@@ -4461,16 +4461,29 @@ a.bg-danger:focus, a.bg-danger:hover {
   background-color: #05345C;
   color: #fff;
   padding: 0; }
-  .kent-bar header.navbar-brand {
+  .kent-bar a.navbar-brand {
     font-size: 1.2rem;
     padding: .8rem  .4rem;
-    color: #fff; }
+    color: #fff;
+    display: block; }
   .kent-bar button {
     padding: .8rem;
     background-color: #063c6b;
     border: none;
     font-size: 1.2rem; }
+  .kent-bar button.menu-button {
+    background-color: #074479; }
   .kent-bar nav a {
     color: #fff; }
+
+.departmental-nav header {
+  background-color: #05345C;
+  color: #fff;
+  padding: .5rem;
+  border-top: 1px solid #074479; }
+.departmental-nav .navbar-toggler {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */

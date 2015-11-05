@@ -3,10 +3,11 @@
 	color: #fff;
 	padding: 0;
 	
-	header.navbar-brand {
+	a.navbar-brand {
 		font-size: 1.2rem;
 		padding: .8rem  .4rem;
 		color: #fff;
+		display:block;
 	}
 
 	button {
@@ -17,7 +18,7 @@
     	font-size:1.2rem;
 	}
 	button.menu-button {
-		background-color: lighten($brand-primary, 3%);
+		background-color: lighten($brand-primary, 6%);
 	}
 
 	nav a {
@@ -25,3 +26,17 @@
 	}
 }
 
+
+.departmental-nav {
+	header {
+		background-color: $brand-primary;
+		color: #fff;
+		padding: .5rem;
+		border-top: 1px solid lighten($brand-primary, 6%);
+	}
+	.navbar-toggler {
+		background-color: $brand-darkgrey;
+		color:#fff;
+		cursor:pointer;
+	}
+}
