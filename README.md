@@ -4,7 +4,7 @@
 
 CSS documentation is provided inline using the [Hologram](http://trulia.github.io/hologram/) format.
 
-Hologram allows generation of a living style guide. The Hologram templates are kept in `plugins/hologram`.
+Hologram allows generation of a living style guide. The example Hologram templates are kept in `code_example_templates`.
 
 Instructions for installing and running Hologram can be found in the [Hologram github repository readme](https://github.com/trulia/hologram/blob/master/README.md).
 
