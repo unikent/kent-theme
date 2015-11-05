@@ -68,6 +68,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-postcss');
 
 	// Define tasks
-	grunt.registerTask('development', [ 'jshint', 'copy:fonts', 'sass', 'postcss' ]);
+	grunt.registerTask('development', [ 'jshint', 'copy:fonts', 'sass', 'postcss', 'hologram']);
 	grunt.registerTask('default', [ 'development', 'watch' ]);
 };
