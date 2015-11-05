@@ -13,8 +13,11 @@
   "dependencies": {
     "bootstrap": "4.0.0-alpha",
     "jquery": "~2.1.3",
-    "jquery-ui":"~1.11.4",
+    "jquery-ui": "~1.11.4",
     "modernizr": "~2.8.3",
     "kent-font": "unikent/kent-font"
+  },
+  "devDependencies": {
+    "phantomcss": "~0.11.0"
   }
 }
