@@ -8,6 +8,10 @@ module.exports = function(grunt) {
                 src: '**',
                 dest: 'dist/fonts/',
             },
+            fontscss: {
+                src: 'vendor/kent-font/public/css/kentfont.css',
+                dest: 'dist/css/kentfont.css'
+            },
         },
 
         sass: {
@@ -61,6 +65,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-postcss');
 
     // Define tasks
-    grunt.registerTask('development', [ 'jshint', 'copy:fonts', 'sass', 'postcss' ]);
+    grunt.registerTask('development', [ 'jshint', 'copy', 'sass', 'postcss' ]);
     grunt.registerTask('default', [ 'development', 'watch' ]);
 };
