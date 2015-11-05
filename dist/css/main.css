@@ -4746,6 +4746,13 @@ a.bg-danger:focus, a.bg-danger:hover {
   height: 1px;
   overflow: hidden; }
 
+/*doc
+---
+title: header
+name: header
+category: basics
+---
+*/
 .kent-bar {
   background-color: #05345C;
   color: #fff;
