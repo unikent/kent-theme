@@ -8,7 +8,12 @@ module.exports = function(grunt) {
 				src: '**',
 				dest: 'dist/fonts/',
 			},
+			fontscss: {
+				src: 'vendor/kent-font/public/css/kentfont.css',
+				dest: 'dist/css/kentfont.css'
+			},
 		},
+		
 		sass: {
 			dist : {
 				files: {
@@ -58,7 +63,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-
 	// Load tasks
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
@@ -68,6 +72,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-postcss');
 
 	// Define tasks
-	grunt.registerTask('development', [ 'jshint', 'copy:fonts', 'sass', 'postcss', 'hologram']);
+	grunt.registerTask('development', [ 'jshint', 'copy', 'sass', 'postcss', 'hologram']);
 	grunt.registerTask('default', [ 'development', 'watch' ]);
 };
