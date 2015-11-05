@@ -1,4 +1,10 @@
-# kent-theme
+# The Kent Theme
+
+## Setup
+
+Run `npm install` to install all dependencies, run grunt and start a watch task.
+
+To restart the watch for any reason simply run `grunt`.
 
 ## Documentation
 
@@ -8,4 +14,4 @@ Hologram allows generation of a living style guide. The Hologram templates are k
 
 Instructions for installing and running Hologram can be found in the [Hologram github repository readme](https://github.com/trulia/hologram/blob/master/README.md).
 
-For the purposes of kent-theme and to avoid the need for Ruby (Hologram is a Ruby gem), use `npm install grunt-hologram --save-dev` to install the Hologram plugin.
+For the purposes of kent-theme, use `npm install grunt-hologram --save-dev` to install the Hologram plugin.
