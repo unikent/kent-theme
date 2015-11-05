@@ -71,9 +71,10 @@ module.exports = function(grunt) {
                         ['dist/css/main.css']
                     ]
                 },
-                extra: {
-                    shiv: false
-                },
+                extensibility: [
+                    "html5printshiv",
+                    "html5shiv"
+                ],
                 uglify: true,
                 parseFiles: true
             }
