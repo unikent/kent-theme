@@ -82,13 +82,14 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: [ 'js/*.js', 'js/**/*.js','!js/_*.js' ],
-                tasks: [ 'jshint' ]
+                tasks: [ 'jshint', 'concat', 'uglify', 'modernizr' ]
             },
             sass: {
                 files: [ 'scss/*.scss','scss/**/*.scss'  ],
-                tasks: [ 'sass' ]
+                tasks: [ 'sass', 'postcss', 'cssnano' ]
             }
         },
+
         jshint: {
             options: {
                 jshintrc: '.jshintrc'
@@ -110,7 +111,6 @@ module.exports = function(grunt) {
                 processors: [
                     require('pixrem')(), // add fallbacks for rem units
                     require('autoprefixer')({browsers: 'last 2 versions'}), // add vendor prefixes
-                    //require('cssnano')() // minify the result
                 ]
             },
             dist: {
@@ -139,8 +139,9 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-cssnano');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-modernizr');
 
     // Define tasks
-    grunt.registerTask('development', [ 'jshint', 'concat', 'uglify', 'copy', 'sass', 'postcss', 'cssnano' ]);
+    grunt.registerTask('development', [ 'jshint', 'concat', 'uglify', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr' ]);
     grunt.registerTask('default', [ 'development', 'watch' ]);
 };
