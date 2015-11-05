@@ -4477,10 +4477,12 @@ a.bg-danger:focus, a.bg-danger:hover {
     color: #fff; }
 
 .departmental-nav header {
+  font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
   background-color: #05345C;
   color: #fff;
   padding: .5rem;
-  border-top: 1px solid #074479; }
+  border-top: 1px solid #074479;
+  font-size: 1.1rem; }
 .departmental-nav .navbar-toggler {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
