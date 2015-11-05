@@ -12,6 +12,10 @@ module.exports = function(grunt) {
                 src: 'js/main.js',
                 dest: 'dist/js/main.js'
             },
+            kentfont: {
+                src: 'vendor/kent-font/public/css/kentfont.css',
+                dest: 'dist/css/kentfont.css'
+            },
         },
 
         sass: {
