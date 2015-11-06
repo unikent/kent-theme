@@ -383,7 +383,7 @@ output {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: inherit;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit; }
@@ -4671,18 +4671,35 @@ a.bg-danger:focus, a.bg-danger:hover {
 
 @font-face {
   font-family: 'ArialLight';
-  src: url("../fonts/arialmt-light-webfont.eot");
-  src: url("../fonts/arialmt-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arialmt-light-webfont.woff2") format("woff2"), url("../fonts/arialmt-light-webfont.woff") format("woff"), url("../fonts/arialmt-light-webfont.ttf") format("truetype"), url("../fonts/arialmt-light-webfont.svg#ariallight") format("svg");
+  src: url("../fonts/arialmt/arialmt-light-webfont.eot");
+  src: url("../fonts/arialmt/arialmt-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arialmt/arialmt-light-webfont.woff2") format("woff2"), url("../fonts/arialmt/arialmt-light-webfont.woff") format("woff"), url("../fonts/arialmt/arialmt-light-webfont.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
-.screen-reader {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden; }
+@font-face {
+  font-family: 'ArialLight';
+  src: url("../fonts/arialmt/arialmt-lightitalic-webfont.eot");
+  src: url("../fonts/arialmt/arialmt-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arialmt/arialmt-lightitalic-webfont.woff2") format("woff2"), url("../fonts/arialmt/arialmt-lightitalic-webfont.woff") format("woff"), url("../fonts/arialmt/arialmt-lightitalic-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'ArialLight';
+  src: url("../fonts/arialmt/arialmt-medium-webfont.eot");
+  src: url("../fonts/arialmt/arialmt-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arialmt/arialmt-medium-webfont.woff2") format("woff2"), url("../fonts/arialmt/arialmt-medium-webfont.woff") format("woff"), url("../fonts/arialmt/arialmt-medium-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'ArialLight';
+  src: url("../fonts/arialmt/arialmt-mediumitalic-webfont.eot");
+  src: url("../fonts/arialmt/arialmt-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arialmt/arialmt-mediumitalic-webfont.woff2") format("woff2"), url("../fonts/arialmt/arialmt-mediumitalic-webfont.woff") format("woff"), url("../fonts/arialmt/arialmt-mediumitalic-webfont.ttf") format("truetype");
+  font-weight: bold;
+  font-style: italic; }
+
+h1, .h1 {
+  font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+  color: #05345C; }
 
 .kent-bar {
   background-color: #05345C;
