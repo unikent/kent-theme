@@ -8,6 +8,7 @@ install:
   - npm install -g casperjs
   - npm install
   - bower install
+  - sudo gem install hologram
 before_script:
   - phantomjs --version
   - casperjs --version
