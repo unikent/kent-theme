@@ -6,29 +6,112 @@ category: basics
 ---
 */
 
-.kent-bar {
+.audience-bar {
 	background-color: $brand-primary;
 	color: #fff;
 	padding: 0;
-
-	header.navbar-brand {
+	
+	a.navbar-brand {
 		font-size: 1.2rem;
 		padding: .8rem  .4rem;
 		color: #fff;
+		display:block;
 	}
 
 	button {
 		padding: .8rem;
 		background-color: lighten($brand-primary, 3%);
-
 		border: none;
 		font-size:1.2rem;
 	}
 	button.menu-button {
-		background-color: lighten($brand-primary, 3%);
+		background-color: lighten($brand-primary, 6%);
 	}
 
-	nav a {
+	nav {
+		font-size:0.9rem;
+		padding: 0.2rem;
+		a {
+			color: #fff;
+			margin-left: .5rem;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		a.navbar-brand, button {display:none;}
+
+	}
+
+
+}
+
+.global-nav {
+	.global-nav-search {
+		margin-top:15px;
+	}
+	a.main-logo {
+		font-size:3.5rem;
+		color: $brand-primary;
+		padding:1rem;
+		display:block;
+
+		&:hover { text-decoration:none;}
+	}
+
+	.global-nav-menu,
+	.global-nav-search {
+			height:100vh;
+	}
+
+	.global-nav-link {
+		a {
+			display:block;
+			line-height: 3rem;
+			border-bottom: solid 1px #eee;
+			padding-left:1rem;
+
+			.more {
+				@extend .pull-right;
+				display:block;
+				height:3rem;
+				border-left: solid 1px #eee;
+				padding: 1rem;
+			}
+		}
+
+		nav {
+			display:none;
+		}
+	}
+
+	.audience-nav-links {
+		margin-top:1rem;
+	 	a{
+			display:block;
+			text-align:center;
+			background: #eee;
+			padding: .5rem;
+			@extend .col-xs-6;
+			border-bottom: solid 1px #fff;
+			border-right: solid 1px #fff;
+		}
+
+	}
+}
+
+
+.departmental-nav {
+	header {
+		font-family: $font-family-serif;
+		background-color: $brand-primary;
 		color: #fff;
+		padding: .5rem;
+		border-top: 1px solid lighten($brand-primary, 6%);
+		font-size:1.1rem;
+	}
+	.navbar-toggler {
+		background-color: $brand-darkgrey;
+		color:#fff;
+		cursor:pointer;
 	}
 }

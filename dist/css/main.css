@@ -383,7 +383,7 @@ output {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-family: inherit;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit; }
@@ -654,7 +654,7 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .global-nav .audience-nav-links a, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -662,7 +662,7 @@ pre {
   padding-right: 15px;
   padding-right: 0.9375rem; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .global-nav .audience-nav-links a, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left; }
 
 .col-xs-1 {
@@ -680,7 +680,7 @@ pre {
 .col-xs-5 {
   width: 41.6666666667%; }
 
-.col-xs-6 {
+.col-xs-6, .global-nav .audience-nav-links a {
   width: 50%; }
 
 .col-xs-7 {
@@ -2207,7 +2207,7 @@ input[type="button"].btn-block {
   left: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu {
+.pull-right > .dropdown-menu, .global-nav .global-nav-link a .more > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -3720,7 +3720,8 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out; }
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4014,6 +4015,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -4171,7 +4173,7 @@ button.close {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right {
+.pull-right, .global-nav .global-nav-link a .more {
   float: right !important; }
 
 .pull-left {
@@ -4671,18 +4673,35 @@ a.bg-danger:focus, a.bg-danger:hover {
 
 @font-face {
   font-family: 'ArialLight';
-  src: url("../fonts/arialmt-light-webfont.eot");
-  src: url("../fonts/arialmt-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arialmt-light-webfont.woff2") format("woff2"), url("../fonts/arialmt-light-webfont.woff") format("woff"), url("../fonts/arialmt-light-webfont.ttf") format("truetype"), url("../fonts/arialmt-light-webfont.svg#ariallight") format("svg");
+  src: url("../fonts/arialmt/arialmt-light-webfont.eot");
+  src: url("../fonts/arialmt/arialmt-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arialmt/arialmt-light-webfont.woff2") format("woff2"), url("../fonts/arialmt/arialmt-light-webfont.woff") format("woff"), url("../fonts/arialmt/arialmt-light-webfont.ttf") format("truetype"), url("../fonts/arialmt/arialmt-mtlight-webfont.svg#arial_mtmt_light") format("svg");
   font-weight: normal;
   font-style: normal; }
 
-.screen-reader {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden; }
+@font-face {
+  font-family: 'ArialLight';
+  src: url("../fonts/arialmt/arialmt-lightitalic-webfont.eot");
+  src: url("../fonts/arialmt/arialmt-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arialmt/arialmt-lightitalic-webfont.woff2") format("woff2"), url("../fonts/arialmt/arialmt-lightitalic-webfont.woff") format("woff"), url("../fonts/arialmt/arialmt-lightitalic-webfont.ttf") format("truetype"), url("../fonts/arialmt/arialmt-lightitalic-webfont.svg#arial_mtlight_italic") format("svg");
+  font-weight: normal;
+  font-style: italic; }
+
+@font-face {
+  font-family: 'ArialLight';
+  src: url("../fonts/arialmt/arialmt-medium-webfont.eot");
+  src: url("../fonts/arialmt/arialmt-medium-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arialmt/arialmt-medium-webfont.woff2") format("woff2"), url("../fonts/arialmt/arialmt-medium-webfont.woff") format("woff"), url("../fonts/arialmt/arialmt-medium-webfont.ttf") format("truetype"), url("../fonts/arialmt/arialmt-medium-webfont.svg#arial_mtmedium") format("svg");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'ArialLight';
+  src: url("../fonts/arialmt/arialmt-mediumitalic-webfont.eot");
+  src: url("../fonts/arialmt/arialmt-mediumitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/arialmt/arialmt-mediumitalic-webfont.woff2") format("woff2"), url("../fonts/arialmt/arialmt-mediumitalic-webfont.woff") format("woff"), url("../fonts/arialmt/arialmt-mediumitalic-webfont.ttf") format("truetype"), url("../fonts/arialmt/arialmt-mediumitalic-webfont.svg#arial_mtmedium_italic") format("svg");
+  font-weight: bold;
+  font-style: italic; }
+
+h1, .h1 {
+  font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+  color: #05345C; }
 
 /*doc
 ---
@@ -4691,26 +4710,99 @@ name: header
 category: basics
 ---
 */
-.kent-bar {
+.audience-bar {
   background-color: #05345C;
   color: #fff;
   padding: 0; }
-  .kent-bar header.navbar-brand {
+  .audience-bar a.navbar-brand {
     font-size: 19.2px;
     font-size: 1.2rem;
     padding: 12.8px  6.4px;
     padding: .8rem  .4rem;
-    color: #fff; }
-  .kent-bar button {
+    color: #fff;
+    display: block; }
+  .audience-bar button {
     padding: 12.8px;
     padding: .8rem;
     background-color: #063c6b;
     border: none;
     font-size: 19.2px;
     font-size: 1.2rem; }
-  .kent-bar button.menu-button {
-    background-color: #063c6b; }
-  .kent-bar nav a {
-    color: #fff; }
+  .audience-bar button.menu-button {
+    background-color: #074479; }
+  .audience-bar nav {
+    font-size: 14.4px;
+    font-size: 0.9rem;
+    padding: 3.2px;
+    padding: 0.2rem; }
+    .audience-bar nav a {
+      color: #fff;
+      margin-left: 8px;
+      margin-left: .5rem; }
+  @media (min-width: 34em) {
+    .audience-bar a.navbar-brand, .audience-bar button {
+      display: none; } }
+
+.global-nav .global-nav-search {
+  margin-top: 15px; }
+
+.global-nav a.main-logo {
+  font-size: 56px;
+  font-size: 3.5rem;
+  color: #05345C;
+  padding: 16px;
+  padding: 1rem;
+  display: block; }
+  .global-nav a.main-logo:hover {
+    text-decoration: none; }
+
+.global-nav .global-nav-menu,
+.global-nav .global-nav-search {
+  height: 100vh; }
+
+.global-nav .global-nav-link a {
+  display: block;
+  line-height: 48px;
+  line-height: 3rem;
+  border-bottom: solid 1px #eee;
+  padding-left: 16px;
+  padding-left: 1rem; }
+  .global-nav .global-nav-link a .more {
+    display: block;
+    height: 48px;
+    height: 3rem;
+    border-left: solid 1px #eee;
+    padding: 16px;
+    padding: 1rem; }
+
+.global-nav .global-nav-link nav {
+  display: none; }
+
+.global-nav .audience-nav-links {
+  margin-top: 16px;
+  margin-top: 1rem; }
+  .global-nav .audience-nav-links a {
+    display: block;
+    text-align: center;
+    background: #eee;
+    padding: 8px;
+    padding: .5rem;
+    border-bottom: solid 1px #fff;
+    border-right: solid 1px #fff; }
+
+.departmental-nav header {
+  font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+  background-color: #05345C;
+  color: #fff;
+  padding: 8px;
+  padding: .5rem;
+  border-top: 1px solid #074479;
+  font-size: 17.6px;
+  font-size: 1.1rem; }
+
+.departmental-nav .navbar-toggler {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  cursor: pointer; }
 
 /*# sourceMappingURL=main.css.map */
