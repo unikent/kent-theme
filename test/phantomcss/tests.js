@@ -1,3 +1,6 @@
+// for examples, see vendor/phantomcss/demo/testsuite.js
+// or go to https://github.com/Huddle/PhantomCSS
+
 /*
 	Require and initialise PhantomCSS module
 	Paths are relative to CasperJs directory
@@ -17,28 +20,7 @@ casper.test.begin( 'Kent theme visual tests', function ( test ) {
 		comparisonResultRoot: fs.absolute( fs.workingDirectory + '/test/phantomcss/results' ),
 		screenshotRoot: fs.absolute( fs.workingDirectory + '/test/phantomcss/screenshots' ),
 		failedComparisonsRoot: fs.absolute( fs.workingDirectory + '/test/phantomcss/failures' ),
-		addLabelToFailedImage: false,
-		/*
-		screenshotRoot: '/screenshots',
-		failedComparisonsRoot: '/failures'
-		casper: specific_instance_of_casper,
-		libraryRoot: '/phantomcss',
-		fileNameGetter: function overide_file_naming(){},
-		onPass: function passCallback(){},
-		onFail: function failCallback(){},
-		onTimeout: function timeoutCallback(){},
-		onComplete: function completeCallback(){},
-		hideElements: '#thing.selector',
-		addLabelToFailedImage: true,
-		outputSettings: {
-			errorColor: {
-				red: 255,
-				green: 255,
-				blue: 0
-			},
-			errorType: 'movement',
-			transparency: 0.3
-		}*/
+		addLabelToFailedImage: false
 	} );
 
 	casper.on( 'remote.message', function ( msg ) {
@@ -52,6 +34,7 @@ casper.test.begin( 'Kent theme visual tests', function ( test ) {
 	casper.on( 'resource.error', function ( err ) {
 		casper.log( 'Resource load error: ' + err, 'warning' );
 	} );
+	
 	/*
 		The test scenario
 	*/
@@ -62,45 +45,6 @@ casper.test.begin( 'Kent theme visual tests', function ( test ) {
 	casper.then( function () {
 		phantomcss.screenshot( '#test', 'sample_paragraph' );
 	} );
-
-	// casper.then( function () {
-	// 	casper.click( '#coffee-machine-button' );
-
-	// 	// wait for modal to fade-in 
-	// 	casper.waitForSelector( '#myModal:not([style*="display: none"])',
-	// 		function success() {
-	// 			phantomcss.screenshot( '#myModal', 'coffee machine dialog' );
-	// 		},
-	// 		function timeout() {
-	// 			casper.test.fail( 'Should see coffee machine' );
-	// 		}
-	// 	);
-	// } );
-
-	// casper.then( function () {
-	// 	casper.click( '#cappuccino-button' );
-	// 	phantomcss.screenshot( '#myModal', 'cappuccino success' );
-	// } );
-
-	// casper.then( function () {
-	// 	casper.click( '#close' );
-
-	// 	// wait for modal to fade-out
-	// 	casper.waitForSelector( '#myModal[style*="display: none"]',
-	// 		function success() {
-	// 			phantomcss.screenshot( {
-	// 				'Coffee machine close success': {
-	// 					selector: '#coffee-machine-wrapper',
-	// 					ignore: '.selector'
-	// 				},
-	// 				'Coffee machine button success': '#coffee-machine-button'
-	// 			} );
-	// 		},
-	// 		function timeout() {
-	// 			casper.test.fail( 'Should be able to walk away from the coffee machine' );
-	// 		}
-	// 	);
-	// } );
 
 	casper.then( function now_check_the_screenshots() {
 		// compare screenshots
