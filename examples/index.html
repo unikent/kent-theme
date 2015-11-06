@@ -5,6 +5,8 @@
 		<link rel="stylesheet" href="../dist/css/main.css" />
 		<link rel="stylesheet" href="../dist/css/kentfont.css" />
 		<script src="../dist/js/modernizr.min.js"></script>
+
+	
 	</head>
 	<body>
 		<a href='#' class='sr-only'>Jump to section menu</a>
@@ -13,18 +15,8 @@
 			<section class='audience-bar navbar'>
 				<a class='navbar-brand kf-kent-horizontal' href=''><span class='sr-only'>The University of Kent</span></a>
 
-				<button class='kf-menu pull-right menu-button' onclick="$('.global-nav > nav').toggleClass('hidden-sm-down');"></button>
-				<button class='kf-search pull-right search-button' onclick="$('.global-nav > .search').toggleClass('hidden-sm-down');"></button>
-
-				<nav class='pull-right collapse navbar-toggleable-xs' style='display:none;'>
-					<a href='#'>Student</a>
-					<a href='#'>Staff</a>
-					<a href='#'>Alumni</a>
-					<a href='#'>Departments</a>
-				</nav>
-
-				<div class='search' style='display:none;'></div>
-
+				<button class='kf-menu pull-right menu-button'></button>
+				<button class='kf-search pull-right search-button'></button>
 			</section>
 			<section class='global-nav' >
 				<a class='main-logo kf-kent-block hidden-sm-down' href=''><span class='sr-only'>The University of Kent</span></a>
@@ -50,6 +42,13 @@
 							<a href="#">Test 2</a>
 						</nav>
 					</div>
+
+					<nav class='audience-nav-links'>
+						<a href='#'>Student</a>
+						<a href='#'>Staff</a>
+						<a href='#'>Alumni</a>
+						<a href='#'>Departments</a>
+					</nav>
 
 				</nav>
 				<div class="search hidden-sm-down">
@@ -180,5 +179,13 @@
 		</footer>
 
 		<script src="../dist/js/main.min.js"></script>
+			<script>
+		$('.menu-button').click(function(){
+			$('.global-nav > nav').toggleClass('hidden-sm-down');
+		});
+		$('.search-button').click(function(){
+			$('.global-nav > .search').toggleClass('hidden-sm-down');
+		});
+		</script>
 	</body>
 </html>
