@@ -21,5 +21,7 @@ Run the tests with ```casperjs test test/phantomcss/tests.js```
 
 PhantomCSS will generate a new set of images and compare them with the ones in ```test/phantomcss/screenshots```. The resulting images and diffs with the placed in ```test/phantomcss/results``` and ```test/phantomcss/failures```.
 
+Add new tests to ```test/phantomcss/tests.js```
+
 To generate a fresh copy of the base images to compare with (in ```test/phantomcss/screenshots```), run ```casperjs test test/phantomcss/tests.js --rebase```
 
