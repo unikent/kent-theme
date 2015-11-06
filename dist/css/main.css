@@ -2207,7 +2207,7 @@ input[type="button"].btn-block {
   left: 0;
   z-index: 990; }
 
-.pull-right > .dropdown-menu {
+.pull-right > .dropdown-menu, .global-nav .global-nav-link a .more > .dropdown-menu {
   right: 0;
   left: auto; }
 
@@ -4171,7 +4171,7 @@ button.close {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-right {
+.pull-right, .global-nav .global-nav-link a .more {
   float: right !important; }
 
 .pull-left {
@@ -4709,6 +4709,9 @@ a.bg-danger:focus, a.bg-danger:hover {
     .audience-bar a.navbar-brand, .audience-bar button {
       display: none; } }
 
+.global-nav .search {
+  margin-top: 15px; }
+
 .global-nav a.main-logo {
   font-size: 56px;
   font-size: 3.5rem;
@@ -4718,6 +4721,27 @@ a.bg-danger:focus, a.bg-danger:hover {
   display: block; }
   .global-nav a.main-logo:hover {
     text-decoration: none; }
+
+.global-nav nav.global-nav-menu {
+  height: 100vh; }
+
+.global-nav .global-nav-link a {
+  display: block;
+  line-height: 48px;
+  line-height: 3rem;
+  border-bottom: solid 1px #eee;
+  padding-left: 16px;
+  padding-left: 1rem; }
+  .global-nav .global-nav-link a .more {
+    display: block;
+    height: 48px;
+    height: 3rem;
+    border-left: solid 1px #eee;
+    padding: 16px;
+    padding: 1rem; }
+
+.global-nav .global-nav-link nav {
+  display: none; }
 
 .departmental-nav header {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;

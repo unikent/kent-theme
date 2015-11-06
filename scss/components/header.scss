@@ -33,9 +33,14 @@
 		a.navbar-brand, button {display:none;}
 
 	}
+
+
 }
 
 .global-nav {
+	.search {
+		margin-top:15px;
+	}
 	a.main-logo {
 		font-size:3.5rem;
 		color: $brand-primary;
@@ -43,6 +48,33 @@
 		display:block;
 
 		&:hover { text-decoration:none;}
+	}
+	
+	nav.global-nav-menu {
+			height:100vh;
+	}
+
+	.global-nav-link {
+		a {
+			display:block;
+			line-height: 3rem;
+			border-bottom: solid 1px #eee;
+			padding-left:1rem;
+
+			.more {
+				@extend .pull-right;
+				display:block;
+				height:3rem;
+				border-left: solid 1px #eee;
+				padding: 1rem;
+			}
+		}
+
+		
+
+		nav {
+			display:none;
+		}
 	}
 }
 
