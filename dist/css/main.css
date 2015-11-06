@@ -382,7 +382,7 @@ output {
   display: inline-block; }
 
 h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
+.h1, .h2, .h3, .h4, .global-footer h3, .h5, .h6 {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 500;
   line-height: 1.1;
@@ -394,7 +394,7 @@ h3, .h3 {
   margin-bottom: 8px;
   margin-bottom: 0.5rem; }
 
-h4, .h4,
+h4, .h4, .global-footer h3,
 h5, .h5,
 h6, .h6 {
   margin-bottom: 8px;
@@ -412,7 +412,7 @@ h3, .h3 {
   font-size: 28px;
   font-size: 1.75rem; }
 
-h4, .h4 {
+h4, .h4, .global-footer h3 {
   font-size: 24px;
   font-size: 1.5rem; }
 
@@ -4782,5 +4782,21 @@ h1, .h1 {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   cursor: pointer; }
+
+.global-footer {
+  background: #4f5457;
+  color: #FFF; }
+  .global-footer a, .global-footer a:hover, .global-footer a:active, .global-footer a:focus {
+    color: #FFF;
+    outline: none; }
+  .global-footer a:hover {
+    text-decoration: underline; }
+  .global-footer .global-footer-top {
+    padding: 8px 0;
+    padding: 0.5rem 0;
+    background: #373a3c; }
+  .global-footer .global-footer-middle {
+    padding: 8px 0;
+    padding: 0.5rem 0; }
 
 /*# sourceMappingURL=main.css.map */

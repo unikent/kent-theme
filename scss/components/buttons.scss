@@ -1,0 +1,9 @@
+.chevron-link{
+  font-weight: bold;
+  padding-right:1.5rem;
+  &:after{
+    display: inline-block;
+    content:$kf-angle-right;
+    font-family: "kentfont",sans-serif;
+  }
+}
