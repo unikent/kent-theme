@@ -1,3 +1,11 @@
+/*doc
+---
+title: header
+name: header
+category: basics
+---
+*/
+
 .audience-bar {
 	background-color: $brand-primary;
 	color: #fff;
@@ -13,8 +21,8 @@
 	button {
 		padding: .8rem;
 		background-color: lighten($brand-primary, 3%);
-    	border: none;
-    	font-size:1.2rem;
+		border: none;
+		font-size:1.2rem;
 	}
 	button.menu-button {
 		background-color: lighten($brand-primary, 6%);
@@ -90,6 +98,7 @@
 
 	}
 }
+
 
 .departmental-nav {
 	header {
