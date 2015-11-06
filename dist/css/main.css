@@ -3720,7 +3720,8 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out; }
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4014,6 +4015,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -4737,9 +4739,19 @@ h1, .h1 {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
   color: #05345C; }
 
+<<<<<<< HEAD
 .global-header {
   background-color: #fff; }
 
+=======
+/*doc
+---
+title: header
+name: header
+category: basics
+---
+*/
+>>>>>>> 150ed81b65e85a075c7c577297eecf06e364f8f8
 .audience-bar {
   background-color: #05345C;
   color: #fff;
