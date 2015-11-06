@@ -38,7 +38,7 @@
 }
 
 .global-nav {
-	.search {
+	.global-nav-search {
 		margin-top:15px;
 	}
 	a.main-logo {
@@ -49,8 +49,9 @@
 
 		&:hover { text-decoration:none;}
 	}
-	
-	nav.global-nav-menu {
+
+	.global-nav-menu,
+	.global-nav-search {
 			height:100vh;
 	}
 
@@ -70,11 +71,23 @@
 			}
 		}
 
-		
-
 		nav {
 			display:none;
 		}
+	}
+
+	.audience-nav-links {
+		margin-top:1rem;
+	 	a{
+			display:block;
+			text-align:center;
+			background: #eee;
+			padding: .5rem;
+			@extend .col-xs-6;
+			border-bottom: solid 1px #fff;
+			border-right: solid 1px #fff;
+		}
+
 	}
 }
 

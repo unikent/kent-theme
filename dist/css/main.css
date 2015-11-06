@@ -654,7 +654,7 @@ pre {
   .row:after {
     clear: both; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .global-nav .audience-nav-links a, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -662,7 +662,7 @@ pre {
   padding-right: 15px;
   padding-right: 0.9375rem; }
 
-.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+.col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .global-nav .audience-nav-links a, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
   float: left; }
 
 .col-xs-1 {
@@ -680,7 +680,7 @@ pre {
 .col-xs-5 {
   width: 41.6666666667%; }
 
-.col-xs-6 {
+.col-xs-6, .global-nav .audience-nav-links a {
   width: 50%; }
 
 .col-xs-7 {
@@ -4734,7 +4734,7 @@ h1, .h1 {
     .audience-bar a.navbar-brand, .audience-bar button {
       display: none; } }
 
-.global-nav .search {
+.global-nav .global-nav-search {
   margin-top: 15px; }
 
 .global-nav a.main-logo {
@@ -4747,7 +4747,8 @@ h1, .h1 {
   .global-nav a.main-logo:hover {
     text-decoration: none; }
 
-.global-nav nav.global-nav-menu {
+.global-nav .global-nav-menu,
+.global-nav .global-nav-search {
   height: 100vh; }
 
 .global-nav .global-nav-link a {
@@ -4767,6 +4768,18 @@ h1, .h1 {
 
 .global-nav .global-nav-link nav {
   display: none; }
+
+.global-nav .audience-nav-links {
+  margin-top: 16px;
+  margin-top: 1rem; }
+  .global-nav .audience-nav-links a {
+    display: block;
+    text-align: center;
+    background: #eee;
+    padding: 8px;
+    padding: .5rem;
+    border-bottom: solid 1px #fff;
+    border-right: solid 1px #fff; }
 
 .departmental-nav header {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
