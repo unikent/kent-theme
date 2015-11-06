@@ -4,9 +4,9 @@
 		<title></title>
 		<link rel="stylesheet" href="../dist/css/main.css" />
 		<link rel="stylesheet" href="../dist/css/kentfont.css" />
-		<script src="../dist/js/modernizr.min.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-	
+		<script src="../dist/js/modernizr.min.js"></script>
 	</head>
 	<body>
 		<a href='#' class='sr-only'>Jump to section menu</a>
@@ -19,7 +19,9 @@
 				<button class='kf-search pull-right search-button'></button>
 			</section>
 			<section class='global-nav' >
+				
 				<a class='main-logo kf-kent-block hidden-sm-down' href=''><span class='sr-only'>The University of Kent</span></a>
+				
 				<nav class="hidden-sm-down global-nav-menu">
 					<div class="global-nav-link">
 						<a href="#">Research <span class='more kf-chevron-right'></span></a>
@@ -51,7 +53,7 @@
 					</nav>
 
 				</nav>
-				<div class="search hidden-sm-down">
+				<div class="global-nav-search hidden-sm-down">
 					
 					<form class="form-inline">
 					  <div class="form-group">
@@ -184,10 +186,10 @@
 		<script src="../dist/js/main.min.js"></script>
 			<script>
 		$('.menu-button').click(function(){
-			$('.global-nav > nav').toggleClass('hidden-sm-down');
+			$('.global-nav-menu').toggleClass('hidden-sm-down');
 		});
 		$('.search-button').click(function(){
-			$('.global-nav > .search').toggleClass('hidden-sm-down');
+			$('.global-nav-search').toggleClass('hidden-sm-down');
 		});
 		</script>
 	</body>
