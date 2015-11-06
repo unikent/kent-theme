@@ -1,4 +1,4 @@
-.kent-bar {
+.audience-bar {
 	background-color: $brand-primary;
 	color: #fff;
 	padding: 0;
@@ -13,7 +13,6 @@
 	button {
 		padding: .8rem;
 		background-color: lighten($brand-primary, 3%);
-
     	border: none;
     	font-size:1.2rem;
 	}
@@ -21,11 +20,31 @@
 		background-color: lighten($brand-primary, 6%);
 	}
 
-	nav a {
-		color: #fff;
+	nav {
+		font-size:0.9rem;
+		padding: 0.2rem;
+		a {
+			color: #fff;
+			margin-left: .5rem;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		a.navbar-brand, button {display:none;}
+
 	}
 }
 
+.global-nav {
+	a.main-logo {
+		font-size:3.5rem;
+		color: $brand-primary;
+		padding:1rem;
+		display:block;
+
+		&:hover { text-decoration:none;}
+	}
+}
 
 .departmental-nav {
 	header {
