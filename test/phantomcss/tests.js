@@ -14,7 +14,7 @@ casper.test.begin( 'Kent theme visual tests', function ( test ) {
 		// SlimerJS needs explicit knowledge of this Casper, and lots of absolute paths
 		casper: casper,
 		libraryRoot: fs.absolute( fs.workingDirectory + '/vendor/phantomcss' ),
-		comparisonResultRoot: fs.absolute( fs.workingDirectory + '/test/phantomcss/base_screenshots' ),
+		comparisonResultRoot: fs.absolute( fs.workingDirectory + '/test/phantomcss/results' ),
 		screenshotRoot: fs.absolute( fs.workingDirectory + '/test/phantomcss/screenshots' ),
 		failedComparisonsRoot: fs.absolute( fs.workingDirectory + '/test/phantomcss/failures' ),
 		addLabelToFailedImage: false,
@@ -60,7 +60,7 @@ casper.test.begin( 'Kent theme visual tests', function ( test ) {
 	casper.viewport( 1024, 768 );
 
 	casper.then( function () {
-		phantomcss.screenshot( '#test', 'sample paragraph' );
+		phantomcss.screenshot( '#test', 'sample_paragraph' );
 	} );
 
 	// casper.then( function () {
