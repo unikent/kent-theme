@@ -75,6 +75,7 @@ jQuery(document).ready(function(){
             $target.toggleClass('in',isCollapsed);
             $this.toggleClass('collapsed',!isCollapsed);
         }
+        updateCollapseAriaState();
     });
 
     updateCollapseAriaState();

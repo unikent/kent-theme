@@ -5101,7 +5101,7 @@ h6, .h6 {
         margin: 0; } }
     @media (min-width: 34em) {
       .global-footer .global-footer-top {
-        padding: 1rem 0; }
+        padding: 1rem 0 0.5rem; }
         .global-footer .global-footer-top .footer-section-title {
           margin: 0 0 0.5rem 0;
           cursor: default;
@@ -5114,6 +5114,17 @@ h6, .h6 {
             display: none; } }
   @media (min-width: 48em) {
     .global-footer .global-footer-middle {
-      padding: 1rem 0; } }
+      padding: 1rem 0 0rem; }
+      .global-footer .global-footer-middle .container {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        padding-bottom: 0.5rem; }
+      .global-footer .global-footer-middle .col-md-3 h5 {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.5); }
+        .global-footer .global-footer-middle .col-md-3 h5:first-child {
+          border-top: none;
+          padding-top: 0;
+          margin-top: 0; } }
 
 /*# sourceMappingURL=main.css.map */
