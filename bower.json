@@ -1,21 +1,25 @@
 {
-  "name": "omen",
-  "version": "0.0.0",
-  "homepage": "https://github.com/haddowg/omen",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "resources/assets/vendor",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "4.0.0-alpha",
-    "jquery": "~2.1.4",
-    "jquery-ui": "~1.11.4",
-    "kent-font": "unikent/kent-font",
-    "modernizr": "~2.8.3",
-    "responsive-bootstrap-toolkit": "~2.5.1"
-  }
+	"name": "kent-theme",
+	"authors": "IS Webdev <is-webdev@kent.ac.uk>",
+	"homepage": "https://github.com/unikent/kent-theme",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/unikent/kent-theme.git"
+	},
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"resources/assets/vendor",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"bootstrap": "4.0.0-alpha",
+		"jquery": "~2.1.4",
+		"jquery-ui": "~1.11.4",
+		"kent-font": "unikent/kent-font",
+		"modernizr": "~2.8.3",
+		"responsive-bootstrap-toolkit": "~2.5.1"
+	}
 }
