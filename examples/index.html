@@ -4,6 +4,7 @@
 		<title></title>
 		<link rel="stylesheet" href="../dist/css/main.css" />
 		<link rel="stylesheet" href="../dist/css/kentfont.css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<script src="../dist/js/modernizr.min.js"></script>
@@ -11,18 +12,18 @@
 	<body>
 		<a href='#' class='sr-only'>Jump to section menu</a>
 		<a href='#' class='sr-only'>Jump to content</a>
-		<header>
+		<header class="global-header">
 			<section class='audience-bar navbar'>
 				<a class='navbar-brand kf-kent-horizontal' href=''><span class='sr-only'>The University of Kent</span></a>
 
-				<button class='kf-menu pull-right menu-button'></button>
+				<button class='kf pull-right menu-button'></button>
 				<button class='kf-search pull-right search-button'></button>
 			</section>
 			<section class='global-nav' >
 				
 				<a class='main-logo kf-kent-block hidden-sm-down' href=''><span class='sr-only'>The University of Kent</span></a>
 				
-				<nav class="hidden-sm-down global-nav-menu">
+				<nav class="global-nav-menu">
 					<div class="global-nav-link">
 						<a href="#">Research <span class='more kf-chevron-right'></span></a>
 						<nav>
@@ -178,19 +179,89 @@
 
 		</main>
 		<footer class="global-footer">
-			<section class="global-footer-top"></section>
-			<section class="global-footer-middle"></section>
+			<section class="global-footer-top">
+				<div class="container">
+					<div class="row">
+						<div itemscope itemtype="http://schema.org/CollegeOrUniversity" class="col-md-6">
+							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-contact-us" aria-controls="#footer-contact-us"  data-parent=".global-footer">Contact Us</h4>
+							<div id="footer-contact-us" class="footer-section collapse-xs-down">
+								<div class="row">
+									<div itemscope="" class="col-sm-6">
+										Recruitment and admissions:<br>
+										<a itemprop="email" href="mailto:information@kent.ac.uk">information@kent.ac.uk</a><br>
+										<a href="tel:+441227827272"><span itemprop="telephone">+44 1227 827272</span></a>
+									</div>
+									<div class="col-sm-6">
+										<span itemprop="name">University of Kent</span>,<br>
+										<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+											<span itemprop="addressLocality">Canterbury</span>,<br>
+											<span itemprop="addressRegion">Kent</span>,<br>
+											<span itemprop="addressCountry">England</span>,<br>
+											<span itemprop="postalCode">CT2 7NZ</span>
+										</address>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<a class="chevron-link" href="#">All contacts</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-open-days" data-parent=".global-footer">Open days in 2015/16</h4>
+							<div id="footer-open-days" class="footer-section collapse-xs-down">
+								<div class="row">
+									<div class="col-sm-6">
+										<strong>Canterbury</strong>
+										<p>
+										Sat 29 October 2015<br>
+										Sat 4 November 2015<br>
+										Sat 8 July 2015
+										</p>
+									</div>
+									<div class="col-sm-6">
+										<strong>Medway</strong>
+										<p>
+										Sat 29 October 2015<br>
+										Sat 4 November 2015
+										</p>
+
+										<strong>Postgraduate</strong>
+										<p>
+										Sat 4 November 2015
+										</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-xs-12">
+										<a class="chevron-link" href="#">Visit Kent</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="global-footer-middle">
+
+			</section>
 			<section class="global-footer-bottom"></section>
 		</footer>
 
-		<script src="../dist/js/main.min.js"></script>
+		<script src="../dist/js/main.js"></script>
 			<script>
 		$('.menu-button').click(function(){
-			$('.global-nav-menu').toggleClass('hidden-sm-down');
+			$('.global-header').toggleClass('show-mobile-menu');
+
 		});
 		$('.search-button').click(function(){
 			$('.global-nav-search').toggleClass('hidden-sm-down');
 		});
+
+		$('.global-nav-menu .global-nav-link a').click(function(){
+			$(this).parent().toggleClass('open');
+		})
 		</script>
 	</body>
 </html>
