@@ -4,6 +4,7 @@
 		<title></title>
 		<link rel="stylesheet" href="../dist/css/main.css" />
 		<link rel="stylesheet" href="../dist/css/kentfont.css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
 		<script src="../dist/js/modernizr.min.js"></script>
@@ -182,67 +183,73 @@
 				<div class="container">
 					<div class="row">
 						<div itemscope itemtype="http://schema.org/CollegeOrUniversity" class="col-md-6">
-							<h3>Contact Us</h3>
-							<div class="row">
-								<div itemscope="" class="col-sm-6">
-									Recruitment and admissions:<br>
-									<a itemprop="email" href="mailto:information@kent.ac.uk">information@kent.ac.uk</a><br>
-									<a href="tel:+441227827272"><span itemprop="telephone">+44 1227 827272</span></a>
+							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-contact-us" aria-controls="#footer-contact-us"  data-parent=".global-footer">Contact Us</h4>
+							<div id="footer-contact-us" class="footer-section collapse-xs-down">
+								<div class="row">
+									<div itemscope="" class="col-sm-6">
+										Recruitment and admissions:<br>
+										<a itemprop="email" href="mailto:information@kent.ac.uk">information@kent.ac.uk</a><br>
+										<a href="tel:+441227827272"><span itemprop="telephone">+44 1227 827272</span></a>
+									</div>
+									<div class="col-sm-6">
+										<span itemprop="name">University of Kent</span>,<br>
+										<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+											<span itemprop="addressLocality">Canterbury</span>,<br>
+											<span itemprop="addressRegion">Kent</span>,<br>
+											<span itemprop="addressCountry">England</span>,<br>
+											<span itemprop="postalCode">CT2 7NZ</span>
+										</address>
+									</div>
 								</div>
-								<div class="col-sm-6">
-									<span itemprop="name">University of Kent</span>,<br>
-									<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-										<span itemprop="addressLocality">Canterbury</span>,<br>
-										<span itemprop="addressRegion">Kent</span>,<br>
-										<span itemprop="addressCountry">England</span>,<br>
-										<span itemprop="postalCode">CT2 7NZ</span>
-									</address>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12">
-									<a class="chevron-link" href="#">All contacts <i class="kf-angle-right"></i></a>
+								<div class="row">
+									<div class="col-xs-12">
+										<a class="chevron-link" href="#">All contacts</a>
+									</div>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6">
-							<h3>Open days in 2015/16</h3>
-							<div class="row">
-								<div class="col-sm-6">
-									<h6>Canterbury</h6>
-									<p>
-									Sat 29 October 2015<br>
-									Sat 4 November 2015<br>
-									Sat 8 July 2015
-									</p>
-								</div>
-								<div class="col-sm-6">
-									<h6>Medway</h6>
-									<p>
-									Sat 29 October 2015<br>
-									Sat 4 November 2015
-									</p>
+							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-open-days" data-parent=".global-footer">Open days in 2015/16</h4>
+							<div id="footer-open-days" class="footer-section collapse-xs-down">
+								<div class="row">
+									<div class="col-sm-6">
+										<strong>Canterbury</strong>
+										<p>
+										Sat 29 October 2015<br>
+										Sat 4 November 2015<br>
+										Sat 8 July 2015
+										</p>
+									</div>
+									<div class="col-sm-6">
+										<strong>Medway</strong>
+										<p>
+										Sat 29 October 2015<br>
+										Sat 4 November 2015
+										</p>
 
-									<h6>Postgraduate</h6>
-									<p>
-									Sat 4 November 2015
-									</p>
+										<strong>Postgraduate</strong>
+										<p>
+										Sat 4 November 2015
+										</p>
+									</div>
 								</div>
-							</div>
-							<div class="row">
-								<div class="col-xs-12">
-									<a class="chevron-link" href="#">Visit Kent <i class="kf-angle-right"></i></a>
+								<div class="row">
+									<div class="col-xs-12">
+										<a class="chevron-link" href="#">Visit Kent</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<section class="global-footer-middle"></section>
+			<section class="global-footer-middle">
+
+			</section>
 			<section class="global-footer-bottom"></section>
 		</footer>
 
-		<script src="../dist/js/main.min.js"></script>
+		<script src="../dist/js/main.js"></script>
 			<script>
 		$('.menu-button').click(function(){
 			$('.global-nav-menu').toggleClass('hidden-sm-down');

@@ -1,7 +1,13 @@
 .global-footer{
 
   background: lighten($gray-dark, 10%);
-  color: #FFF;
+  color: #E8E8E8;
+  font-size: 14px;
+
+  h3,.h3,h4,.h4,h5.h5,h6.h6{
+    color: #FFF;
+    font-family: $font-family-sans-serif;
+  }
 
   a{
 
@@ -19,16 +25,98 @@
 
   }
 
-  h3{
-    @extend .h4;
+  .footer-section-title{
+
+    cursor: pointer;
+    margin-right: -($grid-gutter-width/2);
+    margin-left: -($grid-gutter-width/2);
+    margin-bottom: 0;
+    padding: 0.75rem 1rem;
+    font-size: $font-size-h5;
+
+    &:after{
+      position: absolute;
+      right: 1rem;
+      display: inline-block;
+      content:$kf-angle-up;
+      font-family: "kentfont",sans-serif;
+    }
+    &.collapsed{
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+      &:after{
+        content:$kf-angle-down;
+      }
+    }
+
+
+    @include media-breakpoint-up(sm){
+      margin: 0 0 0.5rem 0;
+      cursor: default;
+      padding: 0;
+      border-bottom: none;
+      font-size: $font-size-h4;
+
+      &.collapsed{
+        border-bottom: none;
+      }
+
+      &:after{
+        display: none;
+      }
+    }
   }
 
+  .footer-section{
+    &.in {
+      margin-right: -($grid-gutter-width/2);
+      margin-left: -($grid-gutter-width/2);
+      padding: 0 1rem 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.5);
+    }
+    @include media-breakpoint-up(sm){
+      &.in {
+        margin: 0;
+        padding: 0;
+        border-bottom: none;
+      }
+    }
+  }
+
+
   .global-footer-top{
-    padding: 0.5rem 0;
+    padding: 0;
     background: $gray-dark;
+
+    .row{
+      .col-sm-6{
+        margin-top: 0.5rem;
+        &:first-child{
+          margin: 0;
+        }
+        @include media-breakpoint-up(sm){
+          margin: 0;
+        }
+      }
+      .col-md-6{
+        @include media-breakpoint-up(sm){
+          margin-top: 1rem;
+          &:first-child{
+            margin: 0;
+          }
+        }
+        @include media-breakpoint-up(md){
+          margin: 0;
+        }
+      }
+    }
+
+    @include media-breakpoint-up(sm){
+      padding: 1rem 0;
+    }
+
   }
   .global-footer-middle{
-    padding: 0.5rem 0;
+    padding: 1rem 0;
     .nav{
 
     }

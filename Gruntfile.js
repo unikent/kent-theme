@@ -55,7 +55,9 @@ module.exports = function(grunt) {
                 src:[
                     'vendor/jquery/dist/jquery.js',
                     'js/_bootstrap.js',
-                    'js/components/foo.js'
+                    'vendor/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.js',
+                    'js/components/responsive_util.js',
+                    'js/components/collapse_responsive.js'
                 ],
                 dest: 'js/main.js'
             }
@@ -83,7 +85,7 @@ module.exports = function(grunt) {
         watch: {
             js: {
                 files: [ 'js/*.js', 'js/**/*.js','!js/_*.js' ],
-                tasks: [ 'jshint', 'concat', 'uglify', 'modernizr' ]
+                tasks: [ 'jshint', 'concat', 'copy:mainjs', 'uglify', 'modernizr' ]
             },
             sass: {
                 files: [ 'scss/*.scss','scss/**/*.scss'  ],
