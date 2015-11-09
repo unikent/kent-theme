@@ -12,18 +12,18 @@
 	<body>
 		<a href='#' class='sr-only'>Jump to section menu</a>
 		<a href='#' class='sr-only'>Jump to content</a>
-		<header>
+		<header class="global-header">
 			<section class='audience-bar navbar'>
 				<a class='navbar-brand kf-kent-horizontal' href=''><span class='sr-only'>The University of Kent</span></a>
 
-				<button class='kf-menu pull-right menu-button'></button>
+				<button class='kf pull-right menu-button'></button>
 				<button class='kf-search pull-right search-button'></button>
 			</section>
 			<section class='global-nav' >
 				
 				<a class='main-logo kf-kent-block hidden-sm-down' href=''><span class='sr-only'>The University of Kent</span></a>
 				
-				<nav class="hidden-sm-down global-nav-menu">
+				<nav class="global-nav-menu">
 					<div class="global-nav-link">
 						<a href="#">Research <span class='more kf-chevron-right'></span></a>
 						<nav>
@@ -252,11 +252,16 @@
 		<script src="../dist/js/main.js"></script>
 			<script>
 		$('.menu-button').click(function(){
-			$('.global-nav-menu').toggleClass('hidden-sm-down');
+			$('.global-header').toggleClass('show-mobile-menu');
+
 		});
 		$('.search-button').click(function(){
 			$('.global-nav-search').toggleClass('hidden-sm-down');
 		});
+
+		$('.global-nav-menu .global-nav-link a').click(function(){
+			$(this).parent().toggleClass('open');
+		})
 		</script>
 	</body>
 </html>
