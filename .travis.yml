@@ -4,14 +4,12 @@ node_js:
 git:
   submodules: false
 install:
+  - gem install hologram
   - npm install -g grunt-cli
   - npm install -g casperjs
   - npm install
   - bower install
-  - sudo gem install hologram
 before_script:
-  - npm install -g bower
-  - bower install
   - phantomjs --version
   - casperjs --version
 script: "casperjs test test/phantomcss/tests.js"
