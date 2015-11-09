@@ -10,6 +10,8 @@ install:
   - bower install
   - sudo gem install hologram
 before_script:
+  - npm install -g bower
+  - bower install
   - phantomjs --version
   - casperjs --version
 script: "casperjs test test/phantomcss/tests.js"
