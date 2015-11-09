@@ -4,6 +4,8 @@
 		<title></title>
 		<link rel="stylesheet" href="../dist/css/main.css" />
 		<link rel="stylesheet" href="../dist/css/kentfont.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
 		<script src="../dist/js/modernizr.min.js"></script>
 	</head>
 	<body>
@@ -13,21 +15,13 @@
 			<section class='audience-bar navbar'>
 				<a class='navbar-brand kf-kent-horizontal' href=''><span class='sr-only'>The University of Kent</span></a>
 
-				<button class='kf-menu pull-right menu-button' onclick="$('.global-nav > nav').toggleClass('hidden-sm-down');"></button>
-				<button class='kf-search pull-right search-button' onclick="$('.global-nav > .search').toggleClass('hidden-sm-down');"></button>
-
-				<nav class='pull-right collapse navbar-toggleable-xs' style='display:none;'>
-					<a href='#'>Student</a>
-					<a href='#'>Staff</a>
-					<a href='#'>Alumni</a>
-					<a href='#'>Departments</a>
-				</nav>
-
-				<div class='search' style='display:none;'></div>
-
+				<button class='kf-menu pull-right menu-button'></button>
+				<button class='kf-search pull-right search-button'></button>
 			</section>
 			<section class='global-nav' >
+				
 				<a class='main-logo kf-kent-block hidden-sm-down' href=''><span class='sr-only'>The University of Kent</span></a>
+				
 				<nav class="hidden-sm-down global-nav-menu">
 					<div class="global-nav-link">
 						<a href="#">Research <span class='more kf-chevron-right'></span></a>
@@ -51,8 +45,15 @@
 						</nav>
 					</div>
 
+					<nav class='audience-nav-links'>
+						<a href='#'>Student</a>
+						<a href='#'>Staff</a>
+						<a href='#'>Alumni</a>
+						<a href='#'>Departments</a>
+					</nav>
+
 				</nav>
-				<div class="search hidden-sm-down">
+				<div class="global-nav-search hidden-sm-down">
 					
 					<form class="form-inline">
 					  <div class="form-group">
@@ -242,5 +243,13 @@
 		</footer>
 
 		<script src="../dist/js/main.min.js"></script>
+			<script>
+		$('.menu-button').click(function(){
+			$('.global-nav-menu').toggleClass('hidden-sm-down');
+		});
+		$('.search-button').click(function(){
+			$('.global-nav-search').toggleClass('hidden-sm-down');
+		});
+		</script>
 	</body>
 </html>
