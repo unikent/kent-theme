@@ -41,6 +41,7 @@ To use [CasperJS](http://casperjs.org/) you'll need:
 - [PhantomJS](http://phantomjs.org/) 1.8.2+ but less than 2.0
 - [Python 2.6+](https://www.python.org/downloads/)
 - Run `npm install -g casperjs` to install it
+  - **Do not user homebrew to install it. You need casperjs 1.1.0-beta3. This isn't available via homebrew**
 
 ### Runing tests
 Run the tests with `casperjs test test/phantomcss/tests.js`
