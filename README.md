@@ -17,6 +17,7 @@ Hologram allows generation of a living style guide. The example Hologram templat
 Instructions for installing and running Hologram can be found in the [Hologram github repository readme](https://github.com/trulia/hologram/blob/master/README.md).
 
 For the purposes of kent-theme, use `npm install grunt-hologram --save-dev` to install the Hologram plugin.
+  - If you have issues with this, you can do it the old-fashioned way with `gem install hologram`
 
 To document, you'll need to add some comments to the SCSS file you want
 Example:
