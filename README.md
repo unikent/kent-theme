@@ -35,13 +35,19 @@ Some text about what the SCSS component is
 
 ## Testing
 
-[PhantomCSS](https://github.com/Huddle/PhantomCSS) tests are used to perform regression testing on UI components. You'll need to have [python](https://www.python.org/downloads/) in your path and ```npm install -g casperjs``` to be able to run them.
+[PhantomCSS](https://github.com/Huddle/PhantomCSS) tests are used to perform regression testing on UI components.
 
-Run the tests with ```casperjs test test/phantomcss/tests.js```
+To use [CasperJS](http://casperjs.org/) you'll need:
+- [PhantomJS](http://phantomjs.org/) 1.8.2+ but less than 2.0
+- [Python 2.6+](https://www.python.org/downloads/)
+- Run `npm install -g casperjs` to install it
 
-PhantomCSS will generate a new set of images and compare them with the ones in ```test/phantomcss/screenshots```. The resulting images and diffs with the placed in ```test/phantomcss/results``` and ```test/phantomcss/failures```.
+### Runing tests
+Run the tests with `casperjs test test/phantomcss/tests.js`
 
-Add new tests to ```test/phantomcss/tests.js```
+PhantomCSS will generate a new set of images and compare them with the ones in `test/phantomcss/screenshots`. The resulting images and diffs with the placed in `test/phantomcss/results` and `test/phantomcss/failures`.
 
-To generate a fresh copy of the base images to compare with (in ```test/phantomcss/screenshots```), run ```casperjs test test/phantomcss/tests.js --rebase```
+Add new tests to `test/phantomcss/tests.js`
+
+To generate a fresh copy of the base images to compare with (in `test/phantomcss/screenshots`), run `casperjs test test/phantomcss/tests.js --rebase`
 
