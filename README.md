@@ -35,7 +35,7 @@ Some text about what the SCSS component is
 
 ## Testing
 
-[PhantomCSS](https://github.com/Huddle/PhantomCSS) tests are used to perform regression testing on UI components. You'll need to have python in your path and ```npm install -g casperjs``` to be able to run them.
+[PhantomCSS](https://github.com/Huddle/PhantomCSS) tests are used to perform regression testing on UI components. You'll need to have [python](https://www.python.org/downloads/) in your path and ```npm install -g casperjs``` to be able to run them.
 
 Run the tests with ```casperjs test test/phantomcss/tests.js```
 
