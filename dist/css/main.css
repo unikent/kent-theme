@@ -3720,7 +3720,8 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out; }
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4014,6 +4015,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -4697,6 +4699,42 @@ a.bg-danger:focus, a.bg-danger:hover {
   font-weight: bold;
   font-style: italic; }
 
+.kf {
+  display: inline-block;
+  -webkit-font-feature-settings: normal;
+  font-feature-settings: normal;
+  -webkit-font-kerning: auto;
+  font-kerning: auto;
+  -webkit-font-language-override: normal;
+  font-language-override: normal;
+  font-size: inherit;
+  font-size-adjust: none;
+  font-stretch: normal;
+  font-style: normal;
+  font-synthesis: weight style;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  text-rendering: auto;
+  -webkit-transform: translate(0px, 0px);
+  transform: translate(0px, 0px); }
+
+.kf:before {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  text-transform: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "kentfont"; }
+
+body .kf.pull-right, body .global-nav .global-nav-link a .kf.more, .global-nav .global-nav-link a body .kf.more {
+  margin-left: 0px; }
+
 .collapse-xs-up {
   max-height: 0;
   overflow: hidden;
@@ -4807,10 +4845,15 @@ h6, .h6 {
     content: "";
     font-family: "kentfont",sans-serif; }
 
+.global-header {
+  background-color: #fff; }
+
 .audience-bar {
   background-color: #05345C;
   color: #fff;
-  padding: 0; }
+  padding: 0;
+  min-height: 24px;
+  min-height: 1.5rem; }
   .audience-bar a.navbar-brand {
     font-size: 19.2px;
     font-size: 1.2rem;
@@ -4819,6 +4862,8 @@ h6, .h6 {
     color: #fff;
     display: block; }
   .audience-bar button {
+    width: 48px;
+    width: 3rem;
     padding: 12.8px;
     padding: .8rem;
     background-color: #063c6b;
@@ -4827,6 +4872,8 @@ h6, .h6 {
     font-size: 1.2rem; }
   .audience-bar button.menu-button {
     background-color: #074479; }
+    .audience-bar button.menu-button:before {
+      content: ""; }
   .audience-bar nav {
     font-size: 14.4px;
     font-size: 0.9rem;
@@ -4855,7 +4902,9 @@ h6, .h6 {
 
 .global-nav .global-nav-menu,
 .global-nav .global-nav-search {
-  height: 100vh; }
+  height: 0;
+  transition: height 300ms;
+  overflow: hidden; }
 
 .global-nav .global-nav-link a {
   display: block;
@@ -4887,6 +4936,19 @@ h6, .h6 {
     border-bottom: solid 1px #fff;
     border-right: solid 1px #fff; }
 
+.global-header.show-mobile-menu {
+  position: fixed; }
+  .global-header.show-mobile-menu .global-nav-menu {
+    display: block; }
+  .global-header.show-mobile-menu button.menu-button::before {
+    content: ""; }
+  .global-header.show-mobile-menu button.kf-search {
+    display: none; }
+  .global-header.show-mobile-menu .global-nav-menu,
+  .global-header.show-mobile-menu .global-nav-search {
+    height: 100vh;
+    width: 100vw; }
+
 .departmental-nav header {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
   background-color: #05345C;
@@ -4901,6 +4963,16 @@ h6, .h6 {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   cursor: pointer; }
+
+.card .card-img {
+  width: 100%; }
+
+.card.card-overlay .card-block {
+  background-color: #05345C;
+  color: #FFF; }
+  .card.card-overlay .card-block .card-title {
+    text-transform: uppercase;
+    color: #ce9716; }
 
 .global-footer {
   background: #4f5457;
