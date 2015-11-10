@@ -69,6 +69,8 @@
 					    		</span>
 					    	</div>
 					  </div>
+
+					  <span class='close-search'>Close search</span>
 					</form>
 
 				</div>
@@ -352,22 +354,6 @@
 
 
 
-		$('.menu-button').click(function(){
-			$('body').toggleClass('show-mobile-menu');
-			$('.global-nav-menu').toggleClass('open');
-		});
-		$('.search-button,.search-button-full').click(function(){
-			$('body').toggleClass('show-mobile-menu');
-			$('.global-nav-search').toggleClass('open');
-		});
-
-		$('.global-nav-menu .global-nav-link a').click(function(){
-			$(this).parent().toggleClass('open').parent().toggleClass('nav-menu-open');
-		})
-
-		$('.navbar-toggler').click(function(){
-			$('.navbar-menu').toggleClass('open');
-		});
 		</script>
 	</body>
 </html>

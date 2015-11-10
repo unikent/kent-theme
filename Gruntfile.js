@@ -57,7 +57,8 @@ module.exports = function(grunt) {
                     'js/_bootstrap.js',
                     'vendor/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.js',
                     'js/components/responsive_util.js',
-                    'js/components/collapse_responsive.js'
+                    'js/components/collapse_responsive.js',
+                    'js/components/global_nav.js',
                 ],
                 dest: 'js/main.js'
             }
