@@ -4956,32 +4956,12 @@ h6, .h6 {
       padding: .5rem; }
   @media (min-width: 48em) {
     .global-nav {
-      background-color: #fff;
-      margin-left: -0.9375rem;
-      margin-right: -0.9375rem; }
-      .global-nav:before, .global-nav:after {
-        content: " ";
-        display: table; }
-      .global-nav:after {
-        clear: both; }
+      background-color: #fff; }
       .global-nav a.main-logo {
-        display: block;
-        position: relative;
-        float: left;
-        min-height: 1px;
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem;
-        width: 16.6666666667%;
-        padding-left: 2rem; }
+        display: inline-block; }
       .global-nav .global-nav-menu {
-        height: auto; }
-      .global-nav .global-nav-links {
-        position: relative;
-        float: left;
-        min-height: 1px;
-        padding-left: 0.9375rem;
-        padding-right: 0.9375rem;
-        width: 66.6666666667%; }
+        height: auto;
+        display: inline-block; }
       .global-nav .audience-nav-links {
         position: absolute;
         top: 0px;
@@ -4996,8 +4976,7 @@ h6, .h6 {
             display: none; }
       .global-nav .global-nav-link {
         font-size: 1.46rem;
-        display: inline-block;
-        padding-top: 1rem; }
+        display: inline-block; }
         .global-nav .global-nav-link a span.more {
           display: none; } }
 

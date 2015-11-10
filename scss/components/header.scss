@@ -80,6 +80,8 @@
 			text-transform: uppercase;
     		font-family: "CenturySchoolBook";
 
+    		
+
 			.more {
 				float:right;
 				display:block;
@@ -144,24 +146,12 @@
 	@include media-breakpoint-up(md) {
 		background-color: #fff;
 		
-		@include make-row();
-			
 
-		a.main-logo {
-			display: block;
-			@include make-col();
-			@include make-col-span(2);
-
-			padding-left:2rem;
-		}
+		a.main-logo {display:inline-block;}
 
 		.global-nav-menu {
 			height:auto;
-		}
-
-		.global-nav-links {
-			@include make-col();
-			@include make-col-span(8);
+			display:inline-block;
 		}
 		
 		.audience-nav-links {
@@ -182,7 +172,7 @@
 		.global-nav-link {
 			font-size: 1.46rem;
 			display:inline-block;
-			padding-top:1rem;
+
 			a span.more {display:none;}
 		}
 
