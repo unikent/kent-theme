@@ -4980,7 +4980,10 @@ h6, .h6 {
   background: #434749;
   color: #E8E8E8;
   font-size: 14px; }
-  .global-footer h3, .global-footer .h3, .global-footer h4, .global-footer .h4, .global-footer h5, .global-footer .h5, .global-footer h6, .global-footer .h6 {
+  .global-footer h3, .global-footer .h3,
+  .global-footer h4, .global-footer .h4,
+  .global-footer h5, .global-footer .h5,
+  .global-footer h6, .global-footer .h6 {
     color: #FFF;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .global-footer a, .global-footer a:hover, .global-footer a:active, .global-footer a:focus {
