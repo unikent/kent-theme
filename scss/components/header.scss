@@ -79,7 +79,7 @@
 			padding-left:1rem;
 
 			text-transform: uppercase;
-    		font-family: "CenturySchoolBook";
+    		font-family: $font-family-serif;
 
     		&:focus {
     			text-decoration:none;
@@ -124,7 +124,7 @@
 				a {
 					font-family: $font-family-sans-serif;
 					text-transform: none;
-					background: $krispy-kreme;
+					background: $brand-tertiary;
 					border-bottom: solid 1px #ddd;
 
 					span.more { border-left: solid 1px #ddd;}
@@ -163,9 +163,9 @@
 		
 		.audience-nav-links {
 			position:absolute;
-			top: 0px;
-			right: 0px;
-			margin-top:0px;
+			top: 0;
+			right: 0;
+			margin-top:0;
 			a {
 				color:#fff;
 				display:inline-block;
@@ -242,14 +242,14 @@
 	  	text-transform: uppercase;
 	}
 	.navbar-toggler {
-		background-color: $brand-darkgrey;
+		background-color: $gray-dark-trans;
 		color:#fff;
 		cursor:pointer;
 	}
 	.navbar-menu {
 		height:0px;
 		overflow:hidden;
-		background-color: $brand-darkgrey;
+		background-color: $gray-dark-trans;
 		color:#fff;
 		transition: height 300ms;
 
