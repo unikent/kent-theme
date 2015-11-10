@@ -72,14 +72,16 @@
 					</form>
 
 				</div>
+
+				<button class='kf-search pull-right search-button-full hidden-sm-down'></button>
 			</section>
 			<section class="departmental-nav">
 				<header>Postgraduate Courses</header>
 				<div class='navbar-toggler'>Menu <span class="kf-chevron-down pull-right"></span></div>
-				<nav class="collapse navbar-toggleable-xs">
-					<ul>
-						<li>nav</li>
-					</ul>
+				<nav class="navbar-menu">
+					<a href="#">How to apply</a>
+					<a href="#">Where am i?</a>
+					<a href="#">Cupcakes</a>
 				</nav>
 			</section>
 		</header>
@@ -349,7 +351,6 @@
 			<script>
 		$('.menu-button').click(function(){
 			$('body').toggleClass('show-mobile-menu');
-
 		});
 		$('.search-button').click(function(){
 			$('.global-nav-search').toggleClass('hidden-sm-down');
@@ -358,6 +359,10 @@
 		$('.global-nav-menu .global-nav-link a').click(function(){
 			$(this).parent().toggleClass('open').parent().toggleClass('nav-menu-open');
 		})
+
+		$('.dept-menu-button').click(function(){
+			$('body').toggleClass('show-mobile-menu');
+		});
 		</script>
 	</body>
 </html>

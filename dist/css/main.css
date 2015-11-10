@@ -4926,7 +4926,17 @@ h6, .h6 {
       padding: .5rem; }
   @media (min-width: 48em) {
     .global-nav {
-      background-color: #fff; }
+      background-color: #fff;
+      margin-right: auto;
+      margin-left: auto;
+      padding-left: 0.9375rem;
+      padding-right: 0.9375rem;
+      max-width: 72.25rem; }
+      .global-nav:before, .global-nav:after {
+        content: " ";
+        display: table; }
+      .global-nav:after {
+        clear: both; }
       .global-nav a.main-logo {
         display: block;
         float: left; }
@@ -4962,20 +4972,22 @@ h6, .h6 {
 
 .show-mobile-menu {
   overflow-y: hidden; }
-
-.show-mobile-menu .global-header .global-nav-menu {
-  display: block; }
-
-.show-mobile-menu .global-header button.menu-button::before {
-  content: ""; }
-
-.show-mobile-menu .global-header button.kf-search {
-  display: none; }
-
-.show-mobile-menu .global-header .global-nav-menu,
-.show-mobile-menu .global-header .global-nav-search {
-  height: 100vh;
-  width: 100vw; }
+  .show-mobile-menu .global-header .global-nav-menu {
+    display: block; }
+  .show-mobile-menu .global-header button.menu-button::before {
+    content: ""; }
+  .show-mobile-menu .global-header button.kf-search {
+    display: none; }
+  .show-mobile-menu .global-header .global-nav-menu,
+  .show-mobile-menu .global-header .global-nav-search {
+    height: 100vh;
+    width: 100vw; }
+  @media (min-width: 48em) {
+    .show-mobile-menu {
+      overflow-y: auto; }
+      .show-mobile-menu .global-header .global-nav-menu {
+        height: auto;
+        width: auto; } }
 
 .departmental-nav header {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
@@ -4992,6 +5004,36 @@ h6, .h6 {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   cursor: pointer; }
+
+.departmental-nav .navbar-menu {
+  height: 0px;
+  overflow: hidden; }
+
+@media (min-width: 48em) {
+  .departmental-nav {
+    margin: 0 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0.9375rem;
+    padding-right: 0.9375rem;
+    max-width: 72.25rem; }
+    .departmental-nav:before, .departmental-nav:after {
+      content: " ";
+      display: table; }
+    .departmental-nav:after {
+      clear: both; }
+    .departmental-nav header {
+      font-size: 1.8rem; }
+    .departmental-nav .navbar-toggler {
+      display: none; }
+    .departmental-nav .navbar-menu {
+      display: block;
+      background-color: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      height: auto; } }
+
+.global-nav-search {
+  display: none; }
 
 .global-footer {
   background: #434749;
