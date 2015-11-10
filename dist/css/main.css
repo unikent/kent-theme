@@ -5115,7 +5115,7 @@ h6, .h6 {
             display: none; } }
   @media (min-width: 48em) {
     .global-footer .global-footer-middle {
-      padding: 1rem 0 0rem; }
+      padding: 1rem 0 0; }
       .global-footer .global-footer-middle .container {
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         padding-bottom: 0.5rem; }
@@ -5127,5 +5127,34 @@ h6, .h6 {
           border-top: none;
           padding-top: 0;
           margin-top: 0; } }
+  @media (min-width: 48em) {
+    .global-footer .global-footer-bottom {
+      padding: 1rem 0; } }
+  .global-footer .global-footer-base {
+    padding: 8px 0 0;
+    padding: 0.5rem 0 0;
+    background: #FFF;
+    color: #171717; }
+    .global-footer .global-footer-base .container {
+      padding: 0; }
+    .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
+      color: #171717;
+      padding: 0 16px 8px;
+      padding: 0 1rem 0.5rem;
+      display: block;
+      width: 50%;
+      float: left; }
+    @media (min-width: 48em) {
+      .global-footer .global-footer-base {
+        padding: 0.25rem 0;
+        text-align: right; }
+        .global-footer .global-footer-base .container {
+          padding: 0 0.9375rem; }
+        .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
+          padding: 0;
+          display: inline;
+          width: auto;
+          float: none;
+          margin: 0 0.5rem; } }
 
 /*# sourceMappingURL=main.css.map */
