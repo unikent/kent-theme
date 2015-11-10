@@ -4869,6 +4869,8 @@ h6, .h6 {
     height: 0;
     transition: height 300ms;
     overflow: hidden; }
+  .global-nav .search-button-full {
+    display: none; }
   .global-nav .global-nav-link {
     background-color: #fff; }
     .global-nav .global-nav-link a {
@@ -4959,6 +4961,10 @@ h6, .h6 {
           font-size: 0.9rem; }
           .global-nav .audience-nav-links a::after {
             display: none; }
+      .global-nav .search-button-full {
+        display: block;
+        background-color: #937227;
+        border: 0; }
       .global-nav .global-nav-links.nav-menu-open {
         height: 280px; }
       .global-nav .global-nav-links.nav-menu-open .global-nav-link, .global-nav .global-nav-links.nav-menu-open .global-nav-link.open {
