@@ -2879,7 +2879,7 @@ input[type="button"].btn-block {
   border: 1px solid #e5e5e5;
   border: 0.0625rem solid #e5e5e5; }
 
-.card-block {
+.card-block, .card.card-overlay .card-title-wrap {
   padding: 20px;
   padding: 1.25rem; }
 
@@ -5043,6 +5043,51 @@ h6, .h6 {
 
 .global-nav-search {
   display: none; }
+
+.card.card-overlay {
+  margin-top: 25.6px;
+  margin-top: 1.6rem; }
+  .card.card-overlay .card-img {
+    width: 100%; }
+  .card.card-overlay .card-title-wrap {
+    background-color: #05345C;
+    color: #FFF; }
+    .card.card-overlay .card-title-wrap > a.card-title-wrap-link {
+      position: relative;
+      display: block;
+      color: #FFF;
+      padding-right: 32px;
+      padding-right: 2rem; }
+      .card.card-overlay .card-title-wrap > a.card-title-wrap-link:hover {
+        text-decoration: none; }
+      .card.card-overlay .card-title-wrap > a.card-title-wrap-link:after {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -16px;
+        margin-top: -1rem;
+        font-size: 32px;
+        font-size: 2rem;
+        content: "";
+        font-family: "kentfont", sans-serif; }
+    .card.card-overlay .card-title-wrap .card-title, .card.card-overlay .card-title-wrap a.chevron-link.card-title, .card.card-overlay .card-title-wrap .global-nav .audience-nav-links a.card-title, .global-nav .audience-nav-links .card.card-overlay .card-title-wrap a.card-title {
+      text-transform: uppercase;
+      color: #ce9716; }
+  .card.card-overlay .card-title {
+    font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
+  .card.card-overlay .card-img-overlay {
+    top: inherit; }
+    .card.card-overlay .card-img-overlay.overlay-backdrop {
+      background-color: rgba(0, 0, 0, 0.6); }
+  @media (min-width: 48em) {
+    .card.card-overlay .card-title-wrap {
+      position: absolute;
+      width: 40%;
+      left: 5%;
+      top: -1.6rem; }
+      .card.card-overlay .card-title-wrap.pull-right {
+        left: inherit;
+        right: 5%; } }
 
 .global-footer {
   background: #434749;
