@@ -64,7 +64,9 @@
 		overflow:hidden;
 	}
 
-
+	.search-button-full {
+		display:none;
+	}
 
 
 	.global-nav-link {
@@ -177,6 +179,11 @@
 			}
 		}
 		
+		.search-button-full {
+			display:block;
+			background-color: $brand-accent;
+			border:0;
+		}
 
 
 		.global-nav-links {
