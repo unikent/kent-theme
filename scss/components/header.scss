@@ -252,6 +252,19 @@
 	.navbar-menu {
 		height:0px;
 		overflow:hidden;
+		background-color: $brand-darkgrey;
+		color:#fff;
+
+		&.open {
+			height:auto;
+			transition: height 300ms;
+		}
+
+		a {
+			color:#fff;
+			display:block;
+			padding:0.5rem;
+		}
 	}
 
 	@include media-breakpoint-up(md) {
@@ -266,13 +279,10 @@
 
 		.navbar-toggler {display:none;}
 		.navbar-menu {
-			display:block;
-			background-color: $brand-darkgrey;
-			color:#fff;
 			height:auto;
 
 			a {
-
+				display:inline-block;
 			}
 		}
 	}

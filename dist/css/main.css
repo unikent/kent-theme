@@ -5007,7 +5007,17 @@ h6, .h6 {
 
 .departmental-nav .navbar-menu {
   height: 0px;
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff; }
+  .departmental-nav .navbar-menu.open {
+    height: auto;
+    transition: height 300ms; }
+  .departmental-nav .navbar-menu a {
+    color: #fff;
+    display: block;
+    padding: 8px;
+    padding: 0.5rem; }
 
 @media (min-width: 48em) {
   .departmental-nav {
@@ -5027,10 +5037,9 @@ h6, .h6 {
     .departmental-nav .navbar-toggler {
       display: none; }
     .departmental-nav .navbar-menu {
-      display: block;
-      background-color: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      height: auto; } }
+      height: auto; }
+      .departmental-nav .navbar-menu a {
+        display: inline-block; } }
 
 .global-nav-search {
   display: none; }
