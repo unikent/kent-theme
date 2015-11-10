@@ -3,6 +3,7 @@ jQuery(document).ready(function(){
     viewport = ResponsiveBootstrapToolkit;
 
     function updateCollapseAriaState(){
+        console.log(viewport.current());
         var vpHiddenClasses=[];
         if(viewport.is('>=xs')) {
             vpHiddenClasses.push('.collapse-xs-up');
