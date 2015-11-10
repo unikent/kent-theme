@@ -4880,7 +4880,7 @@ h6, .h6 {
       padding-left: 16px;
       padding-left: 1rem;
       text-transform: uppercase;
-      font-family: "CenturySchoolBook"; }
+      font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
       .global-nav .global-nav-link a .more {
         float: right;
         display: block;
@@ -4931,9 +4931,9 @@ h6, .h6 {
         display: inline-block; }
       .global-nav .audience-nav-links {
         position: absolute;
-        top: 0px;
-        right: 0px;
-        margin-top: 0px; }
+        top: 0;
+        right: 0;
+        margin-top: 0; }
         .global-nav .audience-nav-links a {
           color: #fff;
           display: inline-block;
