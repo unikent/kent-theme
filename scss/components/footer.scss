@@ -134,7 +134,7 @@
       text-align: center;
       font-size: 1.5rem;
       display: block;
-      padding: 0.33rem;
+      padding: 0.33rem 0.45rem;
       float: left;
       margin: 0 0.25rem 0.25rem 0;
       &:hover,&:active,&:focus{
@@ -161,6 +161,12 @@
       }
       &.kf-tumblr{
         background-color: $tumblr;
+      }
+      &.kf-instagram{
+        background-color: $instagram;
+      }
+      &.kf-pinterest{
+        background-color: $pinterest;
       }
     }
   }
