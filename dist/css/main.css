@@ -4972,14 +4972,13 @@ h6, .h6 {
 
 .show-mobile-menu {
   overflow-y: hidden; }
-  .show-mobile-menu .global-header .global-nav-menu {
-    display: block; }
   .show-mobile-menu .global-header button.menu-button::before {
     content: ""; }
   .show-mobile-menu .global-header button.kf-search {
     display: none; }
-  .show-mobile-menu .global-header .global-nav-menu,
-  .show-mobile-menu .global-header .global-nav-search {
+  .show-mobile-menu .global-header .global-nav-menu.open,
+  .show-mobile-menu .global-header .global-nav-search.open {
+    display: block;
     height: 100vh;
     width: 100vw; }
   @media (min-width: 48em) {
@@ -5009,10 +5008,10 @@ h6, .h6 {
   height: 0px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.8);
-  color: #fff; }
+  color: #fff;
+  transition: height 300ms; }
   .departmental-nav .navbar-menu.open {
-    height: auto;
-    transition: height 300ms; }
+    height: auto; }
   .departmental-nav .navbar-menu a {
     color: #fff;
     display: block;

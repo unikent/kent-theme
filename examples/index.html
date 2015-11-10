@@ -57,7 +57,7 @@
 					</nav>
 
 				</div>
-				<div class="global-nav-search hidden-sm-down">
+				<div class="global-nav-search">
 					
 					<form class="form-inline">
 					  <div class="form-group">
@@ -348,12 +348,17 @@
 		</footer>
 
 		<script src="../dist/js/main.js"></script>
-			<script>
+		<script>
+
+
+
 		$('.menu-button').click(function(){
 			$('body').toggleClass('show-mobile-menu');
+			$('.global-nav-menu').toggleClass('open');
 		});
 		$('.search-button').click(function(){
-			$('.global-nav-search').toggleClass('hidden-sm-down');
+			$('body').toggleClass('show-mobile-menu');
+			$('.global-nav-search').toggleClass('open');
 		});
 
 		$('.global-nav-menu .global-nav-link a').click(function(){
