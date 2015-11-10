@@ -4914,6 +4914,8 @@ h6, .h6 {
         border-bottom: solid 1px #ddd; }
         .global-nav .global-nav-links.nav-menu-open .global-nav-link.open nav a span.more {
           border-left: solid 1px #ddd; }
+        .global-nav .global-nav-links.nav-menu-open .global-nav-link.open nav a span.global-nav-link-desc {
+          display: none; }
   .global-nav .audience-nav-links {
     margin-top: 16px;
     margin-top: 1rem; }
@@ -4957,6 +4959,33 @@ h6, .h6 {
           font-size: 0.9rem; }
           .global-nav .audience-nav-links a::after {
             display: none; }
+      .global-nav .global-nav-links.nav-menu-open {
+        height: 280px; }
+      .global-nav .global-nav-links.nav-menu-open .global-nav-link, .global-nav .global-nav-links.nav-menu-open .global-nav-link.open {
+        display: inline-block; }
+        .global-nav .global-nav-links.nav-menu-open .global-nav-link nav, .global-nav .global-nav-links.nav-menu-open .global-nav-link.open nav {
+          width: 100%;
+          position: absolute;
+          left: 0;
+          top: 120px;
+          overflow: hidden; }
+          .global-nav .global-nav-links.nav-menu-open .global-nav-link nav a, .global-nav .global-nav-links.nav-menu-open .global-nav-link.open nav a {
+            width: 25%;
+            display: block;
+            float: left;
+            font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            line-height: 2rem;
+            text-align: left;
+            padding: 1rem;
+            height: 170px; }
+            .global-nav .global-nav-links.nav-menu-open .global-nav-link nav a span.global-nav-link-desc, .global-nav .global-nav-links.nav-menu-open .global-nav-link.open nav a span.global-nav-link-desc {
+              font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+              display: inline-block;
+              font-size: 0.9rem;
+              width: 100%;
+              text-transform: none; }
       .global-nav .global-nav-links .global-nav-link {
         width: 32%;
         font-size: 1.46rem;

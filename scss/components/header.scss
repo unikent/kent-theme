@@ -106,6 +106,7 @@
 			& > a {
 				padding-left: 0;
 
+
 				span {
 					border-left:0;
 					float:left;
@@ -118,6 +119,7 @@
 			nav {
 				display:block;
 
+
 				a {
 					font-family: $font-family-sans-serif;
 					text-transform: none;
@@ -125,6 +127,7 @@
 					border-bottom: solid 1px #ddd;
 
 					span.more { border-left: solid 1px #ddd;}
+					span.global-nav-link-desc { display:none;}
 				}
 			}
 
@@ -178,6 +181,44 @@
 
 		.global-nav-links {
 
+			&.nav-menu-open {
+				height:280px;
+			}
+			&.nav-menu-open .global-nav-link,&.nav-menu-open .global-nav-link.open {
+				display: inline-block;
+
+				nav {
+					width:100%;
+					position: absolute;
+					left:0;
+					top:120px;
+					overflow:hidden;
+					a {
+						width:25%;
+						display:block;
+						float:left;
+						font-family: $font-family-serif;
+						text-transform: uppercase;
+						font-size:1.1rem;
+						line-height: 2rem;
+						text-align:left;
+						padding:1rem;
+
+						height:170px;
+
+						span.global-nav-link-desc {
+							font-family: $font-family-sans-serif;
+							display:inline-block;
+							font-size:0.9rem;
+							width:100%;
+							text-transform: none;
+						}
+
+
+					}
+				}
+			}
+
 			.global-nav-link {
 				width:32%;
 				font-size: 1.46rem;
@@ -190,7 +231,7 @@
 					padding-left:0;
 					border-bottom: none;
 				}
-				a span.more {display:none;}
+				a span.more {display:none;} 
 			}
 		}
 

@@ -9593,7 +9593,18 @@ jQuery(document).ready(function(){
 
 	// second level nav
 	global_menu.find('.global-nav-link a').click(function(){
-		$(this).parent().toggleClass('open').parent().toggleClass('nav-menu-open');
+		// remove any old opens
+		var was_open = $(this).parent().hasClass('open');
+
+		// Close all
+		$(this).parent().parent().find('.open').removeClass('open');
+		// if this was open, close fully
+		if(was_open){
+			$(this).parent().parent().removeClass('nav-menu-open');
+		}else{
+			// if not, open it
+			$(this).parent().toggleClass('open').parent().addClass('nav-menu-open');
+		}
 	});
 
 })();
