@@ -3720,7 +3720,8 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out; }
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4014,6 +4015,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -4973,6 +4975,16 @@ h6, .h6 {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   cursor: pointer; }
+
+.card .card-img {
+  width: 100%; }
+
+.card.card-overlay .card-block {
+  background-color: #05345C;
+  color: #FFF; }
+  .card.card-overlay .card-block .card-title {
+    text-transform: uppercase;
+    color: #ce9716; }
 
 .global-footer {
   background: #434749;

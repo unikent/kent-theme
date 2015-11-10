@@ -21,5 +21,8 @@
 		"kent-font": "unikent/kent-font",
 		"modernizr": "~2.8.3",
 		"responsive-bootstrap-toolkit": "~2.5.1"
+	},
+	"devDependencies": {
+		"phantomcss": "0.11.0"
 	}
 }

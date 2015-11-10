@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "0.10"
+git:
+  submodules: false
+install:
+  - gem install hologram
+  - npm install -g grunt-cli
+  - npm install -g casperjs
+  - npm install
+  - bower install
+before_script:
+  - phantomjs --version
+  - casperjs --version
+script: "casperjs test test/phantomcss/tests.js"

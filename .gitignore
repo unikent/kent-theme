@@ -3,3 +3,5 @@
 /.sass-cache
 /node_modules
 vendor/
+test/phantomcss/results/
+test/phantomcss/failures/
