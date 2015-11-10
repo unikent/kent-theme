@@ -3720,7 +3720,8 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out; }
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4014,6 +4015,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -4790,6 +4792,17 @@ body .kf.pull-right {
     .collapse-xs-down.in {
       max-height: 2000px; } }
 
+/*doc
+---
+title: Typography
+name: typography
+category: Layout
+---
+
+## House style
+
+The University has a [set of brand guidelines](http://www.kent.ac.uk/brand/writing/house-style.html) for consistency in writing copy.
+*/
 h1, .h1 {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
 
@@ -4801,6 +4814,17 @@ h5, .h5,
 h6, .h6 {
   color: #05345C; }
 
+/*doc
+---
+title: Buttons
+name: buttons
+category: Base CSS
+---
+
+## Chevron Link buttons
+
+
+*/
 .chevron-link, .global-nav .audience-nav-links a {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
   .chevron-link:after, .global-nav .audience-nav-links a:after {
@@ -5044,6 +5068,23 @@ h6, .h6 {
 .global-nav-search {
   display: none; }
 
+/*doc
+---
+title: Cards
+name: cards
+category: Layout
+---
+
+*/
+/*doc
+---
+title: Card Overlay
+name: card-overlay
+category: Base CSS
+---
+
+## Card Overlay
+*/
 .card.card-overlay {
   margin-top: 25.6px;
   margin-top: 1.6rem; }

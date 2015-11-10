@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="robots" content="noindex nofollow">
-	<meta charset="utf-8">
+	<link rel="stylesheet" href="../dist/css/main.css" />
+	<link rel="stylesheet" href="../dist/css/kentfont.css" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="">
-	<meta name="author" content="University of Kent">
-
-	<title>Kent Theme pattern library</title>
-	<link rel="stylesheet" href="../../../../dist/css/main.css" />
-	<link rel="stylesheet" href="../../../dist/css/kentfont.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<title>Kent Theme pattern library - University of Kent</title>
 </head>
 <body>
-	<a href='#' class='screen-reader'>Jump to section menu</a>
-	<a href='#' class='screen-reader'>Jump to content</a>
-	<header>
-		<section class='kent-bar navbar'>
-			<header class='navbar-brand kf-kent-horizontal'><span class='screen-reader'>The University of Kent</span></header>
+	<a href='#' class='sr-only'>Jump to section menu</a>
+	<a href='#' class='sr-only'>Jump to content</a>
+	<header class="global-header">
+		<section class='audience-bar navbar'>
+			<a class='navbar-brand kf-kent-horizontal' href=''><span class='sr-only'>The University of Kent</span></a>
+			<button class='kf pull-right menu-button'></button>
 		</section>
-	<div class="container">
-		<h1>Kent Theme Pattern Library</h1>
+		<section class='global-nav' >
 
-		<nav class="navbar">
-			<ul>
-				<% @categories.each do |category, file_name| %>
-				<li><a href="<%= file_name %>"><%= category %></a></li>
-				<% end %>
-			</ul>
-		</nav>
+			<a class='main-logo kf-kent-block' href=''><span class='sr-only'>The University of Kent</span></a>
 
-		<section class="content">
-			<ul>
-				<% @blocks.each do |b| %>
-				<li><a href="#<%= b[:name] %>"><%= b[:title] %></a></li>
-				<% end %>
-			</ul>
+			<div class="global-nav-menu">
+				<nav class="global-nav-links">
+					<% @categories.each do |category, file_name| %>
+					<div class="global-nav-link">
+						<a href="<%= file_name %>"><%= category %><span class='more kf-chevron-down'></span></a>
+						<nav>
+							<% @blocks.each do |b| %>
+							  <a href="#<%= b[:name] %>"><%= b[:title] %> <span class='more kf-chevron-right'></span></a>
+							<% end %>
+						</nav>
+					</div><!-- ./global-nav-link -->
+					<% end %>
+				</nav><!-- ./global-nav-links -->
+			</div><!-- ./global-nav-menu -->
+		</section>
+	</header>
