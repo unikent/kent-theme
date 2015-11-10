@@ -4855,8 +4855,6 @@ h6, .h6 {
 .global-nav {
   background-color: #434749;
   overflow: hidden; }
-  .global-nav .global-nav-search {
-    margin-top: 15px; }
   .global-nav a.main-logo {
     font-size: 56px;
     font-size: 3.5rem;
@@ -4941,10 +4939,12 @@ h6, .h6 {
         display: block;
         float: left; }
       .global-nav .global-nav-menu {
-        height: auto;
         display: block;
+        height: auto;
         float: left;
         width: 65%; }
+      .global-nav .global-nav-search {
+        display: none; }
       .global-nav .audience-nav-links {
         position: absolute;
         top: 0;
@@ -4974,7 +4974,7 @@ h6, .h6 {
   overflow-y: hidden; }
   .show-mobile-menu .global-header button.menu-button::before {
     content: ""; }
-  .show-mobile-menu .global-header button.kf-search {
+  .show-mobile-menu .global-header button.search-button {
     display: none; }
   .show-mobile-menu .global-header .global-nav-menu.open,
   .show-mobile-menu .global-header .global-nav-search.open {
@@ -4984,9 +4984,14 @@ h6, .h6 {
   @media (min-width: 48em) {
     .show-mobile-menu {
       overflow-y: auto; }
-      .show-mobile-menu .global-header .global-nav-menu {
+      .show-mobile-menu .global-header .global-nav-menu.open,
+      .show-mobile-menu .global-header .global-nav-search.open {
         height: auto;
-        width: 65%; } }
+        width: 65%; }
+      .show-mobile-menu .global-header .global-nav-menu .global-nav-links, .show-mobile-menu .global-header .global-nav-search {
+        display: none; }
+      .show-mobile-menu .global-header .global-nav-menu.open .global-nav-links, .show-mobile-menu .global-header .global-nav-search.open {
+        display: block; } }
 
 .departmental-nav header {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
@@ -5005,13 +5010,14 @@ h6, .h6 {
   cursor: pointer; }
 
 .departmental-nav .navbar-menu {
-  height: 0px;
+  max-height: 0px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
-  transition: height 300ms; }
+  transition: max-height 300ms; }
   .departmental-nav .navbar-menu.open {
-    height: auto; }
+    height: auto;
+    max-height: 1000px; }
   .departmental-nav .navbar-menu a {
     color: #fff;
     display: block;
@@ -5036,12 +5042,10 @@ h6, .h6 {
     .departmental-nav .navbar-toggler {
       display: none; }
     .departmental-nav .navbar-menu {
+      max-height: none;
       height: auto; }
       .departmental-nav .navbar-menu a {
         display: inline-block; } }
-
-.global-nav-search {
-  display: none; }
 
 .global-footer {
   background: #434749;

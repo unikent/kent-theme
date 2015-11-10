@@ -22,7 +22,7 @@
 			<section class='global-nav' >
 				
 				<a class='main-logo kf-kent-block' href=''><span class='sr-only'>The University of Kent</span></a>
-				
+				<button class='kf-search pull-right search-button-full hidden-sm-down'></button>
 				<div class="global-nav-menu">
 					<nav class="global-nav-links">
 						<div class="global-nav-link">
@@ -59,13 +59,13 @@
 				</div>
 				<div class="global-nav-search">
 					
-					<form class="form-inline">
+					<form >
 					  <div class="form-group">
 					    <label for="search" class="sr-only">Search</label>
-					    	<div class="input-group">
-					    		<input type="search" class="form-control" id="search" placeholder="Search website">
+					    	<div class="input-group p-a">
+					    		<input type="search" class="form-control" id="search" placeholder="Search...">
 					    		<span class="input-group-btn">
-									<button type="submit" class="btn btn-primary">Search</button>
+									<button type="submit" class="btn btn-primary "><span class='kf-search'></span></button>
 					    		</span>
 					    	</div>
 					  </div>
@@ -73,7 +73,7 @@
 
 				</div>
 
-				<button class='kf-search pull-right search-button-full hidden-sm-down'></button>
+				
 			</section>
 			<section class="departmental-nav">
 				<header>Postgraduate Courses</header>
@@ -356,7 +356,7 @@
 			$('body').toggleClass('show-mobile-menu');
 			$('.global-nav-menu').toggleClass('open');
 		});
-		$('.search-button').click(function(){
+		$('.search-button,.search-button-full').click(function(){
 			$('body').toggleClass('show-mobile-menu');
 			$('.global-nav-search').toggleClass('open');
 		});

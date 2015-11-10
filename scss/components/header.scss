@@ -48,9 +48,6 @@
 	background-color: lighten($gray-dark, 5%);
 	overflow: hidden;
 
-	.global-nav-search {
-		margin-top:15px;
-	}
 	a.main-logo {
 		font-size:3.5rem;
 		color: $brand-primary;
@@ -154,13 +151,15 @@
 
 		a.main-logo {display:block; float:left;}
 
-		.global-nav-menu {
-			height:auto;
+		.global-nav-menu,{
 			display:block; 
+			height:auto;
 			float:left;
 			width: 65%;
 		}
-		
+		.global-nav-search {
+			display:none;
+		}
 		.audience-nav-links {
 			position:absolute;
 			top: 0;
@@ -174,6 +173,8 @@
 				&::after { display:none; }
 			}
 		}
+		
+
 
 		.global-nav-links {
 
@@ -207,12 +208,12 @@
 			content: $kf-close;
 		}
 
-		button.kf-search {display:none;}
+		button.search-button {display:none;}
 
 		.global-nav-menu.open,
 		.global-nav-search.open {
 			display:block;
-			height: 100vh;
+			height:100vh;
 			width: 100vw;
 		}
 	}
@@ -220,9 +221,17 @@
 	@include media-breakpoint-up(md) {
 		overflow-y:auto;
 
-		.global-header .global-nav-menu {
+		.global-header .global-nav-menu.open,
+		.global-header .global-nav-search.open {
 			height:auto;
 			width: 65%;
+		}
+
+		.global-header .global-nav-menu .global-nav-links, .global-header .global-nav-search{
+			display:none;
+		}
+		.global-header .global-nav-menu.open .global-nav-links, .global-header .global-nav-search.open {
+			display:block;
 		}
 	}
 }
@@ -247,15 +256,15 @@
 		cursor:pointer;
 	}
 	.navbar-menu {
-		height:0px;
+		max-height:0px;
 		overflow:hidden;
 		background-color: $gray-dark-trans;
 		color:#fff;
-		transition: height 300ms;
+		transition: max-height 300ms;
 
 		&.open {
-			height:auto;
-			
+			 height:auto;
+			 max-height:1000px;
 		}
 
 		a {
@@ -277,6 +286,7 @@
 
 		.navbar-toggler {display:none;}
 		.navbar-menu {
+			max-height: none;
 			height:auto;
 
 			a {
@@ -284,7 +294,4 @@
 			}
 		}
 	}
-}
-.global-nav-search {
-	display:none;
 }
