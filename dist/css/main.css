@@ -4987,7 +4987,7 @@ h6, .h6 {
       overflow-y: auto; }
       .show-mobile-menu .global-header .global-nav-menu {
         height: auto;
-        width: auto; } }
+        width: 65%; } }
 
 .departmental-nav header {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
