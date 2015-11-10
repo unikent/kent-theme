@@ -4697,39 +4697,6 @@ a.bg-danger:focus, a.bg-danger:hover {
   font-weight: bold;
   font-style: italic; }
 
-.kf {
-  display: inline-block;
-  -webkit-font-feature-settings: normal;
-  font-feature-settings: normal;
-  -webkit-font-kerning: auto;
-  font-kerning: auto;
-  -webkit-font-language-override: normal;
-  font-language-override: normal;
-  font-size: inherit;
-  font-size-adjust: none;
-  font-stretch: normal;
-  font-style: normal;
-  font-synthesis: weight style;
-  font-variant: normal;
-  font-weight: normal;
-  line-height: 1;
-  text-rendering: auto;
-  -webkit-transform: translate(0px, 0px);
-  transform: translate(0px, 0px); }
-
-.kf:before {
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  text-transform: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-family: "kentfont"; }
-
 body .kf.pull-right {
   margin-left: 0px; }
 
@@ -5105,8 +5072,8 @@ h6, .h6 {
       font-size: 24px;
       font-size: 1.5rem;
       display: block;
-      padding: 5.28px;
-      padding: 0.33rem;
+      padding: 5.28px 7.2px;
+      padding: 0.33rem 0.45rem;
       float: left;
       margin: 0 4px 4px 0;
       margin: 0 0.25rem 0.25rem 0; }
@@ -5127,6 +5094,10 @@ h6, .h6 {
         background-color: #FF6600; }
       .global-footer .footer-section-social a.kf-tumblr {
         background-color: #35465c; }
+      .global-footer .footer-section-social a.kf-instagram {
+        background-color: #125688; }
+      .global-footer .footer-section-social a.kf-pinterest {
+        background-color: #cb2027; }
   .global-footer .global-footer-top {
     padding: 0;
     background: #373a3c; }
