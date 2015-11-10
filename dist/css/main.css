@@ -4853,7 +4853,8 @@ h6, .h6 {
       display: none; } }
 
 .global-nav {
-  background-color: #434749; }
+  background-color: #434749;
+  overflow: hidden; }
   .global-nav .global-nav-search {
     margin-top: 15px; }
   .global-nav a.main-logo {
@@ -4881,6 +4882,8 @@ h6, .h6 {
       padding-left: 1rem;
       text-transform: uppercase;
       font-family: "CenturySchoolBook"; }
+      .global-nav .global-nav-link a:focus {
+        text-decoration: none; }
       .global-nav .global-nav-link a .more {
         float: right;
         display: block;
@@ -4925,10 +4928,13 @@ h6, .h6 {
     .global-nav {
       background-color: #fff; }
       .global-nav a.main-logo {
-        display: inline-block; }
+        display: block;
+        float: left; }
       .global-nav .global-nav-menu {
         height: auto;
-        display: inline-block; }
+        display: block;
+        float: left;
+        width: 65%; }
       .global-nav .audience-nav-links {
         position: absolute;
         top: 0px;
@@ -4941,24 +4947,35 @@ h6, .h6 {
           font-size: 0.9rem; }
           .global-nav .audience-nav-links a::after {
             display: none; }
-      .global-nav .global-nav-link {
+      .global-nav .global-nav-links .global-nav-link {
+        width: 32%;
         font-size: 1.46rem;
-        display: inline-block; }
-        .global-nav .global-nav-link a span.more {
+        display: inline-block;
+        padding: 1rem;
+        padding-top: 1.4rem;
+        text-align: center; }
+        .global-nav .global-nav-links .global-nav-link a {
+          padding-left: 0;
+          border-bottom: none; }
+        .global-nav .global-nav-links .global-nav-link a span.more {
           display: none; } }
 
-.global-header.show-mobile-menu {
-  position: fixed; }
-  .global-header.show-mobile-menu .global-nav-menu {
-    display: block; }
-  .global-header.show-mobile-menu button.menu-button::before {
-    content: ""; }
-  .global-header.show-mobile-menu button.kf-search {
-    display: none; }
-  .global-header.show-mobile-menu .global-nav-menu,
-  .global-header.show-mobile-menu .global-nav-search {
-    height: 100vh;
-    width: 100vw; }
+.show-mobile-menu {
+  overflow-y: hidden; }
+
+.show-mobile-menu .global-header .global-nav-menu {
+  display: block; }
+
+.show-mobile-menu .global-header button.menu-button::before {
+  content: ""; }
+
+.show-mobile-menu .global-header button.kf-search {
+  display: none; }
+
+.show-mobile-menu .global-header .global-nav-menu,
+.show-mobile-menu .global-header .global-nav-search {
+  height: 100vh;
+  width: 100vw; }
 
 .departmental-nav header {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
