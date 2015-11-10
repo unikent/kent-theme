@@ -4957,7 +4957,8 @@ h6, .h6 {
   padding: .5rem;
   border-top: 1px solid #074479;
   font-size: 17.6px;
-  font-size: 1.1rem; }
+  font-size: 1.1rem;
+  text-transform: uppercase; }
 
 .departmental-nav .navbar-toggler {
   background-color: rgba(0, 0, 0, 0.8);
@@ -4975,10 +4976,10 @@ h6, .h6 {
     color: #ce9716; }
 
 .global-footer {
-  background: #4f5457;
+  background: #434749;
   color: #E8E8E8;
   font-size: 14px; }
-  .global-footer h3, .global-footer .h3, .global-footer h4, .global-footer .h4, .global-footer h5.h5, .global-footer h6.h6 {
+  .global-footer h3, .global-footer .h3, .global-footer h4, .global-footer .h4, .global-footer h5, .global-footer .h5, .global-footer h6, .global-footer .h6 {
     color: #FFF;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .global-footer a, .global-footer a:hover, .global-footer a:active, .global-footer a:focus {
@@ -5008,13 +5009,13 @@ h6, .h6 {
       border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
       .global-footer .footer-section-title.collapsed:after {
         content: ""; }
-    @media (min-width: 34em) {
+    @media (min-width: 48em) {
       .global-footer .footer-section-title {
         margin: 0 0 0.5rem 0;
         cursor: default;
         padding: 0;
         border-bottom: none;
-        font-size: 1.5rem; }
+        font-size: 1.35rem; }
         .global-footer .footer-section-title.collapsed {
           border-bottom: none; }
         .global-footer .footer-section-title:after {
@@ -5027,11 +5028,71 @@ h6, .h6 {
     padding: 0 16px 8px;
     padding: 0 1rem 0.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
-  @media (min-width: 34em) {
-    .global-footer .footer-section.in {
-      margin: 0;
+  @media (min-width: 48em) {
+    .global-footer .footer-section {
+      margin-bottom: 0.5rem; }
+      .global-footer .footer-section.in {
+        margin: 0;
+        padding: 0;
+        border-bottom: none; } }
+  .global-footer .footer-section-open .footer-section-title {
+    cursor: default; }
+    .global-footer .footer-section-open .footer-section-title:after {
+      display: none; }
+  .global-footer .footer-section-open .footer-section {
+    margin-right: -15px;
+    margin-right: -0.9375rem;
+    margin-left: -15px;
+    margin-left: -0.9375rem;
+    padding: 0 16px 8px;
+    padding: 0 1rem 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+  @media (min-width: 48em) {
+    .global-footer .footer-section-open .footer-section {
+      margin: 0 0 0.5rem 0;
       padding: 0;
       border-bottom: none; } }
+  @media (min-width: 48em) {
+    .global-footer .footer-section-panel {
+      background: #373a3c;
+      padding: 0.5rem;
+      margin-bottom: 0.5rem; } }
+  .global-footer .footer-section-links a {
+    display: block;
+    width: 100%; }
+  .global-footer .footer-section-social {
+    overflow: hidden; }
+    .global-footer .footer-section-social a {
+      width: 36px;
+      width: 2.25rem;
+      height: 36px;
+      height: 2.25rem;
+      text-align: center;
+      font-size: 24px;
+      font-size: 1.5rem;
+      display: block;
+      padding: 5.28px;
+      padding: 0.33rem;
+      float: left;
+      margin: 0 4px 4px 0;
+      margin: 0 0.25rem 0.25rem 0; }
+      .global-footer .footer-section-social a:hover, .global-footer .footer-section-social a:active, .global-footer .footer-section-social a:focus {
+        outline: none;
+        text-decoration: none; }
+      .global-footer .footer-section-social a.kf-facebook {
+        background-color: #3b5998; }
+      .global-footer .footer-section-social a.kf-twitter {
+        background-color: #55acee; }
+      .global-footer .footer-section-social a.kf-linkedin {
+        background-color: #0077B5; }
+      .global-footer .footer-section-social a.kf-youtube {
+        background-color: #cd201f; }
+      .global-footer .footer-section-social a.kf-flickr {
+        background-color: #FC329B; }
+      .global-footer .footer-section-social a.kf-rss {
+        background-color: #FF6600; }
+      .global-footer .footer-section-social a.kf-tumblr {
+        background-color: #35465c; }
   .global-footer .global-footer-top {
     padding: 0;
     background: #373a3c; }
@@ -5053,9 +5114,59 @@ h6, .h6 {
         margin: 0; } }
     @media (min-width: 34em) {
       .global-footer .global-footer-top {
-        padding: 1rem 0; } }
-  .global-footer .global-footer-middle {
-    padding: 16px 0;
-    padding: 1rem 0; }
+        padding: 1rem 0 0.5rem; }
+        .global-footer .global-footer-top .footer-section-title {
+          margin: 0 0 0.5rem 0;
+          cursor: default;
+          padding: 0;
+          border-bottom: none;
+          font-size: 1.35rem; }
+          .global-footer .global-footer-top .footer-section-title.collapsed {
+            border-bottom: none; }
+          .global-footer .global-footer-top .footer-section-title:after {
+            display: none; } }
+  @media (min-width: 48em) {
+    .global-footer .global-footer-middle {
+      padding: 1rem 0 0; }
+      .global-footer .global-footer-middle .container {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        padding-bottom: 0.5rem; }
+      .global-footer .global-footer-middle .col-md-3 h5 {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.5); }
+        .global-footer .global-footer-middle .col-md-3 h5:first-child {
+          border-top: none;
+          padding-top: 0;
+          margin-top: 0; } }
+  @media (min-width: 48em) {
+    .global-footer .global-footer-bottom {
+      padding: 1rem 0; } }
+  .global-footer .global-footer-base {
+    padding: 8px 0 0;
+    padding: 0.5rem 0 0;
+    background: #FFF;
+    color: #171717; }
+    .global-footer .global-footer-base .container {
+      padding: 0; }
+    .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
+      color: #171717;
+      padding: 0 16px 8px;
+      padding: 0 1rem 0.5rem;
+      display: block;
+      width: 50%;
+      float: left; }
+    @media (min-width: 48em) {
+      .global-footer .global-footer-base {
+        padding: 0.25rem 0;
+        text-align: right; }
+        .global-footer .global-footer-base .container {
+          padding: 0 0.9375rem; }
+        .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
+          padding: 0;
+          display: inline;
+          width: auto;
+          float: none;
+          margin: 0 0.5rem; } }
 
 /*# sourceMappingURL=main.css.map */
