@@ -1,0 +1,30 @@
+
+  .card-panel{
+
+    padding: 0.5rem;
+    overflow: hidden;
+
+    @include media-breakpoint-up(sm){
+      padding: 1rem;
+    }
+
+    &.card-panel-secondary{
+      background-color: $brand-secondary;
+    }
+
+    &.card-panel-tertiary{
+      background-color: $brand-tertiary;
+    }
+
+    .card{
+
+      @include media-breakpoint-up(sm){
+        @include make-col();
+        @include make-col-span(6);
+      }
+
+      @include media-breakpoint-up(lg){
+        @include make-col-span(3);
+      }
+    }
+  }

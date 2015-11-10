@@ -1,0 +1,38 @@
+.card{
+
+  border: none;
+
+  .card-body{
+    display: block;
+    position: relative;
+  }
+  .card-footer{
+    background: transparent;
+  }
+
+  .card-title{
+    font-family: $headings-font-family;
+    color: $brand-primary;
+    font-size: $font-size-h5;
+  }
+
+  .card-subtitle{
+    color: $text-muted;
+    font-family: $font-family-sans-serif;
+    font-size: 0.9rem;
+  }
+
+  .card-img-top{
+    margin-bottom: 0.75rem;
+  }
+
+  .card-inverse{
+
+    .card-title{
+      color: #FFF;
+    }
+    .card-subtitle{
+      color: $gray-lighter;
+    }
+  }
+}
