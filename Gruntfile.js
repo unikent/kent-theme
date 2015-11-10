@@ -152,6 +152,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-modernizr');
 
 	// Define tasks
-	grunt.registerTask('development', [ 'jshint', 'concat', 'uglify', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr', 'hologram']);
+	grunt.registerTask('development', [ 'jshint', 'concat', 'uglify', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr']);
 	grunt.registerTask('default', [ 'development', 'watch' ]);
 };

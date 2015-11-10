@@ -23,37 +23,39 @@
 				
 				<a class='main-logo kf-kent-block hidden-sm-down' href=''><span class='sr-only'>The University of Kent</span></a>
 				
-				<nav class="global-nav-menu">
-					<div class="global-nav-link">
-						<a href="#">Research <span class='more kf-chevron-right'></span></a>
-						<nav>
-							<a href="#">Test</a>
-							<a href="#">Test 2</a>
-						</nav>
-					</div>
-					<div class="global-nav-link">
-						<a href="#">Study <span class='more kf-chevron-right'></span></a>
-						<nav>
-							<a href="#">Test</a>
-							<a href="#">Test 2</a>
-						</nav>
-					</div>
-					<div class="global-nav-link">
-						<a href="#">Explore <span class='more kf-chevron-right'></span></a>
-						<nav>
-							<a href="#">Test</a>
-							<a href="#">Test 2</a>
-						</nav>
-					</div>
-
+				<div class="global-nav-menu">
+					<nav class="global-nav-links">
+						<div class="global-nav-link">
+							<a href="#">Research <span class='more kf-chevron-down'></span></a>
+							<nav>
+								<a href="#">Stuff 1</a>
+								<a href="#">Stuff 2</a>
+								<a href="#">Stuff 3</a>
+							</nav>
+						</div>
+						<div class="global-nav-link">
+							<a href="#">Study <span class='more kf-chevron-down'></span></a>
+							<nav>
+								<a href="#">Test</a>
+								<a href="#">Test 2</a>
+							</nav>
+						</div>
+						<div class="global-nav-link">
+							<a href="#">Explore <span class='more kf-chevron-down'></span></a>
+							<nav>
+								<a href="#">Test</a>
+								<a href="#">Test 2</a>
+							</nav>
+						</div>
+					</nav>
 					<nav class='audience-nav-links'>
-						<a href='#'>Student</a>
-						<a href='#'>Staff</a>
-						<a href='#'>Alumni</a>
-						<a href='#'>Departments</a>
+						<a href='#' class='chevron-link'>Student</a>
+						<a href='#' class='chevron-link'>Staff</a>
+						<a href='#' class='chevron-link'>Alumni</a>
+						<a href='#' class='chevron-link'>Departments</a>
 					</nav>
 
-				</nav>
+				</div>
 				<div class="global-nav-search hidden-sm-down">
 					
 					<form class="form-inline">
@@ -330,7 +332,7 @@
 		});
 
 		$('.global-nav-menu .global-nav-link a').click(function(){
-			$(this).parent().toggleClass('open');
+			$(this).parent().toggleClass('open').parent().toggleClass('nav-menu-open');
 		})
 		</script>
 	</body>
