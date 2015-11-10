@@ -46,6 +46,7 @@
 .global-nav {
 
 	background-color: lighten($gray-dark, 5%);
+	overflow: hidden;
 
 	.global-nav-search {
 		margin-top:15px;
@@ -80,7 +81,9 @@
 			text-transform: uppercase;
     		font-family: $font-family-serif;
 
-    		
+    		&:focus {
+    			text-decoration:none;
+    		}
 
 			.more {
 				float:right;
@@ -146,12 +149,16 @@
 	@include media-breakpoint-up(md) {
 		background-color: #fff;
 		
+		@include make-container();
+		max-width: 72.25rem;
 
-		a.main-logo {display:inline-block;}
+		a.main-logo {display:block; float:left;}
 
 		.global-nav-menu {
 			height:auto;
-			display:inline-block;
+			display:block; 
+			float:left;
+			width: 65%;
 		}
 		
 		.audience-nav-links {
@@ -168,35 +175,58 @@
 			}
 		}
 
+		.global-nav-links {
 
-		.global-nav-link {
-			font-size: 1.46rem;
-			display:inline-block;
+			.global-nav-link {
+				width:32%;
+				font-size: 1.46rem;
+				display:inline-block;
+				padding: 1rem;
+				padding-top:1.4rem;
+				text-align:center;
 
-			a span.more {display:none;}
+				a {
+					padding-left:0;
+					border-bottom: none;
+				}
+				a span.more {display:none;}
+			}
 		}
-
 
 	}
 
 
 }
 
-.global-header.show-mobile-menu {
-	position:fixed;
-	
-	.global-nav-menu {
-		display:block;
-	}
-	button.menu-button::before {
-		content: $kf-close;
-	}
-	button.kf-search {display:none;}
+.show-mobile-menu {
+	overflow-y:hidden;
 
-	.global-nav-menu,
-	.global-nav-search {
-		height: 100vh;
-		width: 100vw;
+	.global-header {
+
+		.global-nav-menu {
+			display:block;
+		}
+
+		button.menu-button::before {
+			content: $kf-close;
+		}
+
+		button.kf-search {display:none;}
+
+		.global-nav-menu,
+		.global-nav-search {
+			height: 100vh;
+			width: 100vw;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		overflow-y:auto;
+
+		.global-header .global-nav-menu {
+			height:auto;
+			width: 65%;
+		}
 	}
 }
 
@@ -219,4 +249,44 @@
 		color:#fff;
 		cursor:pointer;
 	}
+	.navbar-menu {
+		height:0px;
+		overflow:hidden;
+		background-color: $brand-darkgrey;
+		color:#fff;
+
+		&.open {
+			height:auto;
+			transition: height 300ms;
+		}
+
+		a {
+			color:#fff;
+			display:block;
+			padding:0.5rem;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		margin:0 2rem;
+
+		@include make-container();
+		max-width: 72.25rem;
+
+		header {
+			font-size:1.8rem;
+		}
+
+		.navbar-toggler {display:none;}
+		.navbar-menu {
+			height:auto;
+
+			a {
+				display:inline-block;
+			}
+		}
+	}
+}
+.global-nav-search {
+	display:none;
 }
