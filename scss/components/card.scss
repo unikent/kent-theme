@@ -1,14 +1,15 @@
 $card-overlay-amount: 1.6rem;
 .card {
-	.card-img {
-		width: 100%;
-	}
 	&.card-overlay {
+		.card-img {
+			width: 100%;
+		}
 		margin-top: $card-overlay-amount;
-		.card-block{
+		.card-title-wrap{
+			@extend .card-block;
 			background-color: $brand-primary;
 			color: #FFF;
-			& > a.card-block-link {
+			& > a.card-title-wrap-link {
 				position: relative;
 				display: block;
 				color: #FFF;
@@ -24,14 +25,18 @@ $card-overlay-amount: 1.6rem;
 					right: 0;
 					margin-top: -1rem;
 					font-size: 2rem;
-					content: "";
-					font-family: "kentfont",sans-serif;
+					content: $kf-angle-right;
+					font-family: $font-family-kentfont;
 				}
 			}
 			.card-title, a.chevron-link.card-title {
 				text-transform: uppercase;
 				color: $brand-tertiary-light;
 			}
+		}
+
+		.card-title {
+			font-family: $font-family-serif;
 		}
 
 		.card-img-overlay {
@@ -42,7 +47,7 @@ $card-overlay-amount: 1.6rem;
 		}
 
 		@include media-breakpoint-up(md){
-			.card-block {
+			.card-title-wrap {
 				position: absolute;
 				width: 40%;
 				left: 5%;
