@@ -21,38 +21,39 @@
 			</section>
 			<section class='global-nav' >
 				
-				<a class='main-logo kf-kent-block hidden-sm-down' href=''><span class='sr-only'>The University of Kent</span></a>
+				<a class='main-logo kf-kent-block' href=''><span class='sr-only'>The University of Kent</span></a>
 				
 				<div class="global-nav-menu">
 					<nav class="global-nav-links">
 						<div class="global-nav-link">
 							<a href="#">Research <span class='more kf-chevron-down'></span></a>
 							<nav>
-								<a href="#">Stuff 1</a>
-								<a href="#">Stuff 2</a>
-								<a href="#">Stuff 3</a>
+								<a href="#">Inspiring teaching <span class='more kf-chevron-right'></span></a>
+								<a href="#">Undergraduate <span class='more kf-chevron-right'></span></a>
+								<a href="#">Postgraduate <span class='more kf-chevron-right'></span></a>
+								<a href="#">International <span class='more kf-chevron-right'></span></a>
 							</nav>
 						</div>
 						<div class="global-nav-link">
 							<a href="#">Study <span class='more kf-chevron-down'></span></a>
 							<nav>
-								<a href="#">Test</a>
-								<a href="#">Test 2</a>
+								<a href="#">Learning stuff <span class='more kf-chevron-right'></span></a>
+								<a href="#">Example item <span class='more kf-chevron-right'></span></a>
 							</nav>
 						</div>
 						<div class="global-nav-link">
 							<a href="#">Explore <span class='more kf-chevron-down'></span></a>
 							<nav>
-								<a href="#">Test</a>
-								<a href="#">Test 2</a>
+								<a href="#">About <span class='more kf-chevron-right'></span></a>
+								<a href="#">Our campus <span class='more kf-chevron-right'></span></a>
 							</nav>
 						</div>
 					</nav>
 					<nav class='audience-nav-links'>
-						<a href='#' class='chevron-link'>Student</a>
-						<a href='#' class='chevron-link'>Staff</a>
-						<a href='#' class='chevron-link'>Alumni</a>
-						<a href='#' class='chevron-link'>Departments</a>
+						<a href='#' class=''>Student</a>
+						<a href='#' class=''>Staff</a>
+						<a href='#' class=''>Alumni</a>
+						<a href='#' class=''>Departments</a>
 					</nav>
 
 				</div>
@@ -71,14 +72,16 @@
 					</form>
 
 				</div>
+
+				<button class='kf-search pull-right search-button-full hidden-sm-down'></button>
 			</section>
 			<section class="departmental-nav">
 				<header>Postgraduate Courses</header>
 				<div class='navbar-toggler'>Menu <span class="kf-chevron-down pull-right"></span></div>
-				<nav class="collapse navbar-toggleable-xs">
-					<ul>
-						<li>nav</li>
-					</ul>
+				<nav class="navbar-menu">
+					<a href="#">How to apply</a>
+					<a href="#">Where am i?</a>
+					<a href="#">Cupcakes</a>
 				</nav>
 			</section>
 		</header>
@@ -325,6 +328,8 @@
 									<a title="flickr" href="#" class="kf-flickr"></a>
 									<a title="rss" href="#" class="kf-rss"></a>
 									<a title="tumblr" href="#" class="kf-tumblr"></a>
+									<a title="instagram" href="#" class="kf-instagram"></a>
+									<a title="pinterest" href="#" class="kf-pinterest"></a>
 								</nav>
 							</div>
 							<div class="footer-section-panel">
@@ -367,8 +372,7 @@
 		<script src="../dist/js/main.js"></script>
 			<script>
 		$('.menu-button').click(function(){
-			$('.global-header').toggleClass('show-mobile-menu');
-
+			$('body').toggleClass('show-mobile-menu');
 		});
 		$('.search-button').click(function(){
 			$('.global-nav-search').toggleClass('hidden-sm-down');
@@ -377,6 +381,10 @@
 		$('.global-nav-menu .global-nav-link a').click(function(){
 			$(this).parent().toggleClass('open').parent().toggleClass('nav-menu-open');
 		})
+
+		$('.navbar-toggler').click(function(){
+			$('.navbar-menu').toggleClass('open');
+		});
 		</script>
 	</body>
 </html>

@@ -12,17 +12,20 @@ $enable-hover-media-query:  false;
 //COLOURS
 
 $brand-primary:         #05345C;
-$brand-primary-hover:   #52677f;
-$brand-light:           #cad4dc;
-$brand-lightest:        #ebeff2;
 
-$brand-tertiary:        #937227;
-$brand-tertiary-light:  #ce9716;
+$brand-secondary:       #f5f5f5;
 
-$brand-darkgrey: rgba(0, 0, 0, 0.8);
+$brand-tertiary:        #f7f2e1;
+
+$brand-accent:          #937227; //use on light backgrounds
+$brand-accent-light:    #ce9716; //use on dark backgrounds
+
+$gray-dark-trans: rgba(0, 0, 0, 0.8);
 
 $body-color: #171717;
 
+
+/// Social
 $facebook:              #3b5998;
 $linkedin:              #0077B5;
 $twitter:               #55acee;
@@ -30,6 +33,9 @@ $youtube:               #cd201f;
 $flickr:                #FC329B;
 $rss:                   #FF6600;
 $tumblr:                #35465c;
+$pinterest:             #cb2027;
+$instagram:             #125688;
+
 
 // TYPOGRAPHY
 
@@ -38,19 +44,6 @@ $font-family-serif:          "CentrurySchoolbook", Georgia, "Times New Roman", T
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
 
-$headings-font-family:        Arial, "Helvetica Neue", Helvetica, sans-serif !default;
+$headings-font-family:       Arial, "Helvetica Neue", Helvetica, sans-serif !default;
 
-// KENT FONT HELPERS
-
-$font-family-kentfont:		"kentfont";
-
-$kf-chevron-down: "\f078";
-$kf-chevron-right: "\f054";
-$kf-chevron-left: "\f053";
-$kf-chevron-up: "\f077";
-$kf-angle-down: "\f107";
-$kf-angle-left: "\f104";
-$kf-angle-right: "\f105";
-$kf-angle-up: "\f106";
-$kf-menu: "\f0c9";
-$kf-close: "\f00d";
+$font-family-kentfont:		"kentfont", sans-serif;

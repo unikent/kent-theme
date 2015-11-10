@@ -62,44 +62,6 @@
 
 }
 
-
-// temp KF helper
-// remove after https://github.com/unikent/kent-font/issues/10
-.kf {
-  display: inline-block;
-  -webkit-font-feature-settings: normal;
-          font-feature-settings: normal;
-  -webkit-font-kerning: auto;
-          font-kerning: auto;
-  -webkit-font-language-override: normal;
-          font-language-override: normal;
-  font-size: inherit;
-  font-size-adjust: none;
-  font-stretch: normal;
-  font-style: normal;
-  font-synthesis: weight style;
-  font-variant: normal;
-  font-weight: normal;
-  line-height: 1;
-  text-rendering: auto;
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-}
-.kf:before {
-    display: inline-block;
-  vertical-align: middle;
-  line-height: 1;
-  font-weight: normal;
-  font-style: normal;
-  text-decoration: inherit;
-  text-transform: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  font-family: "kentfont";
-
-}
 body .kf.pull-right {
   margin-left:0px; // why is this a thing
 }
