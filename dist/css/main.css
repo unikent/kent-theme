@@ -5046,6 +5046,11 @@ h6, .h6 {
 
 .card {
   border: none; }
+  .card .card-body {
+    display: block;
+    position: relative; }
+  .card .card-footer {
+    background: transparent; }
   .card .card-title {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: #05345C;
@@ -5090,7 +5095,7 @@ h6, .h6 {
 .card.card-overlay {
   margin-top: 25.6px;
   margin-top: 1.6rem; }
-  .card.card-overlay .card-img {
+  .card.card-overlay .card-img-bottom {
     width: 100%; }
   .card.card-overlay .card-title-wrap {
     background-color: #05345C;
