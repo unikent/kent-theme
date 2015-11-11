@@ -33,14 +33,26 @@
 		}
 	}
 
-	.card-title {
+	.card-title, .card-subtitle {
 		font-family: $font-family-serif;
 	}
 
 	.card-img-overlay {
 		top: inherit;
-		&.overlay-backdrop {
-			background-color: rgba(0,0,0,0.6);
+		.card-subtitle {
+			font-size: 1.5rem;
+		}
+	}
+
+	.card-inverse {
+		.card-img-overlay {
+			text-shadow: 0 2px 2px rgba(0,0,0,.9);
+			.card-text {
+				color: #FFF;
+			}
+			.card-subtitle {
+				color: #FFF;
+			}
 		}
 	}
 
