@@ -5083,18 +5083,21 @@ h6, .h6 {
     padding: 0.5rem; }
 
 @media (min-width: 48em) {
-  .departmental-nav header {
-    font-size: 1.8rem; }
-  .departmental-nav header, .departmental-nav nav {
-    margin: 0 2rem;
-    padding-left: 1rem; }
-  .departmental-nav .navbar-toggler {
-    display: none; }
-  .departmental-nav .navbar-menu {
-    max-height: none;
-    height: auto; }
-    .departmental-nav .navbar-menu a {
-      display: inline-block; } }
+  .departmental-nav {
+    z-index: 9;
+    position: relative; }
+    .departmental-nav header {
+      font-size: 1.8rem; }
+    .departmental-nav header, .departmental-nav nav {
+      margin: 0 2rem;
+      padding-left: 1rem; }
+    .departmental-nav .navbar-toggler {
+      display: none; }
+    .departmental-nav .navbar-menu {
+      max-height: none;
+      height: auto; }
+      .departmental-nav .navbar-menu a {
+        display: inline-block; } }
 
 .card {
   border: none; }
@@ -5186,6 +5189,14 @@ h6, .h6 {
     .card.card-overlay .card-title-wrap .card-title, .card.card-overlay .card-title-wrap a.chevron-link.card-title, .card.card-overlay .card-title-wrap .global-nav .audience-nav-links a.card-title, .global-nav .audience-nav-links .card.card-overlay .card-title-wrap a.card-title {
       text-transform: uppercase;
       color: #ce9716; }
+  .card.card-overlay .card-title-wrap.card-transparent {
+    background: rgba(0, 0, 0, 0.8); }
+    .card.card-overlay .card-title-wrap.card-transparent .card-title {
+      color: #fff;
+      font-size: 25.6px;
+      font-size: 1.6rem;
+      line-height: 38.4px;
+      line-height: 2.4rem; }
   .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
     font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
   .card.card-overlay .card-img-overlay {
@@ -5247,6 +5258,18 @@ h6, .h6 {
   .container .card.card-overlay, .card-panel .card-panel-body .card.card-overlay, .card-panel .card-panel-header .card.card-overlay {
     margin-right: -0.9375rem;
     margin-left: -0.9375rem; } }
+
+.card.header-card-overlay {
+  margin-top: -32px;
+  margin-top: -2rem; }
+  @media (min-width: 48em) {
+    .card.header-card-overlay {
+      margin-top: -7rem; }
+      .card.header-card-overlay .card-title-wrap {
+        width: 45%;
+        bottom: 15%;
+        top: auto;
+        left: 0; } }
 
 .global-footer {
   background: #434749;
