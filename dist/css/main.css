@@ -5235,6 +5235,27 @@ h6, .h6 {
       color: #FFF; }
     .card.card-overlay .card-inverse .card-img-overlay .card-subtitle {
       color: #FFF; }
+  .card.card-overlay .card-img-wrap.card-img-wrap-video {
+    position: relative; }
+    .card.card-overlay .card-img-wrap.card-img-wrap-video:after {
+      content: "";
+      font-family: "kentfont", sans-serif;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -44px;
+      margin-left: -2.75rem;
+      margin-top: -44px;
+      margin-top: -2.75rem;
+      font-size: 64px;
+      font-size: 4rem;
+      color: #FFF;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding-right: 24px;
+      padding-right: 1.5rem;
+      padding-left: 24px;
+      padding-left: 1.5rem;
+      cursor: pointer; }
   .card.card-overlay .card-footer {
     padding: 0; }
     .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a {
@@ -5270,7 +5291,8 @@ h6, .h6 {
       position: absolute;
       width: 40%;
       left: 5%;
-      top: -1.6rem; }
+      top: -1.6rem;
+      z-index: 5; }
       .card.card-overlay .card-title-wrap.card-title-wrap-link {
         position: absolute; }
       .card.card-overlay .card-title-wrap.pull-right {
