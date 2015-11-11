@@ -16,6 +16,10 @@
       background-color: $brand-tertiary;
     }
 
+    &.card-panel-primary-tint{
+      background-color: $brand-primary-tint;
+    }
+
     .card-panel-body{
       @extend .container;
       padding: 0;
@@ -41,6 +45,8 @@
       .card-panel-title{
         margin-bottom: 0;
         font-size: $font-size-h3;
+        display: inline-block;
+        margin-right: 1rem;
       }
 
     }
