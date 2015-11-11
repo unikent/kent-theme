@@ -5163,18 +5163,20 @@ h6, .h6 {
   .card.card-overlay .card-title-wrap {
     background-color: #05345C;
     color: #FFF; }
-    .card.card-overlay .card-title-wrap > a.card-title-wrap-link {
-      position: relative;
+    .card.card-overlay .card-title-wrap.card-title-wrap-link {
       display: block;
       color: #FFF;
-      padding-right: 32px;
-      padding-right: 2rem; }
-      .card.card-overlay .card-title-wrap > a.card-title-wrap-link:hover {
+      padding-right: 40px;
+      padding-right: 2.5rem;
+      cursor: pointer;
+      position: relative; }
+      .card.card-overlay .card-title-wrap.card-title-wrap-link:hover {
         text-decoration: none; }
-      .card.card-overlay .card-title-wrap > a.card-title-wrap-link:after {
+      .card.card-overlay .card-title-wrap.card-title-wrap-link:after {
         position: absolute;
         top: 50%;
-        right: 0;
+        right: 16px;
+        right: 1rem;
         margin-top: -16px;
         margin-top: -1rem;
         font-size: 32px;
@@ -5184,12 +5186,21 @@ h6, .h6 {
     .card.card-overlay .card-title-wrap .card-title, .card.card-overlay .card-title-wrap a.chevron-link.card-title, .card.card-overlay .card-title-wrap .global-nav .audience-nav-links a.card-title, .global-nav .audience-nav-links .card.card-overlay .card-title-wrap a.card-title {
       text-transform: uppercase;
       color: #ce9716; }
-  .card.card-overlay .card-title {
+  .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
     font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
   .card.card-overlay .card-img-overlay {
     top: inherit; }
-    .card.card-overlay .card-img-overlay.overlay-backdrop {
-      background-color: rgba(0, 0, 0, 0.6); }
+    .card.card-overlay .card-img-overlay.pull-right {
+      text-align: right; }
+    .card.card-overlay .card-img-overlay .card-subtitle {
+      font-size: 24px;
+      font-size: 1.5rem; }
+  .card.card-overlay .card-inverse .card-img-overlay {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
+    .card.card-overlay .card-inverse .card-img-overlay .card-text {
+      color: #FFF; }
+    .card.card-overlay .card-inverse .card-img-overlay .card-subtitle {
+      color: #FFF; }
   .card.card-overlay .card-footer {
     padding: 0; }
     .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a {
@@ -5226,6 +5237,8 @@ h6, .h6 {
       width: 40%;
       left: 5%;
       top: -1.6rem; }
+      .card.card-overlay .card-title-wrap.card-title-wrap-link {
+        position: absolute; }
       .card.card-overlay .card-title-wrap.pull-right {
         left: inherit;
         right: 5%; } }
