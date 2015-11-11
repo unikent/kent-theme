@@ -4801,6 +4801,10 @@ h5, .h5,
 h6, .h6 {
   color: #05345C; }
 
+@media (min-width: 75em) {
+  html {
+    font-size: 18px; } }
+
 .chevron-link, .global-nav .audience-nav-links a {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
   .chevron-link:after, .global-nav .audience-nav-links a:after {
@@ -5084,6 +5088,8 @@ h6, .h6 {
 
 .card {
   border: none; }
+  .card:last-child {
+    margin-bottom: 0; }
   .card .card-body {
     display: block;
     position: relative; }
@@ -5097,8 +5103,10 @@ h6, .h6 {
   .card .card-subtitle {
     color: #818a91;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14.4px;
-    font-size: 0.9rem; }
+    font-size: 13.6px;
+    font-size: 0.85rem;
+    margin-bottom: 4.8px;
+    margin-bottom: 0.3rem; }
   .card .card-img-top {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
@@ -5106,6 +5114,23 @@ h6, .h6 {
     color: #FFF; }
   .card .card-inverse .card-subtitle {
     color: #eceeef; }
+  .card ul {
+    list-style: none;
+    padding: 0; }
+    .card ul li {
+      padding-left: 12.8px;
+      padding-left: 0.8rem;
+      position: relative; }
+      .card ul li:before {
+        font-family: "kentfont", sans-serif;
+        content: "";
+        color: #05345C;
+        font-size: 5.6px;
+        font-size: 0.35rem;
+        left: 0;
+        position: absolute;
+        padding-top: 7.2px;
+        padding-top: 0.45rem; }
 
 .card-panel {
   padding: 8px;
@@ -5118,6 +5143,8 @@ h6, .h6 {
     background-color: #f5f5f5; }
   .card-panel.card-panel-tertiary {
     background-color: #f7f2e1; }
+  .card-panel.card-panel-primary-tint {
+    background-color: #e8ebf2; }
   .card-panel .card-panel-body {
     padding: 0; }
   @media (min-width: 34em) {
@@ -5139,7 +5166,10 @@ h6, .h6 {
     .card-panel .card-panel-header .card-panel-title {
       margin-bottom: 0;
       font-size: 28px;
-      font-size: 1.75rem; }
+      font-size: 1.75rem;
+      display: inline-block;
+      margin-right: 16px;
+      margin-right: 1rem; }
 
 .card.card-overlay {
   margin-top: 25.6px;
@@ -5224,7 +5254,8 @@ h6, .h6 {
 .global-footer {
   background: #434749;
   color: #E8E8E8;
-  font-size: 14px; }
+  font-size: 14.4px;
+  font-size: 0.9rem; }
   .global-footer h3, .global-footer .h3,
   .global-footer h4, .global-footer .h4,
   .global-footer h5, .global-footer .h5,
