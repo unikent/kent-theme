@@ -5221,6 +5221,8 @@ h6, .h6 {
     .card.card-overlay .card-title-wrap .card-title, .card.card-overlay .card-title-wrap a.chevron-link.card-title, .card.card-overlay .card-title-wrap .global-nav .audience-nav-links a.card-title, .global-nav .audience-nav-links .card.card-overlay .card-title-wrap a.card-title {
       text-transform: uppercase;
       color: #ce9716; }
+    .card.card-overlay .card-title-wrap .card-title, .card.card-overlay .card-title-wrap .card-text {
+      font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
   .card.card-overlay .card-title-wrap.card-transparent {
     background: rgba(0, 0, 0, 0.8); }
     .card.card-overlay .card-title-wrap.card-transparent .card-title {
