@@ -5635,12 +5635,12 @@ h6, .h6 {
       .card.card-overlay .card-img-wrap > .card-img,
       .card.card-overlay .card-img-wrap > .card-img-bottom,
       .card.card-overlay .card-img-wrap > .card-img-top {
-        margin-top: -12rem; } }
+        margin-top: -14rem; } }
     @media (min-width: 62em) and (min-width: 150em) {
       .card.card-overlay .card-img-wrap > .card-img,
       .card.card-overlay .card-img-wrap > .card-img-bottom,
       .card.card-overlay .card-img-wrap > .card-img-top {
-        margin-top: -18rem; } }
+        margin-top: -20rem; } }
 
 @media (max-width: 33.9em) {
   .container .card.card-overlay, .card-panel .card-panel-body .card.card-overlay, .card-panel .card-panel-header .card.card-overlay {
