@@ -8,6 +8,35 @@ $enable-gradients:          false;
 $enable-transitions:        true;
 $enable-hover-media-query:  false;
 
+//GRID
+
+$grid-breakpoints: (
+  // Extra small screen / phone
+        xs: 0,
+  // Small screen / phone
+        sm: 34em,
+  // Medium screen / tablet
+        md: 48em,
+  // Large screen / desktop
+        lg: 62em,
+  // Extra large screen / wide desktop
+        xl: 75em,
+  // Extra large screen / wide desktop
+        xxl: 85em,
+  // Extra large screen / wide desktop
+        xxxl: 95em,
+
+);
+
+$container-max-widths: (
+        sm: 34rem,    // 480
+        md: 45rem,    // 720
+        lg: 60rem,    // 960
+        xl: 72.25rem,  // 1140
+        xxl: 72.25rem,  // 1140
+        xxxl: 72.25rem  // 1140
+
+);
 
 //COLOURS
 

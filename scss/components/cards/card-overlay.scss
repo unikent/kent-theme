@@ -1,4 +1,5 @@
 .card.card-overlay {
+
 	.card-img-bottom {
 		width: 100%;
 	}
@@ -126,6 +127,26 @@
 			}
 		}
 	}
+  @include media-breakpoint-up(lg){
+	.card-img-wrap {
+	  max-height: 33rem;
+	  overflow: hidden;
+	  & > .card-img,
+	  & > .card-img-bottom,
+	  & > .card-img-top{
+		margin-top: -3rem;
+		@include media-breakpoint-up(xl){
+		  margin-top: -6rem;
+		}
+		@include media-breakpoint-up(xxl){
+		  margin-top: -9rem;
+		}
+		@include media-breakpoint-up(xxl){
+		  margin-top: -12rem;
+		}
+	  }
+	}
+  }
 }
 
 @include media-breakpoint-down(xs) {
