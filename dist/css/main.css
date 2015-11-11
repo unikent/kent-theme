@@ -5165,6 +5165,36 @@ h6, .h6 {
     top: inherit; }
     .card.card-overlay .card-img-overlay.overlay-backdrop {
       background-color: rgba(0, 0, 0, 0.6); }
+  .card.card-overlay .card-footer {
+    padding: 0; }
+    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a {
+      display: block;
+      padding: 12px 16px;
+      padding: 0.75rem 1rem;
+      background: #f5f5f5;
+      border-bottom: 1px solid #ccc; }
+      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after {
+        position: absolute;
+        right: 16px;
+        right: 1rem; }
+      @media (min-width: 48em) {
+        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a {
+          display: table-cell;
+          text-align: center;
+          float: none;
+          width: 1%;
+          vertical-align: top;
+          padding: 0;
+          background: none;
+          border: none; }
+          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after {
+            position: relative;
+            right: auto; } }
+    @media (min-width: 48em) {
+      .card.card-overlay .card-footer {
+        padding: 0.75rem 1.25rem;
+        display: table;
+        table-layout: fixed; } }
   @media (min-width: 48em) {
     .card.card-overlay .card-title-wrap {
       position: absolute;
@@ -5174,6 +5204,11 @@ h6, .h6 {
       .card.card-overlay .card-title-wrap.pull-right {
         left: inherit;
         right: 5%; } }
+
+@media (max-width: 33.9em) {
+  .container .card.card-overlay {
+    margin-right: -0.9375rem;
+    margin-left: -0.9375rem; } }
 
 .global-footer {
   background: #434749;
