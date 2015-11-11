@@ -631,10 +631,10 @@ pre {
   @media (min-width: 75em) {
     .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
       max-width: 72.25rem; } }
-  @media (min-width: 95em) {
+  @media (min-width: 107em) {
     .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
       max-width: 72.25rem; } }
-  @media (min-width: 120em) {
+  @media (min-width: 150em) {
     .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
       max-width: 72.25rem; } }
 
@@ -1250,7 +1250,7 @@ pre {
   .col-xl-offset-12 {
     margin-left: 100%; } }
 
-@media (min-width: 95em) {
+@media (min-width: 107em) {
   .col-xxl-1, .col-xxl-2, .col-xxl-3, .col-xxl-4, .col-xxl-5, .col-xxl-6, .col-xxl-7, .col-xxl-8, .col-xxl-9, .col-xxl-10, .col-xxl-11, .col-xxl-12 {
     float: left; }
   .col-xxl-1 {
@@ -1356,7 +1356,7 @@ pre {
   .col-xxl-offset-12 {
     margin-left: 100%; } }
 
-@media (min-width: 120em) {
+@media (min-width: 150em) {
   .col-xxxl-1, .col-xxxl-2, .col-xxxl-3, .col-xxxl-4, .col-xxxl-5, .col-xxxl-6, .col-xxxl-7, .col-xxxl-8, .col-xxxl-9, .col-xxxl-10, .col-xxxl-11, .col-xxxl-12 {
     float: left; }
   .col-xxxl-1 {
@@ -4857,19 +4857,19 @@ a.bg-danger:focus, a.bg-danger:hover {
   .hidden-xl-up {
     display: none !important; } }
 
-@media (max-width: 94.9em) {
+@media (max-width: 106.9em) {
   .hidden-xl-down {
     display: none !important; } }
 
-@media (min-width: 95em) {
+@media (min-width: 107em) {
   .hidden-xxl-up {
     display: none !important; } }
 
-@media (max-width: 119.9em) {
+@media (max-width: 149.9em) {
   .hidden-xxl-down {
     display: none !important; } }
 
-@media (min-width: 120em) {
+@media (min-width: 150em) {
   .hidden-xxxl-up {
     display: none !important; } }
 
@@ -5631,12 +5631,12 @@ h6, .h6 {
       .card.card-overlay .card-img-wrap > .card-img-bottom,
       .card.card-overlay .card-img-wrap > .card-img-top {
         margin-top: -6rem; } }
-    @media (min-width: 62em) and (min-width: 95em) {
+    @media (min-width: 62em) and (min-width: 107em) {
       .card.card-overlay .card-img-wrap > .card-img,
       .card.card-overlay .card-img-wrap > .card-img-bottom,
       .card.card-overlay .card-img-wrap > .card-img-top {
         margin-top: -12rem; } }
-    @media (min-width: 62em) and (min-width: 120em) {
+    @media (min-width: 62em) and (min-width: 150em) {
       .card.card-overlay .card-img-wrap > .card-img,
       .card.card-overlay .card-img-wrap > .card-img-bottom,
       .card.card-overlay .card-img-wrap > .card-img-top {
