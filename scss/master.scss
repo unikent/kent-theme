@@ -12,9 +12,12 @@
 @import "../vendor/kent-font/build/less/_kentfont";
 
 // Theme components
-@import "components/responsive-utils";
+@import "components/responsive_utils";
+@import "components/scaffolding";
 @import "components/typography";
 @import "components/buttons";
-@import "components/header";
+@import "components/header_audience";
+@import "components/header_global";
+@import "components/header_page";
 @import "components/card";
 @import "components/footer";

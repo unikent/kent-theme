@@ -9,17 +9,8 @@
 	};
 
 	var openMenu = function(menu){
-		$('body').addClass('show-mobile-menu');
-		menu.addClass('open');
-		menu.data('open', true); 
-	};
-	var closeMenu = function(menu){
-		$('body').removeClass('show-mobile-menu');
-		menu.removeClass('open');
-		menu.data('open', false); 
-	};
 
-	$('.menu-button').click(function(){
+		// If a menu is already open
 		if(menusOpen()){
 			if(global_menu.data('open')){
 				closeMenu(global_menu);
@@ -28,11 +19,21 @@
 				closeMenu(global_search);
 			}
 		}else{
-			openMenu(global_menu);	
-		}
+			// if not, open requested menu
+			$('body').addClass('show-global-menu');
+			menu.addClass('open');
+			menu.data('open', true); 
+		}	
+	};
+	var closeMenu = function(menu){
+		$('body').removeClass('show-global-menu');
+		menu.removeClass('open');
+		menu.data('open', false);
+	};
 
+	$('.menu-button').click(function(){
+		openMenu(global_menu);	
 	});
-
 	$('.search-button,.search-button-full').click(function(){
 		openMenu(global_search);
 	});
