@@ -27,8 +27,17 @@
     margin-bottom: 0.3rem;
   }
 
+  .card-img,
+  .card-img-top,
+  .card-img-bottom{
+    @extend .img-responsive;
+  }
+
+  .card-img,
   .card-img-top{
-    margin-bottom: 0.75rem;
+    &:first-child{
+      margin-bottom: 0.75rem;
+    }
   }
 
   .card-inverse{

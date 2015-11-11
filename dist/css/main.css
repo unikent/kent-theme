@@ -542,7 +542,9 @@ mark,
   color: #818a91; }
 
 .img-responsive, .figure > img, .carousel-inner > .carousel-item > img,
-.carousel-inner > .carousel-item > a > img {
+.carousel-inner > .carousel-item > a > img, .card .card-img,
+.card .card-img-top,
+.card .card-img-bottom {
   display: block;
   max-width: 100%;
   height: auto; }
@@ -5166,7 +5168,8 @@ h6, .h6 {
     font-size: 0.85rem;
     margin-bottom: 4.8px;
     margin-bottom: 0.3rem; }
-  .card .card-img-top {
+  .card .card-img:first-child,
+  .card .card-img-top:first-child {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
   .card .card-inverse .card-title {
@@ -5192,8 +5195,8 @@ h6, .h6 {
         padding-top: 0.45rem; }
 
 .card-panel {
-  padding: 8px;
-  padding: 0.5rem;
+  padding: 16px 8px 8px;
+  padding: 1rem 0.5rem 0.5rem;
   overflow: hidden; }
   @media (min-width: 34em) {
     .card-panel {
@@ -5206,17 +5209,71 @@ h6, .h6 {
     background-color: #e8ebf2; }
   .card-panel .card-panel-body {
     padding: 0; }
-  @media (min-width: 34em) {
-    .card-panel .card {
+    @media (min-width: 34em) {
+      .card-panel .card-panel-body .card {
+        position: relative;
+        float: left;
+        min-height: 1px;
+        padding-left: 0.9375rem;
+        padding-right: 0.9375rem;
+        width: 50%; } }
+    @media (min-width: 62em) {
+      .card-panel .card-panel-body .card {
+        width: 25%; } }
+    .card-panel .card-panel-body .card-panel-grid,
+    .card-panel .card-panel-body .card-panel-single,
+    .card-panel .card-panel-body .card-panel-list {
+      overflow: hidden;
+      margin-bottom: 16px;
+      margin-bottom: 1rem; }
+      .card-panel .card-panel-body .card-panel-grid:last-child,
+      .card-panel .card-panel-body .card-panel-single:last-child,
+      .card-panel .card-panel-body .card-panel-list:last-child {
+        margin-bottom: 0; }
+      @media (min-width: 48em) {
+        .card-panel .card-panel-body .card-panel-grid,
+        .card-panel .card-panel-body .card-panel-single,
+        .card-panel .card-panel-body .card-panel-list {
+          position: relative;
+          float: left;
+          min-height: 1px;
+          padding-left: 0.9375rem;
+          padding-right: 0.9375rem;
+          width: 50%;
+          margin-bottom: 0; } }
+    @media (min-width: 34em) {
+      .card-panel .card-panel-body .card-panel-single .card {
+        padding: 0;
+        width: 100%; } }
+    @media (min-width: 62em) {
+      .card-panel .card-panel-body .card-panel-single .card {
+        padding: 0;
+        width: 100%; } }
+    .card-panel .card-panel-body .card-panel-grid .card {
       position: relative;
       float: left;
       min-height: 1px;
+      padding-left: 15px;
       padding-left: 0.9375rem;
+      padding-right: 15px;
       padding-right: 0.9375rem;
-      width: 50%; } }
-  @media (min-width: 62em) {
-    .card-panel .card {
-      width: 25%; } }
+      width: 50%; }
+      .card-panel .card-panel-body .card-panel-grid .card:nth-child(odd) {
+        clear: left; }
+    @media (min-width: 34em) {
+      .card-panel .card-panel-body .card-panel-list .card {
+        padding: 0;
+        width: 100%; } }
+    @media (min-width: 62em) {
+      .card-panel .card-panel-body .card-panel-list .card {
+        padding: 0;
+        width: 100%; } }
+    .card-panel .card-panel-body .card-panel-list .card .card-img-top,
+    .card-panel .card-panel-body .card-panel-list .card .card-img:first-child {
+      float: left;
+      max-width: 40%;
+      margin-right: 16px;
+      margin-right: 1rem; }
   .card-panel .card-panel-header {
     padding: 0 16px;
     padding: 0 1rem;
