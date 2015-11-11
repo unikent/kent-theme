@@ -32,6 +32,10 @@
 			text-transform: uppercase;
 			color: $brand-accent-light;
 		}
+		.card-title, .card-text {
+			font-family: $font-family-serif;
+		}
+
 	}
 
 	.card-title, .card-subtitle {

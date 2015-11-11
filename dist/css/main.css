@@ -3720,7 +3720,8 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out; }
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4014,6 +4015,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -5216,6 +5218,8 @@ h6, .h6 {
     .card.card-overlay .card-title-wrap .card-title, .card.card-overlay .card-title-wrap a.chevron-link.card-title, .card.card-overlay .card-title-wrap .global-nav .audience-nav-links a.card-title, .global-nav .audience-nav-links .card.card-overlay .card-title-wrap a.card-title {
       text-transform: uppercase;
       color: #ce9716; }
+    .card.card-overlay .card-title-wrap .card-title, .card.card-overlay .card-title-wrap .card-text {
+      font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
   .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
     font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
   .card.card-overlay .card-img-overlay {
