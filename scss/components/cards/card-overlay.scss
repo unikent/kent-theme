@@ -2,6 +2,7 @@
 	.card-img-bottom {
 		width: 100%;
 	}
+	
 	margin-top: $card-overlay-amount;
 	.card-title-wrap{
 		@extend .card-block;
@@ -64,6 +65,25 @@
 		}
 	}
 
+	.card-img-wrap.card-img-wrap-video {
+		position: relative;
+		&:after {
+			content: $kf-play;
+			font-family: $font-family-kentfont;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -2.75rem;
+			margin-top: -2.75rem;
+			font-size: 4rem;
+			color: #FFF;
+			background-color: rgba(0,0,0,0.6);
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+			cursor: pointer;
+		}
+	}
+
 	.card-footer{
 		padding: 0;
 
@@ -106,6 +126,7 @@
 			width: 40%;
 			left: 5%;
 			top: -($card-overlay-amount);
+			z-index: 5;
 
 			&.card-title-wrap-link {
 				position: absolute;
