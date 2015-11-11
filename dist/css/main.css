@@ -605,29 +605,29 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container {
+.container, .card-panel .card-panel-body, .card-panel .card-panel-header {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-left: 0.9375rem;
   padding-right: 15px;
   padding-right: 0.9375rem; }
-  .container:before, .container:after {
+  .container:before, .card-panel .card-panel-body:before, .card-panel .card-panel-header:before, .container:after, .card-panel .card-panel-body:after, .card-panel .card-panel-header:after {
     content: " ";
     display: table; }
-  .container:after {
+  .container:after, .card-panel .card-panel-body:after, .card-panel .card-panel-header:after {
     clear: both; }
   @media (min-width: 34em) {
-    .container {
+    .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
       max-width: 34rem; } }
   @media (min-width: 48em) {
-    .container {
+    .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
       max-width: 45rem; } }
   @media (min-width: 62em) {
-    .container {
+    .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
       max-width: 60rem; } }
   @media (min-width: 75em) {
-    .container {
+    .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
       max-width: 72.25rem; } }
 
 .container-fluid {
@@ -5118,6 +5118,8 @@ h6, .h6 {
     background-color: #f5f5f5; }
   .card-panel.card-panel-tertiary {
     background-color: #f7f2e1; }
+  .card-panel .card-panel-body {
+    padding: 0; }
   @media (min-width: 34em) {
     .card-panel .card {
       position: relative;
@@ -5129,6 +5131,15 @@ h6, .h6 {
   @media (min-width: 62em) {
     .card-panel .card {
       width: 25%; } }
+  .card-panel .card-panel-header {
+    padding: 0 16px;
+    padding: 0 1rem;
+    margin-bottom: 16px;
+    margin-bottom: 1rem; }
+    .card-panel .card-panel-header .card-panel-title {
+      margin-bottom: 0;
+      font-size: 28px;
+      font-size: 1.75rem; }
 
 .card.card-overlay {
   margin-top: 25.6px;
@@ -5206,7 +5217,7 @@ h6, .h6 {
         right: 5%; } }
 
 @media (max-width: 33.9em) {
-  .container .card.card-overlay {
+  .container .card.card-overlay, .card-panel .card-panel-body .card.card-overlay, .card-panel .card-panel-header .card.card-overlay {
     margin-right: -0.9375rem;
     margin-left: -0.9375rem; } }
 
@@ -5370,7 +5381,7 @@ h6, .h6 {
   @media (min-width: 48em) {
     .global-footer .global-footer-middle {
       padding: 1rem 0 0; }
-      .global-footer .global-footer-middle .container {
+      .global-footer .global-footer-middle .container, .global-footer .global-footer-middle .card-panel .card-panel-body, .card-panel .global-footer .global-footer-middle .card-panel-body, .global-footer .global-footer-middle .card-panel .card-panel-header, .card-panel .global-footer .global-footer-middle .card-panel-header {
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         padding-bottom: 0.5rem; }
       .global-footer .global-footer-middle .col-md-3 h5 {
@@ -5389,7 +5400,7 @@ h6, .h6 {
     padding: 0.5rem 0 0;
     background: #FFF;
     color: #171717; }
-    .global-footer .global-footer-base .container {
+    .global-footer .global-footer-base .container, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header {
       padding: 0; }
     .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
       color: #171717;
@@ -5402,7 +5413,7 @@ h6, .h6 {
       .global-footer .global-footer-base {
         padding: 0.25rem 0;
         text-align: right; }
-        .global-footer .global-footer-base .container {
+        .global-footer .global-footer-base .container, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header {
           padding: 0 0.9375rem; }
         .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
           padding: 0;
