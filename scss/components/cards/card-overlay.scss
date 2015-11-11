@@ -12,6 +12,7 @@
 			color: #FFF;
 			padding-right: 2rem;
 			cursor: pointer;
+			position: relative;
 
 			&:hover {
 				text-decoration: none;
@@ -39,6 +40,9 @@
 
 	.card-img-overlay {
 		top: inherit;
+		&.pull-right {
+			text-align: right;
+		}
 		.card-subtitle {
 			font-size: 1.5rem;
 		}
@@ -98,6 +102,10 @@
 			width: 40%;
 			left: 5%;
 			top: -($card-overlay-amount);
+
+			&.card-title-wrap-link {
+				position: absolute;
+			}
 
 			&.pull-right{
 				left: inherit;
