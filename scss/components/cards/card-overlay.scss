@@ -3,6 +3,7 @@
 	.card-img-bottom {
 		width: 100%;
 	}
+	
 	margin-top: $card-overlay-amount;
 	.card-title-wrap{
 		@extend .card-block;
@@ -74,6 +75,26 @@
 		}
 	}
 
+	.card-img-wrap.card-img-wrap-video {
+		position: relative;
+		clear: both;
+		&:after {
+			content: $kf-play;
+			font-family: $font-family-kentfont;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -2.65rem;
+			margin-top: -2.65rem;
+			font-size: 3rem;
+			color: rgba(255,255,255,0.9);
+			background-color: rgba(0,0,0,0.6);
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+			cursor: pointer;
+		}
+	}
+
 	.card-footer{
 		padding: 0;
 
@@ -116,6 +137,7 @@
 			width: 40%;
 			left: 5%;
 			top: -($card-overlay-amount);
+			z-index: 5;
 
 			&.card-title-wrap-link {
 				position: absolute;
@@ -127,26 +149,26 @@
 			}
 		}
 	}
-  @include media-breakpoint-up(lg){
-	.card-img-wrap {
-	  max-height: 33rem;
-	  overflow: hidden;
-	  & > .card-img,
-	  & > .card-img-bottom,
-	  & > .card-img-top{
-		margin-top: -3rem;
-		@include media-breakpoint-up(xl){
-		  margin-top: -6rem;
+	@include media-breakpoint-up(lg){
+		.card-img-wrap {
+			max-height: 33rem;
+			overflow: hidden;
+			& > .card-img,
+			& > .card-img-bottom,
+			& > .card-img-top{
+				margin-top: -3rem;
+				@include media-breakpoint-up(xl){
+					margin-top: -6rem;
+				}
+				@include media-breakpoint-up(xxl){
+					margin-top: -14rem;
+				}
+				@include media-breakpoint-up(xxxl){
+					margin-top: -20rem;
+				}
+			}
 		}
-		@include media-breakpoint-up(xxl){
-		  margin-top: -14rem;
-		}
-		@include media-breakpoint-up(xxxl){
-		  margin-top: -20rem;
-		}
-	  }
 	}
-  }
 }
 
 @include media-breakpoint-down(xs) {
