@@ -1,7 +1,7 @@
 
   .card-panel{
 
-    padding: 0.5rem;
+    padding: 1rem 0.5rem 0.5rem;
     overflow: hidden;
 
     @include media-breakpoint-up(sm){
@@ -20,22 +20,80 @@
       background-color: $brand-primary-tint;
     }
 
-    .card-panel-body{
+    .card-panel-body {
       @extend .container;
       padding: 0;
-    }
 
-    .card{
+      .card {
 
-      @include media-breakpoint-up(sm){
-        @include make-col();
-        @include make-col-span(6);
+        @include media-breakpoint-up(sm) {
+          @include make-col();
+          @include make-col-span(6);
+        }
+
+        @include media-breakpoint-up(lg) {
+          @include make-col-span(3);
+        }
       }
 
-      @include media-breakpoint-up(lg){
-        @include make-col-span(3);
+      .card-panel-grid,
+      .card-panel-single,
+      .card-panel-list{
+
+        overflow: hidden;
+        margin-bottom: 1rem;
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col();
+          @include make-col-span(6);
+          margin-bottom: 0;
+        }
+      }
+
+      .card-panel-single{
+        .card{
+          @include media-breakpoint-up(sm) {
+            padding: 0;
+            width: 100%;
+          }
+          @include media-breakpoint-up(lg) {
+            padding: 0;
+            width: 100%;
+          }
+        }
+      }
+      .card-panel-grid{
+        .card{
+          @include make-col();
+          @include make-col-span(6);
+          &:nth-child(odd){
+            clear: left;
+          }
+        }
+      }
+      .card-panel-list{
+        .card{
+          @include media-breakpoint-up(sm) {
+            padding: 0;
+            width: 100%;
+          }
+          @include media-breakpoint-up(lg) {
+            padding: 0;
+            width: 100%;
+          }
+          .card-img-top,
+          .card-img:first-child{
+            float:left;
+            max-width: 40%;
+            margin-right: 1rem;
+          }
+        }
       }
     }
+
 
     .card-panel-header{
       @extend .container;
