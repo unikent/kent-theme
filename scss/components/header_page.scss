@@ -35,8 +35,8 @@
 	@include media-breakpoint-up(md) {
 		
 
-		@include make-container();
-		max-width: 72.25rem;
+		//@include make-container();
+		//max-width: 72.25rem;
 
 		header {
 			font-size:1.8rem;
@@ -44,6 +44,7 @@
 
 		header, nav {
 			margin:0 1.5rem;
+			padding-left: 1rem;
 		}
 
 		.navbar-toggler {display:none;}

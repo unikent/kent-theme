@@ -112,10 +112,11 @@
 	@include media-breakpoint-up(md) {
 		background-color: #fff;
 		
-		@include make-container();
-		max-width: 72.25rem;
+		//@include make-container();
+		//max-width: 72.25rem;
+		margin:0 2rem;
 
-		a.main-logo {display:block; float:left;}
+		a.main-logo {display:block; float:left;padding-left:0;}
 
 		.global-nav-menu,{
 			display:block; 
@@ -129,7 +130,7 @@
 			position:absolute;
 			top: 0;
 			right: 0;
-			margin-top:0;
+			margin-top:.2rem;
 			a {
 				color:#fff;
 				display:inline-block;
@@ -188,6 +189,9 @@
 
 					}
 				}
+			}
+			&.nav-menu-open .global-nav-link.open {
+				a { color: $brand-accent;}
 			}
 
 			.global-nav-link {
