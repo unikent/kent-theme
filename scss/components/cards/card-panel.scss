@@ -16,6 +16,11 @@
       background-color: $brand-tertiary;
     }
 
+    .card-panel-body{
+      @extend .container;
+      padding: 0;
+    }
+
     .card{
 
       @include media-breakpoint-up(sm){
@@ -26,5 +31,17 @@
       @include media-breakpoint-up(lg){
         @include make-col-span(3);
       }
+    }
+
+    .card-panel-header{
+      @extend .container;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+
+      .card-panel-title{
+        margin-bottom: 0;
+        font-size: $font-size-h3;
+      }
+
     }
   }
