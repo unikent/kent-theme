@@ -139,10 +139,10 @@
 		  margin-top: -6rem;
 		}
 		@include media-breakpoint-up(xxl){
-		  margin-top: -9rem;
-		}
-		@include media-breakpoint-up(xxl){
 		  margin-top: -12rem;
+		}
+		@include media-breakpoint-up(xxxl){
+		  margin-top: -18rem;
 		}
 	  }
 	}
