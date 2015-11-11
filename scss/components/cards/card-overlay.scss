@@ -32,7 +32,20 @@
 			text-transform: uppercase;
 			color: $brand-accent-light;
 		}
+		.card-title, .card-text {
+			font-family: $font-family-serif;
+		}
+
 	}
+	.card-title-wrap.card-transparent {
+		background: rgba(0, 0, 0, 0.8);
+		.card-title { 
+			color:#fff;
+			font-size: 1.6rem;
+			line-height:2.4rem;
+		}
+	}
+
 
 	.card-title, .card-subtitle {
 		font-family: $font-family-serif;

@@ -34,7 +34,8 @@
 
 	@include media-breakpoint-up(md) {
 		
-
+		z-index: 9;
+   		position: relative;
 		//@include make-container();
 		//max-width: 72.25rem;
 
