@@ -3174,7 +3174,7 @@ input[type="button"].btn-block {
   border: 1px solid #e5e5e5;
   border: 0.0625rem solid #e5e5e5; }
 
-.card-block, .card.card-overlay .card-title-wrap {
+.card-block {
   padding: 20px;
   padding: 1.25rem; }
 
@@ -5144,11 +5144,11 @@ h6, .h6 {
     border-color: #937227; }
 
 .btn-gray-outline, .card-panel .card-panel-header .card-panel-social a {
-  color: #818a91;
+  color: #aaa;
   background-image: none;
   background-color: transparent;
-  border-color: #818a91;
-  background-color: #fff;
+  border-color: #aaa;
+  background-color: rgba(255, 255, 255, 0.9);
   font-size: 22.4px;
   font-size: 1.4rem;
   line-height: 16px;
@@ -5159,12 +5159,12 @@ h6, .h6 {
   .open > .btn-gray-outline.dropdown-toggle, .card-panel .card-panel-header .card-panel-social
   .open > a.dropdown-toggle {
     color: #fff;
-    background-color: #818a91;
-    border-color: #818a91; }
+    background-color: #aaa;
+    border-color: #aaa; }
   .btn-gray-outline:hover, .card-panel .card-panel-header .card-panel-social a:hover {
     color: #fff;
-    background-color: #818a91;
-    border-color: #818a91; }
+    background-color: #aaa;
+    border-color: #aaa; }
   .btn-gray-outline.disabled:focus, .card-panel .card-panel-header .card-panel-social a.disabled:focus, .btn-gray-outline.disabled.focus, .card-panel .card-panel-header .card-panel-social a.disabled.focus, .btn-gray-outline:disabled:focus, .card-panel .card-panel-header .card-panel-social a:disabled:focus, .btn-gray-outline:disabled.focus, .card-panel .card-panel-header .card-panel-social a:disabled.focus,
   fieldset[disabled] .btn-gray-outline:focus,
   fieldset[disabled] .card-panel .card-panel-header .card-panel-social a:focus, .card-panel .card-panel-header .card-panel-social
@@ -5172,12 +5172,12 @@ h6, .h6 {
   fieldset[disabled] .btn-gray-outline.focus,
   fieldset[disabled] .card-panel .card-panel-header .card-panel-social a.focus, .card-panel .card-panel-header .card-panel-social
   fieldset[disabled] a.focus {
-    border-color: #b7bdc1; }
+    border-color: #dddddd; }
   .btn-gray-outline.disabled:hover, .card-panel .card-panel-header .card-panel-social a.disabled:hover, .btn-gray-outline:disabled:hover, .card-panel .card-panel-header .card-panel-social a:disabled:hover,
   fieldset[disabled] .btn-gray-outline:hover,
   fieldset[disabled] .card-panel .card-panel-header .card-panel-social a:hover, .card-panel .card-panel-header .card-panel-social
   fieldset[disabled] a:hover {
-    border-color: #b7bdc1; }
+    border-color: #dddddd; }
 
 .audience-bar {
   background-color: #05345C;
@@ -5559,6 +5559,35 @@ h6, .h6 {
         position: absolute;
         padding-top: 7.2px;
         padding-top: 0.45rem; }
+  .card .card-badge {
+    text-decoration: none; }
+    .card .card-badge:before {
+      color: #937227;
+      margin-right: 3.2px;
+      margin-right: .2rem;
+      position: relative;
+      bottom: 1.6px;
+      bottom: 0.1rem; }
+  .card .card-author {
+    display: block;
+    font-size: 12.8px;
+    font-size: .8rem;
+    color: #55595c;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: .5em 0;
+    overflow: hidden;
+    line-height: 32px;
+    line-height: 2rem;
+    margin-bottom: 16px;
+    margin-bottom: 1rem;
+    text-decoration: none; }
+    .card .card-author img {
+      height: 32px;
+      height: 2rem;
+      float: left;
+      margin-right: 8px;
+      margin-right: .5rem; }
 
 .card-panel {
   padding: 16px 8px 8px;
@@ -5696,13 +5725,15 @@ h6, .h6 {
   .card.card-overlay .card-img-bottom {
     width: 100%; }
   .card.card-overlay .card-title-wrap {
+    padding: 32px;
+    padding: 2rem;
     background-color: #05345C;
     color: #FFF; }
     .card.card-overlay .card-title-wrap.card-title-wrap-link {
       display: block;
       color: #FFF;
-      padding-right: 40px;
-      padding-right: 2.5rem;
+      padding-right: 48px;
+      padding-right: 3rem;
       cursor: pointer;
       position: relative; }
       .card.card-overlay .card-title-wrap.card-title-wrap-link:hover {
@@ -5718,28 +5749,33 @@ h6, .h6 {
         font-size: 2rem;
         content: "";
         font-family: "kentfont", sans-serif; }
-    .card.card-overlay .card-title-wrap .card-title, .card.card-overlay .card-title-wrap a.chevron-link.card-title, .card.card-overlay .card-title-wrap .global-nav .audience-nav-links a.card-title, .global-nav .audience-nav-links .card.card-overlay .card-title-wrap a.card-title {
+    .card.card-overlay .card-title-wrap .card-title {
+      font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
       text-transform: uppercase;
-      color: #ce9716; }
-    .card.card-overlay .card-title-wrap .card-title, .card.card-overlay .card-title-wrap .card-text {
-      font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
-  .card.card-overlay .card-title-wrap.card-transparent {
-    background: rgba(0, 0, 0, 0.8); }
-    .card.card-overlay .card-title-wrap.card-transparent .card-title {
-      text-transform: none;
-      color: #fff;
-      font-size: 25.6px;
-      font-size: 1.6rem;
-      line-height: 38.4px;
-      line-height: 2.4rem; }
-    .card.card-overlay .card-title-wrap.card-transparent .card-text {
-      font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+      color: #ce9716;
+      font-size: 24px;
+      font-size: 1.5rem; }
+      @media (min-width: 62em) {
+        .card.card-overlay .card-title-wrap .card-title {
+          font-size: 1.75rem; } }
+      @media (min-width: 75em) {
+        .card.card-overlay .card-title-wrap .card-title {
+          font-size: 2rem; } }
+    .card.card-overlay .card-title-wrap .card-text {
+      font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+      color: #FFF; }
+    .card.card-overlay .card-title-wrap.card-transparent, .card.card-overlay .card-title-wrap.card-transparent.card-title-wrap-link {
+      background: rgba(0, 0, 0, 0.8); }
+      .card.card-overlay .card-title-wrap.card-transparent .card-title, .card.card-overlay .card-title-wrap.card-transparent.card-title-wrap-link .card-title {
+        text-transform: none;
+        color: #fff; }
+      .card.card-overlay .card-title-wrap.card-transparent .card-text, .card.card-overlay .card-title-wrap.card-transparent.card-title-wrap-link .card-text {
+        font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #fff; }
   .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
     font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
   .card.card-overlay .card-img-overlay {
     top: inherit; }
-    .card.card-overlay .card-img-overlay.pull-right {
-      text-align: right; }
     .card.card-overlay .card-img-overlay .card-subtitle {
       font-size: 24px;
       font-size: 1.5rem; }
@@ -5752,25 +5788,25 @@ h6, .h6 {
   .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
     position: relative;
     clear: both; }
-  .card.card-overlay .card-media-wrap.card-media-wrap-video:after {
-    content: "";
-    font-family: "kentfont", sans-serif;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -42.4px;
-    margin-left: -2.65rem;
-    margin-top: -42.4px;
-    margin-top: -2.65rem;
-    font-size: 48px;
-    font-size: 3rem;
-    color: rgba(255, 255, 255, 0.9);
-    background-color: rgba(0, 0, 0, 0.6);
-    padding-right: 24px;
-    padding-right: 1.5rem;
-    padding-left: 24px;
-    padding-left: 1.5rem;
-    cursor: pointer; }
+    .card.card-overlay .card-media-wrap.card-media-wrap-video:after, .card.card-overlay .card-embed-wrap.card-media-wrap-video:after {
+      content: "";
+      font-family: "kentfont", sans-serif;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -42.4px;
+      margin-left: -2.65rem;
+      margin-top: -42.4px;
+      margin-top: -2.65rem;
+      font-size: 48px;
+      font-size: 3rem;
+      color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(0, 0, 0, 0.6);
+      padding-right: 24px;
+      padding-right: 1.5rem;
+      padding-left: 24px;
+      padding-left: 1.5rem;
+      cursor: pointer; }
   .card.card-overlay .card-footer {
     padding: 0; }
     .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a {
@@ -5842,7 +5878,7 @@ h6, .h6 {
         margin-top: -20rem; } }
 
 @media (max-width: 33.9em) {
-  .container .card.card-overlay, .card-panel .card-panel-body .card.card-overlay, .card-panel .card-panel-header .card.card-overlay {
+  .container > .card.card-overlay, .card-panel .card-panel-body > .card.card-overlay, .card-panel .card-panel-header > .card.card-overlay {
     margin-right: -0.9375rem;
     margin-left: -0.9375rem; } }
 
