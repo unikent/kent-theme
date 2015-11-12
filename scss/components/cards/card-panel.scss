@@ -153,6 +153,7 @@
 			}
 
 			a {
+				@extend .btn;
 				@extend .btn-gray-outline;
 				float: left;
 				margin-left:.2rem;
