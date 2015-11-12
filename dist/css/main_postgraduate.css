@@ -5789,25 +5789,26 @@ h6, .h6 {
   .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
     position: relative;
     clear: both; }
-    .card.card-overlay .card-media-wrap.card-media-wrap-video:after, .card.card-overlay .card-embed-wrap.card-media-wrap-video:after {
-      content: "";
-      font-family: "kentfont", sans-serif;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin-left: -42.4px;
-      margin-left: -2.65rem;
-      margin-top: -42.4px;
-      margin-top: -2.65rem;
-      font-size: 48px;
-      font-size: 3rem;
-      color: rgba(255, 255, 255, 0.9);
-      background-color: rgba(0, 0, 0, 0.6);
-      padding-right: 24px;
-      padding-right: 1.5rem;
-      padding-left: 24px;
-      padding-left: 1.5rem;
+    .card.card-overlay .card-media-wrap.card-media-wrap-video, .card.card-overlay .card-embed-wrap.card-media-wrap-video {
       cursor: pointer; }
+      .card.card-overlay .card-media-wrap.card-media-wrap-video:after, .card.card-overlay .card-embed-wrap.card-media-wrap-video:after {
+        content: "";
+        font-family: "kentfont", sans-serif;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -42.4px;
+        margin-left: -2.65rem;
+        margin-top: -42.4px;
+        margin-top: -2.65rem;
+        font-size: 48px;
+        font-size: 3rem;
+        color: rgba(255, 255, 255, 0.9);
+        background-color: rgba(0, 0, 0, 0.6);
+        padding-right: 24px;
+        padding-right: 1.5rem;
+        padding-left: 24px;
+        padding-left: 1.5rem; }
   .card.card-overlay .card-footer {
     padding: 0; }
     .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a {
@@ -5894,6 +5895,29 @@ h6, .h6 {
         bottom: 15%;
         top: auto;
         left: 0; } }
+
+.modal.modal-fullscreen .modal-dialog {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: table; }
+  .modal.modal-fullscreen .modal-dialog .modal-content {
+    border: none;
+    display: table-cell;
+    vertical-align: middle; }
+    .modal.modal-fullscreen .modal-dialog .modal-content.modal-content-transparent {
+      background-color: transparent; }
+    .modal.modal-fullscreen .modal-dialog .modal-content .close {
+      position: absolute;
+      right: 32px;
+      right: 2rem;
+      top: 32px;
+      top: 2rem;
+      text-shadow: none;
+      color: #FFF;
+      opacity: 0.5;
+      font-size: 32px;
+      font-size: 2rem; }
 
 blockquote {
   border-left: 0;

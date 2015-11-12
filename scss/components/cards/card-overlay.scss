@@ -97,20 +97,22 @@
 		position: relative;
 		clear: both;
 
-		&.card-media-wrap-video:after {
-			content: $kf-play;
-			font-family: $font-family-kentfont;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			margin-left: -2.65rem;
-			margin-top: -2.65rem;
-			font-size: 3rem;
-			color: rgba(255,255,255,0.9);
-			background-color: rgba(0,0,0,0.6);
-			padding-right: 1.5rem;
-			padding-left: 1.5rem;
+		&.card-media-wrap-video {
 			cursor: pointer;
+			&:after {
+				content: $kf-play;
+				font-family: $font-family-kentfont;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -2.65rem;
+				margin-top: -2.65rem;
+				font-size: 3rem;
+				color: rgba(255,255,255,0.9);
+				background-color: rgba(0,0,0,0.6);
+				padding-right: 1.5rem;
+				padding-left: 1.5rem;
+			}
 		}
 	}
 

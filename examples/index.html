@@ -407,7 +407,7 @@
 						<h4 class="card-title">A video launcher</h4>
 						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
-					<div class="card-media-wrap card-media-wrap-video">
+					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
 						<img class="card-img-bottom" src="images/students.jpg">
 					</div>
 					
@@ -721,6 +721,25 @@
 				</div>
 			</section>
 		</footer>
+
+		<div class="modal fade modal-fullscreen" id="myVideoModal" tabindex="-1" role="dialog" aria-labelledby="myVideoModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+					<div class="modal-content modal-content-transparent">
+
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true"><i class="kf-close"></i></span>
+							<span class="sr-only">Close</span>
+						</button>
+
+						<div class="embed-responsive embed-responsive-16by9">
+							<video class="embed-responsive-item">
+								<source src="video/research2.mp4">
+							</video>
+						</div>
+						
+					</div>
+			</div>
+		</div>
 
 		<script src="../dist/js/main.js"></script>
 		<script>
