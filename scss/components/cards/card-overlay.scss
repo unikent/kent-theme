@@ -40,10 +40,14 @@
 	}
 	.card-title-wrap.card-transparent {
 		background: rgba(0, 0, 0, 0.8);
-		.card-title { 
+		.card-title {
+			text-transform: none;
 			color:#fff;
 			font-size: 1.6rem;
 			line-height:2.4rem;
+		}
+		.card-text{
+			font-family: $font-family-sans-serif;
 		}
 	}
 

@@ -8,3 +8,9 @@
     font-family: "kentfont",sans-serif;
   }
 }
+
+.btn{
+  &.btn-accent{
+    @include button-variant(#FFF, $brand-accent, $brand-accent);
+  }
+}
