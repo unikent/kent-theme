@@ -5749,10 +5749,10 @@ h6, .h6 {
       color: #FFF; }
     .card.card-overlay .card-inverse .card-img-overlay .card-subtitle {
       color: #FFF; }
-  .card.card-overlay .card-img-wrap, .card.card-overlay .card-embed-wrap {
+  .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
     position: relative;
     clear: both; }
-  .card.card-overlay .card-img-wrap.card-img-wrap-video:after {
+  .card.card-overlay .card-media-wrap.card-media-wrap-video:after {
     content: "";
     font-family: "kentfont", sans-serif;
     position: absolute;
@@ -5814,27 +5814,31 @@ h6, .h6 {
         left: inherit;
         right: 5%; } }
   @media (min-width: 62em) {
-    .card.card-overlay .card-img-wrap {
+    .card.card-overlay .card-media-wrap {
       max-height: 33rem;
       overflow: hidden; }
-      .card.card-overlay .card-img-wrap > .card-img,
-      .card.card-overlay .card-img-wrap > .card-img-bottom,
-      .card.card-overlay .card-img-wrap > .card-img-top {
+      .card.card-overlay .card-media-wrap > .card-img,
+      .card.card-overlay .card-media-wrap > .card-img-bottom,
+      .card.card-overlay .card-media-wrap > .card-img-top,
+      .card.card-overlay .card-media-wrap > .card-embed-wrap {
         margin-top: -3rem; } }
     @media (min-width: 62em) and (min-width: 75em) {
-      .card.card-overlay .card-img-wrap > .card-img,
-      .card.card-overlay .card-img-wrap > .card-img-bottom,
-      .card.card-overlay .card-img-wrap > .card-img-top {
+      .card.card-overlay .card-media-wrap > .card-img,
+      .card.card-overlay .card-media-wrap > .card-img-bottom,
+      .card.card-overlay .card-media-wrap > .card-img-top,
+      .card.card-overlay .card-media-wrap > .card-embed-wrap {
         margin-top: -6rem; } }
     @media (min-width: 62em) and (min-width: 107em) {
-      .card.card-overlay .card-img-wrap > .card-img,
-      .card.card-overlay .card-img-wrap > .card-img-bottom,
-      .card.card-overlay .card-img-wrap > .card-img-top {
+      .card.card-overlay .card-media-wrap > .card-img,
+      .card.card-overlay .card-media-wrap > .card-img-bottom,
+      .card.card-overlay .card-media-wrap > .card-img-top,
+      .card.card-overlay .card-media-wrap > .card-embed-wrap {
         margin-top: -14rem; } }
     @media (min-width: 62em) and (min-width: 150em) {
-      .card.card-overlay .card-img-wrap > .card-img,
-      .card.card-overlay .card-img-wrap > .card-img-bottom,
-      .card.card-overlay .card-img-wrap > .card-img-top {
+      .card.card-overlay .card-media-wrap > .card-img,
+      .card.card-overlay .card-media-wrap > .card-img-bottom,
+      .card.card-overlay .card-media-wrap > .card-img-top,
+      .card.card-overlay .card-media-wrap > .card-embed-wrap {
         margin-top: -20rem; } }
 
 @media (max-width: 33.9em) {
