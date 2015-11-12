@@ -497,7 +497,7 @@ mark,
   font-size: 90%;
   text-transform: uppercase; }
 
-.blockquote {
+.blockquote, blockquote {
   padding: 8px 16px;
   padding: 0.5rem 1rem;
   margin-bottom: 16px;
@@ -506,16 +506,16 @@ mark,
   font-size: 1.25rem;
   border-left: 4px solid #eceeef;
   border-left: 0.25rem solid #eceeef; }
-  .blockquote p:last-child,
-  .blockquote ul:last-child,
-  .blockquote ol:last-child {
+  .blockquote p:last-child, blockquote p:last-child,
+  .blockquote ul:last-child, blockquote ul:last-child,
+  .blockquote ol:last-child, blockquote ol:last-child {
     margin-bottom: 0; }
-  .blockquote footer {
+  .blockquote footer, blockquote footer {
     display: block;
     font-size: 80%;
     line-height: 1.5;
     color: #818a91; }
-    .blockquote footer:before {
+    .blockquote footer:before, blockquote footer:before {
       content: "\2014 \00A0"; }
 
 .blockquote-reverse {
@@ -608,35 +608,35 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .card-panel .card-panel-body, .card-panel .card-panel-header {
+.container, .card-panel .card-panel-body, .card-panel .card-panel-header, blockquote {
   margin-right: auto;
   margin-left: auto;
   padding-left: 15px;
   padding-left: 0.9375rem;
   padding-right: 15px;
   padding-right: 0.9375rem; }
-  .container:before, .card-panel .card-panel-body:before, .card-panel .card-panel-header:before, .container:after, .card-panel .card-panel-body:after, .card-panel .card-panel-header:after {
+  .container:before, .card-panel .card-panel-body:before, .card-panel .card-panel-header:before, blockquote:before, .container:after, .card-panel .card-panel-body:after, .card-panel .card-panel-header:after, blockquote:after {
     content: " ";
     display: table; }
-  .container:after, .card-panel .card-panel-body:after, .card-panel .card-panel-header:after {
+  .container:after, .card-panel .card-panel-body:after, .card-panel .card-panel-header:after, blockquote:after {
     clear: both; }
   @media (min-width: 34em) {
-    .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
+    .container, .card-panel .card-panel-body, .card-panel .card-panel-header, blockquote {
       max-width: 34rem; } }
   @media (min-width: 48em) {
-    .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
+    .container, .card-panel .card-panel-body, .card-panel .card-panel-header, blockquote {
       max-width: 45rem; } }
   @media (min-width: 62em) {
-    .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
+    .container, .card-panel .card-panel-body, .card-panel .card-panel-header, blockquote {
       max-width: 60rem; } }
   @media (min-width: 75em) {
-    .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
+    .container, .card-panel .card-panel-body, .card-panel .card-panel-header, blockquote {
       max-width: 72.25rem; } }
   @media (min-width: 107em) {
-    .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
+    .container, .card-panel .card-panel-body, .card-panel .card-panel-header, blockquote {
       max-width: 72.25rem; } }
   @media (min-width: 150em) {
-    .container, .card-panel .card-panel-body, .card-panel .card-panel-header {
+    .container, .card-panel .card-panel-body, .card-panel .card-panel-header, blockquote {
       max-width: 72.25rem; } }
 
 .container-fluid {
@@ -5879,7 +5879,7 @@ h6, .h6 {
         margin-top: -20rem; } }
 
 @media (max-width: 33.9em) {
-  .container > .card.card-overlay, .card-panel .card-panel-body > .card.card-overlay, .card-panel .card-panel-header > .card.card-overlay {
+  .container > .card.card-overlay, .card-panel .card-panel-body > .card.card-overlay, .card-panel .card-panel-header > .card.card-overlay, blockquote > .card.card-overlay {
     margin-right: -0.9375rem;
     margin-left: -0.9375rem; } }
 
@@ -5894,6 +5894,55 @@ h6, .h6 {
         bottom: 15%;
         top: auto;
         left: 0; } }
+
+blockquote {
+  border-left: 0;
+  overflow: hidden;
+  padding: 32px;
+  padding: 2rem;
+  padding-top: 0; }
+  @media (min-width: 62em) {
+    blockquote {
+      padding: 2rem 5rem; } }
+  blockquote > p {
+    padding: 16px 0;
+    padding: 1rem 0;
+    padding-bottom: 0;
+    font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+    font-size: 24px;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #05345C; }
+    @media (min-width: 48em) {
+      blockquote > p {
+        padding: 1rem; } }
+    @media (min-width: 62em) {
+      blockquote > p {
+        font-size: 1.9rem; } }
+  blockquote > img {
+    height: 160px;
+    height: 10rem;
+    margin: 0 auto;
+    display: block; }
+    @media (min-width: 48em) {
+      blockquote > img {
+        height: 15rem;
+        float: left;
+        margin-right: 2rem; } }
+  blockquote footer {
+    font-size: 14.4px;
+    font-size: 0.9rem; }
+    blockquote footer cite {
+      font-weight: bold;
+      color: #171717;
+      font-style: normal; }
+      blockquote footer cite span {
+        font-weight: normal; }
+    @media (min-width: 48em) {
+      blockquote footer {
+        font-size: 1rem; }
+        blockquote footer cite span {
+          display: block; } }
 
 .global-footer {
   background: #434749;
@@ -6056,7 +6105,7 @@ h6, .h6 {
   @media (min-width: 48em) {
     .global-footer .global-footer-middle {
       padding: 1rem 0 0; }
-      .global-footer .global-footer-middle .container, .global-footer .global-footer-middle .card-panel .card-panel-body, .card-panel .global-footer .global-footer-middle .card-panel-body, .global-footer .global-footer-middle .card-panel .card-panel-header, .card-panel .global-footer .global-footer-middle .card-panel-header {
+      .global-footer .global-footer-middle .container, .global-footer .global-footer-middle .card-panel .card-panel-body, .card-panel .global-footer .global-footer-middle .card-panel-body, .global-footer .global-footer-middle .card-panel .card-panel-header, .card-panel .global-footer .global-footer-middle .card-panel-header, .global-footer .global-footer-middle blockquote {
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         padding-bottom: 0.5rem; }
       .global-footer .global-footer-middle .col-md-3 h5 {
@@ -6075,7 +6124,7 @@ h6, .h6 {
     padding: 0.5rem 0 0;
     background: #FFF;
     color: #171717; }
-    .global-footer .global-footer-base .container, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header {
+    .global-footer .global-footer-base .container, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header, .global-footer .global-footer-base blockquote {
       padding: 0; }
     .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
       color: #171717;
@@ -6088,7 +6137,7 @@ h6, .h6 {
       .global-footer .global-footer-base {
         padding: 0.25rem 0;
         text-align: right; }
-        .global-footer .global-footer-base .container, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header {
+        .global-footer .global-footer-base .container, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header, .global-footer .global-footer-base blockquote {
           padding: 0 0.9375rem; }
         .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
           padding: 0;
