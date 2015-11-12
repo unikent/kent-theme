@@ -5570,11 +5570,9 @@ h6, .h6 {
       bottom: 0.1rem; }
   .card .card-author {
     display: block;
-    font-size: 12.8px;
-    font-size: .8rem;
+    font-size: 14.4px;
+    font-size: .9rem;
     color: #55595c;
-    border-bottom: 1px solid #ccc;
-    border-top: 1px solid #ccc;
     padding: .5em 0;
     overflow: hidden;
     line-height: 32px;
@@ -5588,6 +5586,9 @@ h6, .h6 {
       float: left;
       margin-right: 8px;
       margin-right: .5rem; }
+  .card .card-bordered-item {
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc; }
 
 .card-panel {
   padding: 16px 8px 8px;
