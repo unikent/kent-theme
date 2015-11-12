@@ -2018,29 +2018,29 @@ fieldset[disabled] a {
 
 .btn-primary {
   color: #fff;
-  background-color: #05345C;
-  border-color: #05345C; }
+  background-color: #671115;
+  border-color: #671115; }
   .btn-primary:focus, .btn-primary.focus, .btn-primary:active, .btn-primary.active,
   .open > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #02192c;
-    border-color: #021322; }
+    background-color: #3b0a0c;
+    border-color: #32080a; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #02192c;
-    border-color: #021322; }
+    background-color: #3b0a0c;
+    border-color: #32080a; }
   .btn-primary:active, .btn-primary.active,
   .open > .btn-primary.dropdown-toggle {
     background-image: none; }
   .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary:disabled:focus, .btn-primary:disabled.focus,
   fieldset[disabled] .btn-primary:focus,
   fieldset[disabled] .btn-primary.focus {
-    background-color: #05345C;
-    border-color: #05345C; }
+    background-color: #671115;
+    border-color: #671115; }
   .btn-primary.disabled:hover, .btn-primary:disabled:hover,
   fieldset[disabled] .btn-primary:hover {
-    background-color: #05345C;
-    border-color: #05345C; }
+    background-color: #671115;
+    border-color: #671115; }
 
 .btn-secondary {
   color: #373a3c;
@@ -2173,26 +2173,26 @@ fieldset[disabled] a {
     border-color: #d9534f; }
 
 .btn-primary-outline {
-  color: #05345C;
+  color: #671115;
   background-image: none;
   background-color: transparent;
-  border-color: #05345C; }
+  border-color: #671115; }
   .btn-primary-outline:focus, .btn-primary-outline.focus, .btn-primary-outline:active, .btn-primary-outline.active,
   .open > .btn-primary-outline.dropdown-toggle {
     color: #fff;
-    background-color: #05345C;
-    border-color: #05345C; }
+    background-color: #671115;
+    border-color: #671115; }
   .btn-primary-outline:hover {
     color: #fff;
-    background-color: #05345C;
-    border-color: #05345C; }
+    background-color: #671115;
+    border-color: #671115; }
   .btn-primary-outline.disabled:focus, .btn-primary-outline.disabled.focus, .btn-primary-outline:disabled:focus, .btn-primary-outline:disabled.focus,
   fieldset[disabled] .btn-primary-outline:focus,
   fieldset[disabled] .btn-primary-outline.focus {
-    border-color: #0a6bbd; }
+    border-color: #bf1f27; }
   .btn-primary-outline.disabled:hover, .btn-primary-outline:disabled:hover,
   fieldset[disabled] .btn-primary-outline:hover {
-    border-color: #0a6bbd; }
+    border-color: #bf1f27; }
 
 .btn-secondary-outline {
   color: #ccc;
@@ -2433,7 +2433,7 @@ input[type="button"].btn-block {
   .dropdown-item.active, .dropdown-item.active:focus, .dropdown-item.active:hover {
     color: #fff;
     text-decoration: none;
-    background-color: #05345C;
+    background-color: #671115;
     outline: 0; }
   .dropdown-item.disabled, .dropdown-item.disabled:focus, .dropdown-item.disabled:hover {
     color: #818a91; }
@@ -2995,7 +2995,7 @@ input[type="button"].btn-block {
 .nav-pills .nav-item.open .nav-link:hover {
   color: #fff;
   cursor: default;
-  background-color: #05345C; }
+  background-color: #671115; }
 
 .nav-stacked .nav-item {
   display: block;
@@ -3213,8 +3213,8 @@ input[type="button"].btn-block {
   border-top: 0.0625rem solid #e5e5e5; }
 
 .card-primary {
-  background-color: #05345C;
-  border-color: #05345C; }
+  background-color: #671115;
+  border-color: #671115; }
 
 .card-success {
   background-color: #5cb85c;
@@ -3365,8 +3365,8 @@ input[type="button"].btn-block {
     z-index: 2;
     color: #fff;
     cursor: default;
-    background-color: #05345C;
-    border-color: #05345C; }
+    background-color: #671115;
+    border-color: #671115; }
   .pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover,
   .pagination > .disabled > a,
   .pagination > .disabled > a:focus,
@@ -3486,9 +3486,9 @@ a.label:focus, a.label:hover {
     background-color: #687077; }
 
 .label-primary {
-  background-color: #05345C; }
+  background-color: #671115; }
   .label-primary[href]:focus, .label-primary[href]:hover {
-    background-color: #02192c; }
+    background-color: #3b0a0c; }
 
 .label-success {
   background-color: #5cb85c; }
@@ -3814,8 +3814,8 @@ button.list-group-item {
 .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
   z-index: 2;
   color: #fff;
-  background-color: #05345C;
-  border-color: #05345C; }
+  background-color: #671115;
+  border-color: #671115; }
   .list-group-item.active .list-group-item-heading,
   .list-group-item.active .list-group-item-heading > small,
   .list-group-item.active .list-group-item-heading > .small, .list-group-item.active:focus .list-group-item-heading,
@@ -3825,7 +3825,7 @@ button.list-group-item {
   .list-group-item.active:hover .list-group-item-heading > .small {
     color: inherit; }
   .list-group-item.active .list-group-item-text, .list-group-item.active:focus .list-group-item-text, .list-group-item.active:hover .list-group-item-text {
-    color: #399ef4; }
+    color: #e55f66; }
 
 .list-group-item-state {
   color: #3c763d;
@@ -4557,10 +4557,10 @@ button.close {
   color: #818a91; }
 
 .text-primary {
-  color: #05345C; }
+  color: #671115; }
 
 a.text-primary:focus, a.text-primary:hover {
-  color: #02192c; }
+  color: #3b0a0c; }
 
 .text-success {
   color: #5cb85c; }
@@ -4595,10 +4595,10 @@ a.text-danger:focus, a.text-danger:hover {
 
 .bg-primary {
   color: #fff;
-  background-color: #05345C; }
+  background-color: #671115; }
 
 a.bg-primary:focus, a.bg-primary:hover {
-  background-color: #02192c; }
+  background-color: #3b0a0c; }
 
 .bg-success {
   color: #fff;
@@ -5180,7 +5180,7 @@ h6, .h6 {
     border-color: #dddddd; }
 
 .audience-bar {
-  background-color: #05345C;
+  background-color: #671115;
   color: #fff;
   padding: 0;
   font-size: 14.4px;
@@ -5201,12 +5201,12 @@ h6, .h6 {
     width: 3rem;
     padding: 12.8px;
     padding: .8rem;
-    background-color: #063c6b;
+    background-color: #741318;
     border: none;
     font-size: 19.2px;
     font-size: 1.2rem; }
   .audience-bar button.menu-button {
-    background-color: #074479; }
+    background-color: #81151a; }
     .audience-bar button.menu-button:before {
       content: ""; }
   .audience-bar nav {
@@ -5233,7 +5233,7 @@ h6, .h6 {
   .global-nav a.main-logo {
     font-size: 56px;
     font-size: 3.5rem;
-    color: #05345C;
+    color: #671115;
     padding: 16px;
     padding: 1rem;
     display: none; }
@@ -5381,7 +5381,7 @@ h6, .h6 {
                   display: table-cell;
                   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
                   position: relative;
-                  color: #05345C;
+                  color: #671115;
                   font-size: 1.1rem;
                   line-height: 1.25rem;
                   text-align: left;
@@ -5467,11 +5467,11 @@ h6, .h6 {
 
 .departmental-nav header {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
-  background-color: #05345C;
+  background-color: #671115;
   color: #fff;
   padding: 8px 16px;
   padding: .5rem 1rem;
-  border-top: 1px solid #074479;
+  border-top: 1px solid #81151a;
   font-size: 17.6px;
   font-size: 1.1rem;
   text-transform: uppercase; }
@@ -5552,7 +5552,7 @@ h6, .h6 {
       .card ul li:before {
         font-family: "kentfont", sans-serif;
         content: "";
-        color: #05345C;
+        color: #671115;
         font-size: 5.6px;
         font-size: 0.35rem;
         left: 0;
@@ -5602,7 +5602,7 @@ h6, .h6 {
   .card-panel.card-panel-tertiary {
     background-color: #f7f2e1; }
   .card-panel.card-panel-primary-tint {
-    background-color: #e8ebf2; }
+    background-color: #E0D4D4; }
   .card-panel .card-panel-body {
     padding: 0; }
     @media (min-width: 34em) {
@@ -5728,7 +5728,7 @@ h6, .h6 {
   .card.card-overlay .card-title-wrap {
     padding: 32px;
     padding: 2rem;
-    background-color: #05345C;
+    background-color: #671115;
     color: #FFF; }
     .card.card-overlay .card-title-wrap.card-title-wrap-link {
       display: block;
@@ -5936,7 +5936,7 @@ blockquote {
     font-size: 24px;
     font-size: 1.5rem;
     font-style: italic;
-    color: #05345C; }
+    color: #671115; }
     @media (min-width: 48em) {
       blockquote > p {
         padding: 1rem; } }
@@ -6170,4 +6170,4 @@ blockquote {
           float: none;
           margin: 0 0.5rem; } }
 
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=main_postgraduate.css.map */
