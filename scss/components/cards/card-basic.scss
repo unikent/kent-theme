@@ -1,61 +1,65 @@
 .card{
 
-  border: none;
+	border: none;
 
-  &:last-child{
-    margin-bottom: 0;
-  }
+	&:last-child{
+		margin-bottom: 0;
+	}
 
-  .card-body{
-    display: block;
-    position: relative;
-  }
-  .card-footer{
-    background: transparent;
-  }
+	.card-body{
+		display: block;
+		position: relative;
+	}
+	.card-footer{
+		background: transparent;
+	}
 
-  .card-title{
-    font-family: $headings-font-family;
-    color: $brand-primary;
-    font-size: $font-size-h5;
-  }
+	.card-title{
+		font-family: $headings-font-family;
+		color: $brand-primary;
+		font-size: $font-size-h5;
+	}
 
-  .card-subtitle{
-    color: $text-muted;
-    font-family: $font-family-sans-serif;
-    font-size: 0.85rem;
-    margin-bottom: 0.3rem;
-  }
+	.card-subtitle{
+		color: $text-muted;
+		font-family: $font-family-sans-serif;
+		font-size: 0.85rem;
+		margin-bottom: 0.3rem;
+	}
 
-  .card-img,
-  .card-img-top,
-  .card-img-bottom{
-    @extend .img-responsive;
-  }
+	.card-img,
+	.card-img-top,
+	.card-img-bottom{
+		@extend .img-responsive;
+	}
 
-  .card-img,
-  .card-img-top{
-    &:first-child{
-      margin-bottom: 0.75rem;
-    }
-  }
+	.card-img,
+	.card-img-top {
+		&:first-child{
+			margin-bottom: 0.75rem;
+		}
+	}
 
-  .card-inverse{
+	.card-inverse{
+		.card-title{
+			color: #FFF;
+		}
+		.card-subtitle{
+			color: $gray-lighter;
+		}
+	}
 
-    .card-title{
-      color: #FFF;
-    }
-    .card-subtitle{
-      color: $gray-lighter;
-    }
-  }
+	ul{
+		@include bullet-list;
+	}
 
-  ul{
-    @include bullet-list;
-  }
-
-
-  .card-badge {
-    &:before { color: $brand-accent; margin-right:.2rem}
-  }
+	.card-badge {
+		text-decoration:none;
+		&:before {
+			color: $brand-accent; 
+			margin-right:.2rem;
+			position: relative;
+			bottom: 0.1rem;
+		}
+	}
 }

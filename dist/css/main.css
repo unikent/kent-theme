@@ -5144,11 +5144,11 @@ h6, .h6 {
     border-color: #937227; }
 
 .btn-gray-outline, .card-panel .card-panel-header .card-panel-social a {
-  color: #818a91;
+  color: #aaa;
   background-image: none;
   background-color: transparent;
-  border-color: #818a91;
-  background-color: #fff;
+  border-color: #aaa;
+  background-color: rgba(255, 255, 255, 0.9);
   font-size: 22.4px;
   font-size: 1.4rem;
   line-height: 16px;
@@ -5159,12 +5159,12 @@ h6, .h6 {
   .open > .btn-gray-outline.dropdown-toggle, .card-panel .card-panel-header .card-panel-social
   .open > a.dropdown-toggle {
     color: #fff;
-    background-color: #818a91;
-    border-color: #818a91; }
+    background-color: #aaa;
+    border-color: #aaa; }
   .btn-gray-outline:hover, .card-panel .card-panel-header .card-panel-social a:hover {
     color: #fff;
-    background-color: #818a91;
-    border-color: #818a91; }
+    background-color: #aaa;
+    border-color: #aaa; }
   .btn-gray-outline.disabled:focus, .card-panel .card-panel-header .card-panel-social a.disabled:focus, .btn-gray-outline.disabled.focus, .card-panel .card-panel-header .card-panel-social a.disabled.focus, .btn-gray-outline:disabled:focus, .card-panel .card-panel-header .card-panel-social a:disabled:focus, .btn-gray-outline:disabled.focus, .card-panel .card-panel-header .card-panel-social a:disabled.focus,
   fieldset[disabled] .btn-gray-outline:focus,
   fieldset[disabled] .card-panel .card-panel-header .card-panel-social a:focus, .card-panel .card-panel-header .card-panel-social
@@ -5172,12 +5172,12 @@ h6, .h6 {
   fieldset[disabled] .btn-gray-outline.focus,
   fieldset[disabled] .card-panel .card-panel-header .card-panel-social a.focus, .card-panel .card-panel-header .card-panel-social
   fieldset[disabled] a.focus {
-    border-color: #b7bdc1; }
+    border-color: #dddddd; }
   .btn-gray-outline.disabled:hover, .card-panel .card-panel-header .card-panel-social a.disabled:hover, .btn-gray-outline:disabled:hover, .card-panel .card-panel-header .card-panel-social a:disabled:hover,
   fieldset[disabled] .btn-gray-outline:hover,
   fieldset[disabled] .card-panel .card-panel-header .card-panel-social a:hover, .card-panel .card-panel-header .card-panel-social
   fieldset[disabled] a:hover {
-    border-color: #b7bdc1; }
+    border-color: #dddddd; }
 
 .audience-bar {
   background-color: #05345C;
@@ -5559,10 +5559,15 @@ h6, .h6 {
         position: absolute;
         padding-top: 7.2px;
         padding-top: 0.45rem; }
-  .card .card-badge:before {
-    color: #937227;
-    margin-right: 3.2px;
-    margin-right: .2rem; }
+  .card .card-badge {
+    text-decoration: none; }
+    .card .card-badge:before {
+      color: #937227;
+      margin-right: 3.2px;
+      margin-right: .2rem;
+      position: relative;
+      bottom: 1.6px;
+      bottom: 0.1rem; }
 
 .card-panel {
   padding: 16px 8px 8px;
