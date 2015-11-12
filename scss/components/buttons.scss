@@ -9,8 +9,13 @@
   }
 }
 
+.btn{
+  &.btn-accent{
+    @include button-variant(#FFF, $brand-accent, $brand-accent);
+  }
+}
+
 .btn-gray-outline {
-	@extend .btn;
    	@include button-outline-variant($gray-light);
    	background-color:#fff;
 

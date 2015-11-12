@@ -41,10 +41,14 @@
 	}
 	.card-title-wrap.card-transparent {
 		background: rgba(0, 0, 0, 0.8);
-		.card-title { 
+		.card-title {
+			text-transform: none;
 			color:#fff;
 			font-size: 1.6rem;
 			line-height:2.4rem;
+		}
+		.card-text{
+			font-family: $font-family-sans-serif;
 		}
 	}
 
@@ -75,12 +79,12 @@
 		}
 	}
 
-	.card-img-wrap, .card-embed-wrap {
+	.card-media-wrap, .card-embed-wrap {
 		position: relative;
 		clear: both;
 	}
 
-	.card-img-wrap.card-img-wrap-video:after {
+	.card-media-wrap.card-media-wrap-video:after {
 		content: $kf-play;
 		font-family: $font-family-kentfont;
 		position: absolute;
@@ -151,12 +155,13 @@
 		}
 	}
 	@include media-breakpoint-up(lg){
-		.card-img-wrap {
+		.card-media-wrap {
 			max-height: 33rem;
 			overflow: hidden;
 			& > .card-img,
 			& > .card-img-bottom,
-			& > .card-img-top{
+			& > .card-img-top,
+			& > .card-embed-wrap{
 				margin-top: -3rem;
 				@include media-breakpoint-up(xl){
 					margin-top: -6rem;

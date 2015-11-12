@@ -21,13 +21,13 @@
 		}else{
 			// if not, open requested menu
 			$('body').addClass('show-global-menu');
-			menu.addClass('open');
+			menu.addClass('in');
 			menu.data('open', true); 
 		}	
 	};
 	var closeMenu = function(menu){
 		$('body').removeClass('show-global-menu');
-		menu.removeClass('open');
+		menu.removeClass('in');
 		menu.data('open', false);
 	};
 
@@ -44,16 +44,16 @@
 	// second level nav
 	global_menu.find('.global-nav-link a').click(function(){
 		// remove any old opens
-		var was_open = $(this).parent().hasClass('open');
+		var was_open = $(this).parent().hasClass('in');
 
 		// Close all
-		$(this).parent().parent().find('.open').removeClass('open');
+		$(this).parent().parent().find('.in').removeClass('in');
 		// if this was open, close fully
 		if(was_open){
-			$(this).parent().parent().removeClass('nav-menu-open');
+			$(this).parent().parent().removeClass('in');
 		}else{
 			// if not, open it
-			$(this).parent().toggleClass('open').parent().addClass('nav-menu-open');
+			$(this).parent().toggleClass('in').parent().addClass('in');
 		}
 	});
 
@@ -61,5 +61,5 @@
 
 // Dept nav
 $('.navbar-toggler').click(function(){
-	$('.navbar-menu').toggleClass('open');
+	$('.navbar-menu').toggleClass('in');
 });

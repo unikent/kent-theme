@@ -2,16 +2,16 @@
 	background-color: $brand-primary;
 	color: #fff;
 	padding: 0;
-	min-height:1.8rem;
-	
+	font-size: 0.9rem;
+
 	a.navbar-brand {
 		font-size: 1.2rem;
-		padding: .8rem  .4rem;
+		padding: .8rem  1rem;
 		color: #fff;
 		display:block;
 	}
 	.tag-line {
-		padding:0.2rem 1rem;
+		padding:0.3rem 0 0.3rem 2rem;
 		display:none;
 	}
 
