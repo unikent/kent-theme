@@ -1,11 +1,16 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="../dist/css/main.css" />
 	<link rel="stylesheet" href="../dist/css/kentfont.css" />
+	<link rel="stylesheet" href="hologram.css" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 	<title>Kent Theme pattern library - University of Kent</title>
+
+	<script src="../dist/js/modernizr.min.js"></script>
 </head>
 <body>
 	<a href='#' class='sr-only'>Jump to section menu</a>
@@ -15,157 +20,150 @@
 			<a class='navbar-brand kf-kent-horizontal' href=''><span class='sr-only'>The University of Kent</span></a>
 			<button class='kf pull-right menu-button'></button>
 		</section>
-		<section class='global-nav' >
-
+		<section class='global-nav'>
 			<a class='main-logo kf-kent-block' href=''><span class='sr-only'>The University of Kent</span></a>
-
 			<div class="global-nav-menu">
 				<nav class="global-nav-links">
 					
 					<div class="global-nav-link">
 						<a href="base_css.html">Base CSS<span class='more kf-chevron-down'></span></a>
-						<nav>
-							
-							  <a href="#buttons">Buttons <span class='more kf-chevron-right'></span></a>
-							
-							  <a href="#card-overlay">Card Overlay <span class='more kf-chevron-right'></span></a>
-							
-						</nav>
-					</div><!-- ./global-nav-link -->
+					</div><!-- /.global-nav-link -->
 					
 					<div class="global-nav-link">
 						<a href="layout.html">Layout<span class='more kf-chevron-down'></span></a>
-						<nav>
-							
-							  <a href="#buttons">Buttons <span class='more kf-chevron-right'></span></a>
-							
-							  <a href="#card-overlay">Card Overlay <span class='more kf-chevron-right'></span></a>
-							
-						</nav>
-					</div><!-- ./global-nav-link -->
+					</div><!-- /.global-nav-link -->
 					
-				</nav><!-- ./global-nav-links -->
-			</div><!-- ./global-nav-menu -->
+				</nav><!-- /.global-nav-links -->
+			</div><!-- /.global-nav-menu -->
 		</section>
+
 	</header>
+
+	<div class="row">
+		<div class="col-sm-2">
+			<ul class="nav nav-stacked" role="tabpanel" role="navigation">
+				
+				<li><a href="#buttons">Buttons</a></li>
+				
+			</ul><!-- /.nav-stacked-->
+		</div><!-- /.col-sm-2-->
+		<div class="col-sm-10">
 <h1 id="buttons" class="styleguide">Buttons</h1>
+		</div><!-- /.col-sm-10-->
+	</div><!-- /.row -->
 
-<h2>Chevron Link buttons</h2>
-
-<h1 id="card-overlay" class="styleguide">Card Overlay</h1>
-
-<h2>Card Overlay</h2>
-<footer class="global-footer">
-	<section class="global-footer-middle">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-3">
-					<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-about-kent" aria-controls="footer-about-kent" data-parent=".global-footer">About Kent</h5>
-					<nav id="footer-about-kent" class="footer-section footer-section-links collapse-sm-down">
-						<a href="#">Applicants</a>
-						<a href="#">Arriving students</a>
-						<a href="#">Current students</a>
-						<a href="#">International students</a>
-						<a href="#">Parents and family</a>
-						<a href="#">Alumni (former students)</a>
-						<a href="#">Staff</a>
-						<a href="#">Press and media</a>
-						<a href="#">Teachers and advisors</a>
-					</nav>
-				</div>
-				<div class="col-md-3">
-					<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-study-with-us" aria-controls="footer-study-with-us" data-parent=".global-footer">Study with us</h5>
-					<nav id="footer-study-with-us" class="footer-section footer-section-links collapse-sm-down">
-						<a href="#">Applicants</a>
-						<a href="#">Arriving students</a>
-						<a href="#">Current students</a>
-						<a href="#">International students</a>
-					</nav>
-					<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-research" aria-controls="footer-research" data-parent=".global-footer">Research excellence</h5>
-					<nav id="footer-research" class="footer-section footer-section-links collapse-sm-down">
-						<a href="#">Applicants</a>
-						<a href="#">Arriving students</a>
-						<a href="#">Current students</a>
-						<a href="#">International students</a>
-					</nav>
-				</div>
-				<div class="col-md-3">
-					<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-information" aria-controls="footer-information" data-parent=".global-footer">Information for</h5>
-					<nav id="footer-information" class="footer-section footer-section-links collapse-sm-down">
-						<a href="#">Applicants</a>
-						<a href="#">Arriving students</a>
-						<a href="#">Current students</a>
-						<a href="#">International students</a>
-						<a href="#">Parents and family</a>
-						<a href="#">Alumni (former students)</a>
-						<a href="#">Staff</a>
-						<a href="#">Press and media</a>
-						<a href="#">Teachers and advisors</a>
-					</nav>
-				</div>
-				<div class="col-md-3">
-					<div class="footer-section-panel footer-section-open">
-						<h5 class="footer-section-title">Connect</h5>
-						<nav id="footer-social" class="footer-section footer-section-social">
-							<a title="facebook" href="#" class="kf-facebook"></a>
-							<a title="twitter" href="#" class="kf-twitter"></a>
-							<a title="linkedin" href="#" class="kf-linkedin"></a>
-							<a title="youtube" href="#" class="kf-youtube"></a>
-							<a title="flickr" href="#" class="kf-flickr"></a>
-							<a title="rss" href="#" class="kf-rss"></a>
-							<a title="tumblr" href="#" class="kf-tumblr"></a>
-							<a title="instagram" href="#" class="kf-instagram"></a>
-							<a title="pinterest" href="#" class="kf-pinterest"></a>
+	<footer class="global-footer">
+		<section class="global-footer-middle">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-about-kent" aria-controls="footer-about-kent" data-parent=".global-footer">About Kent</h5>
+						<nav id="footer-about-kent" class="footer-section footer-section-links collapse-sm-down">
+							<a href="#">Applicants</a>
+							<a href="#">Arriving students</a>
+							<a href="#">Current students</a>
+							<a href="#">International students</a>
+							<a href="#">Parents and family</a>
+							<a href="#">Alumni (former students)</a>
+							<a href="#">Staff</a>
+							<a href="#">Press and media</a>
+							<a href="#">Teachers and advisors</a>
 						</nav>
 					</div>
-					<div class="footer-section-panel">
-						<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-giving" aria-controls="footer-giving" data-parent=".global-footer">Giving to Kent</h5>
-						<nav id="footer-giving" class="footer-section footer-section-links collapse-sm-down">
-							<a href="#">Support us</a>
-							<a href="#">How to give</a>
-							<a href="#">Kent Law Campaign</a>
-							<a href="#">Kent Opportunity Fund</a>
+					<div class="col-md-3">
+						<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-study-with-us" aria-controls="footer-study-with-us" data-parent=".global-footer">Study with us</h5>
+						<nav id="footer-study-with-us" class="footer-section footer-section-links collapse-sm-down">
+							<a href="#">Applicants</a>
+							<a href="#">Arriving students</a>
+							<a href="#">Current students</a>
+							<a href="#">International students</a>
 						</nav>
+						<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-research" aria-controls="footer-research" data-parent=".global-footer">Research excellence</h5>
+						<nav id="footer-research" class="footer-section footer-section-links collapse-sm-down">
+							<a href="#">Applicants</a>
+							<a href="#">Arriving students</a>
+							<a href="#">Current students</a>
+							<a href="#">International students</a>
+						</nav>
+					</div>
+					<div class="col-md-3">
+						<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-information" aria-controls="footer-information" data-parent=".global-footer">Information for</h5>
+						<nav id="footer-information" class="footer-section footer-section-links collapse-sm-down">
+							<a href="#">Applicants</a>
+							<a href="#">Arriving students</a>
+							<a href="#">Current students</a>
+							<a href="#">International students</a>
+							<a href="#">Parents and family</a>
+							<a href="#">Alumni (former students)</a>
+							<a href="#">Staff</a>
+							<a href="#">Press and media</a>
+							<a href="#">Teachers and advisors</a>
+						</nav>
+					</div>
+					<div class="col-md-3">
+						<div class="footer-section-panel footer-section-open">
+							<h5 class="footer-section-title">Connect</h5>
+							<nav id="footer-social" class="footer-section footer-section-social">
+								<a title="facebook" href="#" class="kf-facebook"></a>
+								<a title="twitter" href="#" class="kf-twitter"></a>
+								<a title="linkedin" href="#" class="kf-linkedin"></a>
+								<a title="youtube" href="#" class="kf-youtube"></a>
+								<a title="flickr" href="#" class="kf-flickr"></a>
+								<a title="rss" href="#" class="kf-rss"></a>
+								<a title="tumblr" href="#" class="kf-tumblr"></a>
+								<a title="instagram" href="#" class="kf-instagram"></a>
+								<a title="pinterest" href="#" class="kf-pinterest"></a>
+							</nav>
+						</div>
+						<div class="footer-section-panel">
+							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-giving" aria-controls="footer-giving" data-parent=".global-footer">Giving to Kent</h5>
+							<nav id="footer-giving" class="footer-section footer-section-links collapse-sm-down">
+								<a href="#">Support us</a>
+								<a href="#">How to give</a>
+								<a href="#">Kent Law Campaign</a>
+								<a href="#">Kent Opportunity Fund</a>
+							</nav>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<section class="global-footer-bottom">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<h6 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" data-parent=".global-footer">Affiliations</h6>
-					<div id="footer-affiliations" class="footer-section collapse-sm-down">
-						<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="../examples/images/logo-sgroup-white.png" class="img-responsive"></div>
-						<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="../examples/images/logo-arc-white.png" class="img-responsive"></div>
-						<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="../examples/images/logo-uniuk-white.png" class="img-responsive"></div>
-						<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 "><img src="../examples/images/logo-queen-white.png" class="img-responsive"></div>
+		</section>
+		<section class="global-footer-bottom">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<h6 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" data-parent=".global-footer">Affiliations</h6>
+						<div id="footer-affiliations" class="footer-section collapse-sm-down">
+							<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="../examples/images/logo-sgroup-white.png" class="img-responsive"></div>
+							<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="../examples/images/logo-arc-white.png" class="img-responsive"></div>
+							<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="../examples/images/logo-uniuk-white.png" class="img-responsive"></div>
+							<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 "><img src="../examples/images/logo-queen-white.png" class="img-responsive"></div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<section class="global-footer-base">
-		<div class="container">
-			<a href="#">&copy; University of Kent</a> <a href="#">Accessibility</a> <a href="#">Contact us</a> <a href="#">Feedback</a> <a href="#">Legal</a> <a href="#">Cookie Policy</a>
-		</div>
-	</section>
-</footer>
+		</section>
+		<section class="global-footer-base">
+			<div class="container">
+				<a href="#">&copy; University of Kent</a> <a href="#">Accessibility</a> <a href="#">Contact us</a> <a href="#">Feedback</a> <a href="#">Legal</a> <a href="#">Cookie Policy</a>
+			</div>
+		</section>
+	</footer>
 
-<script src="../dist/js/main.js"></script>
-<script>
-$('.menu-button').click(function(){
-	$('body').toggleClass('show-mobile-menu');
-});
+	<script src="../dist/js/main.js"></script>
+	<script>
+	$('.menu-button').click(function(){
+		$('body').toggleClass('show-mobile-menu');
+	});
 
-$('.global-nav-menu .global-nav-link a').click(function(){
-	$(this).parent().toggleClass('open').parent().toggleClass('nav-menu-open');
-})
+	$('.global-nav-menu .global-nav-link a').click(function(){
+		$(this).parent().toggleClass('open').parent().toggleClass('nav-menu-open');
+	})
 
-$('.navbar-toggler').click(function(){
-	$('.navbar-menu').toggleClass('open');
-});
-</script>
+	$('.navbar-toggler').click(function(){
+		$('.navbar-menu').toggleClass('open');
+	});
+	</script>
+
 </body>
 </html>

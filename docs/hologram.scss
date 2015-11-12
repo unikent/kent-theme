@@ -1,0 +1,38 @@
+//colours
+$dark_blue: #1F4F82;
+$white: #FFF;
+$dark_grey: #333;
+$light_grey: #ddd;
+
+ul.nav-stacked {
+	margin-top: 2rem;
+}
+.nav-stacked > li {
+	margin-top: 0;
+	margin-left: 0;
+	border-bottom: 1px solid $light_grey;
+	> a {
+		padding-left: 0;
+		color: $dark_blue;
+		border: none !important;
+		&:hover {
+			background-color: $white;
+			color: $dark_blue;
+			color: $dark_grey;
+		}
+	}
+	&.active > a {
+		color: $dark_grey;
+		font-weight: bold;
+	}
+}
+.nav > li > a {
+	&:focus {
+		background-color: $white;
+		color: $dark_blue;
+	}
+	&:visited {
+		background-color: $white;
+		color: $dark_blue;
+	}
+}

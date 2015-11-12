@@ -1,3 +1,12 @@
+/*doc
+---
+title: Header
+name: header
+category: Layout
+---
+
+*/
+
 .global-header {
 	background-color: #fff;
 }
@@ -6,7 +15,7 @@
 	color: #fff;
 	padding: 0;
 	min-height:1.5rem;
-	
+
 	a.navbar-brand {
 		font-size: 1.2rem;
 		padding: .8rem  .4rem;
@@ -18,8 +27,8 @@
 		width: 3rem;
 		padding: .8rem;
 		background-color: lighten($brand-primary, 3%);
-    	border: none;
-    	font-size:1.2rem;
+		border: none;
+		font-size:1.2rem;
 	}
 	button.menu-button {
 		background-color: lighten($brand-primary, 6%);
@@ -79,11 +88,11 @@
 			padding-left:1rem;
 
 			text-transform: uppercase;
-    		font-family: $font-family-serif;
+			font-family: $font-family-serif;
 
-    		&:focus {
-    			text-decoration:none;
-    		}
+			&:focus {
+				text-decoration:none;
+			}
 
 			.more {
 				float:right;
@@ -117,7 +126,7 @@
 					}
 				}
 			}
-		
+
 			nav {
 				display:block;
 
@@ -136,7 +145,7 @@
 
 	.audience-nav-links {
 		margin-top:1rem;
-	 	a {
+		 a {
 			display:block;
 			color: #eee;
 			padding: .5rem;
@@ -148,7 +157,7 @@
 
 	@include media-breakpoint-up(md) {
 		background-color: #fff;
-		
+
 		@include make-container();
 		max-width: 72.25rem;
 
@@ -156,11 +165,11 @@
 
 		.global-nav-menu {
 			height:auto;
-			display:block; 
+			display:block;
 			float:left;
 			width: 65%;
 		}
-		
+
 		.audience-nav-links {
 			position:absolute;
 			top: 0;
@@ -242,7 +251,7 @@
 		padding: .5rem;
 		border-top: 1px solid lighten($brand-primary, 6%);
 		font-size:1.1rem;
-	  	text-transform: uppercase;
+		  text-transform: uppercase;
 	}
 	.navbar-toggler {
 		background-color: $gray-dark-trans;

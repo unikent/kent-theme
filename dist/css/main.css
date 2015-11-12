@@ -4702,6 +4702,16 @@ a.bg-danger:focus, a.bg-danger:hover {
 body .kf.pull-right {
   margin-left: 0px; }
 
+/*doc
+---
+title: Responsive Utils
+name: responsive-utils
+category: Layout
+---
+
+The Kent Theme needs to work on a variety of devices and screens, these Utils are used throughout to maintain consistency across different breakpoints.
+
+*/
 .collapse-xs-up {
   max-height: 0;
   overflow: hidden;
@@ -4821,9 +4831,6 @@ name: buttons
 category: Base CSS
 ---
 
-## Chevron Link buttons
-
-
 */
 .chevron-link, .global-nav .audience-nav-links a {
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
@@ -4834,6 +4841,14 @@ category: Base CSS
     content: "";
     font-family: "kentfont",sans-serif; }
 
+/*doc
+---
+title: Header
+name: header
+category: Layout
+---
+
+*/
 .global-header {
   background-color: #fff; }
 
@@ -5075,15 +5090,9 @@ name: cards
 category: Layout
 ---
 
-*/
-/*doc
----
-title: Card Overlay
-name: card-overlay
-category: Base CSS
----
+The Kent Theme uses [BootStrap 4](http://v4-alpha.getbootstrap.com/), where a card is a flexible and extensible content container.
+To minimise confusion we have decided to keep the same name for the purposes of development.
 
-## Card Overlay
 */
 .card.card-overlay {
   margin-top: 25.6px;
@@ -5130,6 +5139,14 @@ category: Base CSS
         left: inherit;
         right: 5%; } }
 
+/*doc
+---
+title: Footer
+name: footer
+category: Layout
+---
+
+*/
 .global-footer {
   background: #434749;
   color: #E8E8E8;
