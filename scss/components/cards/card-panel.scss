@@ -100,11 +100,24 @@
       padding: 0 1rem;
       margin-bottom: 1rem;
 
+      @extend .form-inline;
+
       .card-panel-title{
         margin-bottom: 0;
         font-size: $font-size-h3;
         display: inline-block;
         margin-right: 1rem;
+        vertical-align:middle;
+      }
+
+      .card-panel-filter {
+
+          display:inline-block;
+
+          select {
+            @extend .form-control;
+            @extend .c-select;
+          }
       }
 
     }

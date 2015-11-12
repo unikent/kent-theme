@@ -1610,7 +1610,7 @@ pre {
     display: block !important;
     border: 1px solid #eceeef; }
 
-.form-control {
+.form-control, .card-panel .card-panel-header .card-panel-filter select {
   display: block;
   width: 100%;
   padding: 6px 12px;
@@ -1624,30 +1624,34 @@ pre {
   border: 1px solid #ccc;
   border: 0.0625rem solid #ccc;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
-  .form-control::-ms-expand {
+  .form-control::-ms-expand, .card-panel .card-panel-header .card-panel-filter select::-ms-expand {
     background-color: transparent;
     border: 0; }
-  .form-control:focus {
+  .form-control:focus, .card-panel .card-panel-header .card-panel-filter select:focus {
     border-color: #66afe9;
     outline: none; }
-  .form-control::-webkit-input-placeholder {
+  .form-control::-webkit-input-placeholder, .card-panel .card-panel-header .card-panel-filter select::-webkit-input-placeholder {
     color: #999;
     opacity: 1; }
-  .form-control::-moz-placeholder {
+  .form-control::-moz-placeholder, .card-panel .card-panel-header .card-panel-filter select::-moz-placeholder {
     color: #999;
     opacity: 1; }
-  .form-control:-ms-input-placeholder {
+  .form-control:-ms-input-placeholder, .card-panel .card-panel-header .card-panel-filter select:-ms-input-placeholder {
     color: #999;
     opacity: 1; }
-  .form-control::placeholder {
+  .form-control::placeholder, .card-panel .card-panel-header .card-panel-filter select::placeholder {
     color: #999;
     opacity: 1; }
-  .form-control:disabled, .form-control[readonly],
-  fieldset[disabled] .form-control {
+  .form-control:disabled, .card-panel .card-panel-header .card-panel-filter select:disabled, .form-control[readonly], .card-panel .card-panel-header .card-panel-filter select[readonly],
+  fieldset[disabled] .form-control,
+  fieldset[disabled] .card-panel .card-panel-header .card-panel-filter select, .card-panel .card-panel-header .card-panel-filter
+  fieldset[disabled] select {
     background-color: #eceeef;
     opacity: 1; }
-  .form-control[disabled],
-  fieldset[disabled] .form-control {
+  .form-control[disabled], .card-panel .card-panel-header .card-panel-filter select[disabled],
+  fieldset[disabled] .form-control,
+  fieldset[disabled] .card-panel .card-panel-header .card-panel-filter select, .card-panel .card-panel-header .card-panel-filter
+  fieldset[disabled] select {
     cursor: not-allowed; }
 
 .form-control-file,
@@ -1698,15 +1702,15 @@ pre {
   padding-bottom: 7px;
   padding-bottom: 0.4375rem;
   margin-bottom: 0; }
-  .form-control-static.form-control-sm, .input-group-sm > .form-control-static.form-control,
+  .form-control-static.form-control-sm, .input-group-sm > .form-control-static.form-control, .card-panel .card-panel-header .card-panel-filter .input-group-sm > select.form-control-static,
   .input-group-sm > .form-control-static.input-group-addon,
-  .input-group-sm > .input-group-btn > .form-control-static.btn, .form-control-static.form-control-lg, .input-group-lg > .form-control-static.form-control,
+  .input-group-sm > .input-group-btn > .form-control-static.btn, .form-control-static.form-control-lg, .input-group-lg > .form-control-static.form-control, .card-panel .card-panel-header .card-panel-filter .input-group-lg > select.form-control-static,
   .input-group-lg > .form-control-static.input-group-addon,
   .input-group-lg > .input-group-btn > .form-control-static.btn {
     padding-right: 0;
     padding-left: 0; }
 
-.form-control-sm, .input-group-sm > .form-control,
+.form-control-sm, .input-group-sm > .form-control, .card-panel .card-panel-header .card-panel-filter .input-group-sm > select,
 .input-group-sm > .input-group-addon,
 .input-group-sm > .input-group-btn > .btn {
   padding: 4.4px 12px;
@@ -1716,7 +1720,7 @@ pre {
   line-height: 1.5;
   border-radius: 0.2rem; }
 
-.form-control-lg, .input-group-lg > .form-control,
+.form-control-lg, .input-group-lg > .form-control, .card-panel .card-panel-header .card-panel-filter .input-group-lg > select,
 .input-group-lg > .input-group-addon,
 .input-group-lg > .input-group-btn > .btn {
   padding: 12px 20px;
@@ -1822,7 +1826,7 @@ fieldset[disabled]
 .has-success.checkbox-inline label {
   color: #5cb85c; }
 
-.has-success .form-control {
+.has-success .form-control, .has-success .card-panel .card-panel-header .card-panel-filter select, .card-panel .card-panel-header .card-panel-filter .has-success select {
   border-color: #5cb85c; }
 
 .has-success .input-group-addon {
@@ -1848,7 +1852,7 @@ fieldset[disabled]
 .has-warning.checkbox-inline label {
   color: #f0ad4e; }
 
-.has-warning .form-control {
+.has-warning .form-control, .has-warning .card-panel .card-panel-header .card-panel-filter select, .card-panel .card-panel-header .card-panel-filter .has-warning select {
   border-color: #f0ad4e; }
 
 .has-warning .input-group-addon {
@@ -1874,7 +1878,7 @@ fieldset[disabled]
 .has-error.checkbox-inline label {
   color: #d9534f; }
 
-.has-error .form-control {
+.has-error .form-control, .has-error .card-panel .card-panel-header .card-panel-filter select, .card-panel .card-panel-header .card-panel-filter .has-error select {
   border-color: #d9534f; }
 
 .has-error .input-group-addon {
@@ -1889,42 +1893,43 @@ fieldset[disabled]
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkNyb3NzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDYxMiA3OTIiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYxMiA3OTIiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwYXRoIGZpbGw9IiNEOTUzNEYiIGQ9Ik00NDcsNTQ0LjRjLTE0LjQsMTQuNC0zNy42LDE0LjQtNTEuOSwwTDMwNiw0NTEuN2wtODkuMSw5Mi43Yy0xNC40LDE0LjQtMzcuNiwxNC40LTUxLjksMGMtMTQuNC0xNC40LTE0LjQtMzcuNiwwLTUxLjlsOTIuNC05Ni40TDE2NSwyOTkuNmMtMTQuNC0xNC40LTE0LjQtMzcuNiwwLTUxLjlzMzcuNi0xNC40LDUxLjksMGw4OS4yLDkyLjdsODkuMS05Mi43YzE0LjQtMTQuNCwzNy42LTE0LjQsNTEuOSwwYzE0LjQsMTQuNCwxNC40LDM3LjYsMCw1MS45TDM1NC43LDM5Nmw5Mi40LDk2LjRDNDYxLjQsNTA2LjgsNDYxLjQsNTMwLDQ0Nyw1NDQuNHoiLz48L3N2Zz4="); }
 
 @media (min-width: 34em) {
-  .form-inline .form-group {
+  .form-inline .form-group, .card-panel .card-panel-header .form-group {
     display: inline-block;
     margin-bottom: 0;
     vertical-align: middle; }
-  .form-inline .form-control {
+  .form-inline .form-control, .card-panel .card-panel-header .form-control, .card-panel .card-panel-header .card-panel-filter select {
     display: inline-block;
     width: auto;
     vertical-align: middle; }
-  .form-inline .form-control-static {
+  .form-inline .form-control-static, .card-panel .card-panel-header .form-control-static {
     display: inline-block; }
-  .form-inline .input-group {
+  .form-inline .input-group, .card-panel .card-panel-header .input-group {
     display: inline-table;
     vertical-align: middle; }
-    .form-inline .input-group .input-group-addon,
-    .form-inline .input-group .input-group-btn,
-    .form-inline .input-group .form-control {
+    .form-inline .input-group .input-group-addon, .card-panel .card-panel-header .input-group .input-group-addon,
+    .form-inline .input-group .input-group-btn, .card-panel .card-panel-header .input-group .input-group-btn,
+    .form-inline .input-group .form-control, .card-panel .card-panel-header .input-group .form-control,
+    .form-inline .input-group .card-panel .card-panel-header .card-panel-filter select, .card-panel .card-panel-header .input-group .card-panel-filter select, .card-panel .card-panel-header .card-panel-filter .input-group select {
       width: auto; }
-  .form-inline .input-group > .form-control {
+  .form-inline .input-group > .form-control, .card-panel .card-panel-header .input-group > .form-control, .card-panel .card-panel-header .card-panel-filter .form-inline .input-group > select, .card-panel .card-panel-header .card-panel-filter .input-group > select {
     width: 100%; }
-  .form-inline .control-label {
+  .form-inline .control-label, .card-panel .card-panel-header .control-label {
     margin-bottom: 0;
     vertical-align: middle; }
-  .form-inline .radio,
-  .form-inline .checkbox {
+  .form-inline .radio, .card-panel .card-panel-header .radio,
+  .form-inline .checkbox, .card-panel .card-panel-header .checkbox {
     display: inline-block;
     margin-top: 0;
     margin-bottom: 0;
     vertical-align: middle; }
-    .form-inline .radio label,
-    .form-inline .checkbox label {
+    .form-inline .radio label, .card-panel .card-panel-header .radio label,
+    .form-inline .checkbox label, .card-panel .card-panel-header .checkbox label {
       padding-left: 0; }
-  .form-inline .radio input[type="radio"],
-  .form-inline .checkbox input[type="checkbox"] {
+  .form-inline .radio input[type="radio"], .card-panel .card-panel-header .radio input[type="radio"],
+  .form-inline .checkbox input[type="checkbox"], .card-panel .card-panel-header .checkbox input[type="checkbox"] {
     position: relative;
     margin-left: 0; }
-  .form-inline .has-feedback .form-control-feedback {
+  .form-inline .has-feedback .form-control-feedback, .card-panel .card-panel-header .has-feedback .form-control-feedback {
     top: 0; } }
 
 .btn {
@@ -2597,7 +2602,7 @@ input[type="button"].btn-block {
   position: relative;
   display: table;
   border-collapse: separate; }
-  .input-group .form-control {
+  .input-group .form-control, .input-group .card-panel .card-panel-header .card-panel-filter select, .card-panel .card-panel-header .card-panel-filter .input-group select {
     position: relative;
     z-index: 2;
     float: left;
@@ -2606,7 +2611,9 @@ input[type="button"].btn-block {
 
 .input-group-addon,
 .input-group-btn,
-.input-group .form-control {
+.input-group .form-control,
+.input-group .card-panel .card-panel-header .card-panel-filter select, .card-panel .card-panel-header .card-panel-filter
+.input-group select {
   display: table-cell; }
 
 .input-group-addon,
@@ -2626,14 +2633,14 @@ input[type="button"].btn-block {
   text-align: center;
   background-color: #eceeef;
   border: 1px solid #ccc; }
-  .input-group-addon.form-control-sm,
+  .input-group-addon.form-control-sm, .card-panel .card-panel-header .card-panel-filter .input-group-sm > select.input-group-addon,
   .input-group-sm > .input-group-addon,
   .input-group-sm > .input-group-btn > .input-group-addon.btn {
     padding: 4.4px 12px;
     padding: 0.275rem 0.75rem;
     font-size: 13.6px;
     font-size: 0.85rem; }
-  .input-group-addon.form-control-lg,
+  .input-group-addon.form-control-lg, .card-panel .card-panel-header .card-panel-filter .input-group-lg > select.input-group-addon,
   .input-group-lg > .input-group-addon,
   .input-group-lg > .input-group-btn > .input-group-addon.btn {
     padding: 20px 20px;
@@ -2644,7 +2651,7 @@ input[type="button"].btn-block {
   .input-group-addon input[type="checkbox"] {
     margin-top: 0; }
 
-.input-group .form-control:first-child,
+.input-group .form-control:first-child, .input-group .card-panel .card-panel-header .card-panel-filter select:first-child, .card-panel .card-panel-header .card-panel-filter .input-group select:first-child,
 .input-group-addon:first-child,
 .input-group-btn:first-child > .btn,
 .input-group-btn:first-child > .btn-group > .btn,
@@ -2657,7 +2664,7 @@ input[type="button"].btn-block {
 .input-group-addon:first-child {
   border-right: 0; }
 
-.input-group .form-control:last-child,
+.input-group .form-control:last-child, .input-group .card-panel .card-panel-header .card-panel-filter select:last-child, .card-panel .card-panel-header .card-panel-filter .input-group select:last-child,
 .input-group-addon:last-child,
 .input-group-btn:last-child > .btn,
 .input-group-btn:last-child > .btn-group > .btn,
@@ -2758,7 +2765,7 @@ input[type="button"].btn-block {
   .c-inputs-stacked .c-input + .c-input {
     margin-left: 0; }
 
-.c-select {
+.c-select, .card-panel .card-panel-header .card-panel-filter select {
   display: inline-block;
   max-width: 100%;
   padding: 6px 28px 6px 12px;
@@ -2774,11 +2781,11 @@ input[type="button"].btn-block {
   padding-right: 12px \9;
   padding-right: .75rem \9;
   background-image: none \9; }
-  .c-select:focus {
+  .c-select:focus, .card-panel .card-panel-header .card-panel-filter select:focus {
     outline: none;
     border-color: #51a7e8;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(81, 167, 232, 0.5); }
-  .c-select::-ms-expand {
+  .c-select::-ms-expand, .card-panel .card-panel-header .card-panel-filter select::-ms-expand {
     opacity: 0; }
 
 .c-select-sm {
@@ -5521,7 +5528,10 @@ h6, .h6 {
       font-size: 1.75rem;
       display: inline-block;
       margin-right: 16px;
-      margin-right: 1rem; }
+      margin-right: 1rem;
+      vertical-align: middle; }
+    .card-panel .card-panel-header .card-panel-filter {
+      display: inline-block; }
 
 .card.card-overlay {
   margin-top: 25.6px;
