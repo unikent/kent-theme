@@ -13,4 +13,14 @@
   &.btn-accent{
     @include button-variant(#FFF, $brand-accent, $brand-accent);
   }
+}}
+
+.btn-gray-outline {
+	@extend .btn;
+   	@include button-outline-variant($gray-light);
+   	background-color:#fff;
+
+   	font-size: 1.4rem;
+    line-height: 1rem;
+    padding: .5rem;
 }
