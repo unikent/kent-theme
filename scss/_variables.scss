@@ -38,9 +38,11 @@ $container-max-widths: (
 );
 
 //COLOURS
+$kent-primary:         #05345C;
+$kent-primary-tint:    #e8ebf2;
 
-$brand-primary:         #05345C;
-$brand-primary-tint:    #e8ebf2;
+$brand-primary:         $kent-primary !default;
+$brand-primary-tint:    $kent-primary-tint !default;
 
 $brand-secondary:       #f5f5f5;
 
