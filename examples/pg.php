@@ -36,7 +36,7 @@
 						<h4 class="card-title">World Leading</h4>
 						<p class="card-text">Our 19 academic schools engage in research of international and world class standing.</p>
 					</div>
-					<div class="card-media-wrap card-media-wrap-video">
+					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
 						<img class="card-img-bottom" src="images/students.jpg">
 					</div>
 					
