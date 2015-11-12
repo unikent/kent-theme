@@ -1,3 +1,15 @@
+/*doc
+---
+title: Cards
+name: cards
+category: Layout
+---
+
+The Kent Theme uses [BootStrap 4](//v4-alpha.getbootstrap.com/), where a card is a flexible and extensible content container.
+To minimise confusion we have decided to keep the same name for the purposes of development.
+
+*/
+
 @import "cards/card-basic";
 @import "cards/card-panel";
 @import "cards/card-overlay";

@@ -3,7 +3,7 @@
 	.card-img-bottom {
 		width: 100%;
 	}
-	
+
 	margin-top: $card-overlay-amount;
 	.card-title-wrap{
 		@extend .card-block;
@@ -41,7 +41,7 @@
 	}
 	.card-title-wrap.card-transparent {
 		background: rgba(0, 0, 0, 0.8);
-		.card-title { 
+		.card-title {
 			color:#fff;
 			font-size: 1.6rem;
 			line-height:2.4rem;

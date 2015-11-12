@@ -1,9 +1,20 @@
+/*doc
+---
+title: Responsive Utils
+name: responsive-utils
+category: Layout
+---
+
+The Kent Theme needs to work on a variety of devices and screens, these utility classes are used throughout to maintain consistency across different breakpoints.
+
+*/
+
 @mixin showhide {
   max-height: 0;
   overflow: hidden;
   transition: max-height 300ms;
   &.in {
-    max-height: 2000px;
+	max-height: 2000px;
   }
 }
 
@@ -18,26 +29,26 @@
 }
 @include media-breakpoint-up(sm){
   .collapse-sm-up{
-    @include showhide;
+	@include showhide;
   }
 }
 
 
 @include media-breakpoint-up(md){
   .collapse-md-up{
-    @include showhide;
+	@include showhide;
   }
 }
 
 @include media-breakpoint-up(lg){
   .collapse-lg-up{
-    @include showhide;
+	@include showhide;
   }
 }
 
 @include media-breakpoint-up(xl){
   .collapse-xl-up{
-    @include showhide;
+	@include showhide;
   }
 }
 
@@ -55,25 +66,25 @@
 
 @include media-breakpoint-down(lg){
   .collapse-lg-down{
-    @include showhide;
+	@include showhide;
   }
 }
 
 
 @include media-breakpoint-down(md){
   .collapse-md-down{
-    @include showhide;
+	@include showhide;
   }
 }
 
 @include media-breakpoint-down(sm){
   .collapse-sm-down{
-    @include showhide;
+	@include showhide;
   }
 }
 
 @include media-breakpoint-down(xs){
   .collapse-xs-down{
-    @include showhide;
+	@include showhide;
   }
 }

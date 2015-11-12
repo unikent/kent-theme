@@ -1,5 +1,17 @@
+/*doc
+---
+title: Typography
+name: typography
+category: Layout
+---
+
+## House style
+
+The University has a [set of brand guidelines](//www.kent.ac.uk/brand/writing/house-style.html) for consistency in writing copy.
+*/
+
 h1,.h1 {
-  font-family: $font-family-serif;
+	font-family: $font-family-serif;
 }
 
 h1,.h1,
@@ -8,29 +20,29 @@ h3,.h3,
 h4,.h4,
 h5,.h5,
 h6,.h6{
-  color: $brand-primary;
+	color: $brand-primary;
 }
 
 @include media-breakpoint-up(xl) {
-  html {
-    font-size: 18px;
-  }
+	html {
+		font-size: 18px;
+	}
 }
 
 @mixin bullet-list{
-  list-style: none;
-  padding:0;
-  li{
-    padding-left: 0.8rem;
-    position: relative;
-    &:before{
-      font-family: $font-family-kentfont;
-      content:$kf-square;
-      color: $brand-primary;
-      font-size: 0.35rem;
-      left:0;
-      position: absolute;
-      padding-top: 0.45rem;
-    }
-  }
+	list-style: none;
+	padding:0;
+	li{
+		padding-left: 0.8rem;
+		position: relative;
+		&:before{
+			font-family: $font-family-kentfont;
+			content:$kf-square;
+			color: $brand-primary;
+			font-size: 0.35rem;
+			left:0;
+			position: absolute;
+			padding-top: 0.45rem;
+		}
+	}
 }

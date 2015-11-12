@@ -28,7 +28,13 @@ title: header
 name: header
 category: basics
 
-Some text about what the SCSS component is
+Some text about what the CSS component is
 ---
 */
 ```
+
+There's a separate style sheet for Hologram. The `hologram.scss` is a SASS file located in `plugins/hologram/doc_assets`. To create the CSS from this, run `grunt sass:hologram`.
+
+To run the hologram task and generate the pattern library, run `grunt hologram` - simples.
+
+*Both of the hologram tasks are excluded from the `grunt watch` so you'll need to run them manually*
