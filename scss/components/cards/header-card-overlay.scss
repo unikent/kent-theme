@@ -8,6 +8,10 @@
 			bottom: 15%;
 			top:auto;
 			left:0;
+			&.pull-right{
+				left: inherit;
+				right:0;
+			}
 		}
 
 	}

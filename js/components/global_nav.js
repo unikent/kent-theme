@@ -21,12 +21,15 @@
 		}else{
 			// if not, open requested menu
 			$('body').addClass('show-global-menu');
+			if(menu.hasClass('global-nav-search')){
+				$('body').addClass('show-global-menu-search');
+			}
 			menu.addClass('in');
 			menu.data('open', true); 
 		}	
 	};
 	var closeMenu = function(menu){
-		$('body').removeClass('show-global-menu');
+		$('body').removeClass('show-global-menu').removeClass('show-global-menu-search');
 		menu.removeClass('in');
 		menu.data('open', false);
 	};

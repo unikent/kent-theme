@@ -1,5 +1,10 @@
 .global-header {
-	background-color: #fff;
+	background-color: transparent;
+
+	@include media-breakpoint-up(md) {
+		position: relative;
+		z-index: 10;
+	}
 }
 
 .global-nav {
@@ -114,9 +119,9 @@
 
 
 	@include media-breakpoint-up(md) {
-		background-color: #fff;
+		background-color: #FFF;
 
-		margin:0 2rem;
+		padding:0 2rem;
 
 		a.main-logo {display:block; float:left;padding-left:0;}
 
@@ -146,13 +151,10 @@
 		}
 		
 		.search-button-full {
+
 			display:block;
-			background-color: $brand-accent;
-			border:0;
-			color: #fff;
-    		padding: .8rem;
-    		font-size: 1.4rem;
-    		margin-top: 1.3rem;
+    		margin-top: 1.25rem;
+
 			&:focus,&:active{
 				outline: none;
 			}
@@ -315,15 +317,22 @@
 			.global-nav-menu .global-nav-links, .global-nav-search {
 				display: none;
 			}
-			.global-nav-menu.in .global-nav-links, .global-nav-search.in {
+
+			.global-nav-search.in {
 				display: block;
+				min-height: 6.5rem;
+				overflow: visible;
 
 				.close-search {
 					display: block;
+					font-size: 0.9rem;
+					position: relative;
+					right: -3rem;
+					top: 4.75rem;
 				}
 				.form-group {
-					margin-top: .5rem;
-					margin-bottom: 0;
+					position: absolute;
+					margin: 0.25rem 1rem 0 8rem;
 					.input-group {
 						padding-bottom: 0;
 					}
@@ -332,3 +341,32 @@
 		}
 	}
 }
+
+.show-global-menu-search{
+	@include media-breakpoint-up(md) {
+		&:before {
+			content: " ";
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			z-index: 5;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		.departmental-nav {
+			&:before {
+				content: " ";
+				width: calc(100% - 4rem);
+				height: 100%;
+				position: absolute;
+				z-index: 5;
+				top: 0;
+				left: 0;
+				margin: 0 0 0 2rem;
+				background: rgba(0, 0, 0, 0.5);
+			}
+		}
+	}
+}
+

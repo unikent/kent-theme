@@ -20,7 +20,7 @@
 		color:#fff;
 		transition: max-height 300ms;
 
-		&.open {
+		&.in {
 			 height:auto;
 			 max-height:1000px;
 		}
@@ -34,10 +34,8 @@
 
 	@include media-breakpoint-up(md) {
 		
-		z-index: 9;
+		z-index: 1;
    		position: relative;
-		//@include make-container();
-		//max-width: 72.25rem;
 
 		header {
 			font-size:1.8rem;
