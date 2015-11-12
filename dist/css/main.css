@@ -5572,6 +5572,10 @@ h6, .h6 {
         position: absolute;
         padding-top: 7.2px;
         padding-top: 0.45rem; }
+  .card .card-badge:before {
+    color: #937227;
+    margin-right: 3.2px;
+    margin-right: .2rem; }
 
 .card-panel {
   padding: 16px 8px 8px;

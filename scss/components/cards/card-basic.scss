@@ -53,4 +53,9 @@
   ul{
     @include bullet-list;
   }
+
+
+  .card-badge {
+    &:before { color: $brand-accent; margin-right:.2rem}
+  }
 }
