@@ -62,4 +62,23 @@
 			bottom: 0.1rem;
 		}
 	}
+
+	.card-author {
+		display:block;
+		font-size: .8rem;
+	    color: $gray;
+	    border-bottom: 1px solid #ccc;
+	    border-top: 1px solid #ccc;
+	    padding: .5em 0;
+	    overflow:hidden;
+	    line-height: 2rem;
+	    margin-bottom: 1rem;
+	    text-decoration: none;
+	    
+	    img {
+	    	height: 2rem;
+	    	float: left;
+	    	margin-right:.5rem;
+	    }
+	}
 }
