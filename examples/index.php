@@ -156,6 +156,8 @@
 				</div>
 			</div>
 
+
+
 			<div class="card-panel">
 				<div class="card-panel-header">
 					<h2 class="card-panel-title">Standard Card Panel</h2>
@@ -468,6 +470,53 @@
 					</div>
 				</div>
 			</div>
+			<section class="container">
+				<p>&nbsp;</p>
+				<h1>And because we can!</h1>
+				<p>&nbsp;</p>
+				
+			</section>
+			
+			<div class="card card-overlay">
+				<div class="card-body card-inverse">
+					<div class="card-title-wrap card-title-wrap-link card-transparent pull-right">
+						<h4 class="card-title">Goodbye</h4>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+					
+
+					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">>
+						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
+							<video autoplay loop class="embed-responsive-item">
+								<source src="video/research2.mp4">
+							</video>
+						</div>
+					</div>
+					<div class="card-title-wrap card-title-wrap-link">
+						<h4 class="card-title">Hello</h4>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+
+					<div class="card-img-overlay">
+						<h5 class="card-subtitle">On the Left</h5>
+						<p class="card-text">This content is shorter.</p>
+					</div>
+					<div class="card-img-overlay text-right">
+						<h5 class="card-subtitle">On the right</h5>
+						<p class="card-text">This content is shorter.</p>
+					</div>
+				</div>
+				<div class="card-footer">
+					<a href="#" class="chevron-link">Card link</a>
+					<a href="#" class="chevron-link">Another link</a>
+					<a href="#" class="chevron-link">More linkage</a>
+					<a href="#" class="chevron-link">Another link</a>
+					<a href="#" class="chevron-link">Another link</a>
+					<a href="#" class="chevron-link">Another link</a>
+				</div>
+			</div>
+
+<p>&nbsp;</p>
 		</main>
 
 		<?php include "inc/footer.php"; ?>
