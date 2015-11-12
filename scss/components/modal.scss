@@ -1,0 +1,28 @@
+.modal.modal-fullscreen {
+	.modal-dialog {
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		display: table;
+	
+		.modal-content {
+			border: none;
+			display: table-cell;
+			vertical-align: middle;
+
+			&.modal-content-transparent{
+				background-color: transparent;
+			}
+			
+			.close {
+				position: absolute;
+				right: 2rem;
+				top: 2rem;
+				text-shadow: none;
+				color: #FFF;
+				opacity: 0.5;
+				font-size: 2rem;
+			}
+		}
+	}
+}

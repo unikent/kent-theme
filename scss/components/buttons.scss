@@ -23,8 +23,8 @@
 
 
 .btn-gray-outline {
-   	@include button-outline-variant($gray-light);
-   	background-color:#fff;
+   	@include button-outline-variant(#aaa);
+   	background-color: rgba(255,255,255,0.9);
 
    	font-size: 1.4rem;
     line-height: 1rem;
