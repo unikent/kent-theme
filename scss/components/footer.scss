@@ -11,7 +11,7 @@ category: Layout
 
 	background: lighten($gray-dark, 5%);
 	color: #E8E8E8;
-	font-size: 14px;
+	font-size: 0.9rem;
 
 	h3,.h3,
 	h4,.h4,
@@ -58,7 +58,6 @@ category: Layout
 				content:$kf-angle-down;
 			}
 		}
-
 
 		@include media-breakpoint-up(md){
 			margin: 0 0 0.5rem 0;
@@ -182,7 +181,6 @@ category: Layout
 		}
 	}
 
-
 	.global-footer-top{
 		padding: 0;
 		background: $gray-dark;
@@ -232,6 +230,7 @@ category: Layout
 		}
 
 	}
+
 	.global-footer-middle{
 
 		@include media-breakpoint-up(md) {

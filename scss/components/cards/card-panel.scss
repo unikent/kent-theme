@@ -1,0 +1,124 @@
+
+  .card-panel{
+
+    padding: 1rem 0.5rem 0.5rem;
+    overflow: hidden;
+
+    @include media-breakpoint-up(sm){
+      padding: 1rem;
+    }
+
+    &.card-panel-secondary{
+      background-color: $brand-secondary;
+    }
+
+    &.card-panel-tertiary{
+      background-color: $brand-tertiary;
+    }
+
+    &.card-panel-primary-tint{
+      background-color: $brand-primary-tint;
+    }
+
+    .card-panel-body {
+      @extend .container;
+      padding: 0;
+
+      .card {
+
+        @include media-breakpoint-up(sm) {
+          @include make-col();
+          @include make-col-span(6);
+        }
+
+        @include media-breakpoint-up(lg) {
+          @include make-col-span(3);
+        }
+      }
+
+      .card-panel-grid,
+      .card-panel-single,
+      .card-panel-list{
+
+        overflow: hidden;
+        margin-bottom: 1rem;
+
+        &:last-child{
+          margin-bottom: 0;
+        }
+        @include media-breakpoint-up(md) {
+          @include make-col();
+          @include make-col-span(6);
+          margin-bottom: 0;
+        }
+      }
+
+      .card-panel-single{
+        .card{
+          @include media-breakpoint-up(sm) {
+            padding: 0;
+            width: 100%;
+          }
+          @include media-breakpoint-up(lg) {
+            padding: 0;
+            width: 100%;
+          }
+        }
+      }
+      .card-panel-grid{
+        .card{
+          @include make-col();
+          @include make-col-span(6);
+          &:nth-child(odd){
+            clear: left;
+          }
+        }
+      }
+      .card-panel-list{
+        .card{
+          @include media-breakpoint-up(sm) {
+            padding: 0;
+            width: 100%;
+          }
+          @include media-breakpoint-up(lg) {
+            padding: 0;
+            width: 100%;
+          }
+          .card-img-top,
+          .card-img:first-child{
+            float:left;
+            max-width: 40%;
+            margin-right: 1rem;
+          }
+        }
+      }
+    }
+
+
+    .card-panel-header{
+      @extend .container;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+
+      @extend .form-inline;
+
+      .card-panel-title{
+        margin-bottom: 0;
+        font-size: $font-size-h3;
+        display: inline-block;
+        margin-right: 1rem;
+        vertical-align:middle;
+      }
+
+      .card-panel-filter {
+
+          display:inline-block;
+
+          select {
+            @extend .form-control;
+            @extend .c-select;
+          }
+      }
+
+    }
+  }

@@ -15,6 +15,7 @@
 		<header class="global-header">
 			<section class='audience-bar navbar'>
 				<a class='navbar-brand kf-kent-horizontal' href=''><span class='sr-only'>The University of Kent</span></a>
+				<span class='tag-line'>The UK's European University</span>
 
 				<button class='kf pull-right menu-button'></button>
 				<button class='kf-search pull-right search-button'></button>
@@ -22,30 +23,42 @@
 			<section class='global-nav' >
 				
 				<a class='main-logo kf-kent-block' href=''><span class='sr-only'>The University of Kent</span></a>
-				
+				<button class='kf-search pull-right search-button-full'></button>
 				<div class="global-nav-menu">
 					<nav class="global-nav-links">
 						<div class="global-nav-link">
 							<a href="#">Research <span class='more kf-chevron-down'></span></a>
 							<nav>
-								<a href="#">Inspiring teaching <span class='more kf-chevron-right'></span></a>
-								<a href="#">Undergraduate <span class='more kf-chevron-right'></span></a>
-								<a href="#">Postgraduate <span class='more kf-chevron-right'></span></a>
-								<a href="#">International <span class='more kf-chevron-right'></span></a>
+								<a href="#">
+									Research impact
+									<span class='global-nav-link-desc'>Making a difference locally and internationally</span>
+									<span class='more kf-chevron-right'></span>
+								</a>
+								<a href="#">Research degrees<span class='global-nav-link-desc'>Cutting edge, research-informed programmes</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Innovation &amp; enterprise <span class='global-nav-link-desc'>Strong, international network of partnerships and business connections</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Academic excellence<span class='global-nav-link-desc'>Thriving, intellectual community of world-expert academics</span><span class='more kf-chevron-right'></span></a>
 							</nav>
 						</div>
 						<div class="global-nav-link">
 							<a href="#">Study <span class='more kf-chevron-down'></span></a>
 							<nav>
-								<a href="#">Learning stuff <span class='more kf-chevron-right'></span></a>
-								<a href="#">Example item <span class='more kf-chevron-right'></span></a>
+								<a href="#">
+									Inspiring teaching 
+									<span class='global-nav-link-desc'>Some text about our amazing research</span>
+									<span class='more kf-chevron-right'></span>
+								</a>
+								<a href="#">Undergraduate <span class='global-nav-link-desc'>Some text about our REF 2014 results</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Postgraduate <span class='global-nav-link-desc'>Look at some of our leading academics</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">International <span class='global-nav-link-desc'>Some text about our amazing research</span><span class='more kf-chevron-right'></span></a>
 							</nav>
 						</div>
 						<div class="global-nav-link">
 							<a href="#">Explore <span class='more kf-chevron-down'></span></a>
 							<nav>
-								<a href="#">About <span class='more kf-chevron-right'></span></a>
-								<a href="#">Our campus <span class='more kf-chevron-right'></span></a>
+								<a href="#">About <span class='global-nav-link-desc'>Some text about our amazing research</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Our campus <span class='global-nav-link-desc'>Some text about our amazing research</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Study abroud <span class='global-nav-link-desc'>Some text about our amazing research</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Test<span class='global-nav-link-desc'>Some text about our amazing research</span><span class='more kf-chevron-right'></span></a>
 							</nav>
 						</div>
 					</nav>
@@ -57,23 +70,25 @@
 					</nav>
 
 				</div>
-				<div class="global-nav-search hidden-sm-down">
+				<div class="global-nav-search">
 					
-					<form class="form-inline">
+					<form >
 					  <div class="form-group">
 					    <label for="search" class="sr-only">Search</label>
 					    	<div class="input-group">
-					    		<input type="search" class="form-control" id="search" placeholder="Search website">
+					    		<input type="search" class="form-control" id="search" placeholder="Search...">
 					    		<span class="input-group-btn">
-									<button type="submit" class="btn btn-primary">Search</button>
+									<button type="submit" class="btn btn-primary "><span class='kf-search'></span></button>
 					    		</span>
 					    	</div>
 					  </div>
+
+					  <span class='close-search pull-right'>Close search</span>
 					</form>
 
 				</div>
 
-				<button class='kf-search pull-right search-button-full hidden-sm-down'></button>
+				
 			</section>
 			<section class="departmental-nav">
 				<header>Postgraduate Courses</header>
@@ -86,6 +101,21 @@
 			</section>
 		</header>
 		<main>
+
+			<div class="card card-overlay header-card-overlay">
+				<div class="card-body">
+					<div class="card-img-wrap">
+						<img class="card-img-bottom" src="images/hero-painting-16-9.jpg">
+					</div>
+					<div class="card-title-wrap card-title-wrap-link card-transparent pull-left">
+						<h2 class="card-title">A leading research institution</h2>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+					
+				</div>
+			</div>
+
+
 			<section class="container">
 				<h1>Heading 1</h1>
 				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor tellus sit amet neque iaculis, at pulvinar lectus mattis. Pellentesque hendrerit risus euismod lobortis auctor. Morbi condimentum dolor mauris, at finibus eros tincidunt id.</p>
@@ -182,28 +212,310 @@
 
 			</section>
 
-			<section class="container">
-				<div class="row">
-					<div class="col-xs-12">
-						<div class="card card-overlay card-inverse">
-							<div class="card-title-wrap pull-right">
-								<a href="" class="card-title-wrap-link">
-									<h4 class="card-title">A bold title</h4>
-									<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-								</a>
-							</div>
-							<img class="card-img" src="images/students.jpg">
-							<div class="card-img-overlay">
-								<h5 class="card-title">A sub title</h5>
-								<p class="card-text">This content is a little bit longer.</p>
-							</div>
-							
-						</div>
-						
+			<div class="card card-overlay">
+				<div class="card-body card-inverse">
+					<div class="card-title-wrap card-title-wrap-link pull-right">
+						<h4 class="card-title">A bold title</h4>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+					<div class="card-img-wrap">
+						<img class="card-img-bottom" src="images/students.jpg">
+					</div>
+					<div class="card-img-overlay">
+						<h5 class="card-subtitle">A sub title</h5>
+						<p class="card-text">This content is shorter.</p>
 					</div>
 				</div>
-			</section>
+				<div class="card-footer">
+					<a href="#" class="chevron-link">Card link</a>
+					<a href="#" class="chevron-link">Another link</a>
+					<a href="#" class="chevron-link">More linkage</a>
+					<a href="#" class="chevron-link">Another link</a>
+				</div>
+			</div>
 
+			<div class="card-panel">
+				<div class="card-panel-header">
+					<h2 class="card-panel-title">Standard Card Panel</h2>
+				</div>
+				<div class="card-panel-body">
+					<div class="card">
+						<img class="card-img" src="images/promo-1.jpg">
+						<h3 class="card-title">Academic excellence</h3>
+						<p class="card-subtitle">1st September 2015</p>
+						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
+						<p class="card-text"><a href="#">Tag1</a>, <a href="#">Tag2</a>, <a href="#">Another Tag</a></p>
+					</div>
+					<div class="card">
+						<img class="card-img" src="images/promo-2.jpg">
+						<h3 class="card-title">Undergraduates</h3>
+						<p class="card-subtitle">28th March 2015</p>
+						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+						<ul>
+							<li><a href="#">Card link</a></li>
+							<li><a href="#">Another link</a></li>
+							<li><a href="#">More linkage</a></li>
+							<li><a href="#">Another link</a></li>
+						</ul>
+					</div>
+					<div class="card">
+						<img class="card-img" src="images/promo-3.jpg">
+						<h3 class="card-title">Postgraduates</h3>
+						<p class="card-subtitle">5th November 2015</p>
+						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+					</div>
+					<div class="card">
+						<img class="card-img" src="images/promo-4.jpg">
+						<h3 class="card-title">Visit Kent</h3>
+						<p class="card-subtitle">17th May 2015</p>
+						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="card-panel card-panel-primary-tint">
+				<div class="card-panel-header">
+					<h2 class="card-panel-title">Card Panel (Primary Tint)</h2>
+
+					<div class="card-panel-filter">
+						<select class="form-control">
+							<option>All news</option>
+							<option>Student news</option>
+							<option>Staff news</option>
+						</select>
+					</div>
+
+				</div>
+				<div class="card-panel-body">
+					<div class="card">
+						<img class="card-img" src="images/promo-1.jpg">
+						<h3 class="card-title">Academic excellence</h3>
+						<p class="card-subtitle">1st September 2015</p>
+						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
+						<p class="card-text"><a href="#">Tag1</a>, <a href="#">Tag2</a>, <a href="#">Another Tag</a></p>
+					</div>
+					<div class="card">
+						<img class="card-img" src="images/promo-2.jpg">
+						<h3 class="card-title">Undergraduates</h3>
+						<p class="card-subtitle">28th March 2015</p>
+						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+						<ul>
+							<li><a href="#">Card link</a></li>
+							<li><a href="#">Another link</a></li>
+							<li><a href="#">More linkage</a></li>
+							<li><a href="#">Another link</a></li>
+						</ul>
+					</div>
+					<div class="card">
+						<img class="card-img" src="images/promo-3.jpg">
+						<h3 class="card-title">Postgraduates</h3>
+						<p class="card-subtitle">5th November 2015</p>
+						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+					</div>
+					<div class="card">
+						<img class="card-img" src="images/promo-4.jpg">
+						<h3 class="card-title">Visit Kent</h3>
+						<p class="card-subtitle">17th May 2015</p>
+						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="card-panel card-panel-tertiary">
+				<div class="card-panel-header">
+					<h2 class="card-panel-title">Card Panel (Tertiary)</h2>
+				</div>
+				<div class="card-panel-body">
+					<div class="card">
+						<img class="card-img" src="images/promo-1.jpg">
+						<h3 class="card-title">Academic excellence</h3>
+						<p class="card-subtitle">1st September 2015</p>
+						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
+						<p class="card-text"><a href="#">Tag1</a>, <a href="#">Tag2</a>, <a href="#">Another Tag</a></p>
+					</div>
+					<div class="card">
+						<img class="card-img" src="images/promo-2.jpg">
+						<h3 class="card-title">Undergraduates</h3>
+						<p class="card-subtitle">28th March 2015</p>
+						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+						<ul>
+							<li><a href="#">Card link</a></li>
+							<li><a href="#">Another link</a></li>
+							<li><a href="#">More linkage</a></li>
+							<li><a href="#">Another link</a></li>
+						</ul>
+					</div>
+					<div class="card">
+						<img class="card-img" src="images/promo-3.jpg">
+						<h3 class="card-title">Postgraduates</h3>
+						<p class="card-subtitle">5th November 2015</p>
+						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+					</div>
+					<div class="card">
+						<img class="card-img" src="images/promo-4.jpg">
+						<h3 class="card-title">Visit Kent</h3>
+						<p class="card-subtitle">17th May 2015</p>
+						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="card card-overlay">
+				<div class="card-body card-body-video card-inverse">
+					<div class="card-title-wrap card-title-wrap-link pull-right">
+						<h4 class="card-title">A video launcher</h4>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+					<div class="card-img-wrap card-img-wrap-video">
+						<img class="card-img-bottom" src="images/students.jpg">
+					</div>
+					
+					<div class="card-img-overlay">
+						<h5 class="card-subtitle">A sub title</h5>
+						<p class="card-text">This content is shorter.</p>
+					</div>
+				</div>
+				<div class="card-footer">
+					<a href="#" class="chevron-link">Card link</a>
+					<a href="#" class="chevron-link">Another link</a>
+					<a href="#" class="chevron-link">More linkage</a>
+					<a href="#" class="chevron-link">Another link</a>
+				</div>
+			</div>
+
+			<div class="card-panel card-panel-primary-tint">
+				<div class="card-panel-header">
+					<h2 class="card-panel-title">Card Panel Single + Grid</h2>
+				</div>
+				<div class="card-panel-body">
+					<div class="card-panel-single">
+						<div class="card">
+							<img class="card-img" src="images/promo-1.jpg">
+							<h3 class="card-title">Academic excellence</h3>
+							<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
+							<p class="card-text"><a href="#">Tag1</a>, <a href="#">Tag2</a>, <a href="#">Another Tag</a></p>
+						</div>
+					</div>
+					<div class="card-panel-grid">
+						<div class="card">
+							<img class="card-img" src="images/promo-2.jpg">
+							<h3 class="card-title">Undergraduates</h3>
+							<p class="card-text">We have a renowned personal teaching style.</p>
+						</div>
+						<div class="card">
+							<img class="card-img" src="images/promo-3.jpg">
+							<h3 class="card-title">Postgraduates</h3>
+							<p class="card-text">We'll equip you with essential skills.</p>
+						</div>
+						<div class="card">
+							<img class="card-img" src="images/promo-4.jpg">
+							<h3 class="card-title">Visit Kent</h3>
+							<p class="card-text">Learn more why our students love Kent.</p>
+						</div>
+						<div class="card">
+							<img class="card-img" src="images/promo-1.jpg">
+							<h3 class="card-title">More stuff</h3>
+							<p class="card-text">We rank amongst the best in the UK.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card-panel card-panel-tertiary">
+				<div class="card-panel-header">
+					<h2 class="card-panel-title">Card Panel Single + List</h2>
+				</div>
+				<div class="card-panel-body">
+					<div class="card-panel-single">
+						<div class="card">
+							<img class="card-img" src="images/promo-1.jpg">
+							<h3 class="card-title">Academic excellence</h3>
+							<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
+							<p class="card-text"><a href="#">Tag1</a>, <a href="#">Tag2</a>, <a href="#">Another Tag</a></p>
+						</div>
+					</div>
+					<div class="card-panel-list">
+						<div class="card">
+							<img class="card-img" src="images/promo-2.jpg">
+							<h3 class="card-title">Undergraduates</h3>
+							<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+						</div>
+						<div class="card">
+							<img class="card-img" src="images/promo-3.jpg">
+							<h3 class="card-title">Postgraduates</h3>
+							<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+						</div>
+						<div class="card">
+							<img class="card-img" src="images/promo-4.jpg">
+							<h3 class="card-title">Visit Kent</h3>
+							<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card-panel">
+				<div class="card-panel-header">
+					<h2 class="card-panel-title">Card Panel Single + Single</h2>
+				</div>
+				<div class="card-panel-body">
+					<div class="card-panel-single">
+						<div class="card">
+							<img class="card-img" src="images/promo-1.jpg">
+							<h3 class="card-title">Academic excellence</h3>
+							<p class="card-subtitle">1st September 2015</p>
+							<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
+							<p class="card-text"><a href="#">Tag1</a>, <a href="#">Tag2</a>, <a href="#">Another Tag</a></p>
+						</div>
+					</div>
+					<div class="card-panel-single">
+						<div class="card">
+							<img class="card-img" src="images/promo-2.jpg">
+							<h3 class="card-title">Undergraduates</h3>
+							<p class="card-subtitle">28th March 2015</p>
+							<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+							<ul>
+								<li><a href="#">Card link</a></li>
+								<li><a href="#">Another link</a></li>
+								<li><a href="#">More linkage</a></li>
+								<li><a href="#">Another link</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="card card-overlay">
+				<div class="card-body card-body-video card-inverse">
+					<div class="card-title-wrap card-title-wrap-link pull-right">
+						<h4 class="card-title">A video loop</h4>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+					<div class="card-img-wrap">
+						<video autoplay loop class="card-img-bottom">
+							<source src="video/research2.mp4">
+						</video>
+					</div>
+					
+					<div class="card-img-overlay">
+						<h5 class="card-subtitle">A sub title</h5>
+						<p class="card-text">This content is shorter.</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="card card-overlay">
+				<div class="card-body card-body-video card-inverse">
+					<div class="card-title-wrap card-title-wrap-link pull-right">
+						<h4 class="card-title">A google map</h4>
+						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+					</div>
+					<div class="card-img-wrap">
+						<iframe  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d39932.327605613886!2d1.08385085!3d51.2785439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2suk!4v1447262198975" width="100%" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+					</div>
+				</div>
+			</div>
 		</main>
 		<footer class="global-footer">
 			<section class="global-footer-top">
@@ -370,21 +682,10 @@
 		</footer>
 
 		<script src="../dist/js/main.js"></script>
-			<script>
-		$('.menu-button').click(function(){
-			$('body').toggleClass('show-mobile-menu');
-		});
-		$('.search-button').click(function(){
-			$('.global-nav-search').toggleClass('hidden-sm-down');
-		});
+		<script>
 
-		$('.global-nav-menu .global-nav-link a').click(function(){
-			$(this).parent().toggleClass('open').parent().toggleClass('nav-menu-open');
-		})
 
-		$('.navbar-toggler').click(function(){
-			$('.navbar-menu').toggleClass('open');
-		});
+
 		</script>
 	</body>
 </html>

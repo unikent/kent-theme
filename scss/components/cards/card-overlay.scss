@@ -1,62 +1,181 @@
-.card {
-	&.card-overlay {
-		.card-img {
-			width: 100%;
-		}
-		margin-top: $card-overlay-amount;
-		.card-title-wrap{
-			@extend .card-block;
-			background-color: $brand-primary;
+.card.card-overlay {
+
+	.card-img-bottom {
+		width: 100%;
+	}
+
+	margin-top: $card-overlay-amount;
+	.card-title-wrap{
+		@extend .card-block;
+		background-color: $brand-primary;
+		color: #FFF;
+		&.card-title-wrap-link {
+			display: block;
 			color: #FFF;
-			& > a.card-title-wrap-link {
-				position: relative;
-				display: block;
-				color: #FFF;
-				padding-right: 2rem;
+			padding-right: 2.5rem;
+			cursor: pointer;
+			position: relative;
 
-				&:hover {
-					text-decoration: none;
-				}
-
-				&:after {
-					position: absolute;
-					top: 50%;
-					right: 0;
-					margin-top: -1rem;
-					font-size: 2rem;
-					content: $kf-angle-right;
-					font-family: $font-family-kentfont;
-				}
+			&:hover {
+				text-decoration: none;
 			}
-			.card-title, a.chevron-link.card-title {
-				text-transform: uppercase;
-				color: $brand-accent-light;
+
+			&:after {
+				position: absolute;
+				top: 50%;
+				right: 1rem;
+				margin-top: -1rem;
+				font-size: 2rem;
+				content: $kf-angle-right;
+				font-family: $font-family-kentfont;
 			}
 		}
-
-		.card-title {
+		.card-title, a.chevron-link.card-title {
+			text-transform: uppercase;
+			color: $brand-accent-light;
+		}
+		.card-title, .card-text {
 			font-family: $font-family-serif;
 		}
 
+	}
+	.card-title-wrap.card-transparent {
+		background: rgba(0, 0, 0, 0.8);
+		.card-title {
+			color:#fff;
+			font-size: 1.6rem;
+			line-height:2.4rem;
+		}
+	}
+
+
+	.card-title, .card-subtitle {
+		font-family: $font-family-serif;
+	}
+
+	.card-img-overlay {
+		top: inherit;
+		&.pull-right {
+			text-align: right;
+		}
+		.card-subtitle {
+			font-size: 1.5rem;
+		}
+	}
+
+	.card-inverse {
 		.card-img-overlay {
-			top: inherit;
-			&.overlay-backdrop {
-				background-color: rgba(0,0,0,0.6);
+			text-shadow: 0 2px 2px rgba(0,0,0,.9);
+			.card-text {
+				color: #FFF;
+			}
+			.card-subtitle {
+				color: #FFF;
+			}
+		}
+	}
+
+	.card-img-wrap.card-img-wrap-video {
+		position: relative;
+		clear: both;
+		&:after {
+			content: $kf-play;
+			font-family: $font-family-kentfont;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -2.65rem;
+			margin-top: -2.65rem;
+			font-size: 3rem;
+			color: rgba(255,255,255,0.9);
+			background-color: rgba(0,0,0,0.6);
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+			cursor: pointer;
+		}
+	}
+
+	.card-footer{
+		padding: 0;
+
+		.chevron-link{
+			display: block;
+			padding: 0.75rem 1rem;
+			background: $brand-secondary;
+			border-bottom: 1px solid #ccc;
+			&:after{
+				position: absolute;
+				right: 1rem;
+			}
+
+			@include media-breakpoint-up(md){
+				display: table-cell;
+				text-align: center;
+				float: none;
+				width: 1%;
+				vertical-align: top;
+				padding: 0;
+				background: none;
+				border: none;
+				&:after{
+					position: relative;
+					right: auto;
+				}
 			}
 		}
 
 		@include media-breakpoint-up(md){
-			.card-title-wrap {
-				position: absolute;
-				width: 40%;
-				left: 5%;
-				top: -($card-overlay-amount);
+			padding: 0.75rem 1.25rem;
+			display: table;
+			table-layout: fixed;
+		}
 
-				&.pull-right{
-					left: inherit;
-					right: 5%;
+	}
+	@include media-breakpoint-up(md){
+		.card-title-wrap {
+			position: absolute;
+			width: 40%;
+			left: 5%;
+			top: -($card-overlay-amount);
+			z-index: 5;
+
+			&.card-title-wrap-link {
+				position: absolute;
+			}
+
+			&.pull-right{
+				left: inherit;
+				right: 5%;
+			}
+		}
+	}
+	@include media-breakpoint-up(lg){
+		.card-img-wrap {
+			max-height: 33rem;
+			overflow: hidden;
+			& > .card-img,
+			& > .card-img-bottom,
+			& > .card-img-top{
+				margin-top: -3rem;
+				@include media-breakpoint-up(xl){
+					margin-top: -6rem;
+				}
+				@include media-breakpoint-up(xxl){
+					margin-top: -14rem;
+				}
+				@include media-breakpoint-up(xxxl){
+					margin-top: -20rem;
 				}
 			}
+		}
+	}
+}
+
+@include media-breakpoint-down(xs) {
+	.container {
+		.card.card-overlay {
+			margin-right: -($grid-gutter-width/2);
+			margin-left: -($grid-gutter-width/2);
 		}
 	}
 }
