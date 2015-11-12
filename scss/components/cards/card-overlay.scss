@@ -6,13 +6,15 @@
 	
 	margin-top: $card-overlay-amount;
 	.card-title-wrap{
-		@extend .card-block;
+
+		padding: 2rem;
 		background-color: $brand-primary;
 		color: #FFF;
+
 		&.card-title-wrap-link {
 			display: block;
 			color: #FFF;
-			padding-right: 2.5rem;
+			padding-right: 3rem;
 			cursor: pointer;
 			position: relative;
 
@@ -30,28 +32,42 @@
 				font-family: $font-family-kentfont;
 			}
 		}
-		.card-title, a.chevron-link.card-title {
+
+		.card-title{
+			font-family: $font-family-serif;
 			text-transform: uppercase;
 			color: $brand-accent-light;
+			font-size: $font-size-h4;
+			@include media-breakpoint-up(lg){
+				font-size: $font-size-h3;
+			}
+			@include media-breakpoint-up(xl){
+				font-size: $font-size-h2;
+			}
 		}
-		.card-title, .card-text {
+
+		.card-text {
 			font-family: $font-family-serif;
+			color: #FFF;
+		}
+
+		&.card-transparent {
+
+			&,&.card-title-wrap-link {
+				background: rgba(0, 0, 0, 0.8);
+
+				.card-title {
+					text-transform: none;
+					color: #fff;
+				}
+				.card-text {
+					font-family: $font-family-sans-serif;
+					color: #fff;
+				}
+			}
 		}
 
 	}
-	.card-title-wrap.card-transparent {
-		background: rgba(0, 0, 0, 0.8);
-		.card-title {
-			text-transform: none;
-			color:#fff;
-			font-size: 1.6rem;
-			line-height:2.4rem;
-		}
-		.card-text{
-			font-family: $font-family-sans-serif;
-		}
-	}
-
 
 	.card-title, .card-subtitle {
 		font-family: $font-family-serif;
@@ -59,9 +75,7 @@
 
 	.card-img-overlay {
 		top: inherit;
-		&.pull-right {
-			text-align: right;
-		}
+
 		.card-subtitle {
 			font-size: 1.5rem;
 		}
@@ -82,22 +96,22 @@
 	.card-media-wrap, .card-embed-wrap {
 		position: relative;
 		clear: both;
-	}
 
-	.card-media-wrap.card-media-wrap-video:after {
-		content: $kf-play;
-		font-family: $font-family-kentfont;
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		margin-left: -2.65rem;
-		margin-top: -2.65rem;
-		font-size: 3rem;
-		color: rgba(255,255,255,0.9);
-		background-color: rgba(0,0,0,0.6);
-		padding-right: 1.5rem;
-		padding-left: 1.5rem;
-		cursor: pointer;
+		&.card-media-wrap-video:after {
+			content: $kf-play;
+			font-family: $font-family-kentfont;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -2.65rem;
+			margin-top: -2.65rem;
+			font-size: 3rem;
+			color: rgba(255,255,255,0.9);
+			background-color: rgba(0,0,0,0.6);
+			padding-right: 1.5rem;
+			padding-left: 1.5rem;
+			cursor: pointer;
+		}
 	}
 
 	.card-footer{
@@ -136,6 +150,7 @@
 		}
 
 	}
+
 	@include media-breakpoint-up(md){
 		.card-title-wrap {
 			position: absolute;
@@ -179,7 +194,7 @@
 
 @include media-breakpoint-down(xs) {
 	.container {
-		.card.card-overlay {
+		& > .card.card-overlay {
 			margin-right: -($grid-gutter-width/2);
 			margin-left: -($grid-gutter-width/2);
 		}
