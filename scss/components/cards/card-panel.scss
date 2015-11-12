@@ -1,124 +1,174 @@
+.card-panel{
 
-  .card-panel{
+	padding: 1rem 0.5rem 0.5rem;
+	overflow: hidden;
 
-    padding: 1rem 0.5rem 0.5rem;
-    overflow: hidden;
+	@include media-breakpoint-up(sm){
+		padding: 1rem;
+	}
 
-    @include media-breakpoint-up(sm){
-      padding: 1rem;
-    }
+	&.card-panel-secondary{
+		background-color: $brand-secondary;
+	}
 
-    &.card-panel-secondary{
-      background-color: $brand-secondary;
-    }
+	&.card-panel-tertiary{
+		background-color: $brand-tertiary;
+	}
 
-    &.card-panel-tertiary{
-      background-color: $brand-tertiary;
-    }
+	&.card-panel-primary-tint{
+		background-color: $brand-primary-tint;
+	}
 
-    &.card-panel-primary-tint{
-      background-color: $brand-primary-tint;
-    }
+	.card-panel-body {
+		@extend .container;
+		padding: 0;
 
-    .card-panel-body {
-      @extend .container;
-      padding: 0;
+		.card {
 
-      .card {
+		@include media-breakpoint-up(sm) {
+			@include make-col();
+			@include make-col-span(6);
+		}
 
-        @include media-breakpoint-up(sm) {
-          @include make-col();
-          @include make-col-span(6);
-        }
+		@include media-breakpoint-up(lg) {
+			@include make-col-span(3);
+		}
+	}
 
-        @include media-breakpoint-up(lg) {
-          @include make-col-span(3);
-        }
-      }
+	.card-panel-grid,
+	.card-panel-single,
+	.card-panel-list{
 
-      .card-panel-grid,
-      .card-panel-single,
-      .card-panel-list{
+		overflow: hidden;
+		margin-bottom: 1rem;
 
-        overflow: hidden;
-        margin-bottom: 1rem;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		@include media-breakpoint-up(md) {
+			@include make-col();
+			@include make-col-span(6);
+			margin-bottom: 0;
+		}
+	}
 
-        &:last-child{
-          margin-bottom: 0;
-        }
-        @include media-breakpoint-up(md) {
-          @include make-col();
-          @include make-col-span(6);
-          margin-bottom: 0;
-        }
-      }
+	.card-panel-single{
+		.card{
+			@include media-breakpoint-up(sm) {
+			padding: 0;
+			width: 100%;
+			}
+			@include media-breakpoint-up(lg) {
+			padding: 0;
+			width: 100%;
+			}
+		}
+	}
+	.card-panel-grid{
+		.card{
+			@include make-col();
+			@include make-col-span(6);
+			&:nth-child(odd){
+			clear: left;
+			}
+		}
+	}
+	.card-panel-list{
+		.card{
 
-      .card-panel-single{
-        .card{
-          @include media-breakpoint-up(sm) {
-            padding: 0;
-            width: 100%;
-          }
-          @include media-breakpoint-up(lg) {
-            padding: 0;
-            width: 100%;
-          }
-        }
-      }
-      .card-panel-grid{
-        .card{
-          @include make-col();
-          @include make-col-span(6);
-          &:nth-child(odd){
-            clear: left;
-          }
-        }
-      }
-      .card-panel-list{
-        .card{
-          @include media-breakpoint-up(sm) {
-            padding: 0;
-            width: 100%;
-          }
-          @include media-breakpoint-up(lg) {
-            padding: 0;
-            width: 100%;
-          }
-          .card-img-top,
-          .card-img:first-child{
-            float:left;
-            max-width: 40%;
-            margin-right: 1rem;
-          }
-        }
-      }
-    }
+			@include media-breakpoint-up(sm) {
+				padding: 0;
+				width: 100%;
+			}
+			@include media-breakpoint-up(lg) {
+				padding: 0;
+				width: 100%;
+			}
+
+			.card-img-top,
+			.card-img:first-child{
+				float:left;
+				max-width: 40%;
+				margin-right: 1rem;
+				}
+			}
+		}
+	}
 
 
-    .card-panel-header{
-      @extend .container;
-      padding: 0 1rem;
-      margin-bottom: 1rem;
+	.card-panel-header{
+		@extend .container;
+		@extend .form-inline;
 
-      @extend .form-inline;
+		margin-bottom:1rem;
+		margin-top:-1rem;
 
-      .card-panel-title{
-        margin-bottom: 0;
-        font-size: $font-size-h3;
-        display: inline-block;
-        margin-right: 1rem;
-        vertical-align:middle;
-      }
+		& > * {
+			margin-top:1rem;
+			margin-bottom: 0rem;
+		}
 
-      .card-panel-filter {
+		.card-panel-title {
+			font-size: $font-size-h3;
+			display: block;
+			margin: 1rem 1rem 0rem 0;
 
-          display:inline-block;
+			vertical-align:middle;
 
-          select {
-            @extend .form-control;
-            @extend .c-select;
-          }
-      }
+			@include media-breakpoint-up(md) {
+				display: inline-block;
+			}
+		}
 
-    }
-  }
+		.card-panel-filter {
+
+			display:inline-block;
+
+			margin-bottom:0rem;
+			vertical-align:middle;
+			margin-right:1rem;
+
+			input,select,button {
+				min-width:6rem;
+				max-width:14rem;
+			}
+			select {
+				@extend .form-control;
+				@extend .c-select;
+			}
+			input {
+				@extend .form-control;
+			}
+		}
+
+		.card-panel-social {
+			display:inline-block;
+			vertical-align:middle;
+
+			&.right {
+				float:right;
+			}
+			&.left {
+				float:left;
+			}
+
+			a {
+				@extend .btn-gray-outline;
+				float: left;
+				margin-left:.2rem;
+			}
+		}
+
+
+		nav {
+			display:inline-block;
+			vertical-align:middle;
+			@extend .form-control-static;
+
+			a {
+				margin-left:1rem;
+			}
+
+		}
+	}
+}
