@@ -3995,8 +3995,7 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out;
-    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
+    transition: transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4290,7 +4289,6 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
-        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -5823,8 +5821,8 @@ input:-ms-input-placeholder {
   .card.card-overlay .card-img-overlay {
     top: inherit; }
     .card.card-overlay .card-img-overlay .card-subtitle {
-      font-size: 24px;
-      font-size: 1.5rem; }
+      font-size: 28.8px;
+      font-size: 1.8rem; }
     .card.card-overlay .card-img-overlay.card-img-overlay-block {
       position: relative; }
   .card.card-overlay .card-inverse .card-img-overlay {
@@ -5836,6 +5834,9 @@ input:-ms-input-placeholder {
   .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
     position: relative;
     clear: both; }
+    @media (min-width: 48em) {
+      .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
+        min-height: 350px; } }
     .card.card-overlay .card-media-wrap.card-media-wrap-video, .card.card-overlay .card-embed-wrap.card-media-wrap-video {
       cursor: pointer; }
       .card.card-overlay .card-media-wrap.card-media-wrap-video:after, .card.card-overlay .card-embed-wrap.card-media-wrap-video:after {

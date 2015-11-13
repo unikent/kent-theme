@@ -76,7 +76,7 @@
 		top: inherit;
 
 		.card-subtitle {
-			font-size: 1.5rem;
+			font-size: 1.8rem;
 		}
 
 		&.card-img-overlay-block {
@@ -99,6 +99,11 @@
 	.card-media-wrap, .card-embed-wrap {
 		position: relative;
 		clear: both;
+
+		@include media-breakpoint-up(md){
+			//so images have basic shape while they load
+			min-height: 350px;
+		}
 
 		&.card-media-wrap-video {
 			cursor: pointer;
