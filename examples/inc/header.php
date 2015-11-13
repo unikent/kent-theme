@@ -82,9 +82,12 @@
 				<header>Postgraduate Courses</header>
 				<div class='navbar-toggler'>Menu <span class="kf-chevron-down pull-right"></span></div>
 				<nav class="navbar-menu">
-					<a href="#">How to apply</a>
-					<a href="#">Where am i?</a>
-					<a href="#">Cupcakes</a>
+					<a href="#">Programme search</a>
+					<a href="#">Why Kent?</a>
+					<a href="#">Types of degrees</a>
+					<a href="#">Applying</a>
+					<a href="#">Fees and funding</a>
+					<a href="#">People</a>
 				</nav>
 			</section>
 		</header>
