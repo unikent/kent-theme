@@ -1,0 +1,12 @@
+.impact-statement {
+	font-size:2rem;
+	font-family: $font-family-serif;
+	text-align:center;
+	padding: 2rem 0;
+
+	color: $brand-accent;
+
+	.brand {
+		color: $brand-primary;
+	}
+}
