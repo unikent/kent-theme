@@ -92,9 +92,14 @@
 	    border-top: 1px solid #ccc;
 	}
 
+	// helper
+	&.short-text {
+		padding-bottom:2rem;
+	}
+
 	// if card is an A
 	// @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
-	@at-root a#{&} {
+	@at-root a#{&}, a {
 		&:hover, &:focus {
 			text-decoration: none;
 			opacity: 0.9;
