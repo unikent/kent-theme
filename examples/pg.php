@@ -68,14 +68,14 @@
 				
 				<div class="card-panel-body">
 					<div class="card">
-						<img class="card-img" src="images/promo-1.jpg">
+						<img class="card-img" src="images/promo-world.jpg">
 						<h3 class="card-title">Global Opportunities</h3>
 						
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
 						
 					</div>
 					<div class="card">
-						<img class="card-img" src="images/promo-2.jpg">
+						<img class="card-img" src="images/promo-graduates.jpg">
 						<h3 class="card-title">Scholarships &amp; Funding</h3>
 						
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
