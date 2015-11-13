@@ -131,21 +131,19 @@
 			<div class="card-panel">
 				<div class="card-panel-body">
 					<div class="card">
-						
-
-
 						<a href="#">
-						<img class="card-img" src="images/promo-blog.jpg">
-						<h3 class="card-title">Student Blogs</h3>
+							<img class="card-img" src="images/promo-blog.jpg">
+							<h3 class="card-title">Student Blogs</h3>
+						</a>
 						<p class="card-text">Our students tell it like it is.</p>
-					</a>
+						
 						<ul>
 							<li><a href="#">John Rabbit</a></li>
 							<li><a href="#">Felicity Hogg</a></li>
 						</ul>
 	
 					</div>
-					<div class="card">
+					<a class="card short-text" href=''>
 						
 					
 						<img class="card-img" src="images/promo-visit.jpg">
@@ -154,25 +152,25 @@
 					
 
 
-						<p>&nbsp;</p>
-					</div>
+					
+					</a>
 
 
-					<div class="card">
+					<a class="card" href=''>
 
 						<img class="card-img" src="images/international.jpg">
 						<h3 class="card-title">International students</h3>
 						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
 					
 
-						<p>&nbsp;</p>
-					</div>
-					<div class="card">
+						
+					</a>
+					<a class="card" href=''>
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Kent Union</h3>
 						<p class="card-text">Get involved in the hundreds of societies on campus.</p>
-						<p>&nbsp;</p>
-					</div>
+						
+					</a>
 				</div>
 			</div>
 

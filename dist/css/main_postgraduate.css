@@ -5100,9 +5100,9 @@ h6, .h6 {
   html {
     font-size: 18px; } }
 
-.chevron-link, .global-nav .audience-nav-links a, a.card p:last-of-type {
+.chevron-link, .global-nav .audience-nav-links a, a.card p:last-of-type, a p:last-of-type {
   font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .chevron-link:after, .global-nav .audience-nav-links a:after, a.card p:last-of-type:after {
+  .chevron-link:after, .global-nav .audience-nav-links a:after, a.card p:last-of-type:after, a p:last-of-type:after {
     display: inline-block;
     padding-left: 8px;
     padding-left: 0.5rem;
@@ -5640,7 +5640,10 @@ input:-ms-input-placeholder {
   .card .card-bordered-item {
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc; }
-  a.card:hover, a.card:focus {
+  .card.short-text {
+    padding-bottom: 32px;
+    padding-bottom: 2rem; }
+  a.card:hover, a.card:focus, a:hover, a:focus {
     text-decoration: none;
     opacity: 0.9; }
 
@@ -5888,18 +5891,18 @@ input:-ms-input-placeholder {
         padding-left: 1.5rem; }
   .card.card-overlay .card-footer {
     padding: 0; }
-    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer a.card p:last-of-type, a.card .card.card-overlay .card-footer p:last-of-type {
+    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer a p:last-of-type, a .card.card-overlay .card-footer p:last-of-type {
       display: block;
       padding: 12px 16px;
       padding: 0.75rem 1rem;
       background: #f5f5f5;
       border-bottom: 1px solid #ccc; }
-      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer a.card p:last-of-type:after, a.card .card.card-overlay .card-footer p:last-of-type:after {
+      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer a p:last-of-type:after, a .card.card-overlay .card-footer p:last-of-type:after {
         position: absolute;
         right: 16px;
         right: 1rem; }
       @media (min-width: 48em) {
-        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer a.card p:last-of-type, a.card .card.card-overlay .card-footer p:last-of-type {
+        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer a p:last-of-type, a .card.card-overlay .card-footer p:last-of-type {
           display: table-cell;
           text-align: center;
           float: none;
@@ -5908,7 +5911,7 @@ input:-ms-input-placeholder {
           padding: 0;
           background: none;
           border: none; }
-          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer a.card p:last-of-type:after, a.card .card.card-overlay .card-footer p:last-of-type:after {
+          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer a p:last-of-type:after, a .card.card-overlay .card-footer p:last-of-type:after {
             position: relative;
             right: auto; } }
     @media (min-width: 48em) {
