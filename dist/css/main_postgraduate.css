@@ -5830,7 +5830,8 @@ input:-ms-input-placeholder {
   .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
     font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
   .card.card-overlay .card-img-overlay {
-    top: inherit; }
+    top: inherit;
+    text-decoration: none; }
     .card.card-overlay .card-img-overlay .card-subtitle {
       font-size: 28.8px;
       font-size: 1.8rem; }
