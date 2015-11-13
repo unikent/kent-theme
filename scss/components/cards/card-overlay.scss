@@ -79,6 +79,10 @@
 		.card-subtitle {
 			font-size: 1.5rem;
 		}
+
+		&.card-img-overlay-block {
+			position: relative;
+		}
 	}
 
 	.card-inverse {
@@ -169,6 +173,10 @@
 				left: inherit;
 				right: 5%;
 			}
+		}
+
+		.card-img-overlay.card-img-overlay-block {
+			position: absolute
 		}
 	}
 	@include media-breakpoint-up(lg){
