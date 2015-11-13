@@ -71,7 +71,7 @@
 						<img class="card-img" src="images/promo-world.jpg">
 						<h3 class="card-title">Global Opportunities</h3>
 						
-						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
+						<p class="card-text">Findo out how our programmes can help you launch your career and employability.</p>
 						
 					</div>
 					<div class="card">
@@ -114,12 +114,12 @@
 
 <div class="card card-overlay">
 				<div class="card-body card-inverse">
-					<div class="card-title-wrap card-title-wrap-link pull-right">
+					<div class="card-title-wrap card-title-wrap-link">
 						<h4 class="card-title">Life at Kent</h4>
 						<p class="card-text">We have 6 exceptional Postgraduate locations with UK Campuses close to London and centres in Paris, Brussels Rome and Athens.</p>
 					</div>
 					<div class="card-media-wrap">
-						<img src="http://pantheon.app.www-dev.kent.ac.uk/jt353/theme-project/student-sport.jpg" class="card-img-bottom" alt="Sport" />
+						<img src="images/promo-park-16-9.jpg" class="card-img-bottom" alt="Sport" />
 					
 						<div class="card-img-overlay text-right">
 							<h5 class="card-subtitle">Canterbury</h5>
