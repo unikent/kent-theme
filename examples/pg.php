@@ -67,34 +67,26 @@
 			<div class="card-panel">
 				
 				<div class="card-panel-body">
-					<div class="card">
+					<a class="card" href="#">
 						<img class="card-img" src="images/promo-world.jpg">
 						<h3 class="card-title">Global Opportunities</h3>
-						
-						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
-						
-					</div>
-					<div class="card">
+						<p class="card-text">Findo out how our programmes can help you launch your career and employability.</p>
+					</a>
+					<a class="card" href="#">
 						<img class="card-img" src="images/promo-graduates.jpg">
 						<h3 class="card-title">Scholarships &amp; Funding</h3>
-						
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
-						
-					</div>
-					<div class="card">
+					</a>
+					<a class="card" href="#">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">How to apply</h3>
-						
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
-						
-					</div>
-					<div class="card">
+					</a>
+					<a class="card" href="#">
 						<img class="card-img" src="images/promo-4.jpg">
-						<h3 class="card-title">Visit Us</h3>
-						
-						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
-						
-					</div>
+						<h3 class="card-title">International students</h3>
+						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
+					</a>
 				</div>
 			</div>
 
@@ -114,17 +106,17 @@
 
 <div class="card card-overlay">
 				<div class="card-body card-inverse">
-					<div class="card-title-wrap card-title-wrap-link pull-right">
+					<div class="card-title-wrap card-title-wrap-link">
 						<h4 class="card-title">Life at Kent</h4>
 						<p class="card-text">We have 6 exceptional Postgraduate locations with UK Campuses close to London and centres in Paris, Brussels Rome and Athens.</p>
 					</div>
 					<div class="card-media-wrap">
-						<img src="http://pantheon.app.www-dev.kent.ac.uk/jt353/theme-project/student-sport.jpg" class="card-img-bottom" alt="Sport" />
+						<img src="images/promo-park-16-9.jpg" class="card-img-bottom" alt="Sport" />
 					
-						<div class="card-img-overlay text-right">
+						<a class="card-img-overlay text-right" href="#">
 							<h5 class="card-subtitle">Canterbury</h5>
 							<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
-						</div>
+						</a>
 					</div>
 				</div>
 				<div class="card-footer">
@@ -139,7 +131,7 @@
 			<div class="card-panel">
 				<div class="card-panel-body">
 					<div class="card">
-						<img class="card-img" src="images/blogs.jpg">
+						<img class="card-img" src="images/promo-blog.jpg">
 						<h3 class="card-title">Student Blogs</h3>
 						<p class="card-text">Our students tell it like it is.</p>
 						<ul>
@@ -149,16 +141,22 @@
 	
 					</div>
 					<div class="card">
-						<img class="card-img" src="images/international.jpg">
-						<h3 class="card-title">International</h3>
+						
+					
+						<img class="card-img" src="images/promo-visit.jpg">
+						<h3 class="card-title">Visit Us</h3>
+						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+					
 
-						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
+
 						<p>&nbsp;</p>
 					</div>
+
+
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">Innovation and enterprise</h3>
-						<p class="card-text">We work with partners and businesses locally &amp; intentionally to help push research.</p>
+						<p class="card-text">We work with partners and businesses locally and internationally to develop research.</p>
 						<p>&nbsp;</p>
 					</div>
 					<div class="card">
@@ -187,7 +185,7 @@
 
 						<div class="embed-responsive embed-responsive-16by9">
 							<video controls class="embed-responsive-item">
-								<source src="video/video-postgraduate-overview.mp4">
+								<source src="video/video-research.mp4">
 							</video>
 						</div>
 

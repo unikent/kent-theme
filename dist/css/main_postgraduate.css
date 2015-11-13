@@ -305,10 +305,10 @@ blockquote {
   margin: 0 0 1rem; }
 
 a {
-  color: #05345C;
+  color: #005689;
   text-decoration: none; }
   a:focus, a:hover {
-    color: #010b13;
+    color: #00263d;
     text-decoration: underline; }
   a:focus {
     outline: thin dotted;
@@ -2306,7 +2306,7 @@ fieldset[disabled] a {
 
 .btn-link {
   font-weight: normal;
-  color: #05345C;
+  color: #005689;
   border-radius: 0; }
   .btn-link, .btn-link:active, .btn-link.active, .btn-link:disabled,
   fieldset[disabled] .btn-link {
@@ -2316,7 +2316,7 @@ fieldset[disabled] a {
   .btn-link:hover {
     border-color: transparent; }
   .btn-link:focus, .btn-link:hover {
-    color: #010b13;
+    color: #00263d;
     text-decoration: underline;
     background-color: transparent; }
   .btn-link:disabled:focus, .btn-link:disabled:hover,
@@ -3339,7 +3339,7 @@ input[type="button"].btn-block {
       padding: 0.5rem 0.75rem;
       margin-left: -1px;
       line-height: 1.5;
-      color: #05345C;
+      color: #005689;
       text-decoration: none;
       background-color: #fff;
       border: 1px solid #ddd; }
@@ -3355,7 +3355,7 @@ input[type="button"].btn-block {
   .pagination > li > a:focus, .pagination > li > a:hover,
   .pagination > li > span:focus,
   .pagination > li > span:hover {
-    color: #010b13;
+    color: #00263d;
     background-color: #eceeef;
     border-color: #ddd; }
   .pagination > .active > a, .pagination > .active > a:focus, .pagination > .active > a:hover,
@@ -5102,9 +5102,9 @@ h6, .h6 {
   html {
     font-size: 18px; } }
 
-.chevron-link, .global-nav .audience-nav-links a {
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; }
-  .chevron-link:after, .global-nav .audience-nav-links a:after {
+.chevron-link, .global-nav .audience-nav-links a, a.card p:last-of-type {
+  font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .chevron-link:after, .global-nav .audience-nav-links a:after, a.card p:last-of-type:after {
     display: inline-block;
     padding-left: 8px;
     padding-left: 0.5rem;
@@ -5288,6 +5288,7 @@ input:-ms-input-placeholder {
         border-bottom: solid 1px #eee;
         padding-left: 16px;
         padding-left: 1rem;
+        color: #05345C;
         text-transform: uppercase;
         font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
         .global-nav .global-nav-links .global-nav-link a:hover, .global-nav .global-nav-links .global-nav-link a:active, .global-nav .global-nav-links .global-nav-link a:focus {
@@ -5319,7 +5320,8 @@ input:-ms-input-placeholder {
             font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
             text-transform: none;
             background: #f7f2e1;
-            border-bottom: solid 1px #ddd; }
+            border-bottom: solid 1px #ddd;
+            color: #05345C; }
             .global-nav .global-nav-links.in .global-nav-link.in nav a .more {
               border-left: solid 1px #ddd; }
             .global-nav .global-nav-links.in .global-nav-link.in nav a .global-nav-link-desc {
@@ -5560,6 +5562,7 @@ input:-ms-input-placeholder {
         display: inline-block; } }
 
 .card {
+  display: block;
   border: none;
   margin-bottom: 16px;
   margin-bottom: 1rem; }
@@ -5582,6 +5585,8 @@ input:-ms-input-placeholder {
     font-size: 0.85rem;
     margin-bottom: 4.8px;
     margin-bottom: 0.3rem; }
+  .card .card-text {
+    color: #171717; }
   .card .card-img:first-child,
   .card .card-img-top:first-child {
     margin-bottom: 12px;
@@ -5637,6 +5642,9 @@ input:-ms-input-placeholder {
   .card .card-bordered-item {
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc; }
+  a.card:hover, a.card:focus {
+    text-decoration: none;
+    opacity: 0.9; }
 
 .card-panel {
   padding: 16px 8px 8px;
@@ -5825,10 +5833,23 @@ input:-ms-input-placeholder {
   .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
     font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
   .card.card-overlay .card-img-overlay {
-    top: inherit; }
+    top: inherit;
+    text-decoration: none; }
     .card.card-overlay .card-img-overlay .card-subtitle {
       font-size: 28.8px;
       font-size: 1.8rem; }
+      @media (min-width: 62em) {
+        .card.card-overlay .card-img-overlay .card-subtitle {
+          font-size: 2.4rem; } }
+      @media (min-width: 75em) {
+        .card.card-overlay .card-img-overlay .card-subtitle {
+          font-size: 2.8rem; } }
+    @media (min-width: 48em) {
+      .card.card-overlay .card-img-overlay .card-text {
+        font-size: 1.3rem; } }
+    @media (min-width: 62em) {
+      .card.card-overlay .card-img-overlay .card-text {
+        font-size: 1.5rem; } }
     .card.card-overlay .card-img-overlay.card-img-overlay-block {
       position: relative; }
     @media (min-width: 48em) {
@@ -5869,18 +5890,18 @@ input:-ms-input-placeholder {
         padding-left: 1.5rem; }
   .card.card-overlay .card-footer {
     padding: 0; }
-    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a {
+    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer a.card p:last-of-type, a.card .card.card-overlay .card-footer p:last-of-type {
       display: block;
       padding: 12px 16px;
       padding: 0.75rem 1rem;
       background: #f5f5f5;
       border-bottom: 1px solid #ccc; }
-      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after {
+      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer a.card p:last-of-type:after, a.card .card.card-overlay .card-footer p:last-of-type:after {
         position: absolute;
         right: 16px;
         right: 1rem; }
       @media (min-width: 48em) {
-        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a {
+        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer a.card p:last-of-type, a.card .card.card-overlay .card-footer p:last-of-type {
           display: table-cell;
           text-align: center;
           float: none;
@@ -5889,7 +5910,7 @@ input:-ms-input-placeholder {
           padding: 0;
           background: none;
           border: none; }
-          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after {
+          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer a.card p:last-of-type:after, a.card .card.card-overlay .card-footer p:last-of-type:after {
             position: relative;
             right: auto; } }
     @media (min-width: 48em) {
@@ -6046,10 +6067,12 @@ blockquote {
         float: left;
         margin-right: 2rem;
         margin-top: 1rem;
-        margin-bottom: 1rem; } }
+        margin-bottom: 2.5rem; } }
   blockquote footer {
     font-size: 14.4px;
     font-size: 0.9rem; }
+    blockquote footer:before {
+      display: none; }
     blockquote footer cite {
       font-weight: bold;
       color: #171717;
