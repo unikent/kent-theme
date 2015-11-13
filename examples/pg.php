@@ -168,7 +168,7 @@
 						<p>&nbsp;</p>
 					</div>
 					<div class="card">
-						<img class="card-img" src="images/promo-4.jpg">
+						<img class="card-img" src="images/promo-innovation.jpg">
 						<h3 class="card-title">Kent Union</h3>
 						<p class="card-text">Get involved in the hundreds of societies on campus.</p>
 						<p>&nbsp;</p>
