@@ -58,30 +58,30 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-1.jpg">
 						<h3 class="card-title">Global Opportunities</h3>
-						<p class="card-subtitle">1st September 2015</p>
+						
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
-						<a href="#" class="card-badge kf-comment">5</a>
+						
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-2.jpg">
 						<h3 class="card-title">Scholarships &amp; Funding</h3>
-						<p class="card-subtitle">28th March 2015</p>
+						
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
-						<a href="#" class="card-badge kf-comment">7</a>
+						
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">How to apply</h3>
-						<p class="card-subtitle">5th November 2015</p>
+						
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
-						<a href="#" class="card-badge kf-comment">1</a>
+						
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Visit Us</h3>
-						<p class="card-subtitle">17th May 2015</p>
+						
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
-						<a href="#" class="card-badge kf-comment">23</a>
+						
 					</div>
 				</div>
 			</div>
@@ -93,6 +93,7 @@
 					<cite>
 						Dr David Hume,
 						<span>PhD. Particle physics</span>
+						<span><a href="#" class="chevron-link">Learn more about our community</a></span>
 					</cite>
 				</footer>
 			</blockquote>
@@ -127,27 +128,30 @@
 					<div class="card">
 						<img class="card-img" src="images/blogs.jpg">
 						<h3 class="card-title">Student Blogs</h3>
-
-						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
+						<p class="card-text">Our students tell it like it is.</p>
+						<ul>
+							<li><a href="#">John Rabbit</a></li>
+							<li><a href="#">Felicity Hogg</a></li>
+						</ul>
 	
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/international.jpg">
 						<h3 class="card-title">International</h3>
 
-						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
 
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">Innovation and enterprise</h3>
-						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+						<p class="card-text">We work with partners and businesses locally &amp; intentionally to help push research.</p>
 
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Kent Union</h3>
-						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+						<p class="card-text">Get involved in the hundreds of societies on campus.</p>
 	
 					</div>
 				</div>

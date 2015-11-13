@@ -61,17 +61,17 @@
 				<div class="global-nav-search">
 
 					<form >
-					  <div class="form-group">
-					    <label for="search" class="sr-only">Search</label>
-					    	<div class="input-group input-group-lg">
-					    		<input type="search" class="form-control" id="search" placeholder="Search by course, department. keyword... ">
-					    		<span class="input-group-btn">
+						<div class="form-group">
+							<label for="search" class="sr-only">Search</label>
+							<div class="input-group input-group-lg">
+								<input type="search" class="form-control" id="search" placeholder="Search by course, department. keyword... ">
+								<span class="input-group-btn">
 									<button type="submit" class="btn btn-accent btn-icon"><span class='kf-fw kf-search'></span></button>
-					    		</span>
-					    	</div>
-					  </div>
+								</span>
+							</div>
+						</div>
 
-					  <span class='close-search pull-right'>Close search</span>
+						<span class='close-search pull-right'>Close search</span>
 					</form>
 
 				</div>
