@@ -18,17 +18,16 @@
 					<div class="card-media-wrap">
 						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
 							<video autoplay loop class="embed-responsive-item">
-								<source src="video/research2.mp4">
+								<source src="video/video-research-student.mp4">
 							</video>
 						</div>
 					</div>
 				</div>
 			</div>
 
-
-			<section class="container">
-			Ranked 17th for Research Intencity
-			</section>
+			<aside class="container">
+				<p class="impact-statement">Ranked 17th for Research Intencity</p>
+			</aside>
 
 			<div class="card card-overlay">
 				<div class="card-body card-inverse">
@@ -89,7 +88,7 @@
 
 			<blockquote>
 				<img class="img-circle" src="images/profile-academic.jpg"> 
-				<p>"It's the academic community that creates a supportive enviroment to help you excel'"</p>
+				<p>It's the academic community that creates a supportive enviroment to help you excel</p>
 				<footer>
 					<cite>
 						Dr David Hume,
@@ -103,56 +102,53 @@
 <div class="card card-overlay">
 				<div class="card-body card-inverse">
 					<div class="card-title-wrap card-title-wrap-link pull-right">
-						<h4 class="card-title">A video loop</h4>
-						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+						<h4 class="card-title">Life at Kent</h4>
+						<p class="card-text">We have 6 exceptional Postgraduate locations with UK Campuses close to London and centres in Paris, Brussels Rome and Athens.</p>
 					</div>
 					<div class="card-media-wrap">
-						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
-							<video autoplay loop class="embed-responsive-item">
-								<source src="video/research2.mp4">
-							</video>
-						</div>
+						<img src="http://pantheon.app.www-dev.kent.ac.uk/jt353/theme-project/student-sport.jpg" alt="Sport" />
 					</div>
-					<div class="card-img-overlay">
-						<h5 class="card-subtitle">A sub title</h5>
-						<p class="card-text">This content is shorter.</p>
+					<div class="card-img-overlay text-right">
+						<h5 class="card-subtitle">Canterbury</h5>
+						<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
 					</div>
+				</div>
+				<div class="card-footer">
+					<a href="#" class="chevron-link">The UKs European University/a>
+					<a href="#" class="chevron-link">Campus life</a>
+					<a href="#" class="chevron-link">Accommodation &amp; Facilities</a>
+					<a href="#" class="chevron-link">Graduate school</a>
 				</div>
 			</div>
 
 
 	<div class="card-panel">
-				<div class="card-panel-header">
-					<h2 class="card-panel-title">Standard Card Panel</h2>
-				</div>
 				<div class="card-panel-body">
 					<div class="card">
-						<img class="card-img" src="images/promo-1.jpg">
-						<h3 class="card-title">Academic excellence</h3>
-						<p class="card-subtitle">1st September 2015</p>
+						<img class="card-img" src="images/blogs.jpg">
+						<h3 class="card-title">Student Blogs</h3>
+
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
-						<a href="#" class="card-badge kf-comment">5</a>
+	
 					</div>
 					<div class="card">
-						<img class="card-img" src="images/promo-2.jpg">
-						<h3 class="card-title">Undergraduates</h3>
-						<p class="card-subtitle">28th March 2015</p>
+						<img class="card-img" src="images/international.jpg">
+						<h3 class="card-title">International</h3>
+
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
-						<a href="#" class="card-badge kf-comment">7</a>
+
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
-						<h3 class="card-title">Postgraduates</h3>
-						<p class="card-subtitle">5th November 2015</p>
+						<h3 class="card-title">Innovation and enterprise</h3>
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
-						<a href="#" class="card-badge kf-comment">1</a>
+
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-4.jpg">
-						<h3 class="card-title">Visit Kent</h3>
-						<p class="card-subtitle">17th May 2015</p>
+						<h3 class="card-title">Kent Union</h3>
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
-						<a href="#" class="card-badge kf-comment">23</a>
+	
 					</div>
 				</div>
 			</div>

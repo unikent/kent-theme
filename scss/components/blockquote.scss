@@ -26,6 +26,21 @@ blockquote {
 			font-size: 1.9rem;
 		}
 	}
+	& > p:first-of-type{
+		&:before {
+			font-size:1.3em;
+			content: '\201C';
+			line-height:1rem;
+		}
+	}
+	& > p:last-of-type{
+		&:after {
+			font-size:1.3em;
+			content: '\201D';
+			line-height:1rem;
+		}
+	}
+
 	& > img {
 		height: 10rem;
 		margin: 0 auto;

@@ -513,7 +513,7 @@
 					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
 						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
 							<video autoplay loop class="embed-responsive-item">
-								<source src="video/research2.mp4">
+								<source src="http://pantheon.app.www-dev.kent.ac.uk/jt353/theme-project/video-research-student.mp4">
 							</video>
 						</div>
 						<div class="card-img-overlay">

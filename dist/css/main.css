@@ -5545,7 +5545,7 @@ input:-ms-input-placeholder {
     z-index: 1;
     position: relative; }
     .departmental-nav header {
-      font-size: 1.8rem; }
+      font-size: 2rem; }
     .departmental-nav header, .departmental-nav nav {
       margin: 0 2rem;
       padding-left: 1rem; }
@@ -5990,6 +5990,16 @@ blockquote {
     @media (min-width: 62em) {
       blockquote > p {
         font-size: 1.9rem; } }
+  blockquote > p:first-of-type:before {
+    font-size: 1.3em;
+    content: '\201C';
+    line-height: 16px;
+    line-height: 1rem; }
+  blockquote > p:last-of-type:after {
+    font-size: 1.3em;
+    content: '\201D';
+    line-height: 16px;
+    line-height: 1rem; }
   blockquote > img {
     height: 160px;
     height: 10rem;
@@ -6014,6 +6024,17 @@ blockquote {
         font-size: 1rem; }
         blockquote footer cite span {
           display: block; } }
+
+.impact-statement {
+  font-size: 32px;
+  font-size: 2rem;
+  font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+  text-align: center;
+  padding: 32px 0;
+  padding: 2rem 0;
+  color: #937227; }
+  .impact-statement .brand {
+    color: #05345C; }
 
 .global-footer {
   background: #434749;
