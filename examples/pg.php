@@ -83,10 +83,10 @@
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 					</a>
 					<a class="card" href="#">
-						<img class="card-img" src="images/promo-4.jpg">
-						<h3 class="card-title">International students</h3>
-						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
-					</a>
+						<img class="card-img" src="images/promo-3.jpg">
+						<h3 class="card-title">Innovation and enterprise</h3>
+						<p class="card-text">We work with partners and businesses locally and internationally to develop research.</p>
+						</a>
 				</div>
 			</div>
 
@@ -131,16 +131,19 @@
 			<div class="card-panel">
 				<div class="card-panel-body">
 					<div class="card">
-						<img class="card-img" src="images/promo-blog.jpg">
-						<h3 class="card-title">Student Blogs</h3>
+						<a href="#">
+							<img class="card-img" src="images/promo-blog.jpg">
+							<h3 class="card-title">Student Blogs</h3>
+						</a>
 						<p class="card-text">Our students tell it like it is.</p>
+						
 						<ul>
 							<li><a href="#">John Rabbit</a></li>
 							<li><a href="#">Felicity Hogg</a></li>
 						</ul>
 	
 					</div>
-					<div class="card">
+					<a class="card short-text" href=''>
 						
 					
 						<img class="card-img" src="images/promo-visit.jpg">
@@ -149,22 +152,25 @@
 					
 
 
-						<p>&nbsp;</p>
-					</div>
+					
+					</a>
 
 
-					<div class="card">
-						<img class="card-img" src="images/promo-3.jpg">
-						<h3 class="card-title">Innovation and enterprise</h3>
-						<p class="card-text">We work with partners and businesses locally and internationally to develop research.</p>
-						<p>&nbsp;</p>
-					</div>
-					<div class="card">
+					<a class="card" href=''>
+
+						<img class="card-img" src="images/international.jpg">
+						<h3 class="card-title">International students</h3>
+						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
+					
+
+						
+					</a>
+					<a class="card" href=''>
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Kent Union</h3>
 						<p class="card-text">Get involved in the hundreds of societies on campus.</p>
-						<p>&nbsp;</p>
-					</div>
+						
+					</a>
 				</div>
 			</div>
 
@@ -182,6 +188,7 @@
 						</button>
 					</div>
 
+<<<<<<< HEAD
 					<div class="embed-responsive embed-responsive-16by9 ">
 						<video controls class="embed-responsive-item">
 							<source src="video/video-research.mp4">
@@ -189,6 +196,12 @@
 						<div class="embed-responsive-item-overlay">
 							<span class="video-transcript"><small><a href="#">Download transcript</a></small></span>
 						</div>
+=======
+						<div class="embed-responsive embed-responsive-16by9">
+							<video controls class="embed-responsive-item">
+								<source src="video/video-research-student.mp4">
+							</video>
+>>>>>>> b4cc6bb9f15f74f64b916a883dd677a6e3c7e18b
 						</div>
 					</div>
 					
