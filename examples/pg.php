@@ -83,10 +83,10 @@
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 					</a>
 					<a class="card" href="#">
-						<img class="card-img" src="images/promo-4.jpg">
-						<h3 class="card-title">International students</h3>
-						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
-					</a>
+						<img class="card-img" src="images/promo-3.jpg">
+						<h3 class="card-title">Innovation and enterprise</h3>
+						<p class="card-text">We work with partners and businesses locally and internationally to develop research.</p>
+						</a>
 				</div>
 			</div>
 
@@ -131,9 +131,14 @@
 			<div class="card-panel">
 				<div class="card-panel-body">
 					<div class="card">
+						
+
+
+						<a href="#">
 						<img class="card-img" src="images/promo-blog.jpg">
 						<h3 class="card-title">Student Blogs</h3>
 						<p class="card-text">Our students tell it like it is.</p>
+					</a>
 						<ul>
 							<li><a href="#">John Rabbit</a></li>
 							<li><a href="#">Felicity Hogg</a></li>
@@ -154,9 +159,12 @@
 
 
 					<div class="card">
-						<img class="card-img" src="images/promo-3.jpg">
-						<h3 class="card-title">Innovation and enterprise</h3>
-						<p class="card-text">We work with partners and businesses locally and internationally to develop research.</p>
+
+						<img class="card-img" src="images/international.jpg">
+						<h3 class="card-title">International students</h3>
+						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
+					
+
 						<p>&nbsp;</p>
 					</div>
 					<div class="card">
@@ -182,7 +190,7 @@
 
 						<div class="embed-responsive embed-responsive-16by9">
 							<video controls class="embed-responsive-item">
-								<source src="video/video-research.mp4">
+								<source src="video/video-research-student.mp4">
 							</video>
 						</div>
 
