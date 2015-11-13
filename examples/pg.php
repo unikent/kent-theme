@@ -16,22 +16,18 @@
 			<div class="card card-overlay header-card-overlay">
 				<div class="card-body">
 					<div class="card-media-wrap">
-						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
-							<video autoplay loop class="embed-responsive-item">
-								<source src="video/video-laboratory-assistant.mp4">
-							</video>
-						</div>
+						<img src="images/engineering-student-16-9.jpg" class="card-img-bottom">
 					</div>
 				</div>
 			</div>
 
 			<aside class="container">
-				<p class="impact-statement">Our programmes are informed by a commitment to reserach excellence. We are ranked 17th in the UK for Research Intensity.</p>
+				<p class="impact-statement">Our programmes are informed by a commitment to research excellence. We are ranked 17th in the UK for Research Intensity.</p>
 			</aside>
 
 			<div class="card card-overlay">
 				<div class="card-x§body card-inverse">
-					<div class="card-title-wrap card-title-wrap-link">
+					<div class="card-title-wrap card-title-wrap-link pull-right">
 						<h4 class="card-title">World Leading research</h4>
 						<p class="card-text">Kent's excellent research performance positions us as one of UK's leading universities. Our 19 academic schools engage in research of international and world class standing.</p>
 					</div>

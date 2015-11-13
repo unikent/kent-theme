@@ -32,21 +32,21 @@
 							<nav>
 								<a href="#">
 									Inspiring teaching
-									<span class='global-nav-link-desc'>Some text about our amazing research</span>
+									<span class='global-nav-link-desc'>Excellent teaching with individual attention</span>
 									<span class='more kf-chevron-right'></span>
 								</a>
-								<a href="#">Undergraduate <span class='global-nav-link-desc'>Some text about our REF 2014 results</span><span class='more kf-chevron-right'></span></a>
-								<a href="#">Postgraduate <span class='global-nav-link-desc'>Look at some of our leading academics</span><span class='more kf-chevron-right'></span></a>
-								<a href="#">International <span class='global-nav-link-desc'>Some text about our amazing research</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Undergraduate <span class='global-nav-link-desc'>Courses to prepare you for a successful future</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Postgraduate <span class='global-nav-link-desc'>Programmes supported by a stimulating support culture</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">International <span class='global-nav-link-desc'>World-wide links in a supportive, cosmopolitan community</span><span class='more kf-chevron-right'></span></a>
 							</nav>
 						</div>
 						<div class="global-nav-link">
 							<a href="#">Explore <span class='more kf-chevron-down'></span></a>
 							<nav>
-								<a href="#">About <span class='global-nav-link-desc'>Some text about our amazing research</span><span class='more kf-chevron-right'></span></a>
-								<a href="#">Our campus <span class='global-nav-link-desc'>Some text about our amazing research</span><span class='more kf-chevron-right'></span></a>
-								<a href="#">Study abroud <span class='global-nav-link-desc'>Some text about our amazing research</span><span class='more kf-chevron-right'></span></a>
-								<a href="#">Test<span class='global-nav-link-desc'>Some text about our amazing research</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">About <span class='global-nav-link-desc'>Top 16 UK University</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Inspirint student experience <span class='global-nav-link-desc'>3rd for studen satisfaction</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Superb locations <span class='global-nav-link-desc'>Close to London with European centres. Come visit us.</span><span class='more kf-chevron-right'></span></a>
+								<a href="#">Accommodation and facilities<span class='global-nav-link-desc'>Living and learning on campus</span><span class='more kf-chevron-right'></span></a>
 							</nav>
 						</div>
 					</nav>
