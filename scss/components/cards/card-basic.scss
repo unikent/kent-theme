@@ -11,6 +11,7 @@
 		display: block;
 		position: relative;
 	}
+
 	.card-footer{
 		background: transparent;
 	}
@@ -26,6 +27,10 @@
 		font-family: $font-family-sans-serif;
 		font-size: 0.85rem;
 		margin-bottom: 0.3rem;
+	}
+
+	.card-text {
+		color: $body-color;
 	}
 
 	.card-img,
@@ -85,5 +90,14 @@
 	.card-bordered-item {
 		border-bottom: 1px solid #ccc;
 	    border-top: 1px solid #ccc;
+	}
+
+	// if card is an A
+	// @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
+	@at-root a#{&} {
+		&:hover, &:focus {
+			text-decoration: none;
+			opacity: 0.9;
+		}
 	}
 }
