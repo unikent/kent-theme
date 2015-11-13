@@ -170,7 +170,7 @@
 
 						<div class="embed-responsive embed-responsive-16by9">
 							<video controls class="embed-responsive-item">
-								<source src="video/research2.mp4">
+								<source src="video/video-postgraduate-overview.mp4">
 							</video>
 						</div>
 						
