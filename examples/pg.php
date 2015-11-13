@@ -113,10 +113,10 @@
 					<div class="card-media-wrap">
 						<img src="images/promo-park-16-9.jpg" class="card-img-bottom" alt="Sport" />
 					
-						<div class="card-img-overlay text-right">
+						<a class="card-img-overlay text-right" href="#">
 							<h5 class="card-subtitle">Canterbury</h5>
 							<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
-						</div>
+						</a>
 					</div>
 				</div>
 				<div class="card-footer">
