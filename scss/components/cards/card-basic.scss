@@ -1,5 +1,5 @@
-.card{
-
+.card {
+	display:block;
 	border: none;
 	margin-bottom:1rem;
 	
@@ -98,6 +98,9 @@
 		&:hover, &:focus {
 			text-decoration: none;
 			opacity: 0.9;
+		}
+		p:last-of-type {
+			@extend .chevron-link;
 		}
 	}
 }
