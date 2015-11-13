@@ -84,8 +84,8 @@
 					</a>
 					<a class="card" href="#">
 						<img class="card-img" src="images/promo-4.jpg">
-						<h3 class="card-title">Visit Us</h3>
-						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+						<h3 class="card-title">International students</h3>
+						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
 					</a>
 				</div>
 			</div>
@@ -141,16 +141,22 @@
 	
 					</div>
 					<div class="card">
-						<img class="card-img" src="images/international.jpg">
-						<h3 class="card-title">International</h3>
+						
+					
+						<img class="card-img" src="images/promo-visit.jpg">
+						<h3 class="card-title">Visit Us</h3>
+						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+					
 
-						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
+
 						<p>&nbsp;</p>
 					</div>
+
+
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">Innovation and enterprise</h3>
-						<p class="card-text">We work with partners and businesses locally &amp; intentionally to help push research.</p>
+						<p class="card-text">We work with partners and businesses locally and internationally to develop research.</p>
 						<p>&nbsp;</p>
 					</div>
 					<div class="card">
@@ -176,7 +182,7 @@
 
 						<div class="embed-responsive embed-responsive-16by9">
 							<video controls class="embed-responsive-item">
-								<source src="video/video-postgraduate-overview.mp4">
+								<source src="video/video-research.mp4">
 							</video>
 						</div>
 
