@@ -5827,6 +5827,12 @@ input:-ms-input-placeholder {
     .card.card-overlay .card-img-overlay .card-subtitle {
       font-size: 28.8px;
       font-size: 1.8rem; }
+      @media (min-width: 62em) {
+        .card.card-overlay .card-img-overlay .card-subtitle {
+          font-size: 2.4rem; } }
+      @media (min-width: 75em) {
+        .card.card-overlay .card-img-overlay .card-subtitle {
+          font-size: 2.8rem; } }
     .card.card-overlay .card-img-overlay.card-img-overlay-block {
       position: relative; }
     @media (min-width: 48em) {
