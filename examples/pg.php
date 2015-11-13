@@ -131,7 +131,7 @@
 			<div class="card-panel">
 				<div class="card-panel-body">
 					<div class="card">
-						<img class="card-img" src="images/blogs.jpg">
+						<img class="card-img" src="images/promo-blog.jpg">
 						<h3 class="card-title">Student Blogs</h3>
 						<p class="card-text">Our students tell it like it is.</p>
 						<ul>
