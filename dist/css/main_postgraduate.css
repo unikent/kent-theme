@@ -5972,7 +5972,8 @@ input:-ms-input-placeholder {
       color: #FFF;
       opacity: 0.5;
       font-size: 32px;
-      font-size: 2rem; }
+      font-size: 2rem;
+      z-index: 1; }
 
 blockquote {
   border-left: 0;

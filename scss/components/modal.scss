@@ -13,7 +13,7 @@
 			&.modal-content-transparent{
 				background-color: transparent;
 			}
-			
+
 			.close {
 				position: absolute;
 				right: 2rem;
@@ -22,6 +22,7 @@
 				color: #FFF;
 				opacity: 0.5;
 				font-size: 2rem;
+				z-index: 1;
 			}
 		}
 	}
