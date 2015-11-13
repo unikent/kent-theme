@@ -5992,7 +5992,8 @@ blockquote {
   padding-top: 0; }
   @media (min-width: 62em) {
     blockquote {
-      padding: 3rem 5rem; } }
+      padding: 3rem 5rem;
+      padding-bottom: 5rem; } }
   blockquote > p {
     padding: 16px 0;
     padding: 1rem 0;

@@ -9,6 +9,8 @@ blockquote {
 
 	@include media-breakpoint-up(lg) {
 		padding:3rem 5rem; 
+		// asymetric "/
+		padding-bottom:5rem;
 	}
 
 	& > p {
