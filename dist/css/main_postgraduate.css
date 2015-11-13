@@ -5558,7 +5558,9 @@ input:-ms-input-placeholder {
         display: inline-block; } }
 
 .card {
-  border: none; }
+  border: none;
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
   .card:last-child {
     margin-bottom: 0; }
   .card .card-body {
@@ -5637,6 +5639,8 @@ input:-ms-input-placeholder {
 .card-panel {
   padding: 16px 8px 8px;
   padding: 1rem 0.5rem 0.5rem;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
   overflow: hidden; }
   @media (min-width: 34em) {
     .card-panel {
@@ -5765,8 +5769,8 @@ input:-ms-input-placeholder {
         margin-left: 1rem; }
 
 .card.card-overlay {
-  margin-top: 25.6px;
-  margin-top: 1.6rem;
+  margin-top: 41.6px;
+  margin-top: 2.6rem;
   padding-bottom: 16px;
   padding-bottom: 1rem; }
   .card.card-overlay .card-img-bottom {
@@ -5988,7 +5992,7 @@ blockquote {
   padding-top: 0; }
   @media (min-width: 62em) {
     blockquote {
-      padding: 2rem 5rem; } }
+      padding: 3rem 5rem; } }
   blockquote > p {
     padding: 16px 0;
     padding: 1rem 0;

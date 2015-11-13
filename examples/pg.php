@@ -136,7 +136,7 @@
 			</div>
 
 
-	<div class="card-panel">
+			<div class="card-panel">
 				<div class="card-panel-body">
 					<div class="card">
 						<img class="card-img" src="images/blogs.jpg">
@@ -153,19 +153,19 @@
 						<h3 class="card-title">International</h3>
 
 						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
-
+						<p>&nbsp;</p>
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">Innovation and enterprise</h3>
 						<p class="card-text">We work with partners and businesses locally &amp; intentionally to help push research.</p>
-
+						<p>&nbsp;</p>
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Kent Union</h3>
 						<p class="card-text">Get involved in the hundreds of societies on campus.</p>
-	
+						<p>&nbsp;</p>
 					</div>
 				</div>
 			</div>
