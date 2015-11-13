@@ -82,6 +82,16 @@
 		&.card-img-overlay-block {
 			position: relative;
 		}
+
+
+		@include media-breakpoint-up(md){
+			
+			padding-right: 5%;
+			padding-left: 5%;
+
+		}
+
+
 	}
 
 	.card-inverse {
@@ -184,8 +194,8 @@
 				position: absolute;
 			}
 			.input-group {
-				margin-left: 20%;
-				margin-right: 20%;
+				margin-left: 15%;
+				margin-right: 15%;
 			}
 		}
 	}
