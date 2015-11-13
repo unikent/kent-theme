@@ -33,12 +33,14 @@
 					</div>
 					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
 						<img class="card-img-bottom" src="images/students.jpg">
+
+						<div class="card-img-overlay text-right">
+							<h5 class="card-subtitle">Professor Fox</h5>
+							<p class="card-text">PHD Physics.</p>
+						</div>
 					</div>
 					
-					<div class="card-img-overlay text-right">
-						<h5 class="card-subtitle">Professor Fox</h5>
-						<p class="card-text">PHD Physics.</p>
-					</div>
+					
 				</div>
 				<div class="card-footer">
 					<a href="#" class="chevron-link">Taught Programmes</a>
@@ -104,14 +106,15 @@
 					</div>
 					<div class="card-media-wrap">
 						<img src="http://pantheon.app.www-dev.kent.ac.uk/jt353/theme-project/student-sport.jpg" alt="Sport" />
-					</div>
-					<div class="card-img-overlay text-right">
-						<h5 class="card-subtitle">Canterbury</h5>
-						<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
+					
+						<div class="card-img-overlay text-right">
+							<h5 class="card-subtitle">Canterbury</h5>
+							<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
+						</div>
 					</div>
 				</div>
 				<div class="card-footer">
-					<a href="#" class="chevron-link">The UKs European University/a>
+					<a href="#" class="chevron-link">The UKs European University</a>
 					<a href="#" class="chevron-link">Campus life</a>
 					<a href="#" class="chevron-link">Accommodation &amp; Facilities</a>
 					<a href="#" class="chevron-link">Graduate school</a>

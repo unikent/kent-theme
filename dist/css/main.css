@@ -5766,7 +5766,9 @@ input:-ms-input-placeholder {
 
 .card.card-overlay {
   margin-top: 25.6px;
-  margin-top: 1.6rem; }
+  margin-top: 1.6rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem; }
   .card.card-overlay .card-img-bottom {
     width: 100%; }
   .card.card-overlay .card-title-wrap {
@@ -6004,9 +6006,11 @@ blockquote {
     display: block; }
     @media (min-width: 48em) {
       blockquote > img {
-        height: 15rem;
+        height: 12rem;
         float: left;
-        margin-right: 2rem; } }
+        margin-right: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem; } }
   blockquote footer {
     font-size: 14.4px;
     font-size: 0.9rem; }
