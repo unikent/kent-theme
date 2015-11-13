@@ -78,6 +78,10 @@
 		.card-subtitle {
 			font-size: 1.8rem;
 		}
+
+		&.card-img-overlay-block {
+			position: relative;
+		}
 	}
 
 	.card-inverse {
@@ -167,6 +171,16 @@
 			&.pull-right{
 				left: inherit;
 				right: 5%;
+			}
+		}
+
+		.card-img-overlay {
+			&.card-img-overlay-block {
+				position: absolute;
+			}
+			.input-group {
+				margin-left: 20%;
+				margin-right: 20%;
 			}
 		}
 	}

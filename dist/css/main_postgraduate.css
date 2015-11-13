@@ -5823,6 +5823,8 @@ input:-ms-input-placeholder {
     .card.card-overlay .card-img-overlay .card-subtitle {
       font-size: 28.8px;
       font-size: 1.8rem; }
+    .card.card-overlay .card-img-overlay.card-img-overlay-block {
+      position: relative; }
   .card.card-overlay .card-inverse .card-img-overlay {
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
     .card.card-overlay .card-inverse .card-img-overlay .card-text {
@@ -5893,7 +5895,12 @@ input:-ms-input-placeholder {
         position: absolute; }
       .card.card-overlay .card-title-wrap.pull-right {
         left: inherit;
-        right: 5%; } }
+        right: 5%; }
+    .card.card-overlay .card-img-overlay.card-img-overlay-block {
+      position: absolute; }
+    .card.card-overlay .card-img-overlay .input-group {
+      margin-left: 20%;
+      margin-right: 20%; } }
   @media (min-width: 62em) {
     .card.card-overlay .card-media-wrap {
       max-height: 33rem;

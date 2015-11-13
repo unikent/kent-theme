@@ -32,11 +32,11 @@
 						<p class="card-text">Kent's excellent research performance positions us as one of UK's leading universities. Our 19 academic schools engage in research of international and world class standing.</p>
 					</div>
 					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
-						<img class="card-img-bottom" src="images/students.jpg">
+						<img class="card-img-bottom" src="images/feature-professor-2-1.jpg">
 
 						<div class="card-img-overlay text-right">
-							<h5 class="card-subtitle">Professor Fox</h5>
-							<p class="card-text">PHD Physics.</p>
+							<h5 class="card-subtitle">Prof. David Welch</h5>
+							<p class="card-text">Professor of Modern History</p>
 						</div>
 					</div>
 					
