@@ -470,6 +470,32 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="card card-overlay">
+				<div class="card-title-wrap card-title-wrap-link pull-right">
+					<h4 class="card-title">A search box</h4>
+					<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+				</div>
+				<div class="card-media-wrap">
+					<img class="card-img-bottom" src="images/students.jpg">
+				</div>
+				<div class="card-img-overlay card-img-overlay-block">
+					<form >
+						<div class="form-group">
+							<label for="search" class="sr-only">Search</label>
+							<div class="input-group input-group-lg">
+								<input type="search" class="form-control" id="cardCearch" placeholder="Search by course, department. keyword... ">
+								<span class="input-group-btn">
+									<button type="submit" class="btn btn-accent btn-icon"><span class='kf-fw kf-search'></span></button>
+								</span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+
+
 			<section class="container">
 				<p>&nbsp;</p>
 				<h1>And because we can!</h1>
@@ -483,29 +509,30 @@
 						<h4 class="card-title">Goodbye</h4>
 						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div>
-					
 
-					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">>
+					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
 						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
 							<video autoplay loop class="embed-responsive-item">
 								<source src="video/research2.mp4">
 							</video>
 						</div>
+						<div class="card-img-overlay">
+							<h5 class="card-subtitle">On the Left</h5>
+							<p class="card-text">This content is shorter.</p>
+						</div>
+						<div class="card-img-overlay text-right">
+							<h5 class="card-subtitle">On the right</h5>
+							<p class="card-text">This content is shorter.</p>
+						</div>
 					</div>
+
 					<div class="card-title-wrap card-title-wrap-link">
 						<h4 class="card-title">Hello</h4>
 						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					</div>
-
-					<div class="card-img-overlay">
-						<h5 class="card-subtitle">On the Left</h5>
-						<p class="card-text">This content is shorter.</p>
-					</div>
-					<div class="card-img-overlay text-right">
-						<h5 class="card-subtitle">On the right</h5>
-						<p class="card-text">This content is shorter.</p>
-					</div>
+					</div
+					
 				</div>
+
 				<div class="card-footer">
 					<a href="#" class="chevron-link">Card link</a>
 					<a href="#" class="chevron-link">Another link</a>
