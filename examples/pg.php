@@ -174,20 +174,12 @@
 						</button>
 					</div>
 
-<<<<<<< HEAD
 					<div class="embed-responsive embed-responsive-16by9 ">
 						<video controls class="embed-responsive-item">
 							<source src="video/video-research.mp4">
 						</video>
 						<div class="embed-responsive-item-overlay">
 							<span class="video-transcript"><small><a href="#">Download transcript</a></small></span>
-						</div>
-=======
-						<div class="embed-responsive embed-responsive-16by9">
-							<video controls class="embed-responsive-item">
-								<source src="video/video-research-student.mp4">
-							</video>
->>>>>>> b4cc6bb9f15f74f64b916a883dd677a6e3c7e18b
 						</div>
 					</div>
 					
