@@ -83,9 +83,9 @@
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 					</a>
 					<a class="card" href="#">
-						<img class="card-img" src="images/promo-3.jpg">
+						<img class="card-img" src="images/promo-innovation.jpg">
 						<h3 class="card-title">Innovation and enterprise</h3>
-						<p class="card-text">We work with partners and businesses locally and internationally to develop research.</p>
+						<p class="card-text">Find more about the exciting project we're working on with with partners and businesses.</p>
 						</a>
 				</div>
 			</div>
@@ -131,48 +131,32 @@
 			<div class="card-panel">
 				<div class="card-panel-body">
 					<div class="card">
-						
-
-
 						<a href="#">
-						<img class="card-img" src="images/promo-blog.jpg">
-						<h3 class="card-title">Student Blogs</h3>
+							<img class="card-img" src="images/promo-blog.jpg">
+							<h3 class="card-title">Student Blogs</h3>
+						</a>
 						<p class="card-text">Our students tell it like it is.</p>
-					</a>
 						<ul>
 							<li><a href="#">John Rabbit</a></li>
 							<li><a href="#">Felicity Hogg</a></li>
 						</ul>
-	
 					</div>
-					<div class="card">
-						
-					
+					<a class="card short-text" href=''>
 						<img class="card-img" src="images/promo-visit.jpg">
 						<h3 class="card-title">Visit Us</h3>
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
-					
-
-
-						<p>&nbsp;</p>
-					</div>
-
-
-					<div class="card">
-
+					</a>
+					<a class="card" href=''>
 						<img class="card-img" src="images/international.jpg">
 						<h3 class="card-title">International students</h3>
 						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
-					
-
-						<p>&nbsp;</p>
-					</div>
-					<div class="card">
-						<img class="card-img" src="images/promo-innovation.jpg">
+					</a>
+					<a class="card" href=''>
+						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Kent Union</h3>
 						<p class="card-text">Get involved in the hundreds of societies on campus.</p>
-						<p>&nbsp;</p>
-					</div>
+						
+					</a>
 				</div>
 			</div>
 
