@@ -26,7 +26,7 @@
 			</aside>
 
 			<div class="card card-overlay">
-				<div class="card-x§body card-inverse">
+				<div class="card-x body card-inverse">
 					<div class="card-title-wrap card-title-wrap-link pull-right">
 						<h4 class="card-title">World Leading research</h4>
 						<p class="card-text">Kent's excellent research performance positions us as one of UK's leading universities. Our 19 academic schools engage in research of international and world class standing.</p>
@@ -105,7 +105,7 @@
 						<p class="card-text">We have 6 exceptional Postgraduate locations with UK Campuses close to London and centres in Paris, Brussels Rome and Athens.</p>
 					</div>
 					<div class="card-media-wrap">
-						<img src="http://pantheon.app.www-dev.kent.ac.uk/jt353/theme-project/student-sport.jpg" alt="Sport" />
+						<img src="http://pantheon.app.www-dev.kent.ac.uk/jt353/theme-project/student-sport.jpg" class="card-img-bottom" alt="Sport" />
 					
 						<div class="card-img-overlay text-right">
 							<h5 class="card-subtitle">Canterbury</h5>
