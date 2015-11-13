@@ -18,17 +18,16 @@
 					<div class="card-media-wrap">
 						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
 							<video autoplay loop class="embed-responsive-item">
-								<source src="video/research2.mp4">
+								<source src="video/video-research-student.mp4">
 							</video>
 						</div>
 					</div>
 				</div>
 			</div>
 
-
-			<section class="container">
-			Ranked 17th for Research Intencity
-			</section>
+			<aside class="container">
+				<p class="impact-statement">Ranked 17th for Research Intencity</p>
+			</aside>
 
 			<div class="card card-overlay">
 				<div class="card-body card-inverse">
@@ -89,7 +88,7 @@
 
 			<blockquote>
 				<img class="img-circle" src="images/profile-academic.jpg"> 
-				<p>"It's the academic community that creates a supportive enviroment to help you excel'"</p>
+				<p>It's the academic community that creates a supportive enviroment to help you excel</p>
 				<footer>
 					<cite>
 						Dr David Hume,
