@@ -71,28 +71,28 @@
 						<img class="card-img" src="images/promo-world.jpg">
 						<h3 class="card-title">Global Opportunities</h3>
 						
-						<p class="card-text">Findo out how our programmes can help you launch your career and employability.</p>
+						<p class="card-text">Find out how our programmes can help you launch your career and employability.</p>
 						
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-graduates.jpg">
 						<h3 class="card-title">Scholarships &amp; Funding</h3>
 						
-						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+						<p class="card-text">We have £9 million to support our taught and research graduates with a selection of scholarships.</p>
 						
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">How to apply</h3>
 						
-						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+						<p class="card-text">Find out about entry requirements and our how we support your application journey.</p>
 						
 					</div>
 					<div class="card">
-						<img class="card-img" src="images/promo-4.jpg">
-						<h3 class="card-title">Visit Us</h3>
+						<img class="card-img" src="images/promo-visit.jpg">
+						<h3 class="card-title">Get in touch</h3>
 						
-						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+						<p class="card-text">Come and talk to specialist academics and admission staff and visit our locations.</p>
 						
 					</div>
 				</div>
@@ -122,7 +122,7 @@
 						<img src="images/promo-park-16-9.jpg" class="card-img-bottom" alt="Sport" />
 					
 						<div class="card-img-overlay text-right">
-							<h5 class="card-subtitle">Canterbury</h5>
+							<h5 class="card-subtitle">Canterbury campus</h5>
 							<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
 						</div>
 					</div>
@@ -184,7 +184,7 @@
 
 						<div class="embed-responsive embed-responsive-16by9">
 							<video controls class="embed-responsive-item">
-								<source src="video/video-postgraduate-overview.mp4">
+								<source src="video/video-research-student.mp4">
 							</video>
 						</div>
 
