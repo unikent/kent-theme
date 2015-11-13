@@ -18,6 +18,20 @@
 					<div class="card-media-wrap">
 						<img src="images/engineering-student-16-9.jpg" class="card-img-bottom">
 					</div>
+					<div class="card-img-overlay">
+						<form>
+							<div class="form-group">
+								<label for="search" class="sr-only">Search</label>
+								<div class="input-group input-group-lg">
+									<input type="search" class="form-control" id="cardCearch" placeholder="Search for postgraduate courses...">
+									<span class="input-group-btn">
+										<button type="submit" class="btn btn-accent btn-icon"><span class="kf-fw kf-search"></span></button>
+									</span>
+								</div>
+							</div>
+						</form>
+					</div>
+
 				</div>
 			</div>
 

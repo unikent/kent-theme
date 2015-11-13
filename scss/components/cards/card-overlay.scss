@@ -100,6 +100,11 @@
 		position: relative;
 		clear: both;
 
+		@include media-breakpoint-up(md){
+			//so images have basic shape while they load
+			min-height: 350px;
+		}
+
 		&.card-media-wrap-video {
 			cursor: pointer;
 			&:after {
