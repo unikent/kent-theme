@@ -5547,7 +5547,7 @@ input:-ms-input-placeholder {
     z-index: 1;
     position: relative; }
     .departmental-nav header {
-      font-size: 2rem; }
+      font-size: 2.2rem; }
     .departmental-nav header, .departmental-nav nav {
       margin: 0 2rem;
       padding-left: 1rem; }
@@ -5768,7 +5768,9 @@ input:-ms-input-placeholder {
 
 .card.card-overlay {
   margin-top: 25.6px;
-  margin-top: 1.6rem; }
+  margin-top: 1.6rem;
+  padding-bottom: 16px;
+  padding-bottom: 1rem; }
   .card.card-overlay .card-img-bottom {
     width: 100%; }
   .card.card-overlay .card-title-wrap {
@@ -5800,14 +5802,11 @@ input:-ms-input-placeholder {
       font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
       text-transform: uppercase;
       color: #ce9716;
-      font-size: 24px;
-      font-size: 1.5rem; }
-      @media (min-width: 62em) {
+      font-size: 32px;
+      font-size: 2rem; }
+      @media (min-width: 48em) {
         .card.card-overlay .card-title-wrap .card-title {
-          font-size: 1.75rem; } }
-      @media (min-width: 75em) {
-        .card.card-overlay .card-title-wrap .card-title {
-          font-size: 2rem; } }
+          font-size: 2.2rem; } }
     .card.card-overlay .card-title-wrap .card-text {
       font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
       color: #FFF; }
@@ -5945,7 +5944,7 @@ input:-ms-input-placeholder {
       margin-top: -7rem; }
       .card.header-card-overlay .card-title-wrap {
         width: 45%;
-        bottom: 15%;
+        bottom: 0;
         top: auto;
         left: 0; }
         .card.header-card-overlay .card-title-wrap.pull-right {
@@ -6016,9 +6015,11 @@ blockquote {
     display: block; }
     @media (min-width: 48em) {
       blockquote > img {
-        height: 15rem;
+        height: 12rem;
         float: left;
-        margin-right: 2rem; } }
+        margin-right: 2rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem; } }
   blockquote footer {
     font-size: 14.4px;
     font-size: 0.9rem; }
@@ -6035,8 +6036,8 @@ blockquote {
           display: block; } }
 
 .impact-statement {
-  font-size: 32px;
-  font-size: 2rem;
+  font-size: 28.8px;
+  font-size: 1.8rem;
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
   text-align: center;
   padding: 32px 0;

@@ -16,33 +16,31 @@
 			<div class="card card-overlay header-card-overlay">
 				<div class="card-body">
 					<div class="card-media-wrap">
-						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
-							<video autoplay loop class="embed-responsive-item">
-								<source src="video/video-research-student.mp4">
-							</video>
-						</div>
+						<img src="images/engineering-student-16-9.jpg" class="card-img-bottom">
 					</div>
 				</div>
 			</div>
 
 			<aside class="container">
-				<p class="impact-statement">Ranked 17th for Research Intencity</p>
+				<p class="impact-statement">Our programmes are informed by a commitment to research excellence. We are ranked 17th in the UK for Research Intensity.</p>
 			</aside>
 
 			<div class="card card-overlay">
-				<div class="card-body card-inverse">
-					<div class="card-title-wrap card-title-wrap-link">
-						<h4 class="card-title">World Leading</h4>
-						<p class="card-text">Our 19 academic schools engage in research of international and world class standing.</p>
+				<div class="card-x body card-inverse">
+					<div class="card-title-wrap card-title-wrap-link pull-right">
+						<h4 class="card-title">World Leading research</h4>
+						<p class="card-text">Kent's excellent research performance positions us as one of UK's leading universities. Our 19 academic schools engage in research of international and world class standing.</p>
 					</div>
 					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
-						<img class="card-img-bottom" src="images/students.jpg">
+						<img class="card-img-bottom" src="images/feature-professor-2-1.jpg">
+
+						<div class="card-img-overlay text-right">
+							<h5 class="card-subtitle">Prof. David Welch</h5>
+							<p class="card-text">Professor of Modern History</p>
+						</div>
 					</div>
 					
-					<div class="card-img-overlay text-right">
-						<h5 class="card-subtitle">Professor Fox</h5>
-						<p class="card-text">PHD Physics.</p>
-					</div>
+					
 				</div>
 				<div class="card-footer">
 					<a href="#" class="chevron-link">Taught Programmes</a>
@@ -58,30 +56,30 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-1.jpg">
 						<h3 class="card-title">Global Opportunities</h3>
-						<p class="card-subtitle">1st September 2015</p>
+						
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
-						<a href="#" class="card-badge kf-comment">5</a>
+						
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-2.jpg">
 						<h3 class="card-title">Scholarships &amp; Funding</h3>
-						<p class="card-subtitle">28th March 2015</p>
+						
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
-						<a href="#" class="card-badge kf-comment">7</a>
+						
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">How to apply</h3>
-						<p class="card-subtitle">5th November 2015</p>
+						
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
-						<a href="#" class="card-badge kf-comment">1</a>
+						
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Visit Us</h3>
-						<p class="card-subtitle">17th May 2015</p>
+						
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
-						<a href="#" class="card-badge kf-comment">23</a>
+						
 					</div>
 				</div>
 			</div>
@@ -93,6 +91,7 @@
 					<cite>
 						Dr David Hume,
 						<span>PhD. Particle physics</span>
+						<span><a href="#" class="chevron-link">Learn more about our community</a></span>
 					</cite>
 				</footer>
 			</blockquote>
@@ -106,15 +105,16 @@
 						<p class="card-text">We have 6 exceptional Postgraduate locations with UK Campuses close to London and centres in Paris, Brussels Rome and Athens.</p>
 					</div>
 					<div class="card-media-wrap">
-						<img src="http://pantheon.app.www-dev.kent.ac.uk/jt353/theme-project/student-sport.jpg" alt="Sport" />
-					</div>
-					<div class="card-img-overlay text-right">
-						<h5 class="card-subtitle">Canterbury</h5>
-						<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
+						<img src="http://pantheon.app.www-dev.kent.ac.uk/jt353/theme-project/student-sport.jpg" class="card-img-bottom" alt="Sport" />
+					
+						<div class="card-img-overlay text-right">
+							<h5 class="card-subtitle">Canterbury</h5>
+							<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
+						</div>
 					</div>
 				</div>
 				<div class="card-footer">
-					<a href="#" class="chevron-link">The UKs European University/a>
+					<a href="#" class="chevron-link">The UKs European University</a>
 					<a href="#" class="chevron-link">Campus life</a>
 					<a href="#" class="chevron-link">Accommodation &amp; Facilities</a>
 					<a href="#" class="chevron-link">Graduate school</a>
@@ -127,27 +127,30 @@
 					<div class="card">
 						<img class="card-img" src="images/blogs.jpg">
 						<h3 class="card-title">Student Blogs</h3>
-
-						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
+						<p class="card-text">Our students tell it like it is.</p>
+						<ul>
+							<li><a href="#">John Rabbit</a></li>
+							<li><a href="#">Felicity Hogg</a></li>
+						</ul>
 	
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/international.jpg">
 						<h3 class="card-title">International</h3>
 
-						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
 
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">Innovation and enterprise</h3>
-						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+						<p class="card-text">We work with partners and businesses locally &amp; intentionally to help push research.</p>
 
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Kent Union</h3>
-						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+						<p class="card-text">Get involved in the hundreds of societies on campus.</p>
 	
 					</div>
 				</div>

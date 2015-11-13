@@ -47,9 +47,11 @@ blockquote {
 		display: block;
 
 		@include media-breakpoint-up(md) {
-			height: 15rem;
+			height: 12rem;
 			float:left;
 			margin-right:2rem;
+			margin-top:1rem;
+			margin-bottom:1rem;
 		}
 	}
 	footer {
