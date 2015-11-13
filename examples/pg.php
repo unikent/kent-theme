@@ -173,12 +173,14 @@
 								<source src="video/research2.mp4">
 							</video>
 						</div>
+
+						<p>View transcipt</p>
 						
 					</div>
 			</div>
 		</div>
 
 		<script src="../dist/js/main.js"></script>
-		<script>
+
 	</body>
 </html>
