@@ -9590,6 +9590,7 @@ jQuery(document).ready(function(){
 	});
 	$('.search-button,.search-button-full').click(function(){
 		openMenu(global_search);
+		global_search.find("input[type='search']").focus();
 	});
 	$('.close-search').click(function(){
 		closeMenu(global_search);
