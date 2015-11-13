@@ -3995,7 +3995,8 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out; }
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4289,6 +4290,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -5823,6 +5825,8 @@ input:-ms-input-placeholder {
     .card.card-overlay .card-img-overlay .card-subtitle {
       font-size: 24px;
       font-size: 1.5rem; }
+    .card.card-overlay .card-img-overlay.card-img-overlay-block {
+      position: relative; }
   .card.card-overlay .card-inverse .card-img-overlay {
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
     .card.card-overlay .card-inverse .card-img-overlay .card-text {
@@ -5893,7 +5897,12 @@ input:-ms-input-placeholder {
         position: absolute; }
       .card.card-overlay .card-title-wrap.pull-right {
         left: inherit;
-        right: 5%; } }
+        right: 5%; }
+    .card.card-overlay .card-img-overlay.card-img-overlay-block {
+      position: absolute; }
+    .card.card-overlay .card-img-overlay .input-group {
+      margin-left: 20%;
+      margin-right: 20%; } }
   @media (min-width: 62em) {
     .card.card-overlay .card-media-wrap {
       max-height: 33rem;

@@ -479,12 +479,12 @@
 				<div class="card-media-wrap">
 					<img class="card-img-bottom" src="images/students.jpg">
 				</div>
-				<div class="card-img-overlay card-img-overlay-block">
+				<div class="card-img-overlay">
 					<form >
 						<div class="form-group">
 							<label for="search" class="sr-only">Search</label>
 							<div class="input-group input-group-lg">
-								<input type="search" class="form-control" id="cardCearch" placeholder="Search by course, department. keyword... ">
+								<input type="search" class="form-control" id="cardCearch" placeholder="Search for interesting things...">
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-accent btn-icon"><span class='kf-fw kf-search'></span></button>
 								</span>
