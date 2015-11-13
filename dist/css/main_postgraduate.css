@@ -5823,8 +5823,8 @@ input:-ms-input-placeholder {
   .card.card-overlay .card-img-overlay {
     top: inherit; }
     .card.card-overlay .card-img-overlay .card-subtitle {
-      font-size: 24px;
-      font-size: 1.5rem; }
+      font-size: 28.8px;
+      font-size: 1.8rem; }
     .card.card-overlay .card-img-overlay.card-img-overlay-block {
       position: relative; }
   .card.card-overlay .card-inverse .card-img-overlay {
@@ -5836,6 +5836,9 @@ input:-ms-input-placeholder {
   .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
     position: relative;
     clear: both; }
+    @media (min-width: 48em) {
+      .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
+        min-height: 350px; } }
     .card.card-overlay .card-media-wrap.card-media-wrap-video, .card.card-overlay .card-embed-wrap.card-media-wrap-video {
       cursor: pointer; }
       .card.card-overlay .card-media-wrap.card-media-wrap-video:after, .card.card-overlay .card-embed-wrap.card-media-wrap-video:after {
