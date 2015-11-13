@@ -175,8 +175,14 @@
 			}
 		}
 
-		.card-img-overlay.card-img-overlay-block {
-			position: absolute
+		.card-img-overlay {
+			&.card-img-overlay-block {
+				position: absolute;
+			}
+			.input-group {
+				margin-left: 20%;
+				margin-right: 20%;
+			}
 		}
 	}
 	@include media-breakpoint-up(lg){
