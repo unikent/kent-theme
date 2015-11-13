@@ -5560,7 +5560,9 @@ input:-ms-input-placeholder {
         display: inline-block; } }
 
 .card {
-  border: none; }
+  border: none;
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
   .card:last-child {
     margin-bottom: 0; }
   .card .card-body {
@@ -5639,6 +5641,8 @@ input:-ms-input-placeholder {
 .card-panel {
   padding: 16px 8px 8px;
   padding: 1rem 0.5rem 0.5rem;
+  margin-bottom: 16px;
+  margin-bottom: 1rem;
   overflow: hidden; }
   @media (min-width: 34em) {
     .card-panel {
@@ -5767,8 +5771,8 @@ input:-ms-input-placeholder {
         margin-left: 1rem; }
 
 .card.card-overlay {
-  margin-top: 25.6px;
-  margin-top: 1.6rem;
+  margin-top: 41.6px;
+  margin-top: 2.6rem;
   padding-bottom: 16px;
   padding-bottom: 1rem; }
   .card.card-overlay .card-img-bottom {
@@ -5827,6 +5831,10 @@ input:-ms-input-placeholder {
       font-size: 1.8rem; }
     .card.card-overlay .card-img-overlay.card-img-overlay-block {
       position: relative; }
+    @media (min-width: 48em) {
+      .card.card-overlay .card-img-overlay {
+        padding-right: 5%;
+        padding-left: 5%; } }
   .card.card-overlay .card-inverse .card-img-overlay {
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
     .card.card-overlay .card-inverse .card-img-overlay .card-text {
@@ -5904,8 +5912,8 @@ input:-ms-input-placeholder {
     .card.card-overlay .card-img-overlay.card-img-overlay-block {
       position: absolute; }
     .card.card-overlay .card-img-overlay .input-group {
-      margin-left: 20%;
-      margin-right: 20%; } }
+      margin-left: 15%;
+      margin-right: 15%; } }
   @media (min-width: 62em) {
     .card.card-overlay .card-media-wrap {
       max-height: 33rem;
@@ -5965,15 +5973,18 @@ input:-ms-input-placeholder {
     vertical-align: middle; }
     .modal.modal-fullscreen .modal-dialog .modal-content.modal-content-transparent {
       background-color: transparent; }
-    .modal.modal-fullscreen .modal-dialog .modal-content .modal-header {
+    .modal.modal-fullscreen .modal-dialog .modal-content .modal-header, .modal.modal-fullscreen .modal-dialog .modal-content .modal-footer {
       position: absolute;
-      top: 0;
       left: 0;
       right: 0;
-      border-bottom: none;
       color: #FFF;
       text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
       z-index: 1; }
+      .modal.modal-fullscreen .modal-dialog .modal-content .modal-header a, .modal.modal-fullscreen .modal-dialog .modal-content .modal-footer a {
+        color: #FFF; }
+    .modal.modal-fullscreen .modal-dialog .modal-content .modal-header {
+      top: 0;
+      border-bottom: none; }
       .modal.modal-fullscreen .modal-dialog .modal-content .modal-header .close {
         text-shadow: none;
         color: #FFF;
@@ -5982,7 +5993,11 @@ input:-ms-input-placeholder {
         font-size: 2rem;
         margin-right: 32px;
         margin-right: 2rem; }
-      .modal.modal-fullscreen .modal-dialog .modal-content .modal-header a {
+    .modal.modal-fullscreen .modal-dialog .modal-content .modal-footer {
+      bottom: 0;
+      border-top: none;
+      color: #FFF; }
+      .modal.modal-fullscreen .modal-dialog .modal-content .modal-footer a {
         color: #FFF; }
 
 blockquote {
@@ -5993,7 +6008,8 @@ blockquote {
   padding-top: 0; }
   @media (min-width: 62em) {
     blockquote {
-      padding: 2rem 5rem; } }
+      padding: 3rem 5rem;
+      padding-bottom: 5rem; } }
   blockquote > p {
     padding: 16px 0;
     padding: 1rem 0;
@@ -6045,6 +6061,21 @@ blockquote {
         font-size: 1rem; }
         blockquote footer cite span {
           display: block; } }
+
+.embed-responsive .embed-responsive-item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  padding: 1rem; }
+  .embed-responsive .embed-responsive-item-overlay a {
+    color: #FFF; }
+  .embed-responsive .embed-responsive-item-overlay .video-transcript {
+    float: right; }
+    @media (max-width: 74.9em) {
+      .embed-responsive .embed-responsive-item-overlay .video-transcript {
+        padding-bottom: 1.5rem; } }
 
 .impact-statement {
   font-size: 28.8px;

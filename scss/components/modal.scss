@@ -13,15 +13,22 @@
 			&.modal-content-transparent{
 				background-color: transparent;
 			}
-			.modal-header {
+
+			.modal-header, .modal-footer {
 				position: absolute;
-				top: 0;
 				left: 0;
 				right: 0;
-				border-bottom: none;
 				color: #FFF;
 				text-shadow: 0 2px 2px rgba(0,0,0,.9);
-					z-index: 1;
+				z-index: 1;
+				a {
+					color: #FFF;
+				}
+			}
+
+			.modal-header {
+				top: 0;
+				border-bottom: none;
 				.close {
 					text-shadow: none;
 					color: #FFF;
@@ -29,6 +36,12 @@
 					font-size: 2rem;
 					margin-right: 2rem;
 				}
+			}
+			
+			.modal-footer {
+				bottom: 0;
+				border-top: none;
+				color: #FFF;
 				a {
 					color: #FFF;
 				}

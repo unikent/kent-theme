@@ -556,13 +556,15 @@
 								<span aria-hidden="true"><i class="kf-close"></i></span>
 								<span class="sr-only">Close</span>
 							</button>
-							<p><small><a href="#">Download transcription</a></small></p>
 						</div>
 
 						<div class="embed-responsive embed-responsive-16by9">
 							<video controls class="embed-responsive-item">
 								<source src="video/research2.mp4">
 							</video>
+							<div class="embed-responsive-item-overlay">
+								<span class="video-transcript"><small><a href="#">Download transcript</a></small></span>
+							</div>
 						</div>
 						
 					</div>
