@@ -13,16 +13,25 @@
 			&.modal-content-transparent{
 				background-color: transparent;
 			}
-
-			.close {
+			.modal-header {
 				position: absolute;
-				right: 2rem;
-				top: 2rem;
-				text-shadow: none;
+				top: 0;
+				left: 0;
+				right: 0;
+				border-bottom: none;
 				color: #FFF;
-				opacity: 0.5;
-				font-size: 2rem;
-				z-index: 1;
+				text-shadow: 0 2px 2px rgba(0,0,0,.9);
+					z-index: 1;
+				.close {
+					text-shadow: none;
+					color: #FFF;
+					opacity: 0.5;
+					font-size: 2rem;
+					margin-right: 2rem;
+				}
+				a {
+					color: #FFF;
+				}
 			}
 		}
 	}

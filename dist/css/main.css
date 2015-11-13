@@ -5965,18 +5965,25 @@ input:-ms-input-placeholder {
     vertical-align: middle; }
     .modal.modal-fullscreen .modal-dialog .modal-content.modal-content-transparent {
       background-color: transparent; }
-    .modal.modal-fullscreen .modal-dialog .modal-content .close {
+    .modal.modal-fullscreen .modal-dialog .modal-content .modal-header {
       position: absolute;
-      right: 32px;
-      right: 2rem;
-      top: 32px;
-      top: 2rem;
-      text-shadow: none;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-bottom: none;
       color: #FFF;
-      opacity: 0.5;
-      font-size: 32px;
-      font-size: 2rem;
+      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
       z-index: 1; }
+      .modal.modal-fullscreen .modal-dialog .modal-content .modal-header .close {
+        text-shadow: none;
+        color: #FFF;
+        opacity: 0.5;
+        font-size: 32px;
+        font-size: 2rem;
+        margin-right: 32px;
+        margin-right: 2rem; }
+      .modal.modal-fullscreen .modal-dialog .modal-content .modal-header a {
+        color: #FFF; }
 
 blockquote {
   border-left: 0;

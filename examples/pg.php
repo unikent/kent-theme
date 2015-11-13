@@ -177,10 +177,13 @@
 			<div class="modal-dialog" role="document">
 					<div class="modal-content modal-content-transparent">
 
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true"><i class="kf-close"></i></span>
-							<span class="sr-only">Close</span>
-						</button>
+						<div class="modal-header">
+							<button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true"><i class="kf-close"></i></span>
+								<span class="sr-only">Close</span>
+							</button>
+							<p><small><a href="#">Download transcription</a></small></p>
+						</div>
 
 						<div class="embed-responsive embed-responsive-16by9">
 							<video controls class="embed-responsive-item">
