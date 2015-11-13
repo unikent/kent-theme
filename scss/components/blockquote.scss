@@ -53,11 +53,15 @@ blockquote {
 			float:left;
 			margin-right:2rem;
 			margin-top:1rem;
-			margin-bottom:1rem;
+			margin-bottom:2.5rem;
 		}
 	}
 	footer {
 		font-size: 0.9rem;
+
+		&:before{
+			display:none;
+		}
 
 		cite {
 			font-weight: bold;

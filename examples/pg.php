@@ -67,34 +67,26 @@
 			<div class="card-panel">
 				
 				<div class="card-panel-body">
-					<div class="card">
+					<a class="card" href="#">
 						<img class="card-img" src="images/promo-world.jpg">
 						<h3 class="card-title">Global Opportunities</h3>
-						
 						<p class="card-text">Findo out how our programmes can help you launch your career and employability.</p>
-						
-					</div>
-					<div class="card">
+					</a>
+					<a class="card" href="#">
 						<img class="card-img" src="images/promo-graduates.jpg">
 						<h3 class="card-title">Scholarships &amp; Funding</h3>
-						
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
-						
-					</div>
-					<div class="card">
+					</a>
+					<a class="card" href="#">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">How to apply</h3>
-						
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
-						
-					</div>
-					<div class="card">
+					</a>
+					<a class="card" href="#">
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Visit Us</h3>
-						
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
-						
-					</div>
+					</a>
 				</div>
 			</div>
 

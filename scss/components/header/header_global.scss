@@ -45,6 +45,7 @@
 				line-height: 3rem;
 				border-bottom: solid 1px #eee;
 				padding-left:1rem;
+				color: $kent-primary;
 
 				text-transform: uppercase;
 				font-family: $font-family-serif;
@@ -96,6 +97,7 @@
 							text-transform: none;
 							background: $brand-tertiary;
 							border-bottom: solid 1px #ddd;
+							color: $kent-primary;
 
 							.more { border-left: solid 1px #ddd;}
 							.global-nav-link-desc { display:none;}
