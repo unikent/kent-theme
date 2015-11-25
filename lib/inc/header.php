@@ -2,7 +2,7 @@
 <html lang="en-GB">
 	<head>
 		<title><?php echo $page_title; ?></title>
-		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>/assets/css/main.css" />
+		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>/assets/css/<?php echo $theme_style;?>" />
 		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>/assets/css/kentfont.css" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
@@ -94,12 +94,7 @@
 				<header><?php echo $section_title; ?></header>
 				<div class='navbar-toggler'>Menu <span class="kf-chevron-down pull-right"></span></div>
 				<nav class="navbar-menu">
-					<a href="#">Programme search</a>
-					<a href="#">Why Kent?</a>
-					<a href="#">Types of degrees</a>
-					<a href="#">Applying</a>
-					<a href="#">Fees and funding</a>
-					<a href="#">People</a>
+					<?php echo $menu_links; ?>
 				</nav>
 			</section>
 		</header>

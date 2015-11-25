@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-	<head>
-		<title></title>
-		<link rel="stylesheet" href="../dist/css/main_postgraduate.css" />
-		<link rel="stylesheet" href="../dist/css/kentfont.css" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<?php 
+	include "../../lib/theme-helper.php";
+	use \unikent\kent_theme\kentThemeHelper;
 
-		<script src="../dist/js/modernizr.min.js"></script>
-	</head>
-	<body>
-		<?php include "inc/header.php"; ?>
+		KentThemeHelper::header("Postgraduate Home - Kent Theme Beta", "Postgraduate Courses", array(
+			'Home' => '#',
+			'Apply' => '#'
+		), 'postgraduate'); ?>
 		<main>
 
 			<div class="card card-overlay header-card-overlay">

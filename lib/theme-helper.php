@@ -5,7 +5,19 @@ Class KentThemeHelper {
 
 	private static $theme_web_root = false;
 
-	public static function header($page_title, $section_title, $section_menu_file = ''){
+	public static function header($page_title, $section_title, $section_menu = '', $theme = ''){
+
+		if(!empty($section_menu)){
+			$menu_links = static::generate_menu($section_menu);
+		}
+		if(!empty($theme)){
+			$theme_style = "main_{$theme}.css";
+		}else{
+			$theme_style = "main.css";
+		}
+
+		
+
 		include("inc/header.php");
 	}
 
@@ -13,6 +25,22 @@ Class KentThemeHelper {
 		include("inc/footer.php");
 	}
 
+	protected static function generate_menu($menu){
+		$output = "";	
+
+		$current_url = $_SERVER["PHP_SELF"];
+
+		foreach($menu as $name => $link){
+
+			if($link == $current_url){
+				$output .= "<a class='active' href=\"{$link}\">{$name}</a>".PHP_EOL;
+			}else{
+				$output .= "<a href=\"{$link}\">{$name}</a>".PHP_EOL;
+			}
+			
+		}
+		return $output;
+	}
 
 	protected static function getThemeWebRoot(){
 
