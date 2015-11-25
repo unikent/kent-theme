@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<?php use unikent\kent_theme\KentThemeHelper; ?><!DOCTYPE html>
 <html lang="en-GB">
 	<head>
 		<title><?php echo $page_title; ?></title>
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<link rel="stylesheet" href="../assets/css/kentfont.css" />
+		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>/assets/css/main.css" />
+		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>/assets/css/kentfont.css" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
-		<script src="../assets/js/modernizr.min.js"></script>
+		<script src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/js/modernizr.min.js"></script>
 	</head>
 	<body>
 		<a href='#' class='sr-only'>Jump to section menu</a>
