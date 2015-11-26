@@ -6,23 +6,23 @@ module.exports = function(grunt) {
                 expand:true,
                 cwd: 'vendor/kent-font/public/fonts/',
                 src: '**',
-                dest: 'dist/fonts/'
+                dest: 'public/assets/fonts/'
             },
             mainjs: {
                 src: 'js/main.js',
-                dest: 'dist/js/main.js'
+                dest: 'public/assets/js/main.js'
             },
             kentfont: {
                 src: 'vendor/kent-font/public/css/kentfont.css',
-                dest: 'dist/css/kentfont.css'
+                dest: 'public/assets/css/kentfont.css'
             },
         },
 
         sass: {
             dist : {
                 files: {
-                    'dist/css/main.css' : 'scss/master.scss',
-                    'dist/css/main_postgraduate.css' : 'scss/master_postgraduate.scss'
+                    'public/assets/css/main.css' : 'scss/master.scss',
+                    'public/assets/css/main_postgraduate.css' : 'scss/master_postgraduate.scss'
                 }
             }
         },
@@ -46,7 +46,7 @@ module.exports = function(grunt) {
             },
             main: {
                 files: {
-                    'dist/js/main.min.js' : 'js/main.js'
+                    'public/assets/js/main.min.js' : 'js/main.js'
                 }
             }
         },
@@ -68,11 +68,11 @@ module.exports = function(grunt) {
         modernizr: {
             build: {
                 devFile: 'vendor/modernizr/modernizr.js',
-                outputFile: 'dist/js/modernizr.min.js',
+                outputFile: 'public/assets/js/modernizr.min.js',
                 files: {
                     'src': [
-                        ['dist/js/main.js'],
-                        ['dist/css/main.css']
+                        ['public/assets/js/main.js'],
+                        ['public/assets/css/main.css']
                     ]
                 },
                 extensibility: [
@@ -119,7 +119,7 @@ module.exports = function(grunt) {
 				]
 			},
 			dist: {
-				src: 'dist/css/*.css'
+				src: 'public/assets/css/*.css'
 			}
 		},
 		cssnano: {
@@ -128,7 +128,7 @@ module.exports = function(grunt) {
 			},
 			dist: {
 				files: {
-					'dist/css/main.min.css': 'dist/css/main.css'
+					'public/assets/css/main.min.css': 'public/assets/css/main.css'
 				}
 			}
 		},
