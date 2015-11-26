@@ -2,10 +2,10 @@
 	include "../../lib/theme-helper.php";
 	use \unikent\kent_theme\kentThemeHelper;
 
-		KentThemeHelper::header("Postgraduate Home - Kent Theme Beta", "Postgraduate Courses", array(
+		KentThemeHelper::header("Postgraduate Home - Kent Theme Beta", "Postgraduate Courses",  array(
 			'Home' => '#',
 			'Apply' => '#'
-		), 'postgraduate'); ?>
+		),array('description'=>'Postrgaduate home'), 'postgraduate'); ?>
 		<main>
 
 			<div class="card card-overlay header-card-overlay">
