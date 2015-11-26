@@ -5,8 +5,8 @@
  */
 
 // get config
-if(file_exists("config.php")){
-	include "config.php";
+if(file_exists(dirname(__FILE__)."/config.php")){
+	include dirname(__FILE__)."/config.php";
 }else{
 	// set any required defaults
 }
