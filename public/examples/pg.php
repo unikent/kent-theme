@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-	<head>
-		<title></title>
-		<link rel="stylesheet" href="../dist/css/main_postgraduate.css" />
-		<link rel="stylesheet" href="../dist/css/kentfont.css" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<?php 
+	include "../../lib/theme-helper.php";
+	use \unikent\kent_theme\kentThemeHelper;
 
-		<script src="../dist/js/modernizr.min.js"></script>
-	</head>
-	<body>
-		<?php include "inc/header.php"; ?>
-		<main>
+		KentThemeHelper::header("Postgraduate Courses",  array(
+			'Home' => '#',
+			'Apply' => '#'
+		),array('description'=>'Postrgaduate home', 'title'=>"Postgraduate Home - Kent Theme Beta"), 'postgraduate'); ?>
 
 			<div class="card card-overlay header-card-overlay">
 				<div class="card-body">
@@ -161,33 +155,4 @@
 			</div>
 
 		</main>
-		<?php include "inc/footer.php"; ?>
-	
-		<div class="modal fade modal-fullscreen" id="myVideoModal" tabindex="-1" role="dialog" aria-labelledby="myVideoModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content modal-content-transparent">
-
-					<div class="modal-header">
-						<button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true"><i class="kf-close"></i></span>
-							<span class="sr-only">Close</span>
-						</button>
-					</div>
-
-					<div class="embed-responsive embed-responsive-16by9 ">
-						<video controls class="embed-responsive-item">
-							<source src="video/video-research.mp4">
-						</video>
-						<div class="embed-responsive-item-overlay">
-							<span class="video-transcript"><small><a href="#">Download transcript</a></small></span>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-
-		<script src="../dist/js/main.js"></script>
-
-	</body>
-</html>
+		<?php KentThemeHelper::footer(); ?>

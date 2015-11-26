@@ -1,4 +1,5 @@
 <?php use unikent\kent_theme\KentThemeHelper; ?>
+		</main>
 		<footer class="global-footer">
 			<section class="global-footer-top">
 				<div class="container">
@@ -186,5 +187,6 @@
 		</div>
 
 		<script src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/js/main.js"></script>
+		<?php echo $foot_markup ;?>
 	</body>
 </html>

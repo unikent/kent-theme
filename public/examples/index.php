@@ -1,9 +1,15 @@
 <?php 
 	include "../../lib/theme-helper.php";
 	use \unikent\kent_theme\kentThemeHelper;
- ?>
-		<?php KentThemeHelper::header("Demo Page - Kent Theme Beta", "Kent Theme Demo"); ?>
-		<main>
+
+		KentThemeHelper::header("Kent Theme Demo", array(
+			'Home' => '#',
+			'Culture' => '#',
+			'Environment' => '#',
+			'Science' => '#',
+			'Society' => '#',
+			'Kent Life' => '#',
+		),array('title'=>'Demo Page - Kent Theme Beta')); ?>
 
 			<div class="card card-overlay header-card-overlay">
 				<div class="card-body">
@@ -536,7 +542,6 @@
 			</div>
 
 <p>&nbsp;</p>
-		</main>
 
 		<?php KentThemeHelper::footer(); ?>
 	
