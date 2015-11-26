@@ -39,6 +39,8 @@
 		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>/assets/css/kentfont.css" />
 
 		<script src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/js/modernizr.min.js"></script>
+
+		<?php echo $head_markup ;?>
 	</head>
 	<body>
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>

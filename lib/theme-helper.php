@@ -5,7 +5,7 @@ Class KentThemeHelper {
 
 	private static $theme_web_root = false;
 
-	public static function header($title, $section_menu = '', $meta = array(), $theme = ''){
+	public static function header($title, $section_menu = '', $meta = array(), $theme = '', $head_markup = ''){
 		// if menu is provided
 		if(!empty($section_menu)){
 			$menu_links = static::generate_menu($section_menu);
@@ -33,7 +33,7 @@ Class KentThemeHelper {
 		include("inc/header.php");
 	}
 
-	public static function footer(){
+	public static function footer($foot_markup = ''){
 		include("inc/footer.php");
 	}
 
