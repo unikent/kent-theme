@@ -119,7 +119,7 @@
 				</div>
 			</section>
 			<section class="departmental-nav" id="section_menu">
-				<header><?php echo $section_title; ?></header>
+				<header><?php echo $title; ?></header>
 				<div class="navbar-toggler">Menu <span class="kf-chevron-down pull-right"></span></div>
 				<nav class="navbar-menu">
 					<?php echo $menu_links; ?>

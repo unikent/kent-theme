@@ -5,7 +5,7 @@ Class KentThemeHelper {
 
 	private static $theme_web_root = false;
 
-	public static function header($page_title, $section_title, $section_menu = '', $meta = array(), $theme = ''){
+	public static function header($title, $section_menu = '', $meta = array(), $theme = ''){
 		// if menu is provided
 		if(!empty($section_menu)){
 			$menu_links = static::generate_menu($section_menu);
@@ -21,9 +21,13 @@ Class KentThemeHelper {
 
 		// is there a description? pull it out if so
 		$description = false;
+		$page_title = '';
 		if(isset($meta['description'])){
 			$description = $meta['description'];
 			// don't unset as we still want the actual description too
+		}
+		if(isset($meta['title'])){
+			$page_title = $meta['title'];
 		}
 
 		include("inc/header.php");
@@ -36,11 +40,11 @@ Class KentThemeHelper {
 	protected static function generate_menu($menu){
 		$output = "";	
 
-		$current_url = $_SERVER["PHP_SELF"];
+		$current_url = $_SERVER["REQUEST_URI"];
 
 		foreach($menu as $name => $link){
 
-			if($link == $current_url){
+			if(parse_url($link,PHP_URL_PATH) == parse_url($current_url,PHP_URL_PATH)){
 				$output .= "<a class='active' href=\"{$link}\">{$name}</a>".PHP_EOL;
 			}else{
 				$output .= "<a href=\"{$link}\">{$name}</a>".PHP_EOL;
