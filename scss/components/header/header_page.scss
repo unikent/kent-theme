@@ -19,6 +19,7 @@
 		background-color: $gray-dark-trans;
 		color:#fff;
 		transition: max-height 300ms;
+		position: relative;
 
 		&.in {
 			 height:auto;
@@ -27,8 +28,32 @@
 
 		a {
 			color:#fff;
+			font-size: 1rem;
 			display:block;
 			padding:0.5rem;
+		}
+
+		.navbar-menu-toggler {
+			position: absolute;
+			right: 0;
+			top: 0;
+			padding: 0.5rem;
+			padding-right: 1rem;
+			margin-right: 1rem;
+			cursor: pointer;
+
+			&.hide {
+				display: none;
+			}
+
+			&:after {
+				position: absolute;
+				top: 0.7rem;
+				right: 0;
+				font-size: 0.7rem;
+				content: $kf-chevron-down;
+				font-family: $font-family-kentfont;
+			}
 		}
 	}
 
@@ -48,8 +73,14 @@
 
 		.navbar-toggler {display:none;}
 		.navbar-menu {
-			max-height: none;
+			max-height: 2.5rem;
 			height:auto;
+			overflow: hidden;
+			padding-right: 1rem;
+			
+			&.overflown{
+				padding-right: 5rem;
+			}
 
 			a {
 				display:inline-block;

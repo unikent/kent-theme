@@ -3995,7 +3995,8 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out; }
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4289,6 +4290,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -5532,15 +5534,40 @@ input:-ms-input-placeholder {
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
-  transition: max-height 300ms; }
+  transition: max-height 300ms;
+  position: relative; }
   .departmental-nav .navbar-menu.in {
     height: auto;
     max-height: 1000px; }
   .departmental-nav .navbar-menu a {
     color: #fff;
+    font-size: 16px;
+    font-size: 1rem;
     display: block;
     padding: 8px;
     padding: 0.5rem; }
+  .departmental-nav .navbar-menu .navbar-menu-toggler {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 8px;
+    padding: 0.5rem;
+    padding-right: 16px;
+    padding-right: 1rem;
+    margin-right: 16px;
+    margin-right: 1rem;
+    cursor: pointer; }
+    .departmental-nav .navbar-menu .navbar-menu-toggler.hide {
+      display: none; }
+    .departmental-nav .navbar-menu .navbar-menu-toggler:after {
+      position: absolute;
+      top: 11.2px;
+      top: 0.7rem;
+      right: 0;
+      font-size: 11.2px;
+      font-size: 0.7rem;
+      content: "";
+      font-family: "kentfont", sans-serif; }
 
 @media (min-width: 48em) {
   .departmental-nav {
@@ -5554,8 +5581,12 @@ input:-ms-input-placeholder {
     .departmental-nav .navbar-toggler {
       display: none; }
     .departmental-nav .navbar-menu {
-      max-height: none;
-      height: auto; }
+      max-height: 2.5rem;
+      height: auto;
+      overflow: hidden;
+      padding-right: 1rem; }
+      .departmental-nav .navbar-menu.overflown {
+        padding-right: 5rem; }
       .departmental-nav .navbar-menu a {
         display: inline-block; } }
 
