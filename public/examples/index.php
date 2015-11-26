@@ -10,7 +10,6 @@
 			'Society' => '#',
 			'Kent Life' => '#',
 		)); ?>
-		<main>
 
 			<div class="card card-overlay header-card-overlay">
 				<div class="card-body">
@@ -543,7 +542,6 @@
 			</div>
 
 <p>&nbsp;</p>
-		</main>
 
 		<?php KentThemeHelper::footer(); ?>
 	
