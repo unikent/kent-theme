@@ -23,7 +23,7 @@ Class KentThemeHelper {
 		$description = false;
 		if(isset($meta['description'])){
 			$description = $meta['description'];
-			unset($meta['description']);
+			// don't unset as we still want the actual description too
 		}
 
 		include("inc/header.php");
