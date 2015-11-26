@@ -12,6 +12,18 @@
 		background-color: $gray-dark-trans;
 		color:#fff;
 		cursor:pointer;
+
+		&:after {
+			float: right;
+			content: $kf-chevron-down;
+			font-family: $font-family-kentfont;
+		}
+
+		&.open {
+			&:after {
+				content: $kf-chevron-up;
+			}
+		}
 	}
 	.navbar-menu {
 		max-height:0px;
@@ -32,29 +44,6 @@
 			display:block;
 			padding:0.5rem;
 		}
-
-		.navbar-menu-toggler {
-			position: absolute;
-			right: 0;
-			top: 0;
-			padding: 0.5rem;
-			padding-right: 1rem;
-			margin-right: 1rem;
-			cursor: pointer;
-
-			&.hide {
-				display: none;
-			}
-
-			&:after {
-				position: absolute;
-				top: 0.7rem;
-				right: 0;
-				font-size: 0.7rem;
-				content: $kf-chevron-down;
-				font-family: $font-family-kentfont;
-			}
-		}
 	}
 
 	@include media-breakpoint-up(md) {
@@ -71,19 +60,58 @@
 			padding-left: 1rem;
 		}
 
-		.navbar-toggler {display:none;}
 		.navbar-menu {
+			position: absolute;
+			left: 0;
+			right: 0;
 			max-height: 2.5rem;
 			height:auto;
 			overflow: hidden;
 			padding-right: 1rem;
-			
+			border: none;
+
 			&.overflown{
 				padding-right: 5rem;
 			}
 
+			&.in {
+				max-height: none;
+				&:after{
+					position: absolute;
+					width: 100%;
+					border-bottom: 1px solid #696969;
+					top: 2.5rem;
+					left: 0;
+					content: '';
+				}
+			}
+
 			a {
 				display:inline-block;
+			}
+		}
+
+		.navbar-toggler {
+			position: absolute;
+			right: 3rem;
+			padding: 0.5rem;
+			padding-right: 1rem;
+			cursor: pointer;
+			z-index: 1;
+			font-size: 1em;
+			background-color: transparent;
+			line-height: inherit;
+
+			&.hide {
+				display: none;
+			}
+
+			&:after {
+				float: none;
+				position: absolute;
+				top: 0.7rem;
+				right: 0;
+				font-size: 0.7rem;
 			}
 		}
 	}

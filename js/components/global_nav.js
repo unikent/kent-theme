@@ -62,8 +62,3 @@
 	});
 
 })();
-
-// Dept nav
-$('.navbar-toggler').click(function(){
-	$('.navbar-menu').toggleClass('in');
-});
