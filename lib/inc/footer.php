@@ -146,10 +146,10 @@
 						<div class="col-xs-12">
 							<h6 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" data-parent=".global-footer">Affiliations</h6>
 							<div id="footer-affiliations" class="footer-section collapse-sm-down">
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="images/logo-sgroup-white.png" class="img-responsive"></div>
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="images/logo-arc-white.png" class="img-responsive"></div>
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="images/logo-uniuk-white.png" class="img-responsive"></div>
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 "><img src="images/logo-queen-white.png" class="img-responsive"></div>
+								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-sgroup-white.png" class="img-responsive"></div>
+								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-arc-white.png" class="img-responsive"></div>
+								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-uniuk-white.png" class="img-responsive"></div>
+								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-queen-white.png" class="img-responsive"></div>
 							</div>
 						</div>
 					</div>
@@ -157,9 +157,7 @@
 			</section>
 			<section class="global-footer-base">
 				<div class="container">
-
-							<a href="#">&copy; University of Kent</a> <a href="#">Accessibility</a> <a href="#">Contact us</a> <a href="#">Feedback</a> <a href="#">Legal</a> <a href="#">Cookie Policy</a>
-
+					<a href="#">&copy; University of Kent</a> <a href="#">Accessibility</a> <a href="#">Contact us</a> <a href="#">Feedback</a> <a href="#">Legal</a> <a href="#">Cookie Policy</a>
 				</div>
 			</section>
 		</footer>

@@ -1,5 +1,5 @@
 <?php 
-	include "../../lib/theme-helper.php";
+	include dirname(dirname(dirname(__FILE__)))."/lib/bootstrap.php";
 	use \unikent\kent_theme\kentThemeHelper;
 
 		KentThemeHelper::header("Kent Theme Demo", array(

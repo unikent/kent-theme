@@ -55,11 +55,16 @@ Class KentThemeHelper {
 	}
 
 	protected static function getThemeWebRoot(){
-
+		// If constant was provided
+		if(defined("WEBROOT")){
+			return WEBROOT;
+		}
+		// else try and figure it out ourselves
 		if(static::$theme_web_root){
 			echo static::$theme_web_root;
 			return;
 		} 
+
 		// get folder path minus web url
 		$base_folder = str_replace( $_SERVER['PHP_SELF'], '' , $_SERVER['SCRIPT_FILENAME']);
 		// get public folder (full path)
