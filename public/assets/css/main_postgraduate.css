@@ -3995,7 +3995,8 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out; }
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4289,6 +4290,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -5526,18 +5528,27 @@ input:-ms-input-placeholder {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   cursor: pointer; }
+  .departmental-nav .navbar-toggler:after {
+    float: right;
+    content: "";
+    font-family: "kentfont", sans-serif; }
+  .departmental-nav .navbar-toggler.open:after {
+    content: ""; }
 
 .departmental-nav .navbar-menu {
   max-height: 0px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
-  transition: max-height 300ms; }
+  transition: max-height 300ms;
+  position: relative; }
   .departmental-nav .navbar-menu.in {
     height: auto;
     max-height: 1000px; }
   .departmental-nav .navbar-menu a {
     color: #fff;
+    font-size: 16px;
+    font-size: 1rem;
     display: block;
     padding: 8px;
     padding: 0.5rem; }
@@ -5551,13 +5562,46 @@ input:-ms-input-placeholder {
     .departmental-nav header, .departmental-nav nav {
       margin: 0 2rem;
       padding-left: 1rem; }
-    .departmental-nav .navbar-toggler {
-      display: none; }
     .departmental-nav .navbar-menu {
-      max-height: none;
-      height: auto; }
+      position: absolute;
+      left: 0;
+      right: 0;
+      max-height: 2.5rem;
+      height: auto;
+      overflow: hidden;
+      padding-right: 1rem;
+      border: none; }
+      .departmental-nav .navbar-menu.overflown {
+        padding-right: 5rem; }
+      .departmental-nav .navbar-menu.in {
+        max-height: none; }
+        .departmental-nav .navbar-menu.in:after {
+          position: absolute;
+          width: 100%;
+          border-bottom: 1px solid #696969;
+          top: 2.5rem;
+          left: 0;
+          content: ''; }
       .departmental-nav .navbar-menu a {
-        display: inline-block; } }
+        display: inline-block; }
+    .departmental-nav .navbar-toggler {
+      position: absolute;
+      right: 3rem;
+      padding: 0.5rem;
+      padding-right: 1rem;
+      cursor: pointer;
+      z-index: 1;
+      font-size: 1em;
+      background-color: transparent;
+      line-height: inherit; }
+      .departmental-nav .navbar-toggler.hide {
+        display: none; }
+      .departmental-nav .navbar-toggler:after {
+        float: none;
+        position: absolute;
+        top: 0.7rem;
+        right: 0;
+        font-size: 0.7rem; } }
 
 .card {
   display: block;
@@ -5974,7 +6018,7 @@ input:-ms-input-placeholder {
   margin-top: -2rem; }
   @media (min-width: 48em) {
     .card.header-card-overlay {
-      margin-top: -7rem; }
+      margin-top: -4rem; }
       .card.header-card-overlay .card-title-wrap {
         width: 45%;
         bottom: 0;
