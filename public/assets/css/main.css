@@ -3995,8 +3995,7 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out;
-    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
+    transition: transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4290,7 +4289,6 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
-        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -5102,9 +5100,9 @@ h6, .h6 {
   html {
     font-size: 18px; } }
 
-.chevron-link, .global-nav .audience-nav-links a, a.card p:last-of-type, a p:last-of-type {
+.chevron-link, .global-nav .audience-nav-links a, .card-panel a.card p.card-text:last-of-type, .card-panel .card a p.card-text:last-of-type {
   font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .chevron-link:after, .global-nav .audience-nav-links a:after, a.card p:last-of-type:after, a p:last-of-type:after {
+  .chevron-link:after, .global-nav .audience-nav-links a:after, .card-panel a.card p.card-text:last-of-type:after, .card-panel .card a p.card-text:last-of-type:after {
     display: inline-block;
     padding-left: 8px;
     padding-left: 0.5rem;
@@ -5532,7 +5530,7 @@ input:-ms-input-placeholder {
     float: right;
     content: "";
     font-family: "kentfont", sans-serif; }
-  .departmental-nav .navbar-toggler.open:after {
+  .departmental-nav .navbar-toggler.in:after {
     content: ""; }
 
 .departmental-nav .navbar-menu {
@@ -5555,6 +5553,7 @@ input:-ms-input-placeholder {
 
 @media (min-width: 48em) {
   .departmental-nav {
+    min-height: 7rem;
     z-index: 1;
     position: relative; }
     .departmental-nav header {
@@ -5563,9 +5562,6 @@ input:-ms-input-placeholder {
       margin: 0 2rem;
       padding-left: 1rem; }
     .departmental-nav .navbar-menu {
-      position: absolute;
-      left: 0;
-      right: 0;
       max-height: 2.5rem;
       height: auto;
       overflow: hidden;
@@ -5594,14 +5590,16 @@ input:-ms-input-placeholder {
       font-size: 1em;
       background-color: transparent;
       line-height: inherit; }
-      .departmental-nav .navbar-toggler.hide {
-        display: none; }
       .departmental-nav .navbar-toggler:after {
         float: none;
         position: absolute;
         top: 0.7rem;
         right: 0;
         font-size: 0.7rem; } }
+
+@media (min-width: 48em) {
+  .show-departmental-menu .departmental-nav {
+    min-height: 10rem; } }
 
 .card {
   display: block;
@@ -5935,18 +5933,18 @@ input:-ms-input-placeholder {
         padding-left: 1.5rem; }
   .card.card-overlay .card-footer {
     padding: 0; }
-    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer a p:last-of-type, a .card.card-overlay .card-footer p:last-of-type {
+    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer .card-panel a.card p.card-text:last-of-type, .card-panel a.card .card.card-overlay .card-footer p.card-text:last-of-type, .card-panel .card.card-overlay .card-footer a p.card-text:last-of-type, .card-panel .card.card-overlay a .card-footer p.card-text:last-of-type {
       display: block;
       padding: 12px 16px;
       padding: 0.75rem 1rem;
       background: #f5f5f5;
       border-bottom: 1px solid #ccc; }
-      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer a p:last-of-type:after, a .card.card-overlay .card-footer p:last-of-type:after {
+      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer .card-panel a.card p.card-text:last-of-type:after, .card-panel a.card .card.card-overlay .card-footer p.card-text:last-of-type:after, .card-panel .card.card-overlay .card-footer a p.card-text:last-of-type:after, .card-panel .card.card-overlay a .card-footer p.card-text:last-of-type:after {
         position: absolute;
         right: 16px;
         right: 1rem; }
       @media (min-width: 48em) {
-        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer a p:last-of-type, a .card.card-overlay .card-footer p:last-of-type {
+        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer .card-panel a.card p.card-text:last-of-type, .card-panel a.card .card.card-overlay .card-footer p.card-text:last-of-type, .card-panel .card.card-overlay .card-footer a p.card-text:last-of-type, .card-panel .card.card-overlay a .card-footer p.card-text:last-of-type {
           display: table-cell;
           text-align: center;
           float: none;
@@ -5955,7 +5953,7 @@ input:-ms-input-placeholder {
           padding: 0;
           background: none;
           border: none; }
-          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer a p:last-of-type:after, a .card.card-overlay .card-footer p:last-of-type:after {
+          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer .card-panel a.card p.card-text:last-of-type:after, .card-panel a.card .card.card-overlay .card-footer p.card-text:last-of-type:after, .card-panel .card.card-overlay .card-footer a p.card-text:last-of-type:after, .card-panel .card.card-overlay a .card-footer p.card-text:last-of-type:after {
             position: relative;
             right: auto; } }
     @media (min-width: 48em) {
@@ -6018,7 +6016,7 @@ input:-ms-input-placeholder {
   margin-top: -2rem; }
   @media (min-width: 48em) {
     .card.header-card-overlay {
-      margin-top: -4rem; }
+      margin-top: -7rem; }
       .card.header-card-overlay .card-title-wrap {
         width: 45%;
         bottom: 0;
@@ -6027,6 +6025,10 @@ input:-ms-input-placeholder {
         .card.header-card-overlay .card-title-wrap.pull-right {
           left: inherit;
           right: 0; } }
+
+@media (min-width: 48em) {
+  .show-departmental-menu .card.header-card-overlay {
+    margin-top: -10rem; } }
 
 .modal.modal-fullscreen .modal-dialog {
   width: 100%;

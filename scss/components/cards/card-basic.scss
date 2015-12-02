@@ -104,8 +104,5 @@
 			text-decoration: none;
 			opacity: 0.9;
 		}
-		p:last-of-type {
-			@extend .chevron-link;
-		}
 	}
 }

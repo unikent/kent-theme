@@ -9622,10 +9622,10 @@ jQuery(document).ready(function(){
 			toggler.text('More');
 			if (navHasOverflown()) {
 				sectional_nav.addClass('overflown');
-				toggler.removeClass('hide');
+				toggler.prop('hidden',false);
 			}
 			else {
-				toggler.addClass('hide');
+				toggler.prop('hidden',true);
 				sectional_nav.removeClass('overflown');
 				closeNav();
 			}
@@ -9649,13 +9649,15 @@ jQuery(document).ready(function(){
 	}
 
 	function openNav () {
-		toggler.addClass('open');
+        $("body").addClass('show-departmental-menu');
+		toggler.addClass('in');
 		sectional_nav.addClass('in');
 	}
 
 	function closeNav () {
+        $("body").removeClass('show-departmental-menu');
 		sectional_nav.removeClass('in');
-		toggler.removeClass('open');
+		toggler.removeClass('in');
 	}
 
 	toggler.click(function () {

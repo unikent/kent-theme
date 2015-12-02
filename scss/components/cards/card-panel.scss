@@ -173,4 +173,13 @@
 
 		}
 	}
+
+  // if card is an A
+  // @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
+  a.card, .card  a {
+    p:last-of-type.card-text {
+      @extend .chevron-link;
+    }
+  }
+
 }
