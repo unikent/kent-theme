@@ -9448,15 +9448,31 @@ if(b){var c=this.constructor.DATA_KEY,d=a(b.currentTarget).data(c);d||(d=new thi
 
 (function($, viewport){
 
-    var visibilityDivs = {
-        'xs': $('<div class="hidden-sm-up"></div>'),
-        'sm': $('<div class="hidden-xs-down hidden-md-up"></div>'),
-        'md': $('<div class="hidden-sm-down hidden-lg-up"></div>'),
-        'lg': $('<div class="hidden-md-down hidden-xl-up"></div>'),
-        'xl': $('<div class="hidden-lg-down"></div>')
-    };
+	var visibilityDivs = {
+		'xs': $('<div class="hidden-sm-up"></div>'),
+		'sm': $('<div class="hidden-xs-down hidden-md-up"></div>'),
+		'md': $('<div class="hidden-sm-down hidden-lg-up"></div>'),
+		'lg': $('<div class="hidden-md-down hidden-xl-up"></div>'),
+		'xl': $('<div class="hidden-lg-down"></div>')
+	};
 
-    viewport.use('Custom', visibilityDivs);
+	viewport.use('Custom', visibilityDivs);
+
+	// Add our custom event
+	var previousBreakpoint = '';
+	$(window).resize(
+		viewport.changed(function(){
+			var breakpoint = viewport.current();
+
+			$(window).trigger('viewport:resize');
+
+			if(previousBreakpoint !== breakpoint){
+				 $(window).trigger('viewport:change');
+				 previousBreakpoint = breakpoint;
+			}
+		})
+	);
+
 
 })(jQuery, ResponsiveBootstrapToolkit);
 jQuery(document).ready(function(){
@@ -9541,11 +9557,11 @@ jQuery(document).ready(function(){
     });
 
     updateCollapseAriaState();
-    $(window).resize(
-        viewport.changed(function(){
-            updateCollapseAriaState();
-        })
-    );
+
+    $(window).on('viewport:change', function(){
+        updateCollapseAriaState();
+    });
+
 
 
 });
@@ -9664,11 +9680,9 @@ jQuery(document).ready(function(){
 		}
 	});
 
-	$(window).resize(
-		viewport.changed(function(){
-			respond();
-		})
-	);
+	$(window).on('viewport:resize', function(){
+        respond();
+    });
 
 	respond();
 });

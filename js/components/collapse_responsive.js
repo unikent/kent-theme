@@ -80,11 +80,11 @@ jQuery(document).ready(function(){
     });
 
     updateCollapseAriaState();
-    $(window).resize(
-        viewport.changed(function(){
-            updateCollapseAriaState();
-        })
-    );
+
+    $(window).on('viewport:change', function(){
+        updateCollapseAriaState();
+    });
+
 
 
 });
