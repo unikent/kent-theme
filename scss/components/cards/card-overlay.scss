@@ -114,7 +114,7 @@
 	.card-media-wrap, .card-embed-wrap {
 		position: relative;
 		clear: both;
-
+		margin-bottom: 0;
 		@include media-breakpoint-up(md){
 			//so images have basic shape while they load
 			min-height: 350px;
