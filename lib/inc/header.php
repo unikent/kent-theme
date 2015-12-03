@@ -50,13 +50,13 @@
 			<section class="audience-bar navbar">
 				<a class="navbar-brand kf-kent-horizontal" href="/" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a>
 				<span class="tag-line">The UK"s European University</span>
-				<button class="kf pull-right menu-button" aria-controls="global-nav-menu"></button>
-				<button class="kf-search pull-right search-button" aria-controls="global-nav-search"></button>
+				<button class="kf pull-right menu-button" aria-controls="global-nav-menu" title="Open main menu"></button>
+				<button class="kf-search pull-right search-button" aria-controls="global-nav-search" title="Open search"></button>
 			</section>
 			<section class="global-nav">
 				<a class="main-logo kf-kent-block" href=""><span class="sr-only">The University of Kent</span></a>
 				
-				<button class="search-button-full btn btn-accent btn-icon btn-lg pull-right" aria-controls="global-nav-search"><span class="kf-fw kf-search"></span></button>
+				<button class="search-button-full btn btn-accent btn-icon btn-lg pull-right" aria-controls="global-nav-search" title="Open search"><span class="kf-fw kf-search"></span></button>
 
 				<div class="global-nav-menu" id="global-nav-menu" role="menubar">
 					<nav class="global-nav-links" role="menu">
@@ -105,18 +105,18 @@
 				</div>
 				<div class="global-nav-search" id="global-nav-search">
 
-					<form >
+					<form role="search">
 						<div class="form-group">
 							<label for="search" class="sr-only">Search</label>
 							<div class="input-group input-group-lg">
 								<input type="search" class="form-control" id="search" placeholder="Search by course, department. keyword... ">
 								<span class="input-group-btn">
-									<button type="submit" class="btn btn-accent btn-icon"><span class="kf-fw kf-search"></span></button>
+									<button type="submit" class="btn btn-accent btn-icon" aria-label="Search"><span class="kf-fw kf-search"></span></button>
 								</span>
 							</div>
 						</div>
 
-						<span class="close-search pull-right">Close search</span>
+						<span class="close-search pull-right" role="button">Close search</span>
 					</form>
 				</div>
 			</section>
