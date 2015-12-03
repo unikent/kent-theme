@@ -53,22 +53,6 @@
 			color: #FFF;
 		}
 
-		&.card-transparent {
-
-			&,&.card-title-wrap-link {
-				background: rgba(0, 0, 0, 0.8);
-
-				.card-title {
-					text-transform: none;
-					color: #fff;
-				}
-				.card-text {
-					font-family: $font-family-sans-serif;
-					color: #fff;
-				}
-			}
-		}
-
 	}
 
 	.card-title, .card-subtitle {
@@ -139,18 +123,15 @@
 		&.card-media-wrap-video {
 			cursor: pointer;
 			&:after {
-				content: $kf-play;
+				content: $kf-play-circle;
 				font-family: $font-family-kentfont;
 				position: absolute;
 				left: 50%;
 				top: 50%;
 				margin-left: -2.65rem;
-				margin-top: -2.65rem;
-				font-size: 3rem;
+				margin-top: -3.65rem;
+				font-size: 7rem;
 				color: rgba(255,255,255,0.9);
-				background-color: rgba(0,0,0,0.6);
-				padding-right: 1.5rem;
-				padding-left: 1.5rem;
 			}
 		}
 	}

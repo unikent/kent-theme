@@ -5608,6 +5608,9 @@ input:-ms-input-placeholder {
   margin-bottom: 1rem; }
   .card:last-child {
     margin-bottom: 0; }
+  @media (min-width: 48em) {
+    .card:last-child {
+      margin-bottom: 1rem; } }
   .card .card-body {
     display: block;
     position: relative; }
@@ -5616,8 +5619,8 @@ input:-ms-input-placeholder {
   .card .card-title {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     color: #05345C;
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 17.6px;
+    font-size: 1.1rem; }
   .card .card-subtitle {
     color: #818a91;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -5628,9 +5631,26 @@ input:-ms-input-placeholder {
   .card .card-text {
     color: #171717; }
   .card .card-img:first-child,
-  .card .card-img-top:first-child {
+  .card .card-img-top:first-child, .card .card-media-wrap:first-child {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
+  .card .card-media-wrap, .card .card-embed-wrap {
+    position: relative; }
+    .card .card-media-wrap.card-media-wrap-video, .card .card-embed-wrap.card-media-wrap-video {
+      cursor: pointer; }
+      .card .card-media-wrap.card-media-wrap-video:after, .card .card-embed-wrap.card-media-wrap-video:after {
+        content: "";
+        font-family: "kentfont", sans-serif;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -32px;
+        margin-left: -2rem;
+        margin-top: -51.2px;
+        margin-top: -3.2rem;
+        font-size: 72px;
+        font-size: 4.5rem;
+        color: rgba(255, 255, 255, 0.9); }
   .card .card-inverse .card-title {
     color: #FFF; }
   .card .card-inverse .card-subtitle {
@@ -5698,14 +5718,39 @@ input:-ms-input-placeholder {
   @media (min-width: 34em) {
     .card-panel {
       padding: 1rem; } }
+  .card-panel.cards-backed .card {
+    background: #FFFFFF;
+    border-width: 0 15px 0 15px;
+    border-width: 0 0.9375rem 0 0.9375rem;
+    border-style: solid;
+    border-color: transparent; }
+    .card-panel.cards-backed .card .card-img:first-child,
+    .card-panel.cards-backed .card .card-img-top:first-child {
+      margin-left: -15px;
+      margin-left: -0.9375rem;
+      margin-right: -15px;
+      margin-right: -0.9375rem;
+      max-width: calc(100% + 1.875rem); }
   .card-panel.card-panel-secondary {
     background-color: #f5f5f5; }
+    .card-panel.card-panel-secondary.cards-backed .card {
+      border-color: #f5f5f5; }
   .card-panel.card-panel-tertiary {
     background-color: #f7f2e1; }
+    .card-panel.card-panel-tertiary.cards-backed .card {
+      border-color: #f7f2e1; }
   .card-panel.card-panel-primary-tint {
     background-color: #E0D4D4; }
+    .card-panel.card-panel-primary-tint.cards-backed .card {
+      border-color: #E0D4D4; }
   .card-panel .card-panel-body {
-    padding: 0; }
+    padding: 0;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
     @media (min-width: 34em) {
       .card-panel .card-panel-body .card {
         position: relative;
@@ -5713,10 +5758,16 @@ input:-ms-input-placeholder {
         min-height: 1px;
         padding-left: 0.9375rem;
         padding-right: 0.9375rem;
-        width: 50%; } }
+        width: 50%; }
+        .card-panel .card-panel-body .card:nth-child(odd) {
+          clear: left; } }
     @media (min-width: 62em) {
       .card-panel .card-panel-body .card {
-        width: 25%; } }
+        width: 25%; }
+        .card-panel .card-panel-body .card:nth-child(odd) {
+          clear: none; }
+        .card-panel .card-panel-body .card:nth-child(4n+1) {
+          clear: left; } }
     .card-panel .card-panel-body .card-panel-grid,
     .card-panel .card-panel-body .card-panel-single,
     .card-panel .card-panel-body .card-panel-list {
@@ -5738,6 +5789,9 @@ input:-ms-input-placeholder {
           padding-right: 0.9375rem;
           width: 50%;
           margin-bottom: 0; } }
+    .card-panel .card-panel-body .card-panel-single .card .card-title {
+      font-size: 20px;
+      font-size: 1.25rem; }
     @media (min-width: 34em) {
       .card-panel .card-panel-body .card-panel-single .card {
         padding: 0;
@@ -5865,14 +5919,6 @@ input:-ms-input-placeholder {
     .card.card-overlay .card-title-wrap .card-text {
       font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
       color: #FFF; }
-    .card.card-overlay .card-title-wrap.card-transparent, .card.card-overlay .card-title-wrap.card-transparent.card-title-wrap-link {
-      background: rgba(0, 0, 0, 0.8); }
-      .card.card-overlay .card-title-wrap.card-transparent .card-title, .card.card-overlay .card-title-wrap.card-transparent.card-title-wrap-link .card-title {
-        text-transform: none;
-        color: #fff; }
-      .card.card-overlay .card-title-wrap.card-transparent .card-text, .card.card-overlay .card-title-wrap.card-transparent.card-title-wrap-link .card-text {
-        font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        color: #fff; }
   .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
     font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
   .card.card-overlay .card-img-overlay {
@@ -5914,23 +5960,18 @@ input:-ms-input-placeholder {
     .card.card-overlay .card-media-wrap.card-media-wrap-video, .card.card-overlay .card-embed-wrap.card-media-wrap-video {
       cursor: pointer; }
       .card.card-overlay .card-media-wrap.card-media-wrap-video:after, .card.card-overlay .card-embed-wrap.card-media-wrap-video:after {
-        content: "";
+        content: "";
         font-family: "kentfont", sans-serif;
         position: absolute;
         left: 50%;
         top: 50%;
         margin-left: -42.4px;
         margin-left: -2.65rem;
-        margin-top: -42.4px;
-        margin-top: -2.65rem;
-        font-size: 48px;
-        font-size: 3rem;
-        color: rgba(255, 255, 255, 0.9);
-        background-color: rgba(0, 0, 0, 0.6);
-        padding-right: 24px;
-        padding-right: 1.5rem;
-        padding-left: 24px;
-        padding-left: 1.5rem; }
+        margin-top: -58.4px;
+        margin-top: -3.65rem;
+        font-size: 112px;
+        font-size: 7rem;
+        color: rgba(255, 255, 255, 0.9); }
   .card.card-overlay .card-footer {
     padding: 0; }
     .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer .card-panel a.card p.card-text:last-of-type, .card-panel a.card .card.card-overlay .card-footer p.card-text:last-of-type, .card-panel .card.card-overlay .card-footer a p.card-text:last-of-type, .card-panel .card.card-overlay a .card-footer p.card-text:last-of-type {
@@ -6014,17 +6055,30 @@ input:-ms-input-placeholder {
 .card.header-card-overlay {
   margin-top: -32px;
   margin-top: -2rem; }
+  .card.header-card-overlay .card-title-wrap {
+    padding: 32px;
+    padding: 2rem; }
+    .card.header-card-overlay .card-title-wrap.card-title-wrap-link:after {
+      content: none; }
+    .card.header-card-overlay .card-title-wrap.card-title-wrap-link .card-title {
+      text-transform: none;
+      color: #fff; }
+    .card.header-card-overlay .card-title-wrap.card-title-wrap-link .card-text {
+      font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #fff; }
   @media (min-width: 48em) {
     .card.header-card-overlay {
       margin-top: -7rem; }
       .card.header-card-overlay .card-title-wrap {
-        width: 45%;
+        width: 100%;
         bottom: 0;
         top: auto;
-        left: 0; }
-        .card.header-card-overlay .card-title-wrap.pull-right {
-          left: inherit;
-          right: 0; } }
+        left: 0;
+        padding: 3rem 2rem 2rem;
+        background: rgba(0, 0, 0, 0.75);
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); }
+        .card.header-card-overlay .card-title-wrap.card-title-wrap-link {
+          padding: 3rem 2rem 2rem; } }
 
 @media (min-width: 48em) {
   .show-departmental-menu .card.header-card-overlay {
