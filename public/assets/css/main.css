@@ -5621,8 +5621,7 @@ input:-ms-input-placeholder {
   max-height: 64px;
   max-height: 4rem;
   height: auto;
-  overflow: hidden;
-  transition: max-height 300ms; }
+  overflow: hidden; }
   .beta-bar p {
     display: inline-block; }
   .beta-bar.in {
