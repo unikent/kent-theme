@@ -61,6 +61,7 @@ module.exports = function(grunt) {
                     'js/components/collapse_responsive.js',
                     'js/components/global_nav.js',
                     'js/components/sectional_nav.js',
+                    'js/components/beta_bar.js',
                 ],
                 dest: 'js/main.js'
             }

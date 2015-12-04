@@ -45,6 +45,17 @@
 	<body>
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
 		<a href="#main_content" class="sr-only">Jump to content</a>
+		<section class="beta-bar navbar">
+			<p><span class="beta-bar-beta">BETA</span></p>
+			
+			<p>We're testing <a href="#">a new design</a>.</p>
+			<p>It may not be complete or work as intended.</p>
+			<p>
+				<a href="#" class="btn btn-link">Go to original site</a>
+				<button class="btn btn-secondary feedback">Give us feedback</button>
+			</p>
+			<span class="beta-toggler">Lear more</span>
+		</section>
 		<header class="global-header">
 			<section class="audience-bar navbar">
 				<a class="navbar-brand kf-kent-horizontal" href=""><span class="sr-only">The University of Kent</span></a>

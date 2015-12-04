@@ -1,0 +1,63 @@
+.beta-bar {
+	background-color: #fbf5e9;
+	padding: 1.5rem;
+	padding-bottom: 0.5rem;
+	max-height: 4rem;
+	height: auto;
+	overflow: hidden;
+	transition: max-height 300ms;
+
+	p {
+			display: inline-block;
+	}
+
+	&.in {
+		max-height: none;
+	}
+
+	&.overflown{
+		padding-right: 8rem;
+		.btn {
+			margin-top: 0;
+			vertical-align: middle;
+
+			&.btn-link {
+				padding-left: 0;
+			}
+		}
+	}
+
+	.btn {
+		margin-top: -($btn-padding-y);
+		vertical-align: top;
+	}
+	.beta-bar-beta {
+		background-color: $brand-primary;
+		color: white;
+		padding: 0.4rem 1rem;
+		margin-right: 1rem;
+		margin-bottom: 0.5rem;
+		margin-top: -0.2rem;
+	}
+
+	.beta-toggler {
+		cursor:pointer;
+		position: absolute;
+		top: 1rem;
+		right: 0;
+		padding: 0.5rem;
+		padding-right: 1rem;
+
+		&:after {
+			content: $kf-chevron-down;
+			font-family: $font-family-kentfont;
+			padding-left: 0.2rem;
+		}
+
+		&.in {
+			&:after {
+				content: $kf-chevron-up;
+			}
+		}
+	}
+}
