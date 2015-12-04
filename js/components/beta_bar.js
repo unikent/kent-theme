@@ -23,14 +23,14 @@ jQuery(document).ready(function(){
 
 	function barHasOverflown () {
 		var last = beta_bar.find('p').last();
-		var firstp = beta_bar.find('p').first();
-		return last.position().top > firstp.position().top;
+		var first = beta_bar.find('p').first();
+		return last.position().top > first.position().top;
 	}
 
 	function barIsMinimal () {
 		var second = beta_bar.find('p:nth-child(2)').first();
-		var firstp = beta_bar.find('p').first();
-		return second.position().top > firstp.position().top;
+		var first = beta_bar.find('p').first();
+		return second.position().top > first.position().top;
 	}
 
 	function toggleNav () {
