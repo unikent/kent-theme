@@ -9448,15 +9448,31 @@ if(b){var c=this.constructor.DATA_KEY,d=a(b.currentTarget).data(c);d||(d=new thi
 
 (function($, viewport){
 
-    var visibilityDivs = {
-        'xs': $('<div class="hidden-sm-up"></div>'),
-        'sm': $('<div class="hidden-xs-down hidden-md-up"></div>'),
-        'md': $('<div class="hidden-sm-down hidden-lg-up"></div>'),
-        'lg': $('<div class="hidden-md-down hidden-xl-up"></div>'),
-        'xl': $('<div class="hidden-lg-down"></div>')
-    };
+	var visibilityDivs = {
+		'xs': $('<div class="hidden-sm-up"></div>'),
+		'sm': $('<div class="hidden-xs-down hidden-md-up"></div>'),
+		'md': $('<div class="hidden-sm-down hidden-lg-up"></div>'),
+		'lg': $('<div class="hidden-md-down hidden-xl-up"></div>'),
+		'xl': $('<div class="hidden-lg-down"></div>')
+	};
 
-    viewport.use('Custom', visibilityDivs);
+	viewport.use('Custom', visibilityDivs);
+
+	// Add our custom event
+	var previousBreakpoint = '';
+	$(window).resize(
+		viewport.changed(function(){
+			var breakpoint = viewport.current();
+
+			$(window).trigger('viewport:resize');
+
+			if(previousBreakpoint !== breakpoint){
+				 $(window).trigger('viewport:change');
+				 previousBreakpoint = breakpoint;
+			}
+		})
+	);
+
 
 })(jQuery, ResponsiveBootstrapToolkit);
 jQuery(document).ready(function(){
@@ -9541,74 +9557,83 @@ jQuery(document).ready(function(){
     });
 
     updateCollapseAriaState();
-    $(window).resize(
-        viewport.changed(function(){
-            updateCollapseAriaState();
-        })
-    );
+
+    $(window).on('viewport:change', function(){
+        updateCollapseAriaState();
+    });
+
 
 
 });
 // go go global nav
 (function(){
 
-	var global_menu = $('.global-nav-menu');
-	var global_search = $('.global-nav-search');
+	// store control class as data on the node (just for conveniance)
+	var global_menu = $(".global-nav-menu").data("control-class", "show-global-menu");
+	var global_search = $(".global-nav-search").data("control-class", "show-global-search");
 
-	var menusOpen = function(){
-		return (global_menu.data('open') || global_search.data('open') );
-	};
-
-	var openMenu = function(menu){
-
-		// If a menu is already open
-		if(menusOpen()){
-			if(global_menu.data('open')){
-				closeMenu(global_menu);
-			} 
-			if(global_search.data('open')){
-				closeMenu(global_search);
-			}
+	var toggleMenu = function(button, menu){
+		// If no menu is open, open this one, else this is a close action
+		if(!menu.hasClass("in")){
+			openMenu(button, menu);
 		}else{
-			// if not, open requested menu
-			$('body').addClass('show-global-menu');
-			if(menu.hasClass('global-nav-search')){
-				$('body').addClass('show-global-menu-search');
-			}
-			menu.addClass('in');
-			menu.data('open', true); 
-		}	
-	};
-	var closeMenu = function(menu){
-		$('body').removeClass('show-global-menu').removeClass('show-global-menu-search');
-		menu.removeClass('in');
-		menu.data('open', false);
+			closeMenu(button, menu);
+		}
 	};
 
-	$('.menu-button').click(function(){
-		openMenu(global_menu);	
+	var closeMenu = function(button, menu){
+
+		$("body").removeClass(menu.data("control-class"));
+		menu.removeClass("in");
+
+		// Update button so it knows it's expanded area is collapsed
+		// aria-hidden is not needed on th element, since as the element is displayed none
+		// the screen reader won't see it anyway.
+		button.attr("aria-expanded", "false");
+	};
+
+	var openMenu = function(button, menu){
+		// Select find
+		if(menu === global_search){
+			global_search.find("input[type='search']").focus();
+		}
+
+		$("body").addClass(menu.data("control-class"));
+		menu.addClass("in");
+		// update button so it knows it's expanded area is collapsed
+		button.attr("aria-expanded", true);
+	};
+
+	// Hook up menu links
+	$(".menu-button").click(function(){
+		toggleMenu($(this), global_menu);	
 	});
-	$('.search-button,.search-button-full').click(function(){
-		openMenu(global_search);
-		global_search.find("input[type='search']").focus();
+	$(".search-button, .search-button-full").click(function(){
+		toggleMenu($(this), global_search);
 	});
-	$('.close-search').click(function(){
-		closeMenu(global_search);
+	$(".close-search").click(function(){
+		closeMenu($(this), global_search);
 	});
 
-	// second level nav
-	global_menu.find('.global-nav-link a').click(function(){
-		// remove any old opens
-		var was_open = $(this).parent().hasClass('in');
+})();
+(function(){
+	// Primary Nav
+	$(".global-nav-menu .global-nav-link > a").click(function(){
 
-		// Close all
-		$(this).parent().parent().find('.in').removeClass('in');
-		// if this was open, close fully
+		// was this item open?
+		var was_open = $(this).parent().hasClass("in");
+
+		// If a menu was already open, close other menu sections (setting expanded as we go)
+		if($(this).parent().parent().hasClass("in")){
+			$(this).parent().parent().find(".in").removeClass("in").children(":first").attr("aria-expanded", "false"); 
+		}
+
 		if(was_open){
-			$(this).parent().parent().removeClass('in');
+			// if the clicked item was open, close all
+			$(this).parent().parent().removeClass("in");
 		}else{
-			// if not, open it
-			$(this).parent().toggleClass('in').parent().addClass('in');
+			//  if not, tell item its expanded & toggle it all open
+			$(this).attr("aria-expanded", "true").parent().toggleClass("in").parent().addClass("in");
 		}
 	});
 
@@ -9631,12 +9656,15 @@ jQuery(document).ready(function(){
 			}
 		}
 		else {
+			// dont hide toggler at small res
+			toggler.prop('hidden',false);
 			toggler.text('Menu');
 		}
 	}
 
 	function navHasOverflown () {
-		return sectional_nav.find('a').last().position().top >= sectional_nav.find('a').last().height();
+		var last = sectional_nav.find('a').last();
+		return last.position().top >= last.height();
 	}
 
 	function toggleNav () {
@@ -9666,11 +9694,75 @@ jQuery(document).ready(function(){
 		}
 	});
 
-	$(window).resize(
-		viewport.changed(function(){
-			respond();
-		})
-	);
+	$(window).on('viewport:resize', function(){
+        respond();
+    });
+
+	respond();
+});
+jQuery(document).ready(function(){
+	var beta_bar = $('.beta-bar');
+	var toggler = $('.beta-bar .beta-toggler');
+
+	function respond () {
+		if (barHasOverflown()) {
+			beta_bar.addClass('overflown');
+			toggler.prop('hidden',false);
+
+			if (barIsMinimal()) {
+				toggler.text('Learn more');
+			}
+			else {
+				toggler.text('More');
+			}
+		}
+		else {
+			toggler.prop('hidden',true);
+			beta_bar.removeClass('overflown');
+			closeNav();
+		}
+	}
+
+	function barHasOverflown () {
+		var last = beta_bar.find('p').last();
+		var first = beta_bar.find('p').first();
+		return last.position().top > first.position().top;
+	}
+
+	function barIsMinimal () {
+		var second = beta_bar.find('p:nth-child(2)').first();
+		var first = beta_bar.find('p').first();
+		return second.position().top > first.position().top;
+	}
+
+	function toggleNav () {
+		if (beta_bar.hasClass('in')) {
+			closeNav();
+		}
+		else {
+			openNav();
+		}
+	}
+
+	function openNav () {
+		toggler.addClass('in');
+		beta_bar.addClass('in');
+	}
+
+	function closeNav () {
+		beta_bar.removeClass('in');
+		toggler.removeClass('in');
+	}
+
+	toggler.click(function () {
+		if (barHasOverflown()) {
+			toggleNav();
+		}
+	});
+
+	$(window).on('viewport:resize', function(){
+		respond();
+	});
 
 	respond();
 });

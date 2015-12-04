@@ -6,7 +6,7 @@
 					<div class="row">
 						<div itemscope itemtype="http://schema.org/CollegeOrUniversity" class="col-md-6">
 							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-contact-us" aria-controls="footer-contact-us"  data-parent=".global-footer">Contact Us</h4>
-							<div id="footer-contact-us" class="footer-section collapse-xs-down">
+							<div id="footer-contact-us" class="footer-section collapse-xs-down" role="complementary">
 								<div class="row">
 									<div itemscope="" class="col-sm-6">
 										Recruitment and admissions:<br>
@@ -32,7 +32,7 @@
 						</div>
 						<div class="col-md-6">
 							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-open-days" aria-controls="footer-open-days" data-parent=".global-footer">Open days in 2015/16</h4>
-							<div id="footer-open-days" class="footer-section collapse-xs-down">
+							<div id="footer-open-days" class="footer-section collapse-xs-down" role="complementary">
 								<div class="row">
 									<div class="col-sm-6">
 										<strong>Canterbury</strong>
@@ -145,11 +145,11 @@
 					<div class="row">
 						<div class="col-xs-12">
 							<h6 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" data-parent=".global-footer">Affiliations</h6>
-							<div id="footer-affiliations" class="footer-section collapse-sm-down">
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-sgroup-white.png" class="img-responsive"></div>
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-arc-white.png" class="img-responsive"></div>
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-uniuk-white.png" class="img-responsive"></div>
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-queen-white.png" class="img-responsive"></div>
+							<div id="footer-affiliations" class="footer-section collapse-sm-down" role="list">
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="https://sgroup.be/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-sgroup-white.png" class="img-responsive" alt="SGroup European Universities Network"></a>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="https://www.kent.ac.uk/about/partnerships/eastern-arc.html"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-arc-white.png" class="img-responsive" alt="Eastern Academic Research Consortium"></a>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="https://www.universitiesuk.ac.uk/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-uniuk-white.png" class="img-responsive" alt="Univerities UK"></a>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="https://www.kent.ac.uk/about/awards/qap/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-queen-white.png" class="img-responsive" alt="The Queen's Anniversary Prize"></a>
 							</div>
 						</div>
 					</div>
@@ -157,34 +157,11 @@
 			</section>
 			<section class="global-footer-base">
 				<div class="container">
-					<a href="#">&copy; University of Kent</a> <a href="#">Accessibility</a> <a href="#">Contact us</a> <a href="#">Feedback</a> <a href="#">Legal</a> <a href="#">Cookie Policy</a>
+					<a href="#">&copy; University of Kent</a> <a href="#">Accessibility</a> <a href="/contact">Contact us</a> <a href="#">Feedback</a> <a href="/legal">Legal</a> <a href="#">Cookie Policy</a>
 				</div>
 			</section>
 		</footer>
-		<div class="modal fade modal-fullscreen" id="myVideoModal" tabindex="-1" role="dialog" aria-labelledby="myVideoModalLabel" aria-hidden="true">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content modal-content-transparent">
-					<div class="modal-header">
-						<button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true"><i class="kf-close"></i></span>
-							<span class="sr-only">Close</span>
-						</button>
-					</div>
-
-					<div class="embed-responsive embed-responsive-16by9">
-						<video controls class="embed-responsive-item">
-							<source src="video/research2.mp4">
-						</video>
-						<div class="embed-responsive-item-overlay">
-							<span class="video-transcript"><small><a href="#">Download transcript</a></small></span>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-		</div>
-
-		<script src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/js/main.js"></script>
+		<script src="<?php echo KentThemeHelper::getThemeWebRoot();?>/assets/js/main.js"></script>
 		<?php echo $foot_markup ;?>
 	</body>
 </html>

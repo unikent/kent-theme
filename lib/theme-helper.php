@@ -45,9 +45,9 @@ Class KentThemeHelper {
 		foreach($menu as $name => $link){
 
 			if(parse_url($link,PHP_URL_PATH) == parse_url($current_url,PHP_URL_PATH)){
-				$output .= "<a class='active' href=\"{$link}\">{$name}</a>".PHP_EOL;
+				$output .= "<a role=\"menuitem\" class=\"active\" href=\"{$link}\">{$name}</a>".PHP_EOL;
 			}else{
-				$output .= "<a href=\"{$link}\">{$name}</a>".PHP_EOL;
+				$output .= "<a role=\"menuitem\" href=\"{$link}\">{$name}</a>".PHP_EOL;
 			}
 			
 		}

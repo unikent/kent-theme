@@ -16,12 +16,15 @@ jQuery(document).ready(function(){
 			}
 		}
 		else {
+			// dont hide toggler at small res
+			toggler.prop('hidden',false);
 			toggler.text('Menu');
 		}
 	}
 
 	function navHasOverflown () {
-		return sectional_nav.find('a').last().position().top >= sectional_nav.find('a').last().height();
+		var last = sectional_nav.find('a').last();
+		return last.position().top >= last.height();
 	}
 
 	function toggleNav () {
@@ -51,11 +54,9 @@ jQuery(document).ready(function(){
 		}
 	});
 
-	$(window).resize(
-		viewport.changed(function(){
-			respond();
-		})
-	);
+	$(window).on('viewport:resize', function(){
+        respond();
+    });
 
 	respond();
 });
