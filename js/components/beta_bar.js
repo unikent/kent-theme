@@ -3,9 +3,16 @@ jQuery(document).ready(function(){
 	var toggler = $('.beta-bar .beta-toggler');
 
 	function respond () {
-		if (navHasOverflown()) {
+		if (barHasOverflown()) {
 			beta_bar.addClass('overflown');
 			toggler.prop('hidden',false);
+
+			if (barIsMinimal()) {
+				toggler.text('Learn more');
+			}
+			else {
+				toggler.text('More');
+			}
 		}
 		else {
 			toggler.prop('hidden',true);
@@ -14,9 +21,16 @@ jQuery(document).ready(function(){
 		}
 	}
 
-	function navHasOverflown () {
+	function barHasOverflown () {
 		var last = beta_bar.find('p').last();
-		return last.position().top >= last.height();
+		var firstp = beta_bar.find('p').first();
+		return last.position().top > firstp.position().top;
+	}
+
+	function barIsMinimal () {
+		var second = beta_bar.find('p:nth-child(2)').first();
+		var firstp = beta_bar.find('p').first();
+		return second.position().top > firstp.position().top;
 	}
 
 	function toggleNav () {
@@ -39,7 +53,7 @@ jQuery(document).ready(function(){
 	}
 
 	toggler.click(function () {
-		if (navHasOverflown()) {
+		if (barHasOverflown()) {
 			toggleNav();
 		}
 	});
