@@ -16,6 +16,8 @@ jQuery(document).ready(function(){
 			}
 		}
 		else {
+			// dont hide toggler at small res
+			toggler.prop('hidden',false);
 			toggler.text('Menu');
 		}
 	}
@@ -52,11 +54,9 @@ jQuery(document).ready(function(){
 		}
 	});
 
-	$(window).resize(
-		viewport.changed(function(){
-			respond();
-		})
-	);
+	$(window).on('viewport:resize', function(){
+        respond();
+    });
 
 	respond();
 });
