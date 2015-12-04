@@ -50,8 +50,8 @@
 			<section class="audience-bar navbar">
 				<a class="navbar-brand kf-kent-horizontal" href="/" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a>
 				<span class="tag-line">The UK"s European University</span>
-				<button class="kf pull-right menu-button" aria-controls="global-nav-menu" title="Open main menu"></button>
-				<button class="kf-search pull-right search-button" aria-controls="global-nav-search" title="Open search"></button>
+				<button class="kf pull-right menu-button" aria-controls="global-nav-menu" title="Open main menu" aria-expanded="false"></button>
+				<button class="kf-search pull-right search-button" aria-controls="global-nav-search" title="Open search" aria-expanded="false"></button>
 			</section>
 			<section class="global-nav">
 				<a class="main-logo kf-kent-block" href=""><span class="sr-only">The University of Kent</span></a>
@@ -61,7 +61,7 @@
 				<div class="global-nav-menu" id="global-nav-menu" role="menubar">
 					<nav class="global-nav-links" role="menu">
 						<div class="global-nav-link">
-							<a aria-controls="menu-research" role="menuitem">Research <span class="more kf-chevron-down"></span></a>
+							<a aria-controls="menu-research" aria-expanded="false" role="menuitem">Research <span class="more kf-chevron-down"></span></a>
 							<nav id="menu-research" role="menu">
 								<a href="#" role="menuitem" >
 									Research impact
@@ -74,7 +74,7 @@
 							</nav>
 						</div>
 						<div class="global-nav-link">
-							<a aria-controls="menu-study" role="menuitem">Study <span class="more kf-chevron-down"></span></a>
+							<a aria-controls="menu-study" aria-expanded="false" role="menuitem">Study <span class="more kf-chevron-down"></span></a>
 							<nav id="menu-study" role="menu">
 								<a href="#" role="menuitem">
 									Inspiring teaching
@@ -87,7 +87,7 @@
 							</nav>
 						</div>
 						<div class="global-nav-link">
-							<a aria-controls="menu-explore" role="menuitem">Explore <span class="more kf-chevron-down"></span></a>
+							<a aria-controls="menu-explore" aria-expanded="false" role="menuitem">Explore <span class="more kf-chevron-down"></span></a>
 							<nav id="menu-explore" role="menu">
 								<a href="#" role="menuitem">About <span class="global-nav-link-desc">Top 16 UK University</span><span class="more kf-chevron-right"></span></a>
 								<a href="#" role="menuitem">Inspirint student experience <span class="global-nav-link-desc">3rd for studen satisfaction</span><span class="more kf-chevron-right"></span></a>

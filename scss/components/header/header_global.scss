@@ -46,6 +46,7 @@
 				border-bottom: solid 1px #eee;
 				padding-left:1rem;
 				color: $kent-primary;
+				cursor:pointer;
 
 				text-transform: uppercase;
 				font-family: $font-family-serif;
@@ -286,16 +287,14 @@
 
 }
 
-.show-global-menu {
+.show-global-menu, .show-global-search {
 	overflow-y:hidden;
 
 	.global-header {
 
-		button.menu-button::before {
+		button.menu-button::before, button.search-button::before{
 			content: $kf-close;
 		}
-
-		button.search-button {display:none;}
 
 		.global-nav-menu.in,
 		.global-nav-search.in {
@@ -314,10 +313,6 @@
 				height: auto;
 				width: auto;
 				float: none;
-			}
-
-			.global-nav-menu .global-nav-links, .global-nav-search {
-				display: none;
 			}
 
 			.global-nav-search.in {
@@ -344,7 +339,23 @@
 	}
 }
 
-.show-global-menu-search{
+/* Swap buttons in header */
+.show-global-menu .global-header{
+	button.search-button {display:none;}
+}
+.show-global-search .global-header{
+	button.menu-button {display:none;}
+}
+
+
+
+.show-global-search{
+
+			.global-nav-menu .global-nav-links {
+				display: none;
+			}
+
+
 	@include media-breakpoint-up(md) {
 		&:before {
 			content: " ";

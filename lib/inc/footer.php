@@ -146,10 +146,10 @@
 						<div class="col-xs-12">
 							<h6 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" data-parent=".global-footer">Affiliations</h6>
 							<div id="footer-affiliations" class="footer-section collapse-sm-down" role="list">
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-sgroup-white.png" class="img-responsive" alt="SGroup European Universities Network"></div>
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-arc-white.png" class="img-responsive" alt="Eastern Academic Research Consortium"></div>
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-uniuk-white.png" class="img-responsive" alt="Univerities UK"></div>
-								<div class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-queen-white.png" class="img-responsive" alt="The Queen's Anniversary Prize"></div>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="https://sgroup.be/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-sgroup-white.png" class="img-responsive" alt="SGroup European Universities Network"></a>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="https://www.kent.ac.uk/about/partnerships/eastern-arc.html"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-arc-white.png" class="img-responsive" alt="Eastern Academic Research Consortium"></a>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="https://www.universitiesuk.ac.uk/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-uniuk-white.png" class="img-responsive" alt="Univerities UK"></a>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="https://www.kent.ac.uk/about/awards/qap/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-queen-white.png" class="img-responsive" alt="The Queen's Anniversary Prize"></a>
 							</div>
 						</div>
 					</div>
@@ -157,7 +157,7 @@
 			</section>
 			<section class="global-footer-base">
 				<div class="container">
-					<a href="#">&copy; University of Kent</a> <a href="#">Accessibility</a> <a href="#">Contact us</a> <a href="#">Feedback</a> <a href="#">Legal</a> <a href="#">Cookie Policy</a>
+					<a href="#">&copy; University of Kent</a> <a href="#">Accessibility</a> <a href="/contact">Contact us</a> <a href="#">Feedback</a> <a href="/legal">Legal</a> <a href="#">Cookie Policy</a>
 				</div>
 			</section>
 		</footer>

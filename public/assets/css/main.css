@@ -5287,6 +5287,7 @@ input:-ms-input-placeholder {
         padding-left: 16px;
         padding-left: 1rem;
         color: #05345C;
+        cursor: pointer;
         text-transform: uppercase;
         font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
         .global-nav .global-nav-links .global-nav-link a:hover, .global-nav .global-nav-links .global-nav-link a:active, .global-nav .global-nav-links .global-nav-link a:focus {
@@ -5453,45 +5454,53 @@ input:-ms-input-placeholder {
                 .global-nav .global-nav-links.in .global-nav-link.in > a > .more::before {
                   content: ""; } }
 
-.show-global-menu {
+.show-global-menu, .show-global-search {
   overflow-y: hidden; }
-  .show-global-menu .global-header button.menu-button::before {
+  .show-global-menu .global-header button.menu-button::before, .show-global-menu .global-header button.search-button::before, .show-global-search .global-header button.menu-button::before, .show-global-search .global-header button.search-button::before {
     content: ""; }
-  .show-global-menu .global-header button.search-button {
-    display: none; }
   .show-global-menu .global-header .global-nav-menu.in,
-  .show-global-menu .global-header .global-nav-search.in {
+  .show-global-menu .global-header .global-nav-search.in, .show-global-search .global-header .global-nav-menu.in,
+  .show-global-search .global-header .global-nav-search.in {
     display: block;
     height: 100vh;
     width: 100vw; }
   @media (min-width: 48em) {
-    .show-global-menu {
+    .show-global-menu, .show-global-search {
       overflow-y: auto; }
       .show-global-menu .global-header .global-nav-menu.in,
-      .show-global-menu .global-header .global-nav-search.in {
+      .show-global-menu .global-header .global-nav-search.in, .show-global-search .global-header .global-nav-menu.in,
+      .show-global-search .global-header .global-nav-search.in {
         height: auto;
         width: auto;
         float: none; }
-      .show-global-menu .global-header .global-nav-menu .global-nav-links, .show-global-menu .global-header .global-nav-search {
-        display: none; }
-      .show-global-menu .global-header .global-nav-search.in {
+      .show-global-menu .global-header .global-nav-search.in, .show-global-search .global-header .global-nav-search.in {
         display: block;
         min-height: 6.5rem;
         overflow: visible; }
-        .show-global-menu .global-header .global-nav-search.in .close-search {
+        .show-global-menu .global-header .global-nav-search.in .close-search, .show-global-search .global-header .global-nav-search.in .close-search {
           display: block;
           font-size: 0.9rem;
           position: relative;
           right: -3rem;
           top: 4.75rem; }
-        .show-global-menu .global-header .global-nav-search.in .form-group {
+        .show-global-menu .global-header .global-nav-search.in .form-group, .show-global-search .global-header .global-nav-search.in .form-group {
           position: absolute;
           margin: 0.25rem 1rem 0 8rem; }
-          .show-global-menu .global-header .global-nav-search.in .form-group .input-group {
+          .show-global-menu .global-header .global-nav-search.in .form-group .input-group, .show-global-search .global-header .global-nav-search.in .form-group .input-group {
             padding-bottom: 0; } }
 
+/* Swap buttons in header */
+.show-global-menu .global-header button.search-button {
+  display: none; }
+
+.show-global-search .global-header button.menu-button {
+  display: none; }
+
+.show-global-search .global-nav-menu .global-nav-links {
+  display: none; }
+
 @media (min-width: 48em) {
-  .show-global-menu-search:before {
+  .show-global-search:before {
     content: " ";
     width: 100%;
     height: 100%;
@@ -5500,7 +5509,7 @@ input:-ms-input-placeholder {
     top: 0;
     left: 0;
     background: rgba(0, 0, 0, 0.5); }
-  .show-global-menu-search .departmental-nav:before {
+  .show-global-search .departmental-nav:before {
     content: " ";
     width: calc(100% - 4rem);
     height: 100%;
