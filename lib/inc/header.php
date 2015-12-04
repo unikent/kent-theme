@@ -55,7 +55,7 @@
 				<a href="#" class="btn btn-link">Go to original site</a>
 				<button class="btn btn-secondary feedback">Give us feedback</button>
 			</p>
-			<span class="beta-toggler">Lear more</span>
+			<span class="beta-toggler">Learn more</span>
 		</section>
 		<header class="global-header">
 			<section class="audience-bar navbar">
