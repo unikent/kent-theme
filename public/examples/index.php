@@ -9,6 +9,11 @@
 			'Science' => '#',
 			'Society' => '#',
 			'Kent Life' => '#',
+			'Cuslture' => '#',
+			'Envsironment' => '#',
+			'Scisence' => '#',
+			'Socaiety' => '#',
+			'Kenat Life' => '#'
 		),array('title'=>'Demo Page - Kent Theme Beta')); ?>
 
 			<div class="card card-overlay header-card-overlay">

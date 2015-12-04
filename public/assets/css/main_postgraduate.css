@@ -5598,13 +5598,21 @@ input:-ms-input-placeholder {
       z-index: 1;
       font-size: 1em;
       background-color: transparent;
-      line-height: inherit; }
+      line-height: inherit;
+      /* Only show when overflown */
+      display: none; }
       .departmental-nav .navbar-toggler:after {
         float: none;
         position: absolute;
         top: 0.7rem;
         right: 0;
-        font-size: 0.7rem; } }
+        font-size: 0.7rem; }
+      .departmental-nav .navbar-toggler.overflown {
+        display: block; }
+        .departmental-nav .navbar-toggler.overflown::before {
+          content: "More"; }
+        .departmental-nav .navbar-toggler.overflown span {
+          display: none; } }
 
 @media (min-width: 48em) {
   .show-departmental-menu .departmental-nav {
