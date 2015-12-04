@@ -161,7 +161,7 @@
 				</div>
 			</section>
 		</footer>
-		<script src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/js/main.js"></script>
+		<script src="<?php echo KentThemeHelper::getThemeWebRoot();?>/assets/js/main.js"></script>
 		<?php echo $foot_markup ;?>
 	</body>
 </html>
