@@ -9615,15 +9615,16 @@ jQuery(document).ready(function(){
 		closeMenu($(this), global_search);
 	});
 
+})();
+(function(){
 	// Primary Nav
-	global_menu.find(".global-nav-link > a").click(function(){
+	$(".global-nav-menu .global-nav-link > a").click(function(){
 
 		// was this item open?
 		var was_open = $(this).parent().hasClass("in");
 
-		// If a menu was already open, close other menu sections
+		// If a menu was already open, close other menu sections (setting expanded as we go)
 		if($(this).parent().parent().hasClass("in")){
-
 			$(this).parent().parent().find(".in").removeClass("in").children(":first").attr("aria-expanded", "false"); 
 		}
 
@@ -9633,13 +9634,7 @@ jQuery(document).ready(function(){
 		}else{
 			//  if not, tell item its expanded & toggle it all open
 			$(this).attr("aria-expanded", "true").parent().toggleClass("in").parent().addClass("in");
-
 		}
-	});
-
-
-	$(window).on("viewport:change",function(){
-
 	});
 
 })();
@@ -9661,6 +9656,8 @@ jQuery(document).ready(function(){
 			}
 		}
 		else {
+			// dont hide toggler at small res
+			toggler.prop('hidden',false);
 			toggler.text('Menu');
 		}
 	}

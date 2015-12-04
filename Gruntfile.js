@@ -60,6 +60,7 @@ module.exports = function(grunt) {
                     'js/components/responsive_util.js',
                     'js/components/collapse_responsive.js',
                     'js/components/global_nav.js',
+                    'js/components/primary_nav.js',
                     'js/components/sectional_nav.js',
                 ],
                 dest: 'js/main.js'

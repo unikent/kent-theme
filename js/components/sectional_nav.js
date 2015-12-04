@@ -16,6 +16,8 @@ jQuery(document).ready(function(){
 			}
 		}
 		else {
+			// dont hide toggler at small res
+			toggler.prop('hidden',false);
 			toggler.text('Menu');
 		}
 	}
