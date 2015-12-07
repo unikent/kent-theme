@@ -9479,63 +9479,29 @@ jQuery(document).ready(function(){
 
     viewport = ResponsiveBootstrapToolkit;
 
-    function updateCollapseAriaState(){
-        console.log(viewport.current());
-        var vpHiddenClasses=[];
-        if(viewport.is('>=xs')) {
-            vpHiddenClasses.push('.collapse-xs-up');
-        }
-        if(viewport.is('>=sm')) {
-            vpHiddenClasses.push('.collapse-sm-up');
-        }
-        if(viewport.is('>=md')) {
-            vpHiddenClasses.push('.collapse-md-up');
-        }
-        if(viewport.is('>=lg')) {
-            vpHiddenClasses.push('.collapse-lg-up');
-        }
-        if(viewport.is('>=xl')) {
-            vpHiddenClasses.push('.collapse-xl-up');
-        }
-        if(viewport.is('<=xs')) {
-            vpHiddenClasses.push('.collapse-xs-down');
-        }
-        if(viewport.is('<=sm')) {
-            vpHiddenClasses.push('.collapse-sm-down');
-        }
-        if(viewport.is('<=md')) {
-            vpHiddenClasses.push('.collapse-md-down');
-        }
-        if(viewport.is('<=lg')) {
-            vpHiddenClasses.push('.collapse-lg-down');
-        }
-        if(viewport.is('<=xl')) {
-            vpHiddenClasses.push('.collapse-xl-down');
-        }
-        vpHiddenClasses = vpHiddenClasses.join(', ');
-        $targets.attr('aria-expanded',true);
-        $(vpHiddenClasses).not('.in').attr('aria-expanded',false);
-
-    }
-
     var $collabsables = $('[data-toggle="collapse_responsive"]');
-    var $targets = [];
-
-    $collabsables.each(function(){
-        $targets.push($(this).data('target'));
-    });
-    $targets = $targets.join(', ');
-
-    $targets = $($targets);
 
     $collabsables.click(function(e){
         e.preventDefault();
+
         var $this= $(this);
-
         var isCollapsed = $(this).hasClass('collapsed');
-
         var $parent = $($this.data('parent') || null);
+        var $target = $($this.data('target') || null);
 
+        // If target isn't collapsed at this breakpoint, ignore.
+        if( 
+            !(
+                ($target.hasClass('collapse-xl-down') && viewport.is('<=xl')) ||
+                ($target.hasClass('collapse-lg-down') && viewport.is('<=lg')) ||
+                ($target.hasClass('collapse-md-down') && viewport.is('<=md')) ||
+                ($target.hasClass('collapse-sm-down') && viewport.is('<=sm')) ||
+                ($target.hasClass('collapse-xs-down') && viewport.is('<=xs'))
+            )
+        ){
+            return;
+        }
+        // else, toggle it open / shut
 
         if($parent.length > 0){
             var $open = $parent.find('.in');
@@ -9547,21 +9513,39 @@ jQuery(document).ready(function(){
             );
         }
 
-        var $target = $($this.data('target') || null);
-
         if($target.length > 0){
             $target.toggleClass('in',isCollapsed);
-            $this.toggleClass('collapsed',!isCollapsed);
+            // Add expanded state (this only needs to be set when collapsing is possible)
+            $this.toggleClass('collapsed',!isCollapsed).attr("aria-expanded", isCollapsed);
         }
-        updateCollapseAriaState();
     });
 
-    updateCollapseAriaState();
 
-    $(window).on('viewport:change', function(){
-        updateCollapseAriaState();
+    $(window).on("viewport:change", function(){
+        console.log("yes!!!!");
+
+
+        $collabsables.each(function(){
+            var $target = $($(this).data('target') || null);
+
+            if( 
+                !(
+                    ($target.hasClass('collapse-xl-down') && viewport.is('<=xl')) ||
+                    ($target.hasClass('collapse-lg-down') && viewport.is('<=lg')) ||
+                    ($target.hasClass('collapse-md-down') && viewport.is('<=md')) ||
+                    ($target.hasClass('collapse-sm-down') && viewport.is('<=sm')) ||
+                    ($target.hasClass('collapse-xs-down') && viewport.is('<=xs'))
+                )
+            ){
+                // Remove expanded state for none collapsable elements
+                $(this).attr("aria-expanded", "");
+
+                console.log("found");
+                console.log($(this));
+
+            }
+        });
     });
-
 
 
 });
@@ -9673,14 +9657,15 @@ jQuery(document).ready(function(){
 
 	function openNav () {
         $("body").addClass('show-departmental-menu');
-		toggler.addClass('in');
+		toggler.addClass('in').attr("aria-expanded", "true");
 		sectional_nav.addClass('in');
 	}
 
 	function closeNav () {
         $("body").removeClass('show-departmental-menu');
+        toggler.removeClass('in').attr("aria-expanded", "false");
 		sectional_nav.removeClass('in');
-		toggler.removeClass('in');
+		
 	}
 
 	toggler.click(function () {

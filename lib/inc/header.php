@@ -36,10 +36,10 @@
 		<meta property="og:site_name" content="The University of Kent" />
 		<?php if($description):?><meta property="og:description" content="<?php echo $description; ?>" /><?php endif;?>	
 
-		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>/assets/css/<?php echo $theme_style;?>" />
-		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>/assets/css/kentfont.css" />
+		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>assets/css/<?php echo $theme_style;?>" />
+		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>assets/css/kentfont.css" />
 
-		<script src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/js/modernizr.min.js"></script>
+		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/modernizr.min.js"></script>
 
 		<?php echo $head_markup ;?>
 	</head>
@@ -133,7 +133,7 @@
 			</section>
 			<section class="departmental-nav" id="section_menu">
 				<header><?php echo $title; ?></header>
-				<div class="navbar-toggler" aria-controls="navbar-menu" role="button"><span>Menu</span></div>
+				<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
 				<nav class="navbar-menu" id="navbar-menu" role="menu">
 					<?php echo $menu_links; ?>
 				</nav>

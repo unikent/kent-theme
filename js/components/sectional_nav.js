@@ -33,14 +33,15 @@ jQuery(document).ready(function(){
 
 	function openNav () {
         $("body").addClass('show-departmental-menu');
-		toggler.addClass('in');
+		toggler.addClass('in').attr("aria-expanded", "true");
 		sectional_nav.addClass('in');
 	}
 
 	function closeNav () {
         $("body").removeClass('show-departmental-menu');
+        toggler.removeClass('in').attr("aria-expanded", "false");
 		sectional_nav.removeClass('in');
-		toggler.removeClass('in');
+		
 	}
 
 	toggler.click(function () {
