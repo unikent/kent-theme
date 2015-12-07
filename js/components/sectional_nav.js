@@ -4,21 +4,16 @@ jQuery(document).ready(function(){
 
 	function respond () {
 		if (viewport.is('>=md')) {
-			toggler.text('More');
+
 			if (navHasOverflown()) {
 				sectional_nav.addClass('overflown');
-				toggler.prop('hidden',false);
+				toggler.addClass('overflown');
 			}
 			else {
-				toggler.prop('hidden',true);
 				sectional_nav.removeClass('overflown');
+				toggler.removeClass('overflown');
 				closeNav();
 			}
-		}
-		else {
-			// dont hide toggler at small res
-			toggler.prop('hidden',false);
-			toggler.text('Menu');
 		}
 	}
 
