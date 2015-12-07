@@ -1,4 +1,5 @@
-<?php use unikent\kent_theme\KentThemeHelper; ?><!DOCTYPE html>
+<?php use unikent\kent_theme\KentThemeHelper; ?>
+<!DOCTYPE html>
 <html lang="en-GB">
 	<head>
 		<title><?php echo $page_title; ?></title>
@@ -101,7 +102,7 @@
 							<a aria-controls="menu-explore" aria-expanded="false" role="menuitem">Explore <span class="more kf-chevron-down"></span></a>
 							<nav id="menu-explore" role="menu">
 								<a href="//www.kent.ac.uk/about/" role="menuitem">About <span class="global-nav-link-desc">Top 16 UK University</span><span class="more kf-chevron-right"></span></a>
-								<a href="//www.kent.ac.uk/student/experience/" role="menuitem">Inspiring student experience <span class="global-nav-link-desc">3rd for studen satisfaction</span><span class="more kf-chevron-right"></span></a>
+								<a href="//www.kent.ac.uk/student/experience/" role="menuitem">Inspiring student experience <span class="global-nav-link-desc">3rd for student satisfaction</span><span class="more kf-chevron-right"></span></a>
 								<a href="//www.kent.ac.uk/locations/" role="menuitem">Superb locations <span class="global-nav-link-desc">Close to London with European centres. Come visit us.</span><span class="more kf-chevron-right"></span></a>
 								<a href="//www.kent.ac.uk/accommodation/" role="menuitem">Accommodation and facilities<span class="global-nav-link-desc">Living and learning on campus</span><span class="more kf-chevron-right"></span></a>
 							</nav>
