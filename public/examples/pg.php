@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include dirname(dirname(dirname(__FILE__)))."/lib/bootstrap.php";
 	use \unikent\kent_theme\kentThemeHelper;
 
@@ -47,8 +47,8 @@
 							<p class="card-text">Professor of Modern History</p>
 						</div>
 					</div>
-					
-					
+
+
 				</div>
 				<div class="card-footer">
 					<a href="#" class="chevron-link">Taught Programmes</a>
@@ -59,7 +59,7 @@
 			</div>
 
 			<div class="card-panel">
-				
+
 				<div class="card-panel-body">
 					<a class="card" href="#">
 						<img class="card-img" src="images/promo-world.jpg">
@@ -85,7 +85,7 @@
 			</div>
 
 			<blockquote>
-				<img class="img-circle" src="images/profile-academic.jpg"> 
+				<img class="img-circle" src="images/profile-academic.jpg">
 				<p>It's the academic community that creates a supportive enviroment to help you excel</p>
 				<footer>
 					<cite>
@@ -106,7 +106,7 @@
 					</div>
 					<div class="card-media-wrap">
 						<img src="images/promo-park-16-9.jpg" class="card-img-bottom" alt="Sport" />
-					
+
 						<a class="card-img-overlay text-right" href="#">
 							<h5 class="card-subtitle">Canterbury</h5>
 							<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
@@ -114,7 +114,7 @@
 					</div>
 				</div>
 				<div class="card-footer">
-					<a href="#" class="chevron-link">The UKs European University</a>
+					<a href="#" class="chevron-link">The UK's European university</a>
 					<a href="#" class="chevron-link">Campus life</a>
 					<a href="#" class="chevron-link">Accommodation &amp; Facilities</a>
 					<a href="#" class="chevron-link">Graduate school</a>
@@ -149,7 +149,7 @@
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Kent Union</h3>
 						<p class="card-text">Get involved in the hundreds of societies on campus.</p>
-						
+
 					</a>
 				</div>
 			</div>
