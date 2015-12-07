@@ -4,21 +4,16 @@ jQuery(document).ready(function(){
 
 	function respond () {
 		if (viewport.is('>=md')) {
-			toggler.text('More');
+
 			if (navHasOverflown()) {
 				sectional_nav.addClass('overflown');
-				toggler.prop('hidden',false);
+				toggler.addClass('overflown');
 			}
 			else {
-				toggler.prop('hidden',true);
 				sectional_nav.removeClass('overflown');
+				toggler.removeClass('overflown');
 				closeNav();
 			}
-		}
-		else {
-			// dont hide toggler at small res
-			toggler.prop('hidden',false);
-			toggler.text('Menu');
 		}
 	}
 
@@ -38,14 +33,15 @@ jQuery(document).ready(function(){
 
 	function openNav () {
         $("body").addClass('show-departmental-menu');
-		toggler.addClass('in');
+		toggler.addClass('in').attr("aria-expanded", "true");
 		sectional_nav.addClass('in');
 	}
 
 	function closeNav () {
         $("body").removeClass('show-departmental-menu');
+        toggler.removeClass('in').attr("aria-expanded", "false");
 		sectional_nav.removeClass('in');
-		toggler.removeClass('in');
+		
 	}
 
 	toggler.click(function () {
