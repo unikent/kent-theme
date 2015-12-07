@@ -7,6 +7,12 @@
 		margin-bottom: 0;
 	}
 
+    @include media-breakpoint-up(md) {
+      &:last-child{
+        margin-bottom: 1rem;
+      }
+    }
+
 	.card-body{
 		display: block;
 		position: relative;
@@ -19,7 +25,7 @@
 	.card-title{
 		font-family: $headings-font-family;
 		color: $kent-primary;
-		font-size: $font-size-h5;
+		font-size: 1.1rem;
 	}
 
 	.card-subtitle{
@@ -40,12 +46,30 @@
 	}
 
 	.card-img,
-	.card-img-top {
+	.card-img-top, .card-media-wrap{
 		&:first-child{
 			margin-bottom: 0.75rem;
 		}
 	}
 
+	.card-media-wrap, .card-embed-wrap {
+		position: relative;
+
+		&.card-media-wrap-video {
+			cursor: pointer;
+			&:after {
+				content: $kf-play-circle;
+				font-family: $font-family-kentfont;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -2rem;
+				margin-top: -3.2rem;
+				font-size: 4.5rem;
+				color: rgba(255,255,255,0.9);
+			}
+		}
+	}
 	.card-inverse{
 		.card-title{
 			color: #FFF;

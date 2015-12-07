@@ -36,16 +36,27 @@
 		<meta property="og:site_name" content="The University of Kent" />
 		<?php if($description):?><meta property="og:description" content="<?php echo $description; ?>" /><?php endif;?>	
 
-		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>/assets/css/<?php echo $theme_style;?>" />
-		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>/assets/css/kentfont.css" />
+		<link rel="stylesheet" href="<?php echo KentThemeHelper::getThemeWebRoot();?>/assets/css/<?php echo $theme_style;?>" />
+		<link rel="stylesheet" href="<?php echo KentThemeHelper::getThemeWebRoot();?>/assets/css/kentfont.css" />
 
-		<script src="<?php KentThemeHelper::getThemeWebRoot();?>/assets/js/modernizr.min.js"></script>
+		<script src="<?php echo KentThemeHelper::getThemeWebRoot();?>/assets/js/modernizr.min.js"></script>
 
 		<?php echo $head_markup ;?>
 	</head>
 	<body>
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
 		<a href="#main_content" class="sr-only">Jump to content</a>
+		<section class="beta-bar navbar">
+			<p><span class="beta-bar-beta">BETA</span></p>
+			
+			<p>We're testing <a href="#">a new design</a>.</p>
+			<p>It may not be complete or work as intended.</p>
+			<p>
+				<a href="#" class="btn btn-link">Go to original site</a>
+				<button class="btn btn-secondary feedback">Give us feedback</button>
+			</p>
+			<span class="beta-toggler">Learn more</span>
+		</section>
 		<header class="global-header">
 			<section class="audience-bar navbar">
 				<a class="navbar-brand kf-kent-horizontal" href="/" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a>

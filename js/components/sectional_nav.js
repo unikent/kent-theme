@@ -18,7 +18,8 @@ jQuery(document).ready(function(){
 	}
 
 	function navHasOverflown () {
-		return sectional_nav.find('a').last().position().top >= sectional_nav.find('a').last().height();
+		var last = sectional_nav.find('a').last();
+		return last.position().top >= last.height();
 	}
 
 	function toggleNav () {

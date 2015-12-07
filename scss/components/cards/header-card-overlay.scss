@@ -1,16 +1,37 @@
 .card.header-card-overlay {
 	margin-top: -2rem;
+	.card-title-wrap {
+		background: #333;
+		padding: 2rem;
+
+		&.card-title-wrap-link {
+			&:after{
+				content: none;
+			}
+			.card-title {
+				text-transform: none;
+				color: #fff;
+			}
+			.card-text {
+				font-family: $font-family-sans-serif;
+				color: #fff;
+			}
+		}
+	}
 	@include media-breakpoint-up(md) {
+
 		margin-top: -7rem;
 
 		.card-title-wrap {
-			width: 45%;
+			width: 100%;
 			bottom: 0;
 			top:auto;
 			left:0;
-			&.pull-right{
-				left: inherit;
-				right:0;
+			padding: 3rem 2rem 2rem;
+			background: rgba(0,0,0,0.75);
+			background: linear-gradient(transparent, rgba(0,0,0,0.8));
+			&.card-title-wrap-link {
+				padding: 3rem 2rem 2rem;
 			}
 		}
 
