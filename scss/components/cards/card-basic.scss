@@ -126,7 +126,9 @@
 	@at-root a#{&}, a {
 		&:hover, &:focus {
 			text-decoration: none;
-			opacity: 0.9;
+			img{
+				opacity: 0.7;
+			}
 		}
 	}
 }

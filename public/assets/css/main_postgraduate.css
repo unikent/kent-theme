@@ -5197,6 +5197,9 @@ input:-moz-placeholder {
 input:-ms-input-placeholder {
   text-overflow: ellipsis; }
 
+select {
+  border-radius: 0; }
+
 .audience-bar {
   background-color: #671115;
   color: #fff;
@@ -5778,8 +5781,9 @@ input:-ms-input-placeholder {
     padding-bottom: 32px;
     padding-bottom: 2rem; }
   a.card:hover, a.card:focus, a:hover, a:focus {
-    text-decoration: none;
-    opacity: 0.9; }
+    text-decoration: none; }
+    a.card:hover img, a.card:focus img, a:hover img, a:focus img {
+      opacity: 0.7; }
 
 .card-panel {
   padding: 16px 8px 8px;
