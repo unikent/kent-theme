@@ -5745,12 +5745,11 @@ select {
   border: none;
   margin-bottom: 16px;
   margin-bottom: 1rem; }
-  .card:last-child {
-    margin-bottom: 0; }
-  @media (min-width: 48em) {
-    .card:last-child {
-      margin-bottom: 1rem; } }
   .card.card-backed, .card-panel.cards-backed .card {
+    padding-left: 15px;
+    padding-left: 0.9375rem;
+    padding-right: 15px;
+    padding-right: 0.9375rem;
     background: #FFF; }
     .card.card-backed .card-img:first-child, .card-panel.cards-backed .card .card-img:first-child,
     .card.card-backed .card-img-top:first-child, .card-panel.cards-backed .card .card-img-top:first-child {
@@ -5920,11 +5919,11 @@ select {
       color: #FFF; }
     .card-panel.card-panel-inverse a, .card-panel.card-panel-primary a, .card-panel.card-panel-inverse a:hover, .card-panel.card-panel-primary a:hover, .card-panel.card-panel-inverse a:focus, .card-panel.card-panel-primary a:focus {
       color: #FFF; }
-  .card-panel.cards-backed .card {
-    border-width: 0 15px 0 15px;
-    border-width: 0 0.9375rem 0 0.9375rem;
-    border-style: solid;
-    border-color: transparent; }
+  @media (min-width: 34em) {
+    .card-panel.cards-backed .card {
+      border-width: 0 0.9375rem 0 0.9375rem;
+      border-style: solid;
+      border-color: transparent; } }
   .card-panel.card-panel-primary {
     background-color: #05345C; }
     .card-panel.card-panel-primary.cards-backed .card {

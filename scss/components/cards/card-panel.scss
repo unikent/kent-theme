@@ -25,9 +25,11 @@
 	&.cards-backed {
 		.card {
 
-			border-width: 0 ($grid-gutter-width/2) 0 ($grid-gutter-width/2);
-			border-style: solid;
-			border-color: transparent;
+			@include media-breakpoint-up(sm){
+				border-width: 0 ($grid-gutter-width/2) 0 ($grid-gutter-width/2);
+				border-style: solid;
+				border-color: transparent;
+			}
 
 			@extend .card-backed;
 		}
