@@ -8,23 +8,68 @@
 		padding: 1rem;
 	}
 
-	&.cards-backed {
 
+	&.card-panel-inverse{
+
+		color: rgba(255,255,255,.75);
+
+		.card-panel-title{
+			color: #FFF;
+		}
+
+		a,a:hover,a:focus{
+			color: #FFF;
+		}
+	}
+
+	&.cards-backed {
 		.card {
-			background: #FFFFFF;
+
 			border-width: 0 ($grid-gutter-width/2) 0 ($grid-gutter-width/2);
 			border-style: solid;
 			border-color: transparent;
 
-			.card-img,
-			.card-img-top {
-				&:first-child {
-					margin-left:  -$grid-gutter-width/2;
-					margin-right: -$grid-gutter-width/2;
-					max-width:    calc(100% + #{$grid-gutter-width});
-				}
-			}
+			@extend .card-backed;
+		}
+	}
 
+	&.cards-backed-primary{
+		.card {
+			@extend .card-backed-primary;
+		}
+	}
+
+	&.cards-backed-secondary{
+		.card {
+			@extend .card-backed-secondary;
+		}
+	}
+
+	&.cards-backed-tertiary{
+		.card {
+			@extend .card-backed-tertiary;
+		}
+	}
+
+	&.cards-backed-accent{
+		.card {
+			@extend .card-backed-primary-tint;
+		}
+	}
+
+	&.cards-backed-accent{
+		.card {
+			@extend .card-backed-accent;
+		}
+	}
+
+	&.card-panel-primary {
+		background-color: $brand-primary;
+
+		@extend .card-panel-inverse;
+
+		&.cards-backed .card{
+			border-color: $brand-primary;
 		}
 	}
 
@@ -46,6 +91,13 @@
 		background-color: $brand-primary-tint;
 		&.cards-backed .card{
 			border-color: $brand-primary-tint;
+		}
+	}
+
+	&.card-panel-accent {
+		background-color: $brand-accent;
+		&.cards-backed .card{
+			border-color: $brand-accent;
 		}
 	}
 
@@ -198,7 +250,7 @@
 
 			a {
 				@extend .btn;
-				@extend .btn-gray-outline;
+				@extend .btn-gray-icon;
 				float:       left;
 				margin-left: .2rem;
 			}
