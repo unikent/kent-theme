@@ -54,7 +54,7 @@ Class KentThemeHelper {
 		return $output;
 	}
 
-	protected static function getThemeWebRoot(){
+	public static function getThemeWebRoot(){
 		// If constant was provided
 		if(defined("WEBROOT")){
 			return WEBROOT;
