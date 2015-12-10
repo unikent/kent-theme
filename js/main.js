@@ -9522,8 +9522,6 @@ jQuery(document).ready(function(){
 
 
     $(window).on("viewport:change", function(){
-        console.log("yes!!!!");
-
 
         $collabsables.each(function(){
             var $target = $($(this).data('target') || null);
@@ -9537,12 +9535,8 @@ jQuery(document).ready(function(){
                     ($target.hasClass('collapse-xs-down') && viewport.is('<=xs'))
                 )
             ){
-                // Remove expanded state for none collapsable elements
+                // Remove expanded state for none collapsible elements
                 $(this).attr("aria-expanded", "");
-
-                console.log("found");
-                console.log($(this));
-
             }
         });
     });

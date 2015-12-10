@@ -3232,23 +3232,41 @@ input[type="button"].btn-block {
   background-color: #d9534f;
   border-color: #d9534f; }
 
-.card-inverse .card-header,
-.card-inverse .card-footer {
+.card-inverse .card-header, .card.card-backed-primary .card-header, .card-panel.cards-backed-primary .card .card-header,
+.card-panel.cards-backed .card.card-backed-primary .card-header, .card.card-backed-accent .card-header, .card-panel.cards-backed-accent .card .card-header,
+.card-panel.cards-backed .card.card-backed-accent .card-header,
+.card-inverse .card-footer, .card.card-backed-primary .card-footer, .card-panel.cards-backed-primary .card .card-footer,
+.card-panel.cards-backed .card.card-backed-primary .card-footer, .card.card-backed-accent .card-footer, .card-panel.cards-backed-accent .card .card-footer,
+.card-panel.cards-backed .card.card-backed-accent .card-footer {
   border-bottom: 1.2px solid rgba(255, 255, 255, 0.2);
   border-bottom: 0.075rem solid rgba(255, 255, 255, 0.2); }
 
-.card-inverse .card-header,
-.card-inverse .card-footer,
-.card-inverse .card-title,
-.card-inverse .card-blockquote {
+.card-inverse .card-header, .card.card-backed-primary .card-header, .card-panel.cards-backed-primary .card .card-header,
+.card-panel.cards-backed .card.card-backed-primary .card-header, .card.card-backed-accent .card-header, .card-panel.cards-backed-accent .card .card-header,
+.card-panel.cards-backed .card.card-backed-accent .card-header,
+.card-inverse .card-footer, .card.card-backed-primary .card-footer, .card-panel.cards-backed-primary .card .card-footer,
+.card-panel.cards-backed .card.card-backed-primary .card-footer, .card.card-backed-accent .card-footer, .card-panel.cards-backed-accent .card .card-footer,
+.card-panel.cards-backed .card.card-backed-accent .card-footer,
+.card-inverse .card-title, .card.card-backed-primary .card-title, .card-panel.cards-backed-primary .card .card-title,
+.card-panel.cards-backed .card.card-backed-primary .card-title, .card.card-backed-accent .card-title, .card-panel.cards-backed-accent .card .card-title,
+.card-panel.cards-backed .card.card-backed-accent .card-title,
+.card-inverse .card-blockquote, .card.card-backed-primary .card-blockquote, .card-panel.cards-backed-primary .card .card-blockquote,
+.card-panel.cards-backed .card.card-backed-primary .card-blockquote, .card.card-backed-accent .card-blockquote, .card-panel.cards-backed-accent .card .card-blockquote,
+.card-panel.cards-backed .card.card-backed-accent .card-blockquote {
   color: #fff; }
 
-.card-inverse .card-link,
-.card-inverse .card-text,
-.card-inverse .card-blockquote > footer {
+.card-inverse .card-link, .card.card-backed-primary .card-link, .card-panel.cards-backed-primary .card .card-link,
+.card-panel.cards-backed .card.card-backed-primary .card-link, .card.card-backed-accent .card-link, .card-panel.cards-backed-accent .card .card-link,
+.card-panel.cards-backed .card.card-backed-accent .card-link,
+.card-inverse .card-text, .card.card-backed-primary .card-text, .card-panel.cards-backed-primary .card .card-text,
+.card-panel.cards-backed .card.card-backed-primary .card-text, .card.card-backed-accent .card-text, .card-panel.cards-backed-accent .card .card-text,
+.card-panel.cards-backed .card.card-backed-accent .card-text,
+.card-inverse .card-blockquote > footer, .card.card-backed-primary .card-blockquote > footer, .card-panel.cards-backed-primary .card .card-blockquote > footer,
+.card-panel.cards-backed .card.card-backed-primary .card-blockquote > footer, .card.card-backed-accent .card-blockquote > footer, .card-panel.cards-backed-accent .card .card-blockquote > footer,
+.card-panel.cards-backed .card.card-backed-accent .card-blockquote > footer {
   color: rgba(255, 255, 255, 0.65); }
 
-.card-inverse .card-link:focus, .card-inverse .card-link:hover {
+.card-inverse .card-link:focus, .card.card-backed-primary .card-link:focus, .card-panel.cards-backed-primary .card .card-link:focus, .card.card-backed-accent .card-link:focus, .card-panel.cards-backed-accent .card .card-link:focus, .card-inverse .card-link:hover, .card.card-backed-primary .card-link:hover, .card-panel.cards-backed-primary .card .card-link:hover, .card.card-backed-accent .card-link:hover, .card-panel.cards-backed-accent .card .card-link:hover {
   color: #fff; }
 
 .card-blockquote {
@@ -5142,7 +5160,53 @@ h6, .h6 {
     background-color: #937227;
     border-color: #937227; }
 
-.btn-gray-outline, .card-panel .card-panel-header .card-panel-social a {
+.btn-gray-outline {
+  color: #aaa;
+  background-image: none;
+  background-color: transparent;
+  border-color: #aaa; }
+  .btn-gray-outline:focus, .btn-gray-outline.focus, .btn-gray-outline:active, .btn-gray-outline.active,
+  .open > .btn-gray-outline.dropdown-toggle {
+    color: #fff;
+    background-color: #aaa;
+    border-color: #aaa; }
+  .btn-gray-outline:hover {
+    color: #fff;
+    background-color: #aaa;
+    border-color: #aaa; }
+  .btn-gray-outline.disabled:focus, .btn-gray-outline.disabled.focus, .btn-gray-outline:disabled:focus, .btn-gray-outline:disabled.focus,
+  fieldset[disabled] .btn-gray-outline:focus,
+  fieldset[disabled] .btn-gray-outline.focus {
+    border-color: #dddddd; }
+  .btn-gray-outline.disabled:hover, .btn-gray-outline:disabled:hover,
+  fieldset[disabled] .btn-gray-outline:hover {
+    border-color: #dddddd; }
+
+.btn-white-outline {
+  color: #FFF;
+  background-image: none;
+  background-color: transparent;
+  border-color: #FFF; }
+  .btn-white-outline:focus, .btn-white-outline.focus, .btn-white-outline:active, .btn-white-outline.active,
+  .open > .btn-white-outline.dropdown-toggle {
+    color: #fff;
+    background-color: #FFF;
+    border-color: #FFF; }
+  .btn-white-outline:hover {
+    color: #fff;
+    background-color: #FFF;
+    border-color: #FFF; }
+  .btn-white-outline.disabled:focus, .btn-white-outline.disabled.focus, .btn-white-outline:disabled:focus, .btn-white-outline:disabled.focus,
+  fieldset[disabled] .btn-white-outline:focus,
+  fieldset[disabled] .btn-white-outline.focus {
+    border-color: white; }
+  .btn-white-outline.disabled:hover, .btn-white-outline:disabled:hover,
+  fieldset[disabled] .btn-white-outline:hover {
+    border-color: white; }
+  .btn-white-outline:hover, .btn-white-outline:focus {
+    color: #05345C; }
+
+.btn-gray-icon, .card-panel .card-panel-header .card-panel-social a {
   color: #aaa;
   background-image: none;
   background-color: transparent;
@@ -5154,26 +5218,26 @@ h6, .h6 {
   line-height: 1rem;
   padding: 8px;
   padding: .5rem; }
-  .btn-gray-outline:focus, .card-panel .card-panel-header .card-panel-social a:focus, .btn-gray-outline.focus, .card-panel .card-panel-header .card-panel-social a.focus, .btn-gray-outline:active, .card-panel .card-panel-header .card-panel-social a:active, .btn-gray-outline.active, .card-panel .card-panel-header .card-panel-social a.active,
-  .open > .btn-gray-outline.dropdown-toggle, .card-panel .card-panel-header .card-panel-social
+  .btn-gray-icon:focus, .card-panel .card-panel-header .card-panel-social a:focus, .btn-gray-icon.focus, .card-panel .card-panel-header .card-panel-social a.focus, .btn-gray-icon:active, .card-panel .card-panel-header .card-panel-social a:active, .btn-gray-icon.active, .card-panel .card-panel-header .card-panel-social a.active,
+  .open > .btn-gray-icon.dropdown-toggle, .card-panel .card-panel-header .card-panel-social
   .open > a.dropdown-toggle {
     color: #fff;
     background-color: #aaa;
     border-color: #aaa; }
-  .btn-gray-outline:hover, .card-panel .card-panel-header .card-panel-social a:hover {
+  .btn-gray-icon:hover, .card-panel .card-panel-header .card-panel-social a:hover {
     color: #fff;
     background-color: #aaa;
     border-color: #aaa; }
-  .btn-gray-outline.disabled:focus, .card-panel .card-panel-header .card-panel-social a.disabled:focus, .btn-gray-outline.disabled.focus, .card-panel .card-panel-header .card-panel-social a.disabled.focus, .btn-gray-outline:disabled:focus, .card-panel .card-panel-header .card-panel-social a:disabled:focus, .btn-gray-outline:disabled.focus, .card-panel .card-panel-header .card-panel-social a:disabled.focus,
-  fieldset[disabled] .btn-gray-outline:focus,
+  .btn-gray-icon.disabled:focus, .card-panel .card-panel-header .card-panel-social a.disabled:focus, .btn-gray-icon.disabled.focus, .card-panel .card-panel-header .card-panel-social a.disabled.focus, .btn-gray-icon:disabled:focus, .card-panel .card-panel-header .card-panel-social a:disabled:focus, .btn-gray-icon:disabled.focus, .card-panel .card-panel-header .card-panel-social a:disabled.focus,
+  fieldset[disabled] .btn-gray-icon:focus,
   fieldset[disabled] .card-panel .card-panel-header .card-panel-social a:focus, .card-panel .card-panel-header .card-panel-social
   fieldset[disabled] a:focus,
-  fieldset[disabled] .btn-gray-outline.focus,
+  fieldset[disabled] .btn-gray-icon.focus,
   fieldset[disabled] .card-panel .card-panel-header .card-panel-social a.focus, .card-panel .card-panel-header .card-panel-social
   fieldset[disabled] a.focus {
     border-color: #dddddd; }
-  .btn-gray-outline.disabled:hover, .card-panel .card-panel-header .card-panel-social a.disabled:hover, .btn-gray-outline:disabled:hover, .card-panel .card-panel-header .card-panel-social a:disabled:hover,
-  fieldset[disabled] .btn-gray-outline:hover,
+  .btn-gray-icon.disabled:hover, .card-panel .card-panel-header .card-panel-social a.disabled:hover, .btn-gray-icon:disabled:hover, .card-panel .card-panel-header .card-panel-social a:disabled:hover,
+  fieldset[disabled] .btn-gray-icon:hover,
   fieldset[disabled] .card-panel .card-panel-header .card-panel-social a:hover, .card-panel .card-panel-header .card-panel-social
   fieldset[disabled] a:hover {
     border-color: #dddddd; }
@@ -5196,6 +5260,9 @@ input:-moz-placeholder {
 
 input:-ms-input-placeholder {
   text-overflow: ellipsis; }
+
+select {
+  border-radius: 0; }
 
 .audience-bar {
   background-color: #05345C;
@@ -5678,11 +5745,44 @@ input:-ms-input-placeholder {
   border: none;
   margin-bottom: 16px;
   margin-bottom: 1rem; }
-  .card:last-child {
-    margin-bottom: 0; }
-  @media (min-width: 48em) {
-    .card:last-child {
-      margin-bottom: 1rem; } }
+  .card.card-backed, .card-panel.cards-backed .card {
+    padding-left: 15px;
+    padding-left: 0.9375rem;
+    padding-right: 15px;
+    padding-right: 0.9375rem;
+    background: #FFF; }
+    .card.card-backed .card-img:first-child, .card-panel.cards-backed .card .card-img:first-child,
+    .card.card-backed .card-img-top:first-child, .card-panel.cards-backed .card .card-img-top:first-child {
+      margin-left: -15px;
+      margin-left: -0.9375rem;
+      margin-right: -15px;
+      margin-right: -0.9375rem;
+      max-width: calc(100% + 1.875rem); }
+  .card.card-backed-primary, .card-panel.cards-backed-primary .card,
+  .card-panel.cards-backed .card.card-backed-primary,
+  .card-panel.cards-backed .card-panel.cards-backed-primary .card, .card-panel.cards-backed-primary
+  .card-panel.cards-backed .card {
+    background: #05345C; }
+  .card.card-backed-secondary, .card-panel.cards-backed-secondary .card,
+  .card-panel.cards-backed .card.card-backed-secondary,
+  .card-panel.cards-backed .card-panel.cards-backed-secondary .card, .card-panel.cards-backed-secondary
+  .card-panel.cards-backed .card {
+    background: #f5f5f5; }
+  .card.card-backed-tertiary, .card-panel.cards-backed-tertiary .card,
+  .card-panel.cards-backed .card.card-backed-tertiary,
+  .card-panel.cards-backed .card-panel.cards-backed-tertiary .card, .card-panel.cards-backed-tertiary
+  .card-panel.cards-backed .card {
+    background: #f7f2e1; }
+  .card.card-backed-primary-tint, .card-panel.cards-backed-accent .card,
+  .card-panel.cards-backed .card.card-backed-primary-tint,
+  .card-panel.cards-backed .card-panel.cards-backed-accent .card, .card-panel.cards-backed-accent
+  .card-panel.cards-backed .card {
+    background: #e8ebf2; }
+  .card.card-backed-accent, .card-panel.cards-backed-accent .card,
+  .card-panel.cards-backed .card.card-backed-accent,
+  .card-panel.cards-backed .card-panel.cards-backed-accent .card, .card-panel.cards-backed-accent
+  .card-panel.cards-backed .card {
+    background: #937227; }
   .card .card-body {
     display: block;
     position: relative; }
@@ -5700,8 +5800,6 @@ input:-ms-input-placeholder {
     font-size: 0.85rem;
     margin-bottom: 4.8px;
     margin-bottom: 0.3rem; }
-  .card .card-text {
-    color: #171717; }
   .card .card-img:first-child,
   .card .card-img-top:first-child, .card .card-media-wrap:first-child {
     margin-bottom: 12px;
@@ -5723,10 +5821,34 @@ input:-ms-input-placeholder {
         font-size: 72px;
         font-size: 4.5rem;
         color: rgba(255, 255, 255, 0.9); }
-  .card .card-inverse .card-title {
-    color: #FFF; }
-  .card .card-inverse .card-subtitle {
-    color: #eceeef; }
+  .card.card-inverse .card-subtitle, .card.card-backed-primary .card-subtitle, .card-panel.cards-backed-primary .card .card-subtitle,
+  .card-panel.cards-backed .card.card-backed-primary .card-subtitle, .card.card-backed-accent .card-subtitle, .card-panel.cards-backed-accent .card .card-subtitle,
+  .card-panel.cards-backed .card.card-backed-accent .card-subtitle, .card .card-inverse .card-subtitle, .card .card.card-backed-primary .card-subtitle, .card .card-panel.cards-backed-primary .card .card-subtitle, .card-panel.cards-backed-primary .card .card .card-subtitle, .card .card.card-backed-accent .card-subtitle, .card .card-panel.cards-backed-accent .card .card-subtitle, .card-panel.cards-backed-accent .card .card .card-subtitle {
+    color: rgba(255, 255, 255, 0.65); }
+  .card.card-inverse .card-link, .card.card-backed-primary .card-link, .card-panel.cards-backed-primary .card .card-link,
+  .card-panel.cards-backed .card.card-backed-primary .card-link, .card.card-backed-accent .card-link, .card-panel.cards-backed-accent .card .card-link,
+  .card-panel.cards-backed .card.card-backed-accent .card-link,
+  .card.card-inverse .card-text, .card.card-backed-primary .card-text, .card-panel.cards-backed-primary .card .card-text,
+  .card-panel.cards-backed .card.card-backed-primary .card-text, .card.card-backed-accent .card-text, .card-panel.cards-backed-accent .card .card-text,
+  .card-panel.cards-backed .card.card-backed-accent .card-text,
+  .card.card-inverse .card-blockquote > footer, .card.card-backed-primary .card-blockquote > footer, .card-panel.cards-backed-primary .card .card-blockquote > footer,
+  .card-panel.cards-backed .card.card-backed-primary .card-blockquote > footer, .card.card-backed-accent .card-blockquote > footer, .card-panel.cards-backed-accent .card .card-blockquote > footer,
+  .card-panel.cards-backed .card.card-backed-accent .card-blockquote > footer, .card .card-inverse .card-link, .card .card.card-backed-primary .card-link, .card .card-panel.cards-backed-primary .card .card-link, .card-panel.cards-backed-primary .card .card .card-link, .card .card.card-backed-accent .card-link, .card .card-panel.cards-backed-accent .card .card-link, .card-panel.cards-backed-accent .card .card .card-link,
+  .card .card-inverse .card-text,
+  .card .card.card-backed-primary .card-text,
+  .card .card-panel.cards-backed-primary .card .card-text, .card-panel.cards-backed-primary
+  .card .card .card-text,
+  .card .card.card-backed-accent .card-text,
+  .card .card-panel.cards-backed-accent .card .card-text, .card-panel.cards-backed-accent
+  .card .card .card-text,
+  .card .card-inverse .card-blockquote > footer,
+  .card .card.card-backed-primary .card-blockquote > footer,
+  .card .card-panel.cards-backed-primary .card .card-blockquote > footer, .card-panel.cards-backed-primary
+  .card .card .card-blockquote > footer,
+  .card .card.card-backed-accent .card-blockquote > footer,
+  .card .card-panel.cards-backed-accent .card .card-blockquote > footer, .card-panel.cards-backed-accent
+  .card .card .card-blockquote > footer {
+    color: rgba(255, 255, 255, 0.75); }
   .card ul {
     list-style: none;
     padding: 0; }
@@ -5778,8 +5900,9 @@ input:-ms-input-placeholder {
     padding-bottom: 32px;
     padding-bottom: 2rem; }
   a.card:hover, a.card:focus, a:hover, a:focus {
-    text-decoration: none;
-    opacity: 0.9; }
+    text-decoration: none; }
+    a.card:hover img, a.card:focus img, a:hover img, a:focus img {
+      opacity: 0.7; }
 
 .card-panel {
   padding: 16px 8px 8px;
@@ -5790,19 +5913,21 @@ input:-ms-input-placeholder {
   @media (min-width: 34em) {
     .card-panel {
       padding: 1rem; } }
-  .card-panel.cards-backed .card {
-    background: #FFFFFF;
-    border-width: 0 15px 0 15px;
-    border-width: 0 0.9375rem 0 0.9375rem;
-    border-style: solid;
-    border-color: transparent; }
-    .card-panel.cards-backed .card .card-img:first-child,
-    .card-panel.cards-backed .card .card-img-top:first-child {
-      margin-left: -15px;
-      margin-left: -0.9375rem;
-      margin-right: -15px;
-      margin-right: -0.9375rem;
-      max-width: calc(100% + 1.875rem); }
+  .card-panel.card-panel-inverse, .card-panel.card-panel-primary {
+    color: rgba(255, 255, 255, 0.75); }
+    .card-panel.card-panel-inverse .card-panel-title, .card-panel.card-panel-primary .card-panel-title {
+      color: #FFF; }
+    .card-panel.card-panel-inverse a, .card-panel.card-panel-primary a, .card-panel.card-panel-inverse a:hover, .card-panel.card-panel-primary a:hover, .card-panel.card-panel-inverse a:focus, .card-panel.card-panel-primary a:focus {
+      color: #FFF; }
+  @media (min-width: 34em) {
+    .card-panel.cards-backed .card {
+      border-width: 0 0.9375rem 0 0.9375rem;
+      border-style: solid;
+      border-color: transparent; } }
+  .card-panel.card-panel-primary {
+    background-color: #05345C; }
+    .card-panel.card-panel-primary.cards-backed .card {
+      border-color: #05345C; }
   .card-panel.card-panel-secondary {
     background-color: #f5f5f5; }
     .card-panel.card-panel-secondary.cards-backed .card {
@@ -5815,6 +5940,10 @@ input:-ms-input-placeholder {
     background-color: #e8ebf2; }
     .card-panel.card-panel-primary-tint.cards-backed .card {
       border-color: #e8ebf2; }
+  .card-panel.card-panel-accent {
+    background-color: #937227; }
+    .card-panel.card-panel-accent.cards-backed .card {
+      border-color: #937227; }
   .card-panel .card-panel-body {
     padding: 0;
     display: -webkit-flex;
@@ -6017,11 +6146,11 @@ input:-ms-input-placeholder {
       .card.card-overlay .card-img-overlay {
         padding-right: 5%;
         padding-left: 5%; } }
-  .card.card-overlay .card-inverse .card-img-overlay {
+  .card.card-overlay .card-inverse .card-img-overlay, .card.card-overlay .card.card-backed-primary .card-img-overlay, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay, .card.card-overlay .card.card-backed-accent .card-img-overlay, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay {
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
-    .card.card-overlay .card-inverse .card-img-overlay .card-text {
+    .card.card-overlay .card-inverse .card-img-overlay .card-text, .card.card-overlay .card.card-backed-primary .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay .card-text, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card.card-backed-accent .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay .card-text, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-text {
       color: #FFF; }
-    .card.card-overlay .card-inverse .card-img-overlay .card-subtitle {
+    .card.card-overlay .card-inverse .card-img-overlay .card-subtitle, .card.card-overlay .card.card-backed-primary .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card.card-backed-accent .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-subtitle {
       color: #FFF; }
   .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
     position: relative;
