@@ -137,9 +137,13 @@
 
 
 .show-departmental-menu {
-  @include media-breakpoint-up(md) {
-    .departmental-nav {
-      min-height: 10rem;
-    }
-  }
+	@include media-breakpoint-up(md) {
+	.departmental-nav {
+			min-height: 10rem;
+
+			&.slim {
+				min-height: auto;
+			}
+		}
+	}
 }
