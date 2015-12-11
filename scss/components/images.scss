@@ -44,26 +44,29 @@ figure{
 		color: #fff;
 		position: absolute;
 		display: inline-block;
-		font-size: 0.9rem;
-		padding: 0.2rem 0.75rem;
-		height: 3rem;
+		font-size: 0.75rem;
+		padding: 0.3rem 0.75rem;
+		height: 2rem;
 		cursor: pointer;
 		bottom: 1.5rem;
 		right:0;
-		line-height: 3rem;
-		transition: width 300ms;
+		line-height: 1.5rem;
+		max-width: 2.5rem;
+
 
 		i {
-			font-size: 1.5rem;
-			line-height: 2rem;
-
+			font-size: 1rem;
+			line-height: 1rem;
+			margin-right: 1rem;
 		}
 
 		span {
-			display:none;
-			margin-top: -0.25rem;
-			vertical-align: top;
-			padding-left:1rem;
+			transition: all 300ms;
+			display: block;
+			float:right;
+			max-width: 0;
+			overflow: hidden;
+			box-sizing: border-box;
 
 			a {
 				color:#fff;
@@ -74,7 +77,10 @@ figure{
 		}
 
 		&.in {
-			span {display:inline-block;}
+			max-width: 3000px;
+			span {
+				max-width:3000px;
+			}
 		}
 	}
 }
