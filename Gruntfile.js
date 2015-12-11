@@ -63,6 +63,7 @@ module.exports = function(grunt) {
                     'js/components/primary_nav.js',
                     'js/components/sectional_nav.js',
                     'js/components/beta_bar.js',
+					'js/components/attribution.js'
                 ],
                 dest: 'js/main.js'
             }

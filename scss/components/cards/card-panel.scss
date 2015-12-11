@@ -250,12 +250,8 @@
 				float: left;
 			}
 
-			a {
-				@extend .btn;
-				@extend .btn-gray-icon;
-				float:       left;
-				margin-left: .2rem;
-			}
+			@extend .content-social;
+
 		}
 
 		nav {

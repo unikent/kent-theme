@@ -5,10 +5,26 @@ Class KentThemeHelper {
 
 	private static $theme_web_root = false;
 
-	public static function header($title, $section_menu = '', $meta = array(), $theme = '', $head_markup = ''){
+	public static function header($config= array()){
+
+		$defaults = array(
+			'title' => 'Kent Theme Beta',
+			'menu' => array(),
+			'meta' => array(),
+			'theme' => '',
+			'head_markup' => '',
+			'slim'=>false
+		);
+
+		$config = array_merge($defaults,$config);
+
+		extract($config);
+
+		$meta = array_merge(array('title'=>'Kent Theme Beta'), $meta);
+
 		// if menu is provided
-		if(!empty($section_menu)){
-			$menu_links = static::generate_menu($section_menu);
+		if(!empty($menu)){
+			$menu_links = static::generate_menu($menu);
 		}else{
 			$menu_links = "";
 		}

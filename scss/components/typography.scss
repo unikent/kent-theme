@@ -11,6 +11,12 @@ h6,.h6{
   color: $kent-primary;
 }
 
+.lead{
+	font-family: $font-family-serif;
+	color: $brand-primary;
+	font-size: 1.5rem;
+}
+
 @include media-breakpoint-up(xl) {
   html {
     font-size: 18px;
@@ -33,4 +39,24 @@ h6,.h6{
       padding-top: 0.45rem;
     }
   }
+}
+
+@mixin link-list{
+
+	list-style: none;
+	padding: 0;
+	li{
+		padding: 0.5rem 0;
+		border-bottom: 1px solid #f4f4f4;
+		a{
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		span{
+			display: block;
+			color: $text-muted;
+		}
+	}
+
 }
