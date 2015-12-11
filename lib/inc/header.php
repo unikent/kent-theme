@@ -37,10 +37,10 @@
 		<meta property="og:site_name" content="The University of Kent" />
 		<?php if($description):?><meta property="og:description" content="<?php echo $description; ?>" /><?php endif;?>
 
-		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>assets/css/<?php echo $theme_style;?>" />
-		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>assets/css/kentfont.css" />
+		<link rel="stylesheet" href="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/css/<?php echo $theme_style;?>" />
+		<link rel="stylesheet" href="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/css/kentfont.css" />
 
-		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/modernizr.min.js"></script>
+		<script src="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/js/modernizr.min.js"></script>
 
 		<?php echo $head_markup ;?>
 	</head>
@@ -54,7 +54,7 @@
 			<p>It may not be complete or work as intended.</p>
 			<p>
 				<a href="//www.kent.ac.uk" class="btn btn-link">Go to original site</a>
-				<button class="btn btn-secondary feedback">Give us feedback</button>
+				<button class="btn btn-secondary feedback" onclick="return window.usabilla_live('click');">Give us feedback</button>
 			</p>
 			<span class="beta-toggler">Learn more</span>
 		</section>
