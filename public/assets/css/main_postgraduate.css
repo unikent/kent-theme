@@ -6141,7 +6141,9 @@ select {
 
 @media (min-width: 48em) {
   .show-departmental-menu .departmental-nav {
-    min-height: 10rem; } }
+    min-height: 10rem; }
+    .show-departmental-menu .departmental-nav.slim {
+      min-height: auto; } }
 
 nav.breadcrumb {
   margin: 0 32px;
