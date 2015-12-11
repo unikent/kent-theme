@@ -43,10 +43,10 @@
 			<figure class="featured-image">
 				<div class="media-wrap">
 					<img src="images/story-ping-pong.jpg">
-				</div>
-				<div class="attribution">
-					<i class="kf-camera"></i>
-					<span>Political Studies Association: Picture by <a href="#">Someone</a>. <a href="#">Attribution License</a></span>
+					<div class="attribution">
+						<i class="kf-camera"></i>
+						<span>Political Studies Association: Picture by <a href="#">Someone</a>. <a href="#">Attribution License</a></span>
+					</div>
 				</div>
 				<figcaption>Ping Pong the dolphin</figcaption>
 			</figure>
@@ -119,10 +119,10 @@
 		<figure>
 			<div class="media-wrap">
 				<img src="images/story-swimmers.jpg">
-			</div>
-			<div class="attribution">
-				<i class="kf-camera"></i>
-				<span>Political Studies Association: Picture by <a href="#">Someone</a>. <a href="#">Attribution License</a></span>
+				<div class="attribution">
+					<i class="kf-camera"></i>
+					<span>Political Studies Association: Picture by <a href="#">Someone</a>. <a href="#">Attribution License</a></span>
+				</div>
 			</div>
 			<figcaption>Students enjoying diving course</figcaption>
 		</figure>
