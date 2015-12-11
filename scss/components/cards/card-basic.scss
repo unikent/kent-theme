@@ -87,7 +87,8 @@
 	}
 
 	.card-media-wrap, .card-embed-wrap {
-		position: relative;
+
+		@extend .media-wrap;
 
 		&.card-media-wrap-video {
 			cursor: pointer;

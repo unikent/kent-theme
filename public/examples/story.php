@@ -45,7 +45,7 @@
 		</div>
 		<div class="content-container-full">
 			<figure class="featured-image">
-				<div class="media-wrap">
+				<div class="media-wrap-letterbox">
 					<img src="images/story-ping-pong.jpg">
 					<div class="attribution">
 						<i class="kf-camera"></i>
@@ -106,9 +106,8 @@
 			<h2>Surveys of amphibians and reptiles</h2>
 
 			<p>Together with Billy Childish, Charles Thomson founded the movement in 1999 in an attempt to revive the fortunes of contemporary figurative painting.  The show, co-curated by the Studio 3 Gallery MA Curating group in collaboration with Charles Thomson, demonstrates the now-global reach of the movement and includes works by Thomson, Ella Guru, Joe Machine, Jaroslav Valecka and Black Francis (frontman of The Pixies).  It is the School’s 20th exhibition since opening in 2010.</p>
-			<p>
-				<figure class="figure-right">
-					<div class="wrap">
+			<figure class="figure-right">
+					<div class="media-wrap">
 						<img src="images/story-starfish.jpg">
 						<div class="attribution">
 							<i class="kf-camera"></i>
@@ -116,14 +115,16 @@
 						</div>
 					</div>
 					<figcaption>Patrick</figcaption>
-				</figure>
-				Stuckism has become a truly international art movement, with affiliated groups spanning Buenos Aires to Beijing. But Stuckism still retains deep regional affiliations with the North Kent and Medway areas from which many of the founding Stuckists originated.</p>
+			</figure>
+			<p>Stuckism has become a truly international art movement, with affiliated groups spanning Buenos Aires to Beijing. But Stuckism still retains deep regional affiliations with the North Kent and Medway areas from which many of the founding Stuckists originated.</p>
 			<p>This research event is held in partnership between the Art History & Visual Cultures Research Centre and Studio 3 Gallery.</p>
 			<p>This event is free and all are welcome but booking  is encouraged due to limited space.</p>
-
+			<p>At the end of October 2015 we had our second hackathon for Information Services. In an attempt to target a wider audience and get more non-techies involved we renamed the event “Innovation Splash”.</p>
+			<p>The event was held over 2 working days, we had a total of 5 teams take part who tackled various problems facing the institution and gave 10 minute lightening talks on their prototypes at the end of the second day.</p>
+			<p>This blog post aims to give a quick run down of each of the teams ideas. Just to show off some of the cool stuff our colleagues produced in such a short amount of time.</p>
 		</div>
 		<figure>
-			<div class="media-wrap">
+			<div class="media-wrap-letterbox">
 				<img src="images/story-swimmers.jpg">
 				<div class="attribution">
 					<i class="kf-camera"></i>

@@ -5233,6 +5233,7 @@ main {
   margin-bottom: 2rem; }
   .content-page .content-container {
     position: relative;
+    overflow: hidden;
     padding: 0 16px;
     padding: 0 1rem; }
     @media (min-width: 48em) {
@@ -5246,6 +5247,7 @@ main {
         padding: 0 33.333333333% 0 8.333333333%; } }
   .content-page .content-header, .content-page .content-container-full {
     position: relative;
+    overflow: hidden;
     padding: 0 16px;
     padding: 0 1rem; }
     @media (min-width: 48em) {
@@ -5303,32 +5305,38 @@ main {
       .content-page .content-social.content-social-head, .content-page .card-panel .card-panel-header .content-social-head.card-panel-social, .card-panel .card-panel-header .content-page .content-social-head.card-panel-social {
         display: block; } }
 
-.media-wrap, .card.card-overlay .card-media-wrap {
+.media-wrap, .card .card-media-wrap, .card .card-embed-wrap {
+  position: relative; }
+  .media-wrap > img, .card .card-media-wrap > img, .card .card-embed-wrap > img {
+    width: 100%;
+    height: auto; }
+
+.media-wrap-letterbox, .card.card-overlay .card-media-wrap {
   position: relative;
   clear: both; }
   @media (min-width: 48em) {
-    .media-wrap, .card.card-overlay .card-media-wrap {
+    .media-wrap-letterbox, .card.card-overlay .card-media-wrap {
       min-height: 22rem; } }
   @media (min-width: 62em) {
-    .media-wrap, .card.card-overlay .card-media-wrap {
+    .media-wrap-letterbox, .card.card-overlay .card-media-wrap {
       max-height: 33rem;
       overflow: hidden; } }
-  .media-wrap > img, .card.card-overlay .card-media-wrap > img {
+  .media-wrap-letterbox > img, .card.card-overlay .card-media-wrap > img {
     width: 100%;
     display: block;
     max-width: 100%;
     height: auto; }
     @media (min-width: 62em) {
-      .media-wrap > img, .card.card-overlay .card-media-wrap > img {
+      .media-wrap-letterbox > img, .card.card-overlay .card-media-wrap > img {
         margin-top: -3rem; } }
   @media (min-width: 62em) and (min-width: 75em) {
-    .media-wrap > img, .card.card-overlay .card-media-wrap > img {
+    .media-wrap-letterbox > img, .card.card-overlay .card-media-wrap > img {
       margin-top: -6rem; } }
   @media (min-width: 62em) and (min-width: 107em) {
-    .media-wrap > img, .card.card-overlay .card-media-wrap > img {
+    .media-wrap-letterbox > img, .card.card-overlay .card-media-wrap > img {
       margin-top: -14rem; } }
   @media (min-width: 62em) and (min-width: 150em) {
-    .media-wrap > img, .card.card-overlay .card-media-wrap > img {
+    .media-wrap-letterbox > img, .card.card-overlay .card-media-wrap > img {
       margin-top: -20rem; } }
 
 figure {
@@ -5342,42 +5350,66 @@ figure {
     font-size: 0.75rem;
     padding: 4.8px 12px;
     padding: 0.3rem 0.75rem;
-    height: 32px;
-    height: 2rem;
+    max-height: 32px;
+    max-height: 2rem;
     cursor: pointer;
     bottom: 0;
     right: 0;
     line-height: 24px;
     line-height: 1.5rem;
-    max-width: 40px;
-    max-width: 2.5rem; }
+    min-width: 40px;
+    min-width: 2.5rem;
+    transition: all 300ms; }
+    figure .attribution:before {
+      content: " ";
+      display: block;
+      float: left;
+      width: 16px;
+      width: 1rem;
+      height: 16px;
+      height: 1rem;
+      transition: width 500ms; }
     figure .attribution i {
       font-size: 16px;
       font-size: 1rem;
       line-height: 16px;
       line-height: 1rem;
-      margin-right: 16px;
-      margin-right: 1rem; }
+      position: absolute;
+      top: 6.4px;
+      top: 0.4rem;
+      left: 12px;
+      left: 0.75rem; }
     figure .attribution span {
-      transition: all 300ms;
+      transition: max-height 150ms, max-width 150ms 150ms;
       display: block;
-      float: right;
       max-width: 0;
       overflow: hidden;
-      box-sizing: border-box; }
+      box-sizing: border-box;
+      max-height: 32px;
+      max-height: 2rem; }
       figure .attribution span a {
         color: #fff; }
         figure .attribution span a:hover {
           text-decoration: underline; }
     figure .attribution.in {
-      max-width: 3000px; }
+      max-height: 3000px; }
+      figure .attribution.in:before {
+        width: 28px;
+        width: 1.75rem;
+        transition: width 50ms; }
       figure .attribution.in span {
+        transition: max-width 300ms, max-height 150ms 150ms;
+        max-height: 3000px;
         max-width: 3000px; }
   figure.figure-right img {
     width: 100%; }
   @media (min-width: 62em) {
     figure.figure-right {
-      max-width: 33.333333%; } }
+      max-width: 50%;
+      float: right;
+      margin-right: -20%;
+      margin-left: 2rem;
+      margin-bottom: 2rem; } }
   figure figcaption {
     color: #818a91;
     font-size: 14.4px;
@@ -6323,23 +6355,21 @@ nav.breadcrumb {
   .card .card-img-top:first-child, .card .card-media-wrap:first-child {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
-  .card .card-media-wrap, .card .card-embed-wrap {
-    position: relative; }
-    .card .card-media-wrap.card-media-wrap-video, .card .card-embed-wrap.card-media-wrap-video {
-      cursor: pointer; }
-      .card .card-media-wrap.card-media-wrap-video:after, .card .card-embed-wrap.card-media-wrap-video:after {
-        content: "";
-        font-family: "kentfont", sans-serif;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin-left: -32px;
-        margin-left: -2rem;
-        margin-top: -51.2px;
-        margin-top: -3.2rem;
-        font-size: 72px;
-        font-size: 4.5rem;
-        color: rgba(255, 255, 255, 0.9); }
+  .card .card-media-wrap.card-media-wrap-video, .card .card-embed-wrap.card-media-wrap-video {
+    cursor: pointer; }
+    .card .card-media-wrap.card-media-wrap-video:after, .card .card-embed-wrap.card-media-wrap-video:after {
+      content: "";
+      font-family: "kentfont", sans-serif;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -32px;
+      margin-left: -2rem;
+      margin-top: -51.2px;
+      margin-top: -3.2rem;
+      font-size: 72px;
+      font-size: 4.5rem;
+      color: rgba(255, 255, 255, 0.9); }
   .card.card-inverse .card-subtitle, .card.card-backed-primary .card-subtitle, .card-panel.cards-backed-primary .card .card-subtitle,
   .card-panel.cards-backed .card.card-backed-primary .card-subtitle, .card.card-backed-accent .card-subtitle, .card-panel.cards-backed-accent .card .card-subtitle,
   .card-panel.cards-backed .card.card-backed-accent .card-subtitle, .card .card-inverse .card-subtitle, .card .card.card-backed-primary .card-subtitle, .card .card-panel.cards-backed-primary .card .card-subtitle, .card-panel.cards-backed-primary .card .card .card-subtitle, .card .card.card-backed-accent .card-subtitle, .card .card-panel.cards-backed-accent .card .card-subtitle, .card-panel.cards-backed-accent .card .card .card-subtitle {
