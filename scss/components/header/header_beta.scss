@@ -19,6 +19,7 @@
 		.btn {
 			margin-top: 0;
 			vertical-align: middle;
+			margin-top: 1rem;
 
 			&.btn-link {
 				padding-left: 0;
@@ -29,6 +30,8 @@
 	.btn {
 		margin-top: -($btn-padding-y);
 		vertical-align: top;
+		display: inline;
+		transition: none;
 	}
 	.beta-bar-beta {
 		background-color: $brand-primary;
