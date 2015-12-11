@@ -1,0 +1,38 @@
+.page-feedback{
+	padding: 0.5rem 1rem;
+	border-top: 1px solid $gray;
+	font-size: 0.9rem;
+
+	@include make-row();
+
+
+	.page-feedback-toggle, .page-feedback-meta{
+		@include make-col();
+		@include media-breakpoint-up(md) {
+			@include make-col-span(6);
+		}
+	}
+
+	.page-feedback-toggle{
+		a:after{
+			content: $kf-caret-up;
+			font-family: $font-family-kentfont;
+			display: inline-block;
+			padding-left: 0.25rem;
+		}
+		a.collapsed:after{
+			content: $kf-caret-down;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		.page-feedback-meta {
+			text-align: right;
+		}
+	}
+
+	.page-feedback-form{
+		@include make-col();
+		@include make-col-span(12);
+	}
+}

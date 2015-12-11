@@ -13,8 +13,9 @@
 
 // Theme components
 @import "components/responsive_utils";
-@import "components/scaffolding";
 @import "components/typography";
+@import "components/scaffolding";
+@import "components/images";
 @import "components/buttons";
 @import "components/forms";
 @import "components/header/header_audience";
@@ -26,4 +27,6 @@
 @import "components/blockquote";
 @import "components/embed-responsive";
 @import "components/impact_statement";
+@import "components/page_feedback";
+@import "components/article";
 @import "components/footer";

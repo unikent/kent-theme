@@ -109,10 +109,10 @@
 						</div>
 					</nav>
 					<nav class="audience-nav-links" role="menu">
-						<a href="//www.kent.ac.uk/student" role="menuitem">Student</a>
-						<a href="//www.kent.ac.uk/campusonline" role="menuitem">Staff</a>
-						<a href="//www.kent.ac.uk/alumni" role="menuitem">Alumni</a>
-						<a href="//www.kent.ac.uk/departments" role="menuitem">Departments</a>
+						<a href="//www.kent.ac.uk/student/" role="menuitem">Student</a>
+						<a href="//www.kent.ac.uk/campusonline/" role="menuitem">Staff</a>
+						<a href="//www.kent.ac.uk/alumni/" role="menuitem">Alumni</a>
+						<a href="//www.kent.ac.uk/departments/" role="menuitem">Departments</a>
 					</nav>
 				</div>
 				<div class="global-nav-search" id="global-nav-search">
@@ -132,7 +132,7 @@
 					</form>
 				</div>
 			</section>
-			<section class="departmental-nav" id="section_menu">
+			<section class="departmental-nav<?php echo ($slim)?' slim':''; ?>" id="section_menu">
 				<header><?php echo $title; ?></header>
 				<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
 				<nav class="navbar-menu" id="navbar-menu" role="menu">

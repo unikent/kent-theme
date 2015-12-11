@@ -21,6 +21,7 @@
 			if(previousBreakpoint !== breakpoint){
 				 $(window).trigger('viewport:change');
 				 previousBreakpoint = breakpoint;
+				console.log(breakpoint);
 			}
 		})
 	);
