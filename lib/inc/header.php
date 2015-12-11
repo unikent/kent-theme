@@ -139,7 +139,7 @@
 					<?php echo $menu_links; ?>
 				</nav>
 			</section>
-			<?php if($slim): ?>
+			<?php if(isset($slim) && $slim && isset($breadcrumb)): ?>
 				<nav class="breadcrumb">
 
 					<a href="/" rel="index">University of Kent</a> 
