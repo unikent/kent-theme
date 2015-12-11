@@ -4149,7 +4149,8 @@ button.close {
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%);
     transition: -webkit-transform .3s ease-out;
-    transition: transform .3s ease-out; }
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out; }
   .modal.in .modal-dialog {
     -webkit-transform: translate(0, 0);
             transform: translate(0, 0); }
@@ -4443,6 +4444,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -6377,8 +6379,8 @@ nav.breadcrumb {
     top: 16px;
     top: 1rem;
     right: 0;
-    padding: 8px;
-    padding: 0.5rem;
+    padding: 6.4px;
+    padding: 0.4rem;
     padding-right: 16px;
     padding-right: 1rem; }
     .beta-bar .beta-toggler:after {
