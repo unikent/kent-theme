@@ -3,11 +3,9 @@
 	border-top: 1px solid $border-gray;
 	font-size: 0.9rem;
 
-	@include make-row();
-
-
 	.page-feedback-toggle, .page-feedback-meta{
 		@include make-col();
+		padding: 0;
 		@include media-breakpoint-up(md) {
 			@include make-col-span(6);
 		}

@@ -7,7 +7,6 @@ main {
 
 	.content-container {
 		position: relative;
-		overflow: hidden;
 		padding:  0 $article-padding-sm;
 		@include media-breakpoint-up(md) {
 			padding: 0 $article-padding-md;
@@ -18,10 +17,6 @@ main {
 		@include media-breakpoint-up(xl) {
 			padding: $article-container-padding-xl;
 		}
-	}
-
-	.content-container-full{
-		overflow: hidden;
 	}
 
 	.content-header, .content-container-full {
@@ -40,6 +35,8 @@ main {
 
 	.content-sidebar{
 
+		margin: 3rem 0;
+
 		h3{
 			font-size: $font-size-h5;
 		}
@@ -53,6 +50,8 @@ main {
 		}
 
 		@include media-breakpoint-up(lg) {
+
+			margin: 0;
 			position: absolute;
 			top: 0;
 			right:$article-left-padding-lg;

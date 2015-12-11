@@ -47,6 +47,9 @@
 
 figure{
 	position: relative;
+	clear:both;
+	overflow: hidden;
+	margin-top:2rem;
 
 	.attribution {
 		background-color: rgba(0,0,0,0.6);
@@ -135,6 +138,9 @@ figure{
 
 .container, .content-container, .content-container-full{
 	& > figure{
+		clear: none;
+		overflow: visible;
+		margin-top:0;
 		figcaption{
 			padding-left: 0;
 		}

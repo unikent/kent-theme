@@ -113,6 +113,19 @@
 }
 
 
+.social-link{
+	display: inline-block;
+	line-height: 2rem;
+	i{
+		@extend .btn;
+		@extend .btn-gray-icon;
+		width: 2.5rem;
+		text-align: center;
+		margin-right: 0.5rem;
+	}
+
+}
+
 .content-social{
 	position: relative;
 	overflow: hidden;
@@ -124,5 +137,13 @@
 		float:       left;
 		margin-left: .2rem;
 		margin-bottom: .2rem;
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+	&.content-social-head{
+		a, .content-social-link {
+			margin-left: 0;
+		}
 	}
 }

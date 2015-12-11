@@ -97,7 +97,8 @@
 				</nav>
 				<div>
 					<h3>Follow us</h3>
-					<a title="twitter" href="https://twitter.com/unikentnews" class="kf-twitter"></a>
+					<a title="twitter" href="https://twitter.com/unikentnews" class="social-link"><i class="kf-twitter"></i> @unikentnews</a>
+
 				</div>
 			</aside>
 		</div>
@@ -122,6 +123,9 @@
 			<p>At the end of October 2015 we had our second hackathon for Information Services. In an attempt to target a wider audience and get more non-techies involved we renamed the event “Innovation Splash”.</p>
 			<p>The event was held over 2 working days, we had a total of 5 teams take part who tackled various problems facing the institution and gave 10 minute lightening talks on their prototypes at the end of the second day.</p>
 			<p>This blog post aims to give a quick run down of each of the teams ideas. Just to show off some of the cool stuff our colleagues produced in such a short amount of time.</p>
+			<p>Tests on 461 cancer cell lines revealed that neuroblastoma – the most common solid cancer occurring outside the brain in children and a major cause of death during infancy – was highly sensitive to flubendazole.</p>
+			<p>Flubendazole was also found to reduce the viability of five primary neuroblastoma samples in concentrations thought to be achievable in humans. It inhibited vessel formation and neuroblastoma tumour growth in a tumour model in fertilised chicken eggs.</p>
+			<p>Acquired resistance to various anti-cancer drugs is a major problem in high-risk neuroblastoma. The researchers found that 119 cell lines from a panel of 140 neuroblastoma cell lines with acquired resistance to various anti-cancer drugs were sensitive to flubendazole in low concentrations.</p>
 		</div>
 		<figure>
 			<div class="media-wrap-letterbox">
