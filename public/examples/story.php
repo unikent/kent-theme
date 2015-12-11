@@ -14,7 +14,11 @@
 				'Kent Life' => '#'
 			),
 			'meta' => array('title'=>'Story Demo Page - Kent Theme Beta'),
-			'slim'=>true
+			'slim'=>true,
+			'breadcrumb'=> array(
+				'News Centre'=> '/news',
+				'Center strengthened by consultant appointment' => '#',
+			)
 		)
 	);
 ?>
