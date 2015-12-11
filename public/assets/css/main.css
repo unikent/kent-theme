@@ -5373,11 +5373,11 @@ figure {
       max-width: 3000px; }
       figure .attribution.in span {
         max-width: 3000px; }
-    figure .attribution.figure-right img {
-      width: 100%; }
-    @media (min-width: 62em) {
-      figure .attribution.figure-right {
-        max-width: 33.333333%; } }
+  figure.figure-right img {
+    width: 100%; }
+  @media (min-width: 62em) {
+    figure.figure-right {
+      max-width: 33.333333%; } }
   figure figcaption {
     color: #818a91;
     font-size: 14.4px;

@@ -107,11 +107,13 @@
 
 			<p>Together with Billy Childish, Charles Thomson founded the movement in 1999 in an attempt to revive the fortunes of contemporary figurative painting.  The show, co-curated by the Studio 3 Gallery MA Curating group in collaboration with Charles Thomson, demonstrates the now-global reach of the movement and includes works by Thomson, Ella Guru, Joe Machine, Jaroslav Valecka and Black Francis (frontman of The Pixies).  It is the School’s 20th exhibition since opening in 2010.</p>
 			<p>
-				<figure class="align-right">
-					<img src="images/story-starfish.jpg">
-					<div class="attribution">
-						<i class="kf-camera"></i>
-						<span>Political Studies Association: Picture by <a href="#">Someone</a>. <a href="#">Attribution License</a></span>
+				<figure class="figure-right">
+					<div class="wrap">
+						<img src="images/story-starfish.jpg">
+						<div class="attribution">
+							<i class="kf-camera"></i>
+							<span>Political Studies Association: Picture by <a href="#">Someone</a>. <a href="#">Attribution License</a></span>
+						</div>
 					</div>
 					<figcaption>Patrick</figcaption>
 				</figure>

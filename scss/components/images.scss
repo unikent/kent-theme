@@ -83,16 +83,17 @@ figure{
 			}
 		}
 
-		&.figure-right{
+	}
 
-			img{
-				width: 100%;
-			}
-			@include media-breakpoint-up(lg){
-				max-width: 33.333333%;
-			}
+	&.figure-right{
 
+		img{
+			width: 100%;
 		}
+		@include media-breakpoint-up(lg){
+			max-width: 33.333333%;
+		}
+
 	}
 
 	figcaption{
