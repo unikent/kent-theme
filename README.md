@@ -8,6 +8,8 @@ Run `npm install` to install all dependencies, run grunt and start a watch task.
 
 To restart the watch for any reason simply run `grunt`.
 
+Make a copy of `lib/config.sample.php` and rename to `lib/config.php` - change the WEBROOT if you need to when developing locally.
+
 ## Documentation
 
 CSS documentation is provided inline using the [Hologram](http://trulia.github.io/hologram/) format.

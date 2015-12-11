@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include dirname(dirname(dirname(__FILE__)))."/lib/bootstrap.php";
 	use \unikent\kent_theme\kentThemeHelper;
 
@@ -8,12 +8,7 @@
 			'Environment' => '#',
 			'Science' => '#',
 			'Society' => '#',
-			'Kent Life' => '#',
-			'Cuslture' => '#',
-			'Envsironment' => '#',
-			'Scisence' => '#',
-			'Socaiety' => '#',
-			'Kenat Life' => '#'
+			'Kent Life' => '#'
 		),array('title'=>'Demo Page - Kent Theme Beta')); ?>
 
 			<div class="card card-overlay header-card-overlay">
@@ -128,7 +123,7 @@
 
 
 			<blockquote>
-				<img class="img-circle" src="images/profile-academic.jpg"> 
+				<img class="img-circle" src="images/profile-academic.jpg">
 				<p>It was I who ate all the pies! And I would have gotten away with it too, if it weren't for you meddling kids.</p>
 				<footer>
 					<cite>
@@ -223,9 +218,9 @@
 						<h3 class="card-title">Academic excellence</h3>
 						<p class="card-subtitle">1st September 2015</p>
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
-						
+
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">  
+							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
 							Dr Jim Groombridge
 						</a>
 
@@ -238,7 +233,7 @@
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
 
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">  
+							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
 							Dr David Hume
 						</a>
 
@@ -255,7 +250,7 @@
 						<p class="card-subtitle">5th November 2015</p>
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">  
+							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
 							Dr Jim Groombridge
 						</a>
 
@@ -266,7 +261,7 @@
 						<p class="card-subtitle">17th May 2015</p>
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">  
+							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
 							Dr Bob Smithington
 						</a>
 					</div>
@@ -386,7 +381,7 @@
 					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
 						<img class="card-img-bottom" src="images/students.jpg">
 					</div>
-					
+
 					<div class="card-img-overlay text-right">
 						<h5 class="card-subtitle">A sub title</h5>
 						<p class="card-text">This content is shorter.</p>
@@ -563,9 +558,9 @@
 				<p>&nbsp;</p>
 				<h1>And because we can!</h1>
 				<p>&nbsp;</p>
-				
+
 			</section>
-			
+
 			<div class="card card-overlay">
 				<div class="card-body card-inverse">
 					<div class="card-title-wrap card-title-wrap-link card-transparent pull-right">
@@ -593,7 +588,7 @@
 						<h4 class="card-title">Hello</h4>
 						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
 					</div
-					
+
 				</div>
 
 				<div class="card-footer">
@@ -609,5 +604,5 @@
 <p>&nbsp;</p>
 
 		<?php KentThemeHelper::footer(); ?>
-	
-		
+
+

@@ -33,7 +33,7 @@
 
 	<h4>Sites Available in the beta theme</h4>
 	<ul>
-		<li><a href='/news'>Kent News Center</a></li>
+		<li><a href='/news'>Kent News Centre</a></li>
 	</ul>
 
 </div>

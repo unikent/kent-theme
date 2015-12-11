@@ -54,7 +54,7 @@ Class KentThemeHelper {
 		return $output;
 	}
 
-	protected static function getThemeWebRoot(){
+	public static function getThemeWebRoot(){
 		// If constant was provided
 		if(defined("WEBROOT")){
 			return WEBROOT;
@@ -75,7 +75,7 @@ Class KentThemeHelper {
 		$public_folder_path = str_replace(array('\\', '/'),'/', $public_folder_path);
 		
 		// remove base folder from public folder to get releative webpath
-		echo static::$theme_web_root = str_replace( $base_folder ,'', $public_folder_path );
+		echo static::$theme_web_root = str_replace( $base_folder ,'', $public_folder_path ).'/';
 	}
 
 }
