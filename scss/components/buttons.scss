@@ -77,6 +77,10 @@
 	@include kent-button-variant(#FFF, $brand-accent, $brand-accent);
 }
 
+.btn-label{
+	@include kent-button-variant($link-color, $border-gray, $border-gray);
+}
+
 .btn-info {
 	@include kent-button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 }

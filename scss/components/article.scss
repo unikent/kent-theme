@@ -22,3 +22,17 @@
 		}
 	}
 }
+
+.content-tags{
+	overflow: hidden;
+	clear:both;
+
+	.content-tag{
+		float:left;
+		display: inline-block;
+		margin: 0 0.5rem 0.5rem 0;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
