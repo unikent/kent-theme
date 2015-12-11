@@ -139,5 +139,19 @@
 					<?php echo $menu_links; ?>
 				</nav>
 			</section>
+			<?php if($slim): ?>
+				<nav class="breadcrumb">
+
+					<a href="/" rel="index">University of Kent</a> 
+
+					<?php $i=0;foreach($breadcrumb as $name => $link): ?>
+						<?php if(++$i == sizeof($breadcrumb)): ?>
+							<span><?php echo $name; ?></span> 
+						<?php else:?>
+							<a href="<?php echo $link; ?>" rel="up"><?php echo $name; ?></a> 
+						<?php endif;?>
+					<?php endforeach;?> 
+				</nav>
+			<?php endif;?>
 		</header>
 		<main id="main_content">
