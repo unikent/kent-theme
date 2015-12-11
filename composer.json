@@ -1,0 +1,11 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "~3.8",
+        "nesbot/carbon": "^1.21"
+    },
+    "autoload": {
+        "psr-4": {
+            "unikent\\kent_theme\\": "lib/src"
+        }
+    }
+}

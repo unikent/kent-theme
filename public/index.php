@@ -1,39 +1,70 @@
-<?php 
-	include dirname(dirname(__FILE__))."/lib/bootstrap.php";
-	use \unikent\kent_theme\kentThemeHelper;
+<?php
+include dirname(dirname(__FILE__))."/lib/bootstrap.php";
+use \unikent\kent_theme\kentThemeHelper;
 
-	KentThemeHelper::header("Kent Beta",
-		array(
-			'Home' => '#',
-			'About' => '#',
-			'Blog' => '#'
+KentThemeHelper::header("Beta",
+	array(
+		'Home' => '#',
+		'About' => '#',
+		'Blog' => '//blogs.kent.ac.uk/webdev/category/beta/'
 		),
-		array(
-			'title'=>'Kent Beta - Kent Theme Beta'
+	array(
+		'title'=>'Kent Beta - Kent Theme Beta'
 		)
-	); 
-?>
-<div class="card card-overlay header-card-overlay">
-	<div class="card-body">
-		<div class="card-media-wrap">
-			<img src="examples/images/engineering-student-16-9.jpg" class="card-img-bottom" alt="">
+	);
+	?>
+	<div class="card card-overlay header-card-overlay">
+		<div class="card-body">
+			<div class="card-media-wrap">
+				<img src="examples/images/sunrise-16-9.jpg" class="card-img-bottom" alt="">
+			</div>
+			<a href="//blogs.kent.ac.uk/webdev/category/beta/" class="card-title-wrap card-title-wrap-link card-transparent">
+				<h2 class="card-title">We're testing out new designs</h2>
+				<p class="card-text">Find out more about our beta, a site for experimenting and getting feedback</p>
+			</a>
 		</div>
-		<div class="card-title-wrap card-title-wrap-link card-transparent">
-				<h2 class="card-title">beta.kent.ac.uk</h2>
-				<p class="card-text">Evolving Kent's online user experience</p>
-			</div>	
+	</div>
 
+	<div class="card-panel card-panel-primary-tint recent-news">
+		<div class="card-panel-header">
+			<h2 class="card-panel-title">Updates</h2>
+		</div>
+
+		<?php
+		// TODO: Don't like doing this in the view, are we going to move to a controller?
+		$api = new unikent\kent_theme\KentApi;
+		$posts = $api->getPostsByTag('beta-kent');
+		?>
+		<div class="card-panel-body">
+			<?php
+			for ($i = 0; $i < min(4, count($posts)); ++$i):
+				$post = $posts[$i];
+			$thumbnail = $post->getImage('post-thumbnail');
+			?>
+			<a href="<?php echo $post->getPermalink() ?>" class="card">
+				<img
+				class="card-img"
+				src="<?php echo $thumbnail['url'] ?>"
+				alt="<?php echo $thumbnail['alt'] ?>"
+				title="<?php echo $thumbnail['title'] ?>"
+				>
+				<h3 class="card-title"><?php echo $post->getTitle() ?></h3>
+				<p><?php echo $post->getDate() ?></p>
+			</a>
+		<?php endfor; ?>
 	</div>
 </div>
 
 <div class='container'>
-	<h1>Kent Beta</h1>
-	<p>Over the past year, we've been exploring a new visual language and defining UX (user experience) principles to evolve Kent's online user experience.</p>
-	<p>The beta.kent site is our test bed to start trying out some of these ideas.</p>
-
-	<h4>Sites Available in the beta theme</h4>
+	<h2>New Content</h2>
 	<ul>
-		<li><a href='/news'>Kent News Centre</a></li>
+		<li><a href='/news'>News centre</a></li>
+	</ul>
+
+	<h4>Planned</h4>
+	<ul>
+		<li>Homepage (early 2016)</li>
+		<li>Course details pages (early 2016)</li>
 	</ul>
 
 </div>
