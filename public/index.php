@@ -25,8 +25,8 @@ KentThemeHelper::header(array(
 			<h2 class="card-title">We're testing out new designs</h2>
 			<p class="card-text">Find out more about our beta, a site for experimenting and getting feedback</p>
 		</a>
-	</div>
-</div>
+	</div><!-- /.card-body -->
+</div><!-- /.card -->
 
 <div class="card-panel card-panel-primary-tint recent-news">
 	<div class="card-panel-header">
@@ -34,15 +34,16 @@ KentThemeHelper::header(array(
 	</div>
 
 	<?php
-		// TODO: Don't like doing this in the view, are we going to move to a controller?
+	// TODO: Don't like doing this in the view, are we going to move to a controller?
 	$api = new unikent\kent_theme\KentApi;
+	// get webdev blog posts with this tag
 	$posts = $api->getPostsByTag('beta-kent');
 	?>
 	<div class="card-panel-body">
 		<?php
 		for ($i = 0; $i < min(4, count($posts)); ++$i):
 			$post = $posts[$i];
-		$thumbnail = $post->getImage('post-thumbnail');
+			$thumbnail = $post->getImage('post-thumbnail');
 		?>
 		<a href="<?php echo $post->getPermalink() ?>" class="card">
 			<img
@@ -54,9 +55,9 @@ KentThemeHelper::header(array(
 			<h3 class="card-title"><?php echo $post->getTitle() ?></h3>
 			<p><?php echo $post->getDate() ?></p>
 		</a>
-	<?php endfor; ?>
-</div>
-</div>
+		<?php endfor; ?>
+	</div><!-- /.card-panel-body -->
+</div><!-- /.card-panel -->
 
 <div class='container'>
 	<h2>New Content</h2>
@@ -69,7 +70,6 @@ KentThemeHelper::header(array(
 		<li>Homepage (early 2016)</li>
 		<li>Course details pages (early 2016)</li>
 	</ul>
-
-</div>
+</div><!-- /.container -->
 
 <?php KentThemeHelper::footer(); ?>

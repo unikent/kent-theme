@@ -2,13 +2,16 @@
 
 ## Setup
 
-Run `npm install` to install all dependencies, run grunt and start a watch task.
+1. Install [Composer](http://getcomposer.org) and run `composer install` to grab [Guzzle](http://guzzle3.readthedocs.org/) for calling the API and [Carbon](http://carbon.nesbot.com/docs/) to make dates appear nicely.
+
+1. Make a copy of `lib/config.sample.php` and rename to `lib/config.php` - change the WEBROOT if you need to when developing locally.
+
+1. Run `npm install` to install all dependencies, run grunt and start a watch task.
 
 *Note: we're using the Ruby version of Sass so you'll need to have it in your PATH first - use `gem install sass`*
 
 To restart the watch for any reason simply run `grunt`.
 
-Make a copy of `lib/config.sample.php` and rename to `lib/config.php` - change the WEBROOT if you need to when developing locally.
 
 ## Documentation
 
