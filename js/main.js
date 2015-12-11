@@ -9469,6 +9469,7 @@ if(b){var c=this.constructor.DATA_KEY,d=a(b.currentTarget).data(c);d||(d=new thi
 			if(previousBreakpoint !== breakpoint){
 				 $(window).trigger('viewport:change');
 				 previousBreakpoint = breakpoint;
+				console.log(breakpoint);
 			}
 		})
 	);
@@ -9739,4 +9740,11 @@ jQuery(document).ready(function(){
 	});
 
 	respond();
+});
+jQuery(document).ready(function($){
+
+	$('.attribution').click(function(){
+		$(this).toggleClass('in');
+	});
+
 });

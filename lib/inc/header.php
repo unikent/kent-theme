@@ -132,7 +132,7 @@
 					</form>
 				</div>
 			</section>
-			<section class="departmental-nav" id="section_menu">
+			<section class="departmental-nav<?php echo ($slim)?' slim':''; ?>" id="section_menu">
 				<header><?php echo $title; ?></header>
 				<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
 				<nav class="navbar-menu" id="navbar-menu" role="menu">

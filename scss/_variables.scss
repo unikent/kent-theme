@@ -82,15 +82,35 @@ $headings-font-family:       Arial, "Helvetica Neue", Helvetica, sans-serif !def
 $font-family-kentfont:		"kentfont", sans-serif;
 
 
-//CARDS
+//BUTTONS
 
-/// card overlay
+$btn-primary-color:              #fff;
+$btn-primary-bg:                 $link-color;
+$btn-primary-border:             $btn-primary-bg;
+
+$btn-secondary-color:            $body-color;
+$btn-secondary-bg:               #e6e6e6;
+$btn-secondary-border:           #adadad;
+
+
+//CARDS
 
 $card-overlay-amount: 1.6rem;
 
 
 // HEADER OPTIONS
 $global-nav-height: 8.75rem;
+
+
+
+// ARTICLE LAYOUT
+$article-padding-sm : 1rem;
+$article-padding-md : 6rem;
+$article-right-padding: 33.333333333%;
+$article-left-padding-lg: 9.333333333%;
+$article-left-padding-xl: 8.333333333%;
+$article-container-padding-lg: 0 $article-right-padding 0 $article-left-padding-lg;
+$article-container-padding-xl: 0 $article-right-padding 0 $article-left-padding-xl;
 
 
 //BOOTSTRAP FIXES (maybe fixed in later release)
