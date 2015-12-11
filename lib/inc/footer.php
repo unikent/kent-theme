@@ -37,27 +37,27 @@
 									<div class="col-sm-6">
 										<strong>Canterbury</strong>
 										<p>
-										Sat 29 October 2015<br>
-										Sat 4 November 2015<br>
-										Sat 8 July 2015
+										Sat 2 July 2016<br>
+										Sat 8 October 2016<br>
+										Sat 22 October 2016
 										</p>
 									</div>
 									<div class="col-sm-6">
 										<strong>Medway</strong>
 										<p>
-										Sat 29 October 2015<br>
-										Sat 4 November 2015
+										Sat 18 June 2016<br>
+										Tues 1 March 2016
 										</p>
 
 										<strong>Postgraduate</strong>
 										<p>
-										Sat 4 November 2015
+										Sat 4 November 2016
 										</p>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-xs-12">
-										<a class="chevron-link" href="//www.kent.ac.uk/courses/visit/">Visit Kent</a>
+										<a class="chevron-link" href="//www.kent.ac.uk/courses/visit/">All open days and visits</a>
 									</div>
 								</div>
 							</div>
@@ -69,36 +69,53 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3">
-							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-about-kent" aria-controls="footer-about-kent" data-parent=".global-footer">About Kent</h5>
-							<nav id="footer-about-kent" class="footer-section footer-section-links collapse-sm-down">
-								<a href="//www.kent.ac.uk/applicants/">Applicants</a>
-								<a href="//www.kent.ac.uk/gettingstarted/">Arriving students</a>
-								<a href="//www.kent.ac.uk/student/">Current students</a>
-								<a href="//www.kent.ac.uk/internationalstudent/">International students</a>
-								<a href="//www.kent.ac.uk/parents/">Parents and family</a>
-								<a href="//www.kent.ac.uk/alumni/">Alumni (former students)</a>
-								<a href="//www.kent.ac.uk/campusonline/">Staff</a>
-								<a href="/news">Press and media</a>
-								<a href="//www.kent.ac.uk/secondary/">Teachers and advisors</a>
+							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-explore" aria-controls="footer-explore" data-parent=".global-footer">Explore</h5>
+							<nav id="footer-explore" class="footer-section footer-section-links collapse-sm-down">
+								<a href="//www.kent.ac.uk/european/">The UK's European University</a>
+								<a href="//www.kent.ac.uk/about/impact/">Making a difference</a>
+								<a href="//www.kent.ac.uk/locations/">Superb locations</a>
+								<a href="//www.kent.ac.uk/accommodation/">Accommodation and facilities</a>
+								<a href="//www.kent.ac.uk/maps/">Maps and directions</a>
+								<a href="//www.kent.ac.uk/departments/academic/">Departments and schools</a>
 							</nav>
-						</div>
-						<div class="col-md-3">
-							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-study-with-us" aria-controls="footer-study-with-us" data-parent=".global-footer">Study with us</h5>
-							<nav id="footer-study-with-us" class="footer-section footer-section-links collapse-sm-down">
-								<a href="//www.kent.ac.uk/applicants/">Applicants</a>
-								<a href="//www.kent.ac.uk/gettingstarted/">Arriving students</a>
-								<a href="//www.kent.ac.uk/student/">Current students</a>
-								<a href="//www.kent.ac.uk/internationalstudent/">International students</a>
-							</nav>
-							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-research" aria-controls="footer-research" data-parent=".global-footer">Research excellence</h5>
+							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-research" aria-controls="footer-research" data-parent=".global-footer">Research</h5>
 							<nav id="footer-research" class="footer-section footer-section-links collapse-sm-down">
-								<a href="//www.kent.ac.uk/applicants/">Applicants</a>
-								<a href="//www.kent.ac.uk/gettingstarted/">Arriving students</a>
-								<a href="//www.kent.ac.uk/student/">Current students</a>
-								<a href="//www.kent.ac.uk/internationalstudent/">International students</a>
+								<a href="//www.kent.ac.uk/research/">Academic excellence</a>
+								<a href="//www.kent.ac.uk/research/impact/">Research impact</a>
+								<a href="//www.kent.ac.uk/research/expertise/">Find an expert</a>
+								<a href="//www.kent.ac.uk/enterprise/">Innovation and enterprise</a>
+								<a href="//www.kent.ac.uk/enterprise/practical-partnering/">Business partnerships</a>
+								<a href="//www.kent.ac.uk/courses/postgraduate/search/programme_type/research">Research degrees</a>
 							</nav>
 						</div>
 						<div class="col-md-3">
+							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-study" aria-controls="footer-study" data-parent=".global-footer">Study</h5>
+							<nav id="footer-study" class="footer-section footer-section-links collapse-sm-down">
+								<a href="//www.kent.ac.uk/courses/">Inspiring teaching</a>
+								<a href="//www.kent.ac.uk/courses/undergraduate/">Undergraduates</a>
+								<a href="//www.kent.ac.uk/courses/postgraduate/">Postgraduates</a>
+								<a href="//www.kent.ac.uk/internationalstudent/">International students</a>
+								<a href="//www.kent.ac.uk/courses/part-time/">Part-time and short courses</a>
+								<a href="//www.kent.ac.uk/goabroad/">Study abroad</a>
+								<a href="//www.kent.ac.uk/courses/funding/">Fees and funding</a>
+								<a href="//www.kent.ac.uk/scholarships/">Scholarships</a>
+							</nav>
+							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-governance" aria-controls="footer-governance" data-parent=".global-footer">Governance and planning</h5>
+							<nav id="footer-governance" class="footer-section footer-section-links collapse-sm-down">
+								<a href="//www.kent.ac.uk/about/plan/">Planning and strategy</a>
+								<a href="//www.kent.ac.uk/governance/">Governance</a>
+								<a href="//www.kent.ac.uk/ovc/">Office of the Vice-Chancellor</a>
+							</nav>
+						</div>
+						<div class="col-md-3">
+							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-whats-on" aria-controls="footer-whats-on" data-parent=".global-footer">What's on?</h5>
+							<nav id="footer-whats-on" class="footer-section footer-section-links collapse-sm-down">
+								<a href="/news/">News Centre</a>
+								<a href="//www.kent.ac.uk/calendar/">Events calendar</a>
+								<a href="//www.thegulbenkian.co.uk">Gulbenkian - theatre and cinema</a>
+								<a href="//www.kent.ac.uk/music/whatson.html">Coyler-Fergusson - music at Kent</a>
+								<a href="//www.kent.ac.uk/sports/">Sports Centre</a>
+							</nav>
 							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-information" aria-controls="footer-information" data-parent=".global-footer">Information for</h5>
 							<nav id="footer-information" class="footer-section footer-section-links collapse-sm-down">
 								<a href="//www.kent.ac.uk/applicants/">Applicants</a>
@@ -108,8 +125,6 @@
 								<a href="//www.kent.ac.uk/parents/">Parents and family</a>
 								<a href="//www.kent.ac.uk/alumni/">Alumni (former students)</a>
 								<a href="//www.kent.ac.uk/campusonline/">Staff</a>
-								<a href="/news">Press and media</a>
-								<a href="//www.kent.ac.uk/secondary/">Teachers and advisors</a>
 							</nav>
 						</div>
 						<div class="col-md-3">
@@ -134,6 +149,7 @@
 									<a href="//www.kent.ac.uk/giving/give/">How to give</a>
 									<a href="//www.kent.ac.uk/giving/lawcampaign/">Kent Law Campaign</a>
 									<a href="//www.kent.ac.uk/giving/opportunityfund/">Kent Opportunity Fund</a>
+									<a href="//www.kent.ac.uk/giving/hkcp/">Hong Kong and China portal</a>
 								</nav>
 							</div>
 						</div>

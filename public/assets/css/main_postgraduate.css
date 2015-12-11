@@ -6145,8 +6145,8 @@ select {
 
 .beta-bar {
   background-color: #fbf5e9;
-  padding: 24px;
-  padding: 1.5rem;
+  padding: 20.8px;
+  padding: 1.3rem;
   padding-bottom: 8px;
   padding-bottom: 0.5rem;
   max-height: 64px;
@@ -6162,13 +6162,17 @@ select {
     padding-right: 8rem; }
     .beta-bar.overflown .btn, .beta-bar.overflown .content-social a, .content-social .beta-bar.overflown a, .beta-bar.overflown .card-panel .card-panel-header .card-panel-social a, .card-panel .card-panel-header .card-panel-social .beta-bar.overflown a, .beta-bar.overflown .content-social .content-social-link, .content-social .beta-bar.overflown .content-social-link, .beta-bar.overflown .card-panel .card-panel-header .card-panel-social .content-social-link, .card-panel .card-panel-header .card-panel-social .beta-bar.overflown .content-social-link {
       margin-top: 0;
-      vertical-align: middle; }
+      vertical-align: middle;
+      margin-top: 16px;
+      margin-top: 1rem; }
       .beta-bar.overflown .btn.btn-link, .beta-bar.overflown .content-social a.btn-link, .content-social .beta-bar.overflown a.btn-link, .beta-bar.overflown .card-panel .card-panel-header .card-panel-social a.btn-link, .card-panel .card-panel-header .card-panel-social .beta-bar.overflown a.btn-link, .beta-bar.overflown .content-social .btn-link.content-social-link, .content-social .beta-bar.overflown .btn-link.content-social-link, .beta-bar.overflown .card-panel .card-panel-header .card-panel-social .btn-link.content-social-link, .card-panel .card-panel-header .card-panel-social .beta-bar.overflown .btn-link.content-social-link {
         padding-left: 0; }
   .beta-bar .btn, .beta-bar .content-social a, .content-social .beta-bar a, .beta-bar .card-panel .card-panel-header .card-panel-social a, .card-panel .card-panel-header .card-panel-social .beta-bar a, .beta-bar .content-social .content-social-link, .content-social .beta-bar .content-social-link, .beta-bar .card-panel .card-panel-header .card-panel-social .content-social-link, .card-panel .card-panel-header .card-panel-social .beta-bar .content-social-link {
     margin-top: -6px;
     margin-top: -0.375rem;
-    vertical-align: top; }
+    vertical-align: top;
+    display: inline;
+    transition: none; }
   .beta-bar .beta-bar-beta {
     background-color: #671115;
     color: white;

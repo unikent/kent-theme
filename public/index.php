@@ -2,14 +2,17 @@
 	include dirname(dirname(__FILE__))."/lib/bootstrap.php";
 	use \unikent\kent_theme\kentThemeHelper;
 
-	KentThemeHelper::header("Kent Beta",
-		array(
-			'Home' => '#',
-			'About' => '#',
-			'Blog' => '#'
-		),
-		array(
-			'title'=>'Kent Beta - Kent Theme Beta'
+	KentThemeHelper::header(array(
+			"title" => "Kent Beta",
+			'menu' => array(
+				'Home' => '#',
+				'About' => '#',
+				'Blog' => '#'
+			),
+			'meta' => array(
+					'description'=>'Beta home',
+					'title'=>"Kent Beta - Kent Theme Beta"
+			)
 		)
 	); 
 ?>
