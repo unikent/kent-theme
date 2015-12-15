@@ -20,14 +20,15 @@
 			<div class="card card-overlay header-card-overlay">
 				<div class="card-body">
 					<div class="card-media-wrap">
-						<img src="images/engineering-student-16-9.jpg" class="card-img-bottom">
+						<!-- <img src="images/engineering-student-16-9.jpg" class="card-img-bottom"> -->
+						<img src="images/dolphin.jpg" class="card-img-bottom">
 					</div>
 					<div class="card-img-overlay">
 						<form>
 							<div class="form-group">
 								<label for="search" class="sr-only">Search</label>
 								<div class="input-group input-group-lg">
-									<input type="search" class="form-control" id="cardCearch" placeholder="Search for postgraduate courses...">
+									<input type="search" class="form-control" id="cardCearch" placeholder="Search postgraduate programmes or supervisors">
 									<span class="input-group-btn">
 										<button type="submit" class="btn btn-accent btn-icon"><span class="kf-fw kf-search"></span></button>
 									</span>
@@ -37,11 +38,62 @@
 					</div>
 
 				</div>
+
+
+				<div class="card-footer">
+					<a href="#" class="chevron-link"><strong>Taught Programmes</strong></a>
+					<a href="#" class="chevron-link"><strong>Research Programmes</strong></a>
+					<a href="#" class="chevron-link"><strong>PHDs</strong></a>
+					<a href="#" class="chevron-link"><strong>Masters</strong></a>
+				</div>
+
 			</div>
+
+<div style="text-align:center;">
+			<a href="#"><h1><i class="kf-twitter"></i></h1></a>
+			</div>
+
+
+
+<div class="card-panel" style="padding: 50px 0;margin: 50px 0 50px 0; background-color:#f5f5f5;">
+			
+
+				<div class="card-panel-body">
+
+					<a class="card" href="#">
+						<!-- <img class="card-img" src="images/promo-graduates.jpg"> -->
+						<h3 class="card-title">Scholarships &amp; Funding</h3>
+						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+					</a>
+
+					
+					<a class="card" href="#">
+						<!-- <img class="card-img" src="images/promo-4.jpg"> -->
+						<h3 class="card-title">Accommodation</h3>
+						<p class="card-text">Find out about where to live as a postgraduate.</p>
+						</a>
+
+						<a class="card" href="#">
+						<!-- <img class="card-img" src="images/promo-3.jpg"> -->
+						<h3 class="card-title">Postgraduate Support</h3>
+						<p class="card-text">Help with finding out about funding, postgraduate services, research.</p>
+					</a>
+
+
+						<a class="card" href="#">
+						<!-- <img class="card-img" src="images/promo-world.jpg"> -->
+						<h3 class="card-title">Global Opportunities</h3>
+						<p class="card-text">Findo out how our programmes can help you launch your career and employability.</p>
+					</a>
+				</div>
+
+</div>
+
 
 			<aside class="container">
 				<p class="impact-statement">Our programmes are informed by a commitment to research excellence. We are ranked 17th in the UK for Research Intensity.</p>
 			</aside>
+
 
 			<div class="card card-overlay">
 				<div class="card-x body card-inverse">
@@ -60,12 +112,7 @@
 
 
 				</div>
-				<div class="card-footer">
-					<a href="#" class="chevron-link">Taught Programmes</a>
-					<a href="#" class="chevron-link">Research Programmes</a>
-					<a href="#" class="chevron-link">PHDs</a>
-					<a href="#" class="chevron-link">Masters</a>
-				</div>
+				
 			</div>
 
 			<div class="card-panel">
@@ -87,7 +134,7 @@
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 					</a>
 					<a class="card" href="#">
-						<img class="card-img" src="images/promo-innovation.jpg">
+						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Innovation and enterprise</h3>
 						<p class="card-text">Find more about the exciting project we're working on with with partners and businesses.</p>
 						</a>
@@ -105,6 +152,35 @@
 					</cite>
 				</footer>
 			</blockquote>
+
+
+			<div class="card-panel" style="padding: 50px 0;margin: 0 0 150px 0; background-color:#f5f5f5;">
+				
+				<div class="card-panel-body">
+					<a class="card" href="#">
+						<!-- <img class="card-img" src="images/promo-world.jpg"> -->
+						<h3 class="card-title">Global Opportunities</h3>
+						<p class="card-text">Findo out how our programmes can help you launch your career and employability.</p>
+					</a>
+					<a class="card" href="#">
+						<!-- <img class="card-img" src="images/promo-graduates.jpg"> -->
+						<h3 class="card-title">Scholarships &amp; Funding</h3>
+						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+					</a>
+					<a class="card" href="#">
+						<!-- <img class="card-img" src="images/promo-3.jpg"> -->
+						<h3 class="card-title">How to apply</h3>
+						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+					</a>
+					<a class="card" href="#">
+						<!-- <img class="card-img" src="images/promo-4.jpg"> -->
+						<h3 class="card-title">Innovation and enterprise</h3>
+						<p class="card-text">Find more about the exciting project we're working on with with partners and businesses.</p>
+						</a>
+				</div>
+			</div>
+
+
 
 
 
