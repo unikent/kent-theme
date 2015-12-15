@@ -5,7 +5,10 @@
 		'sm': $('<div class="hidden-xs-down hidden-md-up"></div>'),
 		'md': $('<div class="hidden-sm-down hidden-lg-up"></div>'),
 		'lg': $('<div class="hidden-md-down hidden-xl-up"></div>'),
-		'xl': $('<div class="hidden-lg-down"></div>')
+		'xl': $('<div class="hidden-lg-down hidden-xxl-up"></div>'),
+		'xxl': $('<div class="hidden-xl-down hidden-xxxl-up"></div>'),
+		'xxxl': $('<div class="hidden-xxl-down"></div>')
+
 	};
 
 	viewport.use('Custom', visibilityDivs);

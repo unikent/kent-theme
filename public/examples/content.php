@@ -4,7 +4,7 @@
 
 	KentThemeHelper::header(
 		array(
-			'title' => "Kent Theme Demo - Story",
+			'title' => "Kent Theme Demo - Content Page",
 			'menu' => array(
 				'Home' => '#',
 				'Culture' => '#',
@@ -13,44 +13,24 @@
 				'Society' => '#',
 				'Kent Life' => '#'
 			),
-			'meta' => array('title'=>'Story Demo Page - Kent Theme Beta'),
+			'meta' => array('title'=>'Content Demo Page - Kent Theme Beta'),
 			'slim'=>true,
-			'breadcrumb'=> false,
 			'main_class' =>'content-page'
 		)
 	);
+KentThemeHelper::breadcrumb(array(
+								'Theme Examples'=>'/',
+								'Content Page'=>''
+							));
 ?>
-<figure class="featured-image">
-	<div class="media-wrap-letterbox">
-		<img src="images/story-ping-pong.jpg">
-		<div class="attribution">
-			<i class="kf-camera"></i>
-			<span>Political Studies Association: Picture by <a href="#">Someone</a>. <a href="#">Attribution License</a></span>
-		</div>
-	</div>
-	<figcaption>Ping Pong the dolphin</figcaption>
-</figure>
-<div class="content-container-full">
-<?php
-	KentThemeHelper::breadcrumb(array(
-									'News Centre'=> '/news',
-								));
-?>
-</div>
-<article itemscope itemtype="http://schema.org/Article">
+<article class="content-page" itemscope itemtype="http://schema.org/Article">
 	<header class="content-header">
 		<h1 class="article-title" itemprop="name">Center strengthened by consultant appointment</h1>
-		<div class="byline">
-			<img class="author-avatar" src="images/story-author.jpg">
-			<address class="article-author">By <a rel="author" href="#">Wendy Raeside</a></address>
-			<time class="article-published pubdate" pubdate datetime="2015-12-1T12:01:01">12 December 2015</time>
-		</div>
 		<nav class="content-social content-social-head">
 			<a title="twitter" href="#" class="kf-twitter"></a>
 			<a title="facebook" href="#" class="kf-facebook"></a>
 			<a title="instagram" href="#" class="kf-instagram"></a>
 			<a title="pinterest" href="#" class="kf-pinterest"></a>
-			<a title="email" href="#" class="kf-email-o"></a>
 		</nav>
 	</header>
 	<section class="content-body">
@@ -83,7 +63,6 @@
 
 				</div>
 			</aside>
-
 			<p class="lead">
 				A leading consultant in renal medicine is joining the University's Centre for Health Services Studies (CHSS) in a new post as Clinical.
 			</p>
@@ -146,22 +125,11 @@
 	</section>
 	<footer class="content-footer">
 		<div class="content-container">
-			<nav class="content-tags">
-				<a class="content-tag btn btn-label">Culture</a>
-				<a class="content-tag btn btn-label">Environment</a>
-			</nav>
 			<nav class="content-social content-social-colored">
 				<a title="twitter" href="#" class="kf-twitter"></a>
 				<a title="facebook" href="#" class="kf-facebook"></a>
 				<a title="instagram" href="#" class="kf-instagram"></a>
 				<a title="pinterest" href="#" class="kf-pinterest"></a>
-				<a title="linkedin" href="#" class="kf-linkedin"></a>
-				<a title="google-plus" href="#" class="kf-google-plus"></a>
-				<a title="tumblr" href="#" class="kf-tumblr"></a>
-				<a title="flickr" href="#" class="kf-flickr"></a>
-				<a title="rss" href="#" class="kf-rss"></a>
-				<a title="youtube" href="#" class="kf-youtube"></a>
-				<a title="email" href="#" class="kf-email-o"></a>
 			</nav>
 		</div>
 

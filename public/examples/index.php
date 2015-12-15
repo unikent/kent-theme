@@ -397,7 +397,7 @@
 						<img class="card-img-bottom" src="images/students.jpg">
 					</div>
 
-					<div class="card-img-overlay text-right">
+					<div class="card-img-overlay text-xs-right">
 						<h5 class="card-subtitle">A sub title</h5>
 						<p class="card-text">This content is shorter.</p>
 					</div>
@@ -593,7 +593,7 @@
 							<h5 class="card-subtitle">On the Left</h5>
 							<p class="card-text">This content is shorter.</p>
 						</div>
-						<div class="card-img-overlay text-right">
+						<div class="card-img-overlay text-xs-right">
 							<h5 class="card-subtitle">On the right</h5>
 							<p class="card-text">This content is shorter.</p>
 						</div>

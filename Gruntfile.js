@@ -55,6 +55,7 @@ module.exports = function(grunt) {
             main: {
                 src:[
                     'vendor/jquery/dist/jquery.js',
+					'vendor/tether/dist/js/tether.js',
                     'js/_bootstrap.js',
                     'vendor/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.js',
                     'js/components/responsive_util.js',

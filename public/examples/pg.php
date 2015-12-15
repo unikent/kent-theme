@@ -52,7 +52,7 @@
 					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
 						<img class="card-img-bottom" src="images/feature-professor-2-1.jpg">
 
-						<div class="card-img-overlay text-right">
+						<div class="card-img-overlay text-xs-right">
 							<h5 class="card-subtitle">Prof. David Welch</h5>
 							<p class="card-text">Professor of Modern History</p>
 						</div>
@@ -117,7 +117,7 @@
 					<div class="card-media-wrap">
 						<img src="images/promo-park-16-9.jpg" class="card-img-bottom" alt="Sport" />
 
-						<a class="card-img-overlay text-right" href="#">
+						<a class="card-img-overlay text-xs-right" href="#">
 							<h5 class="card-subtitle">Canterbury</h5>
 							<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
 						</a>

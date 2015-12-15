@@ -110,6 +110,12 @@
 		display:   flex;
 		flex-wrap: wrap;
 
+		& > .card{
+			margin-top: 1rem;
+			&:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4){
+				margin-top: 0;
+			}
+		}
 		.card {
 
 			@include media-breakpoint-up(sm) {
@@ -136,7 +142,7 @@
 		.card-panel-list {
 
 			overflow:      hidden;
-			margin-bottom: 1rem;
+			margin-bottom: 2rem;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -250,7 +256,7 @@
 				float: left;
 			}
 
-			@extend .content-social;
+			@extend .social-links;
 
 		}
 
@@ -269,8 +275,10 @@
 	// if card is an A
 	// @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
 	a.card, .card a {
-		p:last-of-type.card-text {
-			@extend .chevron-link;
+		&,&:hover,&:focus {
+			p.card-text {
+				color: $body-color;
+			}
 		}
 	}
 

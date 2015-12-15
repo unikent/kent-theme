@@ -143,33 +143,11 @@
         outline: none;
         text-decoration: none;
       }
-      &.kf-facebook{
-        background-color: $facebook;
-      }
-      &.kf-twitter{
-        background-color: $twitter;
-      }
-      &.kf-linkedin{
-        background-color: $linkedin;
-      }
-      &.kf-youtube{
-        background-color: $youtube;
-      }
-      &.kf-flickr{
-        background-color: $flickr;
-      }
-      &.kf-rss{
-        background-color: $rss;
-      }
-      &.kf-tumblr{
-        background-color: $tumblr;
-      }
-      &.kf-instagram{
-        background-color: $instagram;
-      }
-      &.kf-pinterest{
-        background-color: $pinterest;
-      }
+		@each $network, $color in $social-networks {
+			&.kf-#{$network}{
+				background-color: $color;
+			}
+		}
     }
   }
 

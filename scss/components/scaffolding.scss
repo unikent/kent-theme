@@ -1,29 +1,42 @@
-main {
-	margin-top:2rem;
-}
-
 .content-page {
-	margin-bottom: 2rem;
 
 	.content-container {
-		position: relative;
-		padding:  0 $article-padding-sm;
+		padding: $article-padding-xs;
+		display: flex;
+		flex-flow: column wrap;
+		@include media-breakpoint-up(sm) {
+			padding: $article-padding-sm;
+		}
 		@include media-breakpoint-up(md) {
-			padding: 0 $article-padding-md;
+			display: block;
+			padding: $article-padding-md;
 		}
 		@include media-breakpoint-up(lg) {
-			padding: $article-container-padding-lg;
+
+			padding: $article-padding-lg;
 		}
 		@include media-breakpoint-up(xl) {
-			padding: $article-container-padding-xl;
+			padding: $article-padding-xl;
+		}
+
+		@media (min-width: $article-max-breakpoint) {
+			margin: 0 auto;
+			max-width: 1140px;
+			padding: $article-padding-max;
 		}
 	}
 
-	.content-header, .content-container-full {
+	.content-header{
 		position: relative;
-		padding: 0 $article-padding-sm;
+	}
+
+	.content-header, .content-container-full {
+		padding: $article-padding-xs;
+		@include media-breakpoint-up(sm) {
+			padding: $article-padding-sm;
+		}
 		@include media-breakpoint-up(md) {
-			padding: 0 $article-padding-md;
+			padding: 0 $article-left-padding-md;
 		}
 		@include media-breakpoint-up(lg) {
 			padding: 0 $article-left-padding-lg;
@@ -31,10 +44,16 @@ main {
 		@include media-breakpoint-up(xl) {
 			padding: 0 $article-left-padding-xl;
 		}
+		@media (min-width: $article-max-breakpoint) {
+			margin: 0 auto;
+			max-width: 1140px;
+			padding: 0 0 0 95px;
+		}
 	}
 
 	.content-sidebar{
 
+		order: 9999;
 		margin: 3rem 0;
 
 		h3{
@@ -49,32 +68,29 @@ main {
 			}
 		}
 
-		@include media-breakpoint-up(lg) {
-
-			margin: 0;
-			position: absolute;
-			top: 0;
-			right:$article-left-padding-lg;
-			width: 25%;
-			padding-left: 2rem;
-		}
-		@include media-breakpoint-up(xl) {
-			padding-left: 4rem;
-			right:$article-left-padding-xl;
+		@include media-breakpoint-up(md) {
+			float:  right;
+			margin: 0 -46.6666666% 0 0;
+			width:  38.333333%;
 		}
 
 	}
 
 	.content-social{
+		margin-bottom: 1rem;
 
 		&.content-social-head{
+			margin-bottom: 0;
 			display:none;
 			position: absolute;
-			top:1rem;
+			top:0;
 			left:2rem;
 			width: 3rem;
 			@include media-breakpoint-up(md){
 				display: block;
+			}
+			@media (min-width: $article-max-breakpoint) {
+				left:0;
 			}
 		}
 	}
