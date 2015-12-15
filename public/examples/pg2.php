@@ -2,11 +2,21 @@
 	include dirname(dirname(dirname(__FILE__)))."/lib/bootstrap.php";
 	use \unikent\kent_theme\kentThemeHelper;
 
-		KentThemeHelper::header("Postgraduate Courses",  array(
+KentThemeHelper::header(
+	array(
+		'title'=>"Postgraduate Courses",
+		'menu' => array(
 			'Home' => '#',
 			'Apply' => '#'
-		),array('description'=>'Postrgaduate home', 'title'=>"Postgraduate Home - Kent Theme Beta"), 'postgraduate'); ?>
-
+		),
+		'meta' => array(
+			'description'=>'Postrgaduate home',
+			'title'=>"Postgraduate Home - Kent Theme Beta"
+		),
+		'theme'=>'postgraduate'
+	)
+);
+?>
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
 
