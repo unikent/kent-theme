@@ -1,3 +1,82 @@
 main {
 	margin-top:2rem;
 }
+
+.content-page {
+	margin-bottom: 2rem;
+
+	.content-container {
+		position: relative;
+		padding:  0 $article-padding-sm;
+		@include media-breakpoint-up(md) {
+			padding: 0 $article-padding-md;
+		}
+		@include media-breakpoint-up(lg) {
+			padding: $article-container-padding-lg;
+		}
+		@include media-breakpoint-up(xl) {
+			padding: $article-container-padding-xl;
+		}
+	}
+
+	.content-header, .content-container-full {
+		position: relative;
+		padding: 0 $article-padding-sm;
+		@include media-breakpoint-up(md) {
+			padding: 0 $article-padding-md;
+		}
+		@include media-breakpoint-up(lg) {
+			padding: 0 $article-left-padding-lg;
+		}
+		@include media-breakpoint-up(xl) {
+			padding: 0 $article-left-padding-xl;
+		}
+	}
+
+	.content-sidebar{
+
+		margin: 3rem 0;
+
+		h3{
+			font-size: $font-size-h5;
+		}
+
+		nav{
+			margin-bottom: 3rem;
+
+			ul{
+				@include link-list();
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+
+			margin: 0;
+			position: absolute;
+			top: 0;
+			right:$article-left-padding-lg;
+			width: 25%;
+			padding-left: 2rem;
+		}
+		@include media-breakpoint-up(xl) {
+			padding-left: 4rem;
+			right:$article-left-padding-xl;
+		}
+
+	}
+
+	.content-social{
+
+		&.content-social-head{
+			display:none;
+			position: absolute;
+			top:1rem;
+			left:2rem;
+			width: 3rem;
+			@include media-breakpoint-up(md){
+				display: block;
+			}
+		}
+	}
+
+}

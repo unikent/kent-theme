@@ -2,14 +2,21 @@
 	include dirname(dirname(dirname(__FILE__)))."/lib/bootstrap.php";
 	use \unikent\kent_theme\kentThemeHelper;
 
-		KentThemeHelper::header("Kent Theme Demo", array(
-			'Home' => '#',
-			'Culture' => '#',
-			'Environment' => '#',
-			'Science' => '#',
-			'Society' => '#',
-			'Kent Life' => '#'
-		),array('title'=>'Demo Page - Kent Theme Beta')); ?>
+		KentThemeHelper::header(
+			array(
+				'title' => "Kent Theme Demo",
+				'menu' => array(
+					'Home' => '#',
+					'Culture' => '#',
+					'Environment' => '#',
+					'Science' => '#',
+					'Society' => '#',
+					'Kent Life' => '#'
+				),
+				'meta' => array('title'=>'Demo Page - Kent Theme Beta')
+			)
+		);
+?>
 
 			<div class="card card-overlay header-card-overlay">
 				<div class="card-body">
@@ -121,6 +128,14 @@
 
 			</section>
 
+			<section class="container">
+				<h2>Buttons</h2>
+				<button class="btn btn-primary">Primary Button</button>
+				<button class="btn btn-secondary">Secondary Button</button>
+				<button class="btn btn-tertiary">Tertiary Button</button>
+				<button class="btn btn-accent">Accent Button</button>
+			</section>
+
 
 			<blockquote>
 				<img class="img-circle" src="images/profile-academic.jpg">
@@ -220,7 +235,7 @@
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
 
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
+							<img src="images/profile-academic.jpg">
 							Dr Jim Groombridge
 						</a>
 
@@ -233,7 +248,7 @@
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
 
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
+							<img src="images/profile-academic.jpg">
 							Dr David Hume
 						</a>
 
@@ -250,7 +265,7 @@
 						<p class="card-subtitle">5th November 2015</p>
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
+							<img src="images/profile-academic.jpg">
 							Dr Jim Groombridge
 						</a>
 
@@ -261,7 +276,7 @@
 						<p class="card-subtitle">17th May 2015</p>
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
+							<img src="images/profile-academic.jpg">
 							Dr Bob Smithington
 						</a>
 					</div>
@@ -324,7 +339,7 @@
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
 
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
+							<img src="images/profile-academic.jpg">
 							Dr Jim Groombridge
 						</a>
 
@@ -337,7 +352,7 @@
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
 
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
+							<img src="images/profile-academic.jpg">
 							Dr David Hume
 						</a>
 
@@ -354,7 +369,7 @@
 						<p class="card-subtitle">5th November 2015</p>
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
+							<img src="images/profile-academic.jpg">
 							Dr Jim Groombridge
 						</a>
 
@@ -365,7 +380,7 @@
 						<p class="card-subtitle">17th May 2015</p>
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
 						<a class="card-author card-bordered-item" href='#'>
-							<img class="img-responsive img-circle profile-pic" src="images/profile-academic.jpg">
+							<img src="images/profile-academic.jpg">
 							Dr Bob Smithington
 						</a>
 					</div>

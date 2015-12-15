@@ -87,7 +87,8 @@
 	}
 
 	.card-media-wrap, .card-embed-wrap {
-		position: relative;
+
+		@extend .media-wrap;
 
 		&.card-media-wrap-video {
 			cursor: pointer;
@@ -121,6 +122,8 @@
 
 	.card-badge {
 		text-decoration:none;
+		margin-bottom: 1rem;
+
 		&:before {
 			color: $brand-accent; 
 			margin-right:.2rem;
@@ -141,6 +144,8 @@
 	    text-decoration: none;
 
 	    img {
+			@extend .img-responsive;
+			@extend .img-circle;
 	    	height: 2rem;
 	    	float: left;
 	    	margin-right:.5rem;

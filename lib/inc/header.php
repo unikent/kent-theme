@@ -53,8 +53,8 @@
 			<p>We're testing <a href="#">a new design</a>.</p>
 			<p>It may not be complete or work as intended.</p>
 			<p>
-				<a href="//www.kent.ac.uk" class="btn btn-link">Go to original site</a>
-				<button class="btn btn-secondary feedback">Give us feedback</button>
+				<a href="?betaOptin=false" class="btn btn-link">Go to original site</a>
+				<button class="btn btn-secondary feedback" onclick="return window.usabilla_live('click');">Give us feedback</button>
 			</p>
 			<span class="beta-toggler">Learn more</span>
 		</section>
@@ -109,10 +109,10 @@
 						</div>
 					</nav>
 					<nav class="audience-nav-links" role="menu">
-						<a href="//www.kent.ac.uk/student" role="menuitem">Student</a>
-						<a href="//www.kent.ac.uk/campusonline" role="menuitem">Staff</a>
-						<a href="//www.kent.ac.uk/alumni" role="menuitem">Alumni</a>
-						<a href="//www.kent.ac.uk/departments" role="menuitem">Departments</a>
+						<a href="//www.kent.ac.uk/student/" role="menuitem">Student</a>
+						<a href="//www.kent.ac.uk/campusonline/" role="menuitem">Staff</a>
+						<a href="//www.kent.ac.uk/alumni/" role="menuitem">Alumni</a>
+						<a href="//www.kent.ac.uk/departments/" role="menuitem">Departments</a>
 					</nav>
 				</div>
 				<div class="global-nav-search" id="global-nav-search">
@@ -132,12 +132,26 @@
 					</form>
 				</div>
 			</section>
-			<section class="departmental-nav" id="section_menu">
+			<section class="departmental-nav<?php echo ($slim)?' slim':''; ?>" id="section_menu">
 				<header><?php echo $title; ?></header>
 				<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
 				<nav class="navbar-menu" id="navbar-menu" role="menu">
 					<?php echo $menu_links; ?>
 				</nav>
 			</section>
+			<?php if(isset($slim) && $slim && isset($breadcrumb)): ?>
+				<nav class="breadcrumb">
+
+					<a href="/" rel="index">University of Kent</a> 
+
+					<?php $i=0;foreach($breadcrumb as $name => $link): ?>
+						<?php if(++$i == sizeof($breadcrumb)): ?>
+							<span><?php echo $name; ?></span> 
+						<?php else:?>
+							<a href="<?php echo $link; ?>" rel="up"><?php echo $name; ?></a> 
+						<?php endif;?>
+					<?php endforeach;?> 
+				</nav>
+			<?php endif;?>
 		</header>
 		<main id="main_content">

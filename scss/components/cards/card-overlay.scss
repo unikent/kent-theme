@@ -111,13 +111,16 @@
 		}
 	}
 
-	.card-media-wrap, .card-embed-wrap {
-		position: relative;
-		clear: both;
+	.card-media-wrap{
+
+		@extend .media-wrap-letterbox;
+
 		margin-bottom: 0;
-		@include media-breakpoint-up(md){
-			//so images have basic shape while they load
-			min-height: 350px;
+
+		& > .card-img,
+		& > .card-img-bottom,
+		& > .card-img-top{
+			@include media-img();
 		}
 
 		&.card-media-wrap-video {
@@ -201,27 +204,7 @@
 			}
 		}
 	}
-	@include media-breakpoint-up(lg){
-		.card-media-wrap {
-			max-height: 33rem;
-			overflow: hidden;
-			& > .card-img,
-			& > .card-img-bottom,
-			& > .card-img-top,
-			& > .card-embed-wrap{
-				margin-top: -3rem;
-				@include media-breakpoint-up(xl){
-					margin-top: -6rem;
-				}
-				@include media-breakpoint-up(xxl){
-					margin-top: -14rem;
-				}
-				@include media-breakpoint-up(xxxl){
-					margin-top: -20rem;
-				}
-			}
-		}
-	}
+
 }
 
 @include media-breakpoint-down(xs) {

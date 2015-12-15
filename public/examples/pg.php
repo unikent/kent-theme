@@ -2,11 +2,21 @@
 	include dirname(dirname(dirname(__FILE__)))."/lib/bootstrap.php";
 	use \unikent\kent_theme\kentThemeHelper;
 
-		KentThemeHelper::header("Postgraduate Courses",  array(
-			'Home' => '#',
-			'Apply' => '#'
-		),array('description'=>'Postrgaduate home', 'title'=>"Postgraduate Home - Kent Theme Beta"), 'postgraduate'); ?>
-
+		KentThemeHelper::header(
+			array(
+				'title'=>"Postgraduate Courses",
+				'menu' => array(
+					'Home' => '#',
+					'Apply' => '#'
+				),
+				'meta' => array(
+					'description'=>'Postrgaduate home',
+					'title'=>"Postgraduate Home - Kent Theme Beta"
+				),
+				'theme'=>'postgraduate'
+			)
+		);
+?>
 			<div class="card card-overlay header-card-overlay">
 				<div class="card-body">
 					<div class="card-media-wrap">

@@ -11,10 +11,23 @@ h6,.h6{
   color: $kent-primary;
 }
 
+.lead{
+	font-family: $font-family-serif;
+	color: $brand-primary;
+	font-size: 1.5rem;
+	margin-bottom: 2.25rem;
+}
+
 @include media-breakpoint-up(xl) {
   html {
     font-size: 18px;
   }
+}
+
+.content-container{
+	h2{
+		margin-top:2rem;
+	}
 }
 
 @mixin bullet-list{
@@ -33,4 +46,26 @@ h6,.h6{
       padding-top: 0.45rem;
     }
   }
+}
+
+@mixin link-list{
+
+	list-style: none;
+	padding: 0;
+	li{
+		padding: 0.5rem 0;
+		border-bottom: 1px solid $border-gray;
+		a{
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		span{
+			display: block;
+			color: $text-muted;
+			line-height: 0.9rem;
+			margin-bottom: 0.2rem;
+		}
+	}
+
 }

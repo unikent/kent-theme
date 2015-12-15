@@ -1,6 +1,6 @@
 .beta-bar {
 	background-color: #fbf5e9;
-	padding: 1.5rem;
+	padding: 1.3rem;
 	padding-bottom: 0.5rem;
 	max-height: 4rem;
 	height: auto;
@@ -19,6 +19,7 @@
 		.btn {
 			margin-top: 0;
 			vertical-align: middle;
+			margin-top: 1rem;
 
 			&.btn-link {
 				padding-left: 0;
@@ -29,6 +30,8 @@
 	.btn {
 		margin-top: -($btn-padding-y);
 		vertical-align: top;
+		display: inline;
+		transition: none;
 	}
 	.beta-bar-beta {
 		background-color: $brand-primary;
@@ -44,7 +47,7 @@
 		position: absolute;
 		top: 1rem;
 		right: 0;
-		padding: 0.5rem;
+		padding: 0.4rem;
 		padding-right: 1rem;
 
 		&:after {
