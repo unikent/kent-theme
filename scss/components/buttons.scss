@@ -45,7 +45,7 @@
 	}
 }
 
-@mixin social-circle{
+@mixin icon-circle{
 	@extend .btn;
 	@include button-outline-variant(#aaa);
 	font-size: 1.7rem;
@@ -60,6 +60,7 @@
 		line-height: 3rem;
 	}
 }
+
 .chevron-link{
   font-family: $font-family-sans-serif;
 
@@ -174,7 +175,7 @@
 	position: relative;
 	overflow: hidden;
 	a, .content-social-link {
-		@include social-circle();
+		@include icon-circle();
 		float:       left;
 		margin-left: .4rem;
 		margin-bottom: .4rem;

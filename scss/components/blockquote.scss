@@ -161,7 +161,7 @@ blockquote.social-quote{
 
 	button{
 		@extend .btn;
-		@include social-circle();
+		@include icon-circle();
 	}
 
 	cite{
