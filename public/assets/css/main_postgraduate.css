@@ -6909,8 +6909,8 @@ nav.breadcrumb {
     color: rgba(255, 255, 255, 0.75); }
     .card-panel.card-panel-inverse .card-panel-title, .card-panel.card-panel-primary .card-panel-title {
       color: #FFF; }
-    .card-panel.card-panel-inverse a, .card-panel.card-panel-primary a, .card-panel.card-panel-inverse a:hover, .card-panel.card-panel-primary a:hover, .card-panel.card-panel-inverse a:focus, .card-panel.card-panel-primary a:focus {
-      color: #FFF; }
+    .card-panel.card-panel-inverse .card-panel-header a, .card-panel.card-panel-primary .card-panel-header a, .card-panel.card-panel-inverse .card-panel-header a:hover, .card-panel.card-panel-primary .card-panel-header a:hover, .card-panel.card-panel-inverse .card-panel-header a:focus, .card-panel.card-panel-primary .card-panel-header a:focus {
+      color: #FFFFFF; }
   @media (min-width: 544px) {
     .card-panel.cards-backed .card {
       border-width: 0 0.9375rem 0 0.9375rem;
