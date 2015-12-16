@@ -27,7 +27,6 @@
 		"grunt-contrib-uglify": "~0.6.0",
 		"grunt-contrib-watch": "~0.6.1",
 		"grunt-cssnano": "^2.0.1",
-		"grunt-hologram": "0.0.7",
 		"grunt-modernizr": "~0.6.0",
 		"grunt-postcss": "~0.7.0",
 		"grunt-sass": "^1.1.0",
