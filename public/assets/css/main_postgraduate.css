@@ -7624,14 +7624,15 @@ main > blockquote {
       font-size: 24px;
       font-size: 1.5rem;
       display: block;
-      padding: 5.28px 7.2px;
-      padding: 0.33rem 0.45rem;
       float: left;
       margin: 0 4px 4px 0;
       margin: 0 0.25rem 0.25rem 0; }
       .global-footer .footer-section-social a:hover, .global-footer .footer-section-social a:active, .global-footer .footer-section-social a:focus {
         outline: none;
         text-decoration: none; }
+      .global-footer .footer-section-social a:before {
+        line-height: 36px;
+        line-height: 2.25rem; }
       .global-footer .footer-section-social a.kf-facebook {
         background-color: #3b5998; }
       .global-footer .footer-section-social a.kf-linkedin {
