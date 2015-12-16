@@ -207,6 +207,16 @@
 				</div>
 			</div>
 
+			<blockquote class="social-quote social-quote-twitter">
+				<a href="#">
+					<button></button>
+					<p>Kent study shows that tourism boost in Malta can aid struggling traditional fishermen.</p>
+				</a>
+				<cite>
+					<a href="#">@unikentnews</a>
+				</cite>
+			</blockquote>
+
 			<div class="card-panel card-panel-primary-tint">
 				<div class="card-panel-header">
 					<h2 class="card-panel-title">Card Panel (Primary Tint)</h2>

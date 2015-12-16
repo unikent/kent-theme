@@ -81,7 +81,19 @@ KentThemeHelper::breadcrumb(array(
 			</blockquote>
 
 			<p>Using statistical models, Professor Griffiths’ team from the School of Anthropology and Conservation determined the combination of survey visits and methods needed to obtain reliable data on population status. This resolved a long-standing debate within the fields of conservation and ecology and has made surveys significantly more cost-effective and reliable.</p>
+
+			<blockquote class="social-quote social-quote-twitter">
+				<a href="#">
+					<button></button>
+					<p>Kent study shows that tourism boost in Malta can aid struggling traditional fishermen.</p>
+				</a>
+				<cite>
+					<a href="#">@unikentnews</a>
+				</cite>
+			</blockquote>
+
 			<p>The protocols are being adopted into policy guidance in England, Wales and Scotland and will help to improve the management and conservation of important amphibian and reptile species.</p>
+
 		</div>
 
 		<div class="content-container">
