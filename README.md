@@ -12,25 +12,4 @@ Make a copy of `lib/config.sample.php` and rename to `lib/config.php` - change t
 
 ## Documentation
 
-CSS documentation is provided inline using the [Hologram](http://trulia.github.io/hologram/) format.
-
-Hologram allows generation of a living style guide. The example Hologram templates are kept in `plugins/hologram/code_example_templates`.
-
-Instructions for installing and running Hologram can be found in the [Hologram github repository readme](https://github.com/trulia/hologram/blob/master/README.md).
-
-For the purposes of kent-theme, use `npm install grunt-hologram --save-dev` to install the Hologram plugin.
-
-To document, you'll need to add some comments to the SCSS file you want
-Example:
-
-```
-/*doc
----
-title: header
-name: header
-category: basics
-
-Some text about what the SCSS component is
----
-*/
-```
+@cs462-unikent - please document how the pattern library will work.
