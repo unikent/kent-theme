@@ -45,6 +45,22 @@
 	}
 }
 
+@mixin icon-circle{
+	@extend .btn;
+	@include button-outline-variant(#aaa);
+	font-size: 1.7rem;
+	line-height: 1.9rem;
+	padding: 0;
+	border-radius: 50%;
+	width: 3rem;
+	height: 3rem;
+	text-align: center;
+	&:before{
+		font-family: $font-family-kentfont;
+		line-height: 3rem;
+	}
+}
+
 .chevron-link{
   font-family: $font-family-sans-serif;
 
@@ -56,13 +72,6 @@
   }
 }
 
-
-.btn-icon{
-  padding: 0.375rem;
-  & > *{
-    font-size: 1.5rem;
-  }
-}
 
 .btn-primary {
 	@include kent-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
@@ -78,7 +87,9 @@
 }
 
 .btn-label{
-	@include kent-button-variant($link-color, $border-gray, $border-gray);
+	@include kent-button-variant(#737373, #efefef, #efefef);
+	border-radius: 4px;
+	padding: 0.35rem 0.55rem;
 }
 
 .btn-info {
@@ -107,6 +118,18 @@
 	padding: .5rem;
 }
 
+
+.btn-icon{
+	padding: 0;
+	&:before{
+		font-size: 1.5rem;
+		line-height: 1.5rem;
+	}
+	&:hover,&:active,&:focus{
+		text-decoration: none;
+	}
+}
+
 .input-group-lg > .input-group-btn > .btn.btn-icon,
 .btn-lg.btn-icon{
   padding: 0.75rem;
@@ -126,7 +149,7 @@
 
 }
 
-.content-social{
+.social-links{
 	position: relative;
 	overflow: hidden;
 	a, .content-social-link {
@@ -139,6 +162,44 @@
 		margin-bottom: .2rem;
 		&:first-child{
 			margin-left: 0;
+		}
+	}
+	&.content-social-head{
+		a, .content-social-link {
+			margin-left: 0;
+		}
+	}
+}
+
+.content-social{
+	position: relative;
+	overflow: hidden;
+	a, .content-social-link {
+		@include icon-circle();
+		float:       left;
+		margin-left: .4rem;
+		margin-bottom: .4rem;
+		&:first-child{
+			margin-left: 0;
+		}
+		@each $network, $color in $social-networks {
+			&.kf-#{$network} {
+				@include hover {
+					color: #fff;
+					background-color: $color;
+					border-color: $color;
+				}
+			}
+		}
+	}
+
+	&.content-social-colored{
+		a, .content-social-link {
+			@each $network, $color in $social-networks {
+				&.kf-#{$network} {
+					@include button-outline-variant($color);
+				}
+			}
 		}
 	}
 	&.content-social-head{

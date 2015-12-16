@@ -1,11 +1,11 @@
 .page-feedback{
-	padding: 0.5rem 1rem;
+
 	border-top: 1px solid $border-gray;
 	font-size: 0.9rem;
 
 	.page-feedback-toggle, .page-feedback-meta{
 		@include make-col();
-		padding: 0;
+		padding: 0.5rem 1rem;
 		@include media-breakpoint-up(md) {
 			@include make-col-span(6);
 		}
@@ -13,13 +13,13 @@
 
 	.page-feedback-toggle{
 		a:after{
-			content: $kf-caret-up;
+			content: $kf-angle-up;
 			font-family: $font-family-kentfont;
 			display: inline-block;
 			padding-left: 0.25rem;
 		}
 		a.collapsed:after{
-			content: $kf-caret-down;
+			content: $kf-angle-down;
 		}
 	}
 
@@ -29,8 +29,25 @@
 		}
 	}
 
-	.page-feedback-form{
-		@include make-col();
-		@include make-col-span(12);
+	.page-feedback-content{
+		position: relative;
+		background: $brand-tertiary;
+
+		@include make-row();
+		padding: 2rem $grid-gutter-width/2;
+
+		.page-feedback-form{
+			@include media-breakpoint-up(md) {
+				width: 50%;
+			}
+		}
+
+		i.kf-close{
+			position: absolute;
+			top:1rem;
+			right:2rem;
+
+		}
+
 	}
 }

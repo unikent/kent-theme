@@ -207,6 +207,16 @@
 				</div>
 			</div>
 
+			<blockquote class="social-quote social-quote-twitter">
+				<a href="#">
+					<button></button>
+					<p>Kent study shows that tourism boost in Malta can aid struggling traditional fishermen.</p>
+				</a>
+				<cite>
+					<a href="#">@unikentnews</a>
+				</cite>
+			</blockquote>
+
 			<div class="card-panel card-panel-primary-tint">
 				<div class="card-panel-header">
 					<h2 class="card-panel-title">Card Panel (Primary Tint)</h2>
@@ -397,7 +407,7 @@
 						<img class="card-img-bottom" src="images/students.jpg">
 					</div>
 
-					<div class="card-img-overlay text-right">
+					<div class="card-img-overlay text-xs-right">
 						<h5 class="card-subtitle">A sub title</h5>
 						<p class="card-text">This content is shorter.</p>
 					</div>
@@ -593,7 +603,7 @@
 							<h5 class="card-subtitle">On the Left</h5>
 							<p class="card-text">This content is shorter.</p>
 						</div>
-						<div class="card-img-overlay text-right">
+						<div class="card-img-overlay text-xs-right">
 							<h5 class="card-subtitle">On the right</h5>
 							<p class="card-text">This content is shorter.</p>
 						</div>

@@ -1,5 +1,7 @@
 .card.header-card-overlay {
-	margin-top: -2rem;
+
+	margin-top: 0;
+
 	.card-title-wrap {
 		background: #333;
 		padding: 2rem;
@@ -20,7 +22,7 @@
 	}
 	@include media-breakpoint-up(md) {
 
-		margin-top: -7rem;
+		margin-top: -5rem;
 
 		.card-title-wrap {
 			width: 100%;
@@ -41,7 +43,7 @@
 .show-departmental-menu {
   @include media-breakpoint-up(md) {
     .card.header-card-overlay {
-      margin-top: -10rem;
+      margin-top: -8rem;
     }
   }
 }

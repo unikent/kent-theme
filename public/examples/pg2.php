@@ -251,7 +251,7 @@
 					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
 						<iframe width="1400" height="700" src="https://www.youtube.com/embed/H4tcJUQ1USw?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 
-						<div class="card-img-overlay text-right">
+						<div class="card-img-overlay text-xs-right">
 							<h5 class="card-subtitle">Dr Stephen Lowry</h5>
 							<p class="card-text">Senior Lecturer in Astronomy and Astrophysics</p>
 							<p class="card-text">Rosetta mission: Imaging comet 67P/Churyumov–Gerasimenko</p>
@@ -406,7 +406,7 @@
 					<div class="card-media-wrap">
 						<img src="images/canterbury2.jpg" class="card-img-bottom" alt="Sport" />
 
-						<a class="card-img-overlay text-right" href="#">
+						<a class="card-img-overlay text-xs-right" href="#">
 							<h5 class="card-subtitle">Canterbury</h5>
 							<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
 						</a>

@@ -119,7 +119,7 @@ figure{
 		img{
 			width: 100%;
 		}
-		@include media-breakpoint-up(lg){
+		@include media-breakpoint-up(md){
 			max-width: 50%;
 			float: right;
 			margin-right: -20%;
@@ -145,4 +145,24 @@ figure{
 			padding-left: 0;
 		}
 	}
+}
+
+figure.featured-image{
+
+	overflow: visible;
+
+	@include media-breakpoint-up(md){
+		margin-top:-3.5rem;
+	}
+
+	figcaption{
+		text-align: right;
+		padding-right: 0.5rem;
+		@include media-breakpoint-up(md) {
+			position: absolute;
+			bottom:   -1.5rem;
+			right:    0;
+		}
+	}
+	margin-bottom: 0;
 }

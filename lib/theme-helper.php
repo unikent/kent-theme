@@ -20,11 +20,13 @@ Class KentThemeHelper {
 
 		extract($config);
 
-		$meta = array_merge(array('title'=>'Kent Theme Beta'), $meta);
+		$meta = array_merge(array('title'=>'Kent Theme Beta',
+								'thumb'=>'https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif'
+								  ), $meta);
 
 		// if menu is provided
 		if(!empty($menu)){
-			$menu_links = static::generate_menu($menu);
+			$menu_links = static::generateMenu($menu);
 		}else{
 			$menu_links = "";
 		}
@@ -38,10 +40,15 @@ Class KentThemeHelper {
 		// is there a description? pull it out if so
 		$description = false;
 		$page_title = '';
+
 		if(isset($meta['description'])){
 			$description = $meta['description'];
 			// don't unset as we still want the actual description too
 		}
+
+		$thumb = $meta['thumb'];
+		unset($meta['thumb']);
+
 		if(isset($meta['title'])){
 			$page_title = $meta['title'];
 		}
@@ -53,7 +60,16 @@ Class KentThemeHelper {
 		include("inc/footer.php");
 	}
 
-	protected static function generate_menu($menu){
+	public static function breadcrumb($breadcrumb = array(), $config= array()){
+		include 'inc/breadcrumb.php';
+	}
+
+	public static function pageFeedback($meta = ''){
+		include 'inc/page-feedback.php';
+	}
+
+
+	protected static function generateMenu($menu){
 		$output = "";	
 
 		$current_url = $_SERVER["REQUEST_URI"];

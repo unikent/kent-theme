@@ -11,7 +11,7 @@
 
 		<meta name="application-name" content="University of Kent"/>
 		<meta name="msapplication-TileColor" content="#ffffff"/>
-		<meta name="msapplication-TileImage" content="//static.kent.ac.uk/pantheon/images/Chronos/layout/win8_tile.png" />
+		<meta name="msapplication-TileImage" content="<?php echo $thumb; ?>" />
 
 		<?php foreach($meta as $name => $content): ?>
 			<meta name="<?php echo $name; ?>" content="<?php echo $content; ?>" />
@@ -19,7 +19,7 @@
 
 		<!-- Schema.org markup for Google+ -->
 		<meta itemprop="name" content="<?php echo $page_title; ?>" />
-		<meta itemprop="image" content="https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif" />
+		<meta itemprop="image" content="<?php echo $thumb; ?>" />
 		<?php if($description):?><meta itemprop="description" content="<?php echo $description; ?>" /><?php endif;?>
 
 		<!-- Twitter Card data -->
@@ -27,13 +27,13 @@
 		<meta name="twitter:site" content="@unikent" />
 		<meta name="twitter:title" content="<?php echo $page_title; ?>" />
 		<meta name="twitter:creator" content="@unikent" />
-		<meta name="twitter:image:src" content="https://static.kent.ac.uk/pantheon/static/logos/permalink-logo-1200-1200.gif" />
+		<meta name="twitter:image:src" content="<?php echo $thumb; ?>" />
 		<?php if($description):?><meta name="twitter:description" content="<?php echo $description; ?>" /><?php endif;?>
 
 		<!-- Open Graph data -->
 		<meta property="og:title" content="<?php echo $page_title; ?>" />
 		<meta property="og:type" content="website" />
-		<meta property="og:image" content="https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif" />
+		<meta property="og:image" content="<?php echo $thumb; ?>" />
 		<meta property="og:site_name" content="The University of Kent" />
 		<?php if($description):?><meta property="og:description" content="<?php echo $description; ?>" /><?php endif;?>
 
@@ -68,7 +68,7 @@
 			<section class="global-nav">
 				<a class="main-logo kf-kent-block" href=""><span class="sr-only">The University of Kent</span></a>
 
-				<button class="search-button-full btn btn-accent btn-icon btn-lg pull-right" aria-controls="global-nav-search" title="Open search"><span class="kf-fw kf-search"></span></button>
+				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" title="Open search"></button>
 
 				<div class="global-nav-menu" id="global-nav-menu" role="menubar">
 					<nav class="global-nav-links" role="menu">
@@ -117,13 +117,13 @@
 				</div>
 				<div class="global-nav-search" id="global-nav-search">
 
-					<form role="search">
+					<form role="search" method="get" action="https://www.kent.ac.uk/search/">
 						<div class="form-group">
 							<label for="search" class="sr-only">Search</label>
 							<div class="input-group input-group-lg">
-								<input type="search" class="form-control" id="search" placeholder="Search by course, department. keyword... ">
+								<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department. keyword... ">
 								<span class="input-group-btn">
-									<button type="submit" class="btn btn-accent btn-icon" aria-label="Search"><span class="kf-fw kf-search"></span></button>
+									<button type="submit" class="btn btn-accent btn-icon kf-search" aria-label="Search"></button>
 								</span>
 							</div>
 						</div>
@@ -139,19 +139,5 @@
 					<?php echo $menu_links; ?>
 				</nav>
 			</section>
-			<?php if(isset($slim) && $slim && isset($breadcrumb)): ?>
-				<nav class="breadcrumb">
-
-					<a href="/" rel="index">University of Kent</a> 
-
-					<?php $i=0;foreach($breadcrumb as $name => $link): ?>
-						<?php if(++$i == sizeof($breadcrumb)): ?>
-							<span><?php echo $name; ?></span> 
-						<?php else:?>
-							<a href="<?php echo $link; ?>" rel="up"><?php echo $name; ?></a> 
-						<?php endif;?>
-					<?php endforeach;?> 
-				</nav>
-			<?php endif;?>
 		</header>
-		<main id="main_content">
+		<main id="main_content"<?php echo !empty($main_class) ?' class="' . $main_class .'"' :'' ; ?>>

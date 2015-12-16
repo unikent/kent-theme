@@ -11,31 +11,35 @@ $enable-hover-media-query:  false;
 //GRID
 
 $grid-breakpoints: (
-  // Extra small screen / phone
-        xs: 0,
-  // Small screen / phone
-        sm: 34em,
-  // Medium screen / tablet
-        md: 48em,
-  // Large screen / desktop
-        lg: 62em,
-  // Extra large screen / wide desktop
-        xl: 75em,
-  // Extra large screen / wide desktop
-        xxl: 107em,
-  // Extra large screen / wide desktop
-        xxxl: 150em,
+					   // Extra small screen / phone
+					   xs: 0,
+					   // Small screen / phone
+					   sm: 544px,
+					   // Medium screen / tablet
+					   md: 768px,
+					   // Large screen / desktop
+					   lg: 992px,
+					   // Extra large screen / wide desktop
+					   xl: 1200px,
+					   // Extra Extra large screen / wide desktop
+					   xxl: 1712px,
+					   // Extra Extra Extra large screen / wide desktop
+					   xxxl: 2400px,
+				   );
 
-);
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-        sm: 34rem,    // 480
-        md: 45rem,    // 720
-        lg: 60rem,    // 960
-        xl: 72.25rem,  // 1140
-        xxl: 72.25rem,  // 1140
-        xxxl: 72.25rem  // 1140
-);
+						   sm: 576px,
+						   md: 720px,
+						   lg: 940px,
+						   xl: 1140px,
+						   xxl: 1140px,
+						   xxxl: 1140px
+					   );
 
 //COLOURS
 $kent-primary:         #05345C;
@@ -71,7 +75,20 @@ $rss:                   #FF6600;
 $tumblr:                #35465c;
 $pinterest:             #cb2027;
 $instagram:             #125688;
+$google-plus:			#DC4E41;
 
+$social-networks: (
+	facebook: $facebook,
+	linkedin: $linkedin,
+	twitter: $twitter,
+	youtube: $youtube,
+	flickr: $flickr,
+	rss: $rss,
+	tumblr: $tumblr,
+	pinterest: $pinterest,
+	instagram: $instagram,
+	google-plus : $google-plus
+   );
 
 // TYPOGRAPHY
 
@@ -107,17 +124,20 @@ $global-nav-height: 8.75rem;
 
 
 // ARTICLE LAYOUT
-$article-padding-sm : 1rem;
-$article-padding-md : 6rem;
-$article-right-padding: 33.333333333%;
-$article-left-padding-lg: 9.333333333%;
-$article-left-padding-xl: 8.333333333%;
-$article-container-padding-lg: 0 $article-right-padding 0 $article-left-padding-lg;
-$article-container-padding-xl: 0 $article-right-padding 0 $article-left-padding-xl;
+$article-padding-xs : 0 1rem;
+$article-padding-sm : 0 12%;
+$article-left-padding-md: 12%;
+$article-padding-md : 0 33.333333333% 0 $article-left-padding-md;
+$article-left-padding-lg: 14.333333333%;
+$article-padding-lg: 0 38.333333333% 0 $article-left-padding-lg;
+$article-left-padding-xl: 14.33333333%;
+$article-padding-xl: 0 38.333333333% 0 $article-left-padding-xl;
 
+$article-max-breakpoint: 1328px;
+
+$article-padding-max:	0 415px 0 95px;
 
 //BOOTSTRAP FIXES (maybe fixed in later release)
-
 $border-radius:          0;
 $border-radius-lg:       0;
 $border-radius-sm:       0;

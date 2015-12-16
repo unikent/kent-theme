@@ -1,6 +1,7 @@
 .card {
 	display:block;
 	border: none;
+	background: none;
 	margin-bottom:1rem;
 
 	&.card-backed{
@@ -8,12 +9,21 @@
 		padding-right: $grid-gutter-width/2;
 		background: #FFF;
 
+		.card-media-wrap,
 		.card-img,
 		.card-img-top {
 			&:first-child {
 				margin-left:  -$grid-gutter-width/2;
 				margin-right: -$grid-gutter-width/2;
 				max-width:    calc(100% + #{$grid-gutter-width});
+			}
+		}
+		.card-media-wrap{
+			.card-img,
+			.card-img-top {
+				&:first-child {
+					margin: 0;
+				}
 			}
 		}
 
@@ -76,7 +86,7 @@
 	.card-img,
 	.card-img-top,
 	.card-img-bottom{
-		@extend .img-responsive;
+		@extend .img-fluid;
 	}
 
 	.card-img,
@@ -144,7 +154,7 @@
 	    text-decoration: none;
 
 	    img {
-			@extend .img-responsive;
+			@extend .img-fluid;
 			@extend .img-circle;
 	    	height: 2rem;
 	    	float: left;

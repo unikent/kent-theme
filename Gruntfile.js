@@ -55,6 +55,7 @@ module.exports = function(grunt) {
             main: {
                 src:[
                     'vendor/jquery/dist/jquery.js',
+					'vendor/tether/dist/js/tether.js',
                     'js/_bootstrap.js',
                     'vendor/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.js',
                     'js/components/responsive_util.js',
@@ -135,13 +136,6 @@ module.exports = function(grunt) {
 					'public/assets/css/main.min.css': 'public/assets/css/main.css'
 				}
 			}
-		},
-		hologram: {
-			generate: {
-				options: {
-					config: './hologram_config.yml'
-				}
-			}
 		}
 	});
 
@@ -153,7 +147,6 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-cssnano');
-	grunt.loadNpmTasks('grunt-hologram');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-modernizr');
 
