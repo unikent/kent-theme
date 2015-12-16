@@ -53,7 +53,7 @@
 			<p>We're testing <a href="#">a new design</a>.</p>
 			<p>It may not be complete or work as intended.</p>
 			<p>
-				<a href="?betaOptin=false" class="btn btn-link">Go to original site</a>
+				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="btn btn-link">Go to original site</a>
 				<button class="btn btn-secondary feedback" onclick="return window.usabilla_live('click');">Give us feedback</button>
 			</p>
 			<span class="beta-toggler">Learn more</span>
