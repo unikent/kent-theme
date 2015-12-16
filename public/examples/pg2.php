@@ -267,7 +267,7 @@
 
 			<!-- <div class="card-panel" style="background-color:#05345c;color:#fff;"> -->
 			<div class="card-panel">
-				<div class="card-panel-body">
+				<div class="card-panel-body" style="max-width:100%;">
 					<div class="card">
 						<iframe width="290" height="163" src="https://www.youtube.com/embed/xWTBCsLmsOg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
 						<h3 class="card-title">Dr Heejung Chung</h3>
@@ -290,6 +290,7 @@
 					</div>
 				</div>
 			</div>
+
 
 
 
