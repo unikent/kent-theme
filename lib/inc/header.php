@@ -68,7 +68,7 @@
 			<section class="global-nav">
 				<a class="main-logo kf-kent-block" href=""><span class="sr-only">The University of Kent</span></a>
 
-				<button class="search-button-full btn btn-accent btn-icon btn-lg pull-right" aria-controls="global-nav-search" title="Open search"><span class="kf-fw kf-search"></span></button>
+				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" title="Open search"></button>
 
 				<div class="global-nav-menu" id="global-nav-menu" role="menubar">
 					<nav class="global-nav-links" role="menu">
@@ -123,7 +123,7 @@
 							<div class="input-group input-group-lg">
 								<input type="search" class="form-control" id="search" placeholder="Search by course, department. keyword... ">
 								<span class="input-group-btn">
-									<button type="submit" class="btn btn-accent btn-icon" aria-label="Search"><span class="kf-fw kf-search"></span></button>
+									<button type="submit" class="btn btn-accent btn-icon kf-search" aria-label="Search"></button>
 								</span>
 							</div>
 						</div>

@@ -5544,13 +5544,6 @@ figure.featured-image {
     content: "";
     font-family: "kentfont", sans-serif; }
 
-.btn-icon {
-  padding: 6px;
-  padding: 0.375rem; }
-  .btn-icon > * {
-    font-size: 24px;
-    font-size: 1.5rem; }
-
 .btn-primary {
   color: #fff;
   background-color: #005689;
@@ -5846,6 +5839,16 @@ figure.featured-image {
     border-color: #dddddd; }
   .btn-gray-icon.disabled:hover, .social-link i.disabled:hover, .social-links a.disabled:hover, .card-panel .card-panel-header .card-panel-social a.disabled:hover, .social-links .disabled.content-social-link:hover, .card-panel .card-panel-header .card-panel-social .disabled.content-social-link:hover, .btn-gray-icon:disabled:hover, .social-link i:disabled:hover, .social-links a:disabled:hover, .card-panel .card-panel-header .card-panel-social a:disabled:hover, .social-links .content-social-link:disabled:hover, .card-panel .card-panel-header .card-panel-social .content-social-link:disabled:hover {
     border-color: #dddddd; }
+
+.btn-icon {
+  padding: 0; }
+  .btn-icon:before {
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 24px;
+    line-height: 1.5rem; }
+  .btn-icon:hover, .btn-icon:active, .btn-icon:focus {
+    text-decoration: none; }
 
 .input-group-lg > .input-group-btn > .btn.btn-icon, .social-link .input-group-lg > .input-group-btn > i.btn-icon, .social-links .input-group-lg > .input-group-btn > a.btn-icon, .card-panel .card-panel-header .card-panel-social .input-group-lg > .input-group-btn > a.btn-icon, .social-links .input-group-lg > .input-group-btn > .btn-icon.content-social-link, .card-panel .card-panel-header .card-panel-social .input-group-lg > .input-group-btn > .btn-icon.content-social-link, .content-social .input-group-lg > .input-group-btn > a.btn-icon, .content-social .input-group-lg > .input-group-btn > .btn-icon.content-social-link,
 .btn-lg.btn-icon,
