@@ -179,28 +179,28 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-1.jpg">
 						<h3 class="card-title">Academic excellence</h3>
-						<p class="card-subtitle">1st September 2015</p>
+						<p class="card-meta">1st September 2015</p>
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
 						<a href="#" class="card-badge kf-comment">5</a>
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-2.jpg">
 						<h3 class="card-title">Undergraduates</h3>
-						<p class="card-subtitle">28th March 2015</p>
+						<p class="card-meta">28th March 2015</p>
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
 						<a href="#" class="card-badge kf-comment">7</a>
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">Postgraduates</h3>
-						<p class="card-subtitle">5th November 2015</p>
+						<p class="card-meta">5th November 2015</p>
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 						<a href="#" class="card-badge kf-comment">1</a>
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Visit Kent</h3>
-						<p class="card-subtitle">17th May 2015</p>
+						<p class="card-meta">17th May 2015</p>
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
 						<a href="#" class="card-badge kf-comment">23</a>
 					</div>
@@ -241,7 +241,7 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-1.jpg">
 						<h3 class="card-title">Academic excellence</h3>
-						<p class="card-subtitle">1st September 2015</p>
+						<p class="card-meta">1st September 2015</p>
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
 
 						<a class="card-author card-bordered-item" href='#'>
@@ -254,7 +254,7 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-2.jpg">
 						<h3 class="card-title">Undergraduates</h3>
-						<p class="card-subtitle">28th March 2015</p>
+						<p class="card-meta">28th March 2015</p>
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
 
 						<a class="card-author card-bordered-item" href='#'>
@@ -272,7 +272,7 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">Postgraduates</h3>
-						<p class="card-subtitle">5th November 2015</p>
+						<p class="card-meta">5th November 2015</p>
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 						<a class="card-author card-bordered-item" href='#'>
 							<img src="images/profile-academic.jpg">
@@ -283,7 +283,7 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Visit Kent</h3>
-						<p class="card-subtitle">17th May 2015</p>
+						<p class="card-meta">17th May 2015</p>
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
 						<a class="card-author card-bordered-item" href='#'>
 							<img src="images/profile-academic.jpg">
@@ -306,14 +306,14 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-1.jpg">
 						<h3 class="card-title">Academic excellence</h3>
-						<p class="card-subtitle">1st September 2015</p>
+						<p class="card-meta">1st September 2015</p>
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
 						<p class="card-text"><a href="#">Tag1</a>, <a href="#">Tag2</a>, <a href="#">Another Tag</a></p>
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-2.jpg">
 						<h3 class="card-title">Undergraduates</h3>
-						<p class="card-subtitle">28th March 2015</p>
+						<p class="card-meta">28th March 2015</p>
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
 						<ul>
 							<li><a href="#">Card link</a></li>
@@ -325,13 +325,13 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">Postgraduates</h3>
-						<p class="card-subtitle">5th November 2015</p>
+						<p class="card-meta">5th November 2015</p>
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 					</div>
 					<div class="card">
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Visit Kent</h3>
-						<p class="card-subtitle">17th May 2015</p>
+						<p class="card-meta">17th May 2015</p>
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
 					</div>
 				</div>
@@ -345,7 +345,7 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-1.jpg">
 						<h3 class="card-title">Academic excellence</h3>
-						<p class="card-subtitle">1st September 2015</p>
+						<p class="card-meta">1st September 2015</p>
 						<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
 
 						<a class="card-author card-bordered-item" href='#'>
@@ -358,7 +358,7 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-2.jpg">
 						<h3 class="card-title">Undergraduates</h3>
-						<p class="card-subtitle">28th March 2015</p>
+						<p class="card-meta">28th March 2015</p>
 						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
 
 						<a class="card-author card-bordered-item" href='#'>
@@ -376,7 +376,7 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-3.jpg">
 						<h3 class="card-title">Postgraduates</h3>
-						<p class="card-subtitle">5th November 2015</p>
+						<p class="card-meta">5th November 2015</p>
 						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
 						<a class="card-author card-bordered-item" href='#'>
 							<img src="images/profile-academic.jpg">
@@ -387,7 +387,7 @@
 					<div class="card">
 						<img class="card-img" src="images/promo-4.jpg">
 						<h3 class="card-title">Visit Kent</h3>
-						<p class="card-subtitle">17th May 2015</p>
+						<p class="card-meta">17th May 2015</p>
 						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
 						<a class="card-author card-bordered-item" href='#'>
 							<img src="images/profile-academic.jpg">
@@ -500,7 +500,7 @@
 						<div class="card">
 							<img class="card-img" src="images/promo-1.jpg">
 							<h3 class="card-title">Academic excellence</h3>
-							<p class="card-subtitle">1st September 2015</p>
+							<p class="card-meta">1st September 2015</p>
 							<p class="card-text">We rank amongst the best in the UK. Find out why we're more prestigious than many in the Russel Group.</p>
 							<p class="card-text"><a href="#">Tag1</a>, <a href="#">Tag2</a>, <a href="#">Another Tag</a></p>
 						</div>
@@ -509,7 +509,7 @@
 						<div class="card">
 							<img class="card-img" src="images/promo-2.jpg">
 							<h3 class="card-title">Undergraduates</h3>
-							<p class="card-subtitle">28th March 2015</p>
+							<p class="card-meta">28th March 2015</p>
 							<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
 							<ul>
 								<li><a href="#">Card link</a></li>
@@ -625,6 +625,56 @@
 					<a href="#" class="chevron-link">Another link</a>
 				</div>
 			</div>
+
+		</div>
+
+
+
+	<div class="card-panel cards-backed cards-centered cards-backed-tertiary cards-header-split">
+		<div class="card-panel-header">
+			<h2 class="card-panel-title">Staff profiles</h2>
+		</div>
+		<div class="card-panel-body">
+			<div class="card">
+				<header class="card-header">
+					<img class="card-img img-circle" src="images/profile-academic.jpg">
+				</header>
+				<h3 class="card-title">Dr Test Test</h3>
+				<p class="card-subtitle">Senior Lecture in Classical literature</p>
+			</div>
+			<div class="card card-header-split">
+				<header class="card-header">
+					<img class="card-img img-circle" src="images/profile-academic.jpg">
+				</header>
+				<h3 class="card-title">Dr Test Test</h3>
+				<p class="card-subtitle">Senior Lecture in Classical literature</p>
+			</div>
+			<div class="card">
+				<header class="card-header">
+					<img class="card-img img-circle" src="images/profile-academic.jpg">
+				</header>
+				<h3 class="card-title">Dr Test Test</h3>
+				<p class="card-subtitle">Senior Lecture in Classical literature</p>
+			</div>
+			<div class="card">
+				<header class="card-header">
+					<img class="card-img img-circle" src="images/profile-academic.jpg">
+				</header>
+				<h3 class="card-title">Dr Test Test</h3>
+				<p class="card-subtitle">Senior Lecture in Classical literature</p>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
 
 <p>&nbsp;</p>
 

@@ -4693,7 +4693,7 @@ button.close {
 .text-xs-right {
   text-align: right !important; }
 
-.text-xs-center {
+.text-xs-center, .card.card-centered, .card-panel.cards-centered .card {
   text-align: center !important; }
 
 @media (min-width: 544px) {
@@ -6757,6 +6757,8 @@ nav.breadcrumb {
     padding-right: 15px;
     padding-right: 0.9375rem;
     background: #FFF; }
+    .card.card-backed .card-header, .card-panel.cards-backed .card .card-header {
+      border: none; }
     .card.card-backed .card-media-wrap:first-child, .card-panel.cards-backed .card .card-media-wrap:first-child,
     .card.card-backed .card-img:first-child, .card-panel.cards-backed .card .card-img:first-child,
     .card.card-backed .card-img-top:first-child, .card-panel.cards-backed .card .card-img-top:first-child {
@@ -6765,6 +6767,13 @@ nav.breadcrumb {
       margin-right: -15px;
       margin-right: -0.9375rem;
       max-width: calc(100% + 1.875rem); }
+      .card.card-backed .card-media-wrap:first-child:before, .card-panel.cards-backed .card .card-media-wrap:first-child:before,
+      .card.card-backed .card-img:first-child:before, .card-panel.cards-backed .card .card-img:first-child:before,
+      .card.card-backed .card-img-top:first-child:before, .card-panel.cards-backed .card .card-img-top:first-child:before {
+        display: block;
+        height: 50%;
+        width: 100%;
+        background: red; }
     .card.card-backed .card-media-wrap .card-img:first-child, .card-panel.cards-backed .card .card-media-wrap .card-img:first-child,
     .card.card-backed .card-media-wrap .card-img-top:first-child, .card-panel.cards-backed .card .card-media-wrap .card-img-top:first-child {
       margin: 0; }
@@ -6803,13 +6812,15 @@ nav.breadcrumb {
     color: #05345C;
     font-size: 17.6px;
     font-size: 1.1rem; }
-  .card .card-subtitle {
+  .card .card-meta {
     color: #818a91;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 13.6px;
     font-size: 0.85rem;
     margin-bottom: 4.8px;
     margin-bottom: 0.3rem; }
+  .card .card-subtitle {
+    color: #05345C; }
   .card .card-img:first-child,
   .card .card-img-top:first-child, .card .card-media-wrap:first-child {
     margin-bottom: 12px;
@@ -6915,6 +6926,22 @@ nav.breadcrumb {
   .card.short-text {
     padding-bottom: 32px;
     padding-bottom: 2rem; }
+  .card .card-header {
+    padding: inherit;
+    background-color: transparent;
+    border: none; }
+  .card.card-header-split .card-header, .card-panel.cards-header-split .card .card-header {
+    background: linear-gradient(#ffffff 50%, transparent 50%);
+    margin-left: -15px;
+    margin-left: -0.9375rem;
+    margin-right: -15px;
+    margin-right: -0.9375rem; }
+    .card.card-header-split .card-header .card-img:first-child, .card-panel.cards-header-split .card .card-header .card-img:first-child,
+    .card.card-header-split .card-header .card-img-top:first-child, .card-panel.cards-header-split .card .card-header .card-img-top:first-child,
+    .card.card-header-split .card-header .card-media-wrap:first-child, .card-panel.cards-header-split .card .card-header .card-media-wrap:first-child {
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%; }
   a.card:hover, a.card:focus, a:hover, a:focus {
     text-decoration: none; }
     a.card:hover img, a.card:focus img, a:hover img, a:focus img {
@@ -6939,7 +6966,7 @@ nav.breadcrumb {
     .card-panel.cards-backed .card {
       border-width: 0 0.9375rem 0 0.9375rem;
       border-style: solid;
-      border-color: transparent; } }
+      border-color: #fff; } }
   .card-panel.card-panel-primary {
     background-color: #05345C; }
     .card-panel.card-panel-primary.cards-backed .card {
