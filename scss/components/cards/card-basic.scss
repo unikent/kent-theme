@@ -1,0 +1,231 @@
+.card {
+	display:block;
+	border: none;
+	background: none;
+	margin-bottom:1rem;
+
+	&.card-backed{
+		padding-left: $grid-gutter-width/2;
+		padding-right: $grid-gutter-width/2;
+		background: #FFF;
+
+		.card-header {
+			border:none;
+		}
+
+		.card-media-wrap,
+		.card-img,
+		.card-img-top {
+			&:first-child {
+				margin-left:  -$grid-gutter-width/2;
+				margin-right: -$grid-gutter-width/2;
+				max-width:    calc(100% + #{$grid-gutter-width});
+
+				&:before {
+					display:block;
+					height:50%;
+					width:100%;
+					background:red;
+				}
+
+			}
+		}
+		.card-media-wrap{
+			.card-img,
+			.card-img-top {
+				&:first-child {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	&.card-centered {
+		@extend .text-xs-center;
+	}
+
+
+
+	&.card-backed-primary,
+	.card-panel.cards-backed &.card-backed-primary{
+		background: $brand-primary;
+		@extend .card-inverse;
+	}
+
+	&.card-backed-secondary,
+	.card-panel.cards-backed &.card-backed-secondary{
+		background: $brand-secondary;
+	}
+
+	&.card-backed-tertiary,
+	.card-panel.cards-backed &.card-backed-tertiary{
+		background: $brand-tertiary;
+	}
+
+	&.card-backed-primary-tint,
+	.card-panel.cards-backed &.card-backed-primary-tint{
+		background: $brand-primary-tint;
+	}
+
+	&.card-backed-accent,
+	.card-panel.cards-backed &.card-backed-accent{
+		background: $brand-accent;
+		@extend .card-inverse;
+	}
+
+
+	.card-body{
+		display: block;
+		position: relative;
+	}
+
+	.card-footer{
+		background: transparent;
+	}
+
+	.card-title{
+		font-family: $headings-font-family;
+		color: $kent-primary;
+		font-size: 1.1rem;
+	}
+
+	.card-meta{
+		color: $text-muted;
+		font-family: $font-family-sans-serif;
+		font-size: 0.85rem;
+		margin-bottom: 0.3rem;
+	}
+
+	.card-subtitle {
+		color: $brand-primary;
+	}
+
+	.card-text {
+
+	}
+
+	.card-img,
+	.card-img-top,
+	.card-img-bottom{
+		@extend .img-fluid;
+	}
+
+	.card-img,
+	.card-img-top, .card-media-wrap{
+		&:first-child{
+			margin-bottom: 0.75rem;
+		}
+	}
+
+	.card-media-wrap, .card-embed-wrap {
+
+		@extend .media-wrap;
+
+		&.card-media-wrap-video {
+			cursor: pointer;
+			&:after {
+				content: $kf-play-circle;
+				font-family: $font-family-kentfont;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-left: -2rem;
+				margin-top: -3.2rem;
+				font-size: 4.5rem;
+				color: rgba(255,255,255,0.9);
+			}
+		}
+	}
+	&.card-inverse, .card-inverse{
+		.card-subtitle{
+			color: rgba(255,255,255,.65);
+		}
+		.card-link,
+		.card-text,
+		.card-blockquote > footer {
+			color: rgba(255,255,255,.75);
+		}
+	}
+
+	ul{
+		@include bullet-list;
+	}
+
+	.card-badge {
+		text-decoration:none;
+		margin-bottom: 1rem;
+
+		&:before {
+			color: $brand-accent; 
+			margin-right:.2rem;
+			position: relative;
+			bottom: 0.1rem;
+		}
+	}
+
+	.card-author {
+		display:block;
+		font-size: .9rem;
+	    color: $gray;
+	    
+	    padding: .5em 0;
+	    overflow:hidden;
+	    line-height: 2rem;
+	    margin-bottom: 1rem;
+	    text-decoration: none;
+
+	    img {
+			@extend .img-fluid;
+			@extend .img-circle;
+	    	height: 2rem;
+	    	float: left;
+	    	margin-right:.5rem;
+	    }
+	}
+
+	.card-bordered-item {
+		border-bottom: 1px solid #ccc;
+	    border-top: 1px solid #ccc;
+	}
+
+	// helper
+	&.short-text {
+		padding-bottom:2rem;
+	}
+
+
+	.card-header{
+		padding: inherit;
+		background-color: transparent;
+		border: none;
+	}
+
+	&.card-header-split {
+		.card-header {
+			background: linear-gradient(#ffffff 50%, transparent 50%);
+			margin-left:  -$grid-gutter-width/2;
+			margin-right: -$grid-gutter-width/2;
+
+			.card-img,
+			.card-img-top, 
+			.card-media-wrap{
+				&:first-child{
+					width:70%;
+					margin-left:15%;
+					margin-right:15%;
+				}
+			}
+		}
+	}
+
+	// if card is an A
+	// @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
+	@at-root a#{&}, a {
+		&:hover, &:focus {
+			text-decoration: none;
+			img{
+				opacity: 0.7;
+			}
+		}
+	}
+}

@@ -2,13 +2,14 @@
 
 ## Setup
 
-Run the following command
-```
-npm install
-```
-this will install all dependancies, run grunt and start a watch task.
+Run `npm install` to install all dependencies, run grunt and start a watch task.
 
-To restart the watch for any reason simply use
-```
-grunt
-```
+*Note: we're using the Ruby version of Sass so you'll need to have it in your PATH first - use `gem install sass`*
+
+To restart the watch for any reason simply run `grunt`.
+
+Make a copy of `lib/config.sample.php` and rename to `lib/config.php` - change the WEBROOT if you need to when developing locally.
+
+## Documentation
+
+@cs462-unikent - please document how the pattern library will work.

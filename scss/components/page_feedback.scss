@@ -1,0 +1,53 @@
+.page-feedback{
+
+	border-top: 1px solid $border-gray;
+	font-size: 0.9rem;
+
+	.page-feedback-toggle, .page-feedback-meta{
+		@include make-col();
+		padding: 0.5rem 1rem;
+		@include media-breakpoint-up(md) {
+			@include make-col-span(6);
+		}
+	}
+
+	.page-feedback-toggle{
+		a:after{
+			content: $kf-angle-up;
+			font-family: $font-family-kentfont;
+			display: inline-block;
+			padding-left: 0.25rem;
+		}
+		a.collapsed:after{
+			content: $kf-angle-down;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		.page-feedback-meta {
+			text-align: right;
+		}
+	}
+
+	.page-feedback-content{
+		position: relative;
+		background: $brand-tertiary;
+
+		@include make-row();
+		padding: 2rem $grid-gutter-width/2;
+
+		.page-feedback-form{
+			@include media-breakpoint-up(md) {
+				width: 50%;
+			}
+		}
+
+		i.kf-close{
+			position: absolute;
+			top:1rem;
+			right:2rem;
+
+		}
+
+	}
+}

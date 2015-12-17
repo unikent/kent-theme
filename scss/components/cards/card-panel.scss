@@ -1,0 +1,299 @@
+.card-panel {
+
+	padding:       1rem 0.5rem 0.5rem;
+	margin-bottom: 1rem;
+	overflow:      hidden;
+
+	@include media-breakpoint-up(sm) {
+		padding: 1rem;
+	}
+
+
+	&.card-panel-inverse{
+
+		color: rgba(255,255,255,.75);
+
+		.card-panel-title{
+			color: #FFF;
+		}
+
+		.card-panel-header {
+			a, a:hover, a:focus {
+				color: #FFFFFF;
+			}
+		}
+	}
+
+	&.cards-backed {
+		.card {
+
+			@include media-breakpoint-up(sm){
+				border-width: 0 ($grid-gutter-width/2) 0 ($grid-gutter-width/2);
+				border-style: solid;
+				border-color: #fff;
+			}
+
+			@extend .card-backed;
+		}
+	}
+
+	&.cards-header-split {
+		.card {
+			@extend .card-header-split ;
+		}
+	}
+
+	&.cards-centered {
+		.card {
+			@extend .card-centered;
+		}
+	}
+
+	&.cards-backed-primary{
+		.card {
+			@extend .card-backed-primary;
+		}
+	}
+
+	&.cards-backed-secondary{
+		.card {
+			@extend .card-backed-secondary;
+		}
+	}
+
+	&.cards-backed-tertiary{
+		.card {
+			@extend .card-backed-tertiary;
+		}
+	}
+
+	&.cards-backed-accent{
+		.card {
+			@extend .card-backed-primary-tint;
+		}
+	}
+
+	&.cards-backed-accent{
+		.card {
+			@extend .card-backed-accent;
+		}
+	}
+
+	&.card-panel-primary {
+		background-color: $brand-primary;
+
+		@extend .card-panel-inverse;
+
+		&.cards-backed .card{
+			border-color: $brand-primary;
+		}
+	}
+
+	&.card-panel-secondary {
+		background-color: $brand-secondary;
+		&.cards-backed .card{
+			border-color: $brand-secondary;
+		}
+	}
+
+	&.card-panel-tertiary {
+		background-color: $brand-tertiary;
+		&.cards-backed .card{
+			border-color: $brand-tertiary;
+		}
+	}
+
+	&.card-panel-primary-tint {
+		background-color: $brand-primary-tint;
+		&.cards-backed .card{
+			border-color: $brand-primary-tint;
+		}
+	}
+
+	&.card-panel-accent {
+		background-color: $brand-accent;
+		&.cards-backed .card{
+			border-color: $brand-accent;
+		}
+	}
+
+	.card-panel-body {
+		@extend .container;
+		padding: 0;
+
+		display:   flex;
+		flex-wrap: wrap;
+
+		& > .card{
+			margin-top: 1rem;
+			&:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4){
+				margin-top: 0;
+			}
+		}
+		.card {
+
+			@include media-breakpoint-up(sm) {
+				@include make-col();
+				@include make-col-span(6);
+				&:nth-child(odd){
+					clear:left;
+				}
+			}
+
+			@include media-breakpoint-up(lg) {
+				@include make-col-span(3);
+				&:nth-child(odd){
+					clear:none;
+				}
+				&:nth-child(4n+1){
+					clear:left;
+				}
+			}
+		}
+
+		.card-panel-grid,
+		.card-panel-single,
+		.card-panel-list {
+
+			overflow:      hidden;
+			margin-bottom: 2rem;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+			@include media-breakpoint-up(md) {
+				@include make-col();
+				@include make-col-span(6);
+				margin-bottom: 0;
+			}
+		}
+
+		.card-panel-single {
+			.card {
+				.card-title{
+					font-size: $font-size-h5;
+				}
+				@include media-breakpoint-up(sm) {
+					padding: 0;
+					width:   100%;
+				}
+				@include media-breakpoint-up(lg) {
+					padding: 0;
+					width:   100%;
+				}
+			}
+		}
+		.card-panel-grid {
+			.card {
+				@include make-col();
+				@include make-col-span(6);
+				&:nth-child(odd) {
+					clear: left;
+				}
+			}
+		}
+		.card-panel-list {
+			.card {
+
+				@include media-breakpoint-up(sm) {
+					padding: 0;
+					width:   100%;
+				}
+				@include media-breakpoint-up(lg) {
+					padding: 0;
+					width:   100%;
+				}
+
+				.card-img-top,
+				.card-img:first-child {
+					float:        left;
+					max-width:    40%;
+					margin-right: 1rem;
+				}
+			}
+		}
+	}
+
+	.card-panel-header {
+		@extend .container;
+		@extend .form-inline;
+
+		margin-bottom: 1rem;
+		margin-top:    -1rem;
+
+		& > * {
+			margin-top:    1rem;
+			margin-bottom: 0rem;
+		}
+
+		.card-panel-title {
+			font-size:      $font-size-h3;
+			display:        block;
+			margin:         1rem 1rem 0rem 0;
+
+			vertical-align: middle;
+
+			@include media-breakpoint-up(md) {
+				display: inline-block;
+			}
+		}
+
+		.card-panel-filter {
+
+			display:        inline-block;
+
+			margin-bottom:  0rem;
+			vertical-align: middle;
+			margin-right:   1rem;
+
+			input, select, button {
+				min-width: 6rem;
+				max-width: 14rem;
+			}
+			select {
+				@extend .form-control;
+				@extend .c-select;
+			}
+			input {
+				@extend .form-control;
+			}
+		}
+
+		.card-panel-social {
+			display:        inline-block;
+			vertical-align: middle;
+
+			&.right {
+				float: right;
+			}
+			&.left {
+				float: left;
+			}
+
+			@extend .social-links;
+
+		}
+
+		nav {
+			display:        inline-block;
+			vertical-align: middle;
+			@extend .form-control-static;
+
+			a {
+				margin-left: 1rem;
+			}
+
+		}
+	}
+
+	// if card is an A
+	// @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
+	a.card, .card a {
+		&,&:hover,&:focus {
+			p.card-text {
+				color: $body-color;
+			}
+		}
+	}
+
+}

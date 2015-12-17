@@ -1,0 +1,385 @@
+.global-header {
+	background-color: transparent;
+
+	@include media-breakpoint-up(md) {
+		position: relative;
+		z-index: 10;
+	}
+}
+
+.global-nav {
+
+	background-color: lighten($gray-dark, 5%);
+	overflow: hidden;
+
+	a.main-logo {
+		font-size:3.5rem;
+		color: $kent-primary;
+		padding:1rem;
+		display:none;
+
+		&:hover { text-decoration:none;}
+	}
+
+	.global-nav-menu,
+	.global-nav-search {
+		height:0;
+		transition: height 300ms;
+		overflow:hidden;
+		.close-search {display:none;}
+		.input-group {padding:1rem;}
+	}
+
+	.search-button-full {
+		display:none;
+	}
+
+
+	.global-nav-links {
+		box-shadow: 0 5px 15px $gray-dark;
+
+		.global-nav-link {
+			background-color: #fff;
+			a {
+				display:block;
+				line-height: 3rem;
+				border-bottom: solid 1px #eee;
+				padding-left:1rem;
+				color: $kent-primary;
+				cursor:pointer;
+
+				text-transform: uppercase;
+				font-family: $font-family-serif;
+
+				&:hover,&:active,&:focus {
+					text-decoration:none;
+				}
+
+				.more {
+					float:right;
+					display:block;
+					height:3rem;
+					border-left: solid 1px #eee;
+					padding: 1rem;
+				}
+			}
+
+			nav {
+				display:none;
+			}
+		}
+
+		&.in {
+			.global-nav-link {
+				display:none;
+
+				&.in{
+					display:block;
+
+					& > a {
+						padding-left: 0;
+
+
+						.more{
+							border-left:0;
+							float:left;
+							&::before {
+								content: $kf-chevron-left;
+							}
+						}
+					}
+
+					nav {
+						display:block;
+
+
+						a {
+							font-family: $font-family-sans-serif;
+							text-transform: none;
+							background: $brand-tertiary;
+							border-bottom: solid 1px #ddd;
+							color: $kent-primary;
+
+							.more { border-left: solid 1px #ddd;}
+							.global-nav-link-desc { display:none;}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.audience-nav-links {
+		margin-top:1rem;
+	 	a {
+			display:block;
+			color: #eee;
+			padding: .5rem;
+
+			@extend .chevron-link;
+		}
+	}
+
+
+	@include media-breakpoint-up(md) {
+		background-color: #FFF;
+
+		padding:0 2rem;
+
+		a.main-logo {display:block; float:left;padding-left:0;}
+
+		.global-nav-menu{
+			display:block; 
+			height:auto;
+			padding-right: 1rem;
+		}
+
+		.global-nav-search {
+			display:none;
+		}
+
+		.audience-nav-links {
+			position:absolute;
+			top: 0;
+			right: 2rem;
+			margin-top:.2rem;
+			a {
+			  	font-family: $font-family-sans-serif;
+				color:#fff;
+				display:inline-block;
+				padding: 0 0 0 1rem;
+				font-size: 0.9rem;
+				&::after { display:none; }
+			}
+		}
+		
+		.search-button-full {
+
+			display:block;
+    		margin-top: 1.25rem;
+
+			&:focus,&:active{
+				outline: none;
+			}
+		}
+
+
+		.global-nav-links {
+			display: table;
+			table-layout: fixed;
+			width:100%;
+			box-shadow: none;
+
+			.global-nav-link {
+				min-width: 1%;
+				font-size: 1.46rem;
+				display: table-cell;
+				padding: 1.4rem 1rem 1rem;
+				text-align: center;
+
+				a {
+					padding-left: 0;
+					border-bottom: none;
+
+					.more {
+						display: none;
+					}
+				}
+			}
+
+			&.in {
+				height: ($global-nav-height + 5);
+
+				.global-nav-link{
+
+					display: table-cell;
+
+					&.in{
+						display: table-cell;
+						nav {
+							width:100%;
+							position: absolute;
+							left:0;
+							top: $global-nav-height - 0.5;
+							overflow:hidden;
+							display: table;
+							table-layout: fixed;
+							border-top: 2px solid $brand-tertiary;
+
+							a {
+								min-width:1%;
+								display:table-cell;
+								font-family: $font-family-serif;
+								position: relative;
+
+								color: $kent-primary;
+								font-size:1.1rem;
+								line-height: 1.25rem;
+								text-align:left;
+								padding:1rem 1rem 1rem 0.75rem;
+								text-decoration: none;
+								height: $global-nav-height;
+
+								&:hover,&:focus,&:active{
+									outline: none;
+									background: lighten($brand-tertiary,5%);
+								}
+
+								.global-nav-link-desc {
+									margin-top: .5rem;
+									font-family: $font-family-sans-serif;
+									display:inline-block;
+									font-size:0.85rem;
+									width:100%;
+									color: $gray-dark;
+									line-height: 1rem;
+								}
+								.more {
+									position: absolute;
+									display:block;
+									border-left:0;
+									height:25px;
+									right: 0.5rem;
+									padding:0;
+
+									bottom: ($global-nav-height/2)-0.5;
+									color: $brand-accent;
+
+								}
+								@include media-breakpoint-up(lg) {
+									font-size: 1.25rem;
+									line-height: 1.4rem;
+									padding:1rem 1.25rem 1rem 1rem;
+									.global-nav-link-desc {
+										font-size:0.9rem;
+										line-height: 1rem;
+									}
+								}
+
+
+
+							}
+						}
+					}
+
+					&.in > a{
+						color: $brand-accent;
+						position: relative;
+
+						& > .more {
+							display:block;
+							background-color: $brand-tertiary;
+							width:2.5rem;height:2.5rem;
+							padding:0;
+
+							position:absolute;
+							bottom: -3.5rem;
+							left: 40%;
+							transform: rotate(45deg);
+
+							&::before { content:""; }
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
+
+.show-global-menu, .show-global-search {
+	overflow-y:hidden;
+
+	.global-header {
+
+		button.menu-button::before, button.search-button::before{
+			content: $kf-close;
+		}
+
+		.global-nav-menu.in,
+		.global-nav-search.in {
+			display:block;
+			height:100vh;
+			width: 100vw;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		overflow-y:auto;
+
+		.global-header {
+			.global-nav-menu.in,
+			.global-nav-search.in {
+				height: auto;
+				width: auto;
+				float: none;
+			}
+
+			.global-nav-search.in {
+				display: block;
+				min-height: 6.5rem;
+				overflow: visible;
+
+				.close-search {
+					display: block;
+					font-size: 0.9rem;
+					position: relative;
+					right: -3rem;
+					top: 4.75rem;
+				}
+				.form-group {
+					position: absolute;
+					margin: 0.25rem 1rem 0 8rem;
+					.input-group {
+						padding-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* Swap buttons in header */
+.show-global-menu .global-header{
+	button.search-button {display:none;}
+}
+.show-global-search .global-header{
+	button.menu-button {display:none;}
+}
+
+
+
+.show-global-search{
+
+			.global-nav-menu .global-nav-links {
+				display: none;
+			}
+
+
+	@include media-breakpoint-up(md) {
+		&:before {
+			content: " ";
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			z-index: 5;
+			top: 0;
+			left: 0;
+			background: rgba(0, 0, 0, 0.5);
+		}
+		.departmental-nav {
+			&:before {
+				content: " ";
+				width: calc(100% - 4rem);
+				height: 100%;
+				position: absolute;
+				z-index: 5;
+				top: 0;
+				left: 0;
+				margin: 0 0 0 2rem;
+				background: rgba(0, 0, 0, 0.5);
+			}
+		}
+	}
+}
+

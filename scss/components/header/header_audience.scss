@@ -1,0 +1,53 @@
+.audience-bar {
+	background-color: $brand-primary;
+	color: #fff;
+	padding: 0;
+	font-size: 0.9rem;
+
+	a.navbar-brand {
+		font-size: 1.2rem;
+		padding: .8rem  1rem;
+		color: #fff;
+		display:block;
+	}
+	.tag-line {
+		padding:0.3rem 0 0.3rem 2rem;
+		display:none;
+	}
+
+	button {
+		width: 3rem;
+		padding: .8rem;
+		background-color: lighten($brand-primary, 3%);
+    	border: none;
+    	font-size:1.2rem;
+	}
+	
+	button.menu-button {
+		background-color: lighten($brand-primary, 6%);
+
+		&:before {
+			content: $kf-menu;
+		}
+	}
+
+	nav {
+		font-size:0.9rem;
+		padding: 0.2rem;
+
+		a {
+			color: #fff;
+			margin-left: .5rem;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		a.navbar-brand, button {
+			display:none;
+		}
+
+		.tag-line {
+			display: inline-block;
+		}
+	}
+}

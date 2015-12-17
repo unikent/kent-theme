@@ -1,0 +1,149 @@
+.departmental-nav {
+
+	header {
+		font-family: $font-family-serif;
+		background-color: $brand-primary;
+		color: #fff;
+		padding: .5rem 1rem;
+		border-top: 1px solid lighten($brand-primary, 6%);
+		font-size:1.1rem;
+	  	text-transform: uppercase;
+	}
+	.navbar-toggler {
+		background-color: $gray-dark-trans;
+		color:#fff;
+		cursor:pointer;
+
+		&:after {
+			float: right;
+			content: $kf-chevron-down;
+			font-family: $font-family-kentfont;
+		}
+
+		&.in {
+			&:after {
+				content: $kf-chevron-up;
+			}
+		}
+	}
+	.navbar-menu {
+		max-height:0px;
+		overflow:hidden;
+		background-color: $gray-dark-trans;
+		color:#fff;
+		transition: max-height 300ms;
+		position: relative;
+
+		&.in {
+			height:auto;
+			max-height:1000px;
+		}
+
+		a {
+			color:#fff;
+			font-size: 1rem;
+			display:block;
+			padding:0.5rem;
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+        min-height: 7rem;
+		z-index: 1;
+   		position: relative;
+
+		header {
+			font-size:2.2rem;
+		}
+
+		header, nav {
+			margin:0 2rem;
+			padding-left: 1rem;
+		}
+
+		&.slim{
+			min-height: 4.8rem;
+
+			header {
+				font-size:1.2rem;
+				padding: .25rem 1.5rem;
+			}
+		}
+
+		.navbar-menu {
+
+			max-height: 2.5rem;
+			height:auto;
+			overflow: hidden;
+			padding-right: 1rem;
+			border: none;
+
+			&.overflown{
+				padding-right: 5rem;
+			}
+
+			&.in {
+				max-height: none;
+				&:after{
+					position: absolute;
+					width: 100%;
+					border-bottom: 1px solid #696969;
+					top: 2.5rem;
+					left: 0;
+					content: '';
+				}
+			}
+
+			a {
+				display:inline-block;
+			}
+		}
+
+		.navbar-toggler {
+			
+			position: absolute;
+			right: 3rem;
+			padding: 0.5rem;
+			padding-right: 1rem;
+			cursor: pointer;
+			z-index: 1;
+			font-size: 1em;
+			background-color: transparent;
+			line-height: inherit;
+
+			&:after {
+				float: none;
+				position: absolute;
+				top: 0.7rem;
+				right: 0;
+				font-size: 0.7rem;
+			}
+			/* Only show when overflown */
+			display:none;
+			&.overflown {
+				display:block;
+
+				&::before {
+					content: "More";
+				}
+
+				span {
+					display:none;
+				}
+			}
+		}
+	}
+}
+
+
+.show-departmental-menu {
+	@include media-breakpoint-up(md) {
+	.departmental-nav {
+			min-height: 10rem;
+
+			&.slim {
+				min-height: auto;
+			}
+		}
+	}
+}

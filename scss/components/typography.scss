@@ -1,0 +1,99 @@
+@mixin bullet-list{
+	list-style: none;
+	padding:0;
+	li{
+		padding-left: 0.8rem;
+		position: relative;
+		&:before{
+			font-family: $font-family-kentfont;
+			content:$kf-square;
+			color: $brand-primary;
+			font-size: 0.35rem;
+			left:0;
+			position: absolute;
+			padding-top: 0.45rem;
+		}
+		ul{
+			list-style: none;
+			padding-left: 2rem;
+			li{
+				&:before{
+					color: $gray-light;
+				}
+			}
+		}
+	}
+}
+
+@mixin link-list{
+
+	list-style: none;
+	padding: 0;
+	li{
+		padding: 0.5rem 0;
+		border-bottom: 1px solid $border-gray;
+		a{
+			display: inline-block;
+			vertical-align: middle;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			width: 100%;
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+		span{
+			display: block;
+			color: $brand-accent;
+			line-height: 0.9rem;
+			margin-bottom: 0.2rem;
+		}
+	}
+
+}
+
+
+h1,.h1 {
+  font-family: $font-family-serif;
+}
+
+h1,.h1,
+h2,.h2,
+h3,.h3,
+h4,.h4,
+h5,.h5,
+h6,.h6{
+  color: $kent-primary;
+}
+
+.lead{
+	font-family: $font-family-serif;
+	color: $brand-primary;
+	margin-bottom: 2.25rem;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+
+@include media-breakpoint-up(xl) {
+  html {
+    font-size: 18px;
+  }
+}
+
+.content-header{
+	h1{
+		margin-bottom: 2rem;
+	}
+}
+.content-container{
+	h2{
+		margin-top:2rem;
+	}
+
+	& > ul{
+		@include bullet-list();
+		padding-left: 2rem;
+	}
+}
+

@@ -1,0 +1,57 @@
+main > nav.breadcrumb {
+	margin: 0 2rem 2rem;
+	font-size: 0.9rem;
+
+	a, span {
+		padding-left:0.5rem;
+		margin-bottom: .5rem;
+	}
+	a:after{
+		padding-left:1rem;
+		padding-right: 0;
+	}
+
+	@include media-breakpoint-up(md) {
+		padding: 0.75rem 1rem 0.25rem;
+		border-bottom: solid 1px $border-gray;
+	}
+}
+
+
+nav.breadcrumb {
+	margin:        1.5rem 0 1rem;
+	height: 0;
+	overflow: hidden;
+	background:    #fff;
+	padding: 0;
+	line-height:   1rem;
+	font-size: 0.8rem;
+
+	a, span {
+
+		max-width: 18rem;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow:hidden;
+		display:inline-block;
+		line-height: 1rem;
+		vertical-align: middle;
+	}
+	a {
+		@extend .chevron-link;
+
+		&:after {
+			padding-left:0.75rem;
+			padding-right: 0.5rem;
+		}
+	}
+
+	a:last-child:after{
+		content: none;
+		display: none;
+	}
+
+	@include media-breakpoint-up(md) {
+		height:auto;
+	}
+}
