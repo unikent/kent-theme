@@ -6865,7 +6865,7 @@ nav.breadcrumb {
   .card .card-img-top:first-child, .card .card-media-wrap:first-child {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
-  .card .card-embed-wrap {
+  .card .card-embed-wrap iframe {
     pointer-events: none; }
   .card .card-media-wrap.card-media-wrap-video, .card .card-embed-wrap.card-media-wrap-video {
     cursor: pointer; }
