@@ -4,6 +4,10 @@
 	background: none;
 	margin-bottom:1rem;
 
+	/*
+		apply a background color to a card, also adds padding
+	 	to sides so images have to be pulled back out
+  	*/
 	&.card-backed{
 		padding-left: $grid-gutter-width/2;
 		padding-right: $grid-gutter-width/2;
@@ -44,35 +48,36 @@
 		@extend .text-xs-center;
 	}
 
+	@each $name, $color in $brand-colors-light {
 
+		&.card-backed-#{$name},
+		.card-panel.cards-backed &.card-backed-#{$name}{
+			background: $color;
+		}
 
-	&.card-backed-primary,
-	.card-panel.cards-backed &.card-backed-primary{
-		background: $brand-primary;
-		@extend .card-inverse;
+		.card-panel.card-panel-#{$name} &.card-backed.card-header-split .card-header,
+		.card-panel.card-panel-#{$name}.cards-header-split &.card-backed .card-header,
+		.card-panel.card-panel-#{$name}.cards-backed.cards-header-split & .card-header{
+			background: linear-gradient($color 50%, transparent 50%);
+		}
+
 	}
 
-	&.card-backed-secondary,
-	.card-panel.cards-backed &.card-backed-secondary{
-		background: $brand-secondary;
-	}
+	@each $name, $color in $brand-colors-dark {
 
-	&.card-backed-tertiary,
-	.card-panel.cards-backed &.card-backed-tertiary{
-		background: $brand-tertiary;
-	}
+		&.card-backed-#{$name},
+		.card-panel.cards-backed &.card-backed-#{$name}{
+			background: $color;
+			@extend .card-inverse;
+		}
 
-	&.card-backed-primary-tint,
-	.card-panel.cards-backed &.card-backed-primary-tint{
-		background: $brand-primary-tint;
-	}
+		.card-panel.card-panel-#{$name} &.card-backed.card-header-split .card-header,
+		.card-panel.card-panel-#{$name}.cards-header-split &.card-backed .card-header,
+		.card-panel.card-panel-#{$name}.cards-backed.cards-header-split & .card-header{
+				background: linear-gradient($color 50%, transparent 50%);
+		}
 
-	&.card-backed-accent,
-	.card-panel.cards-backed &.card-backed-accent{
-		background: $brand-accent;
-		@extend .card-inverse;
 	}
-
 
 	.card-body{
 		display: block;
@@ -98,10 +103,16 @@
 
 	.card-subtitle {
 		color: $brand-primary;
+
 	}
 
-	.card-text {
-
+	& >	.card-text,
+	& >	.card-subtitle,
+	& >	.card-meta,
+	& >	.card-badge{
+		&:last-child{
+			margin-bottom: $spacer;
+		}
 	}
 
 	.card-img,
@@ -136,6 +147,7 @@
 			}
 		}
 	}
+
 	&.card-inverse, .card-inverse{
 		.card-subtitle{
 			color: rgba(255,255,255,.65);
@@ -187,12 +199,6 @@
 		border-bottom: 1px solid #ccc;
 	    border-top: 1px solid #ccc;
 	}
-
-	// helper
-	&.short-text {
-		padding-bottom:2rem;
-	}
-
 
 	.card-header{
 		padding: inherit;

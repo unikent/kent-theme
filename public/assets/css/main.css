@@ -6750,7 +6750,11 @@ nav.breadcrumb {
   border: none;
   background: none;
   margin-bottom: 16px;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  /*
+		apply a background color to a card, also adds padding
+	 	to sides so images have to be pulled back out
+  	*/ }
   .card.card-backed, .card-panel.cards-backed .card {
     padding-left: 15px;
     padding-left: 0.9375rem;
@@ -6777,31 +6781,61 @@ nav.breadcrumb {
     .card.card-backed .card-media-wrap .card-img:first-child, .card-panel.cards-backed .card .card-media-wrap .card-img:first-child,
     .card.card-backed .card-media-wrap .card-img-top:first-child, .card-panel.cards-backed .card .card-media-wrap .card-img-top:first-child {
       margin: 0; }
-  .card.card-backed-primary, .card-panel.cards-backed-primary .card,
-  .card-panel.cards-backed .card.card-backed-primary,
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card, .card-panel.cards-backed-primary
+  .card.card-backed-primary-tint, .card-panel.cards-backed-primary-tint .card,
+  .card-panel.cards-backed .card.card-backed-primary-tint,
+  .card-panel.cards-backed .card-panel.cards-backed-primary-tint .card, .card-panel.cards-backed-primary-tint
   .card-panel.cards-backed .card {
-    background: #05345C; }
+    background: #e8ebf2; }
+  .card-panel.card-panel-primary-tint .card.card-backed.card-header-split .card-header, .card-panel.card-panel-primary-tint .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-primary-tint .card.card-header-split .card-header, .card-panel.card-panel-primary-tint .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-primary-tint .card .card-header, .card-panel.card-panel-primary-tint .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-primary-tint .card .card-header, .card-panel.card-panel-primary-tint .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-primary-tint .card.card-backed .card-header,
+  .card-panel.card-panel-primary-tint.cards-header-split .card.card-backed .card-header,
+  .card-panel.card-panel-primary-tint.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
+  .card-panel.card-panel-primary-tint.cards-header-split .card .card-header,
+  .card-panel.card-panel-primary-tint.cards-backed.cards-header-split .card .card-header {
+    background: linear-gradient(#e8ebf2 50%, transparent 50%); }
   .card.card-backed-secondary, .card-panel.cards-backed-secondary .card,
   .card-panel.cards-backed .card.card-backed-secondary,
   .card-panel.cards-backed .card-panel.cards-backed-secondary .card, .card-panel.cards-backed-secondary
   .card-panel.cards-backed .card {
     background: #f5f5f5; }
+  .card-panel.card-panel-secondary .card.card-backed.card-header-split .card-header, .card-panel.card-panel-secondary .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-secondary .card.card-header-split .card-header, .card-panel.card-panel-secondary .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-secondary .card .card-header, .card-panel.card-panel-secondary .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-secondary .card .card-header, .card-panel.card-panel-secondary .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-secondary .card.card-backed .card-header,
+  .card-panel.card-panel-secondary.cards-header-split .card.card-backed .card-header,
+  .card-panel.card-panel-secondary.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
+  .card-panel.card-panel-secondary.cards-header-split .card .card-header,
+  .card-panel.card-panel-secondary.cards-backed.cards-header-split .card .card-header {
+    background: linear-gradient(#f5f5f5 50%, transparent 50%); }
   .card.card-backed-tertiary, .card-panel.cards-backed-tertiary .card,
   .card-panel.cards-backed .card.card-backed-tertiary,
   .card-panel.cards-backed .card-panel.cards-backed-tertiary .card, .card-panel.cards-backed-tertiary
   .card-panel.cards-backed .card {
     background: #f7f2e1; }
-  .card.card-backed-primary-tint, .card-panel.cards-backed-accent .card,
-  .card-panel.cards-backed .card.card-backed-primary-tint,
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card, .card-panel.cards-backed-accent
+  .card-panel.card-panel-tertiary .card.card-backed.card-header-split .card-header, .card-panel.card-panel-tertiary .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-tertiary .card.card-header-split .card-header, .card-panel.card-panel-tertiary .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-tertiary .card .card-header, .card-panel.card-panel-tertiary .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-tertiary .card .card-header, .card-panel.card-panel-tertiary .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-tertiary .card.card-backed .card-header,
+  .card-panel.card-panel-tertiary.cards-header-split .card.card-backed .card-header,
+  .card-panel.card-panel-tertiary.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
+  .card-panel.card-panel-tertiary.cards-header-split .card .card-header,
+  .card-panel.card-panel-tertiary.cards-backed.cards-header-split .card .card-header {
+    background: linear-gradient(#f7f2e1 50%, transparent 50%); }
+  .card.card-backed-primary, .card-panel.cards-backed-primary .card,
+  .card-panel.cards-backed .card.card-backed-primary,
+  .card-panel.cards-backed .card-panel.cards-backed-primary .card, .card-panel.cards-backed-primary
   .card-panel.cards-backed .card {
-    background: #e8ebf2; }
+    background: #05345C; }
+  .card-panel.card-panel-primary .card.card-backed.card-header-split .card-header, .card-panel.card-panel-primary .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-primary .card.card-header-split .card-header, .card-panel.card-panel-primary .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-primary .card .card-header, .card-panel.card-panel-primary .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-primary .card .card-header, .card-panel.card-panel-primary .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-primary .card.card-backed .card-header,
+  .card-panel.card-panel-primary.cards-header-split .card.card-backed .card-header,
+  .card-panel.card-panel-primary.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
+  .card-panel.card-panel-primary.cards-header-split .card .card-header,
+  .card-panel.card-panel-primary.cards-backed.cards-header-split .card .card-header {
+    background: linear-gradient(#05345C 50%, transparent 50%); }
   .card.card-backed-accent, .card-panel.cards-backed-accent .card,
   .card-panel.cards-backed .card.card-backed-accent,
   .card-panel.cards-backed .card-panel.cards-backed-accent .card, .card-panel.cards-backed-accent
   .card-panel.cards-backed .card {
     background: #937227; }
+  .card-panel.card-panel-accent .card.card-backed.card-header-split .card-header, .card-panel.card-panel-accent .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-accent .card.card-header-split .card-header, .card-panel.card-panel-accent .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-accent .card .card-header, .card-panel.card-panel-accent .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-accent .card .card-header, .card-panel.card-panel-accent .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-accent .card.card-backed .card-header,
+  .card-panel.card-panel-accent.cards-header-split .card.card-backed .card-header,
+  .card-panel.card-panel-accent.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
+  .card-panel.card-panel-accent.cards-header-split .card .card-header,
+  .card-panel.card-panel-accent.cards-backed.cards-header-split .card .card-header {
+    background: linear-gradient(#937227 50%, transparent 50%); }
   .card .card-body {
     display: block;
     position: relative; }
@@ -6821,6 +6855,12 @@ nav.breadcrumb {
     margin-bottom: 0.3rem; }
   .card .card-subtitle {
     color: #05345C; }
+  .card > .card-text:last-child,
+  .card > .card-subtitle:last-child,
+  .card > .card-meta:last-child,
+  .card > .card-badge:last-child {
+    margin-bottom: 16px;
+    margin-bottom: 1rem; }
   .card .card-img:first-child,
   .card .card-img-top:first-child, .card .card-media-wrap:first-child {
     margin-bottom: 12px;
@@ -6923,9 +6963,6 @@ nav.breadcrumb {
   .card .card-bordered-item {
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc; }
-  .card.short-text {
-    padding-bottom: 32px;
-    padding-bottom: 2rem; }
   .card .card-header {
     padding: inherit;
     background-color: transparent;
@@ -6956,21 +6993,21 @@ nav.breadcrumb {
   @media (min-width: 544px) {
     .card-panel {
       padding: 1rem; } }
-  .card-panel.card-panel-inverse, .card-panel.card-panel-primary {
+  .card-panel.card-panel-inverse, .card-panel.card-panel-primary, .card-panel.card-panel-accent {
     color: rgba(255, 255, 255, 0.75); }
-    .card-panel.card-panel-inverse .card-panel-title, .card-panel.card-panel-primary .card-panel-title {
+    .card-panel.card-panel-inverse .card-panel-title, .card-panel.card-panel-primary .card-panel-title, .card-panel.card-panel-accent .card-panel-title {
       color: #FFF; }
-    .card-panel.card-panel-inverse .card-panel-header a, .card-panel.card-panel-primary .card-panel-header a, .card-panel.card-panel-inverse .card-panel-header a:hover, .card-panel.card-panel-primary .card-panel-header a:hover, .card-panel.card-panel-inverse .card-panel-header a:focus, .card-panel.card-panel-primary .card-panel-header a:focus {
+    .card-panel.card-panel-inverse .card-panel-header a, .card-panel.card-panel-primary .card-panel-header a, .card-panel.card-panel-accent .card-panel-header a, .card-panel.card-panel-inverse .card-panel-header a:hover, .card-panel.card-panel-primary .card-panel-header a:hover, .card-panel.card-panel-accent .card-panel-header a:hover, .card-panel.card-panel-inverse .card-panel-header a:focus, .card-panel.card-panel-primary .card-panel-header a:focus, .card-panel.card-panel-accent .card-panel-header a:focus {
       color: #FFFFFF; }
   @media (min-width: 544px) {
     .card-panel.cards-backed .card {
       border-width: 0 0.9375rem 0 0.9375rem;
       border-style: solid;
       border-color: #fff; } }
-  .card-panel.card-panel-primary {
-    background-color: #05345C; }
-    .card-panel.card-panel-primary.cards-backed .card {
-      border-color: #05345C; }
+  .card-panel.card-panel-primary-tint {
+    background-color: #e8ebf2; }
+    .card-panel.card-panel-primary-tint.cards-backed .card {
+      border-color: #e8ebf2; }
   .card-panel.card-panel-secondary {
     background-color: #f5f5f5; }
     .card-panel.card-panel-secondary.cards-backed .card {
@@ -6979,10 +7016,10 @@ nav.breadcrumb {
     background-color: #f7f2e1; }
     .card-panel.card-panel-tertiary.cards-backed .card {
       border-color: #f7f2e1; }
-  .card-panel.card-panel-primary-tint {
-    background-color: #e8ebf2; }
-    .card-panel.card-panel-primary-tint.cards-backed .card {
-      border-color: #e8ebf2; }
+  .card-panel.card-panel-primary {
+    background-color: #05345C; }
+    .card-panel.card-panel-primary.cards-backed .card {
+      border-color: #05345C; }
   .card-panel.card-panel-accent {
     background-color: #937227; }
     .card-panel.card-panel-accent.cards-backed .card {

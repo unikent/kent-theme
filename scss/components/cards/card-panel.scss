@@ -49,73 +49,40 @@
 		}
 	}
 
-	&.cards-backed-primary{
-		.card {
-			@extend .card-backed-primary;
+	@each $name, $color in $brand-colors-light {
+		&.cards-backed-#{$name} {
+			.card {
+				@extend .card-backed-#{$name};
+			}
+		}
+
+		&.card-panel-#{$name} {
+			background-color: $color;
+
+			&.cards-backed .card{
+				border-color: $color;
+			}
+		}
+
+	}
+	@each $name, $color in $brand-colors-dark {
+		&.cards-backed-#{$name} {
+			.card {
+				@extend .card-backed-#{$name};
+			}
+		}
+
+		&.card-panel-#{$name} {
+			background-color: $color;
+
+			@extend .card-panel-inverse;
+
+			&.cards-backed .card{
+				border-color: $color;
+			}
 		}
 	}
 
-	&.cards-backed-secondary{
-		.card {
-			@extend .card-backed-secondary;
-		}
-	}
-
-	&.cards-backed-tertiary{
-		.card {
-			@extend .card-backed-tertiary;
-		}
-	}
-
-	&.cards-backed-accent{
-		.card {
-			@extend .card-backed-primary-tint;
-		}
-	}
-
-	&.cards-backed-accent{
-		.card {
-			@extend .card-backed-accent;
-		}
-	}
-
-	&.card-panel-primary {
-		background-color: $brand-primary;
-
-		@extend .card-panel-inverse;
-
-		&.cards-backed .card{
-			border-color: $brand-primary;
-		}
-	}
-
-	&.card-panel-secondary {
-		background-color: $brand-secondary;
-		&.cards-backed .card{
-			border-color: $brand-secondary;
-		}
-	}
-
-	&.card-panel-tertiary {
-		background-color: $brand-tertiary;
-		&.cards-backed .card{
-			border-color: $brand-tertiary;
-		}
-	}
-
-	&.card-panel-primary-tint {
-		background-color: $brand-primary-tint;
-		&.cards-backed .card{
-			border-color: $brand-primary-tint;
-		}
-	}
-
-	&.card-panel-accent {
-		background-color: $brand-accent;
-		&.cards-backed .card{
-			border-color: $brand-accent;
-		}
-	}
 
 	.card-panel-body {
 		@extend .container;
