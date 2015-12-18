@@ -1,45 +1,83 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-	<head>
-		<title></title>
-		<link rel="stylesheet" href="../dist/css/main_postgraduate.css" />
-		<link rel="stylesheet" href="../dist/css/kentfont.css" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<?php
+include dirname(dirname(dirname(__FILE__)))."/lib/bootstrap.php";
+use \unikent\kent_theme\kentThemeHelper;
 
-		<script src="../dist/js/modernizr.min.js"></script>
-	</head>
-	<body>
-		<?php include "inc/header.php"; ?>
-		
-
-		<main>
-
-<style>
-nav.second {
-	width:200px;
-	margin:0 24px 48px 50px;
-	padding:0;
-}
-ul {
-	padding: 0;
-}
-nav li {
-	border-bottom: 1px solid #eee;
-	margin:0;
-	padding: 12px 0;
-	text-align: left;
-	list-style: none;
-	height: auto;
-}
-</style>
+KentThemeHelper::header(
+	array(
+		'title'=>"Content Page",
+		'menu' => array(
+			'Home' => '#',
+			'Apply' => '#'
+		),
+		'meta' => array(
+			'description'=>'Content page',
+			'title'=>"Content Page- Kent Theme Beta"
+		),'slim'=>true,
+		'main_class' =>'content-page',
+		'head_markup'=>"<style>
+			nav.second {
+				width:200px;
+				margin:0 0 48px 24px;padding:0;
+			}
+			ul {
+				padding: 0;
+			}
+			nav li {
+				border-bottom: 1px solid #eee;
+				margin:0;
+				padding: 12px 0;
+				text-align: left;
+				list-style: none;
+				height: auto;
+			}
+			</style>"
+	)
+);
+KentThemeHelper::breadcrumb(array(
+								'Theme Examples'=>'/',
+								'Content Page'=>''
+							));
+?>
 		<div class="container">
 			<div class="row">
 				
-				
+				<div class="col-sm-3"> 
+				<nav class="second" role="navigation">
+				  <ul>             
+					<li>      
+				      <a href="#performance">Outstanding performance</a>
+				    </li>
+				  
+				    <li>      
+				      <a href="#achievements">Reserach achievements</a>
+				    </li>
+
+				    <li>      
+				      <a href="#collaborations">Collaborations</a>
+				    </li>
+				  </ul>
+				</nav>
+				<nav class="second" role="navigation">
+				  <h5>Research at Kent</h5>
+				  <ul>
+				    <li>      
+				      <a href="#">Research website</a>
+				    </li>
+				  
+				    <li>      
+				      <a href="#">Latest research projects</a>
+				    </li>
+
+				    <li>      
+				      <a href="#">International research</a>
+				    </li>
+
+				  </ul>
+				</nav>
+				</div>
 
 				
-				<div class="col-sm-6" style="margin-left:300px;width:650px">
+				<div class="col-sm-6" style="width:650px">
 
 
 						<h1>World-leading research</h1>
@@ -83,43 +121,6 @@ nav li {
 			            <p>&nbsp;</p>
 			            <p>*of 122 universities not including specialist institutions; rankings are taken from the <em>Times Higher Education</em>, Jan 2015</p>
 			    </div>
-
-			    <div class="col-sm-3"> 
-				<nav class="second" role="navigation">
-				  <ul>             
-					<li>      
-				      <a href="#performance">Outstanding performance</a>
-				    </li>
-				  
-				    <li>      
-				      <a href="#achievements">Reserach achievements</a>
-				    </li>
-
-				    <li>      
-				      <a href="#collaborations">Collaborations</a>
-				    </li>
-				  </ul>
-				</nav>
-				<nav class="second" role="navigation">
-				  <h5>Research at Kent</h5>
-				  <ul>
-				    <li>      
-				      <a href="#">Research website</a>
-				    </li>
-				  
-				    <li>      
-				      <a href="#">Latest research projects</a>
-				    </li>
-
-				    <li>      
-				      <a href="#">International research</a>
-				    </li>
-
-				  </ul>
-				</nav>
-				</div>
-
-
 
 			</div>
 
@@ -192,10 +193,6 @@ nav li {
 				
 			</div><!-- /.row -->
 		</div><!-- /.container -->
-
-		</main>
-
-		<?php include "inc/footer.php"; ?>
 	
 		<div class="modal fade modal-fullscreen" id="myVideoModal" tabindex="-1" role="dialog" aria-labelledby="myVideoModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -220,8 +217,3 @@ nav li {
 				</div>
 			</div>
 		</div>
-
-		<script src="../dist/js/main.js"></script>
-
-	</body>
-</html>

@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="en-GB">
-	<head>
-		<title></title>
-		<link rel="stylesheet" href="../dist/css/main_postgraduate.css" />
-		<link rel="stylesheet" href="../dist/css/kentfont.css" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<?php
+include dirname(dirname(dirname(__FILE__)))."/lib/bootstrap.php";
+use \unikent\kent_theme\kentThemeHelper;
 
-		<script src="../dist/js/modernizr.min.js"></script>
-	</head>
-	<body>
-		<?php include "inc/header.php"; ?>
-		
-
-		<main>
-
-<style>
+KentThemeHelper::header(
+	array(
+		'title'=>"Content Page",
+		'menu' => array(
+			'Home' => '#',
+			'Apply' => '#'
+		),
+		'meta' => array(
+			'description'=>'Content page',
+			'title'=>"Content Page- Kent Theme Beta"
+		),'slim'=>true,
+		'main_class' =>'content-page',
+		'head_markup'=>"<style>
 nav.second {
 	width:200px;
-	margin:0 0 48px 24px;padding:0;
+	margin:0 24px 48px 50px;
+	padding:0;
 }
 ul {
 	padding: 0;
@@ -31,47 +31,21 @@ nav li {
 	list-style: none;
 	height: auto;
 }
-</style>
+</style>"
+	)
+);
+KentThemeHelper::breadcrumb(array(
+								'Theme Examples'=>'/',
+								'Content Page'=>''
+							));
+?>
 		<div class="container">
 			<div class="row">
 				
-				<div class="col-sm-3"> 
-				<nav class="second" role="navigation">
-				  <ul>             
-					<li>      
-				      <a href="#performance">Outstanding performance</a>
-				    </li>
-				  
-				    <li>      
-				      <a href="#achievements">Reserach achievements</a>
-				    </li>
-
-				    <li>      
-				      <a href="#collaborations">Collaborations</a>
-				    </li>
-				  </ul>
-				</nav>
-				<nav class="second" role="navigation">
-				  <h5>Research at Kent</h5>
-				  <ul>
-				    <li>      
-				      <a href="#">Research website</a>
-				    </li>
-				  
-				    <li>      
-				      <a href="#">Latest research projects</a>
-				    </li>
-
-				    <li>      
-				      <a href="#">International research</a>
-				    </li>
-
-				  </ul>
-				</nav>
-				</div>
+				
 
 				
-				<div class="col-sm-6" style="width:650px">
+				<div class="col-sm-6">
 
 
 						<h1>World-leading research</h1>
@@ -116,6 +90,43 @@ nav li {
 			            <p>*of 122 universities not including specialist institutions; rankings are taken from the <em>Times Higher Education</em>, Jan 2015</p>
 			    </div>
 
+			    <div class="col-sm-3"> 
+				<nav class="second" role="navigation">
+				  <ul>             
+					<li>      
+				      <a href="#performance">Outstanding performance</a>
+				    </li>
+				  
+				    <li>      
+				      <a href="#achievements">Reserach achievements</a>
+				    </li>
+
+				    <li>      
+				      <a href="#collaborations">Collaborations</a>
+				    </li>
+				  </ul>
+				</nav>
+				<nav class="second" role="navigation">
+				  <h5>Research at Kent</h5>
+				  <ul>
+				    <li>      
+				      <a href="#">Research website</a>
+				    </li>
+				  
+				    <li>      
+				      <a href="#">Latest research projects</a>
+				    </li>
+
+				    <li>      
+				      <a href="#">International research</a>
+				    </li>
+
+				  </ul>
+				</nav>
+				</div>
+
+
+
 			</div>
 
 
@@ -147,50 +158,46 @@ nav li {
 								</a>
 						</div>
 					</div>
+				</div>
+			</div>
 
 
 
 
 
-					<div class="card-panel">
-						<div class="card-panel-body">
-							<div class="card">
-								<a href="#">
-									<img class="card-img" src="images/promo-blog.jpg">
-									<h3 class="card-title">Student Blogs</h3>
-								</a>
-								<p class="card-text">Our students tell it like it is.</p>
-								<ul>
-									<li><a href="#">John Rabbit</a></li>
-									<li><a href="#">Felicity Hogg</a></li>
-								</ul>
-							</div>
-							<a class="card short-text" href=''>
-								<img class="card-img" src="images/promo-visit.jpg">
-								<h3 class="card-title">Visit Us</h3>
-								<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
-							</a>
-							<a class="card" href=''>
-								<img class="card-img" src="images/international.jpg">
-								<h3 class="card-title">International students</h3>
-								<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
-							</a>
-							<a class="card" href=''>
-								<img class="card-img" src="images/promo-4.jpg">
-								<h3 class="card-title">Kent Union</h3>
-								<p class="card-text">Get involved in the hundreds of societies on campus.</p>
-								
-							</a>
-						</div>
+			<div class="card-panel">
+				<div class="card-panel-body">
+					<div class="card">
+						<a href="#">
+							<img class="card-img" src="images/promo-blog.jpg">
+							<h3 class="card-title">Student Blogs</h3>
+						</a>
+						<p class="card-text">Our students tell it like it is.</p>
+						<ul>
+							<li><a href="#">John Rabbit</a></li>
+							<li><a href="#">Felicity Hogg</a></li>
+						</ul>
 					</div>
+					<a class="card short-text" href=''>
+						<img class="card-img" src="images/promo-visit.jpg">
+						<h3 class="card-title">Visit Us</h3>
+						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+					</a>
+					<a class="card" href=''>
+						<img class="card-img" src="images/international.jpg">
+						<h3 class="card-title">International students</h3>
+						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
+					</a>
+					<a class="card" href=''>
+						<img class="card-img" src="images/promo-4.jpg">
+						<h3 class="card-title">Kent Union</h3>
+						<p class="card-text">Get involved in the hundreds of societies on campus.</p>
 
-				
-			</div><!-- /.row -->
-		</div><!-- /.container -->
+					</a>
+				</div>
+			</div>
 
-		</main>
 
-		<?php include "inc/footer.php"; ?>
 	
 		<div class="modal fade modal-fullscreen" id="myVideoModal" tabindex="-1" role="dialog" aria-labelledby="myVideoModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
@@ -215,8 +222,3 @@ nav li {
 				</div>
 			</div>
 		</div>
-
-		<script src="../dist/js/main.js"></script>
-
-	</body>
-</html>
