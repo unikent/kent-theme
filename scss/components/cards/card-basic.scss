@@ -129,7 +129,9 @@
 	}
 
 	.card-embed-wrap{
-		pointer-events: none;
+		iframe{
+			pointer-events: none;
+		}
 	}
 
 	.card-media-wrap, .card-embed-wrap {
