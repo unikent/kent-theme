@@ -20,11 +20,13 @@
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
 
+
+<!-- hero with search and links -->
 			<div class="card card-overlay header-card-overlay">
 				<div class="card-body">
 					<div class="card-media-wrap">
 						<!-- <img src="images/engineering-student-16-9.jpg" class="card-img-bottom"> -->
-						<img src="images/dolphin.jpg" class="card-img-bottom">
+						<img src="images/dolphin.jpg" class="card-img-bottom" style="opacity:1.0">
 						<!-- <video autoplay="" loop="" class="embed-responsive-item" style="top:295px;">
 								<source src="video/pg1.mp4">
 							</video> -->
@@ -47,10 +49,10 @@
 
 
 				<div class="card-footer" style="position:relative;bottom:200px;border-top:none;">
-					<a href="#" class="chevron-link" style="color:#fff"><strong>Taught Programmes</strong></a>
-					<a href="#" class="chevron-link" style="color:#fff"><strong>Research Programmes</strong></a>
-					<a href="#" class="chevron-link" style="color:#fff"><strong>PHDs</strong></a>
-					<a href="#" class="chevron-link" style="color:#fff"><strong>Masters</strong></a>
+					<a href="#" class="chevron-link" style="color:#fff;font-size:1.2rem;"><strong>Taught Programmes</strong></a>
+					<a href="#" class="chevron-link" style="color:#fff;font-size:1.2rem;"><strong>Research Programmes</strong></a>
+					<a href="#" class="chevron-link" style="color:#fff;font-size:1.2rem;"><strong>PHDs</strong></a>
+					<a href="#" class="chevron-link" style="color:#fff;font-size:1.2rem;"><strong>Masters</strong></a>
 				</div>
 
 			</div>
@@ -63,186 +65,52 @@
 
 
 
+<!-- key info icons -->
 
-
-<!--
-<div class="card-panel" style="padding: 50px 0;margin: 50px 0 50px 0; background-color:#f5f5f5;">
-			
-
-				<div class="card-panel-body">
-
-					<a class="card" href="#">
-						<h3 class="card-title">Scholarships &amp; Funding</h3>
-						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
-					</a>
-
-					
-					<a class="card" href="#">
-						<h3 class="card-title">Accommodation</h3>
-						<p class="card-text">Find out about where to live as a postgraduate.</p>
-						</a>
-
-						<a class="card" href="#">
-						<h3 class="card-title">Postgraduate Support</h3>
-						<p class="card-text">Help with finding out about funding, postgraduate services, research.</p>
-					</a>
-
-
-						<a class="card" href="#">
-						<h3 class="card-title">Global Opportunities</h3>
-						<p class="card-text">Find out how our programmes can help you launch your career and employability.</p>
-					</a>
-				</div>
-
-</div>
--->
-
-
-<div class="card-panel" style="padding: 50px 0;margin: -100px 0 100px 0; background-color:#fff;">
+			<div class="card-panel" style="padding: 50px 0;margin: -100px 0 100px 0; background-color:#fff;">
 			
 
 				<div class="card-panel-body">
 
 					<a class="card" href="#" style="text-align:center">
 						<!-- <img class="card-img" src="images/promo-graduates.jpg"> -->
-						<h1><i class="fa fa-gbp" style="margin-bottom:20px;font-size:4rem;"></i></h1>
-						<h3 class="card-title">Scholarships &amp; funding</h3>
+						<!-- <h1><i class="fa fa-gbp" style="margin-bottom:20px;font-size:4rem;"></i></h1> -->
+						<h3 class="card-title" style="font-size:1.5rem;">Scholarships and funding</h3>
 						<p class="card-text">All you need to know about postgraduate fees, financial assistance, and scholarships.</p>
 					</a>
 
 					
 					<a class="card" href="#" style="text-align:center">
 						<!-- <img class="card-img" src="images/promo-4.jpg"> -->
-						<h1><i class="fa fa-home" style="margin-bottom:20px;font-size:4rem;"></i></h1>
-						<h3 class="card-title">Accommodation</h3>
-						<p class="card-text">Find out what you need to know about getting somewhere to live - whether it's for you, or your family too.</p>
+						<!-- <h1><i class="fa fa-home" style="margin-bottom:20px;font-size:4rem;"></i></h1> -->
+						<h3 class="card-title" style="font-size:1.5rem;">Postgraduate accommodation</h3>
+						<p class="card-text">Getting somewhere to live - whether it's for you, or your family too.</p>
 						</a>
 
 					<a class="card" href="#" style="text-align:center">
 						<!-- <img class="card-img" src="images/promo-3.jpg"> -->
-						<h1><i class="fa fa-info" style="margin-bottom:20px;font-size:4rem;"></i></h1>
-						<h3 class="card-title">Postgraduate support</h3>
-						<p class="card-text">Support schemes, skills awards, training... We offer many services to help make your time at Kent as productive as possible.</p>
+						<!-- <h1><i class="fa fa-info" style="margin-bottom:20px;font-size:4rem;"></i></h1> -->
+						<h3 class="card-title" style="font-size:1.5rem;">Postgraduate support</h3>
+						<p class="card-text">Support schemes, skills awards, training... We help make your time at Kent as productive as possible.</p>
 					</a>
 
 
 					<a class="card" href="#" style="text-align:center">
 						<!-- <img class="card-img" src="images/promo-world.jpg"> -->
-						<h1><i class="fa fa-globe" style="margin-bottom:20px;font-size:4rem;"></i></h1>
-						<h3 class="card-title">Global opportunities</h3>
+						<!-- <h1><i class="fa fa-globe" style="margin-bottom:20px;font-size:4rem;"></i></h1> -->
+						<h3 class="card-title" style="font-size:1.5rem;">Global opportunities</h3>
 						<p class="card-text">Paris, Brussels, Rome, Athens. Kent University offers unique opportunities for study and travel outside the UK.</p>
 					</a>
 				</div>
 
-</div>
-
-
-
-
-<!-- 
-<div class="card-panel" style="padding: 50px 0;margin: 50px 0 50px 0; background-color:#f5f5f5;">
-			
-
-				<div class="card-panel-body">
-
-					<div class="card" href="#">
-						<h3 class="card-title">Scholarships &amp; Funding</h3>
-						<p class="card-text">
-						<ul>
-							<li><a href="#">Postgraduate tuition fees</a></li>
-							<li><a href="#">Scholarships</a></li>
-							<li><a href="#">Financial assistance</a></li>
-							<li><a href="#">International awards</a></li>
-							<li><a href="#">External awards</a></li>
-						</ul>
-						</p>
-					</div>
-					
-					<div class="card" href="#">
-						<h3 class="card-title">Accommodation</h3>
-						<p class="card-text">
-						<ul>
-							<li><a href="#">Housing advice for postgraduates</a></li>
-							<li><a href="#">Accommodation for you and your family</a></li>
-							<li><a href="#">Canterbury accommodation</a></li>
-							<li><a href="#">Medway accommodation</a></li>
-							<li><a href="#">Accommodation at our other campuses</a></li>
-						</ul>
-						</p>
-					</div>
-
-
-					<div class="card" href="#">
-						<h3 class="card-title">Support</h3>
-						<p class="card-text">
-						<ul>
-							<li><a href="#">Postgraduate Support Scheme 2015</a></li>
-							<li><a href="#">Research support</a></li>
-							<li><a href="#">Global Skills Award Programme</a></li>
-							<li><a href="#">Training</a></li>
-						</ul>
-						</p>
-					</div>
-
-
-					<div class="card" href="#">
-						<h3 class="card-title">Global opportunities</h3>
-						<p class="card-text">
-						<ul>
-							<li><a href="#">Studying in Europe</a></li>
-						</ul>
-						</p>
-					</div>
-				</div>
-
-</div>
- -->
-
-
-
-<div class="card card-overlay">
-				<div class="card-body card-inverse">
-					<div class="card-title-wrap card-title-wrap-link pull-right">
-						<h4 class="card-title">A video loop</h4>
-						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					</div>
-					<div class="card-media-wrap" style="height:590px;">
-						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
-							<video autoplay="" loop="" class="embed-responsive-item" style="top:-95px;">
-								<source src="video/pg1.mp4">
-							</video>
-						</div>
-					</div>
-					<div class="card-img-overlay">
-						<h5 class="card-subtitle">Research Intensity</h5>
-						<p class="card-text">This content is shorter.</p>
-					</div>
-				</div>
 			</div>
 
 
-<div class="card card-overlay">
-				<div class="card-body card-inverse">
-					<div class="card-title-wrap card-title-wrap-link pull-right">
-						<h4 class="card-title">A video loop</h4>
-						<p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-					</div>
-					<div class="card-media-wrap" style="height:590px;">
-						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
-							<video autoplay="" loop="" class="embed-responsive-item" style="top:-95px;">
-								<source src="video/pg2.mp4">
-							</video>
-						</div>
-					</div>
-					<div class="card-img-overlay">
-						<h5 class="card-subtitle">Research Intensity</h5>
-						<p class="card-text">This content is shorter.</p>
-					</div>
-				</div>
-			</div>
 
 
-			<div class="card card-overlay">
+<!-- Think Kent video section -->
+
+			<div class="card card-overlay" style="margin-bottom:0;padding-bottom:0;">
 				<div class="card-x body card-inverse">
 					<div class="card-title-wrap card-title-wrap-link pull-right">
 						<h4 class="card-title">Think Kent</h4>
@@ -263,10 +131,8 @@
 				
 			</div>
 
-			
-
-			<!-- <div class="card-panel" style="background-color:#05345c;color:#fff;"> -->
-			<div class="card-panel">
+			<div class="card-panel" style="background-color:#f7f2e1;">
+			<!-- <div class="card-panel"> -->
 				<div class="card-panel-body" style="max-width:100%;">
 					<div class="card">
 						<iframe width="290" height="163" src="https://www.youtube.com/embed/xWTBCsLmsOg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
@@ -294,174 +160,78 @@
 
 
 
-<!-- <div class="card card-overlay">
-				<div class="card-x body card-inverse">
-					<div class="card-title-wrap card-title-wrap-link pull-right">
-						<h4 class="card-title">Think Kent</h4>
-						<p class="card-text">International thinkers. Global impact.</p>
-					</div>
-					<div class="card-media-wrap card-media-wrap-video" data-toggle="modal" data-target="#myVideoModal">
-						<iframe width="1400" height="700" src="https://www.youtube.com/embed/xWTBCsLmsOg?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+<!-- twitter message -->
 
-						<div class="card-img-overlay text-right">
-							<h5 class="card-subtitle">DR HEEJUNG CHUNG</h5>
-							<p class="card-text">Senior Lecturer in Sociology and Social Policy</p>
-							<p class="card-text">Flexible working: The way of the future?</p>
+<blockquote class="social-quote social-quote-twitter" style="margin-top: 100px;margin-bottom: 100px;">
+	<a href="https://twitter.com/UniKent/status/677103869265108992">
+		<button></button>
+		<p>Are you thinking about a #PhD? Check out the £9m scholarship fund @UniKent</p>
+	</a>
+	<cite>
+		<a href="https://twitter.com/UniKent">@UniKent</a>
+	</cite>
+</blockquote>
+
+
+
+
+
+
+
+<!-- postgrad life video loop -->
+			<div class="card card-overlay" style="margin-bottom:0;padding-bottom:0;">
+				<div class="card-body card-inverse">
+					<div class="card-title-wrap card-title-wrap-link pull-right">
+						<h4 class="card-title">Postgraduate life</h4>
+						<p class="card-text">What's life and study like as a postgraduate at Kent?</p>
+					</div>
+					<div class="card-media-wrap" style="height:590px;">
+						<div class="card-embed-wrap embed-responsive embed-responsive-16by9">
+							<video autoplay="" loop="" class="embed-responsive-item" style="top:-95px;">
+								<source src="video/pg4.mp4">
+							</video>
 						</div>
 					</div>
-
-
+					<!-- <div class="card-img-overlay">
+						<h5 class="card-subtitle">Research Intensity</h5>
+						<p class="card-text">This content is shorter.</p>
+					</div> -->
 				</div>
-				
-			</div> -->
 
 
-<aside class="container">
+				<!-- <div class="card-footer" style="position:relative;bottom:80px;border-top:none;">
+					<a href="#" class="chevron-link" style="color:#fff"><strong>International students</strong></a>
+					<a href="#" class="chevron-link" style="color:#fff"><strong>Postgraduate study at Kent</strong></a>
+					<a href="#" class="chevron-link" style="color:#fff"><strong>Visit us</strong></a>
+					<a href="#" class="chevron-link" style="color:#fff"><strong>Student Blogs</strong></a>
+				</div> -->
 
 
-				<div style="text-align:center;">
-			<a href="#"><h1><i class="kf-twitter"></i></h1></a>
 			</div>
-			</aside>
-
-			<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">Are you thinking about a <a href="https://twitter.com/hashtag/PhD?src=hash">#PhD</a>? Check out the £9m scholarship fund <a href="https://twitter.com/UniKent">@UniKent</a> <a href="https://t.co/mz01I3SL8z">https://t.co/mz01I3SL8z</a> <a href="https://t.co/iio6jE6Xv5">https://t.co/iio6jE6Xv5</a></p>&mdash; University of Kent (@UniKent) <a href="https://twitter.com/UniKent/status/677103869265108992">December 16, 2015</a></blockquote>
-
-
-
-
-
-			<!-- <aside class="container" style="margin-bottom:100px;">
-				<p class="impact-statement">Our programmes are informed by a commitment to research excellence. We are ranked 17th in the UK for Research Intensity.</p>
-
-				<div style="text-align:center;">
-			<a href="#"><h1><i class="kf-twitter"></i></h1></a>
-			</div>
-			</aside>
- -->
-
-
-
-			<!-- <div class="card-panel">
-
-				<div class="card-panel-body">
-					<a class="card" href="#">
-						<img class="card-img" src="images/promo-world.jpg">
-						<h3 class="card-title">Global Opportunities</h3>
-						<p class="card-text">Find out how our programmes can help you launch your career and employability.</p>
-					</a>
-					<a class="card" href="#">
-						<img class="card-img" src="images/promo-graduates.jpg">
-						<h3 class="card-title">Scholarships &amp; Funding</h3>
-						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
-					</a>
-					<a class="card" href="#">
-						<img class="card-img" src="images/promo-3.jpg">
-						<h3 class="card-title">How to apply</h3>
-						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
-					</a>
-					<a class="card" href="#">
-						<img class="card-img" src="images/promo-4.jpg">
-						<h3 class="card-title">Innovation and enterprise</h3>
-						<p class="card-text">Find more about the exciting project we're working on with with partners and businesses.</p>
-						</a>
-				</div>
-			</div>
- -->
-	
-
-<!-- 
-			<div class="card-panel" style="padding: 50px 0;margin: 0 0 150px 0; background-color:#f5f5f5;">
-				
-				<div class="card-panel-body">
-					<a class="card" href="#">
-						
-						<h3 class="card-title">Global Opportunities</h3>
-						<p class="card-text">Find out how our programmes can help you launch your career and employability.</p>
-					</a>
-					<a class="card" href="#">
-						<h3 class="card-title">Scholarships &amp; Funding</h3>
-						<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
-					</a>
-					<a class="card" href="#">
-
-						<h3 class="card-title">How to apply</h3>
-						<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
-					</a>
-					<a class="card" href="#">
-						<h3 class="card-title">Innovation and enterprise</h3>
-						<p class="card-text">Find more about the exciting project we're working on with with partners and businesses.</p>
-						</a>
-				</div>
-			</div>
- -->
-
-
-
-
-<div class="card card-overlay">
-				<div class="card-body card-inverse">
-					<div class="card-title-wrap card-title-wrap-link">
-						<h4 class="card-title">Superb locations</h4>
-						<p class="card-text">We have 6 exceptional Postgraduate locations with UK Campuses close to London and centres in Paris, Brussels Rome and Athens.</p>
-					</div>
-					<div class="card-media-wrap">
-						<img src="images/canterbury2.jpg" class="card-img-bottom" alt="Sport" />
-
-						<a class="card-img-overlay text-xs-right" href="#">
-							<h5 class="card-subtitle">Canterbury</h5>
-							<p class="card-text">Historical, friendly &amp; cosmopolitan.</p>
-						</a>
-					</div>
-				</div>
-				
-			</div>
-
-<!-- 
-					<blockquote>
-				<img class="img-circle" src="images/profile-academic.jpg">
-				<p>It's the academic community that creates a supportive environment to help you excel</p>
-				<footer>
-					<cite>
-						Dr David Hume,
-						<span>PhD. Particle physics</span>
-						<span><a href="#" class="chevron-link">Learn more about our community</a></span>
-					</cite>
-				</footer>
-			</blockquote> -->
-
-
-
-
-
-
-
-
-			<div class="card-panel">
-				<div class="card-panel-body">
+<!-- postgrad life related content -->
+			<div class="card-panel" style="background-color:#fff;position:relative;top:-70px;">
+				<div class="card-panel-body" style="max-width:100%;">
 					<div class="card">
 						<a href="#">
-							<img class="card-img" src="images/promo-blog.jpg">
-							<h3 class="card-title">Student Blogs</h3>
+							<img class="card-img" src="images/pg-life1.jpg">
+							<h3 class="card-title">Postgraduate student blogs&nbsp;&nbsp;<!-- <i class="fa fa-chevron-right"></i> --></h3>
 						</a>
 						<p class="card-text">Our students tell it like it is.</p>
-						<ul>
-							<li><a href="#">John Rabbit</a></li>
-							<li><a href="#">Felicity Hogg</a></li>
-						</ul>
 					</div>
 					<a class="card short-text" href=''>
-						<img class="card-img" src="images/promo-visit.jpg">
-						<h3 class="card-title">Visit Us</h3>
-						<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+						<img class="card-img" src="images/pg-life4.jpg">
+						<h3 class="card-title">Visit us&nbsp;&nbsp;<!-- <i class="fa fa-chevron-right"></i> --></h3>
+						<p class="card-text">Find out how you can book a visit to one of our campuses.</p>
 					</a>
 					<a class="card" href=''>
-						<img class="card-img" src="images/international.jpg">
-						<h3 class="card-title">International students</h3>
+						<img class="card-img" src="images/pg-life2.jpg">
+						<h3 class="card-title">International students&nbsp;&nbsp;<!-- <i class="fa fa-chevron-right"></i> --></h3>
 						<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
 					</a>
 					<a class="card" href=''>
-						<iframe width="291" height="194" src="https://www.youtube.com/embed/otW4h8pGGXY?showinfo=0" frameborder="0" allowfullscreen></iframe>
-						<h3 class="card-title">Postgraduate study at Kent</h3>
+						
+						<img class="card-img" src="images/pg-life3.jpg">
+						<h3 class="card-title">Postgraduate study at Kent&nbsp;&nbsp;<!-- <i class="fa fa-chevron-right"></i> --></h3>
 						<p class="card-text">What's it like to study here as a postgraduate student?</p>
 
 					</a>
@@ -469,10 +239,113 @@
 			</div>
 
 
+<!-- scholarships icon panel -->
+			
+			<div class="card-panel" style="padding: 0px 0;margin: 100px 0 100px 0; background-color:#f7f2e1;">
+			
+
+				<div class="">
+
+				
+
+<img src="images/canterbury2.jpg" class="card-img-bottom" alt="Sport" style="width:800px;overflow:hidden;float:left;margin: 0" />
+
+					<div style="float:right;margin-right:0px;width:500px;padding:50px 50px 50px 0;">	
+						<h1 style="color:#671115">Superb locations</h1>
+						<p>Kent offers inspirational study locations, and in addition students can choose to study abroad as part of their degree.</p>
+
+<p>No matter on which campus you are based, you can access all our resources on all of our campuses and centres. The University runs an intercampus bus service, making it easy for you to enjoy the facilities at both Canterbury and Medway</p>
+
+<a href="#">Read more about our campuses <i class="fa fa-chevron-right"></i></a>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+						<div class="card-panel" style="padding: 0px 0;margin: 100px 0 100px 0; background-color:#f7f2e1;">
+			
+
+				<div class="">
+
+				
+
+<img src="images/canterbury2.jpg" class="card-img-bottom" alt="Sport" style="width:100%;" />
+
+					<div style="width:500px;padding:50px 50px 50px 50px;position:absolute;top:4900px;right:100px;z-index:99999;background-color:#f7f2e1;opacity:0.9">	
+						<h1 style="color:#671115">Superb locations</h1>
+						<p>Kent offers inspirational study locations, and in addition students can choose to study abroad as part of their degree.</p>
+
+<p>No matter on which campus you are based, you can access all our resources on all of our campuses and centres. The University runs an intercampus bus service, making it easy for you to enjoy the facilities at both Canterbury and Medway</p>
+
+<a href="#">Read more about our campuses <i class="fa fa-chevron-right"></i></a>
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+
+<!-- 			<div class="card-panel" style="padding: 100px 0 0 0;margin: 100px 0 100px 0; background-color:#f7f2e1; height:400px;">
+			
+
+				<div class="">
+
+					<div style="float:left;margin-left:200px;width:500px;">	
+						<h3 class="">Medway</h3>
+						<p class="" style="padding:0 100px 0 0">All you need to know about postgraduate accommodation.</p>
+					</div>
+
+					<h1><i class="fa fa-home" style="float:right;margin: 0 200px 20px 200px;font-size:9rem;"></i></h1>
+
+				</div>
+
+			</div> -->
+
+
+
+
+
+
+<!-- locations -->
+
+<!-- 			<div class="card card-overlay" style="margin-top:150px;">
+				<div class="card-body card-inverse">
+					<div class="card-title-wrap card-title-wrap-link">
+						<h4 class="card-title">Global opportunities</h4>
+						<p class="card-text">We have 6 exceptional Postgraduate locations with UK Campuses close to London and centres in Paris, Brussels Rome and Athens.</p>
+					</div>
+					<div class="card-media-wrap">
+						<img src="images/canterbury2.jpg" class="card-img-bottom" alt="Sport" />
+
+						<video autoplay="" loop="" class="embed-responsive-item" style="position:relative;top:-350px;">
+								<source src="video/pg4.mp4">
+							</video>
+
+						
+					</div>
+				</div>
+				
+			</div>
+
+
+
+
+
+ -->
+
+
 
 
 
 		</main>
+
+
+
 
 		<div class="modal fade modal-fullscreen" id="myVideoModal" tabindex="-1" role="dialog" aria-labelledby="myVideoModalLabel" aria-hidden="true">
 			<div class="modal-dialog" role="document">
