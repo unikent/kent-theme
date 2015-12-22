@@ -110,4 +110,10 @@ Class KentThemeHelper {
 		echo static::$theme_web_root = str_replace( $base_folder ,'', $public_folder_path ).'/';
 	}
 
+	public static function getOriginalSiteLink()
+	{
+		$url = preg_replace("/^(beta)(.+)/i", "www$2", $_SERVER['HTTP_HOST']) . $_SERVER['REQUEST_URI'];
+		return '//'.$url;
+	}
+
 }

@@ -4693,7 +4693,7 @@ button.close {
 .text-xs-right {
   text-align: right !important; }
 
-.text-xs-center {
+.text-xs-center, .card.card-centered, .card-panel.cards-centered .card {
   text-align: center !important; }
 
 @media (min-width: 544px) {
@@ -6750,13 +6750,19 @@ nav.breadcrumb {
   border: none;
   background: none;
   margin-bottom: 16px;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  /*
+		apply a background color to a card, also adds padding
+	 	to sides so images have to be pulled back out
+  	*/ }
   .card.card-backed, .card-panel.cards-backed .card {
     padding-left: 15px;
     padding-left: 0.9375rem;
     padding-right: 15px;
     padding-right: 0.9375rem;
     background: #FFF; }
+    .card.card-backed .card-header, .card-panel.cards-backed .card .card-header {
+      border: none; }
     .card.card-backed .card-media-wrap:first-child, .card-panel.cards-backed .card .card-media-wrap:first-child,
     .card.card-backed .card-img:first-child, .card-panel.cards-backed .card .card-img:first-child,
     .card.card-backed .card-img-top:first-child, .card-panel.cards-backed .card .card-img-top:first-child {
@@ -6765,34 +6771,71 @@ nav.breadcrumb {
       margin-right: -15px;
       margin-right: -0.9375rem;
       max-width: calc(100% + 1.875rem); }
+      .card.card-backed .card-media-wrap:first-child:before, .card-panel.cards-backed .card .card-media-wrap:first-child:before,
+      .card.card-backed .card-img:first-child:before, .card-panel.cards-backed .card .card-img:first-child:before,
+      .card.card-backed .card-img-top:first-child:before, .card-panel.cards-backed .card .card-img-top:first-child:before {
+        display: block;
+        height: 50%;
+        width: 100%;
+        background: red; }
     .card.card-backed .card-media-wrap .card-img:first-child, .card-panel.cards-backed .card .card-media-wrap .card-img:first-child,
     .card.card-backed .card-media-wrap .card-img-top:first-child, .card-panel.cards-backed .card .card-media-wrap .card-img-top:first-child {
       margin: 0; }
-  .card.card-backed-primary, .card-panel.cards-backed-primary .card,
-  .card-panel.cards-backed .card.card-backed-primary,
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card, .card-panel.cards-backed-primary
+  .card.card-backed-primary-tint, .card-panel.cards-backed-primary-tint .card,
+  .card-panel.cards-backed .card.card-backed-primary-tint,
+  .card-panel.cards-backed .card-panel.cards-backed-primary-tint .card, .card-panel.cards-backed-primary-tint
   .card-panel.cards-backed .card {
-    background: #671115; }
+    background: #E0D4D4; }
+  .card-panel.card-panel-primary-tint .card.card-backed.card-header-split .card-header, .card-panel.card-panel-primary-tint .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-primary-tint .card.card-header-split .card-header, .card-panel.card-panel-primary-tint .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-primary-tint .card .card-header, .card-panel.card-panel-primary-tint .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-primary-tint .card .card-header, .card-panel.card-panel-primary-tint .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-primary-tint .card.card-backed .card-header,
+  .card-panel.card-panel-primary-tint.cards-header-split .card.card-backed .card-header,
+  .card-panel.card-panel-primary-tint.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
+  .card-panel.card-panel-primary-tint.cards-header-split .card .card-header,
+  .card-panel.card-panel-primary-tint.cards-backed.cards-header-split .card .card-header {
+    background: linear-gradient(#E0D4D4 50%, transparent 50%); }
   .card.card-backed-secondary, .card-panel.cards-backed-secondary .card,
   .card-panel.cards-backed .card.card-backed-secondary,
   .card-panel.cards-backed .card-panel.cards-backed-secondary .card, .card-panel.cards-backed-secondary
   .card-panel.cards-backed .card {
     background: #f5f5f5; }
+  .card-panel.card-panel-secondary .card.card-backed.card-header-split .card-header, .card-panel.card-panel-secondary .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-secondary .card.card-header-split .card-header, .card-panel.card-panel-secondary .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-secondary .card .card-header, .card-panel.card-panel-secondary .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-secondary .card .card-header, .card-panel.card-panel-secondary .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-secondary .card.card-backed .card-header,
+  .card-panel.card-panel-secondary.cards-header-split .card.card-backed .card-header,
+  .card-panel.card-panel-secondary.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
+  .card-panel.card-panel-secondary.cards-header-split .card .card-header,
+  .card-panel.card-panel-secondary.cards-backed.cards-header-split .card .card-header {
+    background: linear-gradient(#f5f5f5 50%, transparent 50%); }
   .card.card-backed-tertiary, .card-panel.cards-backed-tertiary .card,
   .card-panel.cards-backed .card.card-backed-tertiary,
   .card-panel.cards-backed .card-panel.cards-backed-tertiary .card, .card-panel.cards-backed-tertiary
   .card-panel.cards-backed .card {
     background: #f7f2e1; }
-  .card.card-backed-primary-tint, .card-panel.cards-backed-accent .card,
-  .card-panel.cards-backed .card.card-backed-primary-tint,
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card, .card-panel.cards-backed-accent
+  .card-panel.card-panel-tertiary .card.card-backed.card-header-split .card-header, .card-panel.card-panel-tertiary .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-tertiary .card.card-header-split .card-header, .card-panel.card-panel-tertiary .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-tertiary .card .card-header, .card-panel.card-panel-tertiary .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-tertiary .card .card-header, .card-panel.card-panel-tertiary .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-tertiary .card.card-backed .card-header,
+  .card-panel.card-panel-tertiary.cards-header-split .card.card-backed .card-header,
+  .card-panel.card-panel-tertiary.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
+  .card-panel.card-panel-tertiary.cards-header-split .card .card-header,
+  .card-panel.card-panel-tertiary.cards-backed.cards-header-split .card .card-header {
+    background: linear-gradient(#f7f2e1 50%, transparent 50%); }
+  .card.card-backed-primary, .card-panel.cards-backed-primary .card,
+  .card-panel.cards-backed .card.card-backed-primary,
+  .card-panel.cards-backed .card-panel.cards-backed-primary .card, .card-panel.cards-backed-primary
   .card-panel.cards-backed .card {
-    background: #E0D4D4; }
+    background: #671115; }
+  .card-panel.card-panel-primary .card.card-backed.card-header-split .card-header, .card-panel.card-panel-primary .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-primary .card.card-header-split .card-header, .card-panel.card-panel-primary .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-primary .card .card-header, .card-panel.card-panel-primary .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-primary .card .card-header, .card-panel.card-panel-primary .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-primary .card.card-backed .card-header,
+  .card-panel.card-panel-primary.cards-header-split .card.card-backed .card-header,
+  .card-panel.card-panel-primary.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
+  .card-panel.card-panel-primary.cards-header-split .card .card-header,
+  .card-panel.card-panel-primary.cards-backed.cards-header-split .card .card-header {
+    background: linear-gradient(#671115 50%, transparent 50%); }
   .card.card-backed-accent, .card-panel.cards-backed-accent .card,
   .card-panel.cards-backed .card.card-backed-accent,
   .card-panel.cards-backed .card-panel.cards-backed-accent .card, .card-panel.cards-backed-accent
   .card-panel.cards-backed .card {
     background: #937227; }
+  .card-panel.card-panel-accent .card.card-backed.card-header-split .card-header, .card-panel.card-panel-accent .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-accent .card.card-header-split .card-header, .card-panel.card-panel-accent .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-accent .card .card-header, .card-panel.card-panel-accent .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-accent .card .card-header, .card-panel.card-panel-accent .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-accent .card.card-backed .card-header,
+  .card-panel.card-panel-accent.cards-header-split .card.card-backed .card-header,
+  .card-panel.card-panel-accent.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
+  .card-panel.card-panel-accent.cards-header-split .card .card-header,
+  .card-panel.card-panel-accent.cards-backed.cards-header-split .card .card-header {
+    background: linear-gradient(#937227 50%, transparent 50%); }
   .card .card-body {
     display: block;
     position: relative; }
@@ -6803,17 +6846,27 @@ nav.breadcrumb {
     color: #05345C;
     font-size: 17.6px;
     font-size: 1.1rem; }
-  .card .card-subtitle {
+  .card .card-meta {
     color: #818a91;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 13.6px;
     font-size: 0.85rem;
     margin-bottom: 4.8px;
     margin-bottom: 0.3rem; }
+  .card .card-subtitle {
+    color: #671115; }
+  .card > .card-text:last-child,
+  .card > .card-subtitle:last-child,
+  .card > .card-meta:last-child,
+  .card > .card-badge:last-child {
+    margin-bottom: 16px;
+    margin-bottom: 1rem; }
   .card .card-img:first-child,
   .card .card-img-top:first-child, .card .card-media-wrap:first-child {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
+  .card .card-embed-wrap iframe {
+    pointer-events: none; }
   .card .card-media-wrap.card-media-wrap-video, .card .card-embed-wrap.card-media-wrap-video {
     cursor: pointer; }
     .card .card-media-wrap.card-media-wrap-video:after, .card .card-embed-wrap.card-media-wrap-video:after {
@@ -6912,9 +6965,22 @@ nav.breadcrumb {
   .card .card-bordered-item {
     border-bottom: 1px solid #ccc;
     border-top: 1px solid #ccc; }
-  .card.short-text {
-    padding-bottom: 32px;
-    padding-bottom: 2rem; }
+  .card .card-header {
+    padding: inherit;
+    background-color: transparent;
+    border: none; }
+  .card.card-header-split .card-header, .card-panel.cards-header-split .card .card-header {
+    background: linear-gradient(#ffffff 50%, transparent 50%);
+    margin-left: -15px;
+    margin-left: -0.9375rem;
+    margin-right: -15px;
+    margin-right: -0.9375rem; }
+    .card.card-header-split .card-header .card-img:first-child, .card-panel.cards-header-split .card .card-header .card-img:first-child,
+    .card.card-header-split .card-header .card-img-top:first-child, .card-panel.cards-header-split .card .card-header .card-img-top:first-child,
+    .card.card-header-split .card-header .card-media-wrap:first-child, .card-panel.cards-header-split .card .card-header .card-media-wrap:first-child {
+      width: 70%;
+      margin-left: 15%;
+      margin-right: 15%; }
   a.card:hover, a.card:focus, a:hover, a:focus {
     text-decoration: none; }
     a.card:hover img, a.card:focus img, a:hover img, a:focus img {
@@ -6929,21 +6995,21 @@ nav.breadcrumb {
   @media (min-width: 544px) {
     .card-panel {
       padding: 1rem; } }
-  .card-panel.card-panel-inverse, .card-panel.card-panel-primary {
+  .card-panel.card-panel-inverse, .card-panel.card-panel-primary, .card-panel.card-panel-accent {
     color: rgba(255, 255, 255, 0.75); }
-    .card-panel.card-panel-inverse .card-panel-title, .card-panel.card-panel-primary .card-panel-title {
+    .card-panel.card-panel-inverse .card-panel-title, .card-panel.card-panel-primary .card-panel-title, .card-panel.card-panel-accent .card-panel-title {
       color: #FFF; }
-    .card-panel.card-panel-inverse .card-panel-header a, .card-panel.card-panel-primary .card-panel-header a, .card-panel.card-panel-inverse .card-panel-header a:hover, .card-panel.card-panel-primary .card-panel-header a:hover, .card-panel.card-panel-inverse .card-panel-header a:focus, .card-panel.card-panel-primary .card-panel-header a:focus {
+    .card-panel.card-panel-inverse .card-panel-header a, .card-panel.card-panel-primary .card-panel-header a, .card-panel.card-panel-accent .card-panel-header a, .card-panel.card-panel-inverse .card-panel-header a:hover, .card-panel.card-panel-primary .card-panel-header a:hover, .card-panel.card-panel-accent .card-panel-header a:hover, .card-panel.card-panel-inverse .card-panel-header a:focus, .card-panel.card-panel-primary .card-panel-header a:focus, .card-panel.card-panel-accent .card-panel-header a:focus {
       color: #FFFFFF; }
   @media (min-width: 544px) {
     .card-panel.cards-backed .card {
       border-width: 0 0.9375rem 0 0.9375rem;
       border-style: solid;
-      border-color: transparent; } }
-  .card-panel.card-panel-primary {
-    background-color: #671115; }
-    .card-panel.card-panel-primary.cards-backed .card {
-      border-color: #671115; }
+      border-color: #fff; } }
+  .card-panel.card-panel-primary-tint {
+    background-color: #E0D4D4; }
+    .card-panel.card-panel-primary-tint.cards-backed .card {
+      border-color: #E0D4D4; }
   .card-panel.card-panel-secondary {
     background-color: #f5f5f5; }
     .card-panel.card-panel-secondary.cards-backed .card {
@@ -6952,10 +7018,10 @@ nav.breadcrumb {
     background-color: #f7f2e1; }
     .card-panel.card-panel-tertiary.cards-backed .card {
       border-color: #f7f2e1; }
-  .card-panel.card-panel-primary-tint {
-    background-color: #E0D4D4; }
-    .card-panel.card-panel-primary-tint.cards-backed .card {
-      border-color: #E0D4D4; }
+  .card-panel.card-panel-primary {
+    background-color: #671115; }
+    .card-panel.card-panel-primary.cards-backed .card {
+      border-color: #671115; }
   .card-panel.card-panel-accent {
     background-color: #937227; }
     .card-panel.card-panel-accent.cards-backed .card {

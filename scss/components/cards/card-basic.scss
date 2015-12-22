@@ -4,10 +4,18 @@
 	background: none;
 	margin-bottom:1rem;
 
+	/*
+		apply a background color to a card, also adds padding
+	 	to sides so images have to be pulled back out
+  	*/
 	&.card-backed{
 		padding-left: $grid-gutter-width/2;
 		padding-right: $grid-gutter-width/2;
 		background: #FFF;
+
+		.card-header {
+			border:none;
+		}
 
 		.card-media-wrap,
 		.card-img,
@@ -16,6 +24,14 @@
 				margin-left:  -$grid-gutter-width/2;
 				margin-right: -$grid-gutter-width/2;
 				max-width:    calc(100% + #{$grid-gutter-width});
+
+				&:before {
+					display:block;
+					height:50%;
+					width:100%;
+					background:red;
+				}
+
 			}
 		}
 		.card-media-wrap{
@@ -26,36 +42,42 @@
 				}
 			}
 		}
+	}
+
+	&.card-centered {
+		@extend .text-xs-center;
+	}
+
+	@each $name, $color in $brand-colors-light {
+
+		&.card-backed-#{$name},
+		.card-panel.cards-backed &.card-backed-#{$name}{
+			background: $color;
+		}
+
+		.card-panel.card-panel-#{$name} &.card-backed.card-header-split .card-header,
+		.card-panel.card-panel-#{$name}.cards-header-split &.card-backed .card-header,
+		.card-panel.card-panel-#{$name}.cards-backed.cards-header-split & .card-header{
+			background: linear-gradient($color 50%, transparent 50%);
+		}
 
 	}
 
-	&.card-backed-primary,
-	.card-panel.cards-backed &.card-backed-primary{
-		background: $brand-primary;
-		@extend .card-inverse;
-	}
+	@each $name, $color in $brand-colors-dark {
 
-	&.card-backed-secondary,
-	.card-panel.cards-backed &.card-backed-secondary{
-		background: $brand-secondary;
-	}
+		&.card-backed-#{$name},
+		.card-panel.cards-backed &.card-backed-#{$name}{
+			background: $color;
+			@extend .card-inverse;
+		}
 
-	&.card-backed-tertiary,
-	.card-panel.cards-backed &.card-backed-tertiary{
-		background: $brand-tertiary;
-	}
+		.card-panel.card-panel-#{$name} &.card-backed.card-header-split .card-header,
+		.card-panel.card-panel-#{$name}.cards-header-split &.card-backed .card-header,
+		.card-panel.card-panel-#{$name}.cards-backed.cards-header-split & .card-header{
+				background: linear-gradient($color 50%, transparent 50%);
+		}
 
-	&.card-backed-primary-tint,
-	.card-panel.cards-backed &.card-backed-primary-tint{
-		background: $brand-primary-tint;
 	}
-
-	&.card-backed-accent,
-	.card-panel.cards-backed &.card-backed-accent{
-		background: $brand-accent;
-		@extend .card-inverse;
-	}
-
 
 	.card-body{
 		display: block;
@@ -72,15 +94,25 @@
 		font-size: 1.1rem;
 	}
 
-	.card-subtitle{
+	.card-meta{
 		color: $text-muted;
 		font-family: $font-family-sans-serif;
 		font-size: 0.85rem;
 		margin-bottom: 0.3rem;
 	}
 
-	.card-text {
+	.card-subtitle {
+		color: $brand-primary;
 
+	}
+
+	& >	.card-text,
+	& >	.card-subtitle,
+	& >	.card-meta,
+	& >	.card-badge{
+		&:last-child{
+			margin-bottom: $spacer;
+		}
 	}
 
 	.card-img,
@@ -93,6 +125,12 @@
 	.card-img-top, .card-media-wrap{
 		&:first-child{
 			margin-bottom: 0.75rem;
+		}
+	}
+
+	.card-embed-wrap{
+		iframe{
+			pointer-events: none;
 		}
 	}
 
@@ -115,6 +153,7 @@
 			}
 		}
 	}
+
 	&.card-inverse, .card-inverse{
 		.card-subtitle{
 			color: rgba(255,255,255,.65);
@@ -167,9 +206,28 @@
 	    border-top: 1px solid #ccc;
 	}
 
-	// helper
-	&.short-text {
-		padding-bottom:2rem;
+	.card-header{
+		padding: inherit;
+		background-color: transparent;
+		border: none;
+	}
+
+	&.card-header-split {
+		.card-header {
+			background: linear-gradient(#ffffff 50%, transparent 50%);
+			margin-left:  -$grid-gutter-width/2;
+			margin-right: -$grid-gutter-width/2;
+
+			.card-img,
+			.card-img-top, 
+			.card-media-wrap{
+				&:first-child{
+					width:70%;
+					margin-left:15%;
+					margin-right:15%;
+				}
+			}
+		}
 	}
 
 	// if card is an A

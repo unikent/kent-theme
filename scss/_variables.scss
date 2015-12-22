@@ -63,7 +63,16 @@ $body-color: #171717;
 
 $link-color: #005689;
 
+$brand-colors-light: (
+	primary-tint: $brand-primary-tint,
+	secondary: $brand-secondary,
+	tertiary: $brand-tertiary
+);
 
+$brand-colors-dark: (
+	primary: $brand-primary,
+	accent: $brand-accent
+);
 
 /// Social
 $facebook:              #3b5998;

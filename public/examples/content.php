@@ -1,186 +1,219 @@
 <?php
-	include dirname(dirname(dirname(__FILE__)))."/lib/bootstrap.php";
-	use \unikent\kent_theme\kentThemeHelper;
+include dirname(dirname(dirname(__FILE__)))."/lib/bootstrap.php";
+use \unikent\kent_theme\kentThemeHelper;
 
-	KentThemeHelper::header(
-		array(
-			'title' => "Kent Theme Demo - Content Page",
-			'menu' => array(
-				'Home' => '#',
-				'Culture' => '#',
-				'Environment' => '#',
-				'Science' => '#',
-				'Society' => '#',
-				'Kent Life' => '#'
-			),
-			'meta' => array('title'=>'Content Demo Page - Kent Theme Beta'),
-			'slim'=>true,
-			'main_class' =>'content-page'
-		)
-	);
+KentThemeHelper::header(
+	array(
+		'title'=>"Content Page",
+		'menu' => array(
+			'Home' => '#',
+			'Apply' => '#'
+		),
+		'meta' => array(
+			'description'=>'Content page',
+			'title'=>"Content Page- Kent Theme Beta"
+		),'slim'=>true,
+		'main_class' =>'content-page',
+		'head_markup'=>"<style>
+			nav.second {
+				width:200px;
+				margin:0 0 48px 24px;padding:0;
+			}
+			ul {
+				padding: 0;
+			}
+			nav li {
+				border-bottom: 1px solid #eee;
+				margin:0;
+				padding: 12px 0;
+				text-align: left;
+				list-style: none;
+				height: auto;
+			}
+			</style>"
+	)
+);
 KentThemeHelper::breadcrumb(array(
 								'Theme Examples'=>'/',
 								'Content Page'=>''
 							));
 ?>
-<article class="content-page" itemscope itemtype="http://schema.org/Article">
-	<header class="content-header">
-		<h1 class="article-title" itemprop="name">Center strengthened by consultant appointment</h1>
-		<nav class="content-social content-social-head">
-			<a title="twitter" href="#" class="kf-twitter"></a>
-			<a title="facebook" href="#" class="kf-facebook"></a>
-			<a title="instagram" href="#" class="kf-instagram"></a>
-			<a title="pinterest" href="#" class="kf-pinterest"></a>
-		</nav>
-	</header>
-	<section class="content-body">
-		<div class="content-container">
-			<aside class="content-sidebar">
-				<nav>
-					<h3>See also</h3>
-					<ul>
-						<li><a href="#">Dr. Michael Fish</a></li>
-						<li><a href="#">DICE</a></li>
-						<li><a href="#">Professor Stephan Peckham</a></li>
-					</ul>
-				</nav>
-				<nav>
-					<h3>In the media</h3>
-					<ul>
-						<li>
-							<a href="#">Squeek! Dolphins deciphered</a>
-							<span>Guardian</span>
-						</li>
-						<li>
-							<a href="#">Dolphin Sandwiches</a>
-							<span>Sydney Morning Herald</span>
-						</li>
-					</ul>
-				</nav>
-				<div>
-					<h3>Follow us</h3>
-					<a title="twitter" href="https://twitter.com/unikentnews" class="social-link"><i class="kf-twitter"></i> @unikentnews</a>
+		<div class="container">
+			<div class="row">
+				
+				<div class="col-sm-3"> 
+				<nav class="second" role="navigation">
+				  <ul>             
+					<li>      
+				      <a href="#performance">Outstanding performance</a>
+				    </li>
+				  
+				    <li>      
+				      <a href="#achievements">Reserach achievements</a>
+				    </li>
 
+				    <li>      
+				      <a href="#collaborations">Collaborations</a>
+				    </li>
+				  </ul>
+				</nav>
+				<nav class="second" role="navigation">
+				  <h5>Research at Kent</h5>
+				  <ul>
+				    <li>      
+				      <a href="#">Research website</a>
+				    </li>
+				  
+				    <li>      
+				      <a href="#">Latest research projects</a>
+				    </li>
+
+				    <li>      
+				      <a href="#">International research</a>
+				    </li>
+
+				  </ul>
+				</nav>
 				</div>
-			</aside>
-			<p class="lead">
-				A leading consultant in renal medicine is joining the University's Centre for Health Services Studies (CHSS) in a new post as Clinical.
-			</p>
 
-			<p>She argues that ‘While its absolute influence may have diminished as Beijing’s money arrives, Europe continues to enjoy a premium position, and deeper ties which may hold greater reward in the future’.</p>
+				
+				<div class="col-sm-6" style="width:650px">
 
-			<blockquote>
-				<img class="img-circle" src="images/profile-academic.jpg">
-				<p>It was I who ate all the pies! And I would have gotten away with it too, if it weren't for you meddling kids.</p>
-				<footer>
-					<cite>
-						Dr David Hume,
-						<span>School of Astrofrench and Other stuff</span>
-					</cite>
-				</footer>
-			</blockquote>
 
-			<p>Using statistical models, Professor Griffiths’ team from the School of Anthropology and Conservation determined the combination of survey visits and methods needed to obtain reliable data on population status. This resolved a long-standing debate within the fields of conservation and ecology and has made surveys significantly more cost-effective and reliable.</p>
+						<h1>World-leading research</h1>
 
-			<blockquote class="social-quote social-quote-twitter">
-				<a href="#">
-					<button></button>
-					<p>Kent study shows that tourism boost in Malta can aid struggling traditional fishermen.</p>
-				</a>
-				<cite>
-					<a href="#">@unikentnews</a>
-				</cite>
-			</blockquote>
+						<p><em>Kent's excellent research performance confirms our position as a leading UK university. In the Research Excellence Framework (REF) 2014, Kent was ranked 17th* for research output and research intensity, in the <em>Times Higher Education</em>, outperforming 11 of the 24 Russell Group universities.</em></p>
 
-			<p>The protocols are being adopted into policy guidance in England, Wales and Scotland and will help to improve the management and conservation of important amphibian and reptile species.</p>
+						
 
-		</div>
+			            <h3 id="performance">Outstanding performance</h3>
+			            <p>All our academic schools are engaged in research of international standing and we have some of the best academic and research staff in the country.</p>
+			            <p>Our outstanding performance in the REF led to Kent receiving the fifth highest increase in research funding in the UK from the Higher Education Funding Council for England (HEFCE). Our standing is underpinned by our ability to attract external funding, which now consistently exceeds £12 million per annum. This also reflects our sustained investment in staff, buildings, laboratories and equipment. </p>
 
-		<div class="content-container">
-			<h2>Surveys of amphibians and reptiles</h2>
+			            <h3 id="collaborations">Collaborations</h3>
+			            <p>With programmes of study that are informed by research, our students are able to develop skills and knowledge relevant to contemporary issues. Our research activities and collaborations with outside organisations create knowledge that is highly influential. </p>
 
-			<p>Together with Billy Childish, Charles Thomson founded the movement in 1999 in an attempt to revive the fortunes of contemporary figurative painting.  The show, co-curated by the Studio 3 Gallery MA Curating group in collaboration with Charles Thomson, demonstrates the now-global reach of the movement and includes works by Thomson, Ella Guru, Joe Machine, Jaroslav Valecka and Black Francis (frontman of The Pixies).  It is the School’s 20th exhibition since opening in 2010.</p>
-			<figure class="figure-right">
-					<div class="media-wrap">
-						<img src="images/story-starfish.jpg">
-						<div class="attribution">
-							<i class="kf-camera"></i>
-							<span>Political Studies Association: Picture by <a href="#">Someone</a>. <a href="#">Attribution License</a></span>
+
+			            <blockquote>
+							<img class="img-circle" src="images/profile-academic.jpg"> 
+							<p>Kent's excellent research performance confirms our position as a leading UK university.</p>
+							<footer>
+								<cite>
+									Dr David Hume,
+									<span>PhD. Particle physics</span>
+									<span><a href="#" class="chevron-link">Learn more about our community</a></span>
+								</cite>
+							</footer>
+						</blockquote>
+
+
+			            <h3 id="achievements">Research achievements</h3>
+			            <p>Kent has an outstanding record of research success. Recent research achievements, which have impacted on the economy, government policy and the daily lives of those affected, include:</p>
+			            <ul>
+			              <li>Revelations of the complexity of the interior of an asteroid, helping to explain what happens when collisions occur and how planets form in the solar system </li>
+			              <li> investigation of a new technique for children with autism to communicate, socialise and play imaginatively using performance and puppetry </li>
+			              <li> establishing that a belief in anti-vaccine conspiracy theories may have significant and detrimental consequences for children's health </li>
+			              <li> revelations from a major Kent- led project prompting Police Scotland to investigate the use of the country's airports for rendition flights to move prisoners internationally </li>
+			              <li> investigation into religious diversity of the United Nations, identifying the need for increased non-Christian representation in world-peace-making</li>
+			            </ul>
+			            <p>For up-to-date information about our groundbreaking research projects, see our <a href="/research/">Research</a> website.</p>
+			            <p>&nbsp;</p>
+			            <p>&nbsp;</p>
+			            <p>*of 122 universities not including specialist institutions; rankings are taken from the <em>Times Higher Education</em>, Jan 2015</p>
+			    </div>
+
+			</div>
+
+
+			<div class="row">
+			    <div class="col-md-12">
+
+					<div class="card-panel" style="padding: 50px 0;margin: 0 0 150px 0; background-color:#f5f5f5;">
+						
+						<div class="card-panel-body">
+							<a class="card" href="#">
+								<!-- <img class="card-img" src="images/promo-world.jpg"> -->
+								<h3 class="card-title">Global Opportunities</h3>
+								<p class="card-text">Findo out how our programmes can help you launch your career and employability.</p>
+							</a>
+							<a class="card" href="#">
+								<!-- <img class="card-img" src="images/promo-graduates.jpg"> -->
+								<h3 class="card-title">Scholarships &amp; Funding</h3>
+								<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+							</a>
+							<a class="card" href="#">
+								<!-- <img class="card-img" src="images/promo-3.jpg"> -->
+								<h3 class="card-title">How to apply</h3>
+								<p class="card-text">We'll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+							</a>
+							<a class="card" href="#">
+								<!-- <img class="card-img" src="images/promo-4.jpg"> -->
+								<h3 class="card-title">Innovation and enterprise</h3>
+								<p class="card-text">Find more about the exciting project we're working on with with partners and businesses.</p>
+								</a>
 						</div>
 					</div>
-					<figcaption>Patrick</figcaption>
-			</figure>
-			<p>Stuckism has become a truly international art movement, with affiliated groups spanning Buenos Aires to Beijing. But Stuckism still retains deep regional affiliations with the North Kent and Medway areas from which many of the founding Stuckists originated.</p>
-			<p>This research event is held in partnership between the Art History & Visual Cultures Research Centre and Studio 3 Gallery.</p>
-			<p>This event is free and all are welcome but booking  is encouraged due to limited space.</p>
-			<p>At the end of October 2015 we had our second hackathon for Information Services. In an attempt to target a wider audience and get more non-techies involved we renamed the event “Innovation Splash”.</p>
-			<p>The event was held over 2 working days, we had a total of 5 teams take part who tackled various problems facing the institution and gave 10 minute lightening talks on their prototypes at the end of the second day.</p>
-			<p>This blog post aims to give a quick run down of each of the teams ideas. Just to show off some of the cool stuff our colleagues produced in such a short amount of time.</p>
-			<p>Tests on 461 cancer cell lines revealed that neuroblastoma – the most common solid cancer occurring outside the brain in children and a major cause of death during infancy – was highly sensitive to flubendazole.</p>
-			<p>Flubendazole was also found to reduce the viability of five primary neuroblastoma samples in concentrations thought to be achievable in humans. It inhibited vessel formation and neuroblastoma tumour growth in a tumour model in fertilised chicken eggs.</p>
-			<p>Acquired resistance to various anti-cancer drugs is a major problem in high-risk neuroblastoma. The researchers found that 119 cell lines from a panel of 140 neuroblastoma cell lines with acquired resistance to various anti-cancer drugs were sensitive to flubendazole in low concentrations.</p>
-		</div>
-		<figure>
-			<div class="media-wrap-letterbox">
-				<img src="images/story-swimmers.jpg">
-				<div class="attribution">
-					<i class="kf-camera"></i>
-					<span>Political Studies Association: Picture by <a href="#">Someone</a>. <a href="#">Attribution License</a></span>
+
+
+
+
+
+					<div class="card-panel">
+						<div class="card-panel-body">
+							<div class="card">
+								<a href="#">
+									<img class="card-img" src="images/promo-blog.jpg">
+									<h3 class="card-title">Student Blogs</h3>
+								</a>
+								<p class="card-text">Our students tell it like it is.</p>
+								<ul>
+									<li><a href="#">John Rabbit</a></li>
+									<li><a href="#">Felicity Hogg</a></li>
+								</ul>
+							</div>
+							<a class="card short-text" href=''>
+								<img class="card-img" src="images/promo-visit.jpg">
+								<h3 class="card-title">Visit Us</h3>
+								<p class="card-text">We're ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+							</a>
+							<a class="card" href=''>
+								<img class="card-img" src="images/international.jpg">
+								<h3 class="card-title">International students</h3>
+								<p class="card-text">From visa advice to arrival, we'll support you through the whole process.</p>
+							</a>
+							<a class="card" href=''>
+								<img class="card-img" src="images/promo-4.jpg">
+								<h3 class="card-title">Kent Union</h3>
+								<p class="card-text">Get involved in the hundreds of societies on campus.</p>
+								
+							</a>
+						</div>
+					</div>
+
+				
+			</div><!-- /.row -->
+		</div><!-- /.container -->
+	
+		<div class="modal fade modal-fullscreen" id="myVideoModal" tabindex="-1" role="dialog" aria-labelledby="myVideoModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content modal-content-transparent">
+
+					<div class="modal-header">
+						<button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true"><i class="kf-close"></i></span>
+							<span class="sr-only">Close</span>
+						</button>
+					</div>
+
+					<div class="embed-responsive embed-responsive-16by9 ">
+						<video controls class="embed-responsive-item">
+							<source src="video/video-research.mp4">
+						</video>
+						<div class="embed-responsive-item-overlay">
+							<span class="video-transcript"><small><a href="#">Download transcript</a></small></span>
+						</div>
+					</div>
+					
 				</div>
 			</div>
-			<figcaption>Students enjoying diving course</figcaption>
-		</figure>
-		<div class="content-container">
-			<p>Contractor ES Global was then appointed to develop the design, with the help of KSA specialists including its digital workshop team, who produced 3D images to perfect the joints of the new structure. The complex engineering of the structure led to it being featured at the Future Visions conference on Shell and Spatial structures in Amsterdam in August 2015.</p>
-			<p>Assembly of the structure took less than one week on site. The result , according to Don Gray, is ‘a truly ground-breaking adventure in high-technology assembly, the use of new materials and advanced structural engineering.’</p>
 		</div>
-	</section>
-	<footer class="content-footer">
-		<div class="content-container">
-			<nav class="content-social content-social-colored">
-				<a title="twitter" href="#" class="kf-twitter"></a>
-				<a title="facebook" href="#" class="kf-facebook"></a>
-				<a title="instagram" href="#" class="kf-instagram"></a>
-				<a title="pinterest" href="#" class="kf-pinterest"></a>
-			</nav>
-		</div>
-
-	</footer>
-</article>
-<aside>
-	<div class="card-panel card-panel-primary cards-backed m-b-0">
-		<div class="card-panel-header">
-			<h2 class="card-panel-title">You might also like</h2>
-		</div>
-		<div class="card-panel-body">
-			<div class="card">
-				<img class="card-img" src="images/promo-1.jpg">
-				<h3 class="card-title">Academic excellence</h3>
-				<p class="card-subtitle">1 September 2015</p>
-				<a href="#" class="card-badge kf-comment">5</a>
-			</div>
-			<div class="card">
-				<img class="card-img" src="images/promo-2.jpg">
-				<h3 class="card-title">Undergraduates</h3>
-				<p class="card-subtitle">28 March 2015</p>
-				<a href="#" class="card-badge kf-comment">7</a>
-			</div>
-			<div class="card">
-				<img class="card-img" src="images/promo-3.jpg">
-				<h3 class="card-title">Postgraduates</h3>
-				<p class="card-subtitle">5 November 2015</p>
-				<a href="#" class="card-badge kf-comment">1</a>
-			</div>
-			<div class="card">
-				<img class="card-img" src="images/promo-4.jpg">
-				<h3 class="card-title">Visit Kent</h3>
-				<p class="card-subtitle">17 May 2015</p>
-				<a href="#" class="card-badge kf-comment">23</a>
-			</div>
-		</div>
-	</div>
-</aside>
-<?php
-KentThemeHelper::pageFeedback('Last updated: <time class="content-modified" datetime="2015-12-5T23:59:59">5 December 2015</time> by <span class="content-modified-by">Corporate Communications</span>');
-KentThemeHelper::footer();
-?>

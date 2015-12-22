@@ -30,80 +30,59 @@
 			@include media-breakpoint-up(sm){
 				border-width: 0 ($grid-gutter-width/2) 0 ($grid-gutter-width/2);
 				border-style: solid;
-				border-color: transparent;
+				border-color: #fff;
 			}
 
 			@extend .card-backed;
 		}
 	}
 
-	&.cards-backed-primary{
+	&.cards-header-split {
 		.card {
-			@extend .card-backed-primary;
+			@extend .card-header-split ;
 		}
 	}
 
-	&.cards-backed-secondary{
+	&.cards-centered {
 		.card {
-			@extend .card-backed-secondary;
+			@extend .card-centered;
 		}
 	}
 
-	&.cards-backed-tertiary{
-		.card {
-			@extend .card-backed-tertiary;
+	@each $name, $color in $brand-colors-light {
+		&.cards-backed-#{$name} {
+			.card {
+				@extend .card-backed-#{$name};
+			}
+		}
+
+		&.card-panel-#{$name} {
+			background-color: $color;
+
+			&.cards-backed .card{
+				border-color: $color;
+			}
+		}
+
+	}
+	@each $name, $color in $brand-colors-dark {
+		&.cards-backed-#{$name} {
+			.card {
+				@extend .card-backed-#{$name};
+			}
+		}
+
+		&.card-panel-#{$name} {
+			background-color: $color;
+
+			@extend .card-panel-inverse;
+
+			&.cards-backed .card{
+				border-color: $color;
+			}
 		}
 	}
 
-	&.cards-backed-accent{
-		.card {
-			@extend .card-backed-primary-tint;
-		}
-	}
-
-	&.cards-backed-accent{
-		.card {
-			@extend .card-backed-accent;
-		}
-	}
-
-	&.card-panel-primary {
-		background-color: $brand-primary;
-
-		@extend .card-panel-inverse;
-
-		&.cards-backed .card{
-			border-color: $brand-primary;
-		}
-	}
-
-	&.card-panel-secondary {
-		background-color: $brand-secondary;
-		&.cards-backed .card{
-			border-color: $brand-secondary;
-		}
-	}
-
-	&.card-panel-tertiary {
-		background-color: $brand-tertiary;
-		&.cards-backed .card{
-			border-color: $brand-tertiary;
-		}
-	}
-
-	&.card-panel-primary-tint {
-		background-color: $brand-primary-tint;
-		&.cards-backed .card{
-			border-color: $brand-primary-tint;
-		}
-	}
-
-	&.card-panel-accent {
-		background-color: $brand-accent;
-		&.cards-backed .card{
-			border-color: $brand-accent;
-		}
-	}
 
 	.card-panel-body {
 		@extend .container;
