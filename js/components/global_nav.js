@@ -8,7 +8,7 @@
 	global_search.find('form').submit(function(e){
 		if(global_search.find("input[type='search']").val()===''){
 			e.preventDefault();
-			toggleMenu($(".search-button, .search-button-full"), global_search);
+			toggleMenu($(".search-button, .search-button-full, .close-search"), global_search);
 			return false;
 		}
 	});
@@ -48,11 +48,16 @@
 	$(".menu-button").click(function(){
 		toggleMenu($(this), global_menu);	
 	});
-	$(".search-button, .search-button-full").click(function(){
-		toggleMenu($(".search-button, .search-button-full"), global_search);
+	$(".search-button, .search-button-full").click(function(e){
+		toggleMenu($(".search-button, .search-button-full, .close-search"), global_search);
+		e.preventDefault();
+		return false;
 	});
 	$(".close-search").click(function(){
 		closeMenu($(this), global_search);
+	});
+	$('body').click(function(){
+		closeMenu($(".search-button, .search-button-full, .close-search"), global_search);
 	});
 
 })();
