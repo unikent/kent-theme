@@ -6534,7 +6534,8 @@ select {
     top: 0;
     left: 0;
     background-color: transparent;
-    transition: background-color 300ms; }
+    transition: background-color 300ms;
+    pointer-events: none; }
   body .departmental-nav:before {
     content: " ";
     width: calc(100% - 4rem);
@@ -6545,7 +6546,8 @@ select {
     left: 0;
     margin: 0 0 0 2rem;
     background-color: transparent;
-    transition: background-color 300ms; } }
+    transition: background-color 300ms;
+    pointer-events: none; } }
 
 body.show-global-search .global-nav-menu .global-nav-links {
   display: none; }
