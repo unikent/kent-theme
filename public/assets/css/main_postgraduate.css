@@ -5306,6 +5306,11 @@ h6, .h6 {
       .content-container > ul li ul li:before {
         color: #818a91; }
 
+.content-container p a {
+  border-bottom: 1px solid #CCCCCC; }
+  .content-container p a:hover, .content-container p a:focus {
+    border-bottom: 1px solid #00263d; }
+
 .content-page .content-container {
   padding: 0 16px;
   padding: 0 1rem;
