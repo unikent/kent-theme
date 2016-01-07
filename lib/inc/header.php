@@ -74,38 +74,44 @@
 					<nav class="global-nav-links" role="menu">
 						<div class="global-nav-link">
 							<a aria-controls="menu-research" aria-expanded="false" role="menuitem">Research <span class="more kf-chevron-down"></span></a>
-							<nav id="menu-research" role="menu">
-								<a href="//www.kent.ac.uk/research/" role="menuitem" >
-									Research impact
-									<span class="global-nav-link-desc">Making a difference locally and internationally</span>
-									<span class="more kf-chevron-right"></span>
-								</a>
-								<a href="//www.kent.ac.uk/courses/postgraduate/types/research.html" role="menuitem">Research degrees<span class="global-nav-link-desc">Cutting edge, research-informed programmes</span><span class="more kf-chevron-right"></span></a>
-								<a href="//www.kent.ac.uk/enterprise/" role="menuitem">Innovation &amp; enterprise <span class="global-nav-link-desc">Strong, international network of partnerships and business connections</span><span class="more kf-chevron-right"></span></a>
-								<a href="//www.kent.ac.uk/courses/postgraduate/community/" role="menuitem">Academic excellence<span class="global-nav-link-desc">Thriving, intellectual community of world-expert academics</span><span class="more kf-chevron-right"></span></a>
-							</nav>
+							<div class="global-nav-link-submenu">
+								<nav id="menu-research" role="menu">
+									<a href="//www.kent.ac.uk/research/" role="menuitem" >
+										Research impact
+										<span class="global-nav-link-desc">Making a difference locally and internationally</span>
+										<span class="more kf-chevron-right"></span>
+									</a>
+									<a href="//www.kent.ac.uk/courses/postgraduate/types/research.html" role="menuitem">Research degrees<span class="global-nav-link-desc">Cutting edge, research-informed programmes</span><span class="more kf-chevron-right"></span></a>
+									<a href="//www.kent.ac.uk/enterprise/" role="menuitem">Innovation &amp; enterprise <span class="global-nav-link-desc">Strong, international network of partnerships and business connections</span><span class="more kf-chevron-right"></span></a>
+									<a href="//www.kent.ac.uk/courses/postgraduate/community/" role="menuitem">Academic excellence<span class="global-nav-link-desc">Thriving, intellectual community of world-expert academics</span><span class="more kf-chevron-right"></span></a>
+								</nav>
+							</div>
 						</div>
 						<div class="global-nav-link">
 							<a aria-controls="menu-study" aria-expanded="false" role="menuitem">Study <span class="more kf-chevron-down"></span></a>
-							<nav id="menu-study" role="menu">
-								<a href="//www.kent.ac.uk/courses/why/" role="menuitem">
-									Inspiring teaching
-									<span class="global-nav-link-desc">Excellent teaching with individual attention</span>
-									<span class="more kf-chevron-right"></span>
-								</a>
-								<a href="//www.kent.ac.uk/courses/undergraduate/" role="menuitem">Undergraduate <span class="global-nav-link-desc">Courses to prepare you for a successful future</span><span class="more kf-chevron-right"></span></a>
-								<a href="//www.kent.ac.uk/courses/postgraduate/" role="menuitem">Postgraduate <span class="global-nav-link-desc">Programmes supported by a stimulating support culture</span><span class="more kf-chevron-right"></span></a>
-								<a href="//www.kent.ac.uk/internationalstudent/study-in-kent/" role="menuitem">International <span class="global-nav-link-desc">World-wide links in a supportive, cosmopolitan community</span><span class="more kf-chevron-right"></span></a>
-							</nav>
+							<div class="global-nav-link-submenu">
+								<nav id="menu-study" role="menu">
+									<a href="//www.kent.ac.uk/courses/why/" role="menuitem">
+										Inspiring teaching
+										<span class="global-nav-link-desc">Excellent teaching with individual attention</span>
+										<span class="more kf-chevron-right"></span>
+									</a>
+									<a href="//www.kent.ac.uk/courses/undergraduate/" role="menuitem">Undergraduate <span class="global-nav-link-desc">Courses to prepare you for a successful future</span><span class="more kf-chevron-right"></span></a>
+									<a href="//www.kent.ac.uk/courses/postgraduate/" role="menuitem">Postgraduate <span class="global-nav-link-desc">Programmes supported by a stimulating support culture</span><span class="more kf-chevron-right"></span></a>
+									<a href="//www.kent.ac.uk/internationalstudent/study-in-kent/" role="menuitem">International <span class="global-nav-link-desc">World-wide links in a supportive, cosmopolitan community</span><span class="more kf-chevron-right"></span></a>
+								</nav>
+							</div>
 						</div>
 						<div class="global-nav-link">
 							<a aria-controls="menu-explore" aria-expanded="false" role="menuitem">Explore <span class="more kf-chevron-down"></span></a>
-							<nav id="menu-explore" role="menu">
-								<a href="//www.kent.ac.uk/about/" role="menuitem">About <span class="global-nav-link-desc">Top 16 UK University</span><span class="more kf-chevron-right"></span></a>
-								<a href="//www.kent.ac.uk/student/experience/" role="menuitem">Inspiring student experience <span class="global-nav-link-desc">3rd for student satisfaction</span><span class="more kf-chevron-right"></span></a>
-								<a href="//www.kent.ac.uk/locations/" role="menuitem">Superb locations <span class="global-nav-link-desc">Close to London with European centres. Come visit us.</span><span class="more kf-chevron-right"></span></a>
-								<a href="//www.kent.ac.uk/accommodation/" role="menuitem">Accommodation and facilities<span class="global-nav-link-desc">Living and learning on campus</span><span class="more kf-chevron-right"></span></a>
-							</nav>
+							<div class="global-nav-link-submenu">
+								<nav id="menu-explore" role="menu">
+									<a href="//www.kent.ac.uk/about/" role="menuitem">About <span class="global-nav-link-desc">Top 16 UK University</span><span class="more kf-chevron-right"></span></a>
+									<a href="//www.kent.ac.uk/student/experience/" role="menuitem">Inspiring student experience <span class="global-nav-link-desc">3rd for student satisfaction</span><span class="more kf-chevron-right"></span></a>
+									<a href="//www.kent.ac.uk/locations/" role="menuitem">Superb locations <span class="global-nav-link-desc">Close to London with European centres. Come visit us.</span><span class="more kf-chevron-right"></span></a>
+									<a href="//www.kent.ac.uk/accommodation/" role="menuitem">Accommodation and facilities<span class="global-nav-link-desc">Living and learning on campus</span><span class="more kf-chevron-right"></span></a>
+								</nav>
+							</div>
 						</div>
 					</nav>
 					<nav class="audience-nav-links" role="menu">

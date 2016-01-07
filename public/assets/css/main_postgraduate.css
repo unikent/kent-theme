@@ -6311,34 +6311,30 @@ select {
           display: block;
           height: 48px;
           height: 3rem;
+          width: 48px;
+          width: 3rem;
+          text-align: center;
           border-left: solid 1px #eee;
           padding: 16px;
           padding: 1rem; }
       .global-nav .global-nav-links .global-nav-link nav {
-        display: none; }
-    .global-nav .global-nav-links.in .global-nav-link {
-      display: none; }
-      .global-nav .global-nav-links.in .global-nav-link.in {
-        display: block; }
-        .global-nav .global-nav-links.in .global-nav-link.in > a {
-          padding-left: 0; }
-          .global-nav .global-nav-links.in .global-nav-link.in > a .more {
-            border-left: 0;
-            float: left; }
-            .global-nav .global-nav-links.in .global-nav-link.in > a .more::before {
-              content: ""; }
-        .global-nav .global-nav-links.in .global-nav-link.in nav {
-          display: block; }
-          .global-nav .global-nav-links.in .global-nav-link.in nav a {
-            font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-            text-transform: none;
-            background: #f7f2e1;
-            border-bottom: solid 1px #ddd;
-            color: #05345C; }
-            .global-nav .global-nav-links.in .global-nav-link.in nav a .more {
-              border-left: solid 1px #ddd; }
-            .global-nav .global-nav-links.in .global-nav-link.in nav a .global-nav-link-desc {
-              display: none; }
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 300ms; }
+        .global-nav .global-nav-links .global-nav-link nav a {
+          font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+          text-transform: none;
+          background: #f7f2e1;
+          border-bottom: solid 1px #ddd;
+          color: #05345C; }
+          .global-nav .global-nav-links .global-nav-link nav a .more {
+            border-left: solid 1px #ddd; }
+          .global-nav .global-nav-links .global-nav-link nav a .global-nav-link-desc {
+            display: none; }
+    .global-nav .global-nav-links.in .global-nav-link.in > a .more::before {
+      content: ""; }
+    .global-nav .global-nav-links.in .global-nav-link.in nav {
+      max-height: 100vh; }
   .global-nav .audience-nav-links {
     margin-top: 16px;
     margin-top: 1rem; }
@@ -6360,7 +6356,8 @@ select {
         height: auto;
         padding-right: 1rem; }
       .global-nav .global-nav-search {
-        display: none; }
+        opacity: 0;
+        transition: opacity 300ms; }
       .global-nav .audience-nav-links {
         position: absolute;
         top: 0;
@@ -6383,88 +6380,105 @@ select {
         display: table;
         table-layout: fixed;
         width: 100%;
-        box-shadow: none; }
+        box-shadow: none;
+        height: 5.75rem;
+        transition: height 300ms; }
         .global-nav .global-nav-links .global-nav-link {
           min-width: 1%;
           font-size: 1.46rem;
           display: table-cell;
           padding: 1.4rem 1rem 1rem;
           text-align: center; }
-          .global-nav .global-nav-links .global-nav-link a {
+          .global-nav .global-nav-links .global-nav-link > a {
             padding-left: 0;
-            border-bottom: none; }
-            .global-nav .global-nav-links .global-nav-link a .more {
-              display: none; }
+            border-bottom: none;
+            position: relative;
+            transition: color 300ms; }
+            .global-nav .global-nav-links .global-nav-link > a .more {
+              opacity: 0;
+              transition: opacity 300ms;
+              background-color: #f7f2e1;
+              width: 2.5rem;
+              height: 2.5rem;
+              padding: 0;
+              position: absolute;
+              bottom: -3.5rem;
+              left: 40%;
+              left: calc(50% - 1.25rem);
+              -webkit-transform: rotate(45deg);
+                      transform: rotate(45deg); }
+              .global-nav .global-nav-links .global-nav-link > a .more::before {
+                content: ""; }
+          .global-nav .global-nav-links .global-nav-link .global-nav-link-submenu {
+            max-height: 0;
+            transition: max-height 200ms;
+            overflow: hidden;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 8.25rem; }
+          .global-nav .global-nav-links .global-nav-link nav {
+            display: table;
+            overflow: hidden;
+            width: 100%;
+            table-layout: fixed; }
+            .global-nav .global-nav-links .global-nav-link nav a {
+              min-width: 1%;
+              display: table-cell;
+              font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+              position: relative;
+              border: 0;
+              color: #05345C;
+              font-size: 1.1rem;
+              line-height: 1.25rem;
+              text-align: left;
+              padding: 1rem 1rem 1rem 0.75rem;
+              text-decoration: none;
+              height: 8.75rem; }
+              .global-nav .global-nav-links .global-nav-link nav a:hover, .global-nav .global-nav-links .global-nav-link nav a:focus, .global-nav .global-nav-links .global-nav-link nav a:active {
+                outline: none;
+                background: #fcfbf5; }
+              .global-nav .global-nav-links .global-nav-link nav a .global-nav-link-desc {
+                margin-top: .5rem;
+                font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+                display: inline-block;
+                font-size: 0.85rem;
+                width: 100%;
+                color: #373a3c;
+                line-height: 1rem; }
+              .global-nav .global-nav-links .global-nav-link nav a .more {
+                position: absolute;
+                display: block;
+                border-left: 0;
+                height: 25px;
+                right: 0.5rem;
+                padding: 0;
+                bottom: 3.875rem;
+                color: #937227; } }
+          @media (min-width: 768px) and (min-width: 992px) {
+            .global-nav .global-nav-links .global-nav-link nav a {
+              font-size: 1.25rem;
+              line-height: 1.4rem;
+              padding: 1rem 1.25rem 1rem 1rem; }
+              .global-nav .global-nav-links .global-nav-link nav a .global-nav-link-desc {
+                font-size: 0.9rem;
+                line-height: 1rem; } }
+  @media (min-width: 768px) {
         .global-nav .global-nav-links.in {
           height: 13.75rem; }
+          .global-nav .global-nav-links.in .global-nav-link-submenu {
+            max-height: 8.75rem;
+            transition: max-height 200ms; }
+            .global-nav .global-nav-links.in .global-nav-link-submenu nav {
+              border-top: 2px solid #f7f2e1; }
           .global-nav .global-nav-links.in .global-nav-link {
             display: table-cell; }
-            .global-nav .global-nav-links.in .global-nav-link.in {
-              display: table-cell; }
-              .global-nav .global-nav-links.in .global-nav-link.in nav {
-                width: 100%;
-                position: absolute;
-                left: 0;
-                top: 8.25rem;
-                overflow: hidden;
-                display: table;
-                table-layout: fixed;
-                border-top: 2px solid #f7f2e1; }
-                .global-nav .global-nav-links.in .global-nav-link.in nav a {
-                  min-width: 1%;
-                  display: table-cell;
-                  font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
-                  position: relative;
-                  color: #05345C;
-                  font-size: 1.1rem;
-                  line-height: 1.25rem;
-                  text-align: left;
-                  padding: 1rem 1rem 1rem 0.75rem;
-                  text-decoration: none;
-                  height: 8.75rem; }
-                  .global-nav .global-nav-links.in .global-nav-link.in nav a:hover, .global-nav .global-nav-links.in .global-nav-link.in nav a:focus, .global-nav .global-nav-links.in .global-nav-link.in nav a:active {
-                    outline: none;
-                    background: #fcfbf5; }
-                  .global-nav .global-nav-links.in .global-nav-link.in nav a .global-nav-link-desc {
-                    margin-top: .5rem;
-                    font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-                    display: inline-block;
-                    font-size: 0.85rem;
-                    width: 100%;
-                    color: #373a3c;
-                    line-height: 1rem; }
-                  .global-nav .global-nav-links.in .global-nav-link.in nav a .more {
-                    position: absolute;
-                    display: block;
-                    border-left: 0;
-                    height: 25px;
-                    right: 0.5rem;
-                    padding: 0;
-                    bottom: 3.875rem;
-                    color: #937227; } }
-              @media (min-width: 768px) and (min-width: 992px) {
-                .global-nav .global-nav-links.in .global-nav-link.in nav a {
-                  font-size: 1.25rem;
-                  line-height: 1.4rem;
-                  padding: 1rem 1.25rem 1rem 1rem; }
-                  .global-nav .global-nav-links.in .global-nav-link.in nav a .global-nav-link-desc {
-                    font-size: 0.9rem;
-                    line-height: 1rem; } }
-  @media (min-width: 768px) {
+            .global-nav .global-nav-links.in .global-nav-link.in .global-nav-link-submenu {
+              z-index: 1; }
             .global-nav .global-nav-links.in .global-nav-link.in > a {
-              color: #937227;
-              position: relative; }
+              color: #937227; }
               .global-nav .global-nav-links.in .global-nav-link.in > a > .more {
-                display: block;
-                background-color: #f7f2e1;
-                width: 2.5rem;
-                height: 2.5rem;
-                padding: 0;
-                position: absolute;
-                bottom: -3.5rem;
-                left: 40%;
-                -webkit-transform: rotate(45deg);
-                        transform: rotate(45deg); }
+                opacity: 1; }
                 .global-nav .global-nav-links.in .global-nav-link.in > a > .more::before {
                   content: ""; } }
 
@@ -6475,7 +6489,7 @@ select {
   .show-global-menu .global-header .global-nav-menu.in,
   .show-global-menu .global-header .global-nav-search.in, .show-global-search .global-header .global-nav-menu.in,
   .show-global-search .global-header .global-nav-search.in {
-    display: block;
+    opacity: 1;
     height: 100vh;
     width: 100vw; }
   @media (min-width: 768px) {
@@ -6488,7 +6502,7 @@ select {
         width: auto;
         float: none; }
       .show-global-menu .global-header .global-nav-search.in, .show-global-search .global-header .global-nav-search.in {
-        display: block;
+        opacity: 1;
         min-height: 6.5rem;
         overflow: visible; }
         .show-global-menu .global-header .global-nav-search.in .close-search, .show-global-search .global-header .global-nav-search.in .close-search {
@@ -6510,11 +6524,8 @@ select {
 .show-global-search .global-header button.menu-button {
   display: none; }
 
-.show-global-search .global-nav-menu .global-nav-links {
-  display: none; }
-
 @media (min-width: 768px) {
-  .show-global-search:before {
+  body:before {
     content: " ";
     width: 100%;
     height: 100%;
@@ -6522,8 +6533,9 @@ select {
     z-index: 5;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.5); }
-  .show-global-search .departmental-nav:before {
+    background-color: transparent;
+    transition: background-color 300ms; }
+  body .departmental-nav:before {
     content: " ";
     width: calc(100% - 4rem);
     height: 100%;
@@ -6532,7 +6544,17 @@ select {
     top: 0;
     left: 0;
     margin: 0 0 0 2rem;
-    background: rgba(0, 0, 0, 0.5); } }
+    background-color: transparent;
+    transition: background-color 300ms; } }
+
+body.show-global-search .global-nav-menu .global-nav-links {
+  display: none; }
+
+@media (min-width: 768px) {
+  body.show-global-search:before {
+    background-color: rgba(0, 0, 0, 0.5); }
+  body.show-global-search .departmental-nav:before {
+    background-color: rgba(0, 0, 0, 0.5); } }
 
 .departmental-nav header {
   font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
