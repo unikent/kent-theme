@@ -95,5 +95,15 @@ h6,.h6{
 		@include bullet-list();
 		padding-left: 2rem;
 	}
+
+	p{
+		a {
+			border-bottom: 1px solid #CCCCCC;
+
+			&:hover, &:focus {
+				border-bottom: 1px solid $link-hover-color;
+			}
+		}
+	}
 }
 
