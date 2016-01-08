@@ -5562,9 +5562,9 @@ figure.featured-image {
         bottom: -1.5rem;
         right: 0; } }
 
-.chevron-link, .global-nav .audience-nav-links a, nav.breadcrumb a {
+.chevron-link, nav.breadcrumb a {
   font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .chevron-link:after, .global-nav .audience-nav-links a:after, nav.breadcrumb a:after {
+  .chevron-link:after, nav.breadcrumb a:after {
     display: inline-block;
     padding-left: 8px;
     padding-left: 0.5rem;
@@ -6335,14 +6335,20 @@ select {
       content: ""; }
     .global-nav .global-nav-links.in .global-nav-link.in nav {
       max-height: 100vh; }
-  .global-nav .audience-nav-links {
-    margin-top: 16px;
-    margin-top: 1rem; }
-    .global-nav .audience-nav-links a {
-      display: block;
-      color: #eee;
-      padding: 8px;
-      padding: .5rem; }
+  .global-nav .audience-nav-links a {
+    display: block;
+    color: #eee;
+    padding: 12px 16px;
+    padding: 0.75rem 1rem;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+    .global-nav .audience-nav-links a:after {
+      position: absolute;
+      display: inline-block;
+      content: "";
+      right: 16px;
+      right: 1rem;
+      font-family: "kentfont", sans-serif; }
   @media (min-width: 768px) {
     .global-nav {
       background-color: #FFF;
@@ -6364,11 +6370,11 @@ select {
         right: 2rem;
         margin-top: .2rem; }
         .global-nav .audience-nav-links a {
-          font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
           color: #fff;
           display: inline-block;
           padding: 0 0 0 1rem;
-          font-size: 0.9rem; }
+          font-size: 0.9rem;
+          border: none; }
           .global-nav .audience-nav-links a::after {
             display: none; }
       .global-nav .search-button-full {
@@ -7312,18 +7318,18 @@ nav.breadcrumb {
         color: rgba(255, 255, 255, 0.9); }
   .card.card-overlay .card-footer {
     padding: 0; }
-    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a {
+    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a {
       display: block;
       padding: 12px 16px;
       padding: 0.75rem 1rem;
       background: #f5f5f5;
       border-bottom: 1px solid #ccc; }
-      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-footer a:after {
+      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-footer a:after {
         position: absolute;
         right: 16px;
         right: 1rem; }
       @media (min-width: 768px) {
-        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .global-nav .audience-nav-links a, .global-nav .audience-nav-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a {
+        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a {
           display: table-cell;
           text-align: center;
           float: none;
@@ -7332,7 +7338,7 @@ nav.breadcrumb {
           padding: 0;
           background: none;
           border: none; }
-          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .global-nav .audience-nav-links a:after, .global-nav .audience-nav-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-footer a:after {
+          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-footer a:after {
             position: relative;
             right: auto; } }
     @media (min-width: 768px) {

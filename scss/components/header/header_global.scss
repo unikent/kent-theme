@@ -107,13 +107,19 @@
 	}
 
 	.audience-nav-links {
-		margin-top:1rem;
 	 	a {
 			display:block;
 			color: #eee;
-			padding: .5rem;
-
-			@extend .chevron-link;
+			padding: 0.75rem 1rem;
+			position: relative;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+			&:after{
+				position: absolute;
+				display: inline-block;
+				content:$kf-angle-right;
+				right: 1rem;
+				font-family: $font-family-kentfont;
+			}
 		}
 	}
 
@@ -142,11 +148,11 @@
 			right: 2rem;
 			margin-top:.2rem;
 			a {
-			  	font-family: $font-family-sans-serif;
 				color:#fff;
 				display:inline-block;
 				padding: 0 0 0 1rem;
 				font-size: 0.9rem;
+				border:none;
 				&::after { display:none; }
 			}
 		}
