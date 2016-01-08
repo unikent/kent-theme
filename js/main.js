@@ -11980,6 +11980,11 @@ jQuery(document).ready(function(){
 		}
 	});
 
+	global_search.find("input[type='search']").click(function(e){
+		e.preventDefault();
+		return false;
+	});
+
 	$('body').click(closeSearch);
 
 	$(document).keyup(function(e){
