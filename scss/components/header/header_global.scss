@@ -161,7 +161,10 @@
 
 			display:block;
     		margin-top: 1.25rem;
-
+			border-width: 3px 2px 1px 1px;
+			@include media-breakpoint-up(lg) {
+				border-width: 5px 3px 1px 1px;
+			}
 			&:focus,&:active{
 				outline: none;
 			}
@@ -342,15 +345,17 @@
 
 			.global-nav-search.in {
 				opacity: 1;
-				min-height: 6.5rem;
+				min-height: 5.5rem;
 				overflow: visible;
 
 				.close-search {
 					display: block;
 					font-size: 0.9rem;
-					position: relative;
-					right: -3rem;
-					top: 4.75rem;
+					position: absolute;
+					right: 3rem;
+					top: 8rem;
+					color: #FFF;
+					z-index: 10;
 				}
 				.form-group {
 					position: absolute;

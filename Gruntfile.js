@@ -58,6 +58,7 @@ module.exports = function(grunt) {
 					'vendor/tether/dist/js/tether.js',
                     'js/_bootstrap.js',
                     'vendor/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.js',
+					'vendor/jquery.stellar/src/jquery.stellar.js',
                     'js/components/responsive_util.js',
                     'js/components/collapse_responsive.js',
                     'js/components/global_nav.js',
@@ -65,7 +66,8 @@ module.exports = function(grunt) {
                     'js/components/sectional_nav.js',
                     'js/components/beta_bar.js',
 					'js/components/attribution.js',
-					'js/components/embeds.js'
+					'js/components/embeds.js',
+					'js/components/paralax.js'
                 ],
                 dest: 'js/main.js'
             }

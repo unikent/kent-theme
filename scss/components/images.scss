@@ -30,19 +30,32 @@
 .media-wrap-letterbox {
 	position: relative;
 	clear: both;
+	overflow: hidden;
+
 	@include media-breakpoint-up(md){
 		min-height: 22rem;
 	}
 
 	@include media-breakpoint-up(lg){
 		max-height: 33rem;
-		overflow: hidden;
+
 	}
 
 	& > img{
 		@include media-img();
 	}
 
+}
+
+.media-wrap-paralax {
+	@extend .media-wrap-letterbox;
+
+	& > img{
+		@include media-breakpoint-up(sm) {
+			position: absolute;
+		}
+
+	}
 }
 
 figure{
