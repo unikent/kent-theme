@@ -235,7 +235,7 @@
 						font-size:1.1rem;
 						line-height: 1.25rem;
 						text-align:left;
-						padding:1rem 1rem 1rem 0.75rem;
+						padding:0.75rem;
 						text-decoration: none;
 						height: $global-nav-height;
 
@@ -252,8 +252,10 @@
 							width:100%;
 							color: $gray-dark;
 							line-height: 1rem;
+							padding-right: 0.5rem;
 						}
 						.more {
+							width:1rem;
 							position: absolute;
 							display:block;
 							border-left:0;
@@ -261,17 +263,20 @@
 							right: 0.5rem;
 							padding:0;
 
-							bottom: ($global-nav-height/2)-0.5;
+							font-size: 1.5rem;
+							top: 1.75rem;
+
 							color: $brand-accent;
 
 						}
 						@include media-breakpoint-up(lg) {
 							font-size: 1.25rem;
 							line-height: 1.4rem;
-							padding:1rem 1.25rem 1rem 1rem;
+							padding:1rem;
 							.global-nav-link-desc {
 								font-size:0.9rem;
 								line-height: 1rem;
+
 							}
 						}
 
