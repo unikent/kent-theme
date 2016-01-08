@@ -5,13 +5,6 @@
 	var global_menu = $(".global-nav-menu").data("control-class", "show-global-menu");
 	var global_search = $(".global-nav-search").data("control-class", "show-global-search");
 
-	global_search.find('form').submit(function(e){
-		if(global_search.find("input[type='search']").val()===''){
-			e.preventDefault();
-			toggleMenu($(".search-button, .search-button-full, .close-search"), global_search);
-			return false;
-		}
-	});
 	var toggleMenu = function(button, menu){
 		// If no menu is open, open this one, else this is a close action
 		if(!menu.hasClass("in")){
@@ -44,20 +37,39 @@
 		button.attr("aria-expanded", true);
 	};
 
+	var closeSearch = function(){
+		closeMenu($(".search-button, .search-button-full, .close-search"), global_search);
+	};
+
 	// Hook up menu links
 	$(".menu-button").click(function(){
 		toggleMenu($(this), global_menu);	
 	});
+
 	$(".search-button, .search-button-full").click(function(e){
 		toggleMenu($(".search-button, .search-button-full, .close-search"), global_search);
 		e.preventDefault();
 		return false;
 	});
+
 	$(".close-search").click(function(){
 		closeMenu($(this), global_search);
 	});
-	$('body').click(function(){
-		closeMenu($(".search-button, .search-button-full, .close-search"), global_search);
+
+	global_search.find('form').submit(function(e){
+		if(global_search.find("input[type='search']").val()===''){
+			e.preventDefault();
+			closeSearch();
+			return false;
+		}
+	});
+
+	$('body').click(closeSearch);
+
+	$(document).keyup(function(e){
+		if(e.which === 27){
+			closeSearch();
+		}
 	});
 
 })();
