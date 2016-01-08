@@ -139,7 +139,7 @@
 
 		.global-nav-search {
 			opacity: 0;
-			transition: opacity 300ms;
+			transition: opacity 600ms;
 		}
 
 		.audience-nav-links {
@@ -391,7 +391,7 @@ body{
 			top: 0;
 			left: 0;
 			background-color: transparent;
-			transition: background-color 300ms;
+			transition: background-color 600ms;
 			pointer-events: none;
 		}
 		.departmental-nav {
@@ -405,7 +405,7 @@ body{
 				left: 0;
 				margin: 0 0 0 2rem;
 				background-color: transparent;
-				transition: background-color 300ms;
+				transition: background-color 600ms;
 				pointer-events: none;
 			}
 		}

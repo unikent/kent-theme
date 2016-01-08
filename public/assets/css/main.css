@@ -6367,7 +6367,7 @@ select {
         padding-right: 1rem; }
       .global-nav .global-nav-search {
         opacity: 0;
-        transition: opacity 300ms; }
+        transition: opacity 600ms; }
       .global-nav .audience-nav-links {
         position: absolute;
         top: 0;
@@ -6385,7 +6385,7 @@ select {
         display: block;
         margin-top: 1.25rem;
         border-width: 3px 2px 1px 1px; } }
-    @media (min-width: 768px) and (min-width: 992px) {
+    @media (min-width: 768px) and (min-width: 1200px) {
       .global-nav .search-button-full {
         border-width: 5px 3px 1px 1px; } }
   @media (min-width: 768px) {
@@ -6551,7 +6551,7 @@ select {
     top: 0;
     left: 0;
     background-color: transparent;
-    transition: background-color 300ms;
+    transition: background-color 600ms;
     pointer-events: none; }
   body .departmental-nav:before {
     content: " ";
@@ -6563,7 +6563,7 @@ select {
     left: 0;
     margin: 0 0 0 2rem;
     background-color: transparent;
-    transition: background-color 300ms;
+    transition: background-color 600ms;
     pointer-events: none; } }
 
 body.show-global-search .global-nav-menu .global-nav-links {
