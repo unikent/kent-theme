@@ -7129,6 +7129,10 @@ nav.breadcrumb {
       border-width: 0 0.9375rem 0 0.9375rem;
       border-style: solid;
       border-color: #fff; } }
+  .card-panel.cards-backed .card-panel-body .card-panel-grid,
+  .card-panel.cards-backed .card-panel-body .card-panel-single,
+  .card-panel.cards-backed .card-panel-body .card-panel-list {
+    padding: 0; }
   .card-panel.card-panel-primary-tint {
     background-color: #E0D4D4; }
     .card-panel.card-panel-primary-tint.cards-backed .card {
@@ -7160,8 +7164,11 @@ nav.breadcrumb {
     .card-panel .card-panel-body > .card {
       margin-top: 16px;
       margin-top: 1rem; }
-      .card-panel .card-panel-body > .card:nth-child(1), .card-panel .card-panel-body > .card:nth-child(2), .card-panel .card-panel-body > .card:nth-child(3), .card-panel .card-panel-body > .card:nth-child(4) {
+      .card-panel .card-panel-body > .card:nth-child(1), .card-panel .card-panel-body > .card:nth-child(2) {
         margin-top: 0; }
+      @media (min-width: 992px) {
+        .card-panel .card-panel-body > .card:nth-child(3), .card-panel .card-panel-body > .card:nth-child(4) {
+          margin-top: 0; } }
     @media (min-width: 544px) {
       .card-panel .card-panel-body .card {
         position: relative;
@@ -7183,8 +7190,8 @@ nav.breadcrumb {
     .card-panel .card-panel-body .card-panel-single,
     .card-panel .card-panel-body .card-panel-list {
       overflow: hidden;
-      margin-bottom: 32px;
-      margin-bottom: 2rem; }
+      margin-bottom: 16px;
+      margin-bottom: 1rem; }
       .card-panel .card-panel-body .card-panel-grid:last-child,
       .card-panel .card-panel-body .card-panel-single:last-child,
       .card-panel .card-panel-body .card-panel-list:last-child {
@@ -7211,6 +7218,9 @@ nav.breadcrumb {
       .card-panel .card-panel-body .card-panel-single .card {
         padding: 0;
         width: 100%; } }
+    .card-panel .card-panel-body .card-panel-single .card.card-backed, .card-panel.cards-backed .card-panel-body .card-panel-single .card {
+      padding: 16px 16px 0;
+      padding: 1rem 1rem 0; }
     .card-panel .card-panel-body .card-panel-grid .card {
       position: relative;
       float: left;
@@ -7222,20 +7232,38 @@ nav.breadcrumb {
       width: 50%; }
       .card-panel .card-panel-body .card-panel-grid .card:nth-child(odd) {
         clear: left; }
-    @media (min-width: 544px) {
-      .card-panel .card-panel-body .card-panel-list .card {
-        padding: 0;
-        width: 100%; } }
-    @media (min-width: 992px) {
-      .card-panel .card-panel-body .card-panel-list .card {
-        padding: 0;
-        width: 100%; } }
-    .card-panel .card-panel-body .card-panel-list .card .card-img-top,
-    .card-panel .card-panel-body .card-panel-list .card .card-img:first-child {
+    .card-panel .card-panel-body .card-panel-list .card {
+      position: relative;
       float: left;
-      max-width: 40%;
-      margin-right: 16px;
-      margin-right: 1rem; }
+      min-height: 1px;
+      padding-left: 15px;
+      padding-left: 0.9375rem;
+      padding-right: 15px;
+      padding-right: 0.9375rem; }
+      @media (min-width: 544px) {
+        .card-panel .card-panel-body .card-panel-list .card {
+          padding: 0;
+          width: 100%; } }
+      @media (min-width: 992px) {
+        .card-panel .card-panel-body .card-panel-list .card {
+          padding: 0;
+          width: 100%; } }
+      .card-panel .card-panel-body .card-panel-list .card .card-img-top,
+      .card-panel .card-panel-body .card-panel-list .card .card-img:first-child,
+      .card-panel .card-panel-body .card-panel-list .card img:first-child {
+        float: left;
+        max-width: 40%;
+        margin-right: 16px;
+        margin-right: 1rem; }
+      .card-panel .card-panel-body .card-panel-list .card.card-backed, .card-panel.cards-backed .card-panel-body .card-panel-list .card {
+        padding: 16px 16px 0;
+        padding: 1rem 1rem 0; }
+        .card-panel .card-panel-body .card-panel-list .card.card-backed .card-img-top, .card-panel.cards-backed .card-panel-body .card-panel-list .card .card-img-top,
+        .card-panel .card-panel-body .card-panel-list .card.card-backed .card-img:first-child, .card-panel.cards-backed .card-panel-body .card-panel-list .card .card-img:first-child,
+        .card-panel .card-panel-body .card-panel-list .card.card-backed img:first-child, .card-panel.cards-backed .card-panel-body .card-panel-list .card img:first-child {
+          margin-left: 0;
+          margin-bottom: 16px;
+          margin-bottom: 1rem; }
   .card-panel .card-panel-header {
     margin-bottom: 16px;
     margin-bottom: 1rem;
@@ -7283,6 +7311,14 @@ nav.breadcrumb {
         margin-left: 1rem; }
   .card-panel a.card p.card-text, .card-panel a.card:hover p.card-text, .card-panel a.card:focus p.card-text, .card-panel .card a p.card-text, .card-panel .card a:hover p.card-text, .card-panel .card a:focus p.card-text {
     color: #171717; }
+  .card-panel a.card.card-inverse p.card-text, .card-panel a.card.card-backed-primary p.card-text, .card-panel.cards-backed-primary a.card p.card-text, .card-panel a.card.card-backed-accent p.card-text, .card-panel.cards-backed-accent a.card p.card-text, .card-panel a.card.card-inverse:hover p.card-text, .card-panel a.card.card-backed-primary:hover p.card-text, .card-panel.cards-backed-primary a.card:hover p.card-text, .card-panel a.card.card-backed-accent:hover p.card-text, .card-panel.cards-backed-accent a.card:hover p.card-text, .card-panel a.card.card-inverse:focus p.card-text, .card-panel a.card.card-backed-primary:focus p.card-text, .card-panel.cards-backed-primary a.card:focus p.card-text, .card-panel a.card.card-backed-accent:focus p.card-text, .card-panel.cards-backed-accent a.card:focus p.card-text, .card-panel .card.card-inverse a p.card-text, .card-panel .card.card-backed-primary a p.card-text, .card-panel.cards-backed-primary .card a p.card-text,
+  .card-panel.cards-backed .card.card-backed-primary a p.card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-primary .card a p.card-text, .card-panel.cards-backed-primary
+  .card-panel.cards-backed .card a p.card-text, .card-panel .card.card-backed-accent a p.card-text, .card-panel.cards-backed-accent .card a p.card-text,
+  .card-panel.cards-backed .card.card-backed-accent a p.card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-accent .card a p.card-text, .card-panel.cards-backed-accent
+  .card-panel.cards-backed .card a p.card-text, .card-panel .card.card-inverse a:hover p.card-text, .card-panel .card.card-backed-primary a:hover p.card-text, .card-panel.cards-backed-primary .card a:hover p.card-text, .card-panel .card.card-backed-accent a:hover p.card-text, .card-panel.cards-backed-accent .card a:hover p.card-text, .card-panel .card.card-inverse a:focus p.card-text, .card-panel .card.card-backed-primary a:focus p.card-text, .card-panel.cards-backed-primary .card a:focus p.card-text, .card-panel .card.card-backed-accent a:focus p.card-text, .card-panel.cards-backed-accent .card a:focus p.card-text {
+    color: rgba(255, 255, 255, 0.75); }
 
 .card.card-overlay {
   margin-top: 41.6px;
