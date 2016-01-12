@@ -16,8 +16,9 @@ function react_to_window() {
 
 			$(window).data('plugin_stellar').init();
 			stellarActivated = true;
+		}else{
+			$(window).data('plugin_stellar').refresh();
 		}
-
 		var $ratio = ResponsiveBootstrapToolkit.is('<xl')?(9/16):(7/16);
 		$('.media-wrap-paralax').each(function () {
 			$(this).css('min-height', ($(window).width() * $ratio) + 'px');
@@ -42,7 +43,7 @@ $(document).ready(function(){
 		verticalOffset: 0,
 
 		// Refreshes parallax content on window load and resize
-		responsive: true,
+		responsive: false,
 
 		// Select which property is used to calculate scroll.
 		// Choose 'scroll', 'position', 'margin' or 'transform',
