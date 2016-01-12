@@ -14864,13 +14864,12 @@ function react_to_window() {
 
 			$(window).data('plugin_stellar').init();
 			stellarActivated = true;
-		}else{
-			$(window).data('plugin_stellar').refresh();
 		}
 		var $ratio = ResponsiveBootstrapToolkit.is('<xl')?(9/16):(7/16);
 		$('.media-wrap-paralax').each(function () {
 			$(this).css('min-height', ($(window).width() * $ratio) + 'px');
 		});
+		$(window).data('plugin_stellar').refresh();
 	}
 }
 
@@ -14901,7 +14900,7 @@ $(document).ready(function(){
 		// Select which property is used to position elements.
 		// Choose between 'position' or 'transform',
 		// or write your own 'positionProperty' plugin.
-		positionProperty: 'position',
+		positionProperty: 'transform',
 
 		// Enable or disable the two types of parallax
 		parallaxBackgrounds: true,
