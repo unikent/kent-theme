@@ -6675,7 +6675,8 @@ body.show-global-search .global-nav-menu .global-nav-links {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   transition: max-height 300ms;
-  position: relative; }
+  position: relative;
+  font-size: 0; }
   .departmental-nav .navbar-menu.in {
     height: auto;
     max-height: 1000px; }
@@ -6686,6 +6687,10 @@ body.show-global-search .global-nav-menu .global-nav-links {
     display: block;
     padding: 8px;
     padding: 0.5rem; }
+    .departmental-nav .navbar-menu a:hover {
+      background-color: rgba(255, 255, 255, 0.05); }
+    .departmental-nav .navbar-menu a.active {
+      background-color: rgba(255, 255, 255, 0.1); }
 
 @media (min-width: 768px) {
   .departmental-nav {
