@@ -128,29 +128,14 @@
   }
 
   .footer-section-social{
-    overflow: hidden;
+	  @extend .content-social;
+	  text-align: center;
+	  font-size: 0;
 
-    a{
-      width: 2.25rem;
-      height: 2.25rem;
-      text-align: center;
-      font-size: 1.5rem;
-      display: block;
-      float: left;
-      margin: 0 0.25rem 0.25rem 0;
-      &:hover,&:active,&:focus{
-        outline: none;
-        text-decoration: none;
-      }
-		&:before{
-			line-height: 2.25rem;
-		}
-		@each $network, $color in $social-networks {
-			&.kf-#{$network}{
-				background-color: $color;
-			}
-		}
-    }
+	  a, .content-social-link {
+		  float:none;
+		  margin: 0 0.25rem .5rem;
+	  }
   }
 
 
