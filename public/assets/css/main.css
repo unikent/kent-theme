@@ -5158,6 +5158,75 @@ a.text-danger:focus, a.text-danger:hover {
 body .kf.pull-right {
   margin-left: 0px; }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block; }
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    clear: both; }
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  .slick-slide img {
+    display: block; }
+  .slick-slide.slick-loading img {
+    display: none; }
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
 .collapse-xs-up {
   max-height: 0;
   overflow: hidden;
@@ -7954,6 +8023,109 @@ main > blockquote.social-quote {
     margin: 0 0.5rem 0.5rem 0; }
     .content-tags .content-tag:last-child {
       margin-right: 0; }
+
+.kent-slider .slick-list {
+  width: 100%; }
+
+.kent-slider .kent-slide {
+  position: relative;
+  cursor: hand;
+  width: 100%; }
+
+.kent-slider .slick-prev, .kent-slider .slick-next {
+  z-index: 1;
+  position: absolute;
+  bottom: 35%;
+  bottom: calc( 35% - 1.5rem);
+  font: "0/0" a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+  border: none;
+  padding: 0;
+  width: 48px;
+  width: 3rem;
+  height: 48px;
+  height: 3rem;
+  display: block; }
+  .kent-slider .slick-prev:focus, .kent-slider .slick-next:focus {
+    outline: none; }
+  .kent-slider .slick-prev:after, .kent-slider .slick-next:after {
+    position: absolute;
+    font-family: "kentfont", sans-serif;
+    color: #005689;
+    display: block;
+    width: 48px;
+    width: 3rem;
+    height: 48px;
+    height: 3rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    top: 0;
+    line-height: 48px;
+    line-height: 3rem;
+    text-align: center;
+    font-size: 32px;
+    font-size: 2rem; }
+  @media (min-width: 768px) {
+    .kent-slider .slick-prev, .kent-slider .slick-next {
+      bottom: 50%;
+      bottom: calc( 50% - 1.5rem); } }
+
+.kent-slider .slick-prev {
+  left: 0; }
+  .kent-slider .slick-prev:after {
+    content: ""; }
+
+.kent-slider .slick-next {
+  right: 0; }
+  .kent-slider .slick-next:after {
+    content: ""; }
+
+.kent-slider .kent-slider-dots {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  list-style: none;
+  width: 100%;
+  margin-bottom: 0; }
+  .kent-slider .kent-slider-dots li {
+    display: inline-block;
+    padding: 0; }
+    .kent-slider .kent-slider-dots li:before {
+      display: none; }
+    .kent-slider .kent-slider-dots li button {
+      display: block;
+      padding: 0;
+      width: 16px;
+      width: 1rem;
+      height: 16px;
+      height: 1rem;
+      font: "0/0" a;
+      color: transparent;
+      text-shadow: none;
+      background-color: transparent;
+      border: 0; }
+      .kent-slider .kent-slider-dots li button:after {
+        position: absolute;
+        font-family: "kentfont", sans-serif;
+        color: rgba(255, 255, 255, 0.6);
+        display: block;
+        width: 16px;
+        width: 1rem;
+        height: 16px;
+        height: 1rem;
+        top: 0;
+        line-height: 16px;
+        line-height: 1rem;
+        text-align: center;
+        font-size: 14.4px;
+        font-size: 0.9rem;
+        content: ""; }
+      .kent-slider .kent-slider-dots li button:focus {
+        outline: none; }
+    .kent-slider .kent-slider-dots li.slick-active button:after {
+      color: #005689; }
 
 .global-footer {
   background: #434749;

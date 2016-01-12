@@ -10,6 +10,7 @@
 // Vendor
 
 @import "../vendor/kent-font/build/less/_kentfont";
+@import "../vendor/slick-carousel/slick/slick.scss";
 
 // Theme components
 @import "components/responsive_utils";
@@ -30,4 +31,5 @@
 @import "components/impact_statement";
 @import "components/page_feedback";
 @import "components/article";
+@import "components/slider";
 @import "components/footer";

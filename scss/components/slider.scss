@@ -1,0 +1,102 @@
+.kent-slider{
+	.slick-list{
+		width: 100%;
+	}
+	.kent-slide{
+		position: relative;
+		cursor: hand;
+		width:100%;
+	}
+	.slick-prev,.slick-next{
+		z-index: 1;
+		position: absolute;
+		bottom: 35%;
+		bottom: calc( 35% - 1.5rem);
+		@include text-hide();
+		border:none;
+		padding: 0;
+		width: 3rem;
+		height: 3rem;
+		display: block;
+		&:focus{
+			outline: none;
+		}
+		&:after{
+			position: absolute;
+			font-family: $font-family-kentfont;
+			color: $link-color;
+			display: block;
+			width: 3rem;
+			height: 3rem;
+			background-color: rgba(255,255,255,0.6);
+			top:0;
+			line-height: 3rem;
+			text-align: center;
+			font-size: 2rem;
+		}
+		@include media-breakpoint-up(md){
+			bottom: 50%;
+			bottom: calc( 50% - 1.5rem);
+		}
+	}
+	.slick-prev{
+		left:0;
+		&:after{
+			content: $kf-angle-left;
+		}
+	}
+	.slick-next{
+		right:0;
+		&:after{
+			content: $kf-angle-right;
+		}
+	}
+
+	.kent-slider-dots{
+		position: absolute;
+		bottom: 0;
+		text-align: center;
+		list-style: none;
+		width: 100%;
+		margin-bottom: 0;
+		li{
+			display: inline-block;
+			padding: 0;
+			&:before{
+				display:none;
+			}
+			button{
+
+				display: block;
+				padding: 0;
+				width: 1rem;
+				height: 1rem;
+				@include text-hide();
+				&:after{
+					position: absolute;
+					font-family: $font-family-kentfont;
+					color: rgba(255,255,255,0.6);
+					display: block;
+					width: 1rem;
+					height: 1rem;
+					top:0;
+					line-height: 1rem;
+					text-align: center;
+					font-size: 0.9rem;
+					content: $kf-circle;
+				}
+				&:focus{
+					outline: none;
+				}
+			}
+
+			&.slick-active{
+				button{
+					&:after{
+						color: $link-color;
+					}
+				}
+			}
+		}
+	}
+}

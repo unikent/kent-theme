@@ -59,6 +59,7 @@ module.exports = function(grunt) {
                     'js/_bootstrap.js',
                     'vendor/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.js',
 					'vendor/jquery.stellar/src/jquery.stellar.js',
+					'vendor/slick-carousel/slick/slick.js',
                     'js/components/responsive_util.js',
                     'js/components/collapse_responsive.js',
                     'js/components/global_nav.js',
@@ -67,7 +68,8 @@ module.exports = function(grunt) {
                     'js/components/beta_bar.js',
 					'js/components/attribution.js',
 					'js/components/embeds.js',
-					'js/components/paralax.js'
+					'js/components/paralax.js',
+					'js/components/slider.js'
                 ],
                 dest: 'js/main.js'
             }
