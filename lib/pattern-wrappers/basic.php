@@ -1,6 +1,6 @@
 <?php use unikent\kent_theme\KentThemeHelper; 
 
-include "{bootstrap}";
+include "../bootstrap.php";
 
 KentThemeHelper::header(array(
 			"title" => "Pattern library",
@@ -14,6 +14,6 @@ KentThemeHelper::header(array(
 	); 
 ?>
 
-	{body}
+	{{body}}
 
 <?php KentThemeHelper::footer(); ?>
