@@ -8,6 +8,9 @@
 		padding: 1rem;
 	}
 
+	&.card-panel-contained{
+		@extend .container;
+	}
 
 	&.card-panel-inverse{
 
@@ -35,6 +38,16 @@
 
 			@extend .card-backed;
 		}
+
+		.card-panel-body {
+
+			.card-panel-grid,
+			.card-panel-single,
+			.card-panel-list {
+				padding: 0;
+			}
+
+		}
 	}
 
 	&.cards-header-split {
@@ -61,6 +74,27 @@
 
 			&.cards-backed .card{
 				border-color: $color;
+			}
+
+			.card-panel-full{
+				& > div.expanded{
+					margin-top: -1rem;
+					margin-bottom: -1rem;
+				}
+				&:first-child{
+					& >div{
+						&.expanded{
+							margin-left: -1rem;
+						}
+					}
+				}
+				&:last-child{
+					& >div{
+						&.expanded{
+							margin-right: -1rem;
+						}
+					}
+				}
 			}
 		}
 
@@ -93,8 +127,13 @@
 
 		& > .card{
 			margin-top: 1rem;
-			&:nth-child(1),&:nth-child(2),&:nth-child(3),&:nth-child(4){
+			&:nth-child(1),&:nth-child(2){
 				margin-top: 0;
+			}
+			@include media-breakpoint-up(lg) {
+				&:nth-child(3),&:nth-child(4){
+					margin-top: 0;
+				}
 			}
 		}
 		.card {
@@ -118,12 +157,13 @@
 			}
 		}
 
+		.card-panel-full,
 		.card-panel-grid,
 		.card-panel-single,
 		.card-panel-list {
 
 			overflow:      hidden;
-			margin-bottom: 2rem;
+			margin-bottom: 1rem;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -133,6 +173,31 @@
 				@include make-col-span(6);
 				margin-bottom: 0;
 			}
+		}
+
+		.card-panel-full{
+			overflow: visible;
+			margin-bottom: 0;
+			padding: 0;
+			display: flex;
+			& > div{
+				background-position: center center;
+				background-size: cover;
+				width:100%;
+				width: calc(100% + #{$grid-gutter-width/2});
+			}
+
+			&:first-child{
+				& >div{
+					margin-right: ($grid-gutter-width/2);
+				}
+			}
+			&:last-child{
+				& >div{
+					margin-left: ($grid-gutter-width/2);
+				}
+			}
+
 		}
 
 		.card-panel-single {
@@ -148,9 +213,13 @@
 					padding: 0;
 					width:   100%;
 				}
+				&.card-backed {
+					padding: 1rem 1rem 0;
+				}
 			}
 		}
 		.card-panel-grid {
+			padding: 0;
 			.card {
 				@include make-col();
 				@include make-col-span(6);
@@ -161,7 +230,7 @@
 		}
 		.card-panel-list {
 			.card {
-
+				@include make-col();
 				@include media-breakpoint-up(sm) {
 					padding: 0;
 					width:   100%;
@@ -172,10 +241,21 @@
 				}
 
 				.card-img-top,
-				.card-img:first-child {
+				.card-img:first-child,
+				img:first-child{
 					float:        left;
 					max-width:    40%;
 					margin-right: 1rem;
+				}
+
+				&.card-backed{
+					padding: 1rem 1rem 0;
+					.card-img-top,
+					.card-img:first-child,
+					img:first-child{
+						margin-left: 0;
+						margin-bottom: 1rem;
+					}
 				}
 			}
 		}
@@ -237,7 +317,7 @@
 				float: left;
 			}
 
-			@extend .social-links;
+			@extend .content-social;
 
 		}
 
@@ -253,12 +333,17 @@
 		}
 	}
 
-	// if card is an A
-	// @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
 	a.card, .card a {
 		&,&:hover,&:focus {
 			p.card-text {
 				color: $body-color;
+			}
+		}
+	}
+	a.card.card-inverse, .card.card-inverse a {
+		&,&:hover,&:focus {
+			p.card-text {
+				color: rgba(255,255,255,.75);
 			}
 		}
 	}
