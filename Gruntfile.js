@@ -1,4 +1,37 @@
 module.exports = function(grunt) {
+
+	var path        = require('path');
+	var Handlebars  = require('handlebars');
+
+	Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
+
+		switch (operator) {
+			case '!=':
+				return (v1 !== v2) ? options.fn(this) : options.inverse(this);
+			case '==':
+				return (v1 === v2) ? options.fn(this) : options.inverse(this);
+			case '<':
+				return (v1 < v2) ? options.fn(this) : options.inverse(this);
+			case '<=':
+				return (v1 <= v2) ? options.fn(this) : options.inverse(this);
+			case '>':
+				return (v1 > v2) ? options.fn(this) : options.inverse(this);
+			case '>=':
+				return (v1 >= v2) ? options.fn(this) : options.inverse(this);
+			case '&&':
+				return (v1 && v2) ? options.fn(this) : options.inverse(this);
+			case '||':
+				return (v1 || v2) ? options.fn(this) : options.inverse(this);
+			default:
+				return options.inverse(this);
+		}
+	});
+
+	Handlebars.registerHelper("log", function(something) {
+		console.log(something);
+	});
+
+
     grunt.initConfig({
 
         copy: {
@@ -141,6 +174,93 @@ module.exports = function(grunt) {
 					'public/assets/css/main.min.css': 'public/assets/css/main.css'
 				}
 			}
+		},
+		php2html: {
+			production: {
+				options:   {
+					htmlhint:false,
+					getData: {
+						webroot: '//beta.kent.ac.uk/patterns/'
+					}
+				},
+				files: [
+					{expand:  true,
+						cwd:  'lib/pattern-wrappers/',
+						src:  ['*.php'],
+						dest: 'lib/pattern-wrappers',
+						ext:  '.html'
+					}
+				]
+
+			},
+			development:{
+				options:   {
+					htmlhint:false
+				},
+				files: [
+					{expand:  true,
+						cwd:  'lib/pattern-wrappers/',
+						src:  ['*.php'],
+						dest: 'lib/pattern-wrappers/dev',
+						ext:  '.html'
+					}
+				]
+			}
+		},
+		metalsmith: {
+			production: {
+				options: {
+					metadata: {
+						webroot: '//beta.kent.ac.uk/patterns/',
+						title: 'Pattern Library',
+						description: 'A Pattern Library for the Kent Theme'
+					},
+					plugins: {
+						'metalsmith-layouts': {
+							engine: 'handlebars',
+							directory:'lib/pattern-wrappers',
+							default:'basic.html',
+							partials:'lib/pattern-partials'
+						}
+					}
+				},
+				src: 'patterns',
+				dest: 'public/docs'
+			},
+			development: {
+				options: {
+					metadata: {
+						docsroot: '//localhost/kent-theme/public/devdocs/',
+						title: 'Pattern Library',
+						description: 'A Pattern Library for the Kent Theme'
+					},
+					plugins: {
+						'metalsmith-navigation':{
+							"navConfigs": {
+								header:{
+									filterProperty:false,
+									sortBy:'nav_order'
+								},
+								all:{
+									includeDirs: true,
+									filterProperty:false,
+									sortBy:'sub_title'
+								}
+							},
+							"navSettings": {}
+						},
+						'metalsmith-layouts': {
+							engine: 'handlebars',
+							directory:'lib/pattern-wrappers/dev',
+							default:'basic.html',
+							partials:'lib/pattern-partials'
+						}
+
+					}
+				},
+				src: 'patterns',
+				dest: 'public/devdocs'
+			}
 		}
 	});
 
@@ -154,8 +274,12 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-cssnano');
 	grunt.loadNpmTasks('grunt-postcss');
 	grunt.loadNpmTasks('grunt-modernizr');
+	grunt.loadNpmTasks('grunt-php2html');
+	grunt.loadNpmTasks('grunt-metalsmith');
 
 	// Define tasks
 	grunt.registerTask('development', [ 'jshint', 'concat', 'uglify', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr']);
 	grunt.registerTask('default', [ 'development', 'watch' ]);
+	grunt.registerTask('patterns', [ 'php2html:production','metalsmith:production' ]);
+	grunt.registerTask('patterns_local', [ 'php2html:development','metalsmith:development' ]);
 };

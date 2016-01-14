@@ -13,14 +13,14 @@
 		<meta name="msapplication-TileColor" content="#ffffff"/>
 		<meta name="msapplication-TileImage" content="<?php echo $thumb; ?>" />
 
-		<?php foreach($meta as $name => $content): ?>
+		<?php foreach($meta as $name => $content){  ?>
 			<meta name="<?php echo $name; ?>" content="<?php echo $content; ?>" />
-		<?php endforeach; ?>
+		<?php } ?>
 
 		<!-- Schema.org markup for Google+ -->
 		<meta itemprop="name" content="<?php echo $page_title; ?>" />
 		<meta itemprop="image" content="<?php echo $thumb; ?>" />
-		<?php if($description):?><meta itemprop="description" content="<?php echo $description; ?>" /><?php endif;?>
+		<?php if($description){ ?><meta itemprop="description" content="<?php echo $description; ?>" /><?php } ?>
 
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary_large_image" />
@@ -28,14 +28,14 @@
 		<meta name="twitter:title" content="<?php echo $page_title; ?>" />
 		<meta name="twitter:creator" content="@unikent" />
 		<meta name="twitter:image:src" content="<?php echo $thumb; ?>" />
-		<?php if($description):?><meta name="twitter:description" content="<?php echo $description; ?>" /><?php endif;?>
+		<?php if($description){ ?><meta name="twitter:description" content="<?php echo $description; ?>" /><?php } ?>
 
 		<!-- Open Graph data -->
 		<meta property="og:title" content="<?php echo $page_title; ?>" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="<?php echo $thumb; ?>" />
 		<meta property="og:site_name" content="The University of Kent" />
-		<?php if($description):?><meta property="og:description" content="<?php echo $description; ?>" /><?php endif;?>
+		<?php if($description){ ?><meta property="og:description" content="<?php echo $description; ?>" /><?php } ?>
 
 		<link rel="stylesheet" href="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/css/<?php echo $theme_style;?>" />
 		<link rel="stylesheet" href="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/css/kentfont.css" />
@@ -47,6 +47,7 @@
 	<body>
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
 		<a href="#main_content" class="sr-only">Jump to content</a>
+		<?php if($beta_bar){ ?>
 		<section class="beta-bar navbar">
 			<p><span class="beta-bar-beta">BETA</span></p>
 
@@ -58,6 +59,7 @@
 			</p>
 			<span class="beta-toggler">Learn more</span>
 		</section>
+		<?php } ?>
 		<header class="global-header">
 			<section class="audience-bar navbar">
 				<a class="navbar-brand kf-kent-horizontal" href="/" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a>
