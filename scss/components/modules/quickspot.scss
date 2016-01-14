@@ -1,0 +1,41 @@
+.quickspot-container {
+	position:relative;
+	/*Oddly IE7 is fine without this, IE8 on the other hand gets a bit confused*/
+	position:absolute\9; 
+ }
+
+.quickspot-results {
+	width: 100%;
+	background: #fff;
+	position:absolute;
+	top:3.2rem;
+	left:0;
+	z-index:9999;
+	max-height:15rem;
+	overflow:auto;
+
+
+	border:solid 1px $brand-primary;
+	
+	.quickspot-result {
+		padding:8px 10px;
+		display:block;
+		text-decoration: none;
+		cursor:pointer;
+		color: $body-color;
+
+		strong {
+			color: $link-color;
+		}
+
+		&.selected {
+			background: $kent-primary-tint;
+			//color:#fff;
+
+			span {
+				font-style: italic;
+			}
+		}
+	}
+
+}
