@@ -77,14 +77,16 @@
 			}
 
 			.card-panel-full{
+
 				& > div.expanded{
-					margin-top: -1rem;
-					margin-bottom: -1rem;
+					width: calc(100% + #{$grid-gutter-width});
 				}
 				&:first-child{
 					& >div{
 						&.expanded{
+							margin-top: -1rem;
 							margin-left: -1rem;
+							margin-right: -1rem;
 						}
 					}
 				}
@@ -92,6 +94,41 @@
 					& >div{
 						&.expanded{
 							margin-right: -1rem;
+							margin-left: -1rem;
+							margin-bottom: -0.5rem;
+						}
+					}
+				}
+
+				@include media-breakpoint-up(sm) {
+					&:last-child{
+						& >div{
+							&.expanded{
+								margin-bottom: -1rem;
+							}
+						}
+					}
+				}
+
+				@include media-breakpoint-up(md) {
+					& > div.expanded{
+					}
+					&:first-child{
+						& >div{
+							&.expanded{
+								margin-right: 0;
+								margin-top: -1rem;
+								margin-bottom: -1rem;
+							}
+						}
+					}
+					&:last-child{
+						& >div{
+							&.expanded{
+								margin-left: 0;
+								margin-top: -1rem;
+								margin-bottom: -1rem;
+							}
 						}
 					}
 				}
@@ -177,25 +214,35 @@
 
 		.card-panel-full{
 			overflow: visible;
-			margin-bottom: 0;
 			padding: 0;
 			display: flex;
+			width: 100%;
+
 			& > div{
 				background-position: center center;
 				background-size: cover;
 				width:100%;
-				width: calc(100% + #{$grid-gutter-width/2});
+				padding-top: 100%;
 			}
 
-			&:first-child{
-				& >div{
-					margin-right: ($grid-gutter-width/2);
+			@include media-breakpoint-up(md) {
+				@include make-col-span(6);
+				margin-bottom: 0;
+				& > div{
+					width: calc(100% + #{$grid-gutter-width/2});
 				}
-			}
-			&:last-child{
-				& >div{
-					margin-left: ($grid-gutter-width/2);
+
+				&:first-child{
+					& >div{
+						margin-right: ($grid-gutter-width/2);
+					}
 				}
+				&:last-child{
+					& >div{
+						margin-left: ($grid-gutter-width/2);
+					}
+				}
+
 			}
 
 		}
