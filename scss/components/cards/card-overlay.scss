@@ -88,6 +88,22 @@
 			position: relative;
 		}
 
+		&.card-overlay-inline-sm {
+			@include media-breakpoint-down(sm){
+				position:initial;
+				padding:0;
+			}
+		}
+		&.card-overlay-inline-xs {
+			@include media-breakpoint-down(xs){
+				position:initial;
+				padding:0;
+			}
+		}
+
+
+		
+
 
 		@include media-breakpoint-up(md){
 			
@@ -175,6 +191,9 @@
 		}
 
 	}
+
+
+
 
 	@include media-breakpoint-up(md){
 		.card-title-wrap {

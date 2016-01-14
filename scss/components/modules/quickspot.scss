@@ -7,18 +7,15 @@
 .quickspot-results {
 	width: 100%;
 	background: #fff;
-	position:absolute;
-	top:3.2rem;
-	left:0;
 	z-index:9999;
 	max-height:14rem;
 	overflow:auto;
-	box-shadow:  3px 3px 5px 0px rgba(0, 0, 0, 0.3);
-
-
+	
 	border:solid 1px #ccc;
 	border-top:0px;
-	
+	display:block;
+	box-shadow:  3px 3px 5px 0px rgba(0, 0, 0, 0.3);	
+
 	.quickspot-result {
 		padding:8px 10px;
 		display:block;
@@ -26,28 +23,57 @@
 		cursor:pointer;
 		color: $body-color;
 		border-bottom: 1px solid #eee;
-
+		transition: background .25s;
 		
 		&:before {
 			color: #ccc;
 			float: right;
    			content: $kf-chevron-right;
   			font-family: $font-family-kentfont;
+  			// doube line height spacing
+  			margin-top: 0.8rem;
 		}
 
 		strong {
-			color: $link-color;
+			color: #000;
 		}
 		span {
-				font-style: italic;
-				color: $brand-accent;
-			
+			font-style: italic;
+			color: $brand-accent;
 		}
 		&.selected {
 			background: #eee;
-			//color:#fff;
-		}
-			
+			transition: background .25s;
+		}	
 	}
 
+
+	@include media-breakpoint-up(sm){
+		position:absolute;
+		//top:3.2rem;
+		left:0;	
+		width:100%;
+		
+	}
+
+}
+
+
+/* Emulates form-group input sizing (to allow it to match with search element more easily) */
+#quickspot-results-container {
+		position:relative;
+
+	@include media-breakpoint-up(md){
+		margin-left: 15%;
+	 	margin-right: 15%;
+	}
+		
+}
+
+
+/* style helper */
+.quickspot-container {
+	.form-group {
+		margin-bottom:0px;
+	}
 }
