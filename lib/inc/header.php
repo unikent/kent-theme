@@ -129,7 +129,7 @@
 						<div class="form-group">
 							<label for="search" class="sr-only">Search</label>
 							<div class="input-group input-group-lg">
-								<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department. keyword... ">
+								<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department. keyword... " autocomplete="off">
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-accent btn-icon kf-search" aria-label="Search"></button>
 								</span>
