@@ -8560,14 +8560,18 @@ main > blockquote.social-quote {
     cursor: pointer;
     color: #171717;
     border-bottom: 1px solid #eee;
-    transition: background .25s; }
+    transition: background .25s;
+    position: relative; }
     .quickspot-results .quickspot-result:before {
       color: #ccc;
       float: right;
       content: "";
       font-family: "kentfont", sans-serif;
-      margin-top: 12.8px;
-      margin-top: 0.8rem; }
+      position: absolute;
+      right: 8px;
+      right: .5rem;
+      top: 35%;
+      top: calc(50% - .5rem); }
     .quickspot-results .quickspot-result strong {
       color: #000; }
     .quickspot-results .quickspot-result span {
