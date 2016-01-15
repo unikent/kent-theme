@@ -36,6 +36,7 @@
     "load-grunt-tasks": "~1.0.0",
     "metalsmith-layouts": "^1.4.2",
     "metalsmith-navigation": "^0.2.5",
+    "metalsmith-text-replace": "^1.0.1",
     "pixrem": "^3.0.0",
     "time-grunt": "~1.0.0"
   },

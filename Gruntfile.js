@@ -236,6 +236,12 @@ module.exports = function(grunt) {
 							directory:'lib/pattern-wrappers',
 							default:'basic.html',
 							partials:'lib/pattern-partials'
+						},
+						'metalsmith-text-replace':{
+							'**/**':{
+								find: "../../examples/",
+								replace: "../"
+							}
 						}
 					}
 				},
