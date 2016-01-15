@@ -37,10 +37,10 @@
 		<meta property="og:site_name" content="The University of Kent" />
 		<?php if($description){ ?><meta property="og:description" content="<?php echo $description; ?>" /><?php } ?>
 
-		<link rel="stylesheet" href="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/css/<?php echo $theme_style;?>" />
-		<link rel="stylesheet" href="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/css/kentfont.css" />
+		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>assets/css/<?php echo $theme_style;?>" />
+		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>assets/css/kentfont.css" />
 
-		<script src="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/js/modernizr.min.js"></script>
+		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/modernizr.min.js"></script>
 
 		<?php echo $head_markup ;?>
 	</head>
