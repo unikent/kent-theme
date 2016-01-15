@@ -6697,6 +6697,10 @@ select {
                 opacity: 1; }
                 .global-nav .global-nav-links.in .global-nav-link.in > a > .more::before {
                   content: ""; } }
+  @media (min-width: 992px) {
+    .global-nav .global-nav-links {
+      max-width: 1200px;
+      margin: 0 auto; } }
 
 .show-global-menu, .show-global-search {
   overflow-y: hidden; }
@@ -8571,7 +8575,7 @@ main > blockquote.social-quote {
       right: 8px;
       right: .5rem;
       top: 35%;
-      top: calc(50% - .5rem); }
+      top: calc(50% - 0.5rem); }
     .quickspot-results .quickspot-result strong {
       color: #000; }
     .quickspot-results .quickspot-result span {

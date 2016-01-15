@@ -1,11 +1,11 @@
 jQuery(document).ready(function(){
 	var beta_bar = $('.beta-bar');
-	var toggler = $('.beta-bar .beta-toggler');
 
-	function respond () {
+
+	function respond() {
 		if (barHasOverflown()) {
 			beta_bar.addClass('overflown');
-			toggler.prop('hidden',false);
+			toggler.prop('hidden', false);
 
 			if (barIsMinimal()) {
 				toggler.text('Learn more');
@@ -15,25 +15,25 @@ jQuery(document).ready(function(){
 			}
 		}
 		else {
-			toggler.prop('hidden',true);
+			toggler.prop('hidden', true);
 			beta_bar.removeClass('overflown');
 			closeNav();
 		}
 	}
 
-	function barHasOverflown () {
+	function barHasOverflown() {
 		var last = beta_bar.find('p').last();
 		var first = beta_bar.find('p').first();
 		return last.position().top > first.position().top;
 	}
 
-	function barIsMinimal () {
+	function barIsMinimal() {
 		var second = beta_bar.find('p:nth-child(2)').first();
 		var first = beta_bar.find('p').first();
 		return second.position().top > first.position().top;
 	}
 
-	function toggleNav () {
+	function toggleNav() {
 		if (beta_bar.hasClass('in')) {
 			closeNav();
 		}
@@ -42,25 +42,30 @@ jQuery(document).ready(function(){
 		}
 	}
 
-	function openNav () {
+	function openNav() {
 		toggler.addClass('in');
 		beta_bar.addClass('in');
 	}
 
-	function closeNav () {
+	function closeNav() {
 		beta_bar.removeClass('in');
 		toggler.removeClass('in');
 	}
 
-	toggler.click(function () {
-		if (barHasOverflown()) {
-			toggleNav();
-		}
-	});
+	if(beta_bar.length >0 ) {
 
-	$(window).on('viewport:resize', function(){
+		var toggler = $('.beta-bar .beta-toggler');
+
+		toggler.click(function () {
+			if (barHasOverflown()) {
+				toggleNav();
+			}
+		});
+
+		$(window).on('viewport:resize', function () {
+			respond();
+		});
+
 		respond();
-	});
-
-	respond();
+	}
 });
