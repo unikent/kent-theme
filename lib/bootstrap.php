@@ -5,10 +5,16 @@
  */
 
 // get config
-if(file_exists(dirname(__FILE__)."/config.php")){
-	include dirname(__FILE__)."/config.php";
-}else{
-	// set any required defaults
+if(file_exists(dirname(dirname(__FILE__)."/.env"))){
+	$envfile = file_get_contents(dirname(dirname(__FILE__))."/.env");
+	$lines = explode("\n", str_replace("\r\n","\n",$envfile));
+
+	foreach($lines as $line){
+		$parts = explode('=',$line);
+		if(count($parts)===2){
+			define($parts[0],$parts[1]);
+		}
+	}
 }
 
 include "theme-helper.php";
