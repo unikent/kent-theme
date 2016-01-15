@@ -81,6 +81,12 @@ h6,.h6{
   }
 }
 
+@include media-breakpoint-up(xxxl) {
+	html {
+		font-size: 20px;
+	}
+}
+
 .content-header{
 	h1{
 		margin-bottom: 2rem;
