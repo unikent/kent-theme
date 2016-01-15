@@ -4143,7 +4143,6 @@ button.close {
   .modal.fade .modal-dialog {
     transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
-    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%); }
   .modal.in .modal-dialog {
@@ -4437,7 +4436,6 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
-        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -6418,6 +6416,27 @@ input:-ms-input-placeholder {
 select {
   border-radius: 0; }
 
+.mobile-nav-links a, .global-nav .audience-nav-links a, .departmental-nav .navbar-menu a {
+  display: block;
+  color: #eee;
+  padding: 12px 16px;
+  padding: 0.75rem 1rem;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+  font-size: 1rem; }
+  .mobile-nav-links a:after, .global-nav .audience-nav-links a:after, .departmental-nav .navbar-menu a:after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    right: 16px;
+    right: 1rem;
+    font-family: "kentfont", sans-serif; }
+  .mobile-nav-links a:hover, .global-nav .audience-nav-links a:hover, .departmental-nav .navbar-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1); }
+  .mobile-nav-links a.active, .global-nav .audience-nav-links a.active, .departmental-nav .navbar-menu a.active {
+    background-color: rgba(255, 255, 255, 0.1); }
+
 .audience-bar {
   background-color: #671115;
   color: #fff;
@@ -6542,20 +6561,6 @@ select {
       content: ""; }
     .global-nav .global-nav-links.in .global-nav-link.in nav {
       max-height: 100vh; }
-  .global-nav .audience-nav-links a {
-    display: block;
-    color: #eee;
-    padding: 12px 16px;
-    padding: 0.75rem 1rem;
-    position: relative;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
-    .global-nav .audience-nav-links a:after {
-      position: absolute;
-      display: inline-block;
-      content: "";
-      right: 16px;
-      right: 1rem;
-      font-family: "kentfont", sans-serif; }
   @media (min-width: 768px) {
     .global-nav {
       background-color: #FFF;
@@ -6822,22 +6827,16 @@ body.show-global-search .global-nav-menu .global-nav-links {
   background-color: rgba(0, 0, 0, 0.8);
   color: #fff;
   transition: max-height 300ms;
+  transition-timing-function: ease-in-out;
   position: relative;
   font-size: 0; }
   .departmental-nav .navbar-menu.in {
     height: auto;
     max-height: 1000px; }
-  .departmental-nav .navbar-menu a {
-    color: #fff;
-    font-size: 16px;
-    font-size: 1rem;
-    display: block;
-    padding: 8px;
-    padding: 0.5rem; }
-    .departmental-nav .navbar-menu a:hover {
-      background-color: rgba(255, 255, 255, 0.05); }
-    .departmental-nav .navbar-menu a.active {
-      background-color: rgba(255, 255, 255, 0.1); }
+  .departmental-nav .navbar-menu > a:last-child {
+    border-bottom: none; }
+  .departmental-nav .navbar-menu > a:first-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.5); }
 
 @media (min-width: 768px) {
   .departmental-nav {
@@ -6872,7 +6871,14 @@ body.show-global-search .global-nav-menu .global-nav-links {
           left: 0;
           content: ''; }
       .departmental-nav .navbar-menu a {
-        display: inline-block; }
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-top: none;
+        border-bottom: none; }
+        .departmental-nav .navbar-menu a:first-child {
+          border-top: none; }
+        .departmental-nav .navbar-menu a:after {
+          display: none; }
     .departmental-nav .navbar-toggler {
       position: absolute;
       right: 3rem;
@@ -7660,6 +7666,14 @@ nav.breadcrumb {
         font-size: 1.5rem; } }
     .card.card-overlay .card-img-overlay.card-img-overlay-block {
       position: relative; }
+    @media (max-width: 767px) {
+      .card.card-overlay .card-img-overlay.card-overlay-inline-sm {
+        position: initial;
+        padding: 0; } }
+    @media (max-width: 543px) {
+      .card.card-overlay .card-img-overlay.card-overlay-inline-xs {
+        position: initial;
+        padding: 0; } }
     @media (min-width: 768px) {
       .card.card-overlay .card-img-overlay {
         padding-right: 5%;
@@ -8626,26 +8640,57 @@ main > blockquote.social-quote {
 .quickspot-results {
   width: 100%;
   background: #fff;
-  position: absolute;
-  top: 51.2px;
-  top: 3.2rem;
-  left: 0;
   z-index: 9999;
-  max-height: 240px;
-  max-height: 15rem;
+  max-height: 224px;
+  max-height: 14rem;
   overflow: auto;
-  border: solid 1px #671115; }
+  border: solid 1px #ccc;
+  border-top: 0px;
+  display: block;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3); }
   .quickspot-results .quickspot-result {
     padding: 8px 10px;
     display: block;
     text-decoration: none;
     cursor: pointer;
-    color: #171717; }
+    color: #171717;
+    border-bottom: 1px solid #eee;
+    transition: background .25s;
+    position: relative; }
+    .quickspot-results .quickspot-result:before {
+      color: #ccc;
+      float: right;
+      content: "";
+      font-family: "kentfont", sans-serif;
+      position: absolute;
+      right: 8px;
+      right: .5rem;
+      top: 35%;
+      top: calc(50% - 0.5rem); }
     .quickspot-results .quickspot-result strong {
-      color: #005689; }
+      color: #000; }
+    .quickspot-results .quickspot-result span {
+      font-style: italic;
+      color: #937227; }
     .quickspot-results .quickspot-result.selected {
-      background: #e8ebf2; }
-      .quickspot-results .quickspot-result.selected span {
-        font-style: italic; }
+      background: #eee;
+      transition: background .25s; }
+  @media (min-width: 544px) {
+    .quickspot-results {
+      position: absolute;
+      left: 0;
+      width: 100%; } }
+
+/* Emulates form-group input sizing (to allow it to match with search element more easily) */
+#quickspot-results-container {
+  position: relative; }
+  @media (min-width: 768px) {
+    #quickspot-results-container {
+      margin-left: 15%;
+      margin-right: 15%; } }
+
+/* style helper */
+.quickspot-container .form-group {
+  margin-bottom: 0px; }
 
 /*# sourceMappingURL=main_postgraduate.css.map */

@@ -37,10 +37,10 @@
 		<meta property="og:site_name" content="The University of Kent" />
 		<?php if($description){ ?><meta property="og:description" content="<?php echo $description; ?>" /><?php } ?>
 
-		<link rel="stylesheet" href="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/css/<?php echo $theme_style;?>" />
-		<link rel="stylesheet" href="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/css/kentfont.css" />
+		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>assets/css/<?php echo $theme_style;?>" />
+		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>assets/css/kentfont.css" />
 
-		<script src="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/js/modernizr.min.js"></script>
+		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/modernizr.min.js"></script>
 
 		<?php echo $head_markup ;?>
 	</head>
@@ -129,7 +129,7 @@
 						<div class="form-group">
 							<label for="search" class="sr-only">Search</label>
 							<div class="input-group input-group-lg">
-								<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department. keyword... ">
+								<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department. keyword... " autocomplete="off">
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-accent btn-icon kf-search" aria-label="Search"></button>
 								</span>
