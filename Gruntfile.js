@@ -79,7 +79,8 @@ module.exports = function(grunt) {
             },
             main: {
                 files: {
-                    'public/assets/js/main.min.js' : 'js/main.js'
+                    'public/assets/js/main.min.js' : 'js/main.js',
+                    'public/assets/js/quickspot.min.js' : 'vendor/quick-spot/quickspot.js'
                 }
             }
         },
