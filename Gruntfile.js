@@ -216,6 +216,20 @@ module.exports = function(grunt) {
 						description: 'A Pattern Library for the Kent Theme'
 					},
 					plugins: {
+						'metalsmith-navigation':{
+							"navConfigs": {
+								header:{
+									filterProperty:false,
+									sortBy:'nav_order'
+								},
+								all:{
+									includeDirs: true,
+									filterProperty:false,
+									sortBy:'sub_title'
+								}
+							},
+							"navSettings": {}
+						},
 						'metalsmith-layouts': {
 							engine: 'handlebars',
 							directory:'lib/pattern-wrappers',

@@ -14,7 +14,6 @@ KentThemeHelper::header(array(
 			),
 			'beta_bar'=>false,
 			'slim'=>true,
-			'main_class'=>'content-page',
 			'head_markup'=>'<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/mode/xml/xml.js"></script>'
