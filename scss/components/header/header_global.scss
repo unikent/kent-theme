@@ -161,10 +161,12 @@
 
 			display:block;
     		margin-top: 1.25rem;
-			border-width: 3px 2px 1px 1px;
-			@include media-breakpoint-up(xl) {
-				border-width: 5px 3px 1px 1px;
+			&:before{
+				width: 1.5rem;
 			}
+
+			border-width: 2px;
+
 			&:focus,&:active{
 				outline: none;
 			}
@@ -178,10 +180,11 @@
 			box-shadow: none;
 			height: $global-nav-height - 3;
 			transition: height 300ms;
-
+			max-width: 500px;
+			margin: 0 auto;
 			.global-nav-link {
 				min-width: 1%;
-				font-size: 1.46rem;
+				font-size: 1.7rem;
 				display: table-cell;
 				padding: 1.4rem 1rem 1rem;
 				text-align: center;
@@ -320,8 +323,17 @@
 
 	@include media-breakpoint-up(lg){
 		.global-nav-links{
-			max-width: 1200px;
-			margin: 0 auto;
+			max-width: 700px;
+		}
+	}
+	@include media-breakpoint-up(xl){
+		.global-nav-links{
+			max-width: 900px;
+		}
+	}
+	@include media-breakpoint-up(xxl){
+		.global-nav-links{
+			max-width: 1100px;
 		}
 	}
 
@@ -374,6 +386,12 @@
 					margin: 0.25rem 1rem 0 8rem;
 					.input-group {
 						padding-bottom: 0;
+					}
+					.kf-search{
+						&:before{
+							display: block;
+						}
+						border-width: 1px 2px;
 					}
 				}
 			}

@@ -5937,11 +5937,14 @@ figure.featured-image {
 
 .btn-icon {
   padding: 0; }
-  .btn-icon:before {
+  .btn-icon:before, .btn-icon[class^="kf-"]:before, .btn-icon[class*=" kf-"]:before {
     font-size: 24px;
     font-size: 1.5rem;
     line-height: 24px;
-    line-height: 1.5rem; }
+    line-height: 1.5rem;
+    width: 24px;
+    width: 1.5rem;
+    vertical-align: middle; }
   .btn-icon:hover, .btn-icon:active, .btn-icon:focus {
     text-decoration: none; }
 
@@ -6582,11 +6585,9 @@ select {
       .global-nav .search-button-full {
         display: block;
         margin-top: 1.25rem;
-        border-width: 3px 2px 1px 1px; } }
-    @media (min-width: 768px) and (min-width: 1200px) {
-      .global-nav .search-button-full {
-        border-width: 5px 3px 1px 1px; } }
-  @media (min-width: 768px) {
+        border-width: 2px; }
+        .global-nav .search-button-full:before {
+          width: 1.5rem; }
         .global-nav .search-button-full:focus, .global-nav .search-button-full:active {
           outline: none; }
       .global-nav .global-nav-links {
@@ -6595,10 +6596,12 @@ select {
         width: 100%;
         box-shadow: none;
         height: 5.75rem;
-        transition: height 300ms; }
+        transition: height 300ms;
+        max-width: 500px;
+        margin: 0 auto; }
         .global-nav .global-nav-links .global-nav-link {
           min-width: 1%;
-          font-size: 1.46rem;
+          font-size: 1.7rem;
           display: table-cell;
           padding: 1.4rem 1rem 1rem;
           text-align: center; }
@@ -6699,8 +6702,13 @@ select {
                   content: ""; } }
   @media (min-width: 992px) {
     .global-nav .global-nav-links {
-      max-width: 1200px;
-      margin: 0 auto; } }
+      max-width: 700px; } }
+  @media (min-width: 1200px) {
+    .global-nav .global-nav-links {
+      max-width: 900px; } }
+  @media (min-width: 1712px) {
+    .global-nav .global-nav-links {
+      max-width: 1100px; } }
 
 .show-global-menu, .show-global-search {
   overflow-y: hidden; }
@@ -6737,7 +6745,11 @@ select {
           position: absolute;
           margin: 0.25rem 1rem 0 8rem; }
           .show-global-menu .global-header .global-nav-search.in .form-group .input-group, .show-global-search .global-header .global-nav-search.in .form-group .input-group {
-            padding-bottom: 0; } }
+            padding-bottom: 0; }
+          .show-global-menu .global-header .global-nav-search.in .form-group .kf-search, .show-global-search .global-header .global-nav-search.in .form-group .kf-search {
+            border-width: 1px 2px; }
+            .show-global-menu .global-header .global-nav-search.in .form-group .kf-search:before, .show-global-search .global-header .global-nav-search.in .form-group .kf-search:before {
+              display: block; } }
 
 /* Swap buttons in header */
 .show-global-menu .global-header button.search-button {
