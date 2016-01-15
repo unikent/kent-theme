@@ -253,7 +253,7 @@ module.exports = function(grunt) {
 			development: {
 				options: {
 					metadata: {
-						docsroot: process.env.WEBROOT + 'public/devdocs/',
+						docsroot: process.env.WEBROOT + 'devdocs/',
 						title: 'Pattern Library',
 						description: 'A Pattern Library for the Kent Theme'
 					},
