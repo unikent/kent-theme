@@ -223,6 +223,21 @@
 				background-size: cover;
 				width:100%;
 				padding-top: 100%;
+
+				&.video-launcher {
+					cursor: pointer;
+					&:after {
+						content: $kf-play-circle;
+						font-family: $font-family-kentfont;
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						margin-left: -2.65rem;
+						margin-top: -3.65rem;
+						font-size: 7rem;
+						color: rgba(255,255,255,0.9);
+					}
+				}
 			}
 
 			@include media-breakpoint-up(md) {
