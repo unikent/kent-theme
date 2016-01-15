@@ -217,6 +217,7 @@
 			padding: 0;
 			display: flex;
 			width: 100%;
+			position: relative;
 
 			& > div{
 				background-position: center center;
@@ -232,8 +233,8 @@
 						position: absolute;
 						left: 50%;
 						top: 50%;
-						margin-left: -2.65rem;
-						margin-top: -3.65rem;
+						margin-left: -3.1rem;
+						margin-top: -5rem;
 						font-size: 7rem;
 						color: rgba(255,255,255,0.9);
 					}
