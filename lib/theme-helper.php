@@ -94,6 +94,7 @@ Class KentThemeHelper {
 	public static function getThemeWebRoot(){
 		// If constant was provided
 		if(defined("WEBROOT")){
+			echo WEBROOT;
 			return WEBROOT;
 		}
 		// else try and figure it out ourselves
