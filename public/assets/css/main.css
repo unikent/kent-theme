@@ -4143,6 +4143,7 @@ button.close {
   .modal.fade .modal-dialog {
     transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%); }
   .modal.in .modal-dialog {
@@ -4436,6 +4437,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -8377,7 +8379,10 @@ main > blockquote.social-quote {
   width: 3rem;
   height: 48px;
   height: 3rem;
-  display: block; }
+  display: block;
+  transition: background-color .25s ease-in-out;
+  -moz-transition: background-color .25s ease-in-out;
+  -webkit-transition: background-color .25s ease-in-out; }
   .kent-slider .slick-prev:focus, .kent-slider .slick-next:focus {
     outline: none; }
   .kent-slider .slick-prev:after, .kent-slider .slick-next:after {
@@ -8389,13 +8394,15 @@ main > blockquote.social-quote {
     width: 3rem;
     height: 48px;
     height: 3rem;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.8);
     top: 0;
     line-height: 48px;
     line-height: 3rem;
     text-align: center;
     font-size: 32px;
     font-size: 2rem; }
+  .kent-slider .slick-prev:hover, .kent-slider .slick-next:hover {
+    background-color: white; }
   @media (min-width: 768px) {
     .kent-slider .slick-prev, .kent-slider .slick-next {
       bottom: 50%;
