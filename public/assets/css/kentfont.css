@@ -156,6 +156,12 @@
 .kf-check:before {
   content: "\f00c";
 }
+.kf-chevron-left-square:before {
+  content: "\e008";
+}
+.kf-chevron-right-square:before {
+  content: "\e009";
+}
 .kf-clock:before {
   content: "\f017";
 }
@@ -422,5 +428,4 @@
 .kf-li.kf-lg {
   left: -1.85714286em;
 }
-
 /*# sourceMappingURL=kentfont.css.map */
