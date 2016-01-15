@@ -14,6 +14,7 @@ KentThemeHelper::header(array(
 			),
 			'beta_bar'=>false,
 			'slim'=>true,
+			'main_class'=>'content-page',
 			'head_markup'=>'<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/mode/xml/xml.js"></script>'
@@ -21,18 +22,12 @@ KentThemeHelper::header(array(
 	); 
 ?>
 	{{>breadcrumb}}
-	<div class="container">
+	<div class="content-header">
 		<h1 class="">{{sub_title}}</h1>
-		<br>
-		<br>
 	</div>
-	{{#if mirror}}
-	<div class="pattern">
+	<div class="content-container">
 	{{{contents}}}
-	</div>
-	{{else}}
-	{{{contents}}}
-	{{/if}}
+	<div>
 	<br>
 	<br>
 <?php KentThemeHelper::footer('<script>jQuery(document).ready(function($){

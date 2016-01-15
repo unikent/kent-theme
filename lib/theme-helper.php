@@ -9,11 +9,12 @@ Class KentThemeHelper {
 
 		$defaults = array(
 			'title' => 'Kent Theme Beta',
-			'menu' => array(),
+			'menu' => '',
 			'meta' => array(),
 			'theme' => '',
 			'head_markup' => '',
-			'slim'=>false
+			'slim'=>false,
+			'beta_bar'=>true
 		);
 
 		$config = array_merge($defaults,$config);
@@ -24,11 +25,15 @@ Class KentThemeHelper {
 								'thumb'=>'https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif'
 								  ), $meta);
 
-		// if menu is provided
-		if(!empty($menu)){
-			$menu_links = static::generateMenu($menu);
-		}else{
-			$menu_links = "";
+		if($menu==='placeholder'){
+			$menu_links = "{{> menu}}".PHP_EOL;
+		}else {
+			// if menu is provided
+			if(is_array($menu) && !empty($menu)) {
+				$menu_links = static::generateMenu($menu);
+			} else {
+				$menu_links = "";
+			}
 		}
 		// If theme is not default
 		if(!empty($theme)){
