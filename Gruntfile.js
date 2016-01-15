@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+	require('dotenv').load();
+
 	var path        = require('path');
 	var Handlebars  = require('handlebars');
 
@@ -251,7 +253,7 @@ module.exports = function(grunt) {
 			development: {
 				options: {
 					metadata: {
-						docsroot: '//localhost/kent-theme/public/devdocs/',
+						docsroot: process.env.WEBROOT + 'public/devdocs/',
 						title: 'Pattern Library',
 						description: 'A Pattern Library for the Kent Theme'
 					},
