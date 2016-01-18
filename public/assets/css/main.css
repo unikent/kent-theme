@@ -8394,29 +8394,28 @@ main > blockquote.social-quote {
   height: 48px;
   height: 3rem;
   display: block;
-  transition: background-color .25s ease-in-out;
-  -moz-transition: background-color .25s ease-in-out;
-  -webkit-transition: background-color .25s ease-in-out; }
+  transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -webkit-transition: color .25s ease-in-out; }
   .kent-slider .slick-prev:focus, .kent-slider .slick-next:focus {
     outline: none; }
+  .kent-slider .slick-prev:hover:after, .kent-slider .slick-next:hover:after {
+    color: white; }
   .kent-slider .slick-prev:after, .kent-slider .slick-next:after {
     position: absolute;
     font-family: "kentfont", sans-serif;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.7);
     display: block;
     width: 48px;
     width: 3rem;
     height: 48px;
     height: 3rem;
-    background-color: rgba(255, 255, 255, 0.8);
     top: 0;
     line-height: 48px;
     line-height: 3rem;
     text-align: center;
     font-size: 48px;
     font-size: 3rem; }
-  .kent-slider .slick-prev:hover, .kent-slider .slick-next:hover {
-    background-color: white; }
   @media (min-width: 768px) {
     .kent-slider .slick-prev, .kent-slider .slick-next {
       bottom: 50%;

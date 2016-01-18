@@ -18,28 +18,30 @@
 		width: 3rem;
 		height: 3rem;
 		display: block;
-		transition: background-color .25s ease-in-out;
-		-moz-transition: background-color .25s ease-in-out;
-		-webkit-transition: background-color .25s ease-in-out;
+		transition: color .25s ease-in-out;
+		-moz-transition: color .25s ease-in-out;
+		-webkit-transition: color .25s ease-in-out;
 		&:focus{
 			outline: none;
+		}
+		&:hover{
+			&:after{
+				color: rgba(255,255,255,1);
+			}
 		}
 		&:after{
 			position: absolute;
 			font-family: $font-family-kentfont;
-			color: rgba(255,255,255,0.6);
+			color: rgba(255,255,255,0.7);
 			display: block;
 			width: 3rem;
 			height: 3rem;
-			background-color: rgba(255,255,255,0.8);
 			top:0;
 			line-height: 3rem;
 			text-align: center;
 			font-size: 3rem;
 		}
-		&:hover{
-			background-color: rgba(255,255,255,1);
-		}
+
 		@include media-breakpoint-up(md){
 			bottom: 50%;
 			bottom: calc( 50% - 1.5rem);
