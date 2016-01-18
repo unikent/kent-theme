@@ -7169,11 +7169,21 @@ nav.breadcrumb {
       top: 50%;
       margin-left: -32px;
       margin-left: -2rem;
-      margin-top: -51.2px;
-      margin-top: -3.2rem;
-      font-size: 72px;
-      font-size: 4.5rem;
-      color: rgba(255, 255, 255, 0.9); }
+      margin-top: -57.6px;
+      margin-top: -3.6rem;
+      font-size: 80px;
+      font-size: 5rem;
+      color: rgba(255, 255, 255, 0.7);
+      transition: color .3s ease-in-out;
+      -moz-transition: color .3s ease-in-out;
+      -webkit-transition: color .3s ease-in-out; }
+    .card .card-media-wrap.card-media-wrap-video:hover:after, .card .card-embed-wrap.card-media-wrap-video:hover:after {
+      color: white; }
+    @media (min-width: 544px) {
+      .card .card-media-wrap.card-media-wrap-video:after, .card .card-embed-wrap.card-media-wrap-video:after {
+        margin-left: -2rem;
+        margin-top: -4.4rem;
+        font-size: 6rem; } }
   .card.card-inverse .card-subtitle, .card.card-backed-primary .card-subtitle, .card-panel.cards-backed-primary .card .card-subtitle,
   .card-panel.cards-backed .card.card-backed-primary .card-subtitle, .card.card-backed-accent .card-subtitle, .card-panel.cards-backed-accent .card .card-subtitle,
   .card-panel.cards-backed .card.card-backed-accent .card-subtitle, .card .card-inverse .card-subtitle, .card .card.card-backed-primary .card-subtitle, .card .card-panel.cards-backed-primary .card .card-subtitle, .card-panel.cards-backed-primary .card .card .card-subtitle, .card .card.card-backed-accent .card-subtitle, .card .card-panel.cards-backed-accent .card .card-subtitle, .card-panel.cards-backed-accent .card .card .card-subtitle {
@@ -7490,7 +7500,12 @@ nav.breadcrumb {
             margin-top: -5rem;
             font-size: 112px;
             font-size: 7rem;
-            color: rgba(255, 255, 255, 0.9); }
+            color: rgba(255, 255, 255, 0.7);
+            transition: color .3s ease-in-out;
+            -moz-transition: color .3s ease-in-out;
+            -webkit-transition: color .3s ease-in-out; }
+          .card-panel .card-panel-body .card-panel-full > div.video-launcher:hover:after {
+            color: white; }
       @media (min-width: 768px) {
         .card-panel .card-panel-body .card-panel-full {
           width: 50%;
@@ -7729,21 +7744,6 @@ nav.breadcrumb {
     .card.card-overlay .card-media-wrap > .card-img-bottom,
     .card.card-overlay .card-media-wrap > .card-img-top {
       margin-top: -20rem; } }
-    .card.card-overlay .card-media-wrap.card-media-wrap-video {
-      cursor: pointer; }
-      .card.card-overlay .card-media-wrap.card-media-wrap-video:after {
-        content: "";
-        font-family: "kentfont", sans-serif;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin-left: -42.4px;
-        margin-left: -2.65rem;
-        margin-top: -58.4px;
-        margin-top: -3.65rem;
-        font-size: 112px;
-        font-size: 7rem;
-        color: rgba(255, 255, 255, 0.9); }
   .card.card-overlay .card-footer {
     padding: 0; }
     .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a {
@@ -8380,8 +8380,9 @@ main > blockquote.social-quote {
 .kent-slider .slick-prev, .kent-slider .slick-next {
   z-index: 1;
   position: absolute;
-  bottom: 35%;
-  bottom: calc( 35% - 1.5rem);
+  top: 50%;
+  margin-top: -24px;
+  margin-top: -1.5rem;
   font: "0/0" a;
   color: transparent;
   text-shadow: none;
@@ -8393,14 +8394,9 @@ main > blockquote.social-quote {
   width: 3rem;
   height: 48px;
   height: 3rem;
-  display: block;
-  transition: color .25s ease-in-out;
-  -moz-transition: color .25s ease-in-out;
-  -webkit-transition: color .25s ease-in-out; }
+  display: block; }
   .kent-slider .slick-prev:focus, .kent-slider .slick-next:focus {
     outline: none; }
-  .kent-slider .slick-prev:hover:after, .kent-slider .slick-next:hover:after {
-    color: white; }
   .kent-slider .slick-prev:after, .kent-slider .slick-next:after {
     position: absolute;
     font-family: "kentfont", sans-serif;
@@ -8415,7 +8411,12 @@ main > blockquote.social-quote {
     line-height: 3rem;
     text-align: center;
     font-size: 48px;
-    font-size: 3rem; }
+    font-size: 3rem;
+    transition: color .3s ease-in-out;
+    -moz-transition: color .3s ease-in-out;
+    -webkit-transition: color .3s ease-in-out; }
+  .kent-slider .slick-prev:hover:after, .kent-slider .slick-next:hover:after {
+    color: white; }
   @media (min-width: 768px) {
     .kent-slider .slick-prev, .kent-slider .slick-next {
       bottom: 50%;
@@ -8458,7 +8459,7 @@ main > blockquote.social-quote {
       .kent-slider .kent-slider-dots li button:after {
         position: absolute;
         font-family: "kentfont", sans-serif;
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.5);
         display: block;
         width: 16px;
         width: 1rem;
@@ -8474,7 +8475,7 @@ main > blockquote.social-quote {
       .kent-slider .kent-slider-dots li button:focus {
         outline: none; }
     .kent-slider .kent-slider-dots li.slick-active button:after {
-      color: #005689; }
+      color: #FFF; }
 
 .global-footer {
   background: #434749;
