@@ -10,24 +10,16 @@
 	.slick-prev,.slick-next{
 		z-index: 1;
 		position: absolute;
-		bottom: 35%;
-		bottom: calc( 35% - 1.5rem);
+		top: 50%;
+		margin-top: -1.5rem;
 		@include text-hide();
 		border:none;
 		padding: 0;
 		width: 3rem;
 		height: 3rem;
 		display: block;
-		transition: color .25s ease-in-out;
-		-moz-transition: color .25s ease-in-out;
-		-webkit-transition: color .25s ease-in-out;
 		&:focus{
 			outline: none;
-		}
-		&:hover{
-			&:after{
-				color: rgba(255,255,255,1);
-			}
 		}
 		&:after{
 			position: absolute;
@@ -40,8 +32,15 @@
 			line-height: 3rem;
 			text-align: center;
 			font-size: 3rem;
+			transition: color .3s ease-in-out;
+			-moz-transition: color .3s ease-in-out;
+			-webkit-transition: color .3s ease-in-out;
 		}
-
+		&:hover{
+			&:after{
+				color: rgba(255,255,255,1);
+			}
+		}
 		@include media-breakpoint-up(md){
 			bottom: 50%;
 			bottom: calc( 50% - 1.5rem);
