@@ -138,21 +138,6 @@
 		& > .card-img-top{
 			@include media-img();
 		}
-
-		&.card-media-wrap-video {
-			cursor: pointer;
-			&:after {
-				content: $kf-play-circle;
-				font-family: $font-family-kentfont;
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				margin-left: -2.65rem;
-				margin-top: -3.65rem;
-				font-size: 7rem;
-				color: rgba(255,255,255,0.9);
-			}
-		}
 	}
 
 	.card-footer{
