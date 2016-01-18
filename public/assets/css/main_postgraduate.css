@@ -7174,9 +7174,7 @@ nav.breadcrumb {
       font-size: 80px;
       font-size: 5rem;
       color: rgba(255, 255, 255, 0.7);
-      transition: color .3s ease-in-out;
-      -moz-transition: color .3s ease-in-out;
-      -webkit-transition: color .3s ease-in-out; }
+      transition: color .3s ease-in-out; }
     .card .card-media-wrap.card-media-wrap-video:hover:after, .card .card-embed-wrap.card-media-wrap-video:hover:after {
       color: white; }
     @media (min-width: 544px) {
@@ -7561,9 +7559,7 @@ nav.breadcrumb {
             font-size: 112px;
             font-size: 7rem;
             color: rgba(255, 255, 255, 0.7);
-            transition: color .3s ease-in-out;
-            -moz-transition: color .3s ease-in-out;
-            -webkit-transition: color .3s ease-in-out; }
+            transition: color .3s ease-in-out; }
           .card-panel .card-panel-body .card-panel-full > div.video-launcher:hover:after {
             color: white; }
       @media (min-width: 768px) {
@@ -8513,9 +8509,8 @@ main > blockquote.social-quote {
 .kent-slider .slick-prev, .kent-slider .slick-next {
   z-index: 1;
   position: absolute;
-  top: 50%;
-  margin-top: -24px;
-  margin-top: -1.5rem;
+  bottom: 30%;
+  bottom: calc( 30% - 1.5rem);
   font: "0/0" a;
   color: transparent;
   text-shadow: none;
@@ -8545,11 +8540,13 @@ main > blockquote.social-quote {
     text-align: center;
     font-size: 48px;
     font-size: 3rem;
-    transition: color .3s ease-in-out;
-    -moz-transition: color .3s ease-in-out;
-    -webkit-transition: color .3s ease-in-out; }
+    transition: color .3s ease-in-out; }
   .kent-slider .slick-prev:hover:after, .kent-slider .slick-next:hover:after {
     color: white; }
+  @media (min-width: 544px) {
+    .kent-slider .slick-prev, .kent-slider .slick-next {
+      bottom: 35%;
+      bottom: calc( 35% - 1.5rem); } }
   @media (min-width: 768px) {
     .kent-slider .slick-prev, .kent-slider .slick-next {
       bottom: 50%;
@@ -8609,6 +8606,21 @@ main > blockquote.social-quote {
         outline: none; }
     .kent-slider .kent-slider-dots li.slick-active button:after {
       color: #FFF; }
+
+.header-card-overlay .kent-slider .slick-prev, .header-card-overlay .kent-slider .slick-next {
+  top: 30%;
+  top: calc( 30% - 1.5rem);
+  bottom: auto; }
+  @media (min-width: 544px) {
+    .header-card-overlay .kent-slider .slick-prev, .header-card-overlay .kent-slider .slick-next {
+      top: 35%;
+      top: calc( 35% - 1.5rem);
+      bottom: auto; } }
+  @media (min-width: 768px) {
+    .header-card-overlay .kent-slider .slick-prev, .header-card-overlay .kent-slider .slick-next {
+      top: 50%;
+      top: calc( 50% - 1.5rem);
+      bottom: auto; } }
 
 .global-footer {
   background: #434749;
