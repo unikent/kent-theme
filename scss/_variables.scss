@@ -66,6 +66,13 @@ $link-color: #005689;
 $table-border-color: $brand-primary;
 $table-bg-accent: $brand-primary-tint;
 
+$brand-colors: (
+   primary-tint: $brand-primary-tint,
+   secondary: $brand-secondary,
+   tertiary: $brand-tertiary,
+   primary: $brand-primary,
+   accent: $brand-accent
+);
 
 $brand-colors-light: (
 	primary-tint: $brand-primary-tint,
