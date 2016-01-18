@@ -183,7 +183,7 @@ module.exports = function(grunt) {
 				options:   {
 					htmlhint:false,
 					getData: {
-						webroot: '//beta.kent.ac.uk/patterns/'
+						webroot: '//beta.kent.ac.uk/'
 					}
 				},
 				files: [
@@ -214,7 +214,7 @@ module.exports = function(grunt) {
 			production: {
 				options: {
 					metadata: {
-						webroot: '//beta.kent.ac.uk/patterns/',
+						docsroot: '//beta.kent.ac.uk/patterns/',
 						title: 'Pattern Library',
 						description: 'A Pattern Library for the Kent Theme'
 					},
