@@ -236,7 +236,15 @@
 						margin-left: -3.1rem;
 						margin-top: -5rem;
 						font-size: 7rem;
-						color: rgba(255,255,255,0.9);
+						color: rgba(255,255,255,0.7);
+						transition: color .3s ease-in-out;
+						-moz-transition: color .3s ease-in-out;
+						-webkit-transition: color .3s ease-in-out;
+					}
+					&:hover{
+						&:after{
+							color: rgba(255,255,255,1);
+						}
 					}
 				}
 			}
