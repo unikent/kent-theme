@@ -113,7 +113,9 @@ Class KentThemeHelper {
 		$public_folder_path = str_replace(array('\\', '/'),'/', $public_folder_path);
 		
 		// remove base folder from public folder to get releative webpath
-		echo static::$theme_web_root = str_replace( $base_folder ,'', $public_folder_path ).'/';
+		$root = static::$theme_web_root = str_replace( $base_folder ,'', $public_folder_path ).'/';
+		$root .= (substr($root, -1) == '/' ? '' : '/');
+		echo $root;
 	}
 
 	public static function getOriginalSiteLink()
