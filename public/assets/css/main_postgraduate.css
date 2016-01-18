@@ -8402,7 +8402,7 @@ main > blockquote.social-quote {
   .kent-slider .slick-prev:after, .kent-slider .slick-next:after {
     position: absolute;
     font-family: "kentfont", sans-serif;
-    color: #005689;
+    color: rgba(255, 255, 255, 0.6);
     display: block;
     width: 48px;
     width: 3rem;
@@ -8413,8 +8413,8 @@ main > blockquote.social-quote {
     line-height: 48px;
     line-height: 3rem;
     text-align: center;
-    font-size: 32px;
-    font-size: 2rem; }
+    font-size: 48px;
+    font-size: 3rem; }
   .kent-slider .slick-prev:hover, .kent-slider .slick-next:hover {
     background-color: white; }
   @media (min-width: 768px) {
@@ -8425,12 +8425,12 @@ main > blockquote.social-quote {
 .kent-slider .slick-prev {
   left: 0; }
   .kent-slider .slick-prev:after {
-    content: ""; }
+    content: ""; }
 
 .kent-slider .slick-next {
   right: 0; }
   .kent-slider .slick-next:after {
-    content: ""; }
+    content: ""; }
 
 .kent-slider .kent-slider-dots {
   position: absolute;
