@@ -24,15 +24,14 @@
 		&:after{
 			position: absolute;
 			font-family: $font-family-kentfont;
-			color: $link-color;
+			color: rgba(255,255,255,0.6);
 			display: block;
 			width: 3rem;
 			height: 3rem;
-			background-color: rgba(255,255,255,0.6);
 			top:0;
 			line-height: 3rem;
 			text-align: center;
-			font-size: 2rem;
+			font-size: 3rem;
 		}
 		@include media-breakpoint-up(md){
 			bottom: 50%;
@@ -42,13 +41,13 @@
 	.slick-prev{
 		left:0;
 		&:after{
-			content: $kf-angle-left;
+			content: $kf-chevron-left-square;
 		}
 	}
 	.slick-next{
 		right:0;
 		&:after{
-			content: $kf-angle-right;
+			content: $kf-chevron-right-square;
 		}
 	}
 
