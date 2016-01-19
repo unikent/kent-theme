@@ -5521,7 +5521,8 @@ h6, .h6 {
     height: 72px;
     height: 4.5rem;
     text-align: center;
-    color: rgba(255, 255, 255, 0.9); }
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 300ms; }
     @media (min-width: 544px) {
       .video-launcher:after {
         left: calc(50% - 3.5rem);
@@ -5530,6 +5531,8 @@ h6, .h6 {
         line-height: 7rem;
         width: 7rem;
         height: 7rem; } }
+  .video-launcher:hover:after {
+    color: white; }
 
 .media-wrap-letterbox, .media-wrap-paralax, .card.card-overlay .card-media-wrap {
   position: relative;
@@ -8531,8 +8534,8 @@ main > blockquote.social-quote {
 .kent-slider .slick-prev, .kent-slider .slick-next {
   z-index: 1;
   position: absolute;
-  bottom: 35%;
-  bottom: calc( 35% - 1.5rem);
+  bottom: 30%;
+  bottom: calc( 30% - 1.5rem);
   font: "0/0" a;
   color: transparent;
   text-shadow: none;
@@ -8544,14 +8547,9 @@ main > blockquote.social-quote {
   width: 3rem;
   height: 48px;
   height: 3rem;
-  display: block;
-  transition: color .25s ease-in-out;
-  -moz-transition: color .25s ease-in-out;
-  -webkit-transition: color .25s ease-in-out; }
+  display: block; }
   .kent-slider .slick-prev:focus, .kent-slider .slick-next:focus {
     outline: none; }
-  .kent-slider .slick-prev:hover:after, .kent-slider .slick-next:hover:after {
-    color: white; }
   .kent-slider .slick-prev:after, .kent-slider .slick-next:after {
     position: absolute;
     font-family: "kentfont", sans-serif;
@@ -8566,7 +8564,14 @@ main > blockquote.social-quote {
     line-height: 3rem;
     text-align: center;
     font-size: 48px;
-    font-size: 3rem; }
+    font-size: 3rem;
+    transition: color .3s ease-in-out; }
+  .kent-slider .slick-prev:hover:after, .kent-slider .slick-next:hover:after {
+    color: white; }
+  @media (min-width: 544px) {
+    .kent-slider .slick-prev, .kent-slider .slick-next {
+      bottom: 35%;
+      bottom: calc( 35% - 1.5rem); } }
   @media (min-width: 768px) {
     .kent-slider .slick-prev, .kent-slider .slick-next {
       bottom: 50%;
@@ -8609,7 +8614,7 @@ main > blockquote.social-quote {
       .kent-slider .kent-slider-dots li button:after {
         position: absolute;
         font-family: "kentfont", sans-serif;
-        color: rgba(255, 255, 255, 0.6);
+        color: rgba(255, 255, 255, 0.5);
         display: block;
         width: 16px;
         width: 1rem;
@@ -8625,7 +8630,22 @@ main > blockquote.social-quote {
       .kent-slider .kent-slider-dots li button:focus {
         outline: none; }
     .kent-slider .kent-slider-dots li.slick-active button:after {
-      color: #005689; }
+      color: #FFF; }
+
+.header-card-overlay .kent-slider .slick-prev, .header-card-overlay .kent-slider .slick-next {
+  top: 30%;
+  top: calc( 30% - 1.5rem);
+  bottom: auto; }
+  @media (min-width: 544px) {
+    .header-card-overlay .kent-slider .slick-prev, .header-card-overlay .kent-slider .slick-next {
+      top: 35%;
+      top: calc( 35% - 1.5rem);
+      bottom: auto; } }
+  @media (min-width: 768px) {
+    .header-card-overlay .kent-slider .slick-prev, .header-card-overlay .kent-slider .slick-next {
+      top: 50%;
+      top: calc( 50% - 1.5rem);
+      bottom: auto; } }
 
 .global-footer {
   background: #434749;
