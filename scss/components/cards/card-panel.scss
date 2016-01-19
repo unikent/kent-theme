@@ -224,28 +224,26 @@
 			width: 100%;
 			position: relative;
 
+
 			& > div{
 				background-position: center center;
 				background-size: cover;
 				width:100%;
-				padding-top: 100%;
+			}
 
-				&.video-launcher {
-					cursor: pointer;
-					&:after {
-						content: $kf-play-circle;
-						font-family: $font-family-kentfont;
-						position: absolute;
-						left: 50%;
-						top: 50%;
-						margin-left: -3.1rem;
-						margin-top: -5rem;
-						font-size: 7rem;
-						color: rgba(255,255,255,0.9);
-					}
+			&.fixed{
+				& > div {
+					padding-top: 100%;
 				}
 			}
 
+			& > div.card{
+				padding: 0;
+				margin-bottom: 0;
+				& > * {
+					margin-bottom: 0;
+				}
+			}
 			@include media-breakpoint-up(md) {
 				@include make-col-span(6);
 				margin-bottom: 0;

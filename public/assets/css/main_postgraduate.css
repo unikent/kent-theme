@@ -3401,38 +3401,38 @@ input[type="button"].btn-block {
 
 .card-inverse .card-header, .card.card-backed-primary .card-header, .card-panel.cards-backed-primary .card .card-header,
 .card-panel.cards-backed .card.card-backed-primary .card-header, .card.card-backed-accent .card-header, .card-panel.cards-backed-accent .card .card-header,
-.card-panel.cards-backed .card.card-backed-accent .card-header, .card.editorial.editorial-primary .card-header, .card.editorial.editorial-accent .card-header,
+.card-panel.cards-backed .card.card-backed-accent .card-header, .card .card-img-overlay-bottom .card-header, .card.editorial.editorial-primary .card-header, .card.editorial.editorial-accent .card-header,
 .card-inverse .card-footer, .card.card-backed-primary .card-footer, .card-panel.cards-backed-primary .card .card-footer,
 .card-panel.cards-backed .card.card-backed-primary .card-footer, .card.card-backed-accent .card-footer, .card-panel.cards-backed-accent .card .card-footer,
-.card-panel.cards-backed .card.card-backed-accent .card-footer, .card.editorial.editorial-primary .card-footer, .card.editorial.editorial-accent .card-footer {
+.card-panel.cards-backed .card.card-backed-accent .card-footer, .card .card-img-overlay-bottom .card-footer, .card.editorial.editorial-primary .card-footer, .card.editorial.editorial-accent .card-footer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
 
 .card-inverse .card-header, .card.card-backed-primary .card-header, .card-panel.cards-backed-primary .card .card-header,
 .card-panel.cards-backed .card.card-backed-primary .card-header, .card.card-backed-accent .card-header, .card-panel.cards-backed-accent .card .card-header,
-.card-panel.cards-backed .card.card-backed-accent .card-header, .card.editorial.editorial-primary .card-header, .card.editorial.editorial-accent .card-header,
+.card-panel.cards-backed .card.card-backed-accent .card-header, .card .card-img-overlay-bottom .card-header, .card.editorial.editorial-primary .card-header, .card.editorial.editorial-accent .card-header,
 .card-inverse .card-footer, .card.card-backed-primary .card-footer, .card-panel.cards-backed-primary .card .card-footer,
 .card-panel.cards-backed .card.card-backed-primary .card-footer, .card.card-backed-accent .card-footer, .card-panel.cards-backed-accent .card .card-footer,
-.card-panel.cards-backed .card.card-backed-accent .card-footer, .card.editorial.editorial-primary .card-footer, .card.editorial.editorial-accent .card-footer,
+.card-panel.cards-backed .card.card-backed-accent .card-footer, .card .card-img-overlay-bottom .card-footer, .card.editorial.editorial-primary .card-footer, .card.editorial.editorial-accent .card-footer,
 .card-inverse .card-title, .card.card-backed-primary .card-title, .card-panel.cards-backed-primary .card .card-title,
 .card-panel.cards-backed .card.card-backed-primary .card-title, .card.card-backed-accent .card-title, .card-panel.cards-backed-accent .card .card-title,
-.card-panel.cards-backed .card.card-backed-accent .card-title, .card.editorial.editorial-primary .card-title, .card.editorial.editorial-accent .card-title,
+.card-panel.cards-backed .card.card-backed-accent .card-title, .card .card-img-overlay-bottom .card-title, .card.editorial.editorial-primary .card-title, .card.editorial.editorial-accent .card-title,
 .card-inverse .card-blockquote, .card.card-backed-primary .card-blockquote, .card-panel.cards-backed-primary .card .card-blockquote,
 .card-panel.cards-backed .card.card-backed-primary .card-blockquote, .card.card-backed-accent .card-blockquote, .card-panel.cards-backed-accent .card .card-blockquote,
-.card-panel.cards-backed .card.card-backed-accent .card-blockquote, .card.editorial.editorial-primary .card-blockquote, .card.editorial.editorial-accent .card-blockquote {
+.card-panel.cards-backed .card.card-backed-accent .card-blockquote, .card .card-img-overlay-bottom .card-blockquote, .card.editorial.editorial-primary .card-blockquote, .card.editorial.editorial-accent .card-blockquote {
   color: #fff; }
 
 .card-inverse .card-link, .card.card-backed-primary .card-link, .card-panel.cards-backed-primary .card .card-link,
 .card-panel.cards-backed .card.card-backed-primary .card-link, .card.card-backed-accent .card-link, .card-panel.cards-backed-accent .card .card-link,
-.card-panel.cards-backed .card.card-backed-accent .card-link, .card.editorial.editorial-primary .card-link, .card.editorial.editorial-accent .card-link,
+.card-panel.cards-backed .card.card-backed-accent .card-link, .card .card-img-overlay-bottom .card-link, .card.editorial.editorial-primary .card-link, .card.editorial.editorial-accent .card-link,
 .card-inverse .card-text, .card.card-backed-primary .card-text, .card-panel.cards-backed-primary .card .card-text,
 .card-panel.cards-backed .card.card-backed-primary .card-text, .card.card-backed-accent .card-text, .card-panel.cards-backed-accent .card .card-text,
-.card-panel.cards-backed .card.card-backed-accent .card-text, .card.editorial.editorial-primary .card-text, .card.editorial.editorial-accent .card-text,
+.card-panel.cards-backed .card.card-backed-accent .card-text, .card .card-img-overlay-bottom .card-text, .card.editorial.editorial-primary .card-text, .card.editorial.editorial-accent .card-text,
 .card-inverse .card-blockquote > footer, .card.card-backed-primary .card-blockquote > footer, .card-panel.cards-backed-primary .card .card-blockquote > footer,
 .card-panel.cards-backed .card.card-backed-primary .card-blockquote > footer, .card.card-backed-accent .card-blockquote > footer, .card-panel.cards-backed-accent .card .card-blockquote > footer,
-.card-panel.cards-backed .card.card-backed-accent .card-blockquote > footer, .card.editorial.editorial-primary .card-blockquote > footer, .card.editorial.editorial-accent .card-blockquote > footer {
+.card-panel.cards-backed .card.card-backed-accent .card-blockquote > footer, .card .card-img-overlay-bottom .card-blockquote > footer, .card.editorial.editorial-primary .card-blockquote > footer, .card.editorial.editorial-accent .card-blockquote > footer {
   color: rgba(255, 255, 255, 0.65); }
 
-.card-inverse .card-link:focus, .card.card-backed-primary .card-link:focus, .card-panel.cards-backed-primary .card .card-link:focus, .card.card-backed-accent .card-link:focus, .card-panel.cards-backed-accent .card .card-link:focus, .card.editorial.editorial-primary .card-link:focus, .card.editorial.editorial-accent .card-link:focus, .card-inverse .card-link:hover, .card.card-backed-primary .card-link:hover, .card-panel.cards-backed-primary .card .card-link:hover, .card.card-backed-accent .card-link:hover, .card-panel.cards-backed-accent .card .card-link:hover, .card.editorial.editorial-primary .card-link:hover, .card.editorial.editorial-accent .card-link:hover {
+.card-inverse .card-link:focus, .card.card-backed-primary .card-link:focus, .card-panel.cards-backed-primary .card .card-link:focus, .card.card-backed-accent .card-link:focus, .card-panel.cards-backed-accent .card .card-link:focus, .card .card-img-overlay-bottom .card-link:focus, .card.editorial.editorial-primary .card-link:focus, .card.editorial.editorial-accent .card-link:focus, .card-inverse .card-link:hover, .card.card-backed-primary .card-link:hover, .card-panel.cards-backed-primary .card .card-link:hover, .card.card-backed-accent .card-link:hover, .card-panel.cards-backed-accent .card .card-link:hover, .card .card-img-overlay-bottom .card-link:hover, .card.editorial.editorial-primary .card-link:hover, .card.editorial.editorial-accent .card-link:hover {
   color: #fff; }
 
 .card-blockquote {
@@ -3440,7 +3440,7 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   border-left: 0; }
 
-.card-img-overlay {
+.card-img-overlay, .card .card-img-overlay-bottom {
   position: absolute;
   top: 0;
   right: 0;
@@ -5121,7 +5121,7 @@ a.text-danger:focus, a.text-danger:hover {
     display: none !important; } }
 
 @font-face {
-  font-family: 'CenturySchoolbook';
+  font-family: 'CenturySchoolbookStdRegular';
   src: url("//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.eot");
   src: local("Century Schoolbook"), local("CenturySchoolbook"), url("//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.woff") format("woff"), url("//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.ttf") format("truetype"), url("//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.svg#webfontTvZDraOm") format("svg");
   font-weight: normal;
@@ -5318,7 +5318,7 @@ body .kf.pull-right {
       max-height: 2000px; } }
 
 h1, .h1 {
-  font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
+  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif; }
 
 h1, .h1,
 h2, .h2,
@@ -5329,7 +5329,7 @@ h6, .h6 {
   color: #05345C; }
 
 .lead {
-  font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
   color: #671115;
   margin-bottom: 36px;
   margin-bottom: 2.25rem;
@@ -5501,6 +5501,35 @@ h6, .h6 {
   .media-wrap > img, .card .card-media-wrap > img, .card .card-embed-wrap > img {
     width: 100%;
     height: auto; }
+
+.video-launcher {
+  cursor: pointer; }
+  .video-launcher:after {
+    content: "";
+    font-family: "kentfont", sans-serif;
+    position: absolute;
+    left: 50%;
+    left: calc(50% - 2.25rem);
+    top: 50%;
+    top: calc(50% - 2.25rem);
+    font-size: 72px;
+    font-size: 4.5rem;
+    line-height: 72px;
+    line-height: 4.5rem;
+    width: 72px;
+    width: 4.5rem;
+    height: 72px;
+    height: 4.5rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9); }
+    @media (min-width: 544px) {
+      .video-launcher:after {
+        left: calc(50% - 3.5rem);
+        top: calc(50% - 3.5rem);
+        font-size: 7rem;
+        line-height: 7rem;
+        width: 7rem;
+        height: 7rem; } }
 
 .media-wrap-letterbox, .media-wrap-paralax, .card.card-overlay .card-media-wrap {
   position: relative;
@@ -6535,7 +6564,7 @@ select {
         color: #05345C;
         cursor: pointer;
         text-transform: uppercase;
-        font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
+        font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif; }
         .global-nav .global-nav-links .global-nav-link a:hover, .global-nav .global-nav-links .global-nav-link a:active, .global-nav .global-nav-links .global-nav-link a:focus {
           text-decoration: none; }
         .global-nav .global-nav-links .global-nav-link a .more {
@@ -6656,7 +6685,7 @@ select {
             .global-nav .global-nav-links .global-nav-link nav a {
               min-width: 1%;
               display: table-cell;
-              font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+              font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
               position: relative;
               border: 0;
               color: #05345C;
@@ -6814,7 +6843,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
     background-color: rgba(0, 0, 0, 0.5); } }
 
 .departmental-nav header {
-  font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
   background-color: #671115;
   color: #fff;
   padding: 8px 16px;
@@ -7126,6 +7155,34 @@ nav.breadcrumb {
   .card-panel.card-panel-accent.cards-header-split .card .card-header,
   .card-panel.card-panel-accent.cards-backed.cards-header-split .card .card-header {
     background: linear-gradient(#937227 50%, transparent 50%); }
+  .card .card-img-overlay, .card .card-img-overlay-bottom {
+    padding: 16px;
+    padding: 1rem; }
+    @media (max-width: 543px) {
+      .card .card-img-overlay.card-overlay-inline-xs, .card .card-overlay-inline-xs.card-img-overlay-bottom {
+        position: inherit; } }
+    @media (max-width: 767px) {
+      .card .card-img-overlay.card-overlay-inline-sm, .card .card-overlay-inline-sm.card-img-overlay-bottom {
+        position: inherit; } }
+    @media (max-width: 991px) {
+      .card .card-img-overlay.card-overlay-inline-md, .card .card-overlay-inline-md.card-img-overlay-bottom {
+        position: inherit; } }
+    @media (max-width: 1199px) {
+      .card .card-img-overlay.card-overlay-inline-lg, .card .card-overlay-inline-lg.card-img-overlay-bottom {
+        position: inherit; } }
+    @media (max-width: 1711px) {
+      .card .card-img-overlay.card-overlay-inline-xl, .card .card-overlay-inline-xl.card-img-overlay-bottom {
+        position: inherit; } }
+    @media (max-width: 2399px) {
+      .card .card-img-overlay.card-overlay-inline-xxl, .card .card-overlay-inline-xxl.card-img-overlay-bottom {
+        position: inherit; } }
+    .card .card-img-overlay.card-overlay-inline-xxxl, .card .card-overlay-inline-xxxl.card-img-overlay-bottom {
+      position: inherit; }
+  .card .card-img-overlay-bottom {
+    top: auto;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding-top: 48px;
+    padding-top: 3rem; }
   .card .card-body {
     display: block;
     position: relative; }
@@ -7157,41 +7214,30 @@ nav.breadcrumb {
     margin-bottom: 0.75rem; }
   .card .card-embed-wrap iframe {
     pointer-events: none; }
-  .card .card-media-wrap.card-media-wrap-video, .card .card-embed-wrap.card-media-wrap-video {
-    cursor: pointer; }
-    .card .card-media-wrap.card-media-wrap-video:after, .card .card-embed-wrap.card-media-wrap-video:after {
-      content: "";
-      font-family: "kentfont", sans-serif;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      margin-left: -32px;
-      margin-left: -2rem;
-      margin-top: -51.2px;
-      margin-top: -3.2rem;
-      font-size: 72px;
-      font-size: 4.5rem;
-      color: rgba(255, 255, 255, 0.9); }
+  .card.card-inverse .card-title, .card.card-backed-primary .card-title, .card-panel.cards-backed-primary .card .card-title,
+  .card-panel.cards-backed .card.card-backed-primary .card-title, .card.card-backed-accent .card-title, .card-panel.cards-backed-accent .card .card-title,
+  .card-panel.cards-backed .card.card-backed-accent .card-title, .card .card.card-img-overlay-bottom .card-title, .card.editorial.editorial-primary .card-title, .card.editorial.editorial-accent .card-title, .card .card-inverse .card-title, .card .card.card-backed-primary .card-title, .card .card-panel.cards-backed-primary .card .card-title, .card-panel.cards-backed-primary .card .card .card-title, .card .card.card-backed-accent .card-title, .card .card-panel.cards-backed-accent .card .card-title, .card-panel.cards-backed-accent .card .card .card-title, .card .card-img-overlay-bottom .card-title, .card .card.editorial.editorial-primary .card-title, .card .card.editorial.editorial-accent .card-title {
+    color: #FFF; }
   .card.card-inverse .card-subtitle, .card.card-backed-primary .card-subtitle, .card-panel.cards-backed-primary .card .card-subtitle,
   .card-panel.cards-backed .card.card-backed-primary .card-subtitle, .card.card-backed-accent .card-subtitle, .card-panel.cards-backed-accent .card .card-subtitle,
-  .card-panel.cards-backed .card.card-backed-accent .card-subtitle, .card.editorial.editorial-primary .card-subtitle, .card.editorial.editorial-accent .card-subtitle, .card .card-inverse .card-subtitle, .card .card.card-backed-primary .card-subtitle, .card .card-panel.cards-backed-primary .card .card-subtitle, .card-panel.cards-backed-primary .card .card .card-subtitle, .card .card.card-backed-accent .card-subtitle, .card .card-panel.cards-backed-accent .card .card-subtitle, .card-panel.cards-backed-accent .card .card .card-subtitle, .card .card.editorial.editorial-primary .card-subtitle, .card .card.editorial.editorial-accent .card-subtitle {
+  .card-panel.cards-backed .card.card-backed-accent .card-subtitle, .card .card.card-img-overlay-bottom .card-subtitle, .card.editorial.editorial-primary .card-subtitle, .card.editorial.editorial-accent .card-subtitle, .card .card-inverse .card-subtitle, .card .card.card-backed-primary .card-subtitle, .card .card-panel.cards-backed-primary .card .card-subtitle, .card-panel.cards-backed-primary .card .card .card-subtitle, .card .card.card-backed-accent .card-subtitle, .card .card-panel.cards-backed-accent .card .card-subtitle, .card-panel.cards-backed-accent .card .card .card-subtitle, .card .card-img-overlay-bottom .card-subtitle, .card .card.editorial.editorial-primary .card-subtitle, .card .card.editorial.editorial-accent .card-subtitle {
     color: rgba(255, 255, 255, 0.65); }
   .card.card-inverse .card-link, .card.card-backed-primary .card-link, .card-panel.cards-backed-primary .card .card-link,
   .card-panel.cards-backed .card.card-backed-primary .card-link, .card.card-backed-accent .card-link, .card-panel.cards-backed-accent .card .card-link,
-  .card-panel.cards-backed .card.card-backed-accent .card-link, .card.editorial.editorial-primary .card-link, .card.editorial.editorial-accent .card-link,
+  .card-panel.cards-backed .card.card-backed-accent .card-link, .card .card.card-img-overlay-bottom .card-link, .card.editorial.editorial-primary .card-link, .card.editorial.editorial-accent .card-link,
   .card.card-inverse .card-text, .card.card-backed-primary .card-text, .card-panel.cards-backed-primary .card .card-text,
   .card-panel.cards-backed .card.card-backed-primary .card-text, .card.card-backed-accent .card-text, .card-panel.cards-backed-accent .card .card-text,
-  .card-panel.cards-backed .card.card-backed-accent .card-text, .card.editorial.editorial-primary .card-text, .card.editorial.editorial-accent .card-text,
+  .card-panel.cards-backed .card.card-backed-accent .card-text, .card .card.card-img-overlay-bottom .card-text, .card.editorial.editorial-primary .card-text, .card.editorial.editorial-accent .card-text,
   .card.card-inverse .card-blockquote > footer, .card.card-backed-primary .card-blockquote > footer, .card-panel.cards-backed-primary .card .card-blockquote > footer,
   .card-panel.cards-backed .card.card-backed-primary .card-blockquote > footer, .card.card-backed-accent .card-blockquote > footer, .card-panel.cards-backed-accent .card .card-blockquote > footer,
-  .card-panel.cards-backed .card.card-backed-accent .card-blockquote > footer, .card.editorial.editorial-primary .card-blockquote > footer, .card.editorial.editorial-accent .card-blockquote > footer, .card .card-inverse .card-link, .card .card.card-backed-primary .card-link, .card .card-panel.cards-backed-primary .card .card-link, .card-panel.cards-backed-primary .card .card .card-link, .card .card.card-backed-accent .card-link, .card .card-panel.cards-backed-accent .card .card-link, .card-panel.cards-backed-accent .card .card .card-link, .card .card.editorial.editorial-primary .card-link, .card .card.editorial.editorial-accent .card-link,
+  .card-panel.cards-backed .card.card-backed-accent .card-blockquote > footer, .card .card.card-img-overlay-bottom .card-blockquote > footer, .card.editorial.editorial-primary .card-blockquote > footer, .card.editorial.editorial-accent .card-blockquote > footer, .card .card-inverse .card-link, .card .card.card-backed-primary .card-link, .card .card-panel.cards-backed-primary .card .card-link, .card-panel.cards-backed-primary .card .card .card-link, .card .card.card-backed-accent .card-link, .card .card-panel.cards-backed-accent .card .card-link, .card-panel.cards-backed-accent .card .card .card-link, .card .card-img-overlay-bottom .card-link, .card .card.editorial.editorial-primary .card-link, .card .card.editorial.editorial-accent .card-link,
   .card .card-inverse .card-text,
   .card .card.card-backed-primary .card-text,
   .card .card-panel.cards-backed-primary .card .card-text, .card-panel.cards-backed-primary
   .card .card .card-text,
   .card .card.card-backed-accent .card-text,
   .card .card-panel.cards-backed-accent .card .card-text, .card-panel.cards-backed-accent
-  .card .card .card-text,
+  .card .card .card-text, .card .card-img-overlay-bottom .card-text,
   .card .card.editorial.editorial-primary .card-text,
   .card .card.editorial.editorial-accent .card-text,
   .card .card-inverse .card-blockquote > footer,
@@ -7200,7 +7246,7 @@ nav.breadcrumb {
   .card .card .card-blockquote > footer,
   .card .card.card-backed-accent .card-blockquote > footer,
   .card .card-panel.cards-backed-accent .card .card-blockquote > footer, .card-panel.cards-backed-accent
-  .card .card .card-blockquote > footer,
+  .card .card .card-blockquote > footer, .card .card-img-overlay-bottom .card-blockquote > footer,
   .card .card.editorial.editorial-primary .card-blockquote > footer,
   .card .card.editorial.editorial-accent .card-blockquote > footer {
     color: rgba(255, 255, 255, 0.75); }
@@ -7532,23 +7578,14 @@ nav.breadcrumb {
       .card-panel .card-panel-body .card-panel-full > div {
         background-position: center center;
         background-size: cover;
-        width: 100%;
+        width: 100%; }
+      .card-panel .card-panel-body .card-panel-full.fixed > div {
         padding-top: 100%; }
-        .card-panel .card-panel-body .card-panel-full > div.video-launcher {
-          cursor: pointer; }
-          .card-panel .card-panel-body .card-panel-full > div.video-launcher:after {
-            content: "";
-            font-family: "kentfont", sans-serif;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            margin-left: -49.6px;
-            margin-left: -3.1rem;
-            margin-top: -80px;
-            margin-top: -5rem;
-            font-size: 112px;
-            font-size: 7rem;
-            color: rgba(255, 255, 255, 0.9); }
+      .card-panel .card-panel-body .card-panel-full > div.card {
+        padding: 0;
+        margin-bottom: 0; }
+        .card-panel .card-panel-body .card-panel-full > div.card > * {
+          margin-bottom: 0; }
       @media (min-width: 768px) {
         .card-panel .card-panel-body .card-panel-full {
           width: 50%;
@@ -7665,13 +7702,13 @@ nav.breadcrumb {
         margin-left: 1rem; }
   .card-panel a.card p.card-text, .card-panel a.card:hover p.card-text, .card-panel a.card:focus p.card-text, .card-panel .card a p.card-text, .card-panel .card a:hover p.card-text, .card-panel .card a:focus p.card-text {
     color: #171717; }
-  .card-panel a.card.card-inverse p.card-text, .card-panel a.card.card-backed-primary p.card-text, .card-panel.cards-backed-primary a.card p.card-text, .card-panel a.card.card-backed-accent p.card-text, .card-panel.cards-backed-accent a.card p.card-text, .card-panel a.card.editorial.editorial-primary p.card-text, .card-panel a.card.editorial.editorial-accent p.card-text, .card-panel a.card.card-inverse:hover p.card-text, .card-panel a.card.card-backed-primary:hover p.card-text, .card-panel.cards-backed-primary a.card:hover p.card-text, .card-panel a.card.card-backed-accent:hover p.card-text, .card-panel.cards-backed-accent a.card:hover p.card-text, .card-panel a.card.editorial.editorial-primary:hover p.card-text, .card-panel a.card.editorial.editorial-accent:hover p.card-text, .card-panel a.card.card-inverse:focus p.card-text, .card-panel a.card.card-backed-primary:focus p.card-text, .card-panel.cards-backed-primary a.card:focus p.card-text, .card-panel a.card.card-backed-accent:focus p.card-text, .card-panel.cards-backed-accent a.card:focus p.card-text, .card-panel a.card.editorial.editorial-primary:focus p.card-text, .card-panel a.card.editorial.editorial-accent:focus p.card-text, .card-panel .card.card-inverse a p.card-text, .card-panel .card.card-backed-primary a p.card-text, .card-panel.cards-backed-primary .card a p.card-text,
+  .card-panel a.card.card-inverse p.card-text, .card-panel a.card.card-backed-primary p.card-text, .card-panel.cards-backed-primary a.card p.card-text, .card-panel a.card.card-backed-accent p.card-text, .card-panel.cards-backed-accent a.card p.card-text, .card-panel .card a.card.card-img-overlay-bottom p.card-text, .card .card-panel a.card.card-img-overlay-bottom p.card-text, .card-panel a.card.editorial.editorial-primary p.card-text, .card-panel a.card.editorial.editorial-accent p.card-text, .card-panel a.card.card-inverse:hover p.card-text, .card-panel a.card.card-backed-primary:hover p.card-text, .card-panel.cards-backed-primary a.card:hover p.card-text, .card-panel a.card.card-backed-accent:hover p.card-text, .card-panel.cards-backed-accent a.card:hover p.card-text, .card-panel .card a.card.card-img-overlay-bottom:hover p.card-text, .card .card-panel a.card.card-img-overlay-bottom:hover p.card-text, .card-panel a.card.editorial.editorial-primary:hover p.card-text, .card-panel a.card.editorial.editorial-accent:hover p.card-text, .card-panel a.card.card-inverse:focus p.card-text, .card-panel a.card.card-backed-primary:focus p.card-text, .card-panel.cards-backed-primary a.card:focus p.card-text, .card-panel a.card.card-backed-accent:focus p.card-text, .card-panel.cards-backed-accent a.card:focus p.card-text, .card-panel .card a.card.card-img-overlay-bottom:focus p.card-text, .card .card-panel a.card.card-img-overlay-bottom:focus p.card-text, .card-panel a.card.editorial.editorial-primary:focus p.card-text, .card-panel a.card.editorial.editorial-accent:focus p.card-text, .card-panel .card.card-inverse a p.card-text, .card-panel .card.card-backed-primary a p.card-text, .card-panel.cards-backed-primary .card a p.card-text,
   .card-panel.cards-backed .card.card-backed-primary a p.card-text,
   .card-panel.cards-backed .card-panel.cards-backed-primary .card a p.card-text, .card-panel.cards-backed-primary
   .card-panel.cards-backed .card a p.card-text, .card-panel .card.card-backed-accent a p.card-text, .card-panel.cards-backed-accent .card a p.card-text,
   .card-panel.cards-backed .card.card-backed-accent a p.card-text,
   .card-panel.cards-backed .card-panel.cards-backed-accent .card a p.card-text, .card-panel.cards-backed-accent
-  .card-panel.cards-backed .card a p.card-text, .card-panel .card.editorial.editorial-primary a p.card-text, .card-panel .card.editorial.editorial-accent a p.card-text, .card-panel .card.card-inverse a:hover p.card-text, .card-panel .card.card-backed-primary a:hover p.card-text, .card-panel.cards-backed-primary .card a:hover p.card-text, .card-panel .card.card-backed-accent a:hover p.card-text, .card-panel.cards-backed-accent .card a:hover p.card-text, .card-panel .card.editorial.editorial-primary a:hover p.card-text, .card-panel .card.editorial.editorial-accent a:hover p.card-text, .card-panel .card.card-inverse a:focus p.card-text, .card-panel .card.card-backed-primary a:focus p.card-text, .card-panel.cards-backed-primary .card a:focus p.card-text, .card-panel .card.card-backed-accent a:focus p.card-text, .card-panel.cards-backed-accent .card a:focus p.card-text, .card-panel .card.editorial.editorial-primary a:focus p.card-text, .card-panel .card.editorial.editorial-accent a:focus p.card-text {
+  .card-panel.cards-backed .card a p.card-text, .card-panel .card .card.card-img-overlay-bottom a p.card-text, .card .card-panel .card.card-img-overlay-bottom a p.card-text, .card-panel .card.editorial.editorial-primary a p.card-text, .card-panel .card.editorial.editorial-accent a p.card-text, .card-panel .card.card-inverse a:hover p.card-text, .card-panel .card.card-backed-primary a:hover p.card-text, .card-panel.cards-backed-primary .card a:hover p.card-text, .card-panel .card.card-backed-accent a:hover p.card-text, .card-panel.cards-backed-accent .card a:hover p.card-text, .card-panel .card .card.card-img-overlay-bottom a:hover p.card-text, .card .card-panel .card.card-img-overlay-bottom a:hover p.card-text, .card-panel .card.editorial.editorial-primary a:hover p.card-text, .card-panel .card.editorial.editorial-accent a:hover p.card-text, .card-panel .card.card-inverse a:focus p.card-text, .card-panel .card.card-backed-primary a:focus p.card-text, .card-panel.cards-backed-primary .card a:focus p.card-text, .card-panel .card.card-backed-accent a:focus p.card-text, .card-panel.cards-backed-accent .card a:focus p.card-text, .card-panel .card .card.card-img-overlay-bottom a:focus p.card-text, .card .card-panel .card.card-img-overlay-bottom a:focus p.card-text, .card-panel .card.editorial.editorial-primary a:focus p.card-text, .card-panel .card.editorial.editorial-accent a:focus p.card-text {
     color: rgba(255, 255, 255, 0.75); }
 
 .card.card-overlay {
@@ -7707,7 +7744,7 @@ nav.breadcrumb {
         content: "";
         font-family: "kentfont", sans-serif; }
     .card.card-overlay .card-title-wrap .card-title {
-      font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
       text-transform: uppercase;
       color: #ce9716;
       font-size: 32px;
@@ -7716,47 +7753,45 @@ nav.breadcrumb {
         .card.card-overlay .card-title-wrap .card-title {
           font-size: 2.2rem; } }
     .card.card-overlay .card-title-wrap .card-text {
-      font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
       color: #FFF; }
   .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
-    font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif; }
-  .card.card-overlay .card-img-overlay {
+    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif; }
+  .card.card-overlay .card-img-overlay, .card.card-overlay .card-img-overlay-bottom {
     top: inherit;
     text-decoration: none; }
-    .card.card-overlay .card-img-overlay .card-subtitle {
+    .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle {
       font-size: 28.8px;
       font-size: 1.8rem; }
       @media (min-width: 992px) {
-        .card.card-overlay .card-img-overlay .card-subtitle {
+        .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle {
           font-size: 2.4rem; } }
       @media (min-width: 1200px) {
-        .card.card-overlay .card-img-overlay .card-subtitle {
+        .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle {
           font-size: 2.8rem; } }
     @media (min-width: 768px) {
-      .card.card-overlay .card-img-overlay .card-text {
+      .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text {
         font-size: 1.3rem; } }
     @media (min-width: 992px) {
-      .card.card-overlay .card-img-overlay .card-text {
+      .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text {
         font-size: 1.5rem; } }
-    .card.card-overlay .card-img-overlay.card-img-overlay-block {
+    .card.card-overlay .card-img-overlay.card-img-overlay-block, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom {
       position: relative; }
     @media (max-width: 767px) {
-      .card.card-overlay .card-img-overlay.card-overlay-inline-sm {
-        position: initial;
+      .card.card-overlay .card-img-overlay.card-overlay-inline-sm, .card.card-overlay .card-overlay-inline-sm.card-img-overlay-bottom {
         padding: 0; } }
     @media (max-width: 543px) {
-      .card.card-overlay .card-img-overlay.card-overlay-inline-xs {
-        position: initial;
+      .card.card-overlay .card-img-overlay.card-overlay-inline-xs, .card.card-overlay .card-overlay-inline-xs.card-img-overlay-bottom {
         padding: 0; } }
     @media (min-width: 768px) {
-      .card.card-overlay .card-img-overlay {
+      .card.card-overlay .card-img-overlay, .card.card-overlay .card-img-overlay-bottom {
         padding-right: 5%;
         padding-left: 5%; } }
-  .card.card-overlay .card-inverse .card-img-overlay, .card.card-overlay .card.card-backed-primary .card-img-overlay, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay, .card.card-overlay .card.card-backed-accent .card-img-overlay, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay {
+  .card.card-overlay .card-inverse .card-img-overlay, .card.card-overlay .card.card-backed-primary .card-img-overlay, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay, .card.card-overlay .card.card-backed-accent .card-img-overlay, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay, .card.card-overlay .card-img-overlay-bottom .card-img-overlay, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay, .card.card-overlay .card-inverse .card-img-overlay-bottom, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom {
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
-    .card.card-overlay .card-inverse .card-img-overlay .card-text, .card.card-overlay .card.card-backed-primary .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay .card-text, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card.card-backed-accent .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay .card-text, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay .card-text, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay .card-text {
+    .card.card-overlay .card-inverse .card-img-overlay .card-text, .card.card-overlay .card.card-backed-primary .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay .card-text, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card.card-backed-accent .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay .card-text, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-img-overlay .card-text, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay .card-text, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay .card-text, .card.card-overlay .card-inverse .card-img-overlay-bottom .card-text, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom .card-text, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom .card-text, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom .card-text {
       color: #FFF; }
-    .card.card-overlay .card-inverse .card-img-overlay .card-subtitle, .card.card-overlay .card.card-backed-primary .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card.card-backed-accent .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay .card-subtitle, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay .card-subtitle {
+    .card.card-overlay .card-inverse .card-img-overlay .card-subtitle, .card.card-overlay .card.card-backed-primary .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card.card-backed-accent .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-img-overlay .card-subtitle, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay .card-subtitle, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay .card-subtitle, .card.card-overlay .card-inverse .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom .card-subtitle {
       color: #FFF; }
   .card.card-overlay .card-media-wrap {
     margin-bottom: 0; }
@@ -7787,21 +7822,6 @@ nav.breadcrumb {
     .card.card-overlay .card-media-wrap > .card-img-bottom,
     .card.card-overlay .card-media-wrap > .card-img-top {
       margin-top: -20rem; } }
-    .card.card-overlay .card-media-wrap.card-media-wrap-video {
-      cursor: pointer; }
-      .card.card-overlay .card-media-wrap.card-media-wrap-video:after {
-        content: "";
-        font-family: "kentfont", sans-serif;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin-left: -42.4px;
-        margin-left: -2.65rem;
-        margin-top: -58.4px;
-        margin-top: -3.65rem;
-        font-size: 112px;
-        font-size: 7rem;
-        color: rgba(255, 255, 255, 0.9); }
   .card.card-overlay .card-footer {
     padding: 0; }
     .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a {
@@ -7844,9 +7864,9 @@ nav.breadcrumb {
       .card.card-overlay .card-title-wrap.pull-right {
         left: inherit;
         right: 5%; }
-    .card.card-overlay .card-img-overlay.card-img-overlay-block {
+    .card.card-overlay .card-img-overlay.card-img-overlay-block, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom {
       position: absolute; }
-    .card.card-overlay .card-img-overlay .input-group {
+    .card.card-overlay .card-img-overlay .input-group, .card.card-overlay .card-img-overlay-bottom .input-group {
       margin-left: 15%;
       margin-right: 15%; } }
 
@@ -7921,13 +7941,13 @@ nav.breadcrumb {
     .card.editorial .card-title-wrap {
       width: 40%; } }
 
-.card.editorial.card-inverse .card-title-wrap, .card.editorial.card-backed-primary .card-title-wrap, .card-panel.cards-backed-primary .card.editorial .card-title-wrap, .card.editorial.card-backed-accent .card-title-wrap, .card-panel.cards-backed-accent .card.editorial .card-title-wrap, .card.editorial.editorial-primary .card-title-wrap, .card.editorial.editorial-accent .card-title-wrap, .card.editorial .card-inverse .card-title-wrap, .card.editorial .card.card-backed-primary .card-title-wrap, .card.editorial .card-panel.cards-backed-primary .card .card-title-wrap, .card-panel.cards-backed-primary .card.editorial .card .card-title-wrap, .card.editorial .card.card-backed-accent .card-title-wrap, .card.editorial .card-panel.cards-backed-accent .card .card-title-wrap, .card-panel.cards-backed-accent .card.editorial .card .card-title-wrap, .card.editorial .card.editorial.editorial-primary .card-title-wrap, .card.editorial .card.editorial.editorial-accent .card-title-wrap {
+.card.editorial.card-inverse .card-title-wrap, .card.editorial.card-backed-primary .card-title-wrap, .card-panel.cards-backed-primary .card.editorial .card-title-wrap, .card.editorial.card-backed-accent .card-title-wrap, .card-panel.cards-backed-accent .card.editorial .card-title-wrap, .card .card.editorial.card-img-overlay-bottom .card-title-wrap, .card.editorial.editorial-primary .card-title-wrap, .card.editorial.editorial-accent .card-title-wrap, .card.editorial .card-inverse .card-title-wrap, .card.editorial .card.card-backed-primary .card-title-wrap, .card.editorial .card-panel.cards-backed-primary .card .card-title-wrap, .card-panel.cards-backed-primary .card.editorial .card .card-title-wrap, .card.editorial .card.card-backed-accent .card-title-wrap, .card.editorial .card-panel.cards-backed-accent .card .card-title-wrap, .card-panel.cards-backed-accent .card.editorial .card .card-title-wrap, .card.editorial .card-img-overlay-bottom .card-title-wrap, .card.editorial .card.editorial.editorial-primary .card-title-wrap, .card.editorial .card.editorial.editorial-accent .card-title-wrap {
   background-color: #000; }
   @media (min-width: 768px) {
-    .card.editorial.card-inverse .card-title-wrap, .card.editorial.card-backed-primary .card-title-wrap, .card-panel.cards-backed-primary .card.editorial .card-title-wrap, .card.editorial.card-backed-accent .card-title-wrap, .card-panel.cards-backed-accent .card.editorial .card-title-wrap, .card.editorial.editorial-primary .card-title-wrap, .card.editorial.editorial-accent .card-title-wrap, .card.editorial .card-inverse .card-title-wrap, .card.editorial .card.card-backed-primary .card-title-wrap, .card.editorial .card-panel.cards-backed-primary .card .card-title-wrap, .card-panel.cards-backed-primary .card.editorial .card .card-title-wrap, .card.editorial .card.card-backed-accent .card-title-wrap, .card.editorial .card-panel.cards-backed-accent .card .card-title-wrap, .card-panel.cards-backed-accent .card.editorial .card .card-title-wrap, .card.editorial .card.editorial.editorial-primary .card-title-wrap, .card.editorial .card.editorial.editorial-accent .card-title-wrap {
+    .card.editorial.card-inverse .card-title-wrap, .card.editorial.card-backed-primary .card-title-wrap, .card-panel.cards-backed-primary .card.editorial .card-title-wrap, .card.editorial.card-backed-accent .card-title-wrap, .card-panel.cards-backed-accent .card.editorial .card-title-wrap, .card .card.editorial.card-img-overlay-bottom .card-title-wrap, .card.editorial.editorial-primary .card-title-wrap, .card.editorial.editorial-accent .card-title-wrap, .card.editorial .card-inverse .card-title-wrap, .card.editorial .card.card-backed-primary .card-title-wrap, .card.editorial .card-panel.cards-backed-primary .card .card-title-wrap, .card-panel.cards-backed-primary .card.editorial .card .card-title-wrap, .card.editorial .card.card-backed-accent .card-title-wrap, .card.editorial .card-panel.cards-backed-accent .card .card-title-wrap, .card-panel.cards-backed-accent .card.editorial .card .card-title-wrap, .card.editorial .card-img-overlay-bottom .card-title-wrap, .card.editorial .card.editorial.editorial-primary .card-title-wrap, .card.editorial .card.editorial.editorial-accent .card-title-wrap {
       background-color: rgba(0, 0, 0, 0.9); } }
 
-.card.editorial.card-inverse .card-text, .card.editorial.card-backed-primary .card-text, .card-panel.cards-backed-primary .card.editorial .card-text, .card.editorial.card-backed-accent .card-text, .card-panel.cards-backed-accent .card.editorial .card-text, .card.editorial.editorial-primary .card-text, .card.editorial.editorial-accent .card-text, .card.editorial .card-inverse .card-text, .card.editorial .card.card-backed-primary .card-text, .card.editorial .card-panel.cards-backed-primary .card .card-text, .card-panel.cards-backed-primary .card.editorial .card .card-text, .card.editorial .card.card-backed-accent .card-text, .card.editorial .card-panel.cards-backed-accent .card .card-text, .card-panel.cards-backed-accent .card.editorial .card .card-text, .card.editorial .card.editorial.editorial-primary .card-text, .card.editorial .card.editorial.editorial-accent .card-text {
+.card.editorial.card-inverse .card-text, .card.editorial.card-backed-primary .card-text, .card-panel.cards-backed-primary .card.editorial .card-text, .card.editorial.card-backed-accent .card-text, .card-panel.cards-backed-accent .card.editorial .card-text, .card .card.editorial.card-img-overlay-bottom .card-text, .card.editorial.editorial-primary .card-text, .card.editorial.editorial-accent .card-text, .card.editorial .card-inverse .card-text, .card.editorial .card.card-backed-primary .card-text, .card.editorial .card-panel.cards-backed-primary .card .card-text, .card-panel.cards-backed-primary .card.editorial .card .card-text, .card.editorial .card.card-backed-accent .card-text, .card.editorial .card-panel.cards-backed-accent .card .card-text, .card-panel.cards-backed-accent .card.editorial .card .card-text, .card.editorial .card-img-overlay-bottom .card-text, .card.editorial .card.editorial.editorial-primary .card-text, .card.editorial .card.editorial.editorial-accent .card-text {
   color: #FFF; }
 
 .card.editorial.editorial-primary-tint .card-title-wrap {
@@ -8017,7 +8037,7 @@ blockquote, .blockquote {
     padding: 16px 0;
     padding: 1rem 0;
     padding-bottom: 0;
-    font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
     font-size: 20.8px;
     font-size: 1.3rem;
     font-style: italic;
@@ -8110,7 +8130,7 @@ blockquote.social-quote {
     padding: 16px 0;
     padding: 1rem 0;
     padding-bottom: 0;
-    font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
     font-style: italic;
     color: #671115;
     margin-bottom: 0; }
@@ -8393,7 +8413,7 @@ main > blockquote.social-quote {
 .impact-statement {
   font-size: 28.8px;
   font-size: 1.8rem;
-  font-family: "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif;
+  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
   text-align: center;
   padding: 32px 0;
   padding: 2rem 0;

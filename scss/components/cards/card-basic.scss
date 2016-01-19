@@ -44,10 +44,6 @@
 		}
 	}
 
-	&.card-centered {
-		@extend .text-xs-center;
-	}
-
 	@each $name, $color in $brand-colors-light {
 
 		&.card-backed-#{$name},
@@ -77,6 +73,29 @@
 				background: linear-gradient($color 50%, transparent 50%);
 		}
 
+	}
+
+	&.card-centered {
+		@extend .text-xs-center;
+	}
+
+	.card-img-overlay {
+		padding: 1rem;
+
+		@each $breakpoint, $width in $grid-breakpoints {
+			&.card-overlay-inline-#{$breakpoint} {
+				@include media-breakpoint-down($breakpoint){
+					position: inherit;
+				}
+			}
+		}
+	}
+	.card-img-overlay-bottom{
+		@extend .card-inverse;
+		@extend .card-img-overlay;
+		top:auto;
+		background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+		padding-top: 3rem;
 	}
 
 	.card-body{
@@ -138,23 +157,12 @@
 
 		@extend .media-wrap;
 
-		&.card-media-wrap-video {
-			cursor: pointer;
-			&:after {
-				content: $kf-play-circle;
-				font-family: $font-family-kentfont;
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				margin-left: -2rem;
-				margin-top: -3.2rem;
-				font-size: 4.5rem;
-				color: rgba(255,255,255,0.9);
-			}
-		}
 	}
 
 	&.card-inverse, .card-inverse{
+		.card-title{
+			color: #FFF;
+		}
 		.card-subtitle{
 			color: rgba(255,255,255,.65);
 		}
