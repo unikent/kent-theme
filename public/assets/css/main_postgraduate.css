@@ -5521,8 +5521,9 @@ h6, .h6 {
     height: 72px;
     height: 4.5rem;
     text-align: center;
-    color: rgba(255, 255, 255, 0.9);
-    transition: color 300ms; }
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 300ms;
+    transition-timing-function: linear; }
     @media (min-width: 544px) {
       .video-launcher:after {
         left: calc(50% - 3.5rem);
@@ -5532,7 +5533,25 @@ h6, .h6 {
         width: 7rem;
         height: 7rem; } }
   .video-launcher:hover:after {
-    color: white; }
+    color: white;
+    left: calc(50% - 2.5rem);
+    top: calc(50% - 2.5rem);
+    font-size: 76px;
+    font-size: 4.75rem;
+    line-height: 76px;
+    line-height: 4.75rem;
+    width: 76px;
+    width: 4.75rem;
+    height: 76px;
+    height: 4.75rem; }
+    @media (min-width: 544px) {
+      .video-launcher:hover:after {
+        left: calc(50% - 3.75rem);
+        top: calc(50% - 3.75rem);
+        font-size: 7.5rem;
+        line-height: 7.5rem;
+        width: 7.5rem;
+        height: 7.5rem; } }
 
 .media-wrap-letterbox, .media-wrap-paralax, .card.card-overlay .card-media-wrap {
   position: relative;
