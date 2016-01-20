@@ -22,7 +22,7 @@
 		"kent-font": "unikent/kent-font",
 		"modernizr": "~2.8.3",
 		"responsive-bootstrap-toolkit": "~2.5.1",
-		"jquery.stellar" : "0.6.2",
+		"jquery.stellar" : "unikent/stellarjs#master",
 		"slick-carousel": "1.5.9",
 		"quick-spot": "master",
 		"handlebars": "~4.0.5"

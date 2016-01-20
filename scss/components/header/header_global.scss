@@ -42,12 +42,12 @@
 		.global-nav-link {
 			background-color: #fff;
 			a {
+				position: relative;
 				display:block;
 				line-height: 3rem;
 				border-bottom: solid 1px #eee;
 				padding-left:1rem;
 				color: $kent-primary;
-				cursor:pointer;
 
 				text-transform: uppercase;
 				font-family: $font-family-serif;
@@ -56,14 +56,16 @@
 					text-decoration:none;
 				}
 
-				.more {
-					float:right;
-					display:block;
+				&:after{
+					position: absolute;
+					display: inline-block;
+					content:$kf-chevron-down;
+					right: 0;
+					font-family: $font-family-kentfont;
 					height:3rem;
 					width: 3rem;
 					text-align: center;
 					border-left: solid 1px #eee;
-					padding: 1rem;
 				}
 			}
 
@@ -71,15 +73,25 @@
 				max-height:0;
 				overflow: hidden;
 				transition: max-height 300ms;
-
 				a {
 					font-family: $font-family-sans-serif;
 					text-transform: none;
 					background: $brand-tertiary;
 					border-bottom: solid 1px #ddd;
 					color: $kent-primary;
-
-					.more { border-left: solid 1px #ddd;}
+					padding: 0 0 0 1rem;
+					position: relative;
+					&:after{
+						position: absolute;
+						display: inline-block;
+						content:$kf-chevron-right;
+						right: 0;
+						font-family: $font-family-kentfont;
+						height:3rem;
+						width: 3rem;
+						text-align: center;
+						border-left: solid 1px #ddd;
+					}
 					.global-nav-link-desc { display:none;}
 				}
 			}
@@ -91,11 +103,8 @@
 				&.in{
 
 					& > a {
-
-						.more{
-							&::before {
-								content: $kf-chevron-up;
-							}
+						&:after {
+							content: $kf-chevron-up;
 						}
 					}
 
@@ -168,7 +177,7 @@
 			box-shadow: none;
 			height: $global-nav-height - 3;
 			transition: height 300ms;
-			max-width: 500px;
+			max-width: 580px;
 			margin: 0 auto;
 			.global-nav-link {
 				min-width: 1%;
@@ -183,20 +192,19 @@
 					position: relative;
 					transition: color 300ms;
 
-					.more {
+					&:after {
+						content: "";
+						display: block;
 						opacity: 0;
 						transition: opacity 300ms;
 						background-color: $brand-tertiary;
 						width:2.5rem;height:2.5rem;
 						padding:0;
-
 						position:absolute;
 						bottom: -3.1rem;
 						left: 40%;
 						left: calc(50% - 1.25rem);
 						transform: rotate(45deg);
-
-						&::before { content:""; }
 					}
 				}
 
@@ -220,11 +228,9 @@
 					a {
 						min-width:1%;
 						display:table-cell;
-						font-family: $font-family-serif;
 						position: relative;
 						border:0;
 						color: $kent-primary;
-						font-size:1.1rem;
 						line-height: 1.25rem;
 						text-align:left;
 						padding:0.75rem;
@@ -238,34 +244,33 @@
 						}
 
 						.global-nav-link-desc {
-							margin-top: .5rem;
+							margin-top: .4rem;
 							font-family: $font-family-sans-serif;
 							display:inline-block;
 							font-size:0.85rem;
 							width:100%;
 							color: $gray-dark;
 							line-height: 1rem;
-							padding-right: 0.75rem;
 						}
-						.more {
-							width:1rem;
-							position: absolute;
-							display:block;
-							border-left:0;
-							height:25px;
-							right: 0.5rem;
-							padding:0;
-
-							font-size: 1.5rem;
-							top: 1.75rem;
-
-							color: $brand-accent;
-
+						&:after {
+							display: none;
+						}
+						.global-nav-link-title{
+							font-family: $headings-font-family;
+							font-size: 1.2rem;
+							&:after{
+								content:$kf-angle-right;
+								font-family: $font-family-kentfont;
+								color: $brand-accent;
+								padding-left: .5rem;
+							}
 						}
 						@include media-breakpoint-up(lg) {
-							font-size: 1.25rem;
+							.global-nav-link-title {
+								font-size: 1.4rem;
+							}
 							line-height: 1.4rem;
-							padding:1rem 0.5rem;
+							padding:1rem;
 							.global-nav-link-desc {
 								font-size:0.9rem;
 								line-height: 1rem;
@@ -273,7 +278,6 @@
 							}
 						}
 						@include media-breakpoint-up(xxl) {
-							padding:1rem;
 							.global-nav-link-desc {
 								width: 80%;
 								margin-right: 20%;
@@ -305,9 +309,9 @@
 					}
 					&.in > a{
 						color: $brand-accent;
-						& > .more {
+						&:after {
 							opacity: 1;
-							&::before { content:""; }
+
 						}
 					}
 				}

@@ -11215,6 +11215,10 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 			},
 			transform: {
 				setPosition: function($elem, left, startingLeft, top, startingTop) {
+					startingLeft = (startingLeft==='auto')?0:startingLeft;
+					startingTop = (startingTop==='auto')?0:startingTop;
+					left = (left==='auto')?0:left;
+					top = (top==='auto')?0:top;
 					$elem[0].style[prefixedTransform] = 'translate3d(' + (left - startingLeft) + 'px, ' + (top - startingTop) + 'px, 0)';
 				}
 			}
@@ -11351,6 +11355,7 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 					if (self.options.verticalScrolling) {
 						positionPropertyAdapter.setTop($elem, top, startingTop);
 					}
+				
 				};
 		},
 		_handleWindowLoadAndResize: function() {
@@ -11813,6 +11818,7 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 	// Expose the plugin class so it can be modified
 	window.Stellar = Plugin;
 }(jQuery, this, document));
+
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
