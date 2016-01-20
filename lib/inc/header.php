@@ -55,9 +55,11 @@
 			<p>It may not be complete or work as intended.</p>
 			<p>
 				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="btn btn-link">Go to original site</a>
+			</p>
+			<p>
 				<button class="btn btn-secondary feedback" onclick="return window.usabilla_live('click');">Give us feedback</button>
 			</p>
-			<span class="beta-toggler">Learn more</span>
+			<span class="beta-toggler"></span>
 		</section>
 		<?php } ?>
 		<header class="global-header">
@@ -68,6 +70,9 @@
 				<button class="kf-search pull-right search-button" aria-controls="global-nav-search" title="Open search" aria-expanded="false"></button>
 			</section>
 			<section class="global-nav">
+				<?php if($beta_bar){ ?>
+					<button class="beta-toggler">BETA</button>
+				<?php } ?>
 				<a class="main-logo kf-kent-block" href=""><span class="sr-only">The University of Kent</span></a>
 
 				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" title="Open search"></button>

@@ -96,6 +96,7 @@ module.exports = function(grunt) {
                     'vendor/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.js',
 					'vendor/jquery.stellar/src/jquery.stellar.js',
 					'vendor/slick-carousel/slick/slick.js',
+					'vendor/js-cookie/src/js.cookie.js',
                     'js/components/responsive_util.js',
                     'js/components/collapse_responsive.js',
                     'js/components/global_nav.js',
