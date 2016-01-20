@@ -6624,6 +6624,7 @@ select {
       display: inline-block; } }
 
 .global-header {
+  position: relative;
   background-color: transparent; }
   @media (min-width: 768px) {
     .global-header {
@@ -7121,29 +7122,14 @@ nav.breadcrumb {
       height: auto; } }
 
 .beta-bar {
+  display: none;
   background-color: #fbf5e9;
-  padding: 20.8px;
-  padding: 1.3rem;
-  padding-bottom: 8px;
-  padding-bottom: 0.5rem;
-  max-height: 64px;
-  max-height: 4rem;
+  padding: 20.8px 48px 0 20.8px;
+  padding: 1.3rem 3rem 0 1.3rem;
   height: auto;
   overflow: hidden; }
   .beta-bar p {
     display: inline-block; }
-  .beta-bar.in {
-    max-height: none; }
-  .beta-bar.overflown {
-    padding-right: 128px;
-    padding-right: 8rem; }
-    .beta-bar.overflown .btn, .beta-bar.overflown .social-link i, .social-link .beta-bar.overflown i, .beta-bar.overflown .content-social a, .content-social .beta-bar.overflown a, .beta-bar.overflown .card-panel .card-panel-header .card-panel-social a, .card-panel .card-panel-header .card-panel-social .beta-bar.overflown a, .beta-bar.overflown .global-footer .footer-section-social a, .global-footer .footer-section-social .beta-bar.overflown a, .beta-bar.overflown .content-social .content-social-link, .content-social .beta-bar.overflown .content-social-link, .beta-bar.overflown .card-panel .card-panel-header .card-panel-social .content-social-link, .card-panel .card-panel-header .card-panel-social .beta-bar.overflown .content-social-link, .beta-bar.overflown .global-footer .footer-section-social .content-social-link, .global-footer .footer-section-social .beta-bar.overflown .content-social-link, .beta-bar.overflown blockquote.social-quote button, blockquote.social-quote .beta-bar.overflown button {
-      margin-top: 0;
-      vertical-align: middle;
-      margin-top: 16px;
-      margin-top: 1rem; }
-      .beta-bar.overflown .btn.btn-link, .beta-bar.overflown .social-link i.btn-link, .social-link .beta-bar.overflown i.btn-link, .beta-bar.overflown .content-social a.btn-link, .content-social .beta-bar.overflown a.btn-link, .beta-bar.overflown .card-panel .card-panel-header .card-panel-social a.btn-link, .card-panel .card-panel-header .card-panel-social .beta-bar.overflown a.btn-link, .beta-bar.overflown .global-footer .footer-section-social a.btn-link, .global-footer .footer-section-social .beta-bar.overflown a.btn-link, .beta-bar.overflown .content-social .btn-link.content-social-link, .content-social .beta-bar.overflown .btn-link.content-social-link, .beta-bar.overflown .card-panel .card-panel-header .card-panel-social .btn-link.content-social-link, .card-panel .card-panel-header .card-panel-social .beta-bar.overflown .btn-link.content-social-link, .beta-bar.overflown .global-footer .footer-section-social .btn-link.content-social-link, .global-footer .footer-section-social .beta-bar.overflown .btn-link.content-social-link, .beta-bar.overflown blockquote.social-quote button.btn-link, blockquote.social-quote .beta-bar.overflown button.btn-link {
-        padding-left: 0; }
   .beta-bar .btn, .beta-bar .social-link i, .social-link .beta-bar i, .beta-bar .content-social a, .content-social .beta-bar a, .beta-bar .card-panel .card-panel-header .card-panel-social a, .card-panel .card-panel-header .card-panel-social .beta-bar a, .beta-bar .global-footer .footer-section-social a, .global-footer .footer-section-social .beta-bar a, .beta-bar .content-social .content-social-link, .content-social .beta-bar .content-social-link, .beta-bar .card-panel .card-panel-header .card-panel-social .content-social-link, .card-panel .card-panel-header .card-panel-social .beta-bar .content-social-link, .beta-bar .global-footer .footer-section-social .content-social-link, .global-footer .footer-section-social .beta-bar .content-social-link, .beta-bar blockquote.social-quote button, blockquote.social-quote .beta-bar button {
     margin-top: -6px;
     margin-top: -0.375rem;
@@ -7164,20 +7150,37 @@ nav.breadcrumb {
   .beta-bar .beta-toggler {
     cursor: pointer;
     position: absolute;
-    top: 16px;
-    top: 1rem;
-    right: 0;
-    padding: 6.4px;
-    padding: 0.4rem;
-    padding-right: 16px;
-    padding-right: 1rem; }
+    right: 16px;
+    right: 1rem;
+    top: 12px;
+    top: .75rem; }
     .beta-bar .beta-toggler:after {
-      content: "";
+      font-size: 24px;
+      font-size: 1.5rem;
+      content: "";
       font-family: "kentfont", sans-serif;
-      padding-left: 3.2px;
-      padding-left: 0.2rem; }
-    .beta-bar .beta-toggler.in:after {
-      content: ""; }
+      color: #05345C; }
+
+button.beta-toggler {
+  position: absolute;
+  background-color: #074479;
+  top: 8px;
+  top: .5rem;
+  left: 160px;
+  left: 10rem;
+  color: #FFF;
+  padding: 4px 8px;
+  padding: .25rem .5rem;
+  border: none; }
+  button.beta-toggler:hover, button.beta-toggler:focus, button.beta-toggler:active {
+    background-color: #074d88;
+    outline: none; }
+  @media (min-width: 768px) {
+    button.beta-toggler {
+      top: 2.8rem;
+      left: 9rem;
+      font-size: 0.8rem;
+      padding: .1rem .5rem; } }
 
 .card {
   display: block;
