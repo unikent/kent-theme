@@ -6728,6 +6728,8 @@ select {
         display: block;
         float: left;
         padding-left: 0; }
+      .global-nav .audience-nav-links a:hover {
+        background: transparent; }
       .global-nav .global-nav-menu {
         display: block;
         height: auto;
@@ -6974,9 +6976,11 @@ body.show-global-search .global-nav-menu .global-nav-links {
           color: #fff;
           text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8); }
         .global-header-transparent .global-nav .global-nav-links .global-nav-link.in > a {
-          color: #ce9716; }
+          color: #fff; }
     .global-header-transparent .global-nav .global-nav-link-submenu {
-      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3); } }
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15); }
+      .global-header-transparent .global-nav .global-nav-link-submenu nav {
+        padding: 10px 2rem; } }
 
 .departmental-nav header {
   font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
