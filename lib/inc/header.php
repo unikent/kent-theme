@@ -44,7 +44,7 @@
 
 		<?php echo $head_markup ;?>
 	</head>
-	<body>
+	<body class="<?php echo !empty($home_page) ? 'global-header-transparent' :'' ; ?>">
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
 		<a href="#main_content" class="sr-only">Jump to content</a>
 		<?php if($beta_bar){ ?>
@@ -168,12 +168,15 @@
 					</form>
 				</div>
 			</section>
-			<section class="departmental-nav<?php echo ($slim)?' slim':''; ?>" id="section_menu">
-				<header><?php echo $title; ?></header>
-				<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
-				<nav class="navbar-menu" id="navbar-menu" role="menu">
-					<?php echo $menu_links; ?>
-				</nav>
-			</section>
+			<?php if(!$home_page){ ?>
+				<section class="departmental-nav<?php echo ($slim)?' slim':''; ?>" id="section_menu">
+					<header><?php echo $title; ?></header>
+					<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
+					<nav class="navbar-menu" id="navbar-menu" role="menu">
+						<?php echo $menu_links; ?>
+					</nav>
+				</section>
+			<?php } ?>
 		</header>
-		<main id="main_content"<?php echo !empty($main_class) ?' class="' . $main_class .'"' :'' ; ?>>
+
+		<main id="main_content" class=" <?php echo !empty($main_class) ? $main_class :'' ; ?>">
