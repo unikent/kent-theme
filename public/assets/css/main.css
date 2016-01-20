@@ -6672,6 +6672,7 @@ select {
         padding-left: 16px;
         padding-left: 1rem;
         color: #05345C;
+        cursor: pointer;
         text-transform: uppercase;
         font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif; }
         .global-nav .global-nav-links .global-nav-link a:hover, .global-nav .global-nav-links .global-nav-link a:active, .global-nav .global-nav-links .global-nav-link a:focus {
@@ -6779,7 +6780,7 @@ select {
               content: "";
               display: block;
               opacity: 0;
-              transition: opacity 300ms;
+              transition: opacity 200ms;
               background-color: #f7f2e1;
               width: 2.5rem;
               height: 2.5rem;
@@ -6957,6 +6958,25 @@ body.show-global-search .global-nav-menu .global-nav-links {
     background-color: rgba(0, 0, 0, 0.5); }
   body.show-global-search .departmental-nav:before {
     background-color: rgba(0, 0, 0, 0.5); } }
+
+/* Home page variant */
+@media (min-width: 768px) {
+  .global-header-transparent .global-nav {
+    background: transparent; }
+    .global-header-transparent .global-nav .main-logo {
+      color: #fff;
+      text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8); }
+    .global-header-transparent .global-nav .global-nav-links {
+      height: 5.8rem; }
+      .global-header-transparent .global-nav .global-nav-links .global-nav-link {
+        background: transparent; }
+        .global-header-transparent .global-nav .global-nav-links .global-nav-link > a {
+          color: #fff;
+          text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8); }
+        .global-header-transparent .global-nav .global-nav-links .global-nav-link.in > a {
+          color: #ce9716; }
+    .global-header-transparent .global-nav .global-nav-link-submenu {
+      box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3); } }
 
 .departmental-nav header {
   font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
@@ -8030,6 +8050,19 @@ button.beta-toggler {
 @media (min-width: 768px) {
   .show-departmental-menu .card.header-card-overlay {
     margin-top: -8rem; } }
+
+/* Home page variant */
+@media (min-width: 768px) {
+  .global-header-transparent .card.header-card-overlay {
+    margin-top: -7rem; }
+    .global-header-transparent .card.header-card-overlay .card-media-wrap::after, .global-header-transparent .card.header-card-overlay .media-wrap-paralax::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: "";
+      background: linear-gradient(rgba(0, 0, 0, 0.7) 1rem, transparent 7.5rem); } }
 
 .card.editorial .card-title-wrap {
   background-color: #FFF; }
