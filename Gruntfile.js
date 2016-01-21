@@ -96,6 +96,8 @@ module.exports = function(grunt) {
                     'vendor/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.js',
 					'vendor/jquery.stellar/src/jquery.stellar.js',
 					'vendor/slick-carousel/slick/slick.js',
+					'vendor/handlebars/handlebars.runtime.js',
+					'js/handlebars_templates.js',
 					'vendor/js-cookie/src/js.cookie.js',
                     'js/components/responsive_util.js',
                     'js/components/collapse_responsive.js',
@@ -106,7 +108,8 @@ module.exports = function(grunt) {
 					'js/components/attribution.js',
 					'js/components/embeds.js',
 					'js/components/paralax.js',
-					'js/components/slider.js'
+					'js/components/slider.js',
+					'js/components/video.js'
                 ],
                 dest: 'js/main.js'
             }
@@ -133,8 +136,8 @@ module.exports = function(grunt) {
 
         watch: {
             js: {
-                files: [ 'js/*.js', 'js/**/*.js','!js/_*.js' ],
-                tasks: [ 'jshint', 'concat', 'copy:mainjs', 'uglify', 'modernizr' ]
+                files: [ 'js/*.js', 'js/**/*.js','!js/_*.js', 'js/templates/*.hbs' ],
+                tasks: [ 'jshint', 'handlebars', 'concat', 'copy:mainjs', 'uglify', 'modernizr' ]
             },
             sass: {
                 files: [ 'scss/*.scss','scss/**/*.scss'  ],
@@ -151,7 +154,8 @@ module.exports = function(grunt) {
                 'js/*.js',
                 'js/**/*.js',
                 '!js/_*.js',
-                '!js/main.js'
+                '!js/main.js',
+                '!js/handlebars_templates.js'
             ]
         },
         postcss: {
@@ -285,6 +289,20 @@ module.exports = function(grunt) {
 				src: 'patterns',
 				dest: 'public/devdocs'
 			}
+		},
+		handlebars: {
+			compile: {
+				options: {
+					namespace: 'Handlebars.templates',
+					processName: function(filePath) {
+						return filePath.replace(/js\/templates\/(.+)\.hbs$/, '$1').split('/').join('.');
+					}
+				},
+				files: {
+					'js/handlebars_templates.js': ['js/templates/*.hbs']
+				}
+			}
+			
 		}
 	});
 
@@ -300,9 +318,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-modernizr');
 	grunt.loadNpmTasks('grunt-php2html');
 	grunt.loadNpmTasks('grunt-metalsmith');
+	grunt.loadNpmTasks('grunt-contrib-handlebars');
 
 	// Define tasks
-	grunt.registerTask('development', [ 'jshint', 'concat', 'uglify', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr']);
+	grunt.registerTask('development', [ 'jshint', 'handlebars', 'concat', 'uglify', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr']);
 	grunt.registerTask('default', [ 'development', 'watch' ]);
 	grunt.registerTask('patterns', [ 'php2html:production','metalsmith:production' ]);
 	grunt.registerTask('patterns_local', [ 'php2html:development','metalsmith:development' ]);

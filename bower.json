@@ -18,13 +18,14 @@
 		"bootstrap": "4.0.0-alpha.2",
 		"jquery": "~2.1.4",
 		"jquery-ui": "~1.11.4",
-        "tether":"~1.1.1",
+		"tether":"~1.1.1",
 		"kent-font": "unikent/kent-font",
 		"modernizr": "~2.8.3",
 		"responsive-bootstrap-toolkit": "~2.5.1",
         "jquery.stellar" : "unikent/stellarjs#master",
         "slick-carousel": "1.5.9",
         "quick-spot": "master",
-        "js-cookie": "2.1.0"
+        "js-cookie": "2.1.0",
+		"handlebars": "~4.0.5"
 	}
 }
