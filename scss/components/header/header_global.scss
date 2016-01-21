@@ -462,6 +462,11 @@ body{
 		}
 
 	}
+	&.show-global-search,&.show-global-menu{
+		.home-nav{
+			display: none;
+		}
+	}
 }
 
 
@@ -505,6 +510,128 @@ body{
 			    nav {
 					padding: 10px 2rem;
 			    }
+			}
+		}
+	}
+}
+
+
+.home-nav{
+	position: absolute;
+	top:3rem;
+	z-index: 1;
+	width: 100%;
+	@include media-breakpoint-up(md){
+		display: none;
+	}
+
+
+	.global-nav-links {
+		display: table;
+		table-layout: fixed;
+		width:100%;
+		box-shadow: none;
+		height: $global-nav-height - 4;
+		transition: height 300ms;
+		max-width: 580px;
+		margin: 0 auto;
+
+		.global-nav-link {
+			min-width: 1%;
+			display: table-cell;
+			padding: 1rem;
+			text-align: center;
+			font-size: 1rem;
+			@media (min-width: 400px) {
+				font-size: 1.3rem;
+			}
+			@include media-breakpoint-up(sm) {
+				font-size: 1.7rem;
+			}
+
+			& > a {
+				text-transform: uppercase;
+				font-family: $font-family-serif;
+				color: #FFF;
+				position: relative;
+				text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+
+				&:after {
+					content: "";
+					display: block;
+					opacity: 0;
+					transition: opacity 200ms;
+					background-color: $brand-tertiary;
+					width:2.5rem;height:2.5rem;
+					padding:0;
+					position:absolute;
+					bottom: -3.1rem;
+					left: 40%;
+					left: calc(50% - 1.25rem);
+					transform: rotate(45deg);
+				}
+			}
+
+			.global-nav-link-submenu{
+				max-height: 0;
+				transition: max-height 200ms;
+				overflow: hidden;
+				width:100%;
+				position: absolute;
+				left:0;
+				top: $global-nav-height - 5;
+				@include media-breakpoint-up(sm) {
+					top: $global-nav-height - 4;
+				}
+			}
+			nav {
+				width: 100%;
+				text-align: left;
+				padding: 0.5rem 0;
+				background-color: $brand-tertiary;
+				a {
+					display: block;
+					position: relative;
+					color: $kent-primary;
+					padding: 0 1rem 1rem;
+					.global-nav-link-desc {
+						display: block;
+						color: $body-color;
+						font-size: 0.9rem;
+					}
+					.global-nav-link-title{
+						font-family: $headings-font-family;
+						font-size: 1rem;
+						&:after{
+							content:$kf-angle-right;
+							font-family: $font-family-kentfont;
+							color: $brand-accent;
+							padding-left: .5rem;
+						}
+					}
+				}
+			}
+		}
+
+		&.in {
+
+			.global-nav-link-submenu{
+				max-height: 500px;
+				transition: max-height 200ms;
+			}
+
+			.global-nav-link{
+				&.in{
+					.global-nav-link-submenu{
+						z-index: 1;
+					}
+				}
+				&.in > a{
+					&:after {
+						opacity: 1;
+
+					}
+				}
 			}
 		}
 	}
