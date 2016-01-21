@@ -1,4 +1,5 @@
 .global-header {
+	position: relative;
 	background-color: transparent;
 
 	@include media-breakpoint-up(md) {
@@ -48,7 +49,7 @@
 				border-bottom: solid 1px #eee;
 				padding-left:1rem;
 				color: $kent-primary;
-
+				cursor:pointer;
 				text-transform: uppercase;
 				font-family: $font-family-serif;
 
@@ -128,6 +129,10 @@
 
 		a.main-logo {display:block; float:left;padding-left:0;}
 
+		.audience-nav-links a:hover {
+			background: transparent;
+		}
+
 		.global-nav-menu{
 			display:block; 
 			height:auto;
@@ -179,6 +184,7 @@
 			transition: height 300ms;
 			max-width: 580px;
 			margin: 0 auto;
+
 			.global-nav-link {
 				min-width: 1%;
 				font-size: 1.7rem;
@@ -196,7 +202,7 @@
 						content: "";
 						display: block;
 						opacity: 0;
-						transition: opacity 300ms;
+						transition: opacity 200ms;
 						background-color: $brand-tertiary;
 						width:2.5rem;height:2.5rem;
 						padding:0;
@@ -458,3 +464,48 @@ body{
 	}
 }
 
+
+
+
+/* Home page variant */
+
+.global-header-transparent {
+	@include media-breakpoint-up(md) {
+
+		.global-nav {
+			background: transparent;
+
+			.main-logo { 
+				color: #fff;
+				text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8); 
+			}
+
+			.global-nav-links {
+
+				height: $global-nav-height - 2.8;
+
+				.global-nav-link {
+					background: transparent;
+
+
+					& > a {
+						color: #fff;
+						text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+					}
+					&.in > a {
+						color: #fff;
+					
+					}
+				}
+			}
+
+			.global-nav-link-submenu {
+			    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.15);
+
+			    nav {
+					padding: 10px 2rem;
+			    }
+			}
+		}
+	}
+}

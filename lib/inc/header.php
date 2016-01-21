@@ -44,7 +44,7 @@
 
 		<?php echo $head_markup ;?>
 	</head>
-	<body>
+	<body class="<?php echo !empty($home_page) ? 'global-header-transparent' :'' ; ?>">
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
 		<a href="#main_content" class="sr-only">Jump to content</a>
 		<?php if($beta_bar){ ?>
@@ -55,9 +55,11 @@
 			<p>It may not be complete or work as intended.</p>
 			<p>
 				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="btn btn-link">Go to original site</a>
+			</p>
+			<p>
 				<button class="btn btn-secondary feedback" onclick="return window.usabilla_live('click');">Give us feedback</button>
 			</p>
-			<span class="beta-toggler">Learn more</span>
+			<span class="beta-toggler"></span>
 		</section>
 		<?php } ?>
 		<header class="global-header">
@@ -68,6 +70,9 @@
 				<button class="kf-search pull-right search-button" aria-controls="global-nav-search" title="Open search" aria-expanded="false"></button>
 			</section>
 			<section class="global-nav">
+				<?php if($beta_bar){ ?>
+					<button class="beta-toggler">BETA</button>
+				<?php } ?>
 				<a class="main-logo kf-kent-block" href=""><span class="sr-only">The University of Kent</span></a>
 
 				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" title="Open search"></button>
@@ -168,12 +173,15 @@
 					</form>
 				</div>
 			</section>
-			<section class="departmental-nav<?php echo ($slim)?' slim':''; ?>" id="section_menu">
-				<header><?php echo $title; ?></header>
-				<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
-				<nav class="navbar-menu" id="navbar-menu" role="menu">
-					<?php echo $menu_links; ?>
-				</nav>
-			</section>
+			<?php if(!$home_page){ ?>
+				<section class="departmental-nav<?php echo ($slim)?' slim':''; ?>" id="section_menu">
+					<header><?php echo $title; ?></header>
+					<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
+					<nav class="navbar-menu" id="navbar-menu" role="menu">
+						<?php echo $menu_links; ?>
+					</nav>
+				</section>
+			<?php } ?>
 		</header>
-		<main id="main_content"<?php echo !empty($main_class) ?' class="' . $main_class .'"' :'' ; ?>>
+
+		<main id="main_content" class=" <?php echo !empty($main_class) ? $main_class :'' ; ?>">

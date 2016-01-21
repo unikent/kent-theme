@@ -14,7 +14,8 @@ Class KentThemeHelper {
 			'theme' => '',
 			'head_markup' => '',
 			'slim'=>false,
-			'beta_bar'=>true
+			'beta_bar'=>true,
+			'home_page' => false
 		);
 
 		$config = array_merge($defaults,$config);
