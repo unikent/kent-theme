@@ -16337,14 +16337,7 @@ $(document).ready(function(){
 		mobileFirst:true,
 		useTransform:true,
 		accessibility: true,	
-	}).on("afterChange", function(){
-		console.log("hi");
-	}).on("breakpoint", function(){
-		console.log("zink");
 	});
-
-
-
 });
 $(document).ready(function(){
 	var launcherCount = 0;
