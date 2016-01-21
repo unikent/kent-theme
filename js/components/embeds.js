@@ -23,5 +23,5 @@ onEmbedClickHandler = function (event) {
 
 jQuery(document).ready(function () {
 
-	$('.card-embed-wrap').on('click', onEmbedClickHandler);
+	$('.click-to-interact').on('click', onEmbedClickHandler);
 });

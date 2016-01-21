@@ -16,3 +16,9 @@
 		}
 	} 
 }
+
+.click-to-interact{
+	iframe{
+		pointer-events: none;
+	}
+}
