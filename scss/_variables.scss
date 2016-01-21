@@ -55,6 +55,7 @@ $brand-tertiary:        #f7f2e1;
 $brand-accent:          #937227; //use on light backgrounds
 $brand-accent-light:    #ce9716; //use on dark backgrounds
 
+$brand-dark: #333333;
 $border-gray: #e6e6e6;
 
 $gray-dark-trans: rgba(0, 0, 0, 0.8);
@@ -71,7 +72,8 @@ $brand-colors: (
    secondary: $brand-secondary,
    tertiary: $brand-tertiary,
    primary: $brand-primary,
-   accent: $brand-accent
+   accent: $brand-accent,
+   dark: $brand-dark
 );
 
 $brand-colors-light: (
@@ -82,7 +84,8 @@ $brand-colors-light: (
 
 $brand-colors-dark: (
 	primary: $brand-primary,
-	accent: $brand-accent
+	accent: $brand-accent,
+	dark: $brand-dark
 );
 
 /// Social

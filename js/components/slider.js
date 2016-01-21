@@ -3,6 +3,7 @@ $(document).ready(function(){
 		dots:true,
 		dotsClass:'kent-slider-dots',
 		mobileFirst:true,
-		useTransform:true
+		useTransform:true,
+		accessibility: true,	
 	});
 });

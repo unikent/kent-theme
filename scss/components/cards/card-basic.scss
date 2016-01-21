@@ -81,19 +81,35 @@
 
 	.card-img-overlay {
 		padding: 1rem;
+		display:block;
+		
 		@each $breakpoint, $width in $grid-breakpoints {
 			&.card-overlay-inline-#{$breakpoint} {
 				@include media-breakpoint-down($breakpoint){
 					position: inherit;
-					background: #333;
 					padding: 2rem;
 					clear: both;
+					background: $brand-dark;
+					color: #fff; 
+
+					// If at some point we want other colours on the overlay inlines
+					// 
+					//@each $name, $color in $brand-colors-dark {
+					//	
+					//	&.card-overlay-inline-#{$name} {
+					//		background: $color;
+					//		color: #fff;
+					//	}			
+					//}
+
 					&.card-overlay-inline-nopad{
 						padding: 0;
 					}
 				}
 			}
 		}
+
+
 	}
 	.card-img-overlay-bottom{
 		@extend .card-inverse;
