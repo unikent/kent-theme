@@ -7509,8 +7509,6 @@ button.beta-toggler {
   .card .card-img-top:first-child, .card .card-media-wrap:first-child {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
-  .card .card-embed-wrap iframe {
-    pointer-events: none; }
   .card.card-inverse .card-title, .card.card-backed-primary .card-title, .card-panel.cards-backed-primary .card .card-title,
   .card-panel.cards-backed .card.card-backed-primary .card-title, .card.card-backed-accent .card-title, .card-panel.cards-backed-accent .card .card-title,
   .card-panel.cards-backed .card.card-backed-accent .card-title, .card .card.card-img-overlay-bottom .card-title, .card.editorial.editorial-primary .card-title, .card.editorial.editorial-accent .card-title, .card .card-inverse .card-title, .card .card.card-backed-primary .card-title, .card .card-panel.cards-backed-primary .card .card-title, .card-panel.cards-backed-primary .card .card .card-title, .card .card.card-backed-accent .card-title, .card .card-panel.cards-backed-accent .card .card-title, .card-panel.cards-backed-accent .card .card .card-title, .card .card-img-overlay-bottom .card-title, .card .card.editorial.editorial-primary .card-title, .card .card.editorial.editorial-accent .card-title {
@@ -8726,6 +8724,9 @@ main > blockquote.social-quote {
     @media (max-width: 1199px) {
       .embed-responsive .embed-responsive-item-overlay .video-transcript {
         padding-bottom: 1.5rem; } }
+
+.click-to-interact iframe {
+  pointer-events: none; }
 
 .impact-statement {
   font-size: 28.8px;
