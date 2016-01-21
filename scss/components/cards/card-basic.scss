@@ -88,16 +88,17 @@
 					padding: 2rem;
 					clear: both;
 					background: $brand-dark;
-					color: #fff;
+					color: #fff; 
 
-					// breakpoints can also have colors
-					@each $name, $color in $brand-colors-dark {
-						
-						&.card-overlay-inline-#{$name} {
-							background: $color;
-							color: #fff;
-						}			
-					}
+					// If at some point we want other colours on the overlay inlines
+					// 
+					//@each $name, $color in $brand-colors-dark {
+					//	
+					//	&.card-overlay-inline-#{$name} {
+					//		background: $color;
+					//		color: #fff;
+					//	}			
+					//}
 
 					&.card-overlay-inline-nopad{
 						padding: 0;

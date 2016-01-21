@@ -110,10 +110,14 @@
 
 
 	@each $name, $color in $brand-colors-dark {
-		&.kent-slider-#{$name},
-		&.kent-slider-#{$name} .card-img-overlay {
+		&.kent-slider-#{$name}
+		{
 			background: $color;
 			color: #fff;
+
+			.card-img-overlay {
+				background: transparent;
+			}
 		}
 	}
 }

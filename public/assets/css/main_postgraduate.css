@@ -7436,15 +7436,6 @@ button.beta-toggler {
         clear: both;
         background: #333333;
         color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-xs.card-overlay-inline-primary, .card .card-overlay-inline-xs.card-overlay-inline-primary.card-img-overlay-bottom {
-          background: #671115;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-xs.card-overlay-inline-accent, .card .card-overlay-inline-xs.card-overlay-inline-accent.card-img-overlay-bottom {
-          background: #937227;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-xs.card-overlay-inline-dark, .card .card-overlay-inline-xs.card-overlay-inline-dark.card-img-overlay-bottom {
-          background: #333333;
-          color: #fff; }
         .card .card-img-overlay.card-overlay-inline-xs.card-overlay-inline-nopad, .card .card-overlay-inline-xs.card-overlay-inline-nopad.card-img-overlay-bottom {
           padding: 0; } }
     @media (max-width: 767px) {
@@ -7454,15 +7445,6 @@ button.beta-toggler {
         clear: both;
         background: #333333;
         color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-sm.card-overlay-inline-primary, .card .card-overlay-inline-sm.card-overlay-inline-primary.card-img-overlay-bottom {
-          background: #671115;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-sm.card-overlay-inline-accent, .card .card-overlay-inline-sm.card-overlay-inline-accent.card-img-overlay-bottom {
-          background: #937227;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-sm.card-overlay-inline-dark, .card .card-overlay-inline-sm.card-overlay-inline-dark.card-img-overlay-bottom {
-          background: #333333;
-          color: #fff; }
         .card .card-img-overlay.card-overlay-inline-sm.card-overlay-inline-nopad, .card .card-overlay-inline-sm.card-overlay-inline-nopad.card-img-overlay-bottom {
           padding: 0; } }
     @media (max-width: 991px) {
@@ -7472,15 +7454,6 @@ button.beta-toggler {
         clear: both;
         background: #333333;
         color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-md.card-overlay-inline-primary, .card .card-overlay-inline-md.card-overlay-inline-primary.card-img-overlay-bottom {
-          background: #671115;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-md.card-overlay-inline-accent, .card .card-overlay-inline-md.card-overlay-inline-accent.card-img-overlay-bottom {
-          background: #937227;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-md.card-overlay-inline-dark, .card .card-overlay-inline-md.card-overlay-inline-dark.card-img-overlay-bottom {
-          background: #333333;
-          color: #fff; }
         .card .card-img-overlay.card-overlay-inline-md.card-overlay-inline-nopad, .card .card-overlay-inline-md.card-overlay-inline-nopad.card-img-overlay-bottom {
           padding: 0; } }
     @media (max-width: 1199px) {
@@ -7490,15 +7463,6 @@ button.beta-toggler {
         clear: both;
         background: #333333;
         color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-lg.card-overlay-inline-primary, .card .card-overlay-inline-lg.card-overlay-inline-primary.card-img-overlay-bottom {
-          background: #671115;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-lg.card-overlay-inline-accent, .card .card-overlay-inline-lg.card-overlay-inline-accent.card-img-overlay-bottom {
-          background: #937227;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-lg.card-overlay-inline-dark, .card .card-overlay-inline-lg.card-overlay-inline-dark.card-img-overlay-bottom {
-          background: #333333;
-          color: #fff; }
         .card .card-img-overlay.card-overlay-inline-lg.card-overlay-inline-nopad, .card .card-overlay-inline-lg.card-overlay-inline-nopad.card-img-overlay-bottom {
           padding: 0; } }
     @media (max-width: 1711px) {
@@ -7508,15 +7472,6 @@ button.beta-toggler {
         clear: both;
         background: #333333;
         color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-xl.card-overlay-inline-primary, .card .card-overlay-inline-xl.card-overlay-inline-primary.card-img-overlay-bottom {
-          background: #671115;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-xl.card-overlay-inline-accent, .card .card-overlay-inline-xl.card-overlay-inline-accent.card-img-overlay-bottom {
-          background: #937227;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-xl.card-overlay-inline-dark, .card .card-overlay-inline-xl.card-overlay-inline-dark.card-img-overlay-bottom {
-          background: #333333;
-          color: #fff; }
         .card .card-img-overlay.card-overlay-inline-xl.card-overlay-inline-nopad, .card .card-overlay-inline-xl.card-overlay-inline-nopad.card-img-overlay-bottom {
           padding: 0; } }
     @media (max-width: 2399px) {
@@ -7526,15 +7481,6 @@ button.beta-toggler {
         clear: both;
         background: #333333;
         color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-xxl.card-overlay-inline-primary, .card .card-overlay-inline-xxl.card-overlay-inline-primary.card-img-overlay-bottom {
-          background: #671115;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-xxl.card-overlay-inline-accent, .card .card-overlay-inline-xxl.card-overlay-inline-accent.card-img-overlay-bottom {
-          background: #937227;
-          color: #fff; }
-        .card .card-img-overlay.card-overlay-inline-xxl.card-overlay-inline-dark, .card .card-overlay-inline-xxl.card-overlay-inline-dark.card-img-overlay-bottom {
-          background: #333333;
-          color: #fff; }
         .card .card-img-overlay.card-overlay-inline-xxl.card-overlay-inline-nopad, .card .card-overlay-inline-xxl.card-overlay-inline-nopad.card-img-overlay-bottom {
           padding: 0; } }
     .card .card-img-overlay.card-overlay-inline-xxxl, .card .card-overlay-inline-xxxl.card-img-overlay-bottom {
@@ -7544,15 +7490,6 @@ button.beta-toggler {
       clear: both;
       background: #333333;
       color: #fff; }
-      .card .card-img-overlay.card-overlay-inline-xxxl.card-overlay-inline-primary, .card .card-overlay-inline-xxxl.card-overlay-inline-primary.card-img-overlay-bottom {
-        background: #671115;
-        color: #fff; }
-      .card .card-img-overlay.card-overlay-inline-xxxl.card-overlay-inline-accent, .card .card-overlay-inline-xxxl.card-overlay-inline-accent.card-img-overlay-bottom {
-        background: #937227;
-        color: #fff; }
-      .card .card-img-overlay.card-overlay-inline-xxxl.card-overlay-inline-dark, .card .card-overlay-inline-xxxl.card-overlay-inline-dark.card-img-overlay-bottom {
-        background: #333333;
-        color: #fff; }
       .card .card-img-overlay.card-overlay-inline-xxxl.card-overlay-inline-nopad, .card .card-overlay-inline-xxxl.card-overlay-inline-nopad.card-img-overlay-bottom {
         padding: 0; }
   .card .card-img-overlay-bottom {
@@ -9080,26 +9017,23 @@ main > blockquote.social-quote {
     .kent-slider .kent-slider-dots li.slick-active button:after {
       color: #FFF; }
 
-.kent-slider.kent-slider-primary,
-.kent-slider.kent-slider-primary .card-img-overlay,
-.kent-slider.kent-slider-primary .card .card-img-overlay-bottom, .card
-.kent-slider.kent-slider-primary .card-img-overlay-bottom {
+.kent-slider.kent-slider-primary {
   background: #671115;
   color: #fff; }
+  .kent-slider.kent-slider-primary .card-img-overlay, .kent-slider.kent-slider-primary .card .card-img-overlay-bottom, .card .kent-slider.kent-slider-primary .card-img-overlay-bottom {
+    background: transparent; }
 
-.kent-slider.kent-slider-accent,
-.kent-slider.kent-slider-accent .card-img-overlay,
-.kent-slider.kent-slider-accent .card .card-img-overlay-bottom, .card
-.kent-slider.kent-slider-accent .card-img-overlay-bottom {
+.kent-slider.kent-slider-accent {
   background: #937227;
   color: #fff; }
+  .kent-slider.kent-slider-accent .card-img-overlay, .kent-slider.kent-slider-accent .card .card-img-overlay-bottom, .card .kent-slider.kent-slider-accent .card-img-overlay-bottom {
+    background: transparent; }
 
-.kent-slider.kent-slider-dark,
-.kent-slider.kent-slider-dark .card-img-overlay,
-.kent-slider.kent-slider-dark .card .card-img-overlay-bottom, .card
-.kent-slider.kent-slider-dark .card-img-overlay-bottom {
+.kent-slider.kent-slider-dark {
   background: #333333;
   color: #fff; }
+  .kent-slider.kent-slider-dark .card-img-overlay, .kent-slider.kent-slider-dark .card .card-img-overlay-bottom, .card .kent-slider.kent-slider-dark .card-img-overlay-bottom {
+    background: transparent; }
 
 .header-card-overlay .kent-slider .slick-prev, .header-card-overlay .kent-slider .slick-next {
   top: 30%;
