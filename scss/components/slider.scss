@@ -1,4 +1,7 @@
 .kent-slider{
+
+	
+
 	.slick-list{
 		width: 100%;
 	}
@@ -53,6 +56,10 @@
 		}
 	}
 
+
+
+
+
 	.kent-slider-dots{
 		position: absolute;
 		bottom: 0;
@@ -98,6 +105,15 @@
 					}
 				}
 			}
+		}
+	}
+
+
+	@each $name, $color in $brand-colors-dark {
+		&.kent-slider-#{$name},
+		&.kent-slider-#{$name} .card-img-overlay {
+			background: $color;
+			color: #fff;
 		}
 	}
 }

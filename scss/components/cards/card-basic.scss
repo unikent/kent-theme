@@ -85,15 +85,28 @@
 			&.card-overlay-inline-#{$breakpoint} {
 				@include media-breakpoint-down($breakpoint){
 					position: inherit;
-					background: #333;
 					padding: 2rem;
 					clear: both;
+					background: $brand-dark;
+					color: #fff;
+
+					// breakpoints can also have colors
+					@each $name, $color in $brand-colors-dark {
+						
+						&.card-overlay-inline-#{$name} {
+							background: $color;
+							color: #fff;
+						}			
+					}
+
 					&.card-overlay-inline-nopad{
 						padding: 0;
 					}
 				}
 			}
 		}
+
+
 	}
 	.card-img-overlay-bottom{
 		@extend .card-inverse;
