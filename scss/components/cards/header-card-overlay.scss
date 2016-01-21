@@ -10,6 +10,10 @@
 			&:after{
 				content: none;
 			}
+			&:hover {
+				text-decoration: none;
+				background-color: lighten(#333,5%);
+			}
 			.card-title {
 				text-transform: none;
 				color: #fff;
@@ -34,6 +38,9 @@
 			background: linear-gradient(transparent, rgba(0,0,0,0.8));
 			&.card-title-wrap-link {
 				padding: 3rem 2rem 2rem;
+				&:hover {
+					background: linear-gradient(transparent, rgba(0,0,0,0.8));
+				}
 			}
 		}
 
