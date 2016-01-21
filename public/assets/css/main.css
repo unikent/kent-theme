@@ -7914,7 +7914,8 @@ button.beta-toggler {
     padding: 32px;
     padding: 2rem;
     background-color: #05345C;
-    color: #FFF; }
+    color: #FFF;
+    transition: background-color 300ms; }
     .card.card-overlay .card-title-wrap.pull-right {
       float: none; }
     .card.card-overlay .card-title-wrap.card-title-wrap-link {
@@ -7925,16 +7926,18 @@ button.beta-toggler {
       cursor: pointer;
       position: relative; }
       .card.card-overlay .card-title-wrap.card-title-wrap-link:hover {
-        text-decoration: none; }
+        text-decoration: none;
+        background-color: #064274; }
       .card.card-overlay .card-title-wrap.card-title-wrap-link:after {
         position: absolute;
         top: 50%;
+        top: calc(50% - 1rem);
         right: 16px;
         right: 1rem;
-        margin-top: -16px;
-        margin-top: -1rem;
         font-size: 32px;
         font-size: 2rem;
+        line-height: 32px;
+        line-height: 2rem;
         content: "";
         font-family: "kentfont", sans-serif; }
     .card.card-overlay .card-title-wrap .card-title {

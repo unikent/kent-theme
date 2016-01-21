@@ -13,6 +13,7 @@
 		padding: 2rem;
 		background-color: $brand-primary;
 		color: #FFF;
+		transition: background-color 300ms;
 
 		&.pull-right{
 			float: none;
@@ -27,14 +28,16 @@
 
 			&:hover {
 				text-decoration: none;
+				background-color: lighten($brand-primary,5%);
 			}
 
 			&:after {
 				position: absolute;
 				top: 50%;
+				top: calc(50% - 1rem);
 				right: 1rem;
-				margin-top: -1rem;
 				font-size: 2rem;
+				line-height: 2rem;
 				content: $kf-angle-right;
 				font-family: $font-family-kentfont;
 			}
