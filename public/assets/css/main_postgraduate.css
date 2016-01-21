@@ -7431,7 +7431,8 @@ button.beta-toggler {
     background: linear-gradient(#333333 50%, transparent 50%); }
   .card .card-img-overlay, .card .card-img-overlay-bottom {
     padding: 16px;
-    padding: 1rem; }
+    padding: 1rem;
+    display: block; }
     @media (max-width: 543px) {
       .card .card-img-overlay.card-overlay-inline-xs, .card .card-overlay-inline-xs.card-img-overlay-bottom {
         position: inherit;

@@ -81,6 +81,8 @@
 
 	.card-img-overlay {
 		padding: 1rem;
+		display:block;
+		
 		@each $breakpoint, $width in $grid-breakpoints {
 			&.card-overlay-inline-#{$breakpoint} {
 				@include media-breakpoint-down($breakpoint){
