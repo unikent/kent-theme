@@ -6961,9 +6961,6 @@ body.show-global-search .global-nav-menu .global-nav-links {
   body.show-global-search .departmental-nav:before {
     background-color: rgba(0, 0, 0, 0.5); } }
 
-body.show-global-search .home-nav, body.show-global-menu .home-nav {
-  display: none; }
-
 /* Home page variant */
 @media (min-width: 768px) {
   .global-header-transparent .global-nav {

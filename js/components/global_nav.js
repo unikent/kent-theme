@@ -16,6 +16,10 @@
 
 	var closeMenu = function(button, menu){
 
+		if(menu.hasClass("in")) {
+			$('.home-nav').delay(300).fadeIn();
+		}
+
 		$("body").removeClass(menu.data("control-class"));
 		menu.removeClass("in");
 
@@ -30,6 +34,8 @@
 		if(menu === global_search){
 			global_search.find("input[type='search']").focus();
 		}
+
+		$('.home-nav').hide();
 
 		$("body").addClass(menu.data("control-class"));
 		menu.addClass("in");
