@@ -7,27 +7,30 @@ $(document).ready(function(){
 			// we need some data
 			var src = $(this).data('src') || false;
 			var transcript = $(this).data('transcript') || false;
+			var controls = typeof $(this).data('controls') === 'undefined' || ($(this).data('controls') === 'controls' || $(this).data('controls') === true) ? true : false;
+			var mode = $(this).data('mode') || 'modal'; //default to modal
+			var modal_at = $(this).data('modalAt') || 'xs';
 
-			if (!src) {
+			// check that we have a video source & a template for this mode
+			if (!src || !Handlebars.templates['video_' + mode]) {
 				return;
 			}
 
-			var modal = $(Handlebars.templates.video_modal({
+			// force modal mode if specified or we're at xs
+			if (viewport.is('<=' + modal_at)) {
+				mode = 'modal';
+			}
+
+			// get the right video container
+			var video_container = $(Handlebars.templates['video_' + mode]({
 				id: this.popupId,
 				src: src,
-				transcript: transcript
+				transcript: transcript,
+				controls: controls
 			}));
 
-			var videoEl = modal.find('video');
-
-			if (videoEl.length !== 1) {
-				return;
-			}
-
-			var video = videoEl[0];
-
-			$('body').append(modal);
-			modal.modal({show:false});
+			var video_el = video_container.find('video');
+			var video = video_el[0];
 
 			var playVideo = function () {
 				if (video.paused) {
@@ -51,40 +54,68 @@ $(document).ready(function(){
 			};
 
 			// all click handler to parent because thats where out video launcher button will be
-			videoEl.parent().click(function () {
+			video_el.parent().click(function () {
 				toggleVideo();
 			});
 
-			videoEl.on('playing', function (e) {
-				videoEl.parent().removeClass('video-launcher');
+			video_el.on('playing', function (e) {
+				video_el.parent().removeClass('video-launcher');
 			});
 
-			videoEl.on('pause ended', function (e) {
-				videoEl.parent().addClass('video-launcher');
+			video_el.on('pause ended', function (e) {
+				video_el.parent().addClass('video-launcher');
 			});
 
-			modal.on('shown.bs.modal', function (e) {
-				playVideo();
-			});
+			switch(mode) {
+				case 'inline':
+					$(this).children().hide();
+					$(this).unbind('click'); $(this).css('background-image', 'none');
+					$(this).removeClass('video-launcher');
+					$(this).append(video_container);
 
-			modal.on('hide.bs.modal', function (e) {
-				pauseVideo();
-			});
+					$(this).on('showAndPlay', function (e) {
+						playVideo();
+					});
 
-			this.popup = modal;
-			this.popup.modal('show');
+					$(this).trigger('showAndPlay');
+
+					break;
+
+				case 'modal':
+					$('body').append(video_container);
+					video_container.modal({show:false});
+
+					video_container.on('shown.bs.modal', function (e) {
+						playVideo();
+					});
+
+					video_container.on('hide.bs.modal', function (e) {
+						pauseVideo();
+					});
+
+					$(this).on('showAndPlay', function (e) {
+						this.video_container.modal('show');
+						playVideo();
+					});
+
+					//play it straight away
+					video_container.modal('show');
+					break;
+			}
+
+			this.video_container = video_container;
 		};
 
-		this.popupId = launcherCount;
+		this.video_containerId = launcherCount;
 		launcherCount += 1;
 
 		// add click handler to initiate/show popup video
 		$(this).click(function () {
-			if (!this.popup) {
+			if (!this.video_container) {
 				init.apply(this);
 			}
 			else{
-				this.popup.modal('show');
+				$(this).trigger('showAndPlay');
 			}
 		});
 

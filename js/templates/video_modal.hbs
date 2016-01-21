@@ -1,4 +1,4 @@
-<div class="modal fade modal-fullscreen" id="videoModal{{id}}" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel{{id}}" aria-hidden="true">
+<div class="modal fade modal-fullscreen" id="video{{id}}Modal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel{{id}}" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content modal-content-transparent">
 
@@ -10,7 +10,7 @@
 			</div>
 
 			<div class="embed-responsive embed-responsive-16by9 ">
-				<video controls class="embed-responsive-item">
+				<video {{#if controls}}controls{{/if}} class="embed-responsive-item">
 					<source src="{{src}}" >
 				</video>
 				{{#if transcript}}
