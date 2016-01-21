@@ -16035,6 +16035,10 @@ jQuery(document).ready(function(){
 
 	var closeMenu = function(button, menu){
 
+		if(menu.hasClass("in")) {
+			$('.home-nav').delay(300).fadeIn();
+		}
+
 		$("body").removeClass(menu.data("control-class"));
 		menu.removeClass("in");
 
@@ -16049,6 +16053,8 @@ jQuery(document).ready(function(){
 		if(menu === global_search){
 			global_search.find("input[type='search']").focus();
 		}
+
+		$('.home-nav').hide();
 
 		$("body").addClass(menu.data("control-class"));
 		menu.addClass("in");
