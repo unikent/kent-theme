@@ -9,7 +9,7 @@ $(document).ready(function(){
 			var transcript = $(this).data('transcript') || false;
 			var controls = typeof $(this).data('controls') === 'undefined' || ($(this).data('controls') === 'controls' || $(this).data('controls') === true) ? true : false;
 			var mode = $(this).data('mode') || 'modal'; //default to modal
-			var modal_at = $(this).data('modalAt') || 'xs';
+			var modal_at = $(this).data('modal-at') || 'xs';
 
 			// check that we have a video source & a template for this mode
 			if (!src || !Handlebars.templates['video_' + mode]) {
