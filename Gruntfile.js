@@ -295,7 +295,7 @@ module.exports = function(grunt) {
 				options: {
 					namespace: 'Handlebars.templates',
 					processName: function(filePath) {
-						return filePath.replace('js/templates/', '').replace(/\.hbs$/, '').split('/').join('.');
+						return filePath.replace(/js\/templates\/(.+)\.hbs$/, '$1').split('/').join('.');
 					}
 				},
 				files: {
