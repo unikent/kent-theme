@@ -7298,24 +7298,60 @@ button.beta-toggler {
     padding: 1rem; }
     @media (max-width: 543px) {
       .card .card-img-overlay.card-overlay-inline-xs, .card .card-overlay-inline-xs.card-img-overlay-bottom {
-        position: inherit; } }
+        position: inherit;
+        background: #333;
+        padding: 2rem;
+        clear: both; }
+        .card .card-img-overlay.card-overlay-inline-xs.card-overlay-inline-nopad, .card .card-overlay-inline-xs.card-overlay-inline-nopad.card-img-overlay-bottom {
+          padding: 0; } }
     @media (max-width: 767px) {
       .card .card-img-overlay.card-overlay-inline-sm, .card .card-overlay-inline-sm.card-img-overlay-bottom {
-        position: inherit; } }
+        position: inherit;
+        background: #333;
+        padding: 2rem;
+        clear: both; }
+        .card .card-img-overlay.card-overlay-inline-sm.card-overlay-inline-nopad, .card .card-overlay-inline-sm.card-overlay-inline-nopad.card-img-overlay-bottom {
+          padding: 0; } }
     @media (max-width: 991px) {
       .card .card-img-overlay.card-overlay-inline-md, .card .card-overlay-inline-md.card-img-overlay-bottom {
-        position: inherit; } }
+        position: inherit;
+        background: #333;
+        padding: 2rem;
+        clear: both; }
+        .card .card-img-overlay.card-overlay-inline-md.card-overlay-inline-nopad, .card .card-overlay-inline-md.card-overlay-inline-nopad.card-img-overlay-bottom {
+          padding: 0; } }
     @media (max-width: 1199px) {
       .card .card-img-overlay.card-overlay-inline-lg, .card .card-overlay-inline-lg.card-img-overlay-bottom {
-        position: inherit; } }
+        position: inherit;
+        background: #333;
+        padding: 2rem;
+        clear: both; }
+        .card .card-img-overlay.card-overlay-inline-lg.card-overlay-inline-nopad, .card .card-overlay-inline-lg.card-overlay-inline-nopad.card-img-overlay-bottom {
+          padding: 0; } }
     @media (max-width: 1711px) {
       .card .card-img-overlay.card-overlay-inline-xl, .card .card-overlay-inline-xl.card-img-overlay-bottom {
-        position: inherit; } }
+        position: inherit;
+        background: #333;
+        padding: 2rem;
+        clear: both; }
+        .card .card-img-overlay.card-overlay-inline-xl.card-overlay-inline-nopad, .card .card-overlay-inline-xl.card-overlay-inline-nopad.card-img-overlay-bottom {
+          padding: 0; } }
     @media (max-width: 2399px) {
       .card .card-img-overlay.card-overlay-inline-xxl, .card .card-overlay-inline-xxl.card-img-overlay-bottom {
-        position: inherit; } }
+        position: inherit;
+        background: #333;
+        padding: 2rem;
+        clear: both; }
+        .card .card-img-overlay.card-overlay-inline-xxl.card-overlay-inline-nopad, .card .card-overlay-inline-xxl.card-overlay-inline-nopad.card-img-overlay-bottom {
+          padding: 0; } }
     .card .card-img-overlay.card-overlay-inline-xxxl, .card .card-overlay-inline-xxxl.card-img-overlay-bottom {
-      position: inherit; }
+      position: inherit;
+      background: #333;
+      padding: 32px;
+      padding: 2rem;
+      clear: both; }
+      .card .card-img-overlay.card-overlay-inline-xxxl.card-overlay-inline-nopad, .card .card-overlay-inline-xxxl.card-overlay-inline-nopad.card-img-overlay-bottom {
+        padding: 0; }
   .card .card-img-overlay-bottom {
     top: auto;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
@@ -7324,6 +7360,14 @@ button.beta-toggler {
   .card .card-body {
     display: block;
     position: relative; }
+  .card .card-split {
+    position: relative;
+    padding: 0;
+    overflow: hidden; }
+  .card .card-half {
+    position: relative;
+    float: left;
+    width: 50%; }
   .card .card-footer {
     background: transparent; }
   .card .card-title {
@@ -7867,6 +7911,8 @@ button.beta-toggler {
     padding: 2rem;
     background-color: #671115;
     color: #FFF; }
+    .card.card-overlay .card-title-wrap.pull-right {
+      float: none; }
     .card.card-overlay .card-title-wrap.card-title-wrap-link {
       display: block;
       color: #FFF;
@@ -7921,16 +7967,6 @@ button.beta-toggler {
         font-size: 1.5rem; } }
     .card.card-overlay .card-img-overlay.card-img-overlay-block, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom {
       position: relative; }
-    @media (max-width: 767px) {
-      .card.card-overlay .card-img-overlay.card-overlay-inline-sm, .card.card-overlay .card-overlay-inline-sm.card-img-overlay-bottom {
-        padding: 0; } }
-    @media (max-width: 543px) {
-      .card.card-overlay .card-img-overlay.card-overlay-inline-xs, .card.card-overlay .card-overlay-inline-xs.card-img-overlay-bottom {
-        padding: 0; } }
-    @media (min-width: 768px) {
-      .card.card-overlay .card-img-overlay, .card.card-overlay .card-img-overlay-bottom {
-        padding-right: 5%;
-        padding-left: 5%; } }
   .card.card-overlay .card-inverse .card-img-overlay, .card.card-overlay .card.card-backed-primary .card-img-overlay, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay, .card.card-overlay .card.card-backed-accent .card-img-overlay, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay, .card.card-overlay .card-img-overlay-bottom .card-img-overlay, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay, .card.card-overlay .card-inverse .card-img-overlay-bottom, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom {
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
     .card.card-overlay .card-inverse .card-img-overlay .card-text, .card.card-overlay .card.card-backed-primary .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay .card-text, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card.card-backed-accent .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay .card-text, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-img-overlay .card-text, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay .card-text, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay .card-text, .card.card-overlay .card-inverse .card-img-overlay-bottom .card-text, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom .card-text, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom .card-text, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom .card-text {
@@ -8688,8 +8724,8 @@ main > blockquote.social-quote {
 .kent-slider .slick-prev, .kent-slider .slick-next {
   z-index: 1;
   position: absolute;
-  bottom: 30%;
-  bottom: calc( 30% - 1.5rem);
+  bottom: 50%;
+  bottom: calc( 50% - 1.5rem);
   font: "0/0" a;
   color: transparent;
   text-shadow: none;
@@ -8722,14 +8758,6 @@ main > blockquote.social-quote {
     transition: color .3s ease-in-out; }
   .kent-slider .slick-prev:hover:after, .kent-slider .slick-next:hover:after {
     color: white; }
-  @media (min-width: 544px) {
-    .kent-slider .slick-prev, .kent-slider .slick-next {
-      bottom: 35%;
-      bottom: calc( 35% - 1.5rem); } }
-  @media (min-width: 768px) {
-    .kent-slider .slick-prev, .kent-slider .slick-next {
-      bottom: 50%;
-      bottom: calc( 50% - 1.5rem); } }
 
 .kent-slider .slick-prev {
   left: 0; }
