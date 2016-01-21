@@ -58,26 +58,23 @@
 /* Home page variant */
 
 .global-header-transparent {
+
+	.card-media-wrap, .media-wrap-paralax{
+		&::after {
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			content: "";
+			background: linear-gradient(rgba(0, 0, 0, 0.7) 1rem, transparent 7.5rem);
+		}
+	}
+
 	@include media-breakpoint-up(md) {
 
 		.card.header-card-overlay {
 			margin-top: -7rem;
-
-			.card-media-wrap, .media-wrap-paralax{
-				&::after {
-
-					position:absolute;
-					top:0;
-					left:0;
-					right:0;
-					bottom:0;
-					content: "";
-
-					background: linear-gradient(rgba(0, 0, 0, 0.7) 1rem, transparent 7.5rem);
-
-
-				}
-			}
 		}
 	}
 }
