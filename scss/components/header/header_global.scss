@@ -546,7 +546,7 @@ body{
 				font-size: 1.3rem;
 			}
 			@include media-breakpoint-up(sm) {
-				font-size: 1.7rem;
+				font-size: 1.5rem;
 			}
 
 			& > a {
@@ -587,17 +587,20 @@ body{
 			nav {
 				width: 100%;
 				text-align: left;
-				padding: 0.5rem 0;
 				background-color: $brand-tertiary;
 				a {
+					line-height: 1.5rem;
 					display: block;
 					position: relative;
 					color: $kent-primary;
-					padding: 0 1rem 1rem;
+					padding: 0.5rem 1rem 0.75rem;
+					border-bottom: 1px solid #ddd;
+
 					.global-nav-link-desc {
 						display: block;
 						color: $body-color;
 						font-size: 0.9rem;
+						line-height: 1rem;
 					}
 					.global-nav-link-title{
 						font-family: $headings-font-family;
@@ -608,6 +611,9 @@ body{
 							color: $brand-accent;
 							padding-left: .5rem;
 						}
+					}
+					&:last-child{
+						border-bottom: none;
 					}
 				}
 			}
