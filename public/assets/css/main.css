@@ -7009,12 +7009,14 @@ body.show-global-search .global-nav-menu .global-nav-links {
     height: 4.6rem;
     transition: height 300ms;
     max-width: 580px;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 0 8px;
+    padding: 0 .5rem; }
     .home-nav .global-nav-links .global-nav-link {
       min-width: 1%;
       display: table-cell;
-      padding: 16px;
-      padding: 1rem;
+      padding: 16px 0;
+      padding: 1rem 0;
       text-align: center;
       font-size: 16px;
       font-size: 1rem; }
@@ -7029,7 +7031,8 @@ body.show-global-search .global-nav-menu .global-nav-links {
         font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
         color: #FFF;
         position: relative;
-        text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8); }
+        text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
+        cursor: pointer; }
         .home-nav .global-nav-links .global-nav-link > a:after {
           content: "";
           display: block;
