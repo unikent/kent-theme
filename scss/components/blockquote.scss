@@ -198,3 +198,26 @@ main > blockquote.social-quote{
 	}
 
 }
+
+blockquote.pull-quote{
+	border: 1px solid $brand-primary;
+	border-width: 1px 0;
+	padding: 0 2rem;
+	> p {
+		color: $brand-primary;
+		
+		&:last-of-type {
+			@include media-breakpoint-up(md) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&.pull-quote-accent {
+		border-color: $brand-accent;
+		> p {
+			color: $brand-accent;
+		}
+
+	}
+}

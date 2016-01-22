@@ -9328,6 +9328,21 @@ main > blockquote.social-quote {
     main > blockquote.social-quote {
       padding: 3rem 10rem; } }
 
+blockquote.pull-quote {
+  border: 1px solid #671115;
+  border-width: 1px 0;
+  padding: 0 32px;
+  padding: 0 2rem; }
+  blockquote.pull-quote > p {
+    color: #671115; }
+    @media (min-width: 768px) {
+      blockquote.pull-quote > p:last-of-type {
+        margin-bottom: 0; } }
+  blockquote.pull-quote.pull-quote-accent {
+    border-color: #937227; }
+    blockquote.pull-quote.pull-quote-accent > p {
+      color: #937227; }
+
 .embed-responsive .embed-responsive-item-overlay {
   position: absolute;
   bottom: 0;
