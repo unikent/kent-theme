@@ -15730,738 +15730,6 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ ])
 });
 ;
-this["Handlebars"] = this["Handlebars"] || {};
-this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
-
-this["Handlebars"]["templates"]["video_inline"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
-    return "controls";
-},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
-
-  return "<div id=\"video"
-    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "Inline\" class=\"embed-responsive embed-responsive-16by9\">\r\n	<video "
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.controls : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + " class=\"embed-responsive-item\">\r\n		<source src=\""
-    + alias4(((helper = (helper = helpers.src || (depth0 != null ? depth0.src : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"src","hash":{},"data":data}) : helper)))
-    + "\">\r\n	</video>\r\n</div>";
-},"useData":true});
-
-this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
-    return "controls";
-},"3":function(container,depth0,helpers,partials,data) {
-    var helper;
-
-  return "				<div class=\"embed-responsive-item-overlay\">\r\n					<span class=\"video-transcript\"><small><a href=\""
-    + container.escapeExpression(((helper = (helper = helpers.transcript || (depth0 != null ? depth0.transcript : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"transcript","hash":{},"data":data}) : helper)))
-    + "\">Download transcript</a></small></span>\r\n				</div>\r\n";
-},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
-
-  return "<div class=\"modal fade modal-fullscreen\" id=\"video"
-    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "Modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"videoModalLabel"
-    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" aria-hidden=\"true\">\r\n	<div class=\"modal-dialog\" role=\"document\">\r\n		<div class=\"modal-content modal-content-transparent\">\r\n\r\n			<div class=\"modal-header\">\r\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\r\n					<span class=\"sr-only\">Close</span>\r\n				</button>\r\n			</div>\r\n\r\n			<div class=\"embed-responsive embed-responsive-16by9 \">\r\n				<video "
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.controls : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + " class=\"embed-responsive-item\">\r\n					<source src=\""
-    + alias4(((helper = (helper = helpers.src || (depth0 != null ? depth0.src : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"src","hash":{},"data":data}) : helper)))
-    + "\" >\r\n				</video>\r\n"
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.transcript : depth0),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "			</div>\r\n			\r\n		</div>\r\n	</div>\r\n</div>";
-},"useData":true});
-/*!
- * JavaScript Cookie v2.1.0
- * https://github.com/js-cookie/js-cookie
- *
- * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
- * Released under the MIT license
- */
-(function (factory) {
-	if (typeof define === 'function' && define.amd) {
-		define(factory);
-	} else if (typeof exports === 'object') {
-		module.exports = factory();
-	} else {
-		var _OldCookies = window.Cookies;
-		var api = window.Cookies = factory();
-		api.noConflict = function () {
-			window.Cookies = _OldCookies;
-			return api;
-		};
-	}
-}(function () {
-	function extend () {
-		var i = 0;
-		var result = {};
-		for (; i < arguments.length; i++) {
-			var attributes = arguments[ i ];
-			for (var key in attributes) {
-				result[key] = attributes[key];
-			}
-		}
-		return result;
-	}
-
-	function init (converter) {
-		function api (key, value, attributes) {
-			var result;
-
-			// Write
-
-			if (arguments.length > 1) {
-				attributes = extend({
-					path: '/'
-				}, api.defaults, attributes);
-
-				if (typeof attributes.expires === 'number') {
-					var expires = new Date();
-					expires.setMilliseconds(expires.getMilliseconds() + attributes.expires * 864e+5);
-					attributes.expires = expires;
-				}
-
-				try {
-					result = JSON.stringify(value);
-					if (/^[\{\[]/.test(result)) {
-						value = result;
-					}
-				} catch (e) {}
-
-				if (!converter.write) {
-					value = encodeURIComponent(String(value))
-						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
-				} else {
-					value = converter.write(value, key);
-				}
-
-				key = encodeURIComponent(String(key));
-				key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent);
-				key = key.replace(/[\(\)]/g, escape);
-
-				return (document.cookie = [
-					key, '=', value,
-					attributes.expires && '; expires=' + attributes.expires.toUTCString(), // use expires attribute, max-age is not supported by IE
-					attributes.path    && '; path=' + attributes.path,
-					attributes.domain  && '; domain=' + attributes.domain,
-					attributes.secure ? '; secure' : ''
-				].join(''));
-			}
-
-			// Read
-
-			if (!key) {
-				result = {};
-			}
-
-			// To prevent the for loop in the first place assign an empty array
-			// in case there are no cookies at all. Also prevents odd result when
-			// calling "get()"
-			var cookies = document.cookie ? document.cookie.split('; ') : [];
-			var rdecode = /(%[0-9A-Z]{2})+/g;
-			var i = 0;
-
-			for (; i < cookies.length; i++) {
-				var parts = cookies[i].split('=');
-				var name = parts[0].replace(rdecode, decodeURIComponent);
-				var cookie = parts.slice(1).join('=');
-
-				if (cookie.charAt(0) === '"') {
-					cookie = cookie.slice(1, -1);
-				}
-
-				try {
-					cookie = converter.read ?
-						converter.read(cookie, name) : converter(cookie, name) ||
-						cookie.replace(rdecode, decodeURIComponent);
-
-					if (this.json) {
-						try {
-							cookie = JSON.parse(cookie);
-						} catch (e) {}
-					}
-
-					if (key === name) {
-						result = cookie;
-						break;
-					}
-
-					if (!key) {
-						result[name] = cookie;
-					}
-				} catch (e) {}
-			}
-
-			return result;
-		}
-
-		api.get = api.set = api;
-		api.getJSON = function () {
-			return api.apply({
-				json: true
-			}, [].slice.call(arguments));
-		};
-		api.defaults = {};
-
-		api.remove = function (key, attributes) {
-			api(key, '', extend(attributes, {
-				expires: -1
-			}));
-		};
-
-		api.withConverter = init;
-
-		return api;
-	}
-
-	return init(function () {});
-}));
-
-(function($, viewport){
-
-	var visibilityDivs = {
-		'xs': $('<div class="hidden-sm-up"></div>'),
-		'sm': $('<div class="hidden-xs-down hidden-md-up"></div>'),
-		'md': $('<div class="hidden-sm-down hidden-lg-up"></div>'),
-		'lg': $('<div class="hidden-md-down hidden-xl-up"></div>'),
-		'xl': $('<div class="hidden-lg-down hidden-xxl-up"></div>'),
-		'xxl': $('<div class="hidden-xl-down hidden-xxxl-up"></div>'),
-		'xxxl': $('<div class="hidden-xxl-down"></div>')
-
-	};
-
-	viewport.use('Custom', visibilityDivs);
-
-	// Add our custom event
-	var previousBreakpoint = '';
-	$(window).resize(
-		viewport.changed(function(){
-			var breakpoint = viewport.current();
-
-			$(window).trigger('viewport:resize');
-
-			if(previousBreakpoint !== breakpoint){
-				 $(window).trigger('viewport:change');
-				 previousBreakpoint = breakpoint;
-				console.log(breakpoint);
-			}
-		})
-	);
-
-
-})(jQuery, ResponsiveBootstrapToolkit);
-jQuery(document).ready(function(){
-
-    viewport = ResponsiveBootstrapToolkit;
-
-    var $collabsables = $('[data-toggle="collapse_responsive"]');
-
-    $collabsables.click(function(e){
-        e.preventDefault();
-
-        var $this= $(this);
-        var isCollapsed = $(this).hasClass('collapsed');
-        var $parent = $($this.data('parent') || null);
-        var $target = $($this.data('target') || null);
-
-        // If target isn't collapsed at this breakpoint, ignore.
-        if( 
-            !(
-                ($target.hasClass('collapse-xl-down') && viewport.is('<=xl')) ||
-                ($target.hasClass('collapse-lg-down') && viewport.is('<=lg')) ||
-                ($target.hasClass('collapse-md-down') && viewport.is('<=md')) ||
-                ($target.hasClass('collapse-sm-down') && viewport.is('<=sm')) ||
-                ($target.hasClass('collapse-xs-down') && viewport.is('<=xs'))
-            )
-        ){
-            return;
-        }
-        // else, toggle it open / shut
-
-        if($parent.length > 0){
-            var $open = $parent.find('.in');
-            $open.removeClass('in')
-                .each(
-                    function(){
-                        $parent.find('[data-target="#' + $(this).attr('id') + '"]').addClass('collapsed');
-                    }
-            );
-        }
-
-        if($target.length > 0){
-            $target.toggleClass('in',isCollapsed);
-            // Add expanded state (this only needs to be set when collapsing is possible)
-            $this.toggleClass('collapsed',!isCollapsed).attr("aria-expanded", isCollapsed);
-        }
-    });
-
-
-    $(window).on("viewport:change", function(){
-
-        $collabsables.each(function(){
-            var $target = $($(this).data('target') || null);
-
-            if( 
-                !(
-                    ($target.hasClass('collapse-xl-down') && viewport.is('<=xl')) ||
-                    ($target.hasClass('collapse-lg-down') && viewport.is('<=lg')) ||
-                    ($target.hasClass('collapse-md-down') && viewport.is('<=md')) ||
-                    ($target.hasClass('collapse-sm-down') && viewport.is('<=sm')) ||
-                    ($target.hasClass('collapse-xs-down') && viewport.is('<=xs'))
-                )
-            ){
-                // Remove expanded state for none collapsible elements
-                $(this).attr("aria-expanded", "");
-            }
-        });
-    });
-
-
-});
-// go go global nav
-(function(){
-
-	// store control class as data on the node (just for conveniance)
-	var global_menu = $(".global-nav-menu").data("control-class", "show-global-menu");
-	var global_search = $(".global-nav-search").data("control-class", "show-global-search");
-
-	var toggleMenu = function(button, menu){
-		// If no menu is open, open this one, else this is a close action
-		if(!menu.hasClass("in")){
-			openMenu(button, menu);
-		}else{
-			closeMenu(button, menu);
-		}
-	};
-
-	var closeMenu = function(button, menu){
-
-		if(menu.hasClass("in")) {
-			$('.home-nav').delay(300).fadeIn();
-		}
-
-		$("body").removeClass(menu.data("control-class"));
-		menu.removeClass("in");
-
-		// Update button so it knows it's expanded area is collapsed
-		// aria-hidden is not needed on th element, since as the element is displayed none
-		// the screen reader won't see it anyway.
-		button.attr("aria-expanded", "false");
-	};
-
-	var openMenu = function(button, menu){
-		// Select find
-		if(menu === global_search){
-			global_search.find("input[type='search']").focus();
-		}
-
-		$('.home-nav').hide();
-
-		$("body").addClass(menu.data("control-class"));
-		menu.addClass("in");
-		// update button so it knows it's expanded area is collapsed
-		button.attr("aria-expanded", true);
-	};
-
-	var closeSearch = function(){
-		closeMenu($(".search-button, .search-button-full, .close-search"), global_search);
-	};
-
-	// Hook up menu links
-	$(".menu-button").click(function(){
-		toggleMenu($(this), global_menu);	
-	});
-
-	$(".search-button, .search-button-full").click(function(e){
-		toggleMenu($(".search-button, .search-button-full, .close-search"), global_search);
-		e.preventDefault();
-		return false;
-	});
-
-	$(".close-search").click(function(){
-		closeMenu($(this), global_search);
-	});
-
-	global_search.find('form').submit(function(e){
-		if(global_search.find("input[type='search']").val()===''){
-			e.preventDefault();
-			closeSearch();
-			return false;
-		}
-	});
-
-	global_search.find("input[type='search']").click(function(e){
-		e.preventDefault();
-		return false;
-	});
-
-	$('body').click(closeSearch);
-
-	$(document).keyup(function(e){
-		if(e.which === 27){
-			closeSearch();
-		}
-	});
-
-})();
-(function(){
-	var zTimer = null;
-	// Primary Nav
-	$(".global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a").click(function(){
-		clearTimeout(zTimer);
-		// was this item open?
-		var was_open = $(this).parent().hasClass("in");
-
-		// If a menu was already open, close other menu sections (setting expanded as we go)
-		if($(this).parent().parent().hasClass("in")){
-			var menus = $(this).parent().parent().find(".in").not($(this).parent());
-				menus.removeClass("in");
-				menus.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
-				menus.children(":first").attr("aria-expanded", "false");
-		}else{
-			$(this).parent().parent().find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
-		}
-
-		if(was_open){
-			var $that = $(this);
-			// if the clicked item was open, close all
-			$that.parent().removeClass("in").parent().removeClass("in");
-
-			zTimer = setTimeout(function(){
-				$that.parent().find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
-			},600);
-
-		}else{
-			//  if not, tell item its expanded & toggle it all open
-			var menu = $(this).attr("aria-expanded", "true").parent().toggleClass("in");
-			menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');
-			menu.parent().addClass("in");
-		}
-	});
-
-})();
-jQuery(document).ready(function(){
-	var sectional_nav = $('.departmental-nav .navbar-menu');
-	var toggler = $('.departmental-nav .navbar-toggler');
-
-	// if no nav, don't bother booting menu
-	if(sectional_nav.length === 0){ return; } 
-
-	function respond () {
-		if (viewport.is('>=md')) {
-
-			if (navHasOverflown()) {
-				sectional_nav.addClass('overflown');
-				toggler.addClass('overflown');
-			}
-			else {
-				sectional_nav.removeClass('overflown');
-				toggler.removeClass('overflown');
-				closeNav();
-			}
-		}
-	}
-
-	function navHasOverflown () {
-		var last = sectional_nav.find('a').last();
-		return last.position().top >= last.height();
-	}
-
-	function toggleNav () {
-		if (sectional_nav.hasClass('in')) {
-			closeNav();
-		}
-		else {
-			openNav();
-		}
-	}
-
-	function openNav () {
-        $("body").addClass('show-departmental-menu');
-		toggler.addClass('in').attr("aria-expanded", "true");
-		sectional_nav.addClass('in');
-	}
-
-	function closeNav () {
-        $("body").removeClass('show-departmental-menu');
-        toggler.removeClass('in').attr("aria-expanded", "false");
-		sectional_nav.removeClass('in');
-		
-	}
-
-	toggler.click(function () {
-		if (navHasOverflown()) {
-			toggleNav();
-		}
-	});
-
-	$(window).on('viewport:resize', function(){
-        respond();
-    });
-
-	respond();
-});
-jQuery(document).ready(function(){
-	var beta_bar = $('.beta-bar');
-
-	function toggleNav() {
-		if(beta_bar.hasClass('hidden')){
-			beta_bar.removeClass('hidden').slideDown();
-
-		}else {
-			beta_bar.addClass('hidden').slideUp();
-			Cookies.set('kentbeta_dismissed', '1', {expires: 365});
-		}
-	}
-
-	if(beta_bar.length >0 ) {
-
-		var toggler = $('.beta-toggler');
-
-		var dismissed = typeof Cookies.get('kentbeta_dismissed') !== 'undefined';
-
-		if(!dismissed) {
-			beta_bar.slideDown();
-		}else{
-			beta_bar.addClass('hidden');
-		}
-
-		toggler.click(function () {
-			toggleNav();
-		});
-	}
-});
-jQuery(document).ready(function($){
-
-	$('.attribution').click(function(){
-		$(this).toggleClass('in');
-	});
-
-});
-// Disable scroll zooming and bind back the click event
-var onEmbedClickHandler;
-
-var onEmbedMouseleaveHandler = function (event) {
-	var that = $(this);
-
-	that.on('click', onEmbedClickHandler);
-	that.off('mouseleave', onEmbedMouseleaveHandler);
-	that.find('iframe').css("pointer-events", "none");
-};
-
-onEmbedClickHandler = function (event) {
-	var that = $(this);
-
-	// Disable the click handler until the user leaves the area
-	that.off('click', onEmbedClickHandler);
-
-	that.find('iframe').css("pointer-events", "auto");
-
-	// Handle the mouse leave event
-	that.on('mouseleave', onEmbedMouseleaveHandler);
-};
-
-jQuery(document).ready(function () {
-
-	$('.click-to-interact').on('click', onEmbedClickHandler);
-});
-
-var stellarActivated = false;
-
-function react_to_window() {
-	if(ResponsiveBootstrapToolkit.is('xs')) {
-		if (stellarActivated === true) {
-			$(window).data('plugin_stellar').destroy();
-			stellarActivated = false;
-		}
-		$('.media-wrap-paralax').css('min-height','');
-	} else {
-		if (stellarActivated === false) {
-
-			$.stellar({
-				// Set scrolling to be in either one or both directions
-				horizontalScrolling: false,
-				verticalScrolling: true,
-
-				// Set the global alignment offsets
-				horizontalOffset: 0,
-				verticalOffset: 0,
-
-				// Refreshes parallax content on window load and resize
-				responsive: false,
-
-				// Select which property is used to calculate scroll.
-				// Choose 'scroll', 'position', 'margin' or 'transform',
-				// or write your own 'scrollProperty' plugin.
-				scrollProperty: 'scroll',
-
-				// Select which property is used to position elements.
-				// Choose between 'position' or 'transform',
-				// or write your own 'positionProperty' plugin.
-				positionProperty: 'transform',
-
-				// Enable or disable the two types of parallax
-				parallaxBackgrounds: true,
-				parallaxElements: true,
-
-				// Hide parallax elements that move outside the viewport
-				hideDistantElements: false,
-
-				// Customise how elements are shown and hidden
-				hideElement: function($elem) { $elem.hide(); },
-				showElement: function($elem) { $elem.show(); }
-			});
-
-			$(window).data('plugin_stellar').init();
-			stellarActivated = true;
-		}
-		var $ratio = ResponsiveBootstrapToolkit.is('<xl')?(9/16):(7/16);
-		$('.media-wrap-paralax').each(function () {
-			$(this).css('min-height', ($(window).width() * $ratio) + 'px');
-		});
-		$(window).data('plugin_stellar').refresh();
-	}
-}
-
-$(window).on('viewport:resize',function(){
-	react_to_window();
-});
-
-
-$(document).ready(function(){
-	react_to_window();
-});
-$(document).ready(function(){
-	$('.kent-slider').slick({
-		dots:true,
-		dotsClass:'kent-slider-dots',
-		mobileFirst:true,
-		useTransform:true,
-		accessibility: true,	
-	});
-});
-$(document).ready(function(){
-	var launcherCount = 0;
-	$('.video-launcher').each(function(){
-
-		// initiate and show the video as a modal
-		var init = function () {
-			// we need some data
-			var src = $(this).data('src') || false;
-			var transcript = $(this).data('transcript') || false;
-			var controls = typeof $(this).data('controls') === 'undefined' || ($(this).data('controls') === 'controls' || $(this).data('controls') === true) ? true : false;
-			var mode = $(this).data('mode') || 'modal'; //default to modal
-			var modal_at = $(this).data('modal-at') || 'xs';
-
-			// check that we have a video source & a template for this mode
-			if (!src || !Handlebars.templates['video_' + mode]) {
-				return;
-			}
-
-			// force modal mode if specified or we're at xs
-			if (viewport.is('<=' + modal_at)) {
-				mode = 'modal';
-			}
-
-			// get the right video container
-			var video_container = $(Handlebars.templates['video_' + mode]({
-				id: this.popupId,
-				src: src,
-				transcript: transcript,
-				controls: controls
-			}));
-
-			var video_el = video_container.find('video');
-			var video = video_el[0];
-
-			var playVideo = function () {
-				if (video.paused) {
-					video.play();
-				}
-			};
-
-			var pauseVideo = function () {
-				if (!video.paused) {
-					video.pause();
-				}
-			};
-
-			var toggleVideo = function () {
-				if (video.paused) {
-					video.play();
-				}
-				else {
-					video.pause();
-				}
-			};
-
-			// all click handler to parent because thats where out video launcher button will be
-			video_el.parent().click(function () {
-				toggleVideo();
-			});
-
-			video_el.on('playing', function (e) {
-				video_el.parent().removeClass('video-launcher');
-			});
-
-			video_el.on('pause ended', function (e) {
-				video_el.parent().addClass('video-launcher');
-			});
-
-			switch(mode) {
-				case 'inline':
-					$(this).children().hide();
-					$(this).unbind('click'); $(this).css('background-image', 'none');
-					$(this).removeClass('video-launcher');
-					$(this).append(video_container);
-
-					$(this).on('showAndPlay', function (e) {
-						playVideo();
-					});
-
-					$(this).trigger('showAndPlay');
-
-					break;
-
-				case 'modal':
-					$('body').append(video_container);
-					video_container.modal({show:false});
-
-					video_container.on('shown.bs.modal', function (e) {
-						playVideo();
-					});
-
-					video_container.on('hide.bs.modal', function (e) {
-						pauseVideo();
-					});
-
-					$(this).on('showAndPlay', function (e) {
-						this.video_container.modal('show');
-						playVideo();
-					});
-
-					//play it straight away
-					video_container.modal('show');
-					break;
-			}
-
-			this.video_container = video_container;
-		};
-
-		this.video_containerId = launcherCount;
-		launcherCount += 1;
-
-		// add click handler to initiate/show popup video
-		$(this).click(function () {
-			if (!this.video_container) {
-				init.apply(this);
-			}
-			else{
-				$(this).trigger('showAndPlay');
-			}
-		});
-
-	});
-});
 /**
  * Social Likes
  * http://sapegin.github.com/social-likes
@@ -17100,6 +16368,738 @@ $(document).ready(function(){
 
 }));
 
+/*!
+ * JavaScript Cookie v2.1.0
+ * https://github.com/js-cookie/js-cookie
+ *
+ * Copyright 2006, 2015 Klaus Hartl & Fagner Brack
+ * Released under the MIT license
+ */
+(function (factory) {
+	if (typeof define === 'function' && define.amd) {
+		define(factory);
+	} else if (typeof exports === 'object') {
+		module.exports = factory();
+	} else {
+		var _OldCookies = window.Cookies;
+		var api = window.Cookies = factory();
+		api.noConflict = function () {
+			window.Cookies = _OldCookies;
+			return api;
+		};
+	}
+}(function () {
+	function extend () {
+		var i = 0;
+		var result = {};
+		for (; i < arguments.length; i++) {
+			var attributes = arguments[ i ];
+			for (var key in attributes) {
+				result[key] = attributes[key];
+			}
+		}
+		return result;
+	}
+
+	function init (converter) {
+		function api (key, value, attributes) {
+			var result;
+
+			// Write
+
+			if (arguments.length > 1) {
+				attributes = extend({
+					path: '/'
+				}, api.defaults, attributes);
+
+				if (typeof attributes.expires === 'number') {
+					var expires = new Date();
+					expires.setMilliseconds(expires.getMilliseconds() + attributes.expires * 864e+5);
+					attributes.expires = expires;
+				}
+
+				try {
+					result = JSON.stringify(value);
+					if (/^[\{\[]/.test(result)) {
+						value = result;
+					}
+				} catch (e) {}
+
+				if (!converter.write) {
+					value = encodeURIComponent(String(value))
+						.replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g, decodeURIComponent);
+				} else {
+					value = converter.write(value, key);
+				}
+
+				key = encodeURIComponent(String(key));
+				key = key.replace(/%(23|24|26|2B|5E|60|7C)/g, decodeURIComponent);
+				key = key.replace(/[\(\)]/g, escape);
+
+				return (document.cookie = [
+					key, '=', value,
+					attributes.expires && '; expires=' + attributes.expires.toUTCString(), // use expires attribute, max-age is not supported by IE
+					attributes.path    && '; path=' + attributes.path,
+					attributes.domain  && '; domain=' + attributes.domain,
+					attributes.secure ? '; secure' : ''
+				].join(''));
+			}
+
+			// Read
+
+			if (!key) {
+				result = {};
+			}
+
+			// To prevent the for loop in the first place assign an empty array
+			// in case there are no cookies at all. Also prevents odd result when
+			// calling "get()"
+			var cookies = document.cookie ? document.cookie.split('; ') : [];
+			var rdecode = /(%[0-9A-Z]{2})+/g;
+			var i = 0;
+
+			for (; i < cookies.length; i++) {
+				var parts = cookies[i].split('=');
+				var name = parts[0].replace(rdecode, decodeURIComponent);
+				var cookie = parts.slice(1).join('=');
+
+				if (cookie.charAt(0) === '"') {
+					cookie = cookie.slice(1, -1);
+				}
+
+				try {
+					cookie = converter.read ?
+						converter.read(cookie, name) : converter(cookie, name) ||
+						cookie.replace(rdecode, decodeURIComponent);
+
+					if (this.json) {
+						try {
+							cookie = JSON.parse(cookie);
+						} catch (e) {}
+					}
+
+					if (key === name) {
+						result = cookie;
+						break;
+					}
+
+					if (!key) {
+						result[name] = cookie;
+					}
+				} catch (e) {}
+			}
+
+			return result;
+		}
+
+		api.get = api.set = api;
+		api.getJSON = function () {
+			return api.apply({
+				json: true
+			}, [].slice.call(arguments));
+		};
+		api.defaults = {};
+
+		api.remove = function (key, attributes) {
+			api(key, '', extend(attributes, {
+				expires: -1
+			}));
+		};
+
+		api.withConverter = init;
+
+		return api;
+	}
+
+	return init(function () {});
+}));
+
+this["Handlebars"] = this["Handlebars"] || {};
+this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
+
+this["Handlebars"]["templates"]["video_inline"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    return "controls";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<div id=\"video"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "Inline\" class=\"embed-responsive embed-responsive-16by9\">\r\n	<video "
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.controls : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + " class=\"embed-responsive-item\">\r\n		<source src=\""
+    + alias4(((helper = (helper = helpers.src || (depth0 != null ? depth0.src : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"src","hash":{},"data":data}) : helper)))
+    + "\">\r\n	</video>\r\n</div>";
+},"useData":true});
+
+this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    return "controls";
+},"3":function(container,depth0,helpers,partials,data) {
+    var helper;
+
+  return "				<div class=\"embed-responsive-item-overlay\">\r\n					<span class=\"video-transcript\"><small><a href=\""
+    + container.escapeExpression(((helper = (helper = helpers.transcript || (depth0 != null ? depth0.transcript : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"transcript","hash":{},"data":data}) : helper)))
+    + "\">Download transcript</a></small></span>\r\n				</div>\r\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<div class=\"modal fade modal-fullscreen\" id=\"video"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "Modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"videoModalLabel"
+    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+    + "\" aria-hidden=\"true\">\r\n	<div class=\"modal-dialog\" role=\"document\">\r\n		<div class=\"modal-content modal-content-transparent\">\r\n\r\n			<div class=\"modal-header\">\r\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\r\n					<span class=\"sr-only\">Close</span>\r\n				</button>\r\n			</div>\r\n\r\n			<div class=\"embed-responsive embed-responsive-16by9 \">\r\n				<video "
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.controls : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + " class=\"embed-responsive-item\">\r\n					<source src=\""
+    + alias4(((helper = (helper = helpers.src || (depth0 != null ? depth0.src : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"src","hash":{},"data":data}) : helper)))
+    + "\" >\r\n				</video>\r\n"
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.transcript : depth0),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "			</div>\r\n			\r\n		</div>\r\n	</div>\r\n</div>";
+},"useData":true});
+(function($, viewport){
+
+	var visibilityDivs = {
+		'xs': $('<div class="hidden-sm-up"></div>'),
+		'sm': $('<div class="hidden-xs-down hidden-md-up"></div>'),
+		'md': $('<div class="hidden-sm-down hidden-lg-up"></div>'),
+		'lg': $('<div class="hidden-md-down hidden-xl-up"></div>'),
+		'xl': $('<div class="hidden-lg-down hidden-xxl-up"></div>'),
+		'xxl': $('<div class="hidden-xl-down hidden-xxxl-up"></div>'),
+		'xxxl': $('<div class="hidden-xxl-down"></div>')
+
+	};
+
+	viewport.use('Custom', visibilityDivs);
+
+	// Add our custom event
+	var previousBreakpoint = '';
+	$(window).resize(
+		viewport.changed(function(){
+			var breakpoint = viewport.current();
+
+			$(window).trigger('viewport:resize');
+
+			if(previousBreakpoint !== breakpoint){
+				 $(window).trigger('viewport:change');
+				 previousBreakpoint = breakpoint;
+				console.log(breakpoint);
+			}
+		})
+	);
+
+
+})(jQuery, ResponsiveBootstrapToolkit);
+jQuery(document).ready(function(){
+
+    viewport = ResponsiveBootstrapToolkit;
+
+    var $collabsables = $('[data-toggle="collapse_responsive"]');
+
+    $collabsables.click(function(e){
+        e.preventDefault();
+
+        var $this= $(this);
+        var isCollapsed = $(this).hasClass('collapsed');
+        var $parent = $($this.data('parent') || null);
+        var $target = $($this.data('target') || null);
+
+        // If target isn't collapsed at this breakpoint, ignore.
+        if( 
+            !(
+                ($target.hasClass('collapse-xl-down') && viewport.is('<=xl')) ||
+                ($target.hasClass('collapse-lg-down') && viewport.is('<=lg')) ||
+                ($target.hasClass('collapse-md-down') && viewport.is('<=md')) ||
+                ($target.hasClass('collapse-sm-down') && viewport.is('<=sm')) ||
+                ($target.hasClass('collapse-xs-down') && viewport.is('<=xs'))
+            )
+        ){
+            return;
+        }
+        // else, toggle it open / shut
+
+        if($parent.length > 0){
+            var $open = $parent.find('.in');
+            $open.removeClass('in')
+                .each(
+                    function(){
+                        $parent.find('[data-target="#' + $(this).attr('id') + '"]').addClass('collapsed');
+                    }
+            );
+        }
+
+        if($target.length > 0){
+            $target.toggleClass('in',isCollapsed);
+            // Add expanded state (this only needs to be set when collapsing is possible)
+            $this.toggleClass('collapsed',!isCollapsed).attr("aria-expanded", isCollapsed);
+        }
+    });
+
+
+    $(window).on("viewport:change", function(){
+
+        $collabsables.each(function(){
+            var $target = $($(this).data('target') || null);
+
+            if( 
+                !(
+                    ($target.hasClass('collapse-xl-down') && viewport.is('<=xl')) ||
+                    ($target.hasClass('collapse-lg-down') && viewport.is('<=lg')) ||
+                    ($target.hasClass('collapse-md-down') && viewport.is('<=md')) ||
+                    ($target.hasClass('collapse-sm-down') && viewport.is('<=sm')) ||
+                    ($target.hasClass('collapse-xs-down') && viewport.is('<=xs'))
+                )
+            ){
+                // Remove expanded state for none collapsible elements
+                $(this).attr("aria-expanded", "");
+            }
+        });
+    });
+
+
+});
+// go go global nav
+(function(){
+
+	// store control class as data on the node (just for conveniance)
+	var global_menu = $(".global-nav-menu").data("control-class", "show-global-menu");
+	var global_search = $(".global-nav-search").data("control-class", "show-global-search");
+
+	var toggleMenu = function(button, menu){
+		// If no menu is open, open this one, else this is a close action
+		if(!menu.hasClass("in")){
+			openMenu(button, menu);
+		}else{
+			closeMenu(button, menu);
+		}
+	};
+
+	var closeMenu = function(button, menu){
+
+		if(menu.hasClass("in")) {
+			$('.home-nav').delay(300).fadeIn();
+		}
+
+		$("body").removeClass(menu.data("control-class"));
+		menu.removeClass("in");
+
+		// Update button so it knows it's expanded area is collapsed
+		// aria-hidden is not needed on th element, since as the element is displayed none
+		// the screen reader won't see it anyway.
+		button.attr("aria-expanded", "false");
+	};
+
+	var openMenu = function(button, menu){
+		// Select find
+		if(menu === global_search){
+			global_search.find("input[type='search']").focus();
+		}
+
+		$('.home-nav').hide();
+
+		$("body").addClass(menu.data("control-class"));
+		menu.addClass("in");
+		// update button so it knows it's expanded area is collapsed
+		button.attr("aria-expanded", true);
+	};
+
+	var closeSearch = function(){
+		closeMenu($(".search-button, .search-button-full, .close-search"), global_search);
+	};
+
+	// Hook up menu links
+	$(".menu-button").click(function(){
+		toggleMenu($(this), global_menu);	
+	});
+
+	$(".search-button, .search-button-full").click(function(e){
+		toggleMenu($(".search-button, .search-button-full, .close-search"), global_search);
+		e.preventDefault();
+		return false;
+	});
+
+	$(".close-search").click(function(){
+		closeMenu($(this), global_search);
+	});
+
+	global_search.find('form').submit(function(e){
+		if(global_search.find("input[type='search']").val()===''){
+			e.preventDefault();
+			closeSearch();
+			return false;
+		}
+	});
+
+	global_search.find("input[type='search']").click(function(e){
+		e.preventDefault();
+		return false;
+	});
+
+	$('body').click(closeSearch);
+
+	$(document).keyup(function(e){
+		if(e.which === 27){
+			closeSearch();
+		}
+	});
+
+})();
+(function(){
+	var zTimer = null;
+	// Primary Nav
+	$(".global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a").click(function(){
+		clearTimeout(zTimer);
+		// was this item open?
+		var was_open = $(this).parent().hasClass("in");
+
+		// If a menu was already open, close other menu sections (setting expanded as we go)
+		if($(this).parent().parent().hasClass("in")){
+			var menus = $(this).parent().parent().find(".in").not($(this).parent());
+				menus.removeClass("in");
+				menus.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+				menus.children(":first").attr("aria-expanded", "false");
+		}else{
+			$(this).parent().parent().find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+		}
+
+		if(was_open){
+			var $that = $(this);
+			// if the clicked item was open, close all
+			$that.parent().removeClass("in").parent().removeClass("in");
+
+			zTimer = setTimeout(function(){
+				$that.parent().find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+			},600);
+
+		}else{
+			//  if not, tell item its expanded & toggle it all open
+			var menu = $(this).attr("aria-expanded", "true").parent().toggleClass("in");
+			menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');
+			menu.parent().addClass("in");
+		}
+	});
+
+})();
+jQuery(document).ready(function(){
+	var sectional_nav = $('.departmental-nav .navbar-menu');
+	var toggler = $('.departmental-nav .navbar-toggler');
+
+	// if no nav, don't bother booting menu
+	if(sectional_nav.length === 0){ return; } 
+
+	function respond () {
+		if (viewport.is('>=md')) {
+
+			if (navHasOverflown()) {
+				sectional_nav.addClass('overflown');
+				toggler.addClass('overflown');
+			}
+			else {
+				sectional_nav.removeClass('overflown');
+				toggler.removeClass('overflown');
+				closeNav();
+			}
+		}
+	}
+
+	function navHasOverflown () {
+		var last = sectional_nav.find('a').last();
+		return last.position().top >= last.height();
+	}
+
+	function toggleNav () {
+		if (sectional_nav.hasClass('in')) {
+			closeNav();
+		}
+		else {
+			openNav();
+		}
+	}
+
+	function openNav () {
+        $("body").addClass('show-departmental-menu');
+		toggler.addClass('in').attr("aria-expanded", "true");
+		sectional_nav.addClass('in');
+	}
+
+	function closeNav () {
+        $("body").removeClass('show-departmental-menu');
+        toggler.removeClass('in').attr("aria-expanded", "false");
+		sectional_nav.removeClass('in');
+		
+	}
+
+	toggler.click(function () {
+		if (navHasOverflown()) {
+			toggleNav();
+		}
+	});
+
+	$(window).on('viewport:resize', function(){
+        respond();
+    });
+
+	respond();
+});
+jQuery(document).ready(function(){
+	var beta_bar = $('.beta-bar');
+
+	function toggleNav() {
+		if(beta_bar.hasClass('hidden')){
+			beta_bar.removeClass('hidden').slideDown();
+
+		}else {
+			beta_bar.addClass('hidden').slideUp();
+			Cookies.set('kentbeta_dismissed', '1', {expires: 365});
+		}
+	}
+
+	if(beta_bar.length >0 ) {
+
+		var toggler = $('.beta-toggler');
+
+		var dismissed = typeof Cookies.get('kentbeta_dismissed') !== 'undefined';
+
+		if(!dismissed) {
+			beta_bar.slideDown();
+		}else{
+			beta_bar.addClass('hidden');
+		}
+
+		toggler.click(function () {
+			toggleNav();
+		});
+	}
+});
+jQuery(document).ready(function($){
+
+	$('.attribution').click(function(){
+		$(this).toggleClass('in');
+	});
+
+});
+// Disable scroll zooming and bind back the click event
+var onEmbedClickHandler;
+
+var onEmbedMouseleaveHandler = function (event) {
+	var that = $(this);
+
+	that.on('click', onEmbedClickHandler);
+	that.off('mouseleave', onEmbedMouseleaveHandler);
+	that.find('iframe').css("pointer-events", "none");
+};
+
+onEmbedClickHandler = function (event) {
+	var that = $(this);
+
+	// Disable the click handler until the user leaves the area
+	that.off('click', onEmbedClickHandler);
+
+	that.find('iframe').css("pointer-events", "auto");
+
+	// Handle the mouse leave event
+	that.on('mouseleave', onEmbedMouseleaveHandler);
+};
+
+jQuery(document).ready(function () {
+
+	$('.click-to-interact').on('click', onEmbedClickHandler);
+});
+
+var stellarActivated = false;
+
+function react_to_window() {
+	if(ResponsiveBootstrapToolkit.is('xs')) {
+		if (stellarActivated === true) {
+			$(window).data('plugin_stellar').destroy();
+			stellarActivated = false;
+		}
+		$('.media-wrap-paralax').css('min-height','');
+	} else {
+		if (stellarActivated === false) {
+
+			$.stellar({
+				// Set scrolling to be in either one or both directions
+				horizontalScrolling: false,
+				verticalScrolling: true,
+
+				// Set the global alignment offsets
+				horizontalOffset: 0,
+				verticalOffset: 0,
+
+				// Refreshes parallax content on window load and resize
+				responsive: false,
+
+				// Select which property is used to calculate scroll.
+				// Choose 'scroll', 'position', 'margin' or 'transform',
+				// or write your own 'scrollProperty' plugin.
+				scrollProperty: 'scroll',
+
+				// Select which property is used to position elements.
+				// Choose between 'position' or 'transform',
+				// or write your own 'positionProperty' plugin.
+				positionProperty: 'transform',
+
+				// Enable or disable the two types of parallax
+				parallaxBackgrounds: true,
+				parallaxElements: true,
+
+				// Hide parallax elements that move outside the viewport
+				hideDistantElements: false,
+
+				// Customise how elements are shown and hidden
+				hideElement: function($elem) { $elem.hide(); },
+				showElement: function($elem) { $elem.show(); }
+			});
+
+			$(window).data('plugin_stellar').init();
+			stellarActivated = true;
+		}
+		var $ratio = ResponsiveBootstrapToolkit.is('<xl')?(9/16):(7/16);
+		$('.media-wrap-paralax').each(function () {
+			$(this).css('min-height', ($(window).width() * $ratio) + 'px');
+		});
+		$(window).data('plugin_stellar').refresh();
+	}
+}
+
+$(window).on('viewport:resize',function(){
+	react_to_window();
+});
+
+
+$(document).ready(function(){
+	react_to_window();
+});
+$(document).ready(function(){
+	$('.kent-slider').slick({
+		dots:true,
+		dotsClass:'kent-slider-dots',
+		mobileFirst:true,
+		useTransform:true,
+		accessibility: true,	
+	});
+});
+$(document).ready(function(){
+	var launcherCount = 0;
+	$('.video-launcher').each(function(){
+
+		// initiate and show the video as a modal
+		var init = function () {
+			// we need some data
+			var src = $(this).data('src') || false;
+			var transcript = $(this).data('transcript') || false;
+			var controls = typeof $(this).data('controls') === 'undefined' || ($(this).data('controls') === 'controls' || $(this).data('controls') === true) ? true : false;
+			var mode = $(this).data('mode') || 'modal'; //default to modal
+			var modal_at = $(this).data('modal-at') || 'xs';
+
+			// check that we have a video source & a template for this mode
+			if (!src || !Handlebars.templates['video_' + mode]) {
+				return;
+			}
+
+			// force modal mode if specified or we're at xs
+			if (viewport.is('<=' + modal_at)) {
+				mode = 'modal';
+			}
+
+			// get the right video container
+			var video_container = $(Handlebars.templates['video_' + mode]({
+				id: this.popupId,
+				src: src,
+				transcript: transcript,
+				controls: controls
+			}));
+
+			var video_el = video_container.find('video');
+			var video = video_el[0];
+
+			var playVideo = function () {
+				if (video.paused) {
+					video.play();
+				}
+			};
+
+			var pauseVideo = function () {
+				if (!video.paused) {
+					video.pause();
+				}
+			};
+
+			var toggleVideo = function () {
+				if (video.paused) {
+					video.play();
+				}
+				else {
+					video.pause();
+				}
+			};
+
+			// all click handler to parent because thats where out video launcher button will be
+			video_el.parent().click(function () {
+				toggleVideo();
+			});
+
+			video_el.on('playing', function (e) {
+				video_el.parent().removeClass('video-launcher');
+			});
+
+			video_el.on('pause ended', function (e) {
+				video_el.parent().addClass('video-launcher');
+			});
+
+			switch(mode) {
+				case 'inline':
+					$(this).children().hide();
+					$(this).unbind('click'); $(this).css('background-image', 'none');
+					$(this).removeClass('video-launcher');
+					$(this).append(video_container);
+
+					$(this).on('showAndPlay', function (e) {
+						playVideo();
+					});
+
+					$(this).trigger('showAndPlay');
+
+					break;
+
+				case 'modal':
+					$('body').append(video_container);
+					video_container.modal({show:false});
+
+					video_container.on('shown.bs.modal', function (e) {
+						playVideo();
+					});
+
+					video_container.on('hide.bs.modal', function (e) {
+						pauseVideo();
+					});
+
+					$(this).on('showAndPlay', function (e) {
+						this.video_container.modal('show');
+						playVideo();
+					});
+
+					//play it straight away
+					video_container.modal('show');
+					break;
+			}
+
+			this.video_container = video_container;
+		};
+
+		this.video_containerId = launcherCount;
+		launcherCount += 1;
+
+		// add click handler to initiate/show popup video
+		$(this).click(function () {
+			if (!this.video_container) {
+				init.apply(this);
+			}
+			else{
+				$(this).trigger('showAndPlay');
+			}
+		});
+
+	});
+});
 (function(){
 	//add linkedin support (not included in current version of social-shares)
 	window.socialLikesButtons = {

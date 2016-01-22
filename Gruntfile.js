@@ -1,5 +1,7 @@
 module.exports = function(grunt) {
 
+	grunt.util.linefeed = '\r\n';
+
 	require('dotenv').load();
 
 	var path        = require('path');
