@@ -57,7 +57,7 @@
 
 /* Home page variant */
 
-.global-header-transparent {
+.global-header-transparent .header-card-overlay{
 
 	.card-media-wrap, .media-wrap-paralax{
 		&::after {
@@ -72,9 +72,6 @@
 	}
 
 	@include media-breakpoint-up(md) {
-
-		.card.header-card-overlay {
-			margin-top: -7rem;
-		}
+		margin-top: -7rem;
 	}
 }
