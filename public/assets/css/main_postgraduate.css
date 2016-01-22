@@ -4152,7 +4152,6 @@ button.close {
   .modal.fade .modal-dialog {
     transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
-    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%); }
   .modal.in .modal-dialog {
@@ -4446,7 +4445,6 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
-        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -5348,6 +5346,13 @@ h6, .h6 {
   font-size: 19.2px;
   font-size: 1.2rem; }
 
+.strap-line {
+  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+  color: #671115;
+  text-transform: uppercase; }
+  .strap-line span {
+    color: #937227; }
+
 @media (min-width: 1200px) {
   html {
     font-size: 18px; } }
@@ -5701,9 +5706,9 @@ figure.featured-image {
         bottom: -1.5rem;
         right: 0; } }
 
-.chevron-link, nav.breadcrumb a {
+.chevron-link, .inline-links a, nav.breadcrumb a {
   font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
-  .chevron-link:after, nav.breadcrumb a:after {
+  .chevron-link:after, .inline-links a:after, nav.breadcrumb a:after {
     display: inline-block;
     padding-left: 8px;
     padding-left: 0.5rem;
@@ -6588,6 +6593,15 @@ select {
         .card-panel.nav-links-panel nav a .nav-link-desc, .nav-links-panel nav a .nav-link-desc {
           width: 80%;
           margin-right: 20%; } }
+
+.inline-links {
+  padding-top: 8px;
+  padding-top: .5rem; }
+  .inline-links a {
+    margin-left: 8px;
+    margin-left: .5rem;
+    font-size: 14.4px;
+    font-size: 0.9rem; }
 
 .audience-bar {
   background-color: #671115;
@@ -7887,6 +7901,9 @@ button.beta-toggler {
     background-color: #333333; }
     .card-panel.card-panel-dark.cards-backed .card {
       border-color: #333333; }
+  .card-panel.card-panel-padded .container, .card-panel.card-panel-padded .card-panel.card-panel-contained, .card-panel.card-panel-padded .card-panel-body, .card-panel.card-panel-padded .card-panel-header, .card-panel.card-panel-padded main > blockquote, .card-panel.card-panel-padded .card-panel-body {
+    padding: 32px 8%;
+    padding: 2rem 8%; }
   .card-panel .card-panel-body {
     padding: 0;
     display: -webkit-flex;
@@ -8199,18 +8216,18 @@ button.beta-toggler {
       margin-top: -20rem; } }
   .card.card-overlay .card-footer {
     padding: 0; }
-    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a {
+    .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .inline-links a, .inline-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a {
       display: block;
       padding: 12px 16px;
       padding: 0.75rem 1rem;
       background: #f5f5f5;
       border-bottom: 1px solid #ccc; }
-      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-footer a:after {
+      .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .inline-links a:after, .inline-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-footer a:after {
         position: absolute;
         right: 16px;
         right: 1rem; }
       @media (min-width: 768px) {
-        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a {
+        .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .inline-links a, .inline-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a {
           display: table-cell;
           text-align: center;
           float: none;
@@ -8219,7 +8236,7 @@ button.beta-toggler {
           padding: 0;
           background: none;
           border: none; }
-          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-footer a:after {
+          .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .inline-links a:after, .inline-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-footer a:after {
             position: relative;
             right: auto; } }
     @media (min-width: 768px) {

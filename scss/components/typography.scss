@@ -75,6 +75,17 @@ h6,.h6{
 	font-size: 1.2rem;
 }
 
+.strap-line {
+	font-family: $font-family-serif;
+	color: $brand-primary;
+	text-transform: uppercase;
+
+	span {
+		color: $brand-accent;
+	}
+}
+
+
 @include media-breakpoint-up(xl) {
   html {
     font-size: 18px;
