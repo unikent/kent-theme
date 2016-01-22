@@ -41,6 +41,41 @@ $container-max-widths: (
 						   xxxl: 1140px
 					   );
 
+$spacer:                     1rem;
+$spacer-x:                   $spacer;
+$spacer-y:                   $spacer;
+
+$spacers: (
+			0: (
+				x:   0,
+				y:   0
+			),
+			1: (
+				x:   $spacer-x,
+				y:   $spacer-y
+			),
+			2: (
+				x:   ($spacer-x * 2),
+				y:   ($spacer-y * 2)
+			),
+			3: (
+				x:   ($spacer-x * 3),
+				y:   ($spacer-y * 3)
+			),
+			4: (
+				x:   ($spacer-x * 4),
+				y:   ($spacer-y * 4)
+			),
+			5: (
+				x:   ($spacer-x * 5),
+				y:   ($spacer-y * 5)
+			),
+			6: (
+				x:   ($spacer-x * 6),
+				y:   ($spacer-y * 6)
+			)
+);
+
 //COLOURS
 $kent-primary:         #05345C;
 $kent-primary-tint:    #e8ebf2;
@@ -55,6 +90,7 @@ $brand-tertiary:        #f7f2e1;
 $brand-accent:          #937227; //use on light backgrounds
 $brand-accent-light:    #ce9716; //use on dark backgrounds
 
+$brand-dark: #333333;
 $border-gray: #e6e6e6;
 
 $gray-dark-trans: rgba(0, 0, 0, 0.8);
@@ -62,6 +98,18 @@ $gray-dark-trans: rgba(0, 0, 0, 0.8);
 $body-color: #171717;
 
 $link-color: #005689;
+
+$table-border-color: $brand-primary;
+$table-bg-accent: $brand-primary-tint;
+
+$brand-colors: (
+   primary-tint: $brand-primary-tint,
+   secondary: $brand-secondary,
+   tertiary: $brand-tertiary,
+   primary: $brand-primary,
+   accent: $brand-accent,
+   dark: $brand-dark
+);
 
 $brand-colors-light: (
 	primary-tint: $brand-primary-tint,
@@ -71,7 +119,8 @@ $brand-colors-light: (
 
 $brand-colors-dark: (
 	primary: $brand-primary,
-	accent: $brand-accent
+	accent: $brand-accent,
+	dark: $brand-dark
 );
 
 /// Social
@@ -102,7 +151,7 @@ $social-networks: (
 // TYPOGRAPHY
 
 $font-family-sans-serif:     "ArialLight","Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:          "CentrurySchoolbook", Georgia, "Times New Roman", Times, serif !default;
+$font-family-serif:          "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;
 
@@ -128,7 +177,7 @@ $card-overlay-amount: 1.6rem;
 
 
 // HEADER OPTIONS
-$global-nav-height: 8.75rem;
+$global-nav-height: 8.6rem;
 
 
 
@@ -150,3 +199,6 @@ $article-padding-max:	0 415px 0 95px;
 $border-radius:          0;
 $border-radius-lg:       0;
 $border-radius-sm:       0;
+
+// modals
+$modal-backdrop-opacity:      .95;

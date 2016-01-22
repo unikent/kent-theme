@@ -162,10 +162,10 @@
 						<div class="col-xs-12">
 							<h6 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" data-parent=".global-footer">Affiliations</h6>
 							<div id="footer-affiliations" class="footer-section collapse-sm-down" role="list">
-								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//sgroup.be/"><img src="<?php echo KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-sgroup-white.png" class="img-fluid" alt="SGroup European Universities Network"></a>
-								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//www.kent.ac.uk/about/partnerships/eastern-arc.html"><img src="<?php echo KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-arc-white.png" class="img-fluid" alt="Eastern Academic Research Consortium"></a>
-								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//www.universitiesuk.ac.uk/"><img src="<?php echo KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-uniuk-white.png" class="img-fluid" alt="Univerities UK"></a>
-								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//www.kent.ac.uk/about/awards/qap/"><img src="<?php echo KentThemeHelper::getThemeWebRoot();?>/assets/images/logo-queen-white.png" class="img-fluid" alt="The Queen's Anniversary Prize"></a>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//sgroup.be/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/logo-sgroup-white.png" class="img-fluid" alt="SGroup European Universities Network"></a>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//www.kent.ac.uk/about/partnerships/eastern-arc.html"><img src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/logo-arc-white.png" class="img-fluid" alt="Eastern Academic Research Consortium"></a>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//www.universitiesuk.ac.uk/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/logo-uniuk-white.png" class="img-fluid" alt="Univerities UK"></a>
+								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//www.kent.ac.uk/about/awards/qap/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/logo-queen-white.png" class="img-fluid" alt="The Queen's Anniversary Prize"></a>
 							</div>
 						</div>
 					</div>
@@ -177,7 +177,7 @@
 				</div>
 			</section>
 		</footer>
-		<script src="<?php echo KentThemeHelper::getThemeWebRoot();?>assets/js/main.js"></script>
+		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/main.js"></script>
 		<?php echo $foot_markup ;?>
 
 		<!-- begin usabilla live embed code -->
@@ -188,13 +188,17 @@
 
 		<!-- begin google analytics code -->
 		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+			if (typeof disable_kent_theme_analytics === 'undefined' || !disable_kent_theme_analytics) {
+				(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+				(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+				})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			ga('create', 'UA-54179016-1', 'auto');
-			ga('send', 'pageview');
+				ga('create', 'UA-54179016-1', 'auto');
+				ga('send', 'pageview');
+				ga('require', 'displayfeatures');
+				ga('require', 'linkid', 'linkid.js');
+			}
 		</script>
 		<!-- end google analytics code -->
 

@@ -44,10 +44,6 @@
 		}
 	}
 
-	&.card-centered {
-		@extend .text-xs-center;
-	}
-
 	@each $name, $color in $brand-colors-light {
 
 		&.card-backed-#{$name},
@@ -79,9 +75,88 @@
 
 	}
 
+	&.card-centered {
+		@extend .text-xs-center;
+	}
+
+	.card-img-overlay {
+		padding: 1rem;
+		display:block;
+		
+		@each $breakpoint, $width in $grid-breakpoints {
+			&.card-overlay-inline-#{$breakpoint} {
+				@include media-breakpoint-down($breakpoint){
+					position: inherit;
+					padding: 2rem;
+					clear: both;
+					background: $brand-dark;
+					color: #fff; 
+
+					// If at some point we want other colours on the overlay inlines
+					// 
+					//@each $name, $color in $brand-colors-dark {
+					//	
+					//	&.card-overlay-inline-#{$name} {
+					//		background: $color;
+					//		color: #fff;
+					//	}			
+					//}
+
+					&.card-overlay-inline-nopad{
+						padding: 0;
+					}
+				}
+			}
+		}
+
+
+	}
+	.card-img-overlay-bottom{
+		@extend .card-inverse;
+		@extend .card-img-overlay;
+		top:auto;
+		background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+		padding-top: 3rem;
+	}
+
 	.card-body{
 		display: block;
 		position: relative;
+	}
+
+	.card-split{
+		position: relative;
+		padding: 0;
+		overflow: hidden;
+
+	}
+	.card-half{
+		position: relative;
+		float:left;
+		width: 50%;
+	}
+
+	&.card-flip{
+		position: relative;
+
+		.front{
+			transition: opacity 600ms;
+			position: relative;
+			z-index: 1;
+		}
+		&:hover {
+			.front {
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+		.back{
+			position: absolute;
+			top:0;
+			left:0;
+			bottom: 0;
+			right:0;
+		}
 	}
 
 	.card-footer{
@@ -128,33 +203,16 @@
 		}
 	}
 
-	.card-embed-wrap{
-		iframe{
-			pointer-events: none;
-		}
-	}
-
 	.card-media-wrap, .card-embed-wrap {
 
 		@extend .media-wrap;
 
-		&.card-media-wrap-video {
-			cursor: pointer;
-			&:after {
-				content: $kf-play-circle;
-				font-family: $font-family-kentfont;
-				position: absolute;
-				left: 50%;
-				top: 50%;
-				margin-left: -2rem;
-				margin-top: -3.2rem;
-				font-size: 4.5rem;
-				color: rgba(255,255,255,0.9);
-			}
-		}
 	}
 
 	&.card-inverse, .card-inverse{
+		.card-title{
+			color: #FFF;
+		}
 		.card-subtitle{
 			color: rgba(255,255,255,.65);
 		}

@@ -9,11 +9,13 @@ Class KentThemeHelper {
 
 		$defaults = array(
 			'title' => 'Kent Theme Beta',
-			'menu' => array(),
+			'menu' => '',
 			'meta' => array(),
 			'theme' => '',
 			'head_markup' => '',
-			'slim'=>false
+			'slim'=>false,
+			'beta_bar'=>true,
+			'home_page' => false
 		);
 
 		$config = array_merge($defaults,$config);
@@ -24,11 +26,15 @@ Class KentThemeHelper {
 								'thumb'=>'https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif'
 								  ), $meta);
 
-		// if menu is provided
-		if(!empty($menu)){
-			$menu_links = static::generateMenu($menu);
-		}else{
-			$menu_links = "";
+		if($menu==='placeholder'){
+			$menu_links = "{{> menu}}".PHP_EOL;
+		}else {
+			// if menu is provided
+			if(is_array($menu) && !empty($menu)) {
+				$menu_links = static::generateMenu($menu);
+			} else {
+				$menu_links = "";
+			}
 		}
 		// If theme is not default
 		if(!empty($theme)){
@@ -89,6 +95,7 @@ Class KentThemeHelper {
 	public static function getThemeWebRoot(){
 		// If constant was provided
 		if(defined("WEBROOT")){
+			echo WEBROOT;
 			return WEBROOT;
 		}
 		// else try and figure it out ourselves
@@ -107,7 +114,9 @@ Class KentThemeHelper {
 		$public_folder_path = str_replace(array('\\', '/'),'/', $public_folder_path);
 		
 		// remove base folder from public folder to get releative webpath
-		echo static::$theme_web_root = str_replace( $base_folder ,'', $public_folder_path ).'/';
+		$root = static::$theme_web_root = str_replace( $base_folder ,'', $public_folder_path ).'/';
+		$root .= (substr($root, -1) == '/' ? '' : '/');
+		echo $root;
 	}
 
 	public static function getOriginalSiteLink()

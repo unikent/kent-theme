@@ -16,6 +16,10 @@
 
 	var closeMenu = function(button, menu){
 
+		if(menu.hasClass("in") && ResponsiveBootstrapToolkit.is('<=sm')) {
+			$('.home-nav').delay(300).fadeIn();
+		}
+
 		$("body").removeClass(menu.data("control-class"));
 		menu.removeClass("in");
 
@@ -31,21 +35,58 @@
 			global_search.find("input[type='search']").focus();
 		}
 
+		$('.home-nav').hide();
+
 		$("body").addClass(menu.data("control-class"));
 		menu.addClass("in");
 		// update button so it knows it's expanded area is collapsed
 		button.attr("aria-expanded", true);
 	};
 
+	var closeSearch = function(){
+		closeMenu($(".search-button, .search-button-full, .close-search"), global_search);
+	};
+
 	// Hook up menu links
 	$(".menu-button").click(function(){
 		toggleMenu($(this), global_menu);	
 	});
-	$(".search-button, .search-button-full").click(function(){
-		toggleMenu($(this), global_search);
+
+	$(".search-button, .search-button-full").click(function(e){
+		toggleMenu($(".search-button, .search-button-full, .close-search"), global_search);
+		e.preventDefault();
+		return false;
 	});
+
 	$(".close-search").click(function(){
 		closeMenu($(this), global_search);
 	});
 
+	global_search.find('form').submit(function(e){
+		if(global_search.find("input[type='search']").val()===''){
+			e.preventDefault();
+			closeSearch();
+			return false;
+		}
+	});
+
+	global_search.find("input[type='search']").click(function(e){
+		e.preventDefault();
+		return false;
+	});
+
+	$('body').click(closeSearch);
+
+	$(document).keyup(function(e){
+		if(e.which === 27){
+			closeSearch();
+		}
+	});
+
 })();
+
+$(window).on("viewport:change", function(){
+	if(ResponsiveBootstrapToolkit.is('<=sm')){
+		$('.home-nav').delay(300).fadeIn();
+	}
+});

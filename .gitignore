@@ -5,3 +5,6 @@ lib/config.php
 /node_modules
 vendor/
 www_docroot
+/public/devdocs/
+/lib/pattern-wrappers/dev/
+.env

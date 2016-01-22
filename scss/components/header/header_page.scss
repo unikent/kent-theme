@@ -32,19 +32,26 @@
 		background-color: $gray-dark-trans;
 		color:#fff;
 		transition: max-height 300ms;
-		position: relative;
+		transition-timing-function: ease-in-out;
 
+		position: relative;
+		font-size: 0;
 		&.in {
 			height:auto;
 			max-height:1000px;
 		}
 
-		a {
-			color:#fff;
-			font-size: 1rem;
-			display:block;
-			padding:0.5rem;
+		@extend .mobile-nav-links;
+
+
+		& > a:last-child {
+			border-bottom: none;
 		}
+
+		& > a:first-child {
+			border-top: 1px solid rgba(255, 255, 255, 0.5);
+		}
+		
 	}
 
 	@include media-breakpoint-up(md) {
@@ -96,6 +103,11 @@
 
 			a {
 				display:inline-block;
+				padding: 0.5rem 1rem;
+				border-top: none;
+				border-bottom: none;
+				&:first-child { border-top: none; }
+				&:after{ display:none; }
 			}
 		}
 

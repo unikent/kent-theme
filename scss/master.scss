@@ -10,6 +10,7 @@
 // Vendor
 
 @import "../vendor/kent-font/build/less/_kentfont";
+@import "../vendor/slick-carousel/slick/slick.scss";
 
 // Theme components
 @import "components/responsive_utils";
@@ -18,16 +19,23 @@
 @import "components/images";
 @import "components/buttons";
 @import "components/forms";
+@import "components/navigation";
 @import "components/header/header_audience";
 @import "components/header/header_global";
 @import "components/header/header_page";
 @import "components/header/header_breadcrumb";
 @import "components/header/header_beta";
+@import "components/panel";
 @import "components/card";
 @import "components/modal";
 @import "components/blockquote";
-@import "components/embed-responsive";
+@import "components/embeds";
 @import "components/impact_statement";
 @import "components/page_feedback";
 @import "components/article";
+@import "components/slider";
 @import "components/footer";
+@import "components/table";
+// Modules
+
+@import "components/modules/quickspot";

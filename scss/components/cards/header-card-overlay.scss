@@ -10,6 +10,10 @@
 			&:after{
 				content: none;
 			}
+			&:hover {
+				text-decoration: none;
+				background-color: lighten(#333,5%);
+			}
 			.card-title {
 				text-transform: none;
 				color: #fff;
@@ -34,6 +38,9 @@
 			background: linear-gradient(transparent, rgba(0,0,0,0.8));
 			&.card-title-wrap-link {
 				padding: 3rem 2rem 2rem;
+				&:hover {
+					background: linear-gradient(transparent, rgba(0,0,0,0.8));
+				}
 			}
 		}
 
@@ -46,4 +53,25 @@
       margin-top: -8rem;
     }
   }
+}
+
+/* Home page variant */
+
+.global-header-transparent .header-card-overlay{
+
+	.card-media-wrap, .media-wrap-paralax{
+		&::after {
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			content: "";
+			background: linear-gradient(rgba(0, 0, 0, 0.7) 1rem, transparent 7.5rem);
+		}
+	}
+
+	@include media-breakpoint-up(md) {
+		margin-top: -7rem;
+	}
 }
