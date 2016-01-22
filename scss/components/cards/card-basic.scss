@@ -134,7 +134,29 @@
 		position: relative;
 		float:left;
 		width: 50%;
+	}
 
+	&.card-flip{
+		position: relative;
+
+		.front{
+			transition: opacity 600ms;
+			position: relative;
+			z-index: 1;
+		}
+		&:hover {
+			.front {
+				opacity: 0;
+				pointer-events: none;
+			}
+		}
+		.back{
+			position: absolute;
+			top:0;
+			left:0;
+			bottom: 0;
+			right:0;
+		}
 	}
 
 	.card-footer{
