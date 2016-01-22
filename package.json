@@ -42,5 +42,7 @@
     "pixrem": "^3.0.0",
     "time-grunt": "~1.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "social-likes": "^3.1.0"
+  }
 }

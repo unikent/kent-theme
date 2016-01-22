@@ -109,7 +109,9 @@ module.exports = function(grunt) {
 					'js/components/embeds.js',
 					'js/components/paralax.js',
 					'js/components/slider.js',
-					'js/components/video.js'
+					'js/components/video.js',
+					'node_modules/social-likes/src/social-likes.js',
+					'js/components/social-likes.js'
                 ],
                 dest: 'js/main.js'
             }
