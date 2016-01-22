@@ -16673,7 +16673,7 @@ jQuery(document).ready(function(){
 
 	var closeMenu = function(button, menu){
 
-		if(menu.hasClass("in")) {
+		if(menu.hasClass("in") && ResponsiveBootstrapToolkit.is('<=sm')) {
 			$('.home-nav').delay(300).fadeIn();
 		}
 
@@ -16741,6 +16741,12 @@ jQuery(document).ready(function(){
 	});
 
 })();
+
+$(window).on("viewport:change", function(){
+	if(ResponsiveBootstrapToolkit.is('<=sm')){
+		$('.home-nav').delay(300).fadeIn();
+	}
+});
 (function(){
 	var zTimer = null;
 	// Primary Nav

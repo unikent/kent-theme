@@ -16,7 +16,7 @@
 
 	var closeMenu = function(button, menu){
 
-		if(menu.hasClass("in")) {
+		if(menu.hasClass("in") && ResponsiveBootstrapToolkit.is('<=sm')) {
 			$('.home-nav').delay(300).fadeIn();
 		}
 
@@ -84,3 +84,9 @@
 	});
 
 })();
+
+$(window).on("viewport:change", function(){
+	if(ResponsiveBootstrapToolkit.is('<=sm')){
+		$('.home-nav').delay(300).fadeIn();
+	}
+});
