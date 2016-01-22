@@ -1,0 +1,22 @@
+.panel {
+	@each $name, $color in $brand-colors-light {
+		&.panel-#{$name} {
+			background:$color;
+		}
+	}
+
+	@each $name, $color in $brand-colors-dark {
+		&.panel-#{$name} {
+			background:$color;
+			color: #fff;
+
+			.card {
+				@extend .card-inverse;
+			}
+		}
+	}
+
+	 
+
+
+}
