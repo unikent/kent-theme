@@ -68,8 +68,10 @@
 		position:relative;
 
 	@include media-breakpoint-up(md){
-		margin-left: 15%;
-	 	margin-right: 15%;
+		&.quickspot-contained {
+			margin-left: 15%;
+	 		margin-right: 15%;
+		}
 	}
 		
 }
