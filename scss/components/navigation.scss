@@ -137,3 +137,10 @@
 		}
 	}
 }
+
+.inline-links {
+	a {
+		@extend chevron-link;
+		margin-left: .5rem;
+	}
+}

@@ -97,8 +97,10 @@ module.exports = function(grunt) {
 					'vendor/jquery.stellar/src/jquery.stellar.js',
 					'vendor/slick-carousel/slick/slick.js',
 					'vendor/handlebars/handlebars.runtime.js',
-					'js/handlebars_templates.js',
+					'node_modules/social-likes/src/social-likes.js',
 					'vendor/js-cookie/src/js.cookie.js',
+					'js/handlebars_templates.js',
+
                     'js/components/responsive_util.js',
                     'js/components/collapse_responsive.js',
                     'js/components/global_nav.js',
@@ -110,7 +112,6 @@ module.exports = function(grunt) {
 					'js/components/paralax.js',
 					'js/components/slider.js',
 					'js/components/video.js',
-					'node_modules/social-likes/src/social-likes.js',
 					'js/components/social-likes.js'
                 ],
                 dest: 'js/main.js'

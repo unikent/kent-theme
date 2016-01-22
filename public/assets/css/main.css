@@ -6594,6 +6594,10 @@ select {
           width: 80%;
           margin-right: 20%; } }
 
+.inline-links a {
+  margin-left: 8px;
+  margin-left: .5rem; }
+
 .audience-bar {
   background-color: #05345C;
   color: #fff;
