@@ -6901,10 +6901,6 @@ select {
           .card-panel.nav-links-panel nav a .nav-link-desc, .nav-links-panel.card-panel-flush nav a .nav-link-desc, .nav-links-panel nav a .nav-link-desc {
             font-size: 0.9rem;
             line-height: 1rem; } }
-      @media (min-width: 768px) and (min-width: 1712px) {
-        .card-panel.nav-links-panel nav a .nav-link-desc, .nav-links-panel.card-panel-flush nav a .nav-link-desc, .nav-links-panel nav a .nav-link-desc {
-          width: 80%;
-          margin-right: 20%; } }
 
 .inline-links {
   padding-top: 8px;
