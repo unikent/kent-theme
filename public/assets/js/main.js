@@ -16745,6 +16745,8 @@ jQuery(document).ready(function(){
 $(window).on("viewport:change", function(){
 	if(ResponsiveBootstrapToolkit.is('<=sm')){
 		$('.home-nav').delay(300).fadeIn();
+	}else{
+		$('.home-nav').hide();
 	}
 });
 (function(){
