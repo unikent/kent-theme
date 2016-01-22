@@ -5346,6 +5346,13 @@ h6, .h6 {
   font-size: 19.2px;
   font-size: 1.2rem; }
 
+.strap-line {
+  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+  color: #671115;
+  text-transform: uppercase; }
+  .strap-line span {
+    color: #937227; }
+
 @media (min-width: 1200px) {
   html {
     font-size: 18px; } }
@@ -7885,6 +7892,9 @@ button.beta-toggler {
     background-color: #333333; }
     .card-panel.card-panel-dark.cards-backed .card {
       border-color: #333333; }
+  .card-panel.card-panel-padded .container, .card-panel.card-panel-padded .card-panel.card-panel-contained, .card-panel.card-panel-padded .card-panel-body, .card-panel.card-panel-padded .card-panel-header, .card-panel.card-panel-padded main > blockquote, .card-panel.card-panel-padded .card-panel-body {
+    padding: 32px 8%;
+    padding: 2rem 8%; }
   .card-panel .card-panel-body {
     padding: 0;
     display: -webkit-flex;

@@ -172,6 +172,11 @@
 		}
 	}
 
+	&.card-panel-padded {
+		.container,.card-panel-body {
+			padding: 2rem 8%;
+		} 
+	}
 
 	.card-panel-body {
 		@extend .container;
@@ -339,6 +344,10 @@
 			}
 		}
 	}
+
+
+
+
 
 	.card-panel-header {
 		@extend .container;
