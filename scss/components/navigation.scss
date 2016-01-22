@@ -139,8 +139,11 @@
 }
 
 .inline-links {
+	padding-top:.5rem;
 	a {
-		@extend chevron-link;
+		@extend .chevron-link;
+
 		margin-left: .5rem;
+		font-size:0.9rem;
 	}
 }
