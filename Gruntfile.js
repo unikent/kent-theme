@@ -51,7 +51,7 @@ module.exports = function(grunt) {
 			kentfont: {
 				src: 'vendor/kent-font/public/css/kentfont.css',
 				dest: 'public/assets/css/kentfont.css'
-			},
+			}
 		},
 
 		sass: {
@@ -82,8 +82,7 @@ module.exports = function(grunt) {
 			},
 			main: {
 				files: {
-					'public/assets/js/main.min.js' : 'js/main.js',
-					'public/assets/js/quickspot.min.js' : 'vendor/quick-spot/quickspot.js'
+					'public/assets/js/main.min.js' : 'js/main.js'
 				}
 			}
 		},
@@ -101,7 +100,7 @@ module.exports = function(grunt) {
 					'node_modules/social-likes/src/social-likes.js',
 					'vendor/js-cookie/src/js.cookie.js',
 					'js/handlebars_templates.js',
-
+					'vendor/quick-spot/quickspot.js',
 					'js/components/responsive_util.js',
 					'js/components/collapse_responsive.js',
 					'js/components/global_nav.js',
