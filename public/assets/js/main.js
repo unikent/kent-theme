@@ -17518,9 +17518,9 @@ KENT.quickspot.config = {
 };
 
 
-KENT.quickspot.config.ug_courses = KENT.quickspot.courses_defaults;
+KENT.quickspot.config.ug_courses = $.extend({},KENT.quickspot.config.courses_defaults);
 
-KENT.quickspot.config.pg_courses = $.extend(KENT.quickspot.config.courses_defaults,{
+KENT.quickspot.config.pg_courses = $.extend({},KENT.quickspot.config.courses_defaults,{
 
 	"url":	"https://webtools-test.kent.ac.uk/programmes/api/current/postgraduate/programmes",
 	"click_handler":    function (itm) {
@@ -17540,7 +17540,7 @@ jQuery(document).ready(function($){
 
 		config = KENT.quickspot.config[config] || KENT.quickspot.config.courses_defaults;
 
-		var qs = quickspot.attach($.extend(config,{
+		var qs = quickspot.attach($.extend({},config,{
 			target:$(this).attr('id'),
 			"results_container":target
 		}));
