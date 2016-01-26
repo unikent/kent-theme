@@ -9274,6 +9274,7 @@ blockquote, .blockquote {
         margin-top: 1rem;
         margin-bottom: 1.5rem; } }
   blockquote footer, .blockquote footer {
+    display: inline-block;
     font-size: 14.4px;
     font-size: 0.9rem; }
     blockquote footer:before, .blockquote footer:before {
