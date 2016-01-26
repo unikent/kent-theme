@@ -1,8 +1,7 @@
 module.exports = function(grunt) {
 
-	grunt.util.linefeed = '\r\n';
-
 	require('dotenv').load();
+	require('time-grunt')(grunt);
 
 	var path        = require('path');
 	var Handlebars  = require('handlebars');
@@ -142,11 +141,15 @@ module.exports = function(grunt) {
 		watch: {
 			js: {
 				files: [ 'js/*.js', 'js/**/*.js','!js/_*.js', 'js/templates/*.hbs' ],
-				tasks: [ 'jshint', 'handlebars', 'concat', 'copy:mainjs', 'uglify', 'modernizr' ]
+				tasks: [ 'jshint', 'handlebars', 'concat', 'copy:mainjs', 'uglify:main' ]
 			},
 			sass: {
 				files: [ 'scss/*.scss','scss/**/*.scss'  ],
-				tasks: [ 'sass', 'postcss', 'cssnano' ]
+				tasks: [ 'sass', 'postcss' ]
+			},
+			patterns: {
+				files: ['patterns/**/ *.html'],
+				tasks: ['patterns_local']
 			}
 		},
 
@@ -183,9 +186,16 @@ module.exports = function(grunt) {
 				sourcemap: false
 			},
 			dist: {
-				files: {
-					'public/assets/css/main.min.css': 'public/assets/css/main.css'
-				}
+				files: [
+					{
+						expand: true,     // Enable dynamic expansion.
+						cwd: 'public/assets/css/',      // Src matches are relative to this path.
+						src: ['*.css'], // Actual pattern(s) to match.
+						dest: 'public/assets/css/',   // Destination path prefix.
+						ext: '.min.css',   // Dest filepaths will have this extension.
+						extDot: 'first'   // Extensions in filenames begin after the first dot
+					}
+				]
 			}
 		},
 		php2html: {
@@ -326,8 +336,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-handlebars');
 
 	// Define tasks
-	grunt.registerTask('development', [ 'jshint', 'handlebars', 'concat', 'uglify', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr']);
-	grunt.registerTask('default', [ 'development', 'watch' ]);
+	grunt.registerTask('development', [ 'jshint', 'handlebars', 'uglify:bootstrap', 'concat', 'copy', 'sass', 'postcss','patterns_local']);
+	grunt.registerTask('production', [ 'jshint', 'handlebars', 'uglify:bootstrap', 'concat', 'uglify:main', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr','patterns']);
+	grunt.registerTask('default', [ 'development' ]);
 	grunt.registerTask('patterns', [ 'php2html:production','metalsmith:production' ]);
 	grunt.registerTask('patterns_local', [ 'php2html:development','metalsmith:development' ]);
 };
