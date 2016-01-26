@@ -17505,7 +17505,6 @@ KENT.quickspot.config = {
 			"search_on":                    ["name", "award", "subject", "main_school", "ucas_code", "search_keywords"],
 			"disable_occurrence_weighting": true,
 			"screenreader":                 true,
-			"results_container":            "quickspot-results-container",
 			"prevent_headers":              true,
 
 			"display_handler":  window.KENT.quickspot.display_handler,
@@ -17537,9 +17536,14 @@ jQuery(document).ready(function($){
 		$(this).attr('autocomplete','off');
 
 		var config = $(this).data('quickspot-config');
+		var target = $(this).data('quickspot-target');
+
 		config = KENT.quickspot.config[config] || KENT.quickspot.config.courses_defaults;
 
-		var qs = quickspot.attach($.extend(config,{target:$(this).attr('id')}));
+		var qs = quickspot.attach($.extend(config,{
+			target:$(this).attr('id'),
+			"results_container":target
+		}));
 
 		$(this).data('qs',qs);
 	});
