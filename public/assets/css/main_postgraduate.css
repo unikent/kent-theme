@@ -8066,10 +8066,13 @@ button.beta-toggler {
       width: 70%;
       margin-left: 15%;
       margin-right: 15%; }
+  a.card img, a img {
+    transition: all 600ms; }
   a.card:hover, a.card:focus, a:hover, a:focus {
     text-decoration: none; }
     a.card:hover img, a.card:focus img, a:hover img, a:focus img {
-      opacity: 0.7; }
+      -webkit-filter: opacity(70%);
+              filter: opacity(70%); }
 
 .card-panel, .card-panel-flush {
   padding: 16px 8px 8px;

@@ -291,10 +291,15 @@
 	// if card is an A
 	// @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
 	@at-root a#{&}, a {
+
+		img{
+			transition: all 600ms;
+		}
+
 		&:hover, &:focus {
 			text-decoration: none;
 			img{
-				opacity: 0.7;
+				filter: opacity(70%);
 			}
 		}
 	}
