@@ -7098,7 +7098,7 @@ select {
         table-layout: fixed;
         width: 100%;
         box-shadow: none;
-        height: 5.6rem;
+        height: 5.5rem;
         transition: height 300ms;
         max-width: 580px;
         margin: 0 auto; }
@@ -7135,7 +7135,7 @@ select {
             width: 100%;
             position: absolute;
             left: 0;
-            top: 7.6rem; }
+            top: 7.3rem; }
           .global-nav .global-nav-links .global-nav-link nav {
             display: table;
             overflow: hidden;
