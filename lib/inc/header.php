@@ -44,7 +44,7 @@
 
 		<?php echo $head_markup ;?>
 	</head>
-	<body class="<?php echo !empty($home_page) ? 'global-header-transparent' :'' ; ?>">
+	<body<?php echo !empty($home_page) ? ' class="global-header-transparent"' :'' ; ?>>
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
 		<a href="#main_content" class="sr-only">Jump to content</a>
 		<?php if($beta_bar){ ?>
