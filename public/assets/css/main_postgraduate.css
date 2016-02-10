@@ -7653,8 +7653,9 @@ button.beta-toggler {
       font-size: 0.8rem;
       padding: .1rem .5rem; } }
 
-body.show-global-search button.beta-toggler {
-  visibility: hidden; }
+@media (min-width: 768px) {
+  body.show-global-search button.beta-toggler {
+    visibility: hidden; } }
 
 .panel.panel-primary-tint {
   background: #E0D4D4; }

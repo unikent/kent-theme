@@ -57,8 +57,10 @@ button.beta-toggler{
 	}
 }
 
-body.show-global-search{
-	button.beta-toggler{
-		visibility: hidden;
+@include media-breakpoint-up(md){
+	body.show-global-search{
+		button.beta-toggler{
+			visibility: hidden;
+		}
 	}
 }
