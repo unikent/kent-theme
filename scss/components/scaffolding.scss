@@ -100,7 +100,7 @@
 .container-padded {
 	@extend .container;
 	
-	padding: 2rem 0;
+	padding: 1rem 0;
 		
 	@include media-breakpoint-up(sm) {
 		padding: 2rem 8%;

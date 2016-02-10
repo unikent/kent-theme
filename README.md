@@ -2,13 +2,17 @@
 
 ## Setup
 
-Run `npm install` to install all dependencies, run grunt and start a watch task.
+1. Make a copy of `.env.sample` and rename to `.env` 
+  - change the WEBROOT and API_URL variables if you need to when developing locally.
 
-*Note: we're using the Ruby version of Sass so you'll need to have it in your PATH first - use `gem install sass`*
+2. Run `npm install` to install all dependencies, run grunt and start a watch task.
 
-To restart the watch for any reason simply run `grunt`.
+  - *Note: we're using the Ruby version of Sass so you'll need to have it in your PATH first - use `gem install sass`*
+  - We're also using [grunt-php2html](https://www.npmjs.com/package/grunt-php2html) for frontend HTML generation of the pattern library. You need the `php-cgi` binary in your PATH for this to work. The previous link has instructions on how to do this for different OS.
 
-Make a copy of `lib/config.sample.php` and rename to `lib/config.php` - change the WEBROOT if you need to when developing locally.
+3. To restart the watch for any reason simply run `grunt`.
+
+*You may also need to run `bower update` to pull in updated dependencies.*
 
 ## Pattern Library
 
