@@ -56,3 +56,9 @@ button.beta-toggler{
 		padding: .1rem .5rem;
 	}
 }
+
+body.show-global-search{
+	button.beta-toggler{
+		visibility: hidden;
+	}
+}
