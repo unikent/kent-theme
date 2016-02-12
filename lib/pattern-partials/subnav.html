@@ -4,7 +4,7 @@
 	<ul class="list-unstyled">
 		{{#with (lookup navs section)}}
 		{{#each this.[0].children.[0].children}}
-		<li><a href="{{@root.docsroot}}{{path}}">{{file.sub_title}}</a></li>
+		<li><a href="{{@root.docsroot}}{{path}}">{{#ifCond file.sub_title '==' @root.sub_title}}<strong style="color:#000;">{{/ifCond}}{{file.sub_title}}{{#ifCond file.sub_title '==' @root.sub_title}}</strong>{{/ifCond}}</a></li>
 		{{/each}}
 		{{/with}}
 	</ul>
