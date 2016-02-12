@@ -7653,6 +7653,10 @@ button.beta-toggler {
       font-size: 0.8rem;
       padding: .1rem .5rem; } }
 
+@media (min-width: 768px) {
+  body.show-global-search button.beta-toggler {
+    visibility: hidden; } }
+
 .panel.panel-primary-tint {
   background: #e8ebf2; }
 
@@ -8533,98 +8537,110 @@ button.beta-toggler {
     .card-panel-flush.cards-backed .card {
       border: none; } }
 
-.card-panel-profiles .card {
-  float: left;
-  width: 100%; }
-  .card-panel-profiles .card .card-img {
-    max-width: none;
+.card-panel-profiles {
+  display: block; }
+  @media (min-width: 992px) {
+    .card-panel-profiles .kent-slider .card:first-child {
+      margin-left: 50%; } }
+  .card-panel-profiles .card {
+    float: left;
     width: 100%; }
-  .card-panel-profiles .card .card-title {
-    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
-    font-size: 24px;
-    font-size: 1.5rem; }
+    .card-panel-profiles .card .card-img {
+      max-width: none;
+      width: 100%; }
+    .card-panel-profiles .card .card-title {
+      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      font-size: 24px;
+      font-size: 1.5rem; }
+      @media (min-width: 544px) {
+        .card-panel-profiles .card .card-title {
+          font-size: 1.3rem; } }
+      @media (min-width: 768px) {
+        .card-panel-profiles .card .card-title {
+          font-size: 1.5rem; } }
+    .card-panel-profiles .card .card-subtitle {
+      font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-size: 1rem; }
+    .card-panel-profiles .card .back {
+      padding: 48px;
+      padding: 3rem;
+      font-size: 19.2px;
+      font-size: 1.2rem; }
+      @media (min-width: 544px) {
+        .card-panel-profiles .card .back {
+          padding: 1.5rem;
+          font-size: 1rem; } }
+      @media (min-width: 768px) {
+        .card-panel-profiles .card .back {
+          padding: 3rem;
+          font-size: 1.2rem; } }
+      @media (min-width: 992px) {
+        .card-panel-profiles .card .back {
+          padding: 1.5rem;
+          font-size: 1rem; } }
+      @media (min-width: 1712px) {
+        .card-panel-profiles .card .back {
+          padding: 3rem;
+          font-size: 1.2rem; } }
+      .card-panel-profiles .card .back a {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        color: #ce9716; }
     @media (min-width: 544px) {
-      .card-panel-profiles .card .card-title {
-        font-size: 1.3rem; } }
-    @media (min-width: 768px) {
-      .card-panel-profiles .card .card-title {
-        font-size: 1.5rem; } }
-  .card-panel-profiles .card .card-subtitle {
-    font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-size: 1rem; }
-  .card-panel-profiles .card .back {
+      .card-panel-profiles .card {
+        width: 50%; } }
+    @media (min-width: 992px) {
+      .card-panel-profiles .card {
+        width: 25%; } }
+  .card-panel-profiles.card-panel-flush .card-double,
+  .card-panel-profiles .card-double {
     padding: 48px;
     padding: 3rem;
-    font-size: 19.2px;
-    font-size: 1.2rem; }
-    @media (min-width: 544px) {
-      .card-panel-profiles .card .back {
-        padding: 1.5rem;
-        font-size: 1rem; } }
-    @media (min-width: 768px) {
-      .card-panel-profiles .card .back {
-        padding: 3rem;
-        font-size: 1.2rem; } }
+    width: 100%; }
+    .card-panel-profiles.card-panel-flush .card-double .card-title,
+    .card-panel-profiles .card-double .card-title {
+      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      text-transform: uppercase;
+      font-size: 32px;
+      font-size: 2rem; }
+    .card-panel-profiles.card-panel-flush .card-double .card-subtitle,
+    .card-panel-profiles .card-double .card-subtitle {
+      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      color: #171717;
+      font-size: 19.2px;
+      font-size: 1.2rem; }
+      @media (min-width: 1200px) {
+        .card-panel-profiles.card-panel-flush .card-double .card-subtitle,
+        .card-panel-profiles .card-double .card-subtitle {
+          max-width: 80%; } }
+      @media (min-width: 1712px) {
+        .card-panel-profiles.card-panel-flush .card-double .card-subtitle,
+        .card-panel-profiles .card-double .card-subtitle {
+          max-width: 66%; } }
     @media (min-width: 992px) {
-      .card-panel-profiles .card .back {
-        padding: 1.5rem;
-        font-size: 1rem; } }
-    @media (min-width: 1712px) {
-      .card-panel-profiles .card .back {
+      .card-panel-profiles.card-panel-flush .card-double,
+      .card-panel-profiles .card-double {
+        width: 50%;
         padding: 3rem;
-        font-size: 1.2rem; } }
-    .card-panel-profiles .card .back a {
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      color: #ce9716; }
-  @media (min-width: 544px) {
-    .card-panel-profiles .card {
-      width: 50%; } }
-  @media (min-width: 992px) {
-    .card-panel-profiles .card {
-      width: 25%; } }
-
-.card-panel-profiles .card-double {
-  padding: 48px;
-  padding: 3rem;
-  width: 100%; }
-  .card-panel-profiles .card-double .card-title {
-    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
-    text-transform: uppercase;
+        position: absolute; } }
+  .card-panel-profiles a.card-double:after {
+    position: absolute;
+    top: 50%;
+    top: calc(50% - 1rem);
+    right: 16px;
+    right: 1rem;
     font-size: 32px;
-    font-size: 2rem; }
-  .card-panel-profiles .card-double .card-subtitle {
-    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
-    color: #171717;
-    font-size: 19.2px;
-    font-size: 1.2rem; }
-    @media (min-width: 1200px) {
-      .card-panel-profiles .card-double .card-subtitle {
-        max-width: 80%; } }
-    @media (min-width: 1712px) {
-      .card-panel-profiles .card-double .card-subtitle {
-        max-width: 66%; } }
-  @media (min-width: 992px) {
-    .card-panel-profiles .card-double {
-      width: 50%;
-      padding: 1.5rem; } }
-  @media (min-width: 992px) {
-    .card-panel-profiles .card-double {
-      padding: 3rem; } }
-
-.card-panel-profiles a.card-double:after {
-  position: absolute;
-  top: 50%;
-  top: calc(50% - 1rem);
-  right: 16px;
-  right: 1rem;
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 32px;
-  line-height: 2rem;
-  content: "";
-  font-family: "kentfont", sans-serif;
-  color: #05345C; }
+    font-size: 2rem;
+    line-height: 32px;
+    line-height: 2rem;
+    content: "";
+    font-family: "kentfont", sans-serif;
+    color: #05345C; }
+  .card-panel-profiles .kent-slider {
+    clear: both; }
+    @media (min-width: 992px) {
+      .card-panel-profiles .kent-slider {
+        clear: none; } }
 
 .card.card-overlay {
   margin-top: 41.6px;
@@ -9805,7 +9821,8 @@ blockquote.pull-quote {
   text-align: center;
   list-style: none;
   width: 100%;
-  margin-bottom: 0; }
+  margin: 0;
+  padding: 0; }
   .kent-slider .kent-slider-dots li {
     display: inline-block;
     padding: 0; }

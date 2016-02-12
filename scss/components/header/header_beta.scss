@@ -56,3 +56,11 @@ button.beta-toggler{
 		padding: .1rem .5rem;
 	}
 }
+
+@include media-breakpoint-up(md){
+	body.show-global-search{
+		button.beta-toggler{
+			visibility: hidden;
+		}
+	}
+}
