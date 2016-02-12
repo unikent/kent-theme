@@ -33,6 +33,7 @@
 			height: 3rem;
 			top:0;
 			line-height: 3rem;
+			line-height: calc(3rem); // IE11 workaround
 			text-align: center;
 			font-size: 3rem;
 			transition: color .3s ease-in-out;
@@ -89,6 +90,7 @@
 					height: 1rem;
 					top:0;
 					line-height: 1rem;
+					line-height: calc(1rem); // IE11 workaround
 					text-align: center;
 					font-size: 0.9rem;
 					content: $kf-circle;

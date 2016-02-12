@@ -582,6 +582,7 @@
 			right: 1rem;
 			font-size: 2rem;
 			line-height: 2rem;
+			line-height: calc(2rem); // IE11 workaround
 			content: $kf-angle-right;
 			font-family: $font-family-kentfont;
 			color: $brand-primary;
