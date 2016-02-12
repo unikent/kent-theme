@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
-		<title>{{{title}}}</title>
+		<title>Pattern Library</title>
 
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,21 +12,21 @@
 		<meta name="msapplication-TileColor" content="#ffffff"/>
 		<meta name="msapplication-TileImage" content="https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif" />
 
-					<meta name="title" content="{{{title}}}" />
+					<meta name="title" content="Pattern Library" />
 		
 		<!-- Schema.org markup for Google+ -->
-		<meta itemprop="name" content="{{{title}}}" />
+		<meta itemprop="name" content="Pattern Library" />
 		<meta itemprop="image" content="https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif" />
 		
 		<!-- Twitter Card data -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:site" content="@unikent" />
-		<meta name="twitter:title" content="{{{title}}}" />
+		<meta name="twitter:title" content="Pattern Library" />
 		<meta name="twitter:creator" content="@unikent" />
 		<meta name="twitter:image:src" content="https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif" />
 		
 		<!-- Open Graph data -->
-		<meta property="og:title" content="{{{title}}}" />
+		<meta property="og:title" content="Pattern Library" />
 		<meta property="og:type" content="website" />
 		<meta property="og:image" content="https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif" />
 		<meta property="og:site_name" content="The University of Kent" />
@@ -147,37 +147,44 @@
 					</form>
 				</div>
 			</section>
-							<section class="departmental-nav" id="section_menu">
-					<header>{{{title}}}</header>
+							<section class="departmental-nav slim" id="section_menu">
+					<header>Pattern Library</header>
 					<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
 					<nav class="navbar-menu" id="navbar-menu" role="menu">
-						{{> menu}}
+						<a href="//beta.kent.ac.uk/patterns/index.html">Home</a>
+						<a href="//beta.kent.ac.uk/patterns/principles.html">Guiding Principles</a>
+						<a href="//beta.kent.ac.uk/patterns/technical.html">Technical Documentation</a>
 					</nav>
 				</section>
 					</header>
 
 		<main id="main_content" class=" content-page">
-{{>breadcrumb}}
-<div class="content-header">
-	<h1 class="">{{sub_title}}</h1>
-</div>
-<div class="content-container">
+	<nav class="breadcrumb">
+		<a href="//beta.kent.ac.uk/patterns//index.html">Home</a>
+		<a href="//beta.kent.ac.uk/patterns//index.html"></a>
+		<span>Guiding Principles</span>
+	</nav>	<div class="content-header">
+		<h1 class="">Guiding Principles</h1>
+	</div>
+	<div class="content-container">
 
-	{{{contents}}}
+		<aside class="content-sidebar">
+			<nav>
+			<h3></h3>
+			<ul class="list-unstyled">
+			</ul>
+			</nav>
+		</aside>
+		<p class="lead"></p>
 
-	<ul>
-		{{#each navs.all}}
-		{{#ifCond file.section '==' @root.section }}
-		{{#each children}}
-		{{> menu_item}}
-		{{/each}}
-		{{/ifCond}}
-		{{/each}}
-	</ul>
+		<nav class="jump-links">
+			<p class="h4">On this page</p>
+		</nav>
+		
 
-</div>
-<br>
-<br>
+	</div>
+		<br>
+		<br>
 		</main>
 		<footer class="global-footer">
 			<section class="global-footer-top">

@@ -139,3 +139,24 @@
 		font-size:0.9rem;
 	}
 }
+
+
+.jump-links{
+	padding: 1rem;
+	background: $brand-primary-tint;
+	overflow: hidden;
+
+	a{
+		display: block;
+		@include media-breakpoint-up(md){
+			width: 50%;
+			float: left;
+		}
+		&:before{
+			font-family: $font-family-kentfont;
+			content: $kf-caret-down;
+			padding-right: .5rem;
+			font-size: 0.9rem;
+		}
+	}
+}

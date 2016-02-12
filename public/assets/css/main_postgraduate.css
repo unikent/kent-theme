@@ -6913,6 +6913,25 @@ select {
     font-size: 14.4px;
     font-size: 0.9rem; }
 
+.jump-links {
+  padding: 16px;
+  padding: 1rem;
+  background: #E0D4D4;
+  overflow: hidden; }
+  .jump-links a {
+    display: block; }
+    @media (min-width: 768px) {
+      .jump-links a {
+        width: 50%;
+        float: left; } }
+    .jump-links a:before {
+      font-family: "kentfont", sans-serif;
+      content: "";
+      padding-right: 8px;
+      padding-right: .5rem;
+      font-size: 14.4px;
+      font-size: 0.9rem; }
+
 .audience-bar {
   background-color: #671115;
   color: #fff;
@@ -7652,6 +7671,10 @@ button.beta-toggler {
       left: 9rem;
       font-size: 0.8rem;
       padding: .1rem .5rem; } }
+
+@media (min-width: 768px) {
+  body.show-global-search button.beta-toggler {
+    visibility: hidden; } }
 
 .panel.panel-primary-tint {
   background: #E0D4D4; }

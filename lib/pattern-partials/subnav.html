@@ -1,0 +1,12 @@
+<aside class="content-sidebar">
+	<nav>
+	<h3>{{lookup section_names section}}</h3>
+	<ul class="list-unstyled">
+		{{#with (lookup navs section)}}
+		{{#each this.[0].children.[0].children}}
+		<li><a href="{{@root.docsroot}}{{path}}">{{file.sub_title}}</a></li>
+		{{/each}}
+		{{/with}}
+	</ul>
+	</nav>
+</aside>
