@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-sm-4">
+		<h2>Core Elements</h2>
+		<ul class="list-unstyled">
+			{{#each navs.core_elements.[0].children.[0].children}}
+			<li><a href="{{@root.docsroot}}{{path}}">{{file.sub_title}}</a></li>
+			{{/each}}
+		</ul>
+	</div>
+	<div class="col-sm-4">
+		<h2>Featured Content</h2>
+		<ul class="list-unstyled">
+			{{#each navs.featured_content.[0].children.[0].children}}
+			<li><a href="{{@root.docsroot}}{{path}}">{{file.sub_title}}</a></li>
+			{{/each}}
+		</ul>
+	</div>
+	<div class="col-sm-4">
+		<h2>Page Types</h2>
+		<ul class="list-unstyled">
+			{{#each navs.page_types.[0].children.[0].children}}
+			<li><a href="{{@root.docsroot}}{{path}}">{{file.sub_title}}</a></li>
+			{{/each}}
+		</ul>
+	</div>
+</div>
