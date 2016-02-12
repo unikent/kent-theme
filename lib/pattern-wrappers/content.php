@@ -29,10 +29,10 @@ KentThemeHelper::header(array(
 		<p class="lead">{{lead}}</p>
 
 		{{>page_nav}}
+	</div>
 
 		{{{contents}}}
 
-	</div>
 		<br>
 		<br>
 <?php KentThemeHelper::footer(); ?>
