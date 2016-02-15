@@ -388,6 +388,9 @@
 				.form-group {
 					position: absolute;
 					margin: 0.25rem 1rem 0 8rem;
+
+					width: calc(100% - 11rem);
+
 					.input-group {
 						padding-bottom: 0;
 					}

@@ -7273,7 +7273,8 @@ select {
           z-index: 10; }
         .show-global-menu .global-header .global-nav-search.in .form-group, .show-global-search .global-header .global-nav-search.in .form-group {
           position: absolute;
-          margin: 0.25rem 1rem 0 8rem; }
+          margin: 0.25rem 1rem 0 8rem;
+          width: calc(100% - 11rem); }
           .show-global-menu .global-header .global-nav-search.in .form-group .input-group, .show-global-search .global-header .global-nav-search.in .form-group .input-group {
             padding-bottom: 0; }
           .show-global-menu .global-header .global-nav-search.in .form-group .kf-search, .show-global-search .global-header .global-nav-search.in .form-group .kf-search {
