@@ -9308,22 +9308,19 @@ blockquote, .blockquote {
         margin-right: 1rem;
         margin-top: 1rem;
         margin-bottom: 1.5rem; } }
-  blockquote footer, .blockquote footer {
+  blockquote cite, .blockquote cite {
     display: inline-block;
     font-size: 14.4px;
-    font-size: 0.9rem; }
-    blockquote footer:before, .blockquote footer:before {
-      display: none; }
-    blockquote footer cite, .blockquote footer cite {
-      font-weight: bold;
-      color: #171717;
-      font-style: normal; }
-      blockquote footer cite span, .blockquote footer cite span {
-        font-weight: normal; }
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #171717;
+    font-style: normal; }
+    blockquote cite span, .blockquote cite span {
+      font-weight: normal; }
     @media (min-width: 768px) {
-      blockquote footer, .blockquote footer {
+      blockquote cite, .blockquote cite {
         font-size: 1rem; }
-        blockquote footer cite span, .blockquote footer cite span {
+        blockquote cite span, .blockquote cite span {
           display: block; } }
 
 main > blockquote {
