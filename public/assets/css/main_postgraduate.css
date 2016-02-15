@@ -4243,7 +4243,6 @@ button.close {
   .modal.fade .modal-dialog {
     transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
-    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%); }
   .modal.in .modal-dialog {
@@ -4537,7 +4536,6 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
-        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -5824,6 +5822,7 @@ h6, .h6 {
     font-size: 4.5rem;
     line-height: 72px;
     line-height: 4.5rem;
+    line-height: calc(4.5rem);
     width: 72px;
     width: 4.5rem;
     height: 72px;
@@ -5838,6 +5837,7 @@ h6, .h6 {
         top: calc(50% - 3.5rem);
         font-size: 7rem;
         line-height: 7rem;
+        line-height: calc(7rem);
         width: 7rem;
         height: 7rem; } }
   .video-launcher:hover:after {
@@ -5848,6 +5848,7 @@ h6, .h6 {
     font-size: 4.75rem;
     line-height: 76px;
     line-height: 4.75rem;
+    line-height: calc(4.75rem);
     width: 76px;
     width: 4.75rem;
     height: 76px;
@@ -5858,6 +5859,7 @@ h6, .h6 {
         top: calc(50% - 3.75rem);
         font-size: 7.5rem;
         line-height: 7.5rem;
+        line-height: calc(7.5rem);
         width: 7.5rem;
         height: 7.5rem; } }
 
@@ -6305,6 +6307,7 @@ figure.featured-image {
     font-size: 1.5rem;
     line-height: 24px;
     line-height: 1.5rem;
+    line-height: calc(1.5rem);
     width: 24px;
     width: 1.5rem;
     vertical-align: middle; }
@@ -6363,7 +6366,8 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
     .social-link i:before {
       font-family: "kentfont", sans-serif;
       line-height: 48px;
-      line-height: 3rem; }
+      line-height: 3rem;
+      line-height: calc(3rem); }
     .social-link i.kf-facebook:hover {
       color: #fff;
       background-color: #3b5998;
@@ -6492,7 +6496,8 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
     .content-social a:before, .card-panel .card-panel-header .card-panel-social a:before, .card-panel-flush .card-panel-header .card-panel-social a:before, .global-footer .footer-section-social a:before, .content-social .content-social-link:before, .card-panel .card-panel-header .card-panel-social .content-social-link:before, .card-panel-flush .card-panel-header .card-panel-social .content-social-link:before, .global-footer .footer-section-social .content-social-link:before {
       font-family: "kentfont", sans-serif;
       line-height: 48px;
-      line-height: 3rem; }
+      line-height: 3rem;
+      line-height: calc(3rem); }
     .content-social a:first-child, .card-panel .card-panel-header .card-panel-social a:first-child, .card-panel-flush .card-panel-header .card-panel-social a:first-child, .global-footer .footer-section-social a:first-child, .content-social .content-social-link:first-child, .card-panel .card-panel-header .card-panel-social .content-social-link:first-child, .card-panel-flush .card-panel-header .card-panel-social .content-social-link:first-child, .global-footer .footer-section-social .content-social-link:first-child {
       margin-left: 0; }
     .content-social a.kf-facebook:hover, .card-panel .card-panel-header .card-panel-social a.kf-facebook:hover, .card-panel-flush .card-panel-header .card-panel-social a.kf-facebook:hover, .global-footer .footer-section-social a.kf-facebook:hover, .content-social .content-social-link.kf-facebook:hover, .card-panel .card-panel-header .card-panel-social .content-social-link.kf-facebook:hover, .card-panel-flush .card-panel-header .card-panel-social .content-social-link.kf-facebook:hover, .global-footer .footer-section-social .content-social-link.kf-facebook:hover {
@@ -8652,6 +8657,7 @@ button.beta-toggler {
     font-size: 2rem;
     line-height: 32px;
     line-height: 2rem;
+    line-height: calc(2rem);
     content: "";
     font-family: "kentfont", sans-serif;
     color: #671115; }
@@ -8696,6 +8702,7 @@ button.beta-toggler {
         font-size: 2rem;
         line-height: 32px;
         line-height: 2rem;
+        line-height: calc(2rem);
         content: "";
         font-family: "kentfont", sans-serif; }
     .card.card-overlay .card-title-wrap .card-title {
@@ -9291,12 +9298,14 @@ blockquote, .blockquote {
     font-size: 1.3em;
     content: '\201C';
     line-height: 16px;
-    line-height: 1rem; }
+    line-height: 1rem;
+    line-height: calc(1rem); }
   blockquote > p:last-of-type:after, .blockquote > p:last-of-type:after {
     font-size: 1.3em;
     content: '\201D';
     line-height: 16px;
-    line-height: 1rem; }
+    line-height: 1rem;
+    line-height: calc(1rem); }
   blockquote > img, .blockquote > img {
     height: 160px;
     height: 10rem;
@@ -9375,12 +9384,14 @@ blockquote.social-quote {
       font-size: 1.3em;
       content: '\201C';
       line-height: 16px;
-      line-height: 1rem; }
+      line-height: 1rem;
+      line-height: calc(1rem); }
     blockquote.social-quote > a p:after {
       font-size: 1.3em;
       content: '\201D';
       line-height: 16px;
-      line-height: 1rem; }
+      line-height: 1rem;
+      line-height: calc(1rem); }
   blockquote.social-quote button {
     color: #aaa;
     background-image: none;
@@ -9413,7 +9424,8 @@ blockquote.social-quote {
     blockquote.social-quote button:before {
       font-family: "kentfont", sans-serif;
       line-height: 48px;
-      line-height: 3rem; }
+      line-height: 3rem;
+      line-height: calc(3rem); }
   blockquote.social-quote cite {
     font-size: 16px;
     font-size: 1rem;
@@ -9814,6 +9826,7 @@ blockquote.pull-quote {
     top: 0;
     line-height: 48px;
     line-height: 3rem;
+    line-height: calc(3rem);
     text-align: center;
     font-size: 48px;
     font-size: 3rem;
@@ -9868,6 +9881,7 @@ blockquote.pull-quote {
         top: 0;
         line-height: 16px;
         line-height: 1rem;
+        line-height: calc(1rem);
         text-align: center;
         font-size: 14.4px;
         font-size: 0.9rem;
