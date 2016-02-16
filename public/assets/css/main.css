@@ -5824,6 +5824,7 @@ h6, .h6 {
     font-size: 4.5rem;
     line-height: 72px;
     line-height: 4.5rem;
+    line-height: calc(4.5rem);
     width: 72px;
     width: 4.5rem;
     height: 72px;
@@ -5838,6 +5839,7 @@ h6, .h6 {
         top: calc(50% - 3.5rem);
         font-size: 7rem;
         line-height: 7rem;
+        line-height: calc(7rem);
         width: 7rem;
         height: 7rem; } }
   .video-launcher:hover:after {
@@ -5848,6 +5850,7 @@ h6, .h6 {
     font-size: 4.75rem;
     line-height: 76px;
     line-height: 4.75rem;
+    line-height: calc(4.75rem);
     width: 76px;
     width: 4.75rem;
     height: 76px;
@@ -5858,6 +5861,7 @@ h6, .h6 {
         top: calc(50% - 3.75rem);
         font-size: 7.5rem;
         line-height: 7.5rem;
+        line-height: calc(7.5rem);
         width: 7.5rem;
         height: 7.5rem; } }
 
@@ -6305,6 +6309,7 @@ figure.featured-image {
     font-size: 1.5rem;
     line-height: 24px;
     line-height: 1.5rem;
+    line-height: calc(1.5rem);
     width: 24px;
     width: 1.5rem;
     vertical-align: middle; }
@@ -6363,7 +6368,8 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
     .social-link i:before {
       font-family: "kentfont", sans-serif;
       line-height: 48px;
-      line-height: 3rem; }
+      line-height: 3rem;
+      line-height: calc(3rem); }
     .social-link i.kf-facebook:hover {
       color: #fff;
       background-color: #3b5998;
@@ -6492,7 +6498,8 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
     .content-social a:before, .card-panel .card-panel-header .card-panel-social a:before, .card-panel-flush .card-panel-header .card-panel-social a:before, .global-footer .footer-section-social a:before, .content-social .content-social-link:before, .card-panel .card-panel-header .card-panel-social .content-social-link:before, .card-panel-flush .card-panel-header .card-panel-social .content-social-link:before, .global-footer .footer-section-social .content-social-link:before {
       font-family: "kentfont", sans-serif;
       line-height: 48px;
-      line-height: 3rem; }
+      line-height: 3rem;
+      line-height: calc(3rem); }
     .content-social a:first-child, .card-panel .card-panel-header .card-panel-social a:first-child, .card-panel-flush .card-panel-header .card-panel-social a:first-child, .global-footer .footer-section-social a:first-child, .content-social .content-social-link:first-child, .card-panel .card-panel-header .card-panel-social .content-social-link:first-child, .card-panel-flush .card-panel-header .card-panel-social .content-social-link:first-child, .global-footer .footer-section-social .content-social-link:first-child {
       margin-left: 0; }
     .content-social a.kf-facebook:hover, .card-panel .card-panel-header .card-panel-social a.kf-facebook:hover, .card-panel-flush .card-panel-header .card-panel-social a.kf-facebook:hover, .global-footer .footer-section-social a.kf-facebook:hover, .content-social .content-social-link.kf-facebook:hover, .card-panel .card-panel-header .card-panel-social .content-social-link.kf-facebook:hover, .card-panel-flush .card-panel-header .card-panel-social .content-social-link.kf-facebook:hover, .global-footer .footer-section-social .content-social-link.kf-facebook:hover {
@@ -6913,6 +6920,25 @@ select {
     font-size: 14.4px;
     font-size: 0.9rem; }
 
+.jump-links {
+  padding: 16px;
+  padding: 1rem;
+  background: #e8ebf2;
+  overflow: hidden; }
+  .jump-links a {
+    display: block; }
+    @media (min-width: 768px) {
+      .jump-links a {
+        width: 50%;
+        float: left; } }
+    .jump-links a:before {
+      font-family: "kentfont", sans-serif;
+      content: "";
+      padding-right: 8px;
+      padding-right: .5rem;
+      font-size: 14.4px;
+      font-size: 0.9rem; }
+
 .audience-bar {
   background-color: #05345C;
   color: #fff;
@@ -7247,7 +7273,8 @@ select {
           z-index: 10; }
         .show-global-menu .global-header .global-nav-search.in .form-group, .show-global-search .global-header .global-nav-search.in .form-group {
           position: absolute;
-          margin: 0.25rem 1rem 0 8rem; }
+          margin: 0.25rem 1rem 0 8rem;
+          width: calc(100% - 11rem); }
           .show-global-menu .global-header .global-nav-search.in .form-group .input-group, .show-global-search .global-header .global-nav-search.in .form-group .input-group {
             padding-bottom: 0; }
           .show-global-menu .global-header .global-nav-search.in .form-group .kf-search, .show-global-search .global-header .global-nav-search.in .form-group .kf-search {
@@ -7652,6 +7679,10 @@ button.beta-toggler {
       left: 9rem;
       font-size: 0.8rem;
       padding: .1rem .5rem; } }
+
+@media (min-width: 768px) {
+  body.show-global-search button.beta-toggler {
+    visibility: hidden; } }
 
 .panel.panel-primary-tint {
   background: #e8ebf2; }
@@ -8533,98 +8564,111 @@ button.beta-toggler {
     .card-panel-flush.cards-backed .card {
       border: none; } }
 
-.card-panel-profiles .card {
-  float: left;
-  width: 100%; }
-  .card-panel-profiles .card .card-img {
-    max-width: none;
+.card-panel-profiles {
+  display: block; }
+  @media (min-width: 992px) {
+    .card-panel-profiles .kent-slider .card:first-child {
+      margin-left: 50%; } }
+  .card-panel-profiles .card {
+    float: left;
     width: 100%; }
-  .card-panel-profiles .card .card-title {
-    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
-    font-size: 24px;
-    font-size: 1.5rem; }
+    .card-panel-profiles .card .card-img {
+      max-width: none;
+      width: 100%; }
+    .card-panel-profiles .card .card-title {
+      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      font-size: 24px;
+      font-size: 1.5rem; }
+      @media (min-width: 544px) {
+        .card-panel-profiles .card .card-title {
+          font-size: 1.3rem; } }
+      @media (min-width: 768px) {
+        .card-panel-profiles .card .card-title {
+          font-size: 1.5rem; } }
+    .card-panel-profiles .card .card-subtitle {
+      font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      font-size: 1rem; }
+    .card-panel-profiles .card .back {
+      padding: 48px;
+      padding: 3rem;
+      font-size: 19.2px;
+      font-size: 1.2rem; }
+      @media (min-width: 544px) {
+        .card-panel-profiles .card .back {
+          padding: 1.5rem;
+          font-size: 1rem; } }
+      @media (min-width: 768px) {
+        .card-panel-profiles .card .back {
+          padding: 3rem;
+          font-size: 1.2rem; } }
+      @media (min-width: 992px) {
+        .card-panel-profiles .card .back {
+          padding: 1.5rem;
+          font-size: 1rem; } }
+      @media (min-width: 1712px) {
+        .card-panel-profiles .card .back {
+          padding: 3rem;
+          font-size: 1.2rem; } }
+      .card-panel-profiles .card .back a {
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        color: #ce9716; }
     @media (min-width: 544px) {
-      .card-panel-profiles .card .card-title {
-        font-size: 1.3rem; } }
-    @media (min-width: 768px) {
-      .card-panel-profiles .card .card-title {
-        font-size: 1.5rem; } }
-  .card-panel-profiles .card .card-subtitle {
-    font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-size: 1rem; }
-  .card-panel-profiles .card .back {
+      .card-panel-profiles .card {
+        width: 50%; } }
+    @media (min-width: 992px) {
+      .card-panel-profiles .card {
+        width: 25%; } }
+  .card-panel-profiles.card-panel-flush .card-double,
+  .card-panel-profiles .card-double {
     padding: 48px;
     padding: 3rem;
-    font-size: 19.2px;
-    font-size: 1.2rem; }
-    @media (min-width: 544px) {
-      .card-panel-profiles .card .back {
-        padding: 1.5rem;
-        font-size: 1rem; } }
-    @media (min-width: 768px) {
-      .card-panel-profiles .card .back {
-        padding: 3rem;
-        font-size: 1.2rem; } }
+    width: 100%; }
+    .card-panel-profiles.card-panel-flush .card-double .card-title,
+    .card-panel-profiles .card-double .card-title {
+      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      text-transform: uppercase;
+      font-size: 32px;
+      font-size: 2rem; }
+    .card-panel-profiles.card-panel-flush .card-double .card-subtitle,
+    .card-panel-profiles .card-double .card-subtitle {
+      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      color: #171717;
+      font-size: 19.2px;
+      font-size: 1.2rem; }
+      @media (min-width: 1200px) {
+        .card-panel-profiles.card-panel-flush .card-double .card-subtitle,
+        .card-panel-profiles .card-double .card-subtitle {
+          max-width: 80%; } }
+      @media (min-width: 1712px) {
+        .card-panel-profiles.card-panel-flush .card-double .card-subtitle,
+        .card-panel-profiles .card-double .card-subtitle {
+          max-width: 66%; } }
     @media (min-width: 992px) {
-      .card-panel-profiles .card .back {
-        padding: 1.5rem;
-        font-size: 1rem; } }
-    @media (min-width: 1712px) {
-      .card-panel-profiles .card .back {
+      .card-panel-profiles.card-panel-flush .card-double,
+      .card-panel-profiles .card-double {
+        width: 50%;
         padding: 3rem;
-        font-size: 1.2rem; } }
-    .card-panel-profiles .card .back a {
-      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      color: #ce9716; }
-  @media (min-width: 544px) {
-    .card-panel-profiles .card {
-      width: 50%; } }
-  @media (min-width: 992px) {
-    .card-panel-profiles .card {
-      width: 25%; } }
-
-.card-panel-profiles .card-double {
-  padding: 48px;
-  padding: 3rem;
-  width: 100%; }
-  .card-panel-profiles .card-double .card-title {
-    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
-    text-transform: uppercase;
+        position: absolute; } }
+  .card-panel-profiles a.card-double:after {
+    position: absolute;
+    top: 50%;
+    top: calc(50% - 1rem);
+    right: 16px;
+    right: 1rem;
     font-size: 32px;
-    font-size: 2rem; }
-  .card-panel-profiles .card-double .card-subtitle {
-    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
-    color: #171717;
-    font-size: 19.2px;
-    font-size: 1.2rem; }
-    @media (min-width: 1200px) {
-      .card-panel-profiles .card-double .card-subtitle {
-        max-width: 80%; } }
-    @media (min-width: 1712px) {
-      .card-panel-profiles .card-double .card-subtitle {
-        max-width: 66%; } }
-  @media (min-width: 992px) {
-    .card-panel-profiles .card-double {
-      width: 50%;
-      padding: 1.5rem; } }
-  @media (min-width: 992px) {
-    .card-panel-profiles .card-double {
-      padding: 3rem; } }
-
-.card-panel-profiles a.card-double:after {
-  position: absolute;
-  top: 50%;
-  top: calc(50% - 1rem);
-  right: 16px;
-  right: 1rem;
-  font-size: 32px;
-  font-size: 2rem;
-  line-height: 32px;
-  line-height: 2rem;
-  content: "";
-  font-family: "kentfont", sans-serif;
-  color: #05345C; }
+    font-size: 2rem;
+    line-height: 32px;
+    line-height: 2rem;
+    line-height: calc(2rem);
+    content: "";
+    font-family: "kentfont", sans-serif;
+    color: #05345C; }
+  .card-panel-profiles .kent-slider {
+    clear: both; }
+    @media (min-width: 992px) {
+      .card-panel-profiles .kent-slider {
+        clear: none; } }
 
 .card.card-overlay {
   margin-top: 41.6px;
@@ -8661,6 +8705,7 @@ button.beta-toggler {
         font-size: 2rem;
         line-height: 32px;
         line-height: 2rem;
+        line-height: calc(2rem);
         content: "";
         font-family: "kentfont", sans-serif; }
     .card.card-overlay .card-title-wrap .card-title {
@@ -9256,12 +9301,14 @@ blockquote, .blockquote {
     font-size: 1.3em;
     content: '\201C';
     line-height: 16px;
-    line-height: 1rem; }
+    line-height: 1rem;
+    line-height: calc(1rem); }
   blockquote > p:last-of-type:after, .blockquote > p:last-of-type:after {
     font-size: 1.3em;
     content: '\201D';
     line-height: 16px;
-    line-height: 1rem; }
+    line-height: 1rem;
+    line-height: calc(1rem); }
   blockquote > img, .blockquote > img {
     height: 160px;
     height: 10rem;
@@ -9273,22 +9320,22 @@ blockquote, .blockquote {
         margin-right: 1rem;
         margin-top: 1rem;
         margin-bottom: 1.5rem; } }
-  blockquote footer, .blockquote footer {
+  blockquote cite, .blockquote cite {
     display: inline-block;
     font-size: 14.4px;
-    font-size: 0.9rem; }
-    blockquote footer:before, .blockquote footer:before {
-      display: none; }
-    blockquote footer cite, .blockquote footer cite {
-      font-weight: bold;
-      color: #171717;
-      font-style: normal; }
-      blockquote footer cite span, .blockquote footer cite span {
-        font-weight: normal; }
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #171717;
+    font-style: normal; }
+    blockquote cite span, .blockquote cite span {
+      font-weight: normal; }
+    blockquote cite a, .blockquote cite a {
+      font-weight: normal;
+      display: block; }
     @media (min-width: 768px) {
-      blockquote footer, .blockquote footer {
+      blockquote cite, .blockquote cite {
         font-size: 1rem; }
-        blockquote footer cite span, .blockquote footer cite span {
+        blockquote cite span, .blockquote cite span {
           display: block; } }
 
 main > blockquote {
@@ -9343,12 +9390,14 @@ blockquote.social-quote {
       font-size: 1.3em;
       content: '\201C';
       line-height: 16px;
-      line-height: 1rem; }
+      line-height: 1rem;
+      line-height: calc(1rem); }
     blockquote.social-quote > a p:after {
       font-size: 1.3em;
       content: '\201D';
       line-height: 16px;
-      line-height: 1rem; }
+      line-height: 1rem;
+      line-height: calc(1rem); }
   blockquote.social-quote button {
     color: #aaa;
     background-image: none;
@@ -9381,7 +9430,8 @@ blockquote.social-quote {
     blockquote.social-quote button:before {
       font-family: "kentfont", sans-serif;
       line-height: 48px;
-      line-height: 3rem; }
+      line-height: 3rem;
+      line-height: calc(3rem); }
   blockquote.social-quote cite {
     font-size: 16px;
     font-size: 1rem;
@@ -9782,6 +9832,7 @@ blockquote.pull-quote {
     top: 0;
     line-height: 48px;
     line-height: 3rem;
+    line-height: calc(3rem);
     text-align: center;
     font-size: 48px;
     font-size: 3rem;
@@ -9805,7 +9856,8 @@ blockquote.pull-quote {
   text-align: center;
   list-style: none;
   width: 100%;
-  margin-bottom: 0; }
+  margin: 0;
+  padding: 0; }
   .kent-slider .kent-slider-dots li {
     display: inline-block;
     padding: 0; }
@@ -9835,6 +9887,7 @@ blockquote.pull-quote {
         top: 0;
         line-height: 16px;
         line-height: 1rem;
+        line-height: calc(1rem);
         text-align: center;
         font-size: 14.4px;
         font-size: 0.9rem;

@@ -51,7 +51,7 @@
 		<section class="beta-bar navbar">
 			<p><span class="beta-bar-beta">BETA</span></p>
 
-			<p>We're testing <a href="https://blogs.kent.ac.uk/webdev/2015/12/04/beta-kent/">a new design</a>.</p>
+			<p>We're testing <a href="<?php echo isset($beta_bar['about_url']) ? $beta_bar['about_url'] : 'https://blogs.kent.ac.uk/webdev/2015/12/04/beta-kent/' ?>">a new design</a>.</p>
 			<p>It may not be complete or work as intended.</p>
 			<p>
 				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="btn btn-link">Go to original site</a>

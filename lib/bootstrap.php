@@ -12,7 +12,7 @@ if(file_exists(dirname(dirname(__FILE__)."/.env"))){
 	foreach($lines as $line){
 		$parts = explode('=',$line);
 		if(count($parts)===2){
-			define($parts[0],$parts[1]);
+			defined($parts[0])?:define($parts[0],$parts[1]);
 		}
 	}
 }

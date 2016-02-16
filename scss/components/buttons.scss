@@ -58,6 +58,7 @@
 	&:before{
 		font-family: $font-family-kentfont;
 		line-height: 3rem;
+		line-height: calc(3rem); // for reasons unknown to science, this means IE11 will now actually listen to the rem value
 	}
 }
 
@@ -124,6 +125,7 @@
 	&:before, &[class^="kf-"]:before, &[class*=" kf-"]:before{
 		font-size: 1.5rem;
 		line-height: 1.5rem;
+		line-height: calc(1.5rem); // IE11 workaround
 		width:1.5rem;
 		vertical-align: middle;
 	}

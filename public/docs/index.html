@@ -1,13 +1,3 @@
-<br />
-<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
-<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Constant WEBROOT already defined in D:\xampp-5.6.11\htdocs\kent-theme\lib\bootstrap.php on line <i>15</i></th></tr>
-<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
-<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
-<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0000</td><td bgcolor='#eeeeec' align='right'>129336</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='D:\xampp-5.6.11\htdocs\kent-theme\lib\pattern-wrappers\home.php' bgcolor='#eeeeec'>..\home.php<b>:</b>0</td></tr>
-<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>133536</td><td bgcolor='#eeeeec'>include( <font color='#00bb00'>'D:\xampp-5.6.11\htdocs\kent-theme\lib\bootstrap.php'</font> )</td><td title='D:\xampp-5.6.11\htdocs\kent-theme\lib\pattern-wrappers\home.php' bgcolor='#eeeeec'>..\home.php<b>:</b>7</td></tr>
-<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>134608</td><td bgcolor='#eeeeec'><a href='http://www.php.net/function.define' target='_new'>define</a>
-(  )</td><td title='D:\xampp-5.6.11\htdocs\kent-theme\lib\bootstrap.php' bgcolor='#eeeeec'>..\bootstrap.php<b>:</b>15</td></tr>
-</table></font>
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
@@ -101,7 +91,7 @@
 				</a>
 				<a href="//www.kent.ac.uk/courses/postgraduate/" role="menuitem">
 					<span class="global-nav-link-title">Postgraduate</span>
-					<span class="global-nav-link-desc">Programmes supported by a stimulating support culture</span>
+					<span class="global-nav-link-desc">Programmes supported by a stimulating academic culture</span>
 				</a>
 				<a href="//www.kent.ac.uk/internationalstudent/study-in-kent/" role="menuitem">
 					<span class="global-nav-link-title">International</span>
@@ -161,9 +151,9 @@
 					<header>Pattern Library</header>
 					<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
 					<nav class="navbar-menu" id="navbar-menu" role="menu">
-						<a href="//beta.kent.ac.uk/patterns/base_elements.html">Base Elements</a>
-						<a href="//beta.kent.ac.uk/patterns/form_actions.html">Forms &amp; Actions</a>
-						<a href="//beta.kent.ac.uk/patterns/demo.html">Demo</a>
+						<a href="//beta.kent.ac.uk/patterns/index.html">Home</a>
+						<a href="//beta.kent.ac.uk/patterns/principles.html">Guiding Principles</a>
+						<a href="//beta.kent.ac.uk/patterns/technical.html">Technical Documentation</a>
 					</nav>
 				</section>
 					</header>
@@ -171,13 +161,35 @@
 		<main id="main_content" class=" content-page">
 	<br>
 	<br>
-	<div class="content-header">
-		<h1 class="">Welcome to the Kent Theme Pattern Library</h1>
-	</div>
-	<div class="content-container">
-	
-
-	<div>
+	<div class="container">
+	<div class="row">
+		<div class="col-sm-4">
+			<h2>Core Elements</h2>
+			<ul class="list-unstyled">
+				<li><a href="//beta.kent.ac.uk/patterns/sections/core_elements/grid_and_page_structure.html">Grid &amp; Page Structure</a></li>
+				<li><a href="//beta.kent.ac.uk/patterns/sections/core_elements/colours.html">Colours</a></li>
+				<li><a href="//beta.kent.ac.uk/patterns/sections/core_elements/typographic_elements.html">Typographic elements</a></li>
+				<li><a href="//beta.kent.ac.uk/patterns/sections/core_elements/forms_buttons.html">Forms and buttons</a></li>
+				<li><a href="//beta.kent.ac.uk/patterns/sections/core_elements/navigation.html">Navigation</a></li>
+				<li><a href="//beta.kent.ac.uk/patterns/sections/core_elements/images_video.html">Images and video</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-4">
+			<h2>Featured Content</h2>
+			<ul class="list-unstyled">
+				<li><a href="//beta.kent.ac.uk/patterns/sections/featured_content/feature_panels.html">Feature panels</a></li>
+				<li><a href="//beta.kent.ac.uk/patterns/sections/featured_content/feature_layouts.html">Feature layouts</a></li>
+				<li><a href="//beta.kent.ac.uk/patterns/sections/featured_content/summary_listings.html">Summary listings</a></li>
+			</ul>
+		</div>
+		<div class="col-sm-4">
+			<h2>Page Types</h2>
+			<ul class="list-unstyled">
+				<li><a href="//beta.kent.ac.uk/patterns/sections/page_types/landing_page.html">Landing Page</a></li>
+				<li><a href="//beta.kent.ac.uk/patterns/sections/page_types/content_page.html">Content Page</a></li>
+			</ul>
+		</div>
+	</div>	<div>
 <br>
 <br>
 		</main>
@@ -258,6 +270,8 @@
 								<a href="//www.kent.ac.uk/accommodation/">Accommodation and facilities</a>
 								<a href="//www.kent.ac.uk/maps/">Maps and directions</a>
 								<a href="//www.kent.ac.uk/departments/academic/">Departments and schools</a>
+								<a href="/news/">News Centre</a>
+								<a href="//www.kent.ac.uk/jobs/">Jobs and vacancies</a>
 							</nav>
 							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-research" aria-controls="footer-research" data-parent=".global-footer">Research</h5>
 							<nav id="footer-research" class="footer-section footer-section-links collapse-sm-down">
@@ -291,7 +305,7 @@
 						<div class="col-md-3">
 							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-whats-on" aria-controls="footer-whats-on" data-parent=".global-footer">What's on?</h5>
 							<nav id="footer-whats-on" class="footer-section footer-section-links collapse-sm-down">
-								<a href="/news/">News Centre</a>
+								
 								<a href="//www.kent.ac.uk/calendar/">Events calendar</a>
 								<a href="//www.thegulbenkian.co.uk">Gulbenkian - theatre and cinema</a>
 								<a href="//www.kent.ac.uk/music/whatson.html">Coyler-Fergusson - music at Kent</a>

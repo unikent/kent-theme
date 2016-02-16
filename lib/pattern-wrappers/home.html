@@ -1,13 +1,3 @@
-<br />
-<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
-<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Constant WEBROOT already defined in D:\xampp-5.6.11\htdocs\kent-theme\lib\bootstrap.php on line <i>15</i></th></tr>
-<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
-<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
-<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0000</td><td bgcolor='#eeeeec' align='right'>129336</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='D:\xampp-5.6.11\htdocs\kent-theme\lib\pattern-wrappers\home.php' bgcolor='#eeeeec'>..\home.php<b>:</b>0</td></tr>
-<tr><td bgcolor='#eeeeec' align='center'>2</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>133536</td><td bgcolor='#eeeeec'>include( <font color='#00bb00'>'D:\xampp-5.6.11\htdocs\kent-theme\lib\bootstrap.php'</font> )</td><td title='D:\xampp-5.6.11\htdocs\kent-theme\lib\pattern-wrappers\home.php' bgcolor='#eeeeec'>..\home.php<b>:</b>7</td></tr>
-<tr><td bgcolor='#eeeeec' align='center'>3</td><td bgcolor='#eeeeec' align='center'>0.0010</td><td bgcolor='#eeeeec' align='right'>134608</td><td bgcolor='#eeeeec'><a href='http://www.php.net/function.define' target='_new'>define</a>
-(  )</td><td title='D:\xampp-5.6.11\htdocs\kent-theme\lib\bootstrap.php' bgcolor='#eeeeec'>..\bootstrap.php<b>:</b>15</td></tr>
-</table></font>
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
@@ -101,7 +91,7 @@
 				</a>
 				<a href="//www.kent.ac.uk/courses/postgraduate/" role="menuitem">
 					<span class="global-nav-link-title">Postgraduate</span>
-					<span class="global-nav-link-desc">Programmes supported by a stimulating support culture</span>
+					<span class="global-nav-link-desc">Programmes supported by a stimulating academic culture</span>
 				</a>
 				<a href="//www.kent.ac.uk/internationalstudent/study-in-kent/" role="menuitem">
 					<span class="global-nav-link-title">International</span>
@@ -169,11 +159,8 @@
 		<main id="main_content" class=" content-page">
 	<br>
 	<br>
-	<div class="content-header">
-		<h1 class="">{{sub_title}}</h1>
-	</div>
-	<div class="content-container">
-	{{{contents}}}
+	<div class="container">
+	{{>home_nav}}
 	<div>
 <br>
 <br>
@@ -255,6 +242,8 @@
 								<a href="//www.kent.ac.uk/accommodation/">Accommodation and facilities</a>
 								<a href="//www.kent.ac.uk/maps/">Maps and directions</a>
 								<a href="//www.kent.ac.uk/departments/academic/">Departments and schools</a>
+								<a href="/news/">News Centre</a>
+								<a href="//www.kent.ac.uk/jobs/">Jobs and vacancies</a>
 							</nav>
 							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-research" aria-controls="footer-research" data-parent=".global-footer">Research</h5>
 							<nav id="footer-research" class="footer-section footer-section-links collapse-sm-down">
@@ -288,7 +277,7 @@
 						<div class="col-md-3">
 							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-whats-on" aria-controls="footer-whats-on" data-parent=".global-footer">What's on?</h5>
 							<nav id="footer-whats-on" class="footer-section footer-section-links collapse-sm-down">
-								<a href="/news/">News Centre</a>
+								
 								<a href="//www.kent.ac.uk/calendar/">Events calendar</a>
 								<a href="//www.thegulbenkian.co.uk">Gulbenkian - theatre and cinema</a>
 								<a href="//www.kent.ac.uk/music/whatson.html">Coyler-Fergusson - music at Kent</a>

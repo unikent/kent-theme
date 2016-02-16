@@ -20,11 +20,8 @@ KentThemeHelper::header(array(
 ?>
 	<br>
 	<br>
-	<div class="content-header">
-		<h1 class="">{{sub_title}}</h1>
-	</div>
-	<div class="content-container">
-	{{{contents}}}
+	<div class="container">
+	{{>home_nav}}
 	<div>
 <br>
 <br>

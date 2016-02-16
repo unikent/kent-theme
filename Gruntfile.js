@@ -148,7 +148,7 @@ module.exports = function(grunt) {
 				tasks: [ 'sass', 'postcss' ]
 			},
 			patterns: {
-				files: ['patterns/**/ *.html'],
+				files: ['patterns/**/*.html'],
 				tasks: ['patterns_local']
 			}
 		},
@@ -236,9 +236,18 @@ module.exports = function(grunt) {
 					metadata: {
 						docsroot: '//beta.kent.ac.uk/patterns/',
 						title: 'Pattern Library',
-						description: 'A Pattern Library for the Kent Theme'
+						description: 'A Pattern Library for the Kent Theme',
+						section_names: {
+							core_elements:'Core Elements',
+							featured_content:'Featured Content',
+							page_types:'Page Types'
+						}
 					},
 					plugins: {
+						'metalsmith-headings-identifier':{
+							linkTemplate:"<!-- %s -->"
+						},
+						'metalsmith-headings':{},
 						'metalsmith-navigation':{
 							"navConfigs": {
 								header:{
@@ -249,6 +258,21 @@ module.exports = function(grunt) {
 									includeDirs: true,
 									filterProperty:false,
 									sortBy:'sub_title'
+								},
+								core_elements:{
+									includeDirs: true,
+									filterProperty:'section',
+									sortBy:'nav_order'
+								},
+								featured_content:{
+									includeDirs: true,
+									filterProperty:'section',
+									sortBy:'nav_order'
+								},
+								page_types:{
+									includeDirs: true,
+									filterProperty:'section',
+									sortBy:'nav_order'
 								}
 							},
 							"navSettings": {}
@@ -256,15 +280,15 @@ module.exports = function(grunt) {
 						'metalsmith-layouts': {
 							engine: 'handlebars',
 							directory:'lib/pattern-wrappers',
-							default:'basic.html',
+							default:'content.html',
 							partials:'lib/pattern-partials'
-						},
-						'metalsmith-text-replace':{
-							'**/**':{
-								find: "../../examples/",
-								replace: "../"
-							}
 						}
+						//'metalsmith-text-replace':{
+						//	'**/**':{
+						//		find: "../../examples/",
+						//		replace: "../"
+						//	}
+						//}
 					}
 				},
 				src: 'patterns',
@@ -275,9 +299,18 @@ module.exports = function(grunt) {
 					metadata: {
 						docsroot: process.env.WEBROOT + 'devdocs/',
 						title: 'Pattern Library',
-						description: 'A Pattern Library for the Kent Theme'
+						description: 'A Pattern Library for the Kent Theme',
+						section_names: {
+							core_elements:'Core Elements',
+							featured_content:'Featured Content',
+							page_types:'Page Types'
+						}
 					},
 					plugins: {
+						'metalsmith-headings-identifier':{
+							linkTemplate:"<!-- %s -->"
+						},
+						'metalsmith-headings':{},
 						'metalsmith-navigation':{
 							"navConfigs": {
 								header:{
@@ -288,6 +321,21 @@ module.exports = function(grunt) {
 									includeDirs: true,
 									filterProperty:false,
 									sortBy:'sub_title'
+								},
+								core_elements:{
+									includeDirs: true,
+									filterProperty:'section',
+									sortBy:'nav_order'
+								},
+								featured_content:{
+									includeDirs: true,
+									filterProperty:'section',
+									sortBy:'nav_order'
+								},
+								page_types:{
+									includeDirs: true,
+									filterProperty:'section',
+									sortBy:'nav_order'
 								}
 							},
 							"navSettings": {}
@@ -295,7 +343,7 @@ module.exports = function(grunt) {
 						'metalsmith-layouts': {
 							engine: 'handlebars',
 							directory:'lib/pattern-wrappers/dev',
-							default:'basic.html',
+							default:'content.html',
 							partials:'lib/pattern-partials'
 						}
 

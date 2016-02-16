@@ -483,6 +483,16 @@
 
 .card-panel-profiles{
 
+	display: block;
+
+	.kent-slider .card{
+		@include media-breakpoint-up(lg) {
+			&:first-child{
+				margin-left:50%;
+			}
+		}
+	}
+
 	.card{
 		float: left;
 		width: 100%;
@@ -543,6 +553,7 @@
 			@include make-col-span(3);
 		}
 	}
+	&.card-panel-flush .card-double,
 	.card-double{
 		padding:3rem;
 		@include make-col-span(12);
@@ -568,10 +579,8 @@
 
 		@include media-breakpoint-up(lg){
 			@include make-col-span(6);
-			padding: 1.5rem;
-		}
-		@include media-breakpoint-up(lg){
 			padding: 3rem;
+			position: absolute;
 		}
 	}
 	a.card-double{
@@ -582,9 +591,17 @@
 			right: 1rem;
 			font-size: 2rem;
 			line-height: 2rem;
+			line-height: calc(2rem); // IE11 workaround
 			content: $kf-angle-right;
 			font-family: $font-family-kentfont;
 			color: $brand-primary;
+		}
+	}
+
+	.kent-slider{
+		clear:both;
+		@include media-breakpoint-up(lg){
+			clear: none;
 		}
 	}
 }

@@ -1,9 +1,6 @@
 <nav class="breadcrumb">
-	<a href="{{@root.docsroot}}/index.html">Home</a>
-	{{#each breadcrumb_path}}
-		{{#if file}}
-		<a href="{{@root.docsroot}}{{path}}">{{file.sub_title}}</a>
-		{{/if}}
-	{{/each}}
+	<a href="/">University of Kent</a>
+	<a href="{{@root.docsroot}}/index.html">Pattern library</a>
+	<a href="{{@root.docsroot}}/index.html">{{lookup section_names @root.section}}</a>
 	<span>{{@root.sub_title}}</span>
 </nav>
