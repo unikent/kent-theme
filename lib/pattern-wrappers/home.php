@@ -21,11 +21,6 @@ KentThemeHelper::header(array(
 	<br>
 	<br>
 	<div class="container">
-		<h1 class="">Welcome to the Kent Theme Pattern Library</h1>
-	</div>
-	<br>
-	<br>
-	<div class="container">
 	{{>home_nav}}
 	<div>
 <br>
