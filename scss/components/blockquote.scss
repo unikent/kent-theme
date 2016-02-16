@@ -68,7 +68,10 @@ blockquote, .blockquote {
 		span {
 			font-weight: normal;
 		}
-
+		a{
+			font-weight: normal;
+			display: block;
+		}
 		@include media-breakpoint-up(md) {
 			font-size: 1rem;
 

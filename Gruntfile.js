@@ -236,7 +236,12 @@ module.exports = function(grunt) {
 					metadata: {
 						docsroot: '//beta.kent.ac.uk/patterns/',
 						title: 'Pattern Library',
-						description: 'A Pattern Library for the Kent Theme'
+						description: 'A Pattern Library for the Kent Theme',
+						section_names: {
+							core_elements:'Core Elements',
+							featured_content:'Featured Content',
+							page_types:'Page Types'
+						}
 					},
 					plugins: {
 						'metalsmith-headings-identifier':{

@@ -9329,6 +9329,9 @@ blockquote, .blockquote {
     font-style: normal; }
     blockquote cite span, .blockquote cite span {
       font-weight: normal; }
+    blockquote cite a, .blockquote cite a {
+      font-weight: normal;
+      display: block; }
     @media (min-width: 768px) {
       blockquote cite, .blockquote cite {
         font-size: 1rem; }
