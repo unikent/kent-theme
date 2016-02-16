@@ -32,6 +32,7 @@ blockquote, .blockquote {
 			font-size:1.3em;
 			content: '\201C';
 			line-height:1rem;
+			line-height: calc(1rem); // IE11 workaround
 		}
 	}
 	& > p:last-of-type{
@@ -39,6 +40,7 @@ blockquote, .blockquote {
 			font-size:1.3em;
 			content: '\201D';
 			line-height:1rem;
+			line-height: calc(1rem); // IE11 workaround
 		}
 	}
 
@@ -54,35 +56,27 @@ blockquote, .blockquote {
 			margin-bottom:1.5rem;
 		}
 	}
-	footer {
-		display: inline-block;
-		font-size: 0.9rem;
 
-		&:before{
-			display:none;
-		}
 
-		cite {
-			font-weight: bold;
-			color: $body-color;
-			font-style: normal;
+	cite {
+		display:     inline-block;
+		font-size:   0.9rem;
+		font-weight: bold;
+		color:       $body-color;
+		font-style:  normal;
 
-			span {
-				font-weight: normal;
-			}
+		span {
+			font-weight: normal;
 		}
 
 		@include media-breakpoint-up(md) {
 			font-size: 1rem;
 
-			cite span {
-				display:block;
+			span {
+				display: block;
 			}
 		}
 	}
-
-
-	
 }
 
 main > blockquote{
@@ -150,12 +144,14 @@ blockquote.social-quote{
 				font-size:   1.3em;
 				content:     '\201C';
 				line-height: 1rem;
+				line-height: calc(1rem); // IE11 workaround
 			}
 
 			&:after {
 				font-size:   1.3em;
 				content:     '\201D';
 				line-height: 1rem;
+				line-height: calc(1rem); // IE11 workaround
 			}
 		}
 	}
