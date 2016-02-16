@@ -77,6 +77,8 @@
 								<a href="//www.kent.ac.uk/accommodation/">Accommodation and facilities</a>
 								<a href="//www.kent.ac.uk/maps/">Maps and directions</a>
 								<a href="//www.kent.ac.uk/departments/academic/">Departments and schools</a>
+								<a href="/news/">News Centre</a>
+								<a href="//www.kent.ac.uk/jobs/">Jobs and vacancies</a>
 							</nav>
 							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-research" aria-controls="footer-research" data-parent=".global-footer">Research</h5>
 							<nav id="footer-research" class="footer-section footer-section-links collapse-sm-down">
@@ -110,7 +112,7 @@
 						<div class="col-md-3">
 							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-whats-on" aria-controls="footer-whats-on" data-parent=".global-footer">What's on?</h5>
 							<nav id="footer-whats-on" class="footer-section footer-section-links collapse-sm-down">
-								<a href="/news/">News Centre</a>
+								
 								<a href="//www.kent.ac.uk/calendar/">Events calendar</a>
 								<a href="//www.thegulbenkian.co.uk">Gulbenkian - theatre and cinema</a>
 								<a href="//www.kent.ac.uk/music/whatson.html">Coyler-Fergusson - music at Kent</a>

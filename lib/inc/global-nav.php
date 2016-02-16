@@ -36,7 +36,7 @@
 				</a>
 				<a href="//www.kent.ac.uk/courses/postgraduate/" role="menuitem">
 					<span class="global-nav-link-title">Postgraduate</span>
-					<span class="global-nav-link-desc">Programmes supported by a stimulating support culture</span>
+					<span class="global-nav-link-desc">Programmes supported by a stimulating academic culture</span>
 				</a>
 				<a href="//www.kent.ac.uk/internationalstudent/study-in-kent/" role="menuitem">
 					<span class="global-nav-link-title">International</span>
