@@ -299,7 +299,7 @@
 		.card-panel-single {
 			.card {
 				.card-title{
-					font-size: $font-size-h5;
+					font-size: $font-size-h3;
 				}
 				@include media-breakpoint-up(sm) {
 					padding: 0;
@@ -374,9 +374,9 @@
 		}
 
 		.card-panel-title {
-			font-size:      $font-size-h3;
+			font-size:      $font-size-h2;
 			display:        block;
-			margin:         1rem 1rem 0rem 0;
+			margin:         1rem 1rem 0 0;
 
 			vertical-align: middle;
 
@@ -389,7 +389,7 @@
 
 			display:        inline-block;
 
-			margin-bottom:  0rem;
+			margin-bottom:  0;
 			vertical-align: middle;
 			margin-right:   1rem;
 

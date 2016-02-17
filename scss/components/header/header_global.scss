@@ -262,7 +262,7 @@
 							display: none;
 						}
 						.global-nav-link-title{
-							font-family: $headings-font-family;
+							font-family: $headings-font-family-alt;
 							font-size: 1.2rem;
 							&:after{
 								content:$kf-angle-right;
@@ -608,7 +608,7 @@ body{
 						line-height: 1rem;
 					}
 					.global-nav-link-title{
-						font-family: $headings-font-family;
+						font-family: $headings-font-family-alt;
 						font-size: 1rem;
 						&:after{
 							content:$kf-angle-right;
