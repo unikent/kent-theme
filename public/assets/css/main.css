@@ -419,54 +419,54 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 8px;
   margin-bottom: 0.5rem;
-  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: "ArialLight", "Helvetica Neue", Helvetica, sans-serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit; }
 
 h1 {
-  font-size: 40px;
-  font-size: 2.5rem; }
+  font-size: 45.232px;
+  font-size: 2.827rem; }
 
 h2 {
-  font-size: 32px;
-  font-size: 2rem; }
+  font-size: 25.632px;
+  font-size: 1.602rem; }
 
 h3 {
-  font-size: 28px;
-  font-size: 1.75rem; }
+  font-size: 20.256px;
+  font-size: 1.266rem; }
 
 h4 {
-  font-size: 24px;
-  font-size: 1.5rem; }
+  font-size: 16px;
+  font-size: 1rem; }
 
 h5 {
-  font-size: 20px;
-  font-size: 1.25rem; }
+  font-size: 16px;
+  font-size: 1rem; }
 
 h6 {
   font-size: 16px;
   font-size: 1rem; }
 
 .h1 {
-  font-size: 40px;
-  font-size: 2.5rem; }
+  font-size: 45.232px;
+  font-size: 2.827rem; }
 
 .h2 {
-  font-size: 32px;
-  font-size: 2rem; }
+  font-size: 25.632px;
+  font-size: 1.602rem; }
 
 .h3 {
-  font-size: 28px;
-  font-size: 1.75rem; }
+  font-size: 20.256px;
+  font-size: 1.266rem; }
 
 .h4 {
-  font-size: 24px;
-  font-size: 1.5rem; }
+  font-size: 16px;
+  font-size: 1rem; }
 
 .h5 {
-  font-size: 20px;
-  font-size: 1.25rem; }
+  font-size: 16px;
+  font-size: 1rem; }
 
 .h6 {
   font-size: 16px;
@@ -5614,13 +5614,36 @@ body .kf.pull-right {
 h1, .h1 {
   font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif; }
 
-h1, .h1,
+h1, .h1 {
+  color: #05345C; }
+
 h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  color: #05345C; }
+  color: #05345C;
+  font-weight: bold; }
+
+h2, .h2 {
+  margin-bottom: 18px;
+  margin-bottom: 1.125rem; }
+
+.content-container p + h2, .content-container p + .h2 {
+  margin-top: 41.056px;
+  margin-top: 2.566rem; }
+
+p + h3, p + .h3 {
+  margin-top: 28.832px;
+  margin-top: 1.802rem; }
+
+p + h4, p + .h4 {
+  margin-top: 1.266em; }
+
+p + h4, p + .h4,
+p + h5, p + .h5,
+p + h6, p + .h6 {
+  margin-top: 1.266em; }
 
 .lead {
   font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
@@ -5744,8 +5767,8 @@ h6, .h6 {
   margin: 48px 0;
   margin: 3rem 0; }
   .content-page .content-sidebar h3 {
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 16px;
+    font-size: 1rem; }
   .content-page .content-sidebar nav {
     margin-bottom: 48px;
     margin-bottom: 3rem; }
@@ -6894,7 +6917,7 @@ select {
           .card-panel.nav-links-panel nav a:after, .nav-links-panel.card-panel-flush nav a:after, .nav-links-panel nav a:after {
             display: none; }
           .card-panel.nav-links-panel nav a .nav-link-title, .nav-links-panel.card-panel-flush nav a .nav-link-title, .nav-links-panel nav a .nav-link-title {
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-family: "ArialLight", "Helvetica Neue", Helvetica, sans-serif;
             font-size: 1.2rem; }
             .card-panel.nav-links-panel nav a .nav-link-title:after, .nav-links-panel.card-panel-flush nav a .nav-link-title:after, .nav-links-panel nav a .nav-link-title:after {
               content: "";
@@ -7196,7 +7219,7 @@ select {
               .global-nav .global-nav-links .global-nav-link nav a:after {
                 display: none; }
               .global-nav .global-nav-links .global-nav-link nav a .global-nav-link-title {
-                font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+                font-family: "ArialLight", "Helvetica Neue", Helvetica, sans-serif;
                 font-size: 1.2rem; }
                 .global-nav .global-nav-links .global-nav-link nav a .global-nav-link-title:after {
                   content: "";
@@ -7437,7 +7460,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
             line-height: 16px;
             line-height: 1rem; }
           .home-nav .global-nav-links .global-nav-link nav a .global-nav-link-title {
-            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            font-family: "ArialLight", "Helvetica Neue", Helvetica, sans-serif;
             font-size: 16px;
             font-size: 1rem; }
             .home-nav .global-nav-links .global-nav-link nav a .global-nav-link-title:after {
@@ -7933,7 +7956,7 @@ button.beta-toggler {
   .card .card-footer {
     background: transparent; }
   .card .card-title {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: "ArialLight", "Helvetica Neue", Helvetica, sans-serif;
     color: #05345C;
     font-size: 17.6px;
     font-size: 1.1rem; }
@@ -8425,8 +8448,8 @@ button.beta-toggler {
           .card-panel .card-panel-body .card-panel-full:last-child > div, .card-panel-flush .card-panel-body .card-panel-full:last-child > div {
             margin-left: 0.9375rem; } }
     .card-panel .card-panel-body .card-panel-single .card .card-title, .card-panel-flush .card-panel-body .card-panel-single .card .card-title {
-      font-size: 20px;
-      font-size: 1.25rem; }
+      font-size: 16px;
+      font-size: 1rem; }
     @media (min-width: 544px) {
       .card-panel .card-panel-body .card-panel-single .card, .card-panel-flush .card-panel-body .card-panel-single .card {
         padding: 0;
@@ -8496,8 +8519,8 @@ button.beta-toggler {
       margin-bottom: 0px;
       margin-bottom: 0rem; }
     .card-panel .card-panel-header .card-panel-title, .card-panel-flush .card-panel-header .card-panel-title {
-      font-size: 28px;
-      font-size: 1.75rem;
+      font-size: 20.256px;
+      font-size: 1.266rem;
       display: block;
       margin: 16px 16px 0px 0;
       margin: 1rem 1rem 0rem 0;
@@ -8611,7 +8634,7 @@ button.beta-toggler {
           padding: 3rem;
           font-size: 1.2rem; } }
       .card-panel-profiles .card .back a {
-        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-family: "ArialLight", "Helvetica Neue", Helvetica, sans-serif;
         color: #ce9716; }
     @media (min-width: 544px) {
       .card-panel-profiles .card {
@@ -9955,8 +9978,8 @@ blockquote.pull-quote {
     margin-bottom: 0;
     padding: 12px 16px;
     padding: 0.75rem 1rem;
-    font-size: 20px;
-    font-size: 1.25rem; }
+    font-size: 16px;
+    font-size: 1rem; }
     .global-footer .footer-section-title:after {
       position: absolute;
       right: 16px;

@@ -58,14 +58,39 @@ h1,.h1 {
   font-family: $font-family-serif;
 }
 
-h1,.h1,
+h1,.h1 {
+	color: $kent-primary;
+}
+
 h2,.h2,
 h3,.h3,
 h4,.h4,
 h5,.h5,
 h6,.h6{
   color: $kent-primary;
+  font-weight: bold;
 }
+
+
+h2,.h2 {
+	margin-bottom: 1.125rem;
+}
+
+.content-container p+h2, .content-container p+.h2{
+	margin-top: 2.566rem;		
+}
+
+p+h3,p+.h3 {
+	margin-top: 1.802rem;
+}
+
+
+p+h4,p+.h4,
+p+h5,p+.h5,
+p+h6,p+.h6{
+ 	margin-top: 1.266em;
+}
+
 
 .lead{
 	font-family: $font-family-serif;
