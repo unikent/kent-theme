@@ -7966,7 +7966,7 @@ button.beta-toggler {
   .card-panel.cards-backed .card.card-backed-primary .card-subtitle, .cards-backed.card-panel-flush .card.card-backed-primary .card-subtitle, .card.card-backed-accent .card-subtitle, .card-panel.cards-backed-accent .card .card-subtitle, .cards-backed-accent.card-panel-flush .card .card-subtitle,
   .card-panel.cards-backed .card.card-backed-accent .card-subtitle, .cards-backed.card-panel-flush .card.card-backed-accent .card-subtitle, .card.card-backed-dark .card-subtitle, .card-panel.cards-backed-dark .card .card-subtitle, .cards-backed-dark.card-panel-flush .card .card-subtitle,
   .card-panel.cards-backed .card.card-backed-dark .card-subtitle, .cards-backed.card-panel-flush .card.card-backed-dark .card-subtitle, .card .card.card-img-overlay-bottom .card-subtitle, .card .card.card-img-overlay-bottom-shaded .card-subtitle, .card.editorial.editorial-primary .card-subtitle, .card.editorial.editorial-accent .card-subtitle, .card.editorial.editorial-dark .card-subtitle, .card .card-inverse .card-subtitle, .card .card.card-backed-primary .card-subtitle, .card .card-panel.cards-backed-primary .card .card-subtitle, .card-panel.cards-backed-primary .card .card .card-subtitle, .card .cards-backed-primary.card-panel-flush .card .card-subtitle, .cards-backed-primary.card-panel-flush .card .card .card-subtitle, .card .card.card-backed-accent .card-subtitle, .card .card-panel.cards-backed-accent .card .card-subtitle, .card-panel.cards-backed-accent .card .card .card-subtitle, .card .cards-backed-accent.card-panel-flush .card .card-subtitle, .cards-backed-accent.card-panel-flush .card .card .card-subtitle, .card .card.card-backed-dark .card-subtitle, .card .card-panel.cards-backed-dark .card .card-subtitle, .card-panel.cards-backed-dark .card .card .card-subtitle, .card .cards-backed-dark.card-panel-flush .card .card-subtitle, .cards-backed-dark.card-panel-flush .card .card .card-subtitle, .card .card-img-overlay-bottom .card-subtitle, .card .card-img-overlay-bottom-shaded .card-subtitle, .card .card.editorial.editorial-primary .card-subtitle, .card .card.editorial.editorial-accent .card-subtitle, .card .card.editorial.editorial-dark .card-subtitle {
-    color: rgba(255, 255, 255, 0.65); }
+    color: #FFF; }
   .card.card-inverse .card-link, .card.card-backed-primary .card-link, .card-panel.cards-backed-primary .card .card-link, .cards-backed-primary.card-panel-flush .card .card-link,
   .card-panel.cards-backed .card.card-backed-primary .card-link, .cards-backed.card-panel-flush .card.card-backed-primary .card-link, .card.card-backed-accent .card-link, .card-panel.cards-backed-accent .card .card-link, .cards-backed-accent.card-panel-flush .card .card-link,
   .card-panel.cards-backed .card.card-backed-accent .card-link, .cards-backed.card-panel-flush .card.card-backed-accent .card-link, .card.card-backed-dark .card-link, .card-panel.cards-backed-dark .card .card-link, .cards-backed-dark.card-panel-flush .card .card-link,
@@ -8613,22 +8613,10 @@ button.beta-toggler {
       font-size: 16px;
       font-size: 1rem; }
     .card-panel-profiles .card .back {
-      padding: 48px;
-      padding: 3rem;
-      font-size: 19.2px;
-      font-size: 1.2rem; }
-      @media (min-width: 544px) {
-        .card-panel-profiles .card .back {
-          padding: 1.5rem;
-          font-size: 1rem; } }
-      @media (min-width: 768px) {
-        .card-panel-profiles .card .back {
-          padding: 3rem;
-          font-size: 1.2rem; } }
-      @media (min-width: 992px) {
-        .card-panel-profiles .card .back {
-          padding: 1.5rem;
-          font-size: 1rem; } }
+      padding: 24px;
+      padding: 1.5rem;
+      font-size: 16px;
+      font-size: 1rem; }
       @media (min-width: 1712px) {
         .card-panel-profiles .card .back {
           padding: 3rem;
