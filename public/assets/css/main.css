@@ -5637,9 +5637,6 @@ p + h3, p + .h3 {
   margin-top: 28.832px;
   margin-top: 1.802rem; }
 
-p + h4, p + .h4 {
-  margin-top: 1.266em; }
-
 p + h4, p + .h4,
 p + h5, p + .h5,
 p + h6, p + .h6 {
