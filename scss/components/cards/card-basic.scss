@@ -170,7 +170,8 @@
 	}
 
 	.card-title{
-		font-family: $headings-font-family;
+		font-family: $headings-font-family-alt;
+		font-weight: normal;
 		color: $kent-primary;
 		font-size: 1.1rem;
 	}
@@ -220,7 +221,8 @@
 			color: #FFF;
 		}
 		.card-subtitle{
-			color: rgba(255,255,255,.65);
+			color: #FFF;
+			//color: rgba(255,255,255,.65);
 		}
 
 		.card-link,

@@ -150,14 +150,24 @@ $social-networks: (
 
 // TYPOGRAPHY
 
-$font-family-sans-serif:     "ArialLight","Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:          "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif !default;
-$font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
-$font-family-base:           $font-family-sans-serif !default;
+$font-family-sans-serif:     "ArialLight","Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:          "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base:           $font-family-sans-serif;
 
-$headings-font-family:       Arial, "Helvetica Neue", Helvetica, sans-serif !default;
+$headings-font-family:       $font-family-sans-serif;
+$headings-font-family-alt:   Arial, "Helvetica Neue", Helvetica, sans-serif;
 
 $font-family-kentfont:		"kentfont", sans-serif;
+
+
+$font-size-h1:               2.827rem;
+$font-size-h2:               1.602rem;
+$font-size-h3:               1.266rem;
+$font-size-h4:               1rem;
+$font-size-h5:               1rem;
+$font-size-h6:               1rem;
+
 
 
 //BUTTONS
