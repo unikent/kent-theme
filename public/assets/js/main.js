@@ -17442,11 +17442,13 @@ if(typeof console === 'undefined'){
 	window.console = {"log":function(x){}};
 }
 
+window.KENT  = window.KENT || {};
+
 /**
  * Kent Analytics Tracker
  * A simple helper for pushing pages & events to multiple trackers.
  */
- var _kat = {
+window.KENT.kat = {
 
  	/**
 	 *  Track page view
@@ -17478,7 +17480,7 @@ if(typeof console === 'undefined'){
 		if(typeof target === 'undefined'){
 			target = window.location.href;
 		}
-		console.log(network, action, target);
+
 		for(var t in trackers) {
 			try { trackers[t].send('social', network, action, target); } catch(err) { /* Fail silently */ }
 		}
@@ -18240,7 +18242,7 @@ $(document).ready(function(){
 
 			// Hook up social events
 			$likes.find("a").click(function(){
-				_kat.social($(this).attr('title'), 'share');
+				window.KENT.kat.social($(this).attr('title'), 'share');
 			});
 		}
 	});

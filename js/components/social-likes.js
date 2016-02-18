@@ -37,7 +37,7 @@
 
 			// Hook up social events
 			$likes.find("a").click(function(){
-				_kat.social($(this).attr('title'), 'share');
+				window.KENT.kat.social($(this).attr('title'), 'share');
 			});
 		}
 	});

@@ -1,8 +1,10 @@
+window.KENT  = window.KENT || {};
+
 /**
  * Kent Analytics Tracker
  * A simple helper for pushing pages & events to multiple trackers.
  */
- var _kat = {
+window.KENT.kat = {
 
  	/**
 	 *  Track page view
