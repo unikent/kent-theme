@@ -11,6 +11,7 @@
 	&.card-backed{
 		padding-left: $grid-gutter-width/2;
 		padding-right: $grid-gutter-width/2;
+		padding-bottom: 0.1px; //to stop margin collapse
 		background: #FFF;
 
 		.card-header {
@@ -169,7 +170,8 @@
 	}
 
 	.card-title{
-		font-family: $headings-font-family;
+		font-family: $headings-font-family-alt;
+		font-weight: normal;
 		color: $kent-primary;
 		font-size: 1.1rem;
 	}
@@ -219,12 +221,22 @@
 			color: #FFF;
 		}
 		.card-subtitle{
-			color: rgba(255,255,255,.65);
+			color: #FFF;
+			//color: rgba(255,255,255,.65);
 		}
+
 		.card-link,
 		.card-text,
 		.card-blockquote > footer {
 			color: rgba(255,255,255,.75);
+		}
+
+		a{
+			color: #FFF;
+
+			&:hover, &:active, &:focus{
+				color: rgba(255,255,255,.75);
+			}
 		}
 	}
 

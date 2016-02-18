@@ -34,7 +34,9 @@
     margin-left: -($grid-gutter-width/2);
     margin-bottom: 0;
     padding: 0.75rem 1rem;
-    font-size: $font-size-h5;
+    font-size: $font-size-h3;
+    font-family: $headings-font-family-alt;
+    font-weight: 500;
 
     &:after{
       position: absolute;
