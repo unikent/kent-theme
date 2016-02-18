@@ -4,31 +4,46 @@
  */
  var _kat = {
 
- 	// Track page view
+ 	/**
+	 *  Track page view
+	 */
 	"page": function(path){
 		var trackers = _kat.trackers();
-		for(t in trackers) {
+		for(var t in trackers) {
 			try { trackers[t].send('pageview', {"page": path}); } catch(err) { /* Fail silently */ }
 		}
 		return true;
 	},
 
-	// track event
+	/**
+	 *  Track event (namespaced)
+	 */
 	"event": function(category, action, label, value) {
 		var ns_category = 'w3beta-' + category;
 		return _kat.g_event(ns_category, action, label, value);
 	},
 
-	// @see https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions
+	/**
+	 * Track social
+	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions
+	 */
 	"social": function(network, action, target){
 		var trackers = _kat.trackers();
-		for(t in trackers) {
+
+		// use current url if no target is provided
+		if(typeof target === 'undefined'){
+			target = window.location.href;
+		}
+
+		for(var t in trackers) {
 			try { trackers[t].send('social', network, action, target); } catch(err) { /* Fail silently */ }
 		}
 		return true;
 	},
 
-	// Global event (none names-paced)
+	/**
+	 * Track global event
+	 */
 	"g_event": function(category, action, label, value) {
 		// send to all GA trackers
 		var trackers = _kat.trackers();
@@ -38,12 +53,15 @@
 			value = isNaN(parseInt(value)) ? 1 : parseInt(value);
 		}
 
-		for(t in trackers) {
+		for(var t in trackers) {
 			try { trackers[t].send('event', category, action, label, value); } catch(err) { /* Fail silently */ }
 		}
 		return true;
 	},
 
+	/**
+	 * Get trackers
+	 */
 	trackers: function(){
 		return (typeof ga.getAll !=='undefined') ? ga.getAll() : [];
 	}
