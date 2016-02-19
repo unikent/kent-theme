@@ -217,25 +217,28 @@
 	}
 
 	&.card-inverse, .card-inverse{
-		.card-title{
-			color: #FFF;
-		}
-		.card-subtitle{
-			color: #FFF;
-			//color: rgba(255,255,255,.65);
-		}
 
-		.card-link,
-		.card-text,
-		.card-blockquote > footer {
-			color: rgba(255,255,255,.75);
-		}
+		&,& .card-title-wrap {
+			.card-title {
+				color: #FFFFFF;
+			}
+			.card-subtitle {
+				color: #FFFFFF;
+				//color: rgba(255,255,255,.65);
+			}
 
-		a{
-			color: #FFF;
+			.card-link,
+			.card-text,
+			.card-blockquote > footer {
+				color: rgba(255, 255, 255, .75);
+			}
 
-			&:hover, &:active, &:focus{
-				color: rgba(255,255,255,.75);
+			a {
+				color: #FFFFFF;
+
+				&:hover, &:active, &:focus {
+					color: rgba(255, 255, 255, .75);
+				}
 			}
 		}
 	}
