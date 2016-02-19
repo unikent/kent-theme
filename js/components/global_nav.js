@@ -1,7 +1,11 @@
-// go go global nav
+/**
+ * Global navigation 
+ *
+ * Switches between main menu & search menu.
+ */
 (function(){
 
-	// store control class as data on the node (just for conveniance)
+	// store control class as data on the elements (just for conveniance)
 	var global_menu = $(".global-nav-menu").data("control-class", "show-global-menu");
 	var global_search = $(".global-nav-search").data("control-class", "show-global-search");
 
@@ -62,6 +66,7 @@
 		closeMenu($(this), global_search);
 	});
 
+	// Hitting search on empty form closes search menu
 	global_search.find('form').submit(function(e){
 		if(global_search.find("input[type='search']").val()===''){
 			e.preventDefault();

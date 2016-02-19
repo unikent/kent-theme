@@ -17514,8 +17514,20 @@ window.KENT.kat = {
 
 };
 
+/**
+ * Responsive helper
+ *
+ * Triggers events on resize and breakpoint changes
+ *
+ * Events:
+ * - viewport:resize - fired after every resize
+ * - viewport:change - fired only if resize triggers breakpoint change
+ *
+ * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
+ */
 (function($, viewport){
 
+	// Supported breakpoints
 	var visibilityDivs = {
 		'xs': $('<div class="hidden-sm-up"></div>'),
 		'sm': $('<div class="hidden-xs-down hidden-md-up"></div>'),
@@ -17526,7 +17538,6 @@ window.KENT.kat = {
 		'xxxl': $('<div class="hidden-xxl-down"></div>')
 
 	};
-
 	viewport.use('Custom', visibilityDivs);
 
 	// Add our custom event
@@ -17534,89 +17545,139 @@ window.KENT.kat = {
 	$(window).resize(
 		viewport.changed(function(){
 			var breakpoint = viewport.current();
-
+			// resize has occured, fire event
 			$(window).trigger('viewport:resize');
 
 			if(previousBreakpoint !== breakpoint){
-				 $(window).trigger('viewport:change');
-				 previousBreakpoint = breakpoint;
+				// breakpoint has changed, fire evenet
+				$(window).trigger('viewport:change');
+				previousBreakpoint = breakpoint;
+
+				// TODO - REMOVE THIS DEBUG UTIL
 				console.log(breakpoint);
+				
 			}
 		})
 	);
 
-
 })(jQuery, ResponsiveBootstrapToolkit);
 window.KENT  = window.KENT || {};
+/**
+ * Quickspot helper
+ *
+ * Centralises common configuration & initalisation options for QuickSpot search
+ *
+ * @uses https://github.com/thybag/quick-spot
+ */
+ (function(){
 
-window.KENT.quickspot = {
+ 	// create obj
+	window.KENT.quickspot = { config: {} };
+	var configs = window.KENT.quickspot.config;
 
-	display_handler : function (itm, qs) {
-		var locs = [itm.campus];
-		if (itm.additional_locations !== "") {
-			locs = locs.concat(itm.additional_locations.split(', '));
+	// Default config options
+	configs.default = {
+		"disable_occurrence_weighting": true,
+		"screenreader":	true,
+		"prevent_headers": true,
+		"max_results": 150,
+		"no_results": function (qs, val) {
+			return "<a class='quickspot-result selected'>Press enter to search...</a>";
+		},
+		"no_results_click": function (value, qs) {
+			window.location.href = "https://www.kent.ac.uk/search/?q=" + value;
 		}
-		locs = (locs.length > 1) ? [locs.slice(0, -1).join(', '), locs.slice(-1)[0]].join(' and ') : locs[0];
-		// Highlight searched word
-		return (itm.name + ' - ' + itm.award + ' <br> <span>' + locs + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
-	},
+	};
 
-	no_results: function (qs, val) {
-		return "<a class='quickspot-result selected'>Press enter to search...</a>";
-	},
+	// Module search
+	configs.modules = $.extend({}, configs.default, {
+		"url": "https://api.kent.ac.uk/api/v1/modules/collection/all",
+		"search_on": ["title", "sds_code"],
+		"key_value": "title",
+		"auto_highlight":true,
+		"display_handler": function(itm,qs){
+			return itm.title + "<br/><span>" + itm.sds_code + "</span>";
+		},
+		"click_handler":function(itm){
+			document.location.href = '/courses/modules/module/' + itm.sds_code;
+		},
+		"no_results_click": function (value, qs){
+		    window.location.href = "/courses/modules/?search=" + value;
+		},
+		"data_pre_parse": function(data, options){
+			return data.modules;
+		},
+		"loaded": function(){
+			qs.datastore.filter(function(o){ return o.running === true; });
+		}
+	});
 
-	no_results_click: function (value, qs) {
-		var url = "https://www.kent.ac.uk/search/courses?q=" + value;
-		window.location.href = url;
-	}
-};
+	// Default course configs, including callbacks
+	configs.courses_default = $.extend({}, configs.default, {
+		"search_on": ["name", "award", "subject", "main_school", "ucas_code", "search_keywords"],
+		"auto_highlight":false,
+		"display_handler" : function (itm, qs) {
 
-KENT.quickspot.config = {
-	courses_defaults: {
-		"url":                          "https://webtools-test.kent.ac.uk/programmes/api/current/undergraduate/programmes",
-			"search_on":                    ["name", "award", "subject", "main_school", "ucas_code", "search_keywords"],
-			"disable_occurrence_weighting": true,
-			"screenreader":                 true,
-			"prevent_headers":              true,
+			// Generate locations list
+			var locations = [itm.campus];
+			if (itm.additional_locations !== "") {
+				locations = locations.concat(itm.additional_locations.split(', '));
+			}
+			locations = (locations.length > 1) ? [locations.slice(0, -1).join(', '), locations.slice(-1)[0]].join(' and ') : locations[0];
 
-			"display_handler":  window.KENT.quickspot.display_handler,
-			"no_results": window.KENT.quickspot.no_results,
-			"no_results_click": window.KENT.quickspot.no_results_click,
-
-			"click_handler":    function (itm) {
+			// Highlight searched word
+			return (itm.name + ' - ' + itm.award + ' <br> <span>' + locations + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
+		},
+		"click_handler": function (itm) {
 			document.location = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
+		},
+		"no_results_click": function (value, qs) {
+			window.location.href = "https://www.kent.ac.uk/search/courses?q=" + value;
 		}
-	}
-};
+	});
 
+	// UG
+	configs.ug_courses = $.extend({}, configs.courses_default, {
+		"url":	"https://api.kent.ac.uk/api/programmes/current/undergraduate/programmes",
+	});
 
-KENT.quickspot.config.ug_courses = $.extend({},KENT.quickspot.config.courses_defaults);
+	// PG
+	configs.pg_courses = $.extend({}, configs.courses_default, {
+		"url":	"https://api.kent.ac.uk/api/programmes/current/postgraduate/programmes",
+		"click_handler": function (itm) {
+			document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
+		}
+	});
 
-KENT.quickspot.config.pg_courses = $.extend({},KENT.quickspot.config.courses_defaults,{
+})();
 
-	"url":	"https://webtools-test.kent.ac.uk/programmes/api/current/postgraduate/programmes",
-	"click_handler":    function (itm) {
-		document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
-	}
-
-});
-
+/**
+ * Scan for inputs with data-quickspot-config attribute and initalise them as quickspot instances
+ */
 jQuery(document).ready(function($){
 
 	$('input[data-quickspot-config]').each(function(){
 
+		// Load config
+		var config = KENT.quickspot.config[$(this).data('quickspot-config')] || KENT.quickspot.config.defaults;
+		config = $.extend({}, config);
+
+		// Set additional options
+		config.target = $(this).attr('id');
+
+		// Override data source url
+		if($(this).data('quickspot-source')){
+			config.url = $(this).data('quickspot-source');
+		}
+		
+		// Override results container location
+		if($(this).data('quickspot-target')){
+			config.results_container = $(this).data('quickspot-target');
+		}
+
+		// Boot quickspot
+		var qs = quickspot.attach(config);
 		$(this).attr('autocomplete','off');
-
-		var config = $(this).data('quickspot-config');
-		var target = $(this).data('quickspot-target');
-
-		config = KENT.quickspot.config[config] || KENT.quickspot.config.courses_defaults;
-
-		var qs = quickspot.attach($.extend({},config,{
-			target:$(this).attr('id'),
-			"results_container":target
-		}));
-
 		$(this).data('qs',qs);
 	});
 
@@ -17693,10 +17754,14 @@ jQuery(document).ready(function(){
 
 
 });
-// go go global nav
+/**
+ * Global navigation 
+ *
+ * Switches between main menu & search menu.
+ */
 (function(){
 
-	// store control class as data on the node (just for conveniance)
+	// store control class as data on the elements (just for conveniance)
 	var global_menu = $(".global-nav-menu").data("control-class", "show-global-menu");
 	var global_search = $(".global-nav-search").data("control-class", "show-global-search");
 
@@ -17757,6 +17822,7 @@ jQuery(document).ready(function(){
 		closeMenu($(this), global_search);
 	});
 
+	// Hitting search on empty form closes search menu
 	global_search.find('form').submit(function(e){
 		if(global_search.find("input[type='search']").val()===''){
 			e.preventDefault();
@@ -17914,40 +17980,50 @@ jQuery(document).ready(function(){
 		});
 	}
 });
-jQuery(document).ready(function($){
-
+/**
+ * Toggles attribution text display on/off
+ */
+ jQuery(document).ready(function($){
 	$('.attribution').click(function(){
 		$(this).toggleClass('in');
 	});
-
 });
-// Disable scroll zooming and bind back the click event
-var onEmbedClickHandler;
+/**
+ * Click to interact logic
+ *
+ * Disable scrolling/zooming on iframes with .click-to-interact class
+ * User click activates scrolling behavior and loss of focus deactivates it
+ *
+ */
+(function(){
+	var onEmbedClickHandler, onEmbedMouseleaveHandler;
 
-var onEmbedMouseleaveHandler = function (event) {
-	var that = $(this);
+	// Disable pointer events
+	onEmbedMouseleaveHandler = function (event) {
+		// Re add the click to interact handler
+		$(this).on('click', onEmbedClickHandler);
+		// remove the leaving handler
+		$(this).off('mouseleave', onEmbedMouseleaveHandler);
+		// Disable pointer events
+		$(this).find('iframe').css("pointer-events", "none");
+	};
 
-	that.on('click', onEmbedClickHandler);
-	that.off('mouseleave', onEmbedMouseleaveHandler);
-	that.find('iframe').css("pointer-events", "none");
-};
+	// Enable pointer events
+	onEmbedClickHandler = function (event) {
+		// Disable the click handler until the user leaves the area
+		$(this).off('click', onEmbedClickHandler);
+		// Handle the mouse leave event
+		$(this).on('mouseleave', onEmbedMouseleaveHandler);
+		// Enable the pointer events
+		$(this).find('iframe').css("pointer-events", "auto");
+	};
 
-onEmbedClickHandler = function (event) {
-	var that = $(this);
+	jQuery(document).ready(function() {
+		// Disable pointer on class, and attach click action to re-enable them
+		$('.click-to-interact').on('click', onEmbedClickHandler).find('iframe').css("pointer-events", "none");
+	});
 
-	// Disable the click handler until the user leaves the area
-	that.off('click', onEmbedClickHandler);
-
-	that.find('iframe').css("pointer-events", "auto");
-
-	// Handle the mouse leave event
-	that.on('mouseleave', onEmbedMouseleaveHandler);
-};
-
-jQuery(document).ready(function () {
-
-	$('.click-to-interact').on('click', onEmbedClickHandler);
-});
+})();
 
 var stellarActivated = false;
 
@@ -18203,9 +18279,21 @@ $(document).ready(function(){
 
 	});
 });
+/**
+ * Social sharing icons
+ *
+ * Converts anything in a div with the class `content-social-share` in to a social sharing icon.
+ * Clicking the icons will launch a share this page window. 
+ * Will automatically pass share data to Google Analytics.
+ *
+ * @uses https://github.com/sapegin/social-likes
+ */
 (function(){
-	//add linkedin support (not included in current version of social-shares)
+
+	// Add additional social networks to the social-likes code.
 	window.socialLikesButtons = {
+
+		// Add linkedin support 
 		linkedin: {
 			counterUrl: 'http://www.linkedin.com/countserv/count/share?url={url}',
 			counter: function(jsonUrl, deferred) {
@@ -18223,8 +18311,7 @@ $(document).ready(function(){
 					};
 				}
 				options._[jsonUrl] = deferred;
-				$.getScript(jsonUrl)
-					.fail(deferred.reject);
+				$.getScript(jsonUrl).fail(deferred.reject);
 			},
 			popupUrl: 'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',
 			popupWidth: 650,
@@ -18232,17 +18319,21 @@ $(document).ready(function(){
 		}
 	};
 
+	// When jQuery is ready, hook up our social sharing icons.
 	$(function() {
+		// for all social share containers
 		var $likes = $(".content-social-share");
 		if ($likes.length > 0) {
+
+			// Init social likes on container + grab options
 			var options = $likes.socialLikes({"counters": false}).data().socialLikes.options;
 
-			// Populate "email link"
+			// Populate "email link" (Additional option we have added)
 			$likes.find("a.email").attr("href", "mailto:?subject=" + options.title + "&body=Link: " + options.url);
 
-			// Hook up social events
+			// Hook up social events via KAT
 			$likes.find("a").click(function(){
-				window.KENT.kat.social($(this).attr('title'), 'share');
+				window.KENT.kat.social($(this).attr('title'), 'share'); // current url is used, if no url is provided as the 3rd param.
 			});
 		}
 	});
