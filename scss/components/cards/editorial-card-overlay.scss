@@ -11,7 +11,7 @@
 		}
 		.card-title{
 			color: $brand-primary;
-			text-transform: none;
+			text-transform: uppercase;
 			font-size: 2rem;
 			@include media-breakpoint-up(md){
 				font-size: 2.2rem;

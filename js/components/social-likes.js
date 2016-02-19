@@ -34,6 +34,11 @@
 
 			// Populate "email link"
 			$likes.find("a.email").attr("href", "mailto:?subject=" + options.title + "&body=Link: " + options.url);
+
+			// Hook up social events
+			$likes.find("a").click(function(){
+				window.KENT.kat.social($(this).attr('title'), 'share');
+			});
 		}
 	});
 })();

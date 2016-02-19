@@ -406,21 +406,6 @@
 			}
 		}
 
-		.card-panel-social {
-			display:        inline-block;
-			vertical-align: middle;
-
-			&.right {
-				float: right;
-			}
-			&.left {
-				float: left;
-			}
-
-			@extend .content-social;
-
-		}
-
 		nav {
 			display:        inline-block;
 			vertical-align: middle;
@@ -430,7 +415,14 @@
 				margin-left: 1rem;
 			}
 
+			&.content-social{
+				a {
+					margin-left: .4rem;
+				}
+			}
+
 		}
+
 	}
 
 	a.card, .card a {
