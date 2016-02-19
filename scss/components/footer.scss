@@ -130,13 +130,16 @@
   }
 
   .footer-section-social{
-	  @extend .content-social;
 	  text-align: center;
 	  font-size: 0;
 
 	  a, .content-social-link {
 		  float:none;
 		  margin: 0 0.25rem .5rem;
+		  color: #aaa;
+		  &:hover,&:active,&:focus{
+			  text-decoration: none;
+		  }
 	  }
   }
 
