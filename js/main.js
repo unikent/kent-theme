@@ -17442,6 +17442,17 @@ if(typeof console === 'undefined'){
 	window.console = {"log":function(x){}};
 }
 
+/**
+ * Debug helper
+ * Log only shown when KENT.debug is true.
+ */
+ window.KENT  = window.KENT || {};
+
+ window.KENT.log = function(){
+ 	if(window.KENT.settings.debug){
+ 		console.log(arguments.length === 1 ? arguments[0] : arguments);
+ 	}
+ };
 window.KENT  = window.KENT || {};
 
 /**
@@ -17454,10 +17465,11 @@ window.KENT.kat = {
 	 *  Track page view
 	 */
 	"page": function(path){
-		var trackers = _kat.trackers();
+		var trackers = this.trackers();
 		for(var t in trackers) {
 			try { trackers[t].send('pageview', {"page": path}); } catch(err) { /* Fail silently */ }
 		}
+		window.KENT.log("[Analytics] Pageview: " + path);
 		return true;
 	},
 
@@ -17466,7 +17478,7 @@ window.KENT.kat = {
 	 */
 	"event": function(category, action, label, value) {
 		var ns_category = 'w3beta-' + category;
-		return _kat.g_event(ns_category, action, label, value);
+		return this.g_event(ns_category, action, label, value);
 	},
 
 	/**
@@ -17474,7 +17486,7 @@ window.KENT.kat = {
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions
 	 */
 	"social": function(network, action, target){
-		var trackers = _kat.trackers();
+		var trackers = this.trackers();
 
 		// use current url if no target is provided
 		if(typeof target === 'undefined'){
@@ -17484,6 +17496,7 @@ window.KENT.kat = {
 		for(var t in trackers) {
 			try { trackers[t].send('social', network, action, target); } catch(err) { /* Fail silently */ }
 		}
+		window.KENT.log("[Analytics] Social", network, action, target);
 		return true;
 	},
 
@@ -17492,7 +17505,7 @@ window.KENT.kat = {
 	 */
 	"g_event": function(category, action, label, value) {
 		// send to all GA trackers
-		var trackers = _kat.trackers();
+		var trackers = this.trackers();
 
 		// if value is set, check its a number, if not set to 1
 		if(typeof value !== 'undefined'){
@@ -17502,6 +17515,8 @@ window.KENT.kat = {
 		for(var t in trackers) {
 			try { trackers[t].send('event', category, action, label, value); } catch(err) { /* Fail silently */ }
 		}
+
+		window.KENT.log("[Analytics] Event", category, action, label, value);
 		return true;
 	},
 
@@ -17549,13 +17564,12 @@ window.KENT.kat = {
 			$(window).trigger('viewport:resize');
 
 			if(previousBreakpoint !== breakpoint){
+				// Debug
+				window.KENT.log("Breakpoint change: " + previousBreakpoint + ' -> ' + breakpoint);
+
 				// breakpoint has changed, fire evenet
 				$(window).trigger('viewport:change');
 				previousBreakpoint = breakpoint;
-
-				// TODO - REMOVE THIS DEBUG UTIL
-				console.log(breakpoint);
-				
 			}
 		})
 	);
@@ -17669,7 +17683,7 @@ jQuery(document).ready(function($){
 		if($(this).data('quickspot-source')){
 			config.url = $(this).data('quickspot-source');
 		}
-		
+
 		// Override results container location
 		if($(this).data('quickspot-target')){
 			config.results_container = $(this).data('quickspot-target');
@@ -17679,6 +17693,9 @@ jQuery(document).ready(function($){
 		var qs = quickspot.attach(config);
 		$(this).attr('autocomplete','off');
 		$(this).data('qs',qs);
+
+		// Debug
+		window.KENT.log("[Quickspot] Instance created on #" + $(this).attr('id') + " with config " + $(this).data('quickspot-config'));
 	});
 
 });
@@ -17987,6 +18004,9 @@ jQuery(document).ready(function(){
 	$('.attribution').click(function(){
 		$(this).toggleClass('in');
 	});
+	// Debug
+	window.KENT.log("Initiating: Attribution");
+	window.KENT.log($('.attribution'));
 });
 /**
  * Click to interact logic
@@ -18021,6 +18041,9 @@ jQuery(document).ready(function(){
 	jQuery(document).ready(function() {
 		// Disable pointer on class, and attach click action to re-enable them
 		$('.click-to-interact').on('click', onEmbedClickHandler).find('iframe').css("pointer-events", "none");
+
+		window.KENT.log("Initiating: Click to interact");
+		window.KENT.log($('.click-to-interact'));
 	});
 
 })();
@@ -18129,7 +18152,6 @@ window.KENT.kentslider.profile_feature = {
 
 $(document).ready(function(){
 
-
 	$('.kent-slider').each(function()
 	{
 		var slider_config = $(this).data('slider-config');
@@ -18153,6 +18175,8 @@ $(document).ready(function(){
 			$(this).slick(config);
 		}
 
+		// Debug
+		window.KENT.log("[Kent-slider] Instance created", $(this));
 	});
 
 });
@@ -18277,6 +18301,8 @@ $(document).ready(function(){
 			}
 		});
 
+		// Debug
+		window.KENT.log("[Video player] Instance created", $(this));
 	});
 });
 /**
@@ -18336,5 +18362,8 @@ $(document).ready(function(){
 				window.KENT.kat.social($(this).attr('title'), 'share'); // current url is used, if no url is provided as the 3rd param.
 			});
 		}
+		// Debug
+		window.KENT.log("Initiating: Social Sharing");
+		window.KENT.log($likes);
 	});
 })();

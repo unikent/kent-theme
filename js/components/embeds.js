@@ -31,6 +31,9 @@
 	jQuery(document).ready(function() {
 		// Disable pointer on class, and attach click action to re-enable them
 		$('.click-to-interact').on('click', onEmbedClickHandler).find('iframe').css("pointer-events", "none");
+
+		window.KENT.log("Initiating: Click to interact");
+		window.KENT.log($('.click-to-interact'));
 	});
 
 })();

@@ -33,13 +33,12 @@
 			$(window).trigger('viewport:resize');
 
 			if(previousBreakpoint !== breakpoint){
+				// Debug
+				window.KENT.log("Breakpoint change: " + previousBreakpoint + ' -> ' + breakpoint);
+
 				// breakpoint has changed, fire evenet
 				$(window).trigger('viewport:change');
 				previousBreakpoint = breakpoint;
-
-				// TODO - REMOVE THIS DEBUG UTIL
-				console.log(breakpoint);
-				
 			}
 		})
 	);

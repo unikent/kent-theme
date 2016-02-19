@@ -37,7 +37,6 @@ window.KENT.kentslider.profile_feature = {
 
 $(document).ready(function(){
 
-
 	$('.kent-slider').each(function()
 	{
 		var slider_config = $(this).data('slider-config');
@@ -61,6 +60,8 @@ $(document).ready(function(){
 			$(this).slick(config);
 		}
 
+		// Debug
+		window.KENT.log("[Kent-slider] Instance created", $(this));
 	});
 
 });

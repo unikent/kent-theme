@@ -106,7 +106,7 @@ jQuery(document).ready(function($){
 		if($(this).data('quickspot-source')){
 			config.url = $(this).data('quickspot-source');
 		}
-		
+
 		// Override results container location
 		if($(this).data('quickspot-target')){
 			config.results_container = $(this).data('quickspot-target');
@@ -116,6 +116,9 @@ jQuery(document).ready(function($){
 		var qs = quickspot.attach(config);
 		$(this).attr('autocomplete','off');
 		$(this).data('qs',qs);
+
+		// Debug
+		window.KENT.log("[Quickspot] Instance created on #" + $(this).attr('id') + " with config " + $(this).data('quickspot-config'));
 	});
 
 });

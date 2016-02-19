@@ -101,6 +101,7 @@ module.exports = function(grunt) {
 					'vendor/js-cookie/src/js.cookie.js',
 					'js/handlebars_templates.js',
 					'vendor/quick-spot/quickspot.js',
+					'js/components/log.js',
 					'js/components/kat.js',
 					'js/components/responsive_util.js',
 					'js/components/quickspot.js',

@@ -179,6 +179,10 @@
 				</div>
 			</section>
 		</footer>
+		<script>
+			window.KENT  = window.KENT || {};
+			window.KENT.settings = <?php echo json_encode($js_config); ?>;
+		</script>
 		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/main.js"></script>
 		<?php echo $foot_markup ;?>
 

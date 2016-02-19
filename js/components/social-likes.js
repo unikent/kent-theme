@@ -55,5 +55,8 @@
 				window.KENT.kat.social($(this).attr('title'), 'share'); // current url is used, if no url is provided as the 3rd param.
 			});
 		}
+		// Debug
+		window.KENT.log("Initiating: Social Sharing");
+		window.KENT.log($likes);
 	});
 })();

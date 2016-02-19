@@ -5,4 +5,7 @@
 	$('.attribution').click(function(){
 		$(this).toggleClass('in');
 	});
+	// Debug
+	window.KENT.log("Initiating: Attribution");
+	window.KENT.log($('.attribution'));
 });
