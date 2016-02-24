@@ -28,7 +28,7 @@ window.KENT  = window.KENT || {};
 
 	// Module search
 	configs.modules = $.extend({}, configs.default, {
-		"url": "https://api.kent.ac.uk/api/v1/modules/collection/all",
+		"url": window.KENT.settings.api_url + "v1/modules/collection/all",
 		"search_on": ["title", "sds_code"],
 		"key_value": "title",
 		"auto_highlight":true,
@@ -46,6 +46,24 @@ window.KENT  = window.KENT || {};
 		},
 		"loaded": function(){
 			qs.datastore.filter(function(o){ return o.running === true; });
+		}
+	});
+
+	// Scholarships search
+	configs.scholarships = $.extend({}, configs.default, {
+		"url": window.KENT.settings.api_url + "v1/scholarships/",
+		"key_value": "title",
+		"search_on": ["title", "code"],
+		"auto_highlight":true,
+
+		"click_handler":function(itm){
+			document.location.href = '/scholarships/search/' + itm.code;
+		},
+		"display_handler": function(itm, qs){
+			return itm.title + "<br/><span>" + itm.code + "</span>";
+		},
+		"no_results_click": function (value, qs){
+			window.location.href = "/scholarships/search/?search=" + value;
 		}
 	});
 
@@ -75,12 +93,12 @@ window.KENT  = window.KENT || {};
 
 	// UG
 	configs.ug_courses = $.extend({}, configs.courses_default, {
-		"url":	"https://api.kent.ac.uk/api/programmes/current/undergraduate/programmes",
+		"url":	window.KENT.settings.api_url + "programmes/current/undergraduate/programmes",
 	});
 
 	// PG
 	configs.pg_courses = $.extend({}, configs.courses_default, {
-		"url":	"https://api.kent.ac.uk/api/programmes/current/postgraduate/programmes",
+		"url":	window.KENT.settings.api_url + "programmes/current/postgraduate/programmes",
 		"click_handler": function (itm) {
 			document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
 		}
