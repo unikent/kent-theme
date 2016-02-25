@@ -104,7 +104,7 @@
 					display: none;
 				}
 				.nav-link-title {
-					font-family: $headings-font-family;
+					font-family: $headings-font-family-alt;
 					font-size:   1.2rem;
 					&:after {
 						content:      $kf-angle-right;
@@ -145,6 +145,7 @@
 	padding: 1rem;
 	background: $brand-primary-tint;
 	overflow: hidden;
+	margin-bottom: 2rem;
 
 	a{
 		display: block;

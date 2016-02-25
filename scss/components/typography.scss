@@ -56,16 +56,38 @@
 
 h1,.h1 {
   font-family: $font-family-serif;
+	color: $kent-primary;
 }
 
-h1,.h1,
 h2,.h2,
 h3,.h3,
 h4,.h4,
 h5,.h5,
 h6,.h6{
   color: $kent-primary;
+  font-weight: bold;
 }
+
+
+h2,.h2 {
+	margin-bottom: 1.125rem;
+}
+
+p+h2, p+.h2{
+	margin-top: 2.566rem;		
+}
+
+p+h3, p+.h3 {
+	margin-top: 1.802rem;
+}
+
+
+p+h4, p+.h4,
+p+h5, p+.h5,
+p+h6, p+.h6{
+ 	margin-top: 1.266em;
+}
+
 
 .lead{
 	font-family: $font-family-serif;
@@ -79,6 +101,8 @@ h6,.h6{
 	font-family: $font-family-serif;
 	color: $brand-primary;
 	text-transform: uppercase;
+	font-weight: normal;
+	margin-bottom: 0.5rem;
 
 	span {
 		color: $brand-accent;
@@ -104,9 +128,6 @@ h6,.h6{
 	}
 }
 .content-container{
-	h2{
-		margin-top:2rem;
-	}
 
 	& > ul{
 		@include bullet-list();

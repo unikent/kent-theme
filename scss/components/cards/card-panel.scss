@@ -178,15 +178,6 @@
 		}
 	}
 
-	&.card-panel-padded {
-		.container,.card-panel-body {
-			padding: 2rem 0;
-			
-			@include media-breakpoint-up(sm) {
-				padding: 2rem 8%;
-			}
-		} 
-	}
 
 	.card-panel-body {
 		@extend .container;
@@ -299,7 +290,7 @@
 		.card-panel-single {
 			.card {
 				.card-title{
-					font-size: $font-size-h5;
+					font-size: $font-size-h3;
 				}
 				@include media-breakpoint-up(sm) {
 					padding: 0;
@@ -374,9 +365,9 @@
 		}
 
 		.card-panel-title {
-			font-size:      $font-size-h3;
+			font-size:      $font-size-h2;
 			display:        block;
-			margin:         1rem 1rem 0rem 0;
+			margin:         1rem 1rem 0 0;
 
 			vertical-align: middle;
 
@@ -389,7 +380,7 @@
 
 			display:        inline-block;
 
-			margin-bottom:  0rem;
+			margin-bottom:  0;
 			vertical-align: middle;
 			margin-right:   1rem;
 
@@ -406,21 +397,6 @@
 			}
 		}
 
-		.card-panel-social {
-			display:        inline-block;
-			vertical-align: middle;
-
-			&.right {
-				float: right;
-			}
-			&.left {
-				float: left;
-			}
-
-			@extend .content-social;
-
-		}
-
 		nav {
 			display:        inline-block;
 			vertical-align: middle;
@@ -430,7 +406,14 @@
 				margin-left: 1rem;
 			}
 
+			&.content-social{
+				a {
+					margin-left: .4rem;
+				}
+			}
+
 		}
+
 	}
 
 	a.card, .card a {
@@ -518,32 +501,21 @@
 		}
 
 		.back{
-			padding: 3rem;
-			font-size: 1.2rem;
 
-			@include media-breakpoint-up(sm) {
-				padding: 1.5rem;
-				font-size: 1rem;
+			padding: 1.5rem;
+			font-size: 1rem;
 
-			}
-			@include media-breakpoint-up(md) {
-				padding: 3rem;
-				font-size: 1.2rem;
-			}
-
-			@include media-breakpoint-up(lg) {
-				padding: 1.5rem;
-				font-size: 1rem;
-			}
 			@include media-breakpoint-up(xxl) {
 				padding: 3rem;
 				font-size: 1.2rem;
 			}
+
 			a{
 				font-family: $headings-font-family;
 				@extend .chevron-link;
 				color: $brand-accent-light;
 			}
+
 		}
 
 		@include media-breakpoint-up(sm){
