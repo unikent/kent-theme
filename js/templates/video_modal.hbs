@@ -9,16 +9,12 @@
 				</button>
 			</div>
 
-			<div class="embed-responsive embed-responsive-16by9 ">
-				<video {{#if controls}}controls{{/if}} class="embed-responsive-item">
-					<source src="{{src}}" >
-				</video>
-				{{#if transcript}}
-				<div class="embed-responsive-item-overlay">
-					<span class="video-transcript"><small><a href="{{transcript}}">Download transcript</a></small></span>
-				</div>
-				{{/if}}
+			<div class="video-container">
+				
 			</div>
+			{{#if transcript}}
+			<span class="video-transcript"><small><a href="{{transcript}}">Download transcript</a></small></span>
+			{{/if}}
 			
 		</div>
 	</div>

@@ -102,6 +102,7 @@ module.exports = function(grunt) {
 					'js/handlebars_templates.js',
 					'vendor/quick-spot/quickspot.js',
 					'vendor/jwplayer/jwplayer.js',
+					'vendor/jwplayer/jwplayer.html5.js',
 					'js/components/kat.js',
 					'js/components/responsive_util.js',
 					'js/components/quickspot.js',
