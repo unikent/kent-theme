@@ -6795,7 +6795,7 @@ select {
   .global-nav a.main-logo {
     font-size: 56px;
     font-size: 3.5rem;
-    color: #05345C;
+    color: #003882;
     padding: 16px;
     padding: 1rem;
     display: none;
@@ -8194,12 +8194,6 @@ button.beta-toggler {
     background-color: #333333; }
     .card-panel.card-panel-dark.cards-backed .card, .card-panel-dark.cards-backed.card-panel-flush .card {
       border-color: #333333; }
-  .card-panel.card-panel-padded .container, .card-panel-padded.card-panel-flush .container, .card-panel.card-panel-padded .container-padded, .card-panel-padded.card-panel-flush .container-padded, .card-panel.card-panel-padded .card-panel.card-panel-contained, .card-panel-padded.card-panel-flush .card-panel.card-panel-contained, .card-panel.card-panel-padded .card-panel-contained.card-panel-flush, .card-panel-padded.card-panel-flush .card-panel-contained.card-panel-flush, .card-panel.card-panel-padded .card-panel-body, .card-panel-padded.card-panel-flush .card-panel-body, .card-panel.card-panel-padded .card-panel-header, .card-panel-padded.card-panel-flush .card-panel-header, .card-panel.card-panel-padded main > blockquote, .card-panel-padded.card-panel-flush main > blockquote, .card-panel.card-panel-padded .card-panel-body, .card-panel-padded.card-panel-flush .card-panel-body {
-    padding: 32px 0;
-    padding: 2rem 0; }
-    @media (min-width: 544px) {
-      .card-panel.card-panel-padded .container, .card-panel-padded.card-panel-flush .container, .card-panel.card-panel-padded .container-padded, .card-panel-padded.card-panel-flush .container-padded, .card-panel.card-panel-padded .card-panel.card-panel-contained, .card-panel-padded.card-panel-flush .card-panel.card-panel-contained, .card-panel.card-panel-padded .card-panel-contained.card-panel-flush, .card-panel-padded.card-panel-flush .card-panel-contained.card-panel-flush, .card-panel.card-panel-padded .card-panel-body, .card-panel-padded.card-panel-flush .card-panel-body, .card-panel.card-panel-padded .card-panel-header, .card-panel-padded.card-panel-flush .card-panel-header, .card-panel.card-panel-padded main > blockquote, .card-panel-padded.card-panel-flush main > blockquote, .card-panel.card-panel-padded .card-panel-body, .card-panel-padded.card-panel-flush .card-panel-body {
-        padding: 2rem 8%; } }
   .card-panel .card-panel-body, .card-panel-flush .card-panel-body {
     padding: 0; }
     @media (min-width: 544px) {
@@ -8561,7 +8555,9 @@ button.beta-toggler {
       text-transform: uppercase;
       color: #ce9716;
       font-size: 32px;
-      font-size: 2rem; }
+      font-size: 2rem;
+      line-height: 36.8px;
+      line-height: 2.3rem; }
       @media (min-width: 768px) {
         .card.card-overlay .card-title-wrap .card-title {
           font-size: 2.2rem; } }
