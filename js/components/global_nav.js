@@ -138,8 +138,15 @@ window.KENT  = window.KENT || {};
 			}	
 		});
 		$(window).on("viewport:change", function(){
+
+			console.log("!!");
 			if(ResponsiveBootstrapToolkit.is('<=sm')){
-				$('.home-nav').delay(300).fadeIn();
+				// if menu isn't already open
+				if(!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
+					console.log("doesnt have body class");
+					$('.home-nav').delay(300).fadeIn();
+				}
+				
 			}else{
 				$('.home-nav').hide();
 			}

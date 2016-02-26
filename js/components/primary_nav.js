@@ -1,28 +1,45 @@
-(function(){
+/**
+ * Primary Navigation
+ *
+ * Handles open/closing of the submenus in the global nav menu.
+ *
+ */
+ (function(){
 	var zTimer = null;
 	// Primary Nav
 	$(".global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a").click(function(){
 		clearTimeout(zTimer);
-		// was this item open?
-		var was_open = $(this).parent().hasClass("in");
 
-		// If a menu was already open, close other menu sections (setting expanded as we go)
-		if($(this).parent().parent().hasClass("in")){
-			var menus = $(this).parent().parent().find(".in").not($(this).parent());
-				menus.removeClass("in");
-				menus.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
-				menus.children(":first").attr("aria-expanded", "false");
+		// Get current menu item
+		var item = $(this).parent();
+		// Get menu container
+		var container = item.parent();
+
+
+		var closeSubMenus = function(menuItems){
+			return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+		};
+
+		if(container.hasClass("in")){
+			// If a menu was already open, 
+			// Close all menu items other than the one selected (setting expanded as we go)
+			var menus = container.find(".in").not(item);
+			menus.removeClass("in");
+
+			closeSubMenus(menus);
+
+			menus.children(":first").attr("aria-expanded", "false");
 		}else{
-			$(this).parent().parent().find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+			// If menu wasn't open, preperate submenus for being shown.
+			closeSubMenus(container);
 		}
 
-		if(was_open){
-			var $that = $(this);
-			// if the clicked item was open, close all
-			$that.parent().removeClass("in").parent().removeClass("in");
+		if(item.hasClass("in")){
+			// if the clicked menu item was open, close the menu
+			item.removeClass("in").parent().removeClass("in");
 
 			zTimer = setTimeout(function(){
-				$that.parent().find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+				closeSubMenus(item);
 			},600);
 
 		}else{
