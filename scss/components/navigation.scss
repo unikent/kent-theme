@@ -163,3 +163,31 @@
 		}
 	}
 }
+
+
+.nav.nav-tabs{
+
+	border-bottom: 1px solid #ddd;
+
+	.nav-item{
+		.nav-link {
+			&.active {
+				font-weight: bold;
+				border-bottom: 3px solid $brand-primary;
+			}
+		}
+	}
+}
+
+.tab-content{
+	.tab-title{
+
+	}
+}
+
+.tab-content{
+
+	& > .tab-pane {
+		margin-top: 1rem;
+	}
+}
