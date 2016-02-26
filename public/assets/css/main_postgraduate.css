@@ -6863,7 +6863,7 @@ select {
       .global-nav .global-nav-links .global-nav-link nav {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 300ms; }
+        transition: none; }
         .global-nav .global-nav-links .global-nav-link nav a {
           font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
           text-transform: none;
@@ -6890,7 +6890,9 @@ select {
     .global-nav .global-nav-links.in .global-nav-link.in > a:after {
       content: ""; }
     .global-nav .global-nav-links.in .global-nav-link.in nav {
-      max-height: 100vh; }
+      transition: max-height 200ms;
+      max-height: 208px;
+      max-height: 13rem; }
   @media (min-width: 768px) {
     .global-nav {
       background-color: #FFF;

@@ -6,6 +6,7 @@
  */
  (function(){
 	var zTimer = null;
+
 	// Primary Nav
 	$(".global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a").click(function(){
 		clearTimeout(zTimer);
@@ -15,7 +16,7 @@
 		// Get menu container
 		var container = item.parent();
 
-
+		// Close submenus in provided menuItems
 		var closeSubMenus = function(menuItems){
 			return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
 		};
@@ -25,7 +26,6 @@
 			// Close all menu items other than the one selected (setting expanded as we go)
 			var menus = container.find(".in").not(item);
 			menus.removeClass("in");
-
 			closeSubMenus(menus);
 
 			menus.children(":first").attr("aria-expanded", "false");
