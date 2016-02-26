@@ -51,6 +51,7 @@
 			text-transform: uppercase;
 			color: $brand-accent-light;
 			font-size: 2rem;
+			line-height: 2.3rem;
 			@include media-breakpoint-up(md){
 				font-size: 2.2rem;
 			}

@@ -146,13 +146,15 @@
 	background: $brand-primary-tint;
 	overflow: hidden;
 	margin-bottom: 2rem;
-
+	@include media-breakpoint-up(md) {
+		column-count: 2;
+		column-gap:   2rem;
+	}
+	p{
+		column-span: all;
+	}
 	a{
 		display: block;
-		@include media-breakpoint-up(md){
-			width: 50%;
-			float: left;
-		}
 		&:before{
 			font-family: $font-family-kentfont;
 			content: $kf-caret-down;

@@ -1,19 +1,23 @@
+window.KENT  = window.KENT || {};
 /**
  * Global navigation 
  *
- * Switches between main menu & search menu
+ * Switches between main menu & search menu on mobile.
+ * Toggles search on/off on large screens
  *
  */
 (function(){
+	// Menu references
+	// Store control class as data on the elements (just for conveniance)
+	var global_menu = $("#global-nav-menu").data("control-class", "show-global-menu");
+	var global_search = $("#global-nav-search").data("control-class", "show-global-search");
 
-	// store control class as data on the elements (just for conveniance)
-	var global_menu = $(".global-nav-menu").data("control-class", "show-global-menu");
-	var global_search = $(".global-nav-search").data("control-class", "show-global-search");
-
+	// List of Menu toggle classes
+	// This will have the aria-extanded attribute toggled on them, whenever the menu state changes.
 	var global_menu_toggles = $(".menu-button");
 	var global_search_toggles = $(".search-button, .search-button-full, .close-search");
 
-	// Toggle Menu
+	// Toggle a given menu's state
 	var toggleMenu = function(button, menu){
 
 		// If this menu is NOT open, open it. Else close it.
@@ -24,7 +28,7 @@
 		}
 	};
 
-	// Close Menu
+	// Close a given menu (toggling its buttons)
 	var closeMenu = function(button, menu){
 
 		// Cannot close already closed menu
@@ -41,12 +45,13 @@
 		// the screen reader won't see it anyway.
 		button.attr("aria-expanded", "false");
 
-		$(window).trigger("menu:close", menu);
+		// Trigger event
+		$(window).trigger("globalmenu:close", [menu]);
 
 		return true;
 	};
 
-	// Open Menu
+	// Open a given menu (toggling its buttons)
 	var openMenu = function(button, menu){
 
 		// Cannot open already closed menu
@@ -61,55 +66,72 @@
 		// Update button so it knows it's expanded area is collapsed
 		button.attr("aria-expanded", true);
 
-		$(window).trigger("menu:open", menu);
+		// Fire events
+		$(window).trigger("globalmenu:open", [menu]);
 
 		return true;
 	};
 
-	// Global methods
+	// Setup quick access methods to Menu functions
 	var global_nav = {
-		openSearchMenu: function(){
+		openSearchmenu: function(){
 			return openMenu(global_search_toggles, global_search);
 		},
 		closeSearchMenu: function(){
 			return closeMenu(global_search_toggles, global_search);
+		},
+		toggleSearchMenu: function(){
+			return toggleMenu(global_search_toggles, global_search);
 		},
 		openMainMenu: function(){
 			return openMenu(global_menu_toggles, global_menu);
 		},
 		closeMainMenu: function(){
 			return closeMenu(global_menu_toggles, global_menu);
+		},
+		toggleMainMenu: function(){
+			return toggleMenu(global_menu_toggles, global_menu);
 		}
 	};
 
-	window.KENT.global_nav = global_nav;
-
 	// Toggle primary Menu (mobile Only)
-	global_search_toggles.click(function(){
-		toggleMenu(global_search_toggles, global_search);
+	global_search_toggles.click(function(e){
+		e.preventDefault();
+		window.KENT.global_nav.toggleSearchMenu();
+		return false;
 	});
 
 	// Toggle Search Menu
-	global_menu_toggles.click(function(){
-		toggleMenu(global_menu_toggles, global_menu);
+	global_menu_toggles.click(function(e){
+		e.preventDefault();
+		window.KENT.global_nav.toggleMainMenu();
+		return false;
 	});
 
-	// If this menu is search, set focus to search bar.
-	$(window).on("menu:open", function(menu){
-		if(menu === global_search){
-			global_search.find("input[type='search']").focus();
+
+	// Ensure opening one menu, closes the other.
+	$(window).on("globalmenu:open", function(e, menu){
+		if(menu[0] === global_search[0]){
+			window.KENT.global_nav.closeMainMenu();
+		}else{
+			window.KENT.global_nav.closeSearchMenu();
 		}
 	});
 
-
-
+	// CLose all menu's if user hits escape
+	$(document).keyup(function(e){
+		if(e.which === 27){
+			window.KENT.global_nav.closeMainMenu();
+			window.KENT.global_nav.closeSearchMenu();
+		}
+	});
 
 	// Homepage Logic
 	if($('.home-nav').length > 0){
-		$(window).on("menu:open", function(){
+		$(window).on("globalmenu:open", function(){
 			$('.home-nav').hide();	
 		});
-		$(window).on("menu:close", function(menu){
+		$(window).on("globalmenu:close", function(e, menu){
 			//menu.hasClass("in") &&
 			if( ResponsiveBootstrapToolkit.is('<=sm')) {
 				$('.home-nav').delay(300).fadeIn();
@@ -124,33 +146,6 @@
 		});
 	}
 
-
-/*
-
-	var closeSearch = function(){
-		closeMenu($(".search-button, .search-button-full, .close-search"), global_search);
-	};
-
-	// Hitting search on empty form closes search menu
-	global_search.find('form').submit(function(e){
-		if(global_search.find("input[type='search']").val()===''){
-			e.preventDefault();
-			closeSearch();
-			return false;
-		}
-	});
-
-	global_search.find("input[type='search']").click(function(e){
-		e.preventDefault();
-		return false;
-	});
-
-	$('body').click(closeSearch);
-
-	$(document).keyup(function(e){
-		if(e.which === 27){
-			closeSearch();
-		}
-	});
-*/
+	// Add to KENT object
+	window.KENT.global_nav = global_nav;
 })();
