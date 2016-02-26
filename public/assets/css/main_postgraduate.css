@@ -4093,7 +4093,6 @@ button.close {
   .modal.fade .modal-dialog {
     transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
-    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%); }
   .modal.in .modal-dialog {
@@ -4387,7 +4386,6 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
-        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -6875,7 +6873,7 @@ select {
       .global-nav .global-nav-links .global-nav-link nav {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 300ms; }
+        transition: none; }
         .global-nav .global-nav-links .global-nav-link nav a {
           font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
           text-transform: none;
@@ -6902,7 +6900,9 @@ select {
     .global-nav .global-nav-links.in .global-nav-link.in > a:after {
       content: ""; }
     .global-nav .global-nav-links.in .global-nav-link.in nav {
-      max-height: 100vh; }
+      transition: max-height 200ms;
+      max-height: 208px;
+      max-height: 13rem; }
   @media (min-width: 768px) {
     .global-nav {
       background-color: #FFF;

@@ -17442,6 +17442,17 @@ if(typeof console === 'undefined'){
 	window.console = {"log":function(x){}};
 }
 
+/**
+ * Debug helper
+ * Log only shown when KENT.debug is true.
+ */
+ window.KENT  = window.KENT || {};
+
+ window.KENT.log = function(){
+ 	if(window.KENT.settings && window.KENT.settings.debug){
+ 		console.log(arguments.length === 1 ? arguments[0] : arguments);
+ 	}
+ };
 window.KENT  = window.KENT || {};
 
 /**
@@ -17454,10 +17465,11 @@ window.KENT.kat = {
 	 *  Track page view
 	 */
 	"page": function(path){
-		var trackers = _kat.trackers();
+		var trackers = this.trackers();
 		for(var t in trackers) {
 			try { trackers[t].send('pageview', {"page": path}); } catch(err) { /* Fail silently */ }
 		}
+		window.KENT.log("[Analytics] Pageview: " + path);
 		return true;
 	},
 
@@ -17466,7 +17478,7 @@ window.KENT.kat = {
 	 */
 	"event": function(category, action, label, value) {
 		var ns_category = 'w3beta-' + category;
-		return _kat.g_event(ns_category, action, label, value);
+		return this.g_event(ns_category, action, label, value);
 	},
 
 	/**
@@ -17474,7 +17486,7 @@ window.KENT.kat = {
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions
 	 */
 	"social": function(network, action, target){
-		var trackers = _kat.trackers();
+		var trackers = this.trackers();
 
 		// use current url if no target is provided
 		if(typeof target === 'undefined'){
@@ -17484,6 +17496,7 @@ window.KENT.kat = {
 		for(var t in trackers) {
 			try { trackers[t].send('social', network, action, target); } catch(err) { /* Fail silently */ }
 		}
+		window.KENT.log("[Analytics] Social", network, action, target);
 		return true;
 	},
 
@@ -17492,7 +17505,7 @@ window.KENT.kat = {
 	 */
 	"g_event": function(category, action, label, value) {
 		// send to all GA trackers
-		var trackers = _kat.trackers();
+		var trackers = this.trackers();
 
 		// if value is set, check its a number, if not set to 1
 		if(typeof value !== 'undefined'){
@@ -17502,6 +17515,8 @@ window.KENT.kat = {
 		for(var t in trackers) {
 			try { trackers[t].send('event', category, action, label, value); } catch(err) { /* Fail silently */ }
 		}
+
+		window.KENT.log("[Analytics] Event", category, action, label, value);
 		return true;
 	},
 
@@ -17514,8 +17529,20 @@ window.KENT.kat = {
 
 };
 
+/**
+ * Responsive helper
+ *
+ * Triggers events on resize and breakpoint changes
+ *
+ * Events:
+ * - viewport:resize - fired after every resize
+ * - viewport:change - fired only if resize triggers breakpoint change
+ *
+ * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
+ */
 (function($, viewport){
 
+	// Supported breakpoints
 	var visibilityDivs = {
 		'xs': $('<div class="hidden-sm-up"></div>'),
 		'sm': $('<div class="hidden-xs-down hidden-md-up"></div>'),
@@ -17526,7 +17553,6 @@ window.KENT.kat = {
 		'xxxl': $('<div class="hidden-xxl-down"></div>')
 
 	};
-
 	viewport.use('Custom', visibilityDivs);
 
 	// Add our custom event
@@ -17534,90 +17560,160 @@ window.KENT.kat = {
 	$(window).resize(
 		viewport.changed(function(){
 			var breakpoint = viewport.current();
-
+			// resize has occured, fire event
 			$(window).trigger('viewport:resize');
 
 			if(previousBreakpoint !== breakpoint){
-				 $(window).trigger('viewport:change');
-				 previousBreakpoint = breakpoint;
-				console.log(breakpoint);
+				// Debug
+				window.KENT.log("Breakpoint change: " + previousBreakpoint + ' -> ' + breakpoint);
+
+				// breakpoint has changed, fire evenet
+				$(window).trigger('viewport:change');
+				previousBreakpoint = breakpoint;
 			}
 		})
 	);
 
-
 })(jQuery, ResponsiveBootstrapToolkit);
 window.KENT  = window.KENT || {};
+/**
+ * Quickspot helper
+ *
+ * Centralises common configuration & initalisation options for QuickSpot search
+ *
+ * @uses https://github.com/thybag/quick-spot
+ */
+ (function(){
 
-window.KENT.quickspot = {
+ 	// create obj
+	window.KENT.quickspot = { config: {} };
+	var configs = window.KENT.quickspot.config;
 
-	display_handler : function (itm, qs) {
-		var locs = [itm.campus];
-		if (itm.additional_locations !== "") {
-			locs = locs.concat(itm.additional_locations.split(', '));
+	// Default config options
+	configs.default = {
+		"disable_occurrence_weighting": true,
+		"screenreader":	true,
+		"prevent_headers": true,
+		"max_results": 150,
+		"no_results": function (qs, val) {
+			return "<a class='quickspot-result selected'>Press enter to search...</a>";
+		},
+		"no_results_click": function (value, qs) {
+			window.location.href = "https://www.kent.ac.uk/search/?q=" + value;
 		}
-		locs = (locs.length > 1) ? [locs.slice(0, -1).join(', '), locs.slice(-1)[0]].join(' and ') : locs[0];
-		// Highlight searched word
-		return (itm.name + ' - ' + itm.award + ' <br> <span>' + locs + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
-	},
+	};
 
-	no_results: function (qs, val) {
-		return "<a class='quickspot-result selected'>Press enter to search...</a>";
-	},
+	// Module search
+	configs.modules = $.extend({}, configs.default, {
+		"url": window.KENT.settings.api_url + "v1/modules/collection/all",
+		"search_on": ["title", "sds_code"],
+		"key_value": "title",
+		"auto_highlight":true,
+		"display_handler": function(itm,qs){
+			return itm.title + "<br/><span>" + itm.sds_code + "</span>";
+		},
+		"click_handler":function(itm){
+			document.location.href = '/courses/modules/module/' + itm.sds_code;
+		},
+		"no_results_click": function (value, qs){
+		    window.location.href = "/courses/modules/?search=" + value;
+		},
+		"data_pre_parse": function(data, options){
+			return data.modules;
+		},
+		"loaded": function(){
+			qs.datastore.filter(function(o){ return o.running === true; });
+		}
+	});
 
-	no_results_click: function (value, qs) {
-		var url = "https://www.kent.ac.uk/search/courses?q=" + value;
-		window.location.href = url;
-	}
-};
+	// Scholarships search
+	configs.scholarships = $.extend({}, configs.default, {
+		"url": window.KENT.settings.api_url + "v1/scholarships/",
+		"key_value": "title",
+		"search_on": ["title", "code"],
+		"auto_highlight":true,
 
-KENT.quickspot.config = {
-	courses_defaults: {
-		"url":                          "https://webtools-test.kent.ac.uk/programmes/api/current/undergraduate/programmes",
-			"search_on":                    ["name", "award", "subject", "main_school", "ucas_code", "search_keywords"],
-			"disable_occurrence_weighting": true,
-			"screenreader":                 true,
-			"prevent_headers":              true,
+		"click_handler":function(itm){
+			document.location.href = '/scholarships/search/' + itm.code;
+		},
+		"display_handler": function(itm, qs){
+			return itm.title + "<br/><span>" + itm.code + "</span>";
+		},
+		"no_results_click": function (value, qs){
+			window.location.href = "/scholarships/search/?search=" + value;
+		}
+	});
 
-			"display_handler":  window.KENT.quickspot.display_handler,
-			"no_results": window.KENT.quickspot.no_results,
-			"no_results_click": window.KENT.quickspot.no_results_click,
+	// Default course configs, including callbacks
+	configs.courses_default = $.extend({}, configs.default, {
+		"search_on": ["name", "award", "subject", "main_school", "ucas_code", "search_keywords"],
+		"auto_highlight":false,
+		"display_handler" : function (itm, qs) {
 
-			"click_handler":    function (itm) {
+			// Generate locations list
+			var locations = [itm.campus];
+			if (itm.additional_locations !== "") {
+				locations = locations.concat(itm.additional_locations.split(', '));
+			}
+			locations = (locations.length > 1) ? [locations.slice(0, -1).join(', '), locations.slice(-1)[0]].join(' and ') : locations[0];
+
+			// Highlight searched word
+			return (itm.name + ' - ' + itm.award + ' <br> <span>' + locations + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
+		},
+		"click_handler": function (itm) {
 			document.location = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
+		},
+		"no_results_click": function (value, qs) {
+			window.location.href = "https://www.kent.ac.uk/search/courses?q=" + value;
 		}
-	}
-};
+	});
 
+	// UG
+	configs.ug_courses = $.extend({}, configs.courses_default, {
+		"url":	window.KENT.settings.api_url + "programmes/current/undergraduate/programmes",
+	});
 
-KENT.quickspot.config.ug_courses = $.extend({},KENT.quickspot.config.courses_defaults);
+	// PG
+	configs.pg_courses = $.extend({}, configs.courses_default, {
+		"url":	window.KENT.settings.api_url + "programmes/current/postgraduate/programmes",
+		"click_handler": function (itm) {
+			document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
+		}
+	});
 
-KENT.quickspot.config.pg_courses = $.extend({},KENT.quickspot.config.courses_defaults,{
+})();
 
-	"url":	"https://webtools-test.kent.ac.uk/programmes/api/current/postgraduate/programmes",
-	"click_handler":    function (itm) {
-		document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
-	}
-
-});
-
+/**
+ * Scan for inputs with data-quickspot-config attribute and initalise them as quickspot instances
+ */
 jQuery(document).ready(function($){
 
 	$('input[data-quickspot-config]').each(function(){
 
+		// Load config
+		var config = KENT.quickspot.config[$(this).data('quickspot-config')] || KENT.quickspot.config.defaults;
+		config = $.extend({}, config);
+
+		// Set additional options
+		config.target = $(this).attr('id');
+
+		// Override data source url
+		if($(this).data('quickspot-source')){
+			config.url = $(this).data('quickspot-source');
+		}
+
+		// Override results container location
+		if($(this).data('quickspot-target')){
+			config.results_container = $(this).data('quickspot-target');
+		}
+
+		// Boot quickspot
+		var qs = quickspot.attach(config);
 		$(this).attr('autocomplete','off');
-
-		var config = $(this).data('quickspot-config');
-		var target = $(this).data('quickspot-target');
-
-		config = KENT.quickspot.config[config] || KENT.quickspot.config.courses_defaults;
-
-		var qs = quickspot.attach($.extend({},config,{
-			target:$(this).attr('id'),
-			"results_container":target
-		}));
-
 		$(this).data('qs',qs);
+
+		// Debug
+		window.KENT.log("[Quickspot] Instance created on #" + $(this).attr('id') + " with config " + $(this).data('quickspot-config'));
 	});
 
 });
@@ -17625,16 +17721,24 @@ jQuery(document).ready(function($){
 
 
 
+
+/**
+ * Responsive Collapse
+ *
+ * Mirrors the behaviour of http://v4-alpha.getbootstrap.com/components/collapse/ in a breakpoint aware way
+ *
+ * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
+ * @uses responsive_util.js
+ */
 jQuery(document).ready(function(){
 
-    viewport = ResponsiveBootstrapToolkit;
-
+    var viewport = ResponsiveBootstrapToolkit;
     var $collabsables = $('[data-toggle="collapse_responsive"]');
 
     $collabsables.click(function(e){
         e.preventDefault();
 
-        var $this= $(this);
+        var $this = $(this);
         var isCollapsed = $(this).hasClass('collapsed');
         var $parent = $($this.data('parent') || null);
         var $target = $($this.data('target') || null);
@@ -17652,8 +17756,8 @@ jQuery(document).ready(function(){
         ){
             return;
         }
-        // else, toggle it open / shut
 
+        // else, toggle it open / shut
         if($parent.length > 0){
             var $open = $parent.find('.in');
             $open.removeClass('in').removeClass('active')
@@ -17677,7 +17781,7 @@ jQuery(document).ready(function(){
         }
     });
 
-
+    // When breakpoint changes
     $(window).on("viewport:change", function(){
 
         $collabsables.each(function(){
@@ -17700,125 +17804,244 @@ jQuery(document).ready(function(){
 
 
 });
-// go go global nav
+window.KENT  = window.KENT || {};
+/**
+ * Global navigation 
+ *
+ * Switches between main menu & search menu on mobile.
+ * Toggles search on/off on large screens
+ *
+ */
 (function(){
+	// Menu references
+	// Store control class as data on the elements (just for conveniance)
+	var global_menu = $("#global-nav-menu").data("control-class", "show-global-menu");
+	var global_search = $("#global-nav-search").data("control-class", "show-global-search");
 
-	// store control class as data on the node (just for conveniance)
-	var global_menu = $(".global-nav-menu").data("control-class", "show-global-menu");
-	var global_search = $(".global-nav-search").data("control-class", "show-global-search");
+	// List of Menu toggle classes
+	// This will have the aria-extanded attribute toggled on them, whenever the menu state changes.
+	var global_menu_toggles = $(".menu-button");
+	var global_search_toggles = $(".search-button, .search-button-full, .close-search");
 
+	// Toggle a given menu's state
 	var toggleMenu = function(button, menu){
-		// If no menu is open, open this one, else this is a close action
+
+		// If this menu is NOT open, open it. Else close it.
 		if(!menu.hasClass("in")){
-			openMenu(button, menu);
+			return openMenu(button, menu);
 		}else{
-			closeMenu(button, menu);
+			return closeMenu(button, menu);
 		}
 	};
 
+	// Close a given menu (toggling its buttons)
 	var closeMenu = function(button, menu){
 
-		if(menu.hasClass("in") && ResponsiveBootstrapToolkit.is('<=sm')) {
-			$('.home-nav').delay(300).fadeIn();
+		// Cannot close already closed menu
+		if(!menu.hasClass("in")){
+			return false;
 		}
 
-		$("body").removeClass(menu.data("control-class"));
+		// Remove menu & body class
 		menu.removeClass("in");
-
+		$("body").removeClass(menu.data("control-class"));
+		
 		// Update button so it knows it's expanded area is collapsed
-		// aria-hidden is not needed on th element, since as the element is displayed none
+		// aria-hidden is not needed on the element, since as the element is displayed none
 		// the screen reader won't see it anyway.
 		button.attr("aria-expanded", "false");
+
+		// Trigger event
+		$(window).trigger("globalmenu:close", [menu]);
+
+		return true;
 	};
 
+	// Open a given menu (toggling its buttons)
 	var openMenu = function(button, menu){
-		// Select find
-		if(menu === global_search){
-			global_search.find("input[type='search']").focus();
+
+		// Cannot open already closed menu
+		if(menu.hasClass("in")){
+			return false;
 		}
 
-		$('.home-nav').hide();
-
-		$("body").addClass(menu.data("control-class"));
+		// Set menu & body classes
 		menu.addClass("in");
-		// update button so it knows it's expanded area is collapsed
+		$("body").addClass(menu.data("control-class"));
+
+		// Update button so it knows it's expanded area is collapsed
 		button.attr("aria-expanded", true);
+
+		// Fire events
+		$(window).trigger("globalmenu:open", [menu]);
+
+		return true;
 	};
 
-	var closeSearch = function(){
-		closeMenu($(".search-button, .search-button-full, .close-search"), global_search);
+	// Setup quick access methods to Menu functions
+	var global_nav = {
+		openSearchmenu: function(){
+			return openMenu(global_search_toggles, global_search);
+		},
+		closeSearchMenu: function(){
+			return closeMenu(global_search_toggles, global_search);
+		},
+		toggleSearchMenu: function(){
+			return toggleMenu(global_search_toggles, global_search);
+		},
+		openMainMenu: function(){
+			return openMenu(global_menu_toggles, global_menu);
+		},
+		closeMainMenu: function(){
+			return closeMenu(global_menu_toggles, global_menu);
+		},
+		toggleMainMenu: function(){
+			return toggleMenu(global_menu_toggles, global_menu);
+		}
 	};
 
-	// Hook up menu links
-	$(".menu-button").click(function(){
-		toggleMenu($(this), global_menu);	
-	});
-
-	$(".search-button, .search-button-full").click(function(e){
-		toggleMenu($(".search-button, .search-button-full, .close-search"), global_search);
+	// Toggle primary Menu (mobile Only)
+	global_search_toggles.click(function(e){
 		e.preventDefault();
+		window.KENT.global_nav.toggleSearchMenu();
 		return false;
 	});
 
-	$(".close-search").click(function(){
-		closeMenu($(this), global_search);
+	// Toggle Search Menu
+	global_menu_toggles.click(function(e){
+		e.preventDefault();
+		window.KENT.global_nav.toggleMainMenu();
+		return false;
 	});
 
+
+	// Ensure opening one menu, closes the other.
+	$(window).on("globalmenu:open", function(e, menu){
+		if(menu[0] === global_search[0]){
+			window.KENT.global_nav.closeMainMenu();
+		}else{
+			window.KENT.global_nav.closeSearchMenu();
+		}
+	});
+
+	// CLose all menu's if user hits escape
+	$(document).keyup(function(e){
+		if(e.which === 27){
+			window.KENT.global_nav.closeMainMenu();
+			window.KENT.global_nav.closeSearchMenu();
+		}
+	});
+
+	// Homepage Logic
+	if($('.home-nav').length > 0){
+		$(window).on("globalmenu:open", function(){
+			$('.home-nav').hide();	
+		});
+		$(window).on("globalmenu:close", function(e, menu){
+			//menu.hasClass("in") &&
+			if( ResponsiveBootstrapToolkit.is('<=sm')) {
+				$('.home-nav').delay(300).fadeIn();
+			}	
+		});
+		$(window).on("viewport:change", function(){
+
+			console.log("!!");
+			if(ResponsiveBootstrapToolkit.is('<=sm')){
+				// if menu isn't already open
+				if(!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
+					console.log("doesnt have body class");
+					$('.home-nav').delay(300).fadeIn();
+				}
+				
+			}else{
+				$('.home-nav').hide();
+			}
+		});
+	}
+
+	// Add to KENT object
+	window.KENT.global_nav = global_nav;
+})();
+
+window.KENT  = window.KENT || {};
+/**
+ * Global search 
+ *
+ * Super search located at the top of the page
+ *
+ * @uses global_nav.js
+ */
+ (function(){
+
+	// Get global search element.
+	var global_search = $("#global-nav-search");
+
+	// Hitting search on empty form closes search menu
 	global_search.find('form').submit(function(e){
 		if(global_search.find("input[type='search']").val()===''){
 			e.preventDefault();
-			closeSearch();
+			window.KENT.global_nav.closeSearchMenu();
 			return false;
 		}
 	});
 
-	global_search.find("input[type='search']").click(function(e){
-		e.preventDefault();
-		return false;
+	// Focus in search input if global search is toggled
+	$(window).on("globalmenu:open", function(e, menu){
+		if(menu[0] === global_search[0]){
+			global_search.find("input[type='search']").focus();
+		}
 	});
 
-	$('body').click(closeSearch);
-
-	$(document).keyup(function(e){
-		if(e.which === 27){
-			closeSearch();
+	// clicking menu
+	$('body').click(function(e){
+		if(!global_search.is(e.target) && global_search.has(e.target).length === 0){
+			window.KENT.global_nav.closeSearchMenu();
 		}
 	});
 
 })();
-
-$(window).on("viewport:change", function(){
-	if(ResponsiveBootstrapToolkit.is('<=sm')){
-		$('.home-nav').delay(300).fadeIn();
-	}else{
-		$('.home-nav').hide();
-	}
-});
-(function(){
+/**
+ * Primary Navigation
+ *
+ * Handles open/closing of the submenus in the global nav menu.
+ *
+ */
+ (function(){
 	var zTimer = null;
+
 	// Primary Nav
 	$(".global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a").click(function(){
 		clearTimeout(zTimer);
-		// was this item open?
-		var was_open = $(this).parent().hasClass("in");
 
-		// If a menu was already open, close other menu sections (setting expanded as we go)
-		if($(this).parent().parent().hasClass("in")){
-			var menus = $(this).parent().parent().find(".in").not($(this).parent());
-				menus.removeClass("in");
-				menus.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
-				menus.children(":first").attr("aria-expanded", "false");
+		// Get current menu item
+		var item = $(this).parent();
+		// Get menu container
+		var container = item.parent();
+
+		// Close submenus in provided menuItems
+		var closeSubMenus = function(menuItems){
+			return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+		};
+
+		if(container.hasClass("in")){
+			// If a menu was already open, 
+			// Close all menu items other than the one selected (setting expanded as we go)
+			var menus = container.find(".in").not(item);
+			menus.removeClass("in");
+			closeSubMenus(menus);
+
+			menus.children(":first").attr("aria-expanded", "false");
 		}else{
-			$(this).parent().parent().find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+			// If menu wasn't open, preperate submenus for being shown.
+			closeSubMenus(container);
 		}
 
-		if(was_open){
-			var $that = $(this);
-			// if the clicked item was open, close all
-			$that.parent().removeClass("in").parent().removeClass("in");
+		if(item.hasClass("in")){
+			// if the clicked menu item was open, close the menu
+			item.removeClass("in").parent().removeClass("in");
 
 			zTimer = setTimeout(function(){
-				$that.parent().find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+				closeSubMenus(item);
 			},600);
 
 		}else{
@@ -17834,6 +18057,8 @@ jQuery(document).ready(function(){
 	var sectional_nav = $('.departmental-nav .navbar-menu');
 	var toggler = $('.departmental-nav .navbar-toggler');
 
+	var viewport = ResponsiveBootstrapToolkit;
+	
 	// if no nav, don't bother booting menu
 	if(sectional_nav.length === 0){ return; } 
 
@@ -17891,70 +18116,94 @@ jQuery(document).ready(function(){
 
 	respond();
 });
-jQuery(document).ready(function(){
+/**
+ * Beta bar collapse
+ *
+ * Small bit of JS to facilitate the beta bar open/close logic.
+ * This will be removed once the product moves out of beta
+ */
+ jQuery(document).ready(function(){
+
 	var beta_bar = $('.beta-bar');
 
+	// Toggle beta bar
 	function toggleNav() {
 		if(beta_bar.hasClass('hidden')){
 			beta_bar.removeClass('hidden').slideDown();
-
-		}else {
+		} else {
 			beta_bar.addClass('hidden').slideUp();
 			Cookies.set('kentbeta_dismissed', '1', {expires: 365});
 		}
 	}
-
-	if(beta_bar.length >0 ) {
+	// If beta bar exists on page
+	if(beta_bar.length > 0) {
 
 		var toggler = $('.beta-toggler');
-
 		var dismissed = typeof Cookies.get('kentbeta_dismissed') !== 'undefined';
-
+		
+		// Apply show/hide state from cookie.
 		if(!dismissed) {
 			beta_bar.slideDown();
 		}else{
 			beta_bar.addClass('hidden');
-		}
+		}	
 
+		// hook up toggler
 		toggler.click(function () {
 			toggleNav();
 		});
 	}
 });
-jQuery(document).ready(function($){
-
+/**
+ * Toggles attribution text display on/off
+ */
+ jQuery(document).ready(function($){
 	$('.attribution').click(function(){
 		$(this).toggleClass('in');
 	});
-
+	// Debug
+	window.KENT.log("Initiating: Attribution");
+	window.KENT.log($('.attribution'));
 });
-// Disable scroll zooming and bind back the click event
-var onEmbedClickHandler;
+/**
+ * Click to interact logic
+ *
+ * Disable scrolling/zooming on iframes with .click-to-interact class
+ * User click activates scrolling behavior and loss of focus deactivates it
+ *
+ */
+(function(){
+	var onEmbedClickHandler, onEmbedMouseleaveHandler;
 
-var onEmbedMouseleaveHandler = function (event) {
-	var that = $(this);
+	// Disable pointer events
+	onEmbedMouseleaveHandler = function (event) {
+		// Re add the click to interact handler
+		$(this).on('click', onEmbedClickHandler);
+		// remove the leaving handler
+		$(this).off('mouseleave', onEmbedMouseleaveHandler);
+		// Disable pointer events
+		$(this).find('iframe').css("pointer-events", "none");
+	};
 
-	that.on('click', onEmbedClickHandler);
-	that.off('mouseleave', onEmbedMouseleaveHandler);
-	that.find('iframe').css("pointer-events", "none");
-};
+	// Enable pointer events
+	onEmbedClickHandler = function (event) {
+		// Disable the click handler until the user leaves the area
+		$(this).off('click', onEmbedClickHandler);
+		// Handle the mouse leave event
+		$(this).on('mouseleave', onEmbedMouseleaveHandler);
+		// Enable the pointer events
+		$(this).find('iframe').css("pointer-events", "auto");
+	};
 
-onEmbedClickHandler = function (event) {
-	var that = $(this);
+	jQuery(document).ready(function() {
+		// Disable pointer on class, and attach click action to re-enable them
+		$('.click-to-interact').on('click', onEmbedClickHandler).find('iframe').css("pointer-events", "none");
 
-	// Disable the click handler until the user leaves the area
-	that.off('click', onEmbedClickHandler);
+		window.KENT.log("Initiating: Click to interact");
+		window.KENT.log($('.click-to-interact'));
+	});
 
-	that.find('iframe').css("pointer-events", "auto");
-
-	// Handle the mouse leave event
-	that.on('mouseleave', onEmbedMouseleaveHandler);
-};
-
-jQuery(document).ready(function () {
-
-	$('.click-to-interact').on('click', onEmbedClickHandler);
-});
+})();
 
 var stellarActivated = false;
 
@@ -18060,7 +18309,6 @@ window.KENT.kentslider.profile_feature = {
 
 $(document).ready(function(){
 
-
 	$('.kent-slider').each(function()
 	{
 		var slider_config = $(this).data('slider-config');
@@ -18084,6 +18332,8 @@ $(document).ready(function(){
 			$(this).slick(config);
 		}
 
+		// Debug
+		window.KENT.log("[Kent-slider] Instance created", $(this));
 	});
 
 });
@@ -18208,11 +18458,25 @@ $(document).ready(function(){
 			}
 		});
 
+		// Debug
+		window.KENT.log("[Video player] Instance created", $(this));
 	});
 });
+/**
+ * Social sharing icons
+ *
+ * Converts anything in a div with the class `content-social-share` in to a social sharing icon.
+ * Clicking the icons will launch a share this page window. 
+ * Will automatically pass share data to Google Analytics.
+ *
+ * @uses https://github.com/sapegin/social-likes
+ */
 (function(){
-	//add linkedin support (not included in current version of social-shares)
+
+	// Add additional social networks to the social-likes code.
 	window.socialLikesButtons = {
+
+		// Add linkedin support 
 		linkedin: {
 			counterUrl: 'http://www.linkedin.com/countserv/count/share?url={url}',
 			counter: function(jsonUrl, deferred) {
@@ -18230,8 +18494,7 @@ $(document).ready(function(){
 					};
 				}
 				options._[jsonUrl] = deferred;
-				$.getScript(jsonUrl)
-					.fail(deferred.reject);
+				$.getScript(jsonUrl).fail(deferred.reject);
 			},
 			popupUrl: 'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',
 			popupWidth: 650,
@@ -18239,18 +18502,25 @@ $(document).ready(function(){
 		}
 	};
 
+	// When jQuery is ready, hook up our social sharing icons.
 	$(function() {
+		// for all social share containers
 		var $likes = $(".content-social-share");
 		if ($likes.length > 0) {
+
+			// Init social likes on container + grab options
 			var options = $likes.socialLikes({"counters": false}).data().socialLikes.options;
 
-			// Populate "email link"
+			// Populate "email link" (Additional option we have added)
 			$likes.find("a.email").attr("href", "mailto:?subject=" + options.title + "&body=Link: " + options.url);
 
-			// Hook up social events
+			// Hook up social events via KAT
 			$likes.find("a").click(function(){
-				window.KENT.kat.social($(this).attr('title'), 'share');
+				window.KENT.kat.social($(this).attr('title'), 'share'); // current url is used, if no url is provided as the 3rd param.
 			});
 		}
+		// Debug
+		window.KENT.log("Initiating: Social Sharing");
+		window.KENT.log($likes);
 	});
 })();

@@ -1,13 +1,21 @@
+
+/**
+ * Responsive Collapse
+ *
+ * Mirrors the behaviour of http://v4-alpha.getbootstrap.com/components/collapse/ in a breakpoint aware way
+ *
+ * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
+ * @uses responsive_util.js
+ */
 jQuery(document).ready(function(){
 
-    viewport = ResponsiveBootstrapToolkit;
-
+    var viewport = ResponsiveBootstrapToolkit;
     var $collabsables = $('[data-toggle="collapse_responsive"]');
 
     $collabsables.click(function(e){
         e.preventDefault();
 
-        var $this= $(this);
+        var $this = $(this);
         var isCollapsed = $(this).hasClass('collapsed');
         var $parent = $($this.data('parent') || null);
         var $target = $($this.data('target') || null);
@@ -25,8 +33,8 @@ jQuery(document).ready(function(){
         ){
             return;
         }
-        // else, toggle it open / shut
 
+        // else, toggle it open / shut
         if($parent.length > 0){
             var $open = $parent.find('.in');
             $open.removeClass('in').removeClass('active')
@@ -50,7 +58,7 @@ jQuery(document).ready(function(){
         }
     });
 
-
+    // When breakpoint changes
     $(window).on("viewport:change", function(){
 
         $collabsables.each(function(){
