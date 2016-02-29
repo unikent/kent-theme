@@ -1,10 +1,6 @@
 <?php use unikent\kent_theme\KentThemeHelper;
 
-if(isset($_GET['webroot'])){
-	define('WEBROOT',$_GET['webroot']);
-}
-
-include "../bootstrap.php";
+include "pattern_bootstrap.php";
 
 KentThemeHelper::header(array(
 			"title" => "{{{title}}}",

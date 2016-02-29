@@ -18,7 +18,7 @@ Class KentThemeHelper {
 			'home_page' => false
 		);
 
-		$config = array_merge($defaults,$config);
+		$config = array_merge($defaults, $config);
 
 		extract($config);
 
