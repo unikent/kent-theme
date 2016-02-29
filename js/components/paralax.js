@@ -1,4 +1,11 @@
-var stellarActivated = false;
+/**
+ * Parallax
+ *
+ * Provides parallax functionality
+ *
+ * @uses https://github.com/markdalgleish/stellar.js
+ */
+ var stellarActivated = false;
 
 function react_to_window() {
 	if(ResponsiveBootstrapToolkit.is('xs')) {
