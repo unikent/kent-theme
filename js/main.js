@@ -18220,7 +18220,7 @@ function react_to_window() {
 			$(window).data('plugin_stellar').destroy();
 			stellarActivated = false;
 		}
-		$('.media-wrap-paralax').css('min-height','');
+		$('.media-wrap-parallax').css('min-height','');
 	} else {
 		if (stellarActivated === false) {
 
@@ -18262,7 +18262,7 @@ function react_to_window() {
 			stellarActivated = true;
 		}
 		var $ratio = ResponsiveBootstrapToolkit.is('<xl')?(9/16):(7/16);
-		$('.media-wrap-paralax').each(function () {
+		$('.media-wrap-parallax').each(function () {
 			$(this).css('min-height', ($(window).width() * $ratio) + 'px');
 		});
 		$(window).data('plugin_stellar').refresh();
