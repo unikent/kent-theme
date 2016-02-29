@@ -1,6 +1,6 @@
 <?php use unikent\kent_theme\KentThemeHelper;
 
-include "pattern_bootstrap.php";
+include dirname(dirname(__FILE__)) . "/pattern_bootstrap.php";
 
 KentThemeHelper::header(array(
 			"title" => "{{{title}}}",

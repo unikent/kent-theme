@@ -4093,6 +4093,7 @@ button.close {
   .modal.fade .modal-dialog {
     transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
     -webkit-transform: translate(0, -25%);
             transform: translate(0, -25%); }
   .modal.in .modal-dialog {
@@ -4386,6 +4387,7 @@ button.close {
       .carousel-inner > .carousel-item {
         transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
+        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
         -webkit-perspective: 1000px;
@@ -6755,9 +6757,44 @@ select {
     font-weight: bold;
     border-bottom: 3px solid #671115; }
 
+.tab-content > .tab-title {
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 12px 16px;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #671115;
+  margin: 0;
+  font-weight: normal;
+  background: #f5f5f5; }
+  .tab-content > .tab-title:first-child {
+    border-top: 1px solid #ddd; }
+  .tab-content > .tab-title:after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    right: 16px;
+    right: 1rem;
+    font-family: "kentfont", sans-serif;
+    color: #671115; }
+  .tab-content > .tab-title.collapsed:after {
+    content: ""; }
+
 .tab-content > .tab-pane {
-  margin-top: 16px;
-  margin-top: 1rem; }
+  padding: 16px;
+  padding: 1rem;
+  background: #e8e8e8; }
+  .tab-content > .tab-pane.in, .tab-content > .tab-pane.active {
+    border-bottom: 1px solid #ddd; }
+  @media (min-width: 768px) {
+    .tab-content > .tab-pane {
+      background: none; }
+      .tab-content > .tab-pane.in, .tab-content > .tab-pane.active {
+        border-bottom: none; } }
 
 .audience-bar {
   background-color: #671115;
