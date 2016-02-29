@@ -116,7 +116,8 @@ module.exports = function(grunt) {
 					'js/components/paralax.js',
 					'js/components/slider.js',
 					'js/components/video.js',
-					'js/components/social-likes.js'
+					'js/components/social-likes.js',
+					'js/components/navigation.js'
 				],
 				dest: 'js/main.js'
 			}

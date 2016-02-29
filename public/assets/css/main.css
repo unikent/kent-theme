@@ -6758,6 +6758,7 @@ select {
     border-bottom: 3px solid #05345C; }
 
 .tab-content > .tab-title {
+  cursor: pointer;
   overflow: hidden;
   width: 100%;
   display: block;

@@ -17740,8 +17740,8 @@ jQuery(document).ready(function(){
 
         var $this = $(this);
         var isCollapsed = $(this).hasClass('collapsed');
-        var $parent = $($this.data('parent') || null);
-        var $target = $($this.data('target') || null);
+        var $parent = $($this).closest($this.data('parent')) || null;
+        var $target = $($this.data('target')) || null;
 
 		var $isTab = $parent.hasClass('tab-content');
         // If target isn't collapsed at this breakpoint, ignore.
@@ -17765,7 +17765,7 @@ jQuery(document).ready(function(){
                     function(){
                         $parent.find('[data-target="#' + $(this).attr('id') + '"]').addClass('collapsed');
 						if($isTab){
-							$parent.find('.nav-link').removeClass('active');
+							$parent.parent().find('.nav-link').removeClass('active');
 						}
                     }
             );
@@ -17776,7 +17776,7 @@ jQuery(document).ready(function(){
             // Add expanded state (this only needs to be set when collapsing is possible)
             $this.toggleClass('collapsed',!isCollapsed).attr("aria-expanded", isCollapsed);
 			if($isTab){
-				$parent.find('.nav-link[href="#' + $(this).attr('id') + '"]').addClass('active');
+				$parent.parent().find('.nav-link[href="' + $this.data('target') + '"]').addClass('active');
 			}
         }
     });
@@ -18544,4 +18544,17 @@ $(document).ready(function(){
 		window.KENT.log("Initiating: Social Sharing");
 		window.KENT.log($likes);
 	});
+})();
+
+(function(){
+
+	var $tabs = $('a[data-toggle="tab"]');
+	$tabs.on('hidden.bs.tab', function (e) {
+		$('.tab-title[data-target="' + $(e.target).attr('href') + '"]').addClass('collapsed').attr("aria-expanded", false);
+	});
+
+	$tabs.on('shown.bs.tab', function (e) {
+		$('.tab-title[data-target="' + $(e.target).attr('href') + '"]').removeClass('collapsed').attr("aria-expanded", true);
+	});
+
 })();
