@@ -73,7 +73,7 @@
 			nav {
 				max-height:0;
 				overflow: hidden;
-				transition: max-height 300ms;
+				transition:none;
 				a {
 					font-family: $font-family-sans-serif;
 					text-transform: none;
@@ -110,7 +110,10 @@
 					}
 
 					nav {
-						max-height: 100vh;
+						// Speed it up a bit, was a bit slow without the 100vh to fill
+						transition: max-height 200ms;
+						// 3 rem links * 4 + 1 rem for 4px margins
+						max-height: 13rem;
 					}
 				}
 			}
@@ -222,7 +225,8 @@
 					position: absolute;
 					left:0;
 					top: $global-nav-height - 1.3;
-				}
+				}	
+
 				nav {
 					display: table;
 					overflow: hidden;

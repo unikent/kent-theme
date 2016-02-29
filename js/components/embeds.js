@@ -1,27 +1,39 @@
-// Disable scroll zooming and bind back the click event
-var onEmbedClickHandler;
+/**
+ * Click to interact logic
+ *
+ * Disable scrolling/zooming on iframes with .click-to-interact class
+ * User click activates scrolling behavior and loss of focus deactivates it
+ *
+ */
+(function(){
+	var onEmbedClickHandler, onEmbedMouseleaveHandler;
 
-var onEmbedMouseleaveHandler = function (event) {
-	var that = $(this);
+	// Disable pointer events
+	onEmbedMouseleaveHandler = function (event) {
+		// Re add the click to interact handler
+		$(this).on('click', onEmbedClickHandler);
+		// remove the leaving handler
+		$(this).off('mouseleave', onEmbedMouseleaveHandler);
+		// Disable pointer events
+		$(this).find('iframe').css("pointer-events", "none");
+	};
 
-	that.on('click', onEmbedClickHandler);
-	that.off('mouseleave', onEmbedMouseleaveHandler);
-	that.find('iframe').css("pointer-events", "none");
-};
+	// Enable pointer events
+	onEmbedClickHandler = function (event) {
+		// Disable the click handler until the user leaves the area
+		$(this).off('click', onEmbedClickHandler);
+		// Handle the mouse leave event
+		$(this).on('mouseleave', onEmbedMouseleaveHandler);
+		// Enable the pointer events
+		$(this).find('iframe').css("pointer-events", "auto");
+	};
 
-onEmbedClickHandler = function (event) {
-	var that = $(this);
+	jQuery(document).ready(function() {
+		// Disable pointer on class, and attach click action to re-enable them
+		$('.click-to-interact').on('click', onEmbedClickHandler).find('iframe').css("pointer-events", "none");
 
-	// Disable the click handler until the user leaves the area
-	that.off('click', onEmbedClickHandler);
+		window.KENT.log("Initiating: Click to interact");
+		window.KENT.log($('.click-to-interact'));
+	});
 
-	that.find('iframe').css("pointer-events", "auto");
-
-	// Handle the mouse leave event
-	that.on('mouseleave', onEmbedMouseleaveHandler);
-};
-
-jQuery(document).ready(function () {
-
-	$('.click-to-interact').on('click', onEmbedClickHandler);
-});
+})();
