@@ -5730,36 +5730,36 @@ p + h6, p + .h6 {
         width: 7.5rem;
         height: 7.5rem; } }
 
-.media-wrap-letterbox, .media-wrap-paralax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
+.media-wrap-letterbox, .media-wrap-parallax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
   position: relative;
   clear: both;
   overflow: hidden; }
   @media (min-width: 768px) {
-    .media-wrap-letterbox, .media-wrap-paralax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
+    .media-wrap-letterbox, .media-wrap-parallax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
       min-height: 22rem; } }
   @media (min-width: 992px) {
-    .media-wrap-letterbox, .media-wrap-paralax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
+    .media-wrap-letterbox, .media-wrap-parallax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
       max-height: 33rem; } }
-  .media-wrap-letterbox > img, .media-wrap-paralax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
+  .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
     width: 100%;
     display: block;
     max-width: 100%;
     height: auto; }
     @media (min-width: 992px) {
-      .media-wrap-letterbox > img, .media-wrap-paralax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
+      .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
         margin-top: -3rem; } }
   @media (min-width: 992px) and (min-width: 1200px) {
-    .media-wrap-letterbox > img, .media-wrap-paralax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
+    .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
       margin-top: -6rem; } }
   @media (min-width: 992px) and (min-width: 1712px) {
-    .media-wrap-letterbox > img, .media-wrap-paralax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
+    .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
       margin-top: -14rem; } }
   @media (min-width: 992px) and (min-width: 2400px) {
-    .media-wrap-letterbox > img, .media-wrap-paralax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
+    .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
       margin-top: -20rem; } }
 
 @media (min-width: 544px) {
-  .media-wrap-paralax > img {
+  .media-wrap-parallax > img {
     position: absolute; } }
 
 figure {
