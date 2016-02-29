@@ -206,7 +206,9 @@ module.exports = function(grunt) {
 				options:   {
 					htmlhint:false,
 					getData: {
-						webroot: '//beta.kent.ac.uk/'
+						webroot: '//beta.kent.ac.uk/',
+						api_url: 'https://api.kent.ac.uk/api/',
+						debug: false
 					}
 				},
 				files: [
