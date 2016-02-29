@@ -74,7 +74,7 @@ window.KENT  = window.KENT || {};
 
 	// Setup quick access methods to Menu functions
 	var global_nav = {
-		openSearchmenu: function(){
+		openSearchMenu: function(){
 			return openMenu(global_search_toggles, global_search);
 		},
 		closeSearchMenu: function(){
