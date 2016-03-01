@@ -180,12 +180,6 @@
 }
 
 .tab-content{
-	.tab-title{
-
-	}
-}
-
-.tab-content{
 
 	& > .tab-title{
 		cursor: pointer;
@@ -223,16 +217,9 @@
 
 	& > .tab-pane {
 		padding: 1rem;
-		background: darken(#f5f5f5,5%);
 
 		&.in,&.active{
 			border-bottom: 1px solid #ddd;
-		}
-		@include media-breakpoint-up(md){
-			background: none;
-			&.in,&.active{
-				border-bottom: none;
-			}
 		}
 	}
 }

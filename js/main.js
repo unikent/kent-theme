@@ -16580,7 +16580,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 		// Public version of attach.
 		this.attach = function(options){
 
-			// Don't wait if document is already ready or safeload is turnd off
+			// Don't wait if document is already ready or safe load is turned off
 			if(document.readyState === 'complete' || options.safeload === false) {
 				methods.attach(options);
 			}else{
@@ -16597,48 +16597,57 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 		 * Attach a new quick-spot search to the page
 		 *
 		 ** Required
-		 * @param option.target ID of element to use
+		 * @param options.target - ID of element to use
 		 *
 		 ** One of
-		 * @param option.url url of JSON feed to search with
-		 * @param option.data - data to search on provided as raw javascript object
+		 * @param options.url - URL of JSON feed to search with
+		 * @param options.data - data to search on provided as raw JavaScript object
 		 *
 		 ** Advanced configuration
-		 * @param option.key_value - attribute containing key bit of information (name used by default)
-		 * @param option.display_name - name of attribute to display in box (uses key_value by default)
-		 * @param options.search_on - array of attributes to search on (will use all if not specified)
-		 * @param option.disable_occurrence_weighting - if true, occurrences will not weight results
-		 * @param option.safeload - QS will attempt to attach instantly, rather than waiting for document load
+		 * @param options.key_value - attribute containing key bit of information (name used by default)
+		 * @param options.display_name - name of attribute to display in box (uses key_value by default)
+		 * @param options.search_on - array of attributes to search on (Quickspot will search on all attributes in an object if this is not provided)
+		 * @param options.disable_occurrence_weighting - if true, occurrences will not weight results
+		 * @param options.safeload - QS will attempt to attach instantly, rather than waiting for document load
 		 * @param options.hide_on_blur - Hide listing on blur (true by default)
-		 * @param option.results_container - id of contain quickspot results will show in (by default will use quickspot elements parent)
-		 * @param option.prevent_headers - Don't add custom headers such as X-Requested-With (will avoid options requests)
-		 *
+		 * @param options.results_container - id of contain quick-spot results will show in (by default will use quick-spot elements parent)
+		 * @param options.prevent_headers - Don't add custom headers such as X-Requested-With (will avoid options requests)
+		 * @param options.auto_highlight - Automatically attempt to highlight search text in result items. (true|false - default false)
+		 * @param options.max_results - Maximum results to display at any one time (after searching/ordering, results after the cut off won't be rendered. 0 = unlimited)
+		 * @param options.screenreader - Experimental screen reader helper (true|false)
+		 * 
 		 ** Extend methods
-		 * @param option.display_handler - overwrites default display method.
+		 * @param options.display_handler - overwrites default display method.
 		 * @param options.click_handler - Callback method, is passed the selected item.
 		 * @param options.gen_score - callback to set custom score method. (higher number = higher in results order)
 		 * @param options.no_results - Item to show when no results are found (false to do nothing)
 		 * @param options.no_results_click - action when "no results" item is clicked
 		 * @param options.no_search_handler - action when no search is entered
-		 * @param options.loaded - callback fired when datastore has been loaded
-		 * @param options.ready - callback fired when quickspot up & running
+		 * @param options.loaded - callback fired when data store has been loaded
+		 * @param options.ready - callback fired when quick-spot up & running
+		 * @param options.data_pre_parse - callback provided with raw data object & options - can be used to rearrange data to work with quick-spot (if needed)
+		 * @param options.parse_results - Manipulate result array before render.
 		 *
 		 ** Events
 		 * quickspot:start - search is triggered
 		 * quickspot:end - search is completed
+		 * quickspot:activate - quick-spot gets focus
+		 * quickspot:select - new result gets focus
 		 * quickspot:result - result is shown
-		 *
+		 * quickspot:resultsfound - search completes with results
+		 * quickspot:noresult - search completes with no results
 		 */
 		methods.attach = function(options){
 
- 			// Merge passed in options into options obj
- 			for(var i in options) here.options[i] = options[i];
+			// Merge passed in options into options obj
+			for(var i in options) here.options[i] = options[i];
 
- 			// Check we have a target!
+			// Check we have a target!
 			if(!options.target){
 				console.log("Error: Target not specified");
 				return;
 			}
+
 			// Get target
 			here.target = document.getElementById(here.options.target);
 			if(!here.target){
@@ -16687,6 +16696,49 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
 			// Fire ready callback
 			if(typeof options.ready === 'function') options.ready(here);
+
+			// Enable screen reader support - disabled by default as is experimental
+			if(typeof options.screenreader !== 'undefined' && options.screenreader === true){
+				methods.screenreaderHelper();
+			}
+		}
+
+		/**
+		 * Start screenreaderHelper for use in supported browsers
+		 * Currently on firefox seems to fully handle this.
+		 *
+		 * Attaches to primary events to provide screen reader feedback.
+		 */
+		methods.screenreaderHelper = function(){
+
+			// create screen reader element
+			var reader = document.createElement("span");
+			reader.setAttribute("aria-live", "assertive");
+			reader.className = "screenreader";
+			reader.setAttribute("style", "position: absolute!important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px);");
+			// Add to DOM
+			here.target.parentNode.appendChild(reader);
+
+			// When user finishes typing, read result status
+			var typing;
+			util.addListener(here.target, 'quickspot:end', function(){
+				if(typing) clearTimeout(typing);
+				typing = setTimeout(function(){
+					if(here.results.length === 0){
+						reader.innerHTML = "No suggestions found. Hit enter to search.";
+					}else{
+						reader.innerHTML = "Found suggestions. Go to " + here.results[here.selectedIndex][here.options.display_name] + '?';
+					}
+				}, 400);
+			});
+			// Announce selection
+			util.addListener(here.target, 'quickspot:select', function(){
+				reader.innerHTML = "Go to " + here.results[here.selectedIndex][here.options.display_name] + '?';
+			});
+			// Announce selection of link
+			util.addListener(here.target, 'quickspot:activate', function(){
+				reader.innerHTML = "Loading...";
+			});
 		}
 	
 		/**
@@ -16786,7 +16838,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
 		/**
 		 * On: Quick-spot click off (blur)
-		 * if it wasnt one of results that was selected, close results pane
+		 * if it wasn't one of results that was selected, close results pane
 		 */
 		methods.handleBlur = function(event){
 			// is hide on blur enabled
@@ -16862,7 +16914,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 		 */
 		methods.render_results = function(results){
 
-			// Manipulate result array before render.
+			// Manipulate result array before render?
 			if(typeof here.options.parse_results === "function"){
 				results = here.options.parse_results(results, here.options);
 			}
@@ -16889,23 +16941,44 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 				return;
 			}
 
-			// If we have results, append required items in to a documentFragment (to avoid unnessesary dom reflows that will slow this down)
-			var fragment =  document.createDocumentFragment();
-			var tmp; // reuse object, js likes this
+			// If we have results, append required items in to a documentFragment (to avoid unnecessary DOM reflows that will slow this down)
+			var fragment = document.createDocumentFragment();
+			var tmp; // reuse object, JS likes this
+			var result_str;
+			var classes;
+
+			// if max_results is provided, slice off unwanted results (0 = show all, don't bother slicing if array is smaller than maxResults)
+			if(typeof here.options.max_results === 'number' && here.options.max_results !== 0 && results.length > here.options.max_results){
+				results = results.slice(0, here.options.max_results);
+			}
 
 			// For each item (given there own scope by this method)
 			results.forEach(function(result, idx){
-				// Create new a element
-				tmp = document.createElement('a');
+				
 				// Set name/title
-				if(typeof here.options.display_handler != 'undefined'){
-					tmp.innerHTML = here.options.display_handler(result, here);
+				if(typeof here.options.display_handler === 'function'){
+					result_str = here.options.display_handler(result, here);
 				}else{
-					tmp.innerHTML = result[here.options.display_name];
+					result_str = result[here.options.display_name];
+				}	
+
+				// Automatically highlight matching portion of text
+				if(typeof here.options.auto_highlight !== 'undefined' && here.options.auto_highlight == true){
+					// Attempt to avoid sticking strong's in the middle of html tags
+					// http://stackoverflow.com/questions/18621568/regex-replace-text-outside-html-tags#answer-18622606
+					result_str = result_str.replace(RegExp('('+here.lastValue+')(?![^<]*>|[^<>]*<\/)', 'i'), '<strong>$1</strong>');
 				}
 
+				// Create new a element
+				tmp = document.createElement('a');
+				tmp.innerHTML = result_str;
+
 				// Apply classes
-				tmp.className = 'quickspot-result quickspot-result-'+idx;
+				classes = 'quickspot-result quickspot-result-'+idx;
+				if(typeof result.qs_result_class === 'string'){
+					classes = result.qs_result_class + ' ' + classes;
+				}
+				tmp.className = classes;
 
 				// Attach listener (click)
 				util.addListener(tmp, 'click', function(event){ 
@@ -16922,13 +16995,14 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 			//event when results found
 			util.triggerEvent(here.target,"quickspot:resultsfound");
 
-			//clear old data from dom.
+			// Clear old data from DOM.
 			here.dom.innerHTML ='';
-			//Attach fragment
+
+			// Attach fragment
 			here.dom.style.display = 'block';
 			here.dom.appendChild(fragment);
 
-			//select the inital value.
+			// Select the initial value.
 			methods.selectIndex(this.selectedIndex);
 		}
 
@@ -16946,6 +17020,9 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 			// Ensure result is valid
 			if(typeof result === 'undefined') return here.options.no_results_click(here.lastValue, here);
 
+			// Fire activate event
+			util.triggerEvent(here.target,"quickspot:activate");
+			
 			// If custom handler was provided
 			if(typeof here.options.click_handler != 'undefined'){
 				here.options.click_handler(result);
@@ -16959,7 +17036,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 					here.target.value = result[here.options.display_name];
 					here.dom.style.display = 'none';
 				}
-			}		
+			}
 		}
 		
 		/**
@@ -17035,6 +17112,11 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 				here.options.key_value = 'name';
 			}
 
+			// Pre parse data (re arrange structure to allow searching if needed)
+			if(typeof options.data_pre_parse === 'function'){
+				data = options.data_pre_parse(data, options);
+			} 
+
 			// Convert object to array if found
 			// keys will be thrown away
 			if(typeof data === 'object'){
@@ -17048,7 +17130,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 			// Loop through searchable items, adding all values that will need to be searched upon in to a
 			// string stored as __searchvalues. Either add everything or just what the user specifies.
 			for(var i = 0; i < data.length; i++){
-				// If search_on exists use the as attributes list, else just use all of them
+				// If search_on exists use th as attributes list, else just use all of them
 				data[i] = ds.pre_process(data[i], attrs);
 			}
 			// Store in memory
@@ -17115,9 +17197,9 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 		}
 
 		/**
- 		 * Clear all filters applied to data.
- 		 * @return this
- 		 */
+		 * Clear all filters applied to data.
+		 * @return this
+		 */
 		this.clear_filters = function(){
 			this.data_filtered = this.data;
 			return this;
@@ -17149,20 +17231,20 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 		}
 
 		/**
- 		 * get
- 		 *
- 		 * @return results as array
- 		 */
+		 * get
+		 *
+		 * @return results as array
+		 */
 		this.get = function(){
 			return this.results;
 		}
 
 		/**
- 		 * pre_process an item to make it quickly searchable
- 		 *
- 		 * @param item item object]
- 		 * @param attrs attributes to search on
- 		 */
+		 * pre_process an item to make it quickly searchable
+		 *
+		 * @param item item object
+		 * @param attrs attributes to search on
+		 */
 		ds.pre_process = function(item, attrs){
 			var tmp = '';
 
@@ -17242,7 +17324,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 		 *
 		 * @param results - array of items that match the search result
 		 * @param search - search string in use
-		 * @return orderd array of results
+		 * @return ordered array of results
 		 */
 		ds.sort_by_match = function(results, search){
 			// Select either user defined score_handler, or default (built in) one
@@ -17257,11 +17339,16 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 			// Sort results based on score (higher=better)
 			results.sort(function(a, b){
 				if(a.__score==b.__score){
-					return (a.__len_diff==b.__len_diff) ? 0 : (a.__len_diff > b.__len_diff)  ? 1 : -1;
+					if (a.__len_diff==b.__len_diff){
+						return (a.__searchvalues > b.__searchvalues)? 1: -1; // if two values have an equal match score, order them alphabetically 
+					}else{
+						return (a.__len_diff > b.__len_diff)  ? 1 : -1;
+					}
 				}else{
 					return (a.__score < b.__score) ? 1 : -1;
 				}
-			})
+			});
+
 			// return them for rendering
 			return results;
 		}
@@ -17280,10 +17367,10 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 			// key value index
 			idx = result.__keyvalue.indexOf(search);
 
-			// Count occurences 
+			// Count occurrences 
 			// This metric is less useful for 1 letter words so waste cycles on it if so.
-			// The occurrence weighting can aslo be disabled from options if needed, as it can
-			// sometimes have unwanted results when used with values that repeat alot.
+			// The occurrence weighting can also be disabled from options if needed, as it can
+			// sometimes have unwanted results when used with values that repeat a lot.
 			if(!here.options.disable_occurrence_weighting && search.length > 2) score += util.occurrences(result.__searchvalues, search);
 			// Boost score by 5 if match is start of word
 			score += (result.__searchvalues.indexOf(' '+search) !== -1) ? 5 : 0;
@@ -17314,10 +17401,10 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 			"disable_occurrence_weighting": false
 		}
 
-		// Setup datastore
+		// Setup data store
 		ds.create(data, options);
 	}
-	// Static method, create a new datastore.
+	// Static method, create a new data store.
 	datastore.create = function(data, options){
 		return new datastore(data, options);
 	}
@@ -17401,7 +17488,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
 	// Add ourselves to the outside world / global namespace
 	window.quickspot = {};
-	// Provide method that will allow us to create an new object instance for each attached searchbox.
+	// Provide method that will allow us to create an new object instance for each attached search box.
 	window.quickspot.attach = function(options){
 		var qs = new quickspot;
 		qs.attach(options);
@@ -17422,7 +17509,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 	
 }).call({});
 
-// Compatability layer
+// Compatibility layer
 
 // forEach shim for
 if (!('forEach' in Array.prototype)) {
@@ -17435,7 +17522,7 @@ if (!('forEach' in Array.prototype)) {
 }
 
 // JSON shim (import cdn copy of json2 if JSON is missing)
-// Even if jQuery is avaiable it seems json2 is signifcantly faster, so importing it is worth the time.
+// Even if jQuery is available it seems json2 is significantly faster, so importing it is worth the time.
 if(typeof JSON === 'undefined'){
 	var json2 = document.createElement('script');
 	json2.src = '//ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js';
@@ -18598,13 +18685,24 @@ $(document).ready(function(){
 
 (function(){
 
+	//get all tabs
 	var $tabs = $('a[data-toggle="tab"]');
+
+	// when tab is hidden adjust related accordion tab-title accordingly
 	$tabs.on('hidden.bs.tab', function (e) {
 		$('.tab-title[data-target="' + $(e.target).attr('href') + '"]').addClass('collapsed').attr("aria-expanded", false);
 	});
 
+    // when tab is show adjust related accordion tab-title accordingly
 	$tabs.on('shown.bs.tab', function (e) {
 		$('.tab-title[data-target="' + $(e.target).attr('href') + '"]').removeClass('collapsed').attr("aria-expanded", true);
+	});
+
+	//endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
+	$(window).on('viewport:resize',function(){
+		$('.nav-tabs:visible').each(function(){
+			$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr("aria-expanded", true);
+		});
 	});
 
 })();
