@@ -9837,7 +9837,7 @@ blockquote.pull-quote {
 
 .quickspot-results {
   width: 100%;
-  background: #fff;
+  background: #eee;
   z-index: 9999;
   max-height: 224px;
   max-height: 14rem;
@@ -9852,9 +9852,10 @@ blockquote.pull-quote {
     text-decoration: none;
     cursor: pointer;
     color: #171717;
-    border-bottom: 1px solid #eee;
+    background: #fff;
     transition: background .25s;
-    position: relative; }
+    position: relative;
+    margin-bottom: 1px; }
     .quickspot-results .quickspot-result:before {
       color: #ccc;
       float: right;
@@ -9865,6 +9866,12 @@ blockquote.pull-quote {
       right: .5rem;
       top: 35%;
       top: calc(50% - 0.5rem); }
+    .quickspot-results .quickspot-result.pg {
+      border-left: solid 8px #671115;
+      border-left: solid 0.5rem #671115; }
+    .quickspot-results .quickspot-result.ug {
+      border-left: solid 8px #05345C;
+      border-left: solid 0.5rem #05345C; }
     .quickspot-results .quickspot-result strong {
       color: #000; }
     .quickspot-results .quickspot-result span {

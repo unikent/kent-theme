@@ -2,11 +2,11 @@
 	position:relative;
 	/*Oddly IE7 is fine without this, IE8 on the other hand gets a bit confused*/
 	position:absolute\9; 
- }
+}
 
 .quickspot-results {
 	width: 100%;
-	background: #fff;
+	background: #eee;
 	z-index:9999;
 	max-height:14rem;
 	overflow:auto;
@@ -16,26 +16,34 @@
 	display:block;
 	box-shadow:  3px 3px 5px 0px rgba(0, 0, 0, 0.3);	
 
+
 	.quickspot-result {
 		padding:8px 10px;
 		display:block;
 		text-decoration: none;
 		cursor:pointer;
 		color: $body-color;
-		border-bottom: 1px solid #eee;
+		background: #fff;
 		transition: background .25s;
 		position: relative;
-		
+		margin-bottom: 1px;
 		&:before {
 			color: #ccc;
 			float: right;
-   			content: $kf-chevron-right;
-  			font-family: $font-family-kentfont;
-  			position: absolute;
-  			right: .5rem;
-  			top: 35%; // old browsers
-  			top: calc(50% - 0.5rem);
-  		
+			content: $kf-chevron-right;
+			font-family: $font-family-kentfont;
+			position: absolute;
+			right: .5rem;
+			top: 35%; // old browsers
+			top: calc(50% - 0.5rem);
+		
+		}
+
+		&.pg {
+			border-left: solid .5rem $kent-pg-primary;
+		}
+		&.ug {
+			border-left: solid .5rem $kent-primary;
 		}
 
 		strong {
