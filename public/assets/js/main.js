@@ -16862,6 +16862,11 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 		 */
 		methods.render_results = function(results){
 
+			// Manipulate result array before render.
+			if(typeof here.options.parse_results === "function"){
+				results = here.options.parse_results(results, here.options);
+			}
+
 			// If no results, don't show result box.
 			if(results.length === 0){
 
@@ -16898,7 +16903,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 				}else{
 					tmp.innerHTML = result[here.options.display_name];
 				}
-				
+
 				// Apply classes
 				tmp.className = 'quickspot-result quickspot-result-'+idx;
 
@@ -17043,7 +17048,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 			// Loop through searchable items, adding all values that will need to be searched upon in to a
 			// string stored as __searchvalues. Either add everything or just what the user specifies.
 			for(var i = 0; i < data.length; i++){
-				// If search_on exists use th as attributes list, else just use all of them
+				// If search_on exists use the as attributes list, else just use all of them
 				data[i] = ds.pre_process(data[i], attrs);
 			}
 			// Store in memory
@@ -17650,6 +17655,10 @@ window.KENT  = window.KENT || {};
 		"auto_highlight":false,
 		"display_handler" : function (itm, qs) {
 
+			if(typeof itm.search_option === 'boolean' && itm.search_option === true){
+				return "<i class='kf-search' style='color:#ccc;'></i> View all results for <strong>" + qs.lastValue + "</strong>";
+			}
+
 			// Generate locations list
 			var locations = [itm.campus];
 			if (itm.additional_locations !== "") {
@@ -17671,6 +17680,11 @@ window.KENT  = window.KENT || {};
 	// UG
 	configs.ug_courses = $.extend({}, configs.courses_default, {
 		"url":	window.KENT.settings.api_url + "programmes/current/undergraduate/programmes",
+
+		"parse_results": function (results, options){
+			results.unshift({"name": "", "campus":"", "additional_locations":"", "search_option": true});
+			return results;
+		}
 	});
 
 	// PG
@@ -17680,6 +17694,43 @@ window.KENT  = window.KENT || {};
 			document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
 		}
 	});
+
+	// Combined
+	configs.all_courses = $.extend({}, configs.courses_default, {
+		"url":	"https://webtools-test.kent.ac.uk/programmes/api/2016/all/programmes/",
+		"parse_results": function (results, options){
+			results.unshift({"name": "", "campus":"", "additional_locations":"", "search_option": true});
+			return results;
+		},
+		"display_handler" : function (itm, qs) {
+
+			itm.qs_result_class = "cupcake";
+
+			if(typeof itm.search_option === 'boolean' && itm.search_option === true){
+				return "<i class='kf-search' style='color:#ccc;'></i> View all results for <strong>" + qs.lastValue + "</strong>";
+			}
+
+			// Generate locations list
+			var locations = [itm.campus];
+			if (itm.additional_locations !== "") {
+				locations = locations.concat(itm.additional_locations.split(', '));
+			}
+			locations = (locations.length > 1) ? [locations.slice(0, -1).join(', '), locations.slice(-1)[0]].join(' and ') : locations[0];
+
+			// Highlight searched word
+			return '<span class="'+ itm.level +'"></span>' + (itm.name + ' - ' + itm.award + ' <br> <span>' + locations + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
+		},
+		"click_handler": function (itm) {
+			document.location = '/courses/' + itm.level +'/' + itm.id + '/' + itm.slug;
+		},
+		"data_pre_parse": function(data, options){
+			for(var i in data){
+				data.qs_result_class = data[i].level;
+			}
+			return data;
+		},
+	});
+
 
 })();
 

@@ -24,7 +24,7 @@
 		"responsive-bootstrap-toolkit": "~2.5.1",
         "jquery.stellar" : "unikent/stellarjs#master",
         "slick-carousel": "1.5.9",
-        "quick-spot": "master",
+        "quick-spot": "develop",
         "js-cookie": "2.1.0",
 		"handlebars": "~4.0.5"
 	}
