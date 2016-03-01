@@ -139,7 +139,6 @@ window.KENT  = window.KENT || {};
 		});
 		$(window).on("viewport:change", function(){
 
-			console.log("!!");
 			if(ResponsiveBootstrapToolkit.is('<=sm')){
 				// if menu isn't already open
 				if(!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
