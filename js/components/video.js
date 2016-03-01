@@ -5,6 +5,7 @@ $(document).ready(function(){
 		// initiate and show the video as a modal
 		var init = function () {
 			// we need some data
+			var This = this;
 			var src = $(this).data('src') || false;
 			var transcript = $(this).data('transcript') || false;
 			var controls = typeof $(this).data('controls') === 'undefined' || ($(this).data('controls') === 'controls' || $(this).data('controls') === true) ? true : false;
@@ -38,20 +39,17 @@ $(document).ready(function(){
 				player.play(true);
 			};
 
-			// var pauseVideo = function () {
-			// 	if (!video.paused) {
-			// 		video.pause();
-			// 	}
-			// };
+			var pauseVideo = function () {
+				player.pause(true);
+			};
 
-			// var toggleVideo = function () {
-			// 	if (video.paused) {
-			// 		video.play();
-			// 	}
-			// 	else {
-			// 		video.pause();
-			// 	}
-			// };
+			var stopVideo = function () {
+				player.stop();
+			};
+
+			var toggleVideo = function () {
+				player.play();
+			};
 
 			// // all click handler to parent because thats where out video launcher button will be
 			// video_el.parent().click(function () {
@@ -83,29 +81,25 @@ $(document).ready(function(){
 
 				case 'modal':
 					$('body').append(video_container);
-					player = video_container.find('.video-container')[0]; console.log(player);
+					player = video_container.find('.video-container')[0];
 					video_container.modal({show:false});
 
-					// video_container.on('shown.bs.modal', function (e) {
-					// 	playVideo();
-					// });
-
-					// video_container.on('hide.bs.modal', function (e) {
-					// 	pauseVideo();
-					// });
-
-					$(this).on('showAndPlay', function (e) {
-						this.video_container.modal('show');
+					video_container.on('shown.bs.modal', function (e) {
 						playVideo();
 					});
 
-					//play it straight away
-					//video_container.modal('show');
+					video_container.on('hide.bs.modal', function (e) {
+						pauseVideo();
+					});
+
+					$(this).on('showAndPlay', function (e) {
+						this.video_container.modal('show');
+					});
+
 					break;
 			}
 
-			player = jwplayer(player);
-			player.setup({
+			player = jwplayer(player).setup({
 				file: src,
 				// image: "//example.com/uploads/myPoster.jpg",
 				width: "100%",
@@ -115,9 +109,22 @@ $(document).ready(function(){
 				//mediaid: '123456'
 			});
 
-			$(this).trigger('showAndPlay');
+			player.onPlay(function () {
+				video_container.addClass('playing');
+			});
+
+			player.onPause(function () {
+				video_container.removeClass('playing');
+			});
 
 			this.video_container = video_container;
+
+
+			//play it straight away when ready
+			player.onReady(function () {
+				$(This).trigger('showAndPlay');
+
+			});
 		};
 
 		this.video_containerId = launcherCount;
