@@ -17934,7 +17934,7 @@ window.KENT  = window.KENT || {};
 			}
 			return data;
 		},
-		"results_footer": "<div class='course-links'><a href='/courses/undergraduate/search'>All Undergraduate <i class='kf-chevron-right'></i></a><a href='/courses/undergraduate/search'>All Postgraduate <i class='kf-chevron-right'></i></a><a href='/courses/part-time/index.html'>Short Courses <i class='kf-chevron-right'></i></a></div>"
+		"results_footer": "<div class='course-links'><a class='chevron-link' href='/courses/undergraduate/search'>All Undergraduate</a><a  class='chevron-link' href='/courses/undergraduate/search'>All Postgraduate </a><a class='chevron-link' href='/courses/part-time/index.html'>Short Courses</a></div>"
 	});
 
 })();

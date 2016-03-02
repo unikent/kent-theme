@@ -64,16 +64,6 @@
 			transition: background .25s;
 		}	
 	}
-
-
-	@include media-breakpoint-up(sm){ 
-		//position:absolute;
-		//top:3.2rem;
-		//left:0;	
-		//width:100%;
-		
-	}
-
 }
 
 
@@ -93,9 +83,9 @@
 		a {
 			width:33.3%;
 			display: inline-block;
-			
+			font-size: 0.9rem;
 			padding: 10px 0;
-			padding-left:10px;
+			text-align:center;
 		}
 	}	
 
