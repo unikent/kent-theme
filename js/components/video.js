@@ -10,7 +10,8 @@ $(document).ready(function(){
 			var transcript = $(this).data('transcript') || false;
 			var controls = typeof $(this).data('controls') === 'undefined' || ($(this).data('controls') === 'controls' || $(this).data('controls') === true) ? true : false;
 			var mode = $(this).data('mode') || 'modal'; //default to modal
-			var modal_at = $(this).data('modal-at') || 'xs';
+			var modal_down = $(this).data('modal-down') || 'xs';
+			var modal_up = $(this).data('modal-up') || false;
 
 			// check that we have a video source & a template for this mode
 			if (!src || !Handlebars.templates['video_' + mode]) {
@@ -18,7 +19,7 @@ $(document).ready(function(){
 			}
 
 			// force modal mode if specified or we're at xs
-			if (viewport.is('<=' + modal_at)) {
+			if (viewport.is('<=' + modal_down) || (modal_up && viewport.is('>=' + modal_up))) {
 				mode = 'modal';
 			}
 
@@ -26,17 +27,14 @@ $(document).ready(function(){
 			var video_container = $(Handlebars.templates['video_' + mode]({
 				id: this.video_containerId,
 				// src: src,
-				// transcript: transcript,
+				vimertranscript: transcript,
 				// controls: controls
 			}));
-
-			// var video_el = video_container.find('video');
-			// var video = video_el[0];
 
 			var player = false; // this will be an instance of jwplayer later on
 
 			var playVideo = function () {
-				player.play(true);
+				player.play(true); console.log('playing');
 			};
 
 			var pauseVideo = function () {
@@ -51,29 +49,17 @@ $(document).ready(function(){
 				player.play();
 			};
 
-			// // all click handler to parent because thats where out video launcher button will be
-			// video_el.parent().click(function () {
-			// 	toggleVideo();
-			// });
-
-			// video_el.on('playing', function (e) {
-			// 	video_el.parent().removeClass('video-launcher');
-			// });
-
-			// video_el.on('pause ended', function (e) {
-			// 	video_el.parent().addClass('video-launcher');
-			// });
-
 			switch(mode) {
 				case 'inline':
-					$(this).children().hide();
-					$(this).unbind('click');
-					$(this).css('background-image', 'none');
-					$(this).removeClass('video-launcher');
-					$(this).append(video_container);
+					$(This).closest('.card-overlay').addClass('card-media-inline');
+					$(This).children().hide();
+					$(This).unbind('click');
+					$(This).css('background-image', 'none');
+					$(This).removeClass('video-launcher');
+					$(This).append(video_container);
 					player = video_container[0];
 
-					$(this).on('showAndPlay', function (e) {
+					$(This).on('showAndPlay', function (e) {
 						playVideo();
 					});
 
@@ -92,7 +78,7 @@ $(document).ready(function(){
 						pauseVideo();
 					});
 
-					$(this).on('showAndPlay', function (e) {
+					$(This).on('showAndPlay', function (e) {
 						this.video_container.modal('show');
 					});
 
@@ -101,20 +87,35 @@ $(document).ready(function(){
 
 			player = jwplayer(player).setup({
 				file: src,
-				// image: "//example.com/uploads/myPoster.jpg",
 				width: "100%",
-				aspectratio: "16:9",
-				// title: 'Basic Video Embed',
-				//description: 'A video with a basic title and description!',
-				//mediaid: '123456'
+				aspectratio: "16:9", description: "some kind of description"
 			});
 
-			player.onPlay(function () {
-				video_container.addClass('playing');
+			player.on('play', function () {
+				$(This).closest('.card-overlay').addClass('card-media-enabled');
+				$(player.getContainer()).removeClass('video-launcher');
 			});
 
-			player.onPause(function () {
-				video_container.removeClass('playing');
+			player.on('pause', function (state) { console.log('pausing');
+				$(This).closest('.card-overlay').removeClass('card-media-enabled');
+				player.setControls(false);
+				player.prevState = state.oldstate;
+				$(player.getContainer()).addClass('video-launcher');
+				$(player.getContainer()).off('click').on('click', function (e){
+
+						player.trigger('displayClick'); return false;
+					
+				});
+				
+				player.on('displayClick', function (something) {
+					if (player.prevState !== 'playing') {
+						player.setControls(true);
+						player.play();
+						player.off('displayClick');
+					}
+					player.prevState = null;
+					return false;
+				});
 			});
 
 			this.video_container = video_container;
