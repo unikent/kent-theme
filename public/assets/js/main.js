@@ -16721,9 +16721,9 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 			util.addListener(here.target, 	'keyup', 	methods.handleKeyDown);
 			util.addListener(here.target, 	'focus', 	methods.handleFocus);
 			util.addListener(here.target, 	'blur', 	methods.handleBlur);
-			util.addListener(here.dom, 		'blur', 	methods.handleBlur);
+			util.addListener(here.container, 'blur', 	methods.handleBlur);
 			// Allows use of commands when only results are selected (if we are not linking off somewhere)
-			util.addListener(here.dom, 		'blur', 	methods.handleKeyUp);
+			util.addListener(here.container, 'blur', 	methods.handleKeyUp);
 
 			// Fire ready callback
 			if(typeof options.ready === 'function') options.ready(here);
@@ -16915,7 +16915,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
 		/**
 		 * On: Quick-spot click off (blur)
-		 * if it wasn't one of results that was selected, close results pane
+		 * If it wasn't one of results that was selected, close results pane
 		 */
 		methods.handleBlur = function(event){
 			// is hide on blur enabled
@@ -16927,7 +16927,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 			// Wait a few ms for the new target to be correctly set so we can decided if we really 
 			// want to close the search.
 			setTimeout(function(){
-				if(here.dom != document.activeElement && here.target != document.activeElement){
+				// So long as the new active element isn't the container, searchbox, or somthing in the quickspot container, close!
+				if(here.container != document.activeElement && here.target != document.activeElement && here.container.contains(document.activeElement) === false){
 					//close if target is neither results or searchbox
 					methods.hideResults();
 				}
@@ -18203,7 +18204,6 @@ window.KENT  = window.KENT || {};
 			if(ResponsiveBootstrapToolkit.is('<=sm')){
 				// if menu isn't already open
 				if(!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
-					console.log("doesnt have body class");
 					$('.home-nav').delay(300).fadeIn();
 				}
 				
