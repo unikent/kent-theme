@@ -5797,8 +5797,8 @@ p + h6, p + .h6 {
         height: 7rem; } }
   .video-launcher:hover:after {
     color: #FFF;
-    -webkit-transform: scale(1.2, 1.2);
-            transform: scale(1.2, 1.2); }
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1); }
 
 .media-wrap-letterbox, .media-wrap-parallax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
   position: relative;
