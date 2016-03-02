@@ -158,5 +158,7 @@ $(document).ready(function(){
 			}
 		});
 
+		// Debug
+		window.KENT.log("[Video player] Instance created", $(this));
 	});
 });

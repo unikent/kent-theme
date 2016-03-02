@@ -10926,7 +10926,7 @@ return Tether;
 }));
 
 "use strict";function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _classCallCheck(a,b){if(!(a instanceof b))throw new TypeError("Cannot call a class as a function")}function _inherits(a,b){if("function"!=typeof b&&null!==b)throw new TypeError("Super expression must either be null or a function, not "+typeof b);a.prototype=Object.create(b&&b.prototype,{constructor:{value:a,enumerable:!1,writable:!0,configurable:!0}}),b&&(Object.setPrototypeOf?Object.setPrototypeOf(a,b):a.__proto__=b)}var Util=function(a){function b(a){return{}.toString.call(a).match(/\s([a-zA-Z]+)/)[1].toLowerCase()}function c(a){return(a[0]||a).nodeType}function d(){return{bindType:h.end,delegateType:h.end,handle:function(b){return a(b.target).is(this)?b.handleObj.handler.apply(this,arguments):void 0}}}function e(){if(window.QUnit)return!1;var a=document.createElement("bootstrap");for(var b in i)if(void 0!==a.style[b])return{end:i[b]};return!1}function f(b){var c=this,d=!1;return a(this).one(j.TRANSITION_END,function(){d=!0}),setTimeout(function(){d||j.triggerTransitionEnd(c)},b),this}function g(){h=e(),a.fn.emulateTransitionEnd=f,j.supportsTransitionEnd()&&(a.event.special[j.TRANSITION_END]=d())}var h=!1,i={WebkitTransition:"webkitTransitionEnd",MozTransition:"transitionend",OTransition:"oTransitionEnd otransitionend",transition:"transitionend"},j={TRANSITION_END:"bsTransitionEnd",getUID:function(a){do a+=~~(1e6*Math.random());while(document.getElementById(a));return a},getSelectorFromElement:function(a){var b=a.getAttribute("data-target");return b||(b=a.getAttribute("href")||"",b=/^#[a-z]/i.test(b)?b:null),b},reflow:function(a){new Function("bs","return bs")(a.offsetHeight)},triggerTransitionEnd:function(b){a(b).trigger(h.end)},supportsTransitionEnd:function(){return Boolean(h)},typeCheckConfig:function(a,d,e){for(var f in e)if(e.hasOwnProperty(f)){var g=e[f],h=d[f],i=void 0;if(i=h&&c(h)?"element":b(h),!new RegExp(g).test(i))throw new Error(a.toUpperCase()+": "+('Option "'+f+'" provided type "'+i+'" ')+('but expected type "'+g+'".'))}}};return g(),j}(jQuery),_createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),Alert=function(a){var b="alert",c="4.0.0-alpha",d="bs.alert",e="."+d,f=".data-api",g=a.fn[b],h=150,i={DISMISS:'[data-dismiss="alert"]'},j={CLOSE:"close"+e,CLOSED:"closed"+e,CLICK_DATA_API:"click"+e+f},k={ALERT:"alert",FADE:"fade",IN:"in"},l=function(){function b(a){_classCallCheck(this,b),this._element=a}return _createClass(b,[{key:"close",value:function(a){a=a||this._element;var b=this._getRootElement(a),c=this._triggerCloseEvent(b);c.isDefaultPrevented()||this._removeElement(b)}},{key:"dispose",value:function(){a.removeData(this._element,d),this._element=null}},{key:"_getRootElement",value:function(b){var c=Util.getSelectorFromElement(b),d=!1;return c&&(d=a(c)[0]),d||(d=a(b).closest("."+k.ALERT)[0]),d}},{key:"_triggerCloseEvent",value:function(b){var c=a.Event(j.CLOSE);return a(b).trigger(c),c}},{key:"_removeElement",value:function(b){return a(b).removeClass(k.IN),Util.supportsTransitionEnd()&&a(b).hasClass(k.FADE)?void a(b).one(Util.TRANSITION_END,a.proxy(this._destroyElement,this,b)).emulateTransitionEnd(h):void this._destroyElement(b)}},{key:"_destroyElement",value:function(b){a(b).detach().trigger(j.CLOSED).remove()}}],[{key:"_jQueryInterface",value:function(c){return this.each(function(){var e=a(this),f=e.data(d);f||(f=new b(this),e.data(d,f)),"close"===c&&f[c](this)})}},{key:"_handleDismiss",value:function(a){return function(b){b&&b.preventDefault(),a.close(this)}}},{key:"VERSION",get:function(){return c}}]),b}();return a(document).on(j.CLICK_DATA_API,i.DISMISS,l._handleDismiss(new l)),a.fn[b]=l._jQueryInterface,a.fn[b].Constructor=l,a.fn[b].noConflict=function(){return a.fn[b]=g,l._jQueryInterface},l}(jQuery),_createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),Button=function(a){var b="button",c="4.0.0-alpha",d="bs.button",e="."+d,f=".data-api",g=a.fn[b],h={ACTIVE:"active",BUTTON:"btn",FOCUS:"focus"},i={DATA_TOGGLE_CARROT:'[data-toggle^="button"]',DATA_TOGGLE:'[data-toggle="buttons"]',INPUT:"input",ACTIVE:".active",BUTTON:".btn"},j={CLICK_DATA_API:"click"+e+f,FOCUS_BLUR_DATA_API:"focus"+e+f+" "+("blur"+e+f)},k=function(){function b(a){_classCallCheck(this,b),this._element=a}return _createClass(b,[{key:"toggle",value:function(){var b=!0,c=a(this._element).closest(i.DATA_TOGGLE)[0];if(c){var d=a(this._element).find(i.INPUT)[0];if(d){if("radio"===d.type)if(d.checked&&a(this._element).hasClass(h.ACTIVE))b=!1;else{var e=a(c).find(i.ACTIVE)[0];e&&a(e).removeClass(h.ACTIVE)}b&&(d.checked=!a(this._element).hasClass(h.ACTIVE),a(this._element).trigger("change"))}}else this._element.setAttribute("aria-pressed",!a(this._element).hasClass(h.ACTIVE));b&&a(this._element).toggleClass(h.ACTIVE)}},{key:"dispose",value:function(){a.removeData(this._element,d),this._element=null}}],[{key:"_jQueryInterface",value:function(c){return this.each(function(){var e=a(this).data(d);e||(e=new b(this),a(this).data(d,e)),"toggle"===c&&e[c]()})}},{key:"VERSION",get:function(){return c}}]),b}();return a(document).on(j.CLICK_DATA_API,i.DATA_TOGGLE_CARROT,function(b){b.preventDefault();var c=b.target;a(c).hasClass(h.BUTTON)||(c=a(c).closest(i.BUTTON)),k._jQueryInterface.call(a(c),"toggle")}).on(j.FOCUS_BLUR_DATA_API,i.DATA_TOGGLE_CARROT,function(b){var c=a(b.target).closest(i.BUTTON)[0];a(c).toggleClass(h.FOCUS,/^focus(in)?$/.test(b.type))}),a.fn[b]=k._jQueryInterface,a.fn[b].Constructor=k,a.fn[b].noConflict=function(){return a.fn[b]=g,k._jQueryInterface},k}(jQuery),_createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),Collapse=function(a){var b="collapse",c="4.0.0-alpha",d="bs.collapse",e="."+d,f=".data-api",g=a.fn[b],h=600,i={toggle:!0,parent:""},j={toggle:"boolean",parent:"string"},k={SHOW:"show"+e,SHOWN:"shown"+e,HIDE:"hide"+e,HIDDEN:"hidden"+e,CLICK_DATA_API:"click"+e+f},l={IN:"in",COLLAPSE:"collapse",COLLAPSING:"collapsing",COLLAPSED:"collapsed"},m={WIDTH:"width",HEIGHT:"height"},n={ACTIVES:".panel > .in, .panel > .collapsing",DATA_TOGGLE:'[data-toggle="collapse"]'},o=function(){function e(b,c){_classCallCheck(this,e),this._isTransitioning=!1,this._element=b,this._config=this._getConfig(c),this._triggerArray=a.makeArray(a('[data-toggle="collapse"][href="#'+b.id+'"],'+('[data-toggle="collapse"][data-target="#'+b.id+'"]'))),this._parent=this._config.parent?this._getParent():null,this._config.parent||this._addAriaAndCollapsedClass(this._element,this._triggerArray),this._config.toggle&&this.toggle()}return _createClass(e,[{key:"toggle",value:function(){a(this._element).hasClass(l.IN)?this.hide():this.show()}},{key:"show",value:function(){var b=this;if(!this._isTransitioning&&!a(this._element).hasClass(l.IN)){var c=void 0,f=void 0;if(this._parent&&(c=a.makeArray(a(n.ACTIVES)),c.length||(c=null)),!(c&&(f=a(c).data(d),f&&f._isTransitioning))){var g=a.Event(k.SHOW);if(a(this._element).trigger(g),!g.isDefaultPrevented()){c&&(e._jQueryInterface.call(a(c),"hide"),f||a(c).data(d,null));var i=this._getDimension();a(this._element).removeClass(l.COLLAPSE).addClass(l.COLLAPSING),this._element.style[i]=0,this._element.setAttribute("aria-expanded",!0),this._triggerArray.length&&a(this._triggerArray).removeClass(l.COLLAPSED).attr("aria-expanded",!0),this.setTransitioning(!0);var j=function(){a(b._element).removeClass(l.COLLAPSING).addClass(l.COLLAPSE).addClass(l.IN),b._element.style[i]="",b.setTransitioning(!1),a(b._element).trigger(k.SHOWN)};if(!Util.supportsTransitionEnd())return void j();var m=i[0].toUpperCase()+i.slice(1),o="scroll"+m;a(this._element).one(Util.TRANSITION_END,j).emulateTransitionEnd(h),this._element.style[i]=this._element[o]+"px"}}}}},{key:"hide",value:function(){var b=this;if(!this._isTransitioning&&a(this._element).hasClass(l.IN)){var c=a.Event(k.HIDE);if(a(this._element).trigger(c),!c.isDefaultPrevented()){var d=this._getDimension(),e=d===m.WIDTH?"offsetWidth":"offsetHeight";this._element.style[d]=this._element[e]+"px",Util.reflow(this._element),a(this._element).addClass(l.COLLAPSING).removeClass(l.COLLAPSE).removeClass(l.IN),this._element.setAttribute("aria-expanded",!1),this._triggerArray.length&&a(this._triggerArray).addClass(l.COLLAPSED).attr("aria-expanded",!1),this.setTransitioning(!0);var f=function(){b.setTransitioning(!1),a(b._element).removeClass(l.COLLAPSING).addClass(l.COLLAPSE).trigger(k.HIDDEN)};return this._element.style[d]=0,Util.supportsTransitionEnd()?void a(this._element).one(Util.TRANSITION_END,f).emulateTransitionEnd(h):void f()}}}},{key:"setTransitioning",value:function(a){this._isTransitioning=a}},{key:"dispose",value:function(){a.removeData(this._element,d),this._config=null,this._parent=null,this._element=null,this._triggerArray=null,this._isTransitioning=null}},{key:"_getConfig",value:function(c){return c=a.extend({},i,c),c.toggle=Boolean(c.toggle),Util.typeCheckConfig(b,c,j),c}},{key:"_getDimension",value:function(){var b=a(this._element).hasClass(m.WIDTH);return b?m.WIDTH:m.HEIGHT}},{key:"_getParent",value:function(){var b=this,c=a(this._config.parent)[0],d='[data-toggle="collapse"][data-parent="'+this._config.parent+'"]';return a(c).find(d).each(function(a,c){b._addAriaAndCollapsedClass(e._getTargetFromElement(c),[c])}),c}},{key:"_addAriaAndCollapsedClass",value:function(b,c){if(b){var d=a(b).hasClass(l.IN);b.setAttribute("aria-expanded",d),c.length&&a(c).toggleClass(l.COLLAPSED,!d).attr("aria-expanded",d)}}}],[{key:"_getTargetFromElement",value:function(b){var c=Util.getSelectorFromElement(b);return c?a(c)[0]:null}},{key:"_jQueryInterface",value:function(b){return this.each(function(){var c=a(this),f=c.data(d),g=a.extend({},i,c.data(),"object"==typeof b&&b);if(!f&&g.toggle&&/show|hide/.test(b)&&(g.toggle=!1),f||(f=new e(this,g),c.data(d,f)),"string"==typeof b){if(void 0===f[b])throw new Error('No method named "'+b+'"');f[b]()}})}},{key:"VERSION",get:function(){return c}},{key:"Default",get:function(){return i}}]),e}();return a(document).on(k.CLICK_DATA_API,n.DATA_TOGGLE,function(b){b.preventDefault();var c=o._getTargetFromElement(this),e=a(c).data(d),f=e?"toggle":a(this).data();o._jQueryInterface.call(a(c),f)}),a.fn[b]=o._jQueryInterface,a.fn[b].Constructor=o,a.fn[b].noConflict=function(){return a.fn[b]=g,o._jQueryInterface},o}(jQuery),_createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),Dropdown=function(a){var b="dropdown",c="4.0.0-alpha",d="bs.dropdown",e="."+d,f=".data-api",g=a.fn[b],h={HIDE:"hide"+e,HIDDEN:"hidden"+e,SHOW:"show"+e,SHOWN:"shown"+e,CLICK:"click"+e,CLICK_DATA_API:"click"+e+f,KEYDOWN_DATA_API:"keydown"+e+f},i={BACKDROP:"dropdown-backdrop",DISABLED:"disabled",OPEN:"open"},j={BACKDROP:".dropdown-backdrop",DATA_TOGGLE:'[data-toggle="dropdown"]',FORM_CHILD:".dropdown form",ROLE_MENU:'[role="menu"]',ROLE_LISTBOX:'[role="listbox"]',NAVBAR_NAV:".navbar-nav",VISIBLE_ITEMS:'[role="menu"] li:not(.disabled) a, [role="listbox"] li:not(.disabled) a'},k=function(){function b(a){_classCallCheck(this,b),this._element=a,this._addEventListeners()}return _createClass(b,[{key:"toggle",value:function(){if(this.disabled||a(this).hasClass(i.DISABLED))return!1;var c=b._getParentFromElement(this),d=a(c).hasClass(i.OPEN);if(b._clearMenus(),d)return!1;if("ontouchstart"in document.documentElement&&!a(c).closest(j.NAVBAR_NAV).length){var e=document.createElement("div");e.className=i.BACKDROP,a(e).insertBefore(this),a(e).on("click",b._clearMenus)}var f={relatedTarget:this},g=a.Event(h.SHOW,f);return a(c).trigger(g),g.isDefaultPrevented()?!1:(this.focus(),this.setAttribute("aria-expanded","true"),a(c).toggleClass(i.OPEN),a(c).trigger(a.Event(h.SHOWN,f)),!1)}},{key:"dispose",value:function(){a.removeData(this._element,d),a(this._element).off(e),this._element=null}},{key:"_addEventListeners",value:function(){a(this._element).on(h.CLICK,this.toggle)}}],[{key:"_jQueryInterface",value:function(c){return this.each(function(){var e=a(this).data(d);if(e||a(this).data(d,e=new b(this)),"string"==typeof c){if(void 0===e[c])throw new Error('No method named "'+c+'"');e[c].call(this)}})}},{key:"_clearMenus",value:function(c){if(!c||3!==c.which){var d=a(j.BACKDROP)[0];d&&d.parentNode.removeChild(d);for(var e=a.makeArray(a(j.DATA_TOGGLE)),f=0;f<e.length;f++){var g=b._getParentFromElement(e[f]),k={relatedTarget:e[f]};if(a(g).hasClass(i.OPEN)&&!(c&&"click"===c.type&&/input|textarea/i.test(c.target.tagName)&&a.contains(g,c.target))){var l=a.Event(h.HIDE,k);a(g).trigger(l),l.isDefaultPrevented()||(e[f].setAttribute("aria-expanded","false"),a(g).removeClass(i.OPEN).trigger(a.Event(h.HIDDEN,k)))}}}}},{key:"_getParentFromElement",value:function(b){var c=void 0,d=Util.getSelectorFromElement(b);return d&&(c=a(d)[0]),c||b.parentNode}},{key:"_dataApiKeydownHandler",value:function(c){if(/(38|40|27|32)/.test(c.which)&&!/input|textarea/i.test(c.target.tagName)&&(c.preventDefault(),c.stopPropagation(),!this.disabled&&!a(this).hasClass(i.DISABLED))){var d=b._getParentFromElement(this),e=a(d).hasClass(i.OPEN);if(!e&&27!==c.which||e&&27===c.which){if(27===c.which){var f=a(d).find(j.DATA_TOGGLE)[0];a(f).trigger("focus")}return void a(this).trigger("click")}var g=a.makeArray(a(j.VISIBLE_ITEMS));if(g=g.filter(function(a){return a.offsetWidth||a.offsetHeight}),g.length){var h=g.indexOf(c.target);38===c.which&&h>0&&h--,40===c.which&&h<g.length-1&&h++,~h||(h=0),g[h].focus()}}}},{key:"VERSION",get:function(){return c}}]),b}();return a(document).on(h.KEYDOWN_DATA_API,j.DATA_TOGGLE,k._dataApiKeydownHandler).on(h.KEYDOWN_DATA_API,j.ROLE_MENU,k._dataApiKeydownHandler).on(h.KEYDOWN_DATA_API,j.ROLE_LISTBOX,k._dataApiKeydownHandler).on(h.CLICK_DATA_API,k._clearMenus).on(h.CLICK_DATA_API,j.DATA_TOGGLE,k.prototype.toggle).on(h.CLICK_DATA_API,j.FORM_CHILD,function(a){a.stopPropagation()}),a.fn[b]=k._jQueryInterface,a.fn[b].Constructor=k,a.fn[b].noConflict=function(){return a.fn[b]=g,k._jQueryInterface},k}(jQuery),_createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),Modal=function(a){var b="modal",c="4.0.0-alpha",d="bs.modal",e="."+d,f=".data-api",g=a.fn[b],h=300,i=150,j={backdrop:!0,keyboard:!0,focus:!0,show:!0},k={backdrop:"(boolean|string)",keyboard:"boolean",focus:"boolean",show:"boolean"},l={HIDE:"hide"+e,HIDDEN:"hidden"+e,SHOW:"show"+e,SHOWN:"shown"+e,FOCUSIN:"focusin"+e,RESIZE:"resize"+e,CLICK_DISMISS:"click.dismiss"+e,KEYDOWN_DISMISS:"keydown.dismiss"+e,MOUSEUP_DISMISS:"mouseup.dismiss"+e,MOUSEDOWN_DISMISS:"mousedown.dismiss"+e,CLICK_DATA_API:"click"+e+f},m={SCROLLBAR_MEASURER:"modal-scrollbar-measure",BACKDROP:"modal-backdrop",OPEN:"modal-open",FADE:"fade",IN:"in"},n={DIALOG:".modal-dialog",DATA_TOGGLE:'[data-toggle="modal"]',DATA_DISMISS:'[data-dismiss="modal"]',FIXED_CONTENT:".navbar-fixed-top, .navbar-fixed-bottom, .is-fixed"},o=function(){function f(b,c){_classCallCheck(this,f),this._config=this._getConfig(c),this._element=b,this._dialog=a(b).find(n.DIALOG)[0],this._backdrop=null,this._isShown=!1,this._isBodyOverflowing=!1,this._ignoreBackdropClick=!1,this._originalBodyPadding=0,this._scrollbarWidth=0}return _createClass(f,[{key:"toggle",value:function(a){return this._isShown?this.hide():this.show(a)}},{key:"show",value:function(b){var c=this,d=a.Event(l.SHOW,{relatedTarget:b});a(this._element).trigger(d),this._isShown||d.isDefaultPrevented()||(this._isShown=!0,this._checkScrollbar(),this._setScrollbar(),a(document.body).addClass(m.OPEN),this._setEscapeEvent(),this._setResizeEvent(),a(this._element).on(l.CLICK_DISMISS,n.DATA_DISMISS,a.proxy(this.hide,this)),a(this._dialog).on(l.MOUSEDOWN_DISMISS,function(){a(c._element).one(l.MOUSEUP_DISMISS,function(b){a(b.target).is(c._element)&&(c._ignoreBackdropClick=!0)})}),this._showBackdrop(a.proxy(this._showElement,this,b)))}},{key:"hide",value:function(b){b&&b.preventDefault();var c=a.Event(l.HIDE);a(this._element).trigger(c),this._isShown&&!c.isDefaultPrevented()&&(this._isShown=!1,this._setEscapeEvent(),this._setResizeEvent(),a(document).off(l.FOCUSIN),a(this._element).removeClass(m.IN),a(this._element).off(l.CLICK_DISMISS),a(this._dialog).off(l.MOUSEDOWN_DISMISS),Util.supportsTransitionEnd()&&a(this._element).hasClass(m.FADE)?a(this._element).one(Util.TRANSITION_END,a.proxy(this._hideModal,this)).emulateTransitionEnd(h):this._hideModal())}},{key:"dispose",value:function(){a.removeData(this._element,d),a(window).off(e),a(document).off(e),a(this._element).off(e),a(this._backdrop).off(e),this._config=null,this._element=null,this._dialog=null,this._backdrop=null,this._isShown=null,this._isBodyOverflowing=null,this._ignoreBackdropClick=null,this._originalBodyPadding=null,this._scrollbarWidth=null}},{key:"_getConfig",value:function(c){return c=a.extend({},j,c),Util.typeCheckConfig(b,c,k),c}},{key:"_showElement",value:function(b){var c=this,d=Util.supportsTransitionEnd()&&a(this._element).hasClass(m.FADE);this._element.parentNode&&this._element.parentNode.nodeType===Node.ELEMENT_NODE||document.body.appendChild(this._element),this._element.style.display="block",this._element.scrollTop=0,d&&Util.reflow(this._element),a(this._element).addClass(m.IN),this._config.focus&&this._enforceFocus();var e=a.Event(l.SHOWN,{relatedTarget:b}),f=function(){c._config.focus&&c._element.focus(),a(c._element).trigger(e)};d?a(this._dialog).one(Util.TRANSITION_END,f).emulateTransitionEnd(h):f()}},{key:"_enforceFocus",value:function(){var b=this;a(document).off(l.FOCUSIN).on(l.FOCUSIN,function(c){b._element===c.target||a(b._element).has(c.target).length||b._element.focus()})}},{key:"_setEscapeEvent",value:function(){var b=this;this._isShown&&this._config.keyboard?a(this._element).on(l.KEYDOWN_DISMISS,function(a){27===a.which&&b.hide()}):this._isShown||a(this._element).off(l.KEYDOWN_DISMISS)}},{key:"_setResizeEvent",value:function(){this._isShown?a(window).on(l.RESIZE,a.proxy(this._handleUpdate,this)):a(window).off(l.RESIZE)}},{key:"_hideModal",value:function(){var b=this;this._element.style.display="none",this._showBackdrop(function(){a(document.body).removeClass(m.OPEN),b._resetAdjustments(),b._resetScrollbar(),a(b._element).trigger(l.HIDDEN)})}},{key:"_removeBackdrop",value:function(){this._backdrop&&(a(this._backdrop).remove(),this._backdrop=null)}},{key:"_showBackdrop",value:function(b){var c=this,d=a(this._element).hasClass(m.FADE)?m.FADE:"";if(this._isShown&&this._config.backdrop){var e=Util.supportsTransitionEnd()&&d;if(this._backdrop=document.createElement("div"),this._backdrop.className=m.BACKDROP,d&&a(this._backdrop).addClass(d),a(this._backdrop).appendTo(document.body),a(this._element).on(l.CLICK_DISMISS,function(a){return c._ignoreBackdropClick?void(c._ignoreBackdropClick=!1):void(a.target===a.currentTarget&&("static"===c._config.backdrop?c._element.focus():c.hide()))}),e&&Util.reflow(this._backdrop),a(this._backdrop).addClass(m.IN),!b)return;if(!e)return void b();a(this._backdrop).one(Util.TRANSITION_END,b).emulateTransitionEnd(i)}else if(!this._isShown&&this._backdrop){a(this._backdrop).removeClass(m.IN);var f=function(){c._removeBackdrop(),b&&b()};Util.supportsTransitionEnd()&&a(this._element).hasClass(m.FADE)?a(this._backdrop).one(Util.TRANSITION_END,f).emulateTransitionEnd(i):f()}else b&&b()}},{key:"_handleUpdate",value:function(){this._adjustDialog()}},{key:"_adjustDialog",value:function(){var a=this._element.scrollHeight>document.documentElement.clientHeight;!this._isBodyOverflowing&&a&&(this._element.style.paddingLeft=this._scrollbarWidth+"px"),this._isBodyOverflowing&&!a&&(this._element.style.paddingRight=this._scrollbarWidth+"px~")}},{key:"_resetAdjustments",value:function(){this._element.style.paddingLeft="",this._element.style.paddingRight=""}},{key:"_checkScrollbar",value:function(){var a=window.innerWidth;if(!a){var b=document.documentElement.getBoundingClientRect();a=b.right-Math.abs(b.left)}this._isBodyOverflowing=document.body.clientWidth<a,this._scrollbarWidth=this._getScrollbarWidth()}},{key:"_setScrollbar",value:function(){var b=parseInt(a(n.FIXED_CONTENT).css("padding-right")||0,10);this._originalBodyPadding=document.body.style.paddingRight||"",this._isBodyOverflowing&&(document.body.style.paddingRight=b+this._scrollbarWidth+"px")}},{key:"_resetScrollbar",value:function(){document.body.style.paddingRight=this._originalBodyPadding}},{key:"_getScrollbarWidth",value:function(){var a=document.createElement("div");a.className=m.SCROLLBAR_MEASURER,document.body.appendChild(a);var b=a.offsetWidth-a.clientWidth;return document.body.removeChild(a),b}}],[{key:"_jQueryInterface",value:function(b,c){return this.each(function(){var e=a(this).data(d),g=a.extend({},f.Default,a(this).data(),"object"==typeof b&&b);if(e||(e=new f(this,g),a(this).data(d,e)),"string"==typeof b){if(void 0===e[b])throw new Error('No method named "'+b+'"');e[b](c)}else g.show&&e.show(c)})}},{key:"VERSION",get:function(){return c}},{key:"Default",get:function(){return j}}]),f}();return a(document).on(l.CLICK_DATA_API,n.DATA_TOGGLE,function(b){var c=this,e=void 0,f=Util.getSelectorFromElement(this);f&&(e=a(f)[0]);var g=a(e).data(d)?"toggle":a.extend({},a(e).data(),a(this).data());"A"===this.tagName&&b.preventDefault();var h=a(e).one(l.SHOW,function(b){b.isDefaultPrevented()||h.one(l.HIDDEN,function(){a(c).is(":visible")&&c.focus()})});o._jQueryInterface.call(a(e),g,this)}),a.fn[b]=o._jQueryInterface,a.fn[b].Constructor=o,a.fn[b].noConflict=function(){return a.fn[b]=g,o._jQueryInterface},o}(jQuery),_createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),ScrollSpy=function(a){var b="scrollspy",c="4.0.0-alpha",d="bs.scrollspy",e="."+d,f=".data-api",g=a.fn[b],h={offset:10,method:"auto",target:""},i={offset:"number",method:"string",target:"(string|element)"},j={ACTIVATE:"activate"+e,SCROLL:"scroll"+e,LOAD_DATA_API:"load"+e+f},k={DROPDOWN_ITEM:"dropdown-item",DROPDOWN_MENU:"dropdown-menu",NAV_LINK:"nav-link",NAV:"nav",ACTIVE:"active"},l={DATA_SPY:'[data-spy="scroll"]',ACTIVE:".active",LIST_ITEM:".list-item",LI:"li",LI_DROPDOWN:"li.dropdown",NAV_LINKS:".nav-link",DROPDOWN:".dropdown",DROPDOWN_ITEMS:".dropdown-item",DROPDOWN_TOGGLE:".dropdown-toggle"},m={OFFSET:"offset",POSITION:"position"},n=function(){function f(b,c){_classCallCheck(this,f),this._element=b,this._scrollElement="BODY"===b.tagName?window:b,this._config=this._getConfig(c),this._selector=this._config.target+" "+l.NAV_LINKS+","+(this._config.target+" "+l.DROPDOWN_ITEMS),this._offsets=[],this._targets=[],this._activeTarget=null,this._scrollHeight=0,a(this._scrollElement).on(j.SCROLL,a.proxy(this._process,this)),this.refresh(),this._process()}return _createClass(f,[{key:"refresh",value:function(){var b=this,c=this._scrollElement!==this._scrollElement.window?m.POSITION:m.OFFSET,d="auto"===this._config.method?c:this._config.method,e=d===m.POSITION?this._getScrollTop():0;this._offsets=[],this._targets=[],this._scrollHeight=this._getScrollHeight();var f=a.makeArray(a(this._selector));f.map(function(b){var c=void 0,f=Util.getSelectorFromElement(b);return f&&(c=a(f)[0]),c&&(c.offsetWidth||c.offsetHeight)?[a(c)[d]().top+e,f]:void 0}).filter(function(a){return a}).sort(function(a,b){return a[0]-b[0]}).forEach(function(a){b._offsets.push(a[0]),b._targets.push(a[1])})}},{key:"dispose",value:function(){a.removeData(this._element,d),a(this._scrollElement).off(e),this._element=null,this._scrollElement=null,this._config=null,this._selector=null,this._offsets=null,this._targets=null,this._activeTarget=null,this._scrollHeight=null}},{key:"_getConfig",value:function(c){if(c=a.extend({},h,c),"string"!=typeof c.target){var d=a(c.target).attr("id");d||(d=Util.getUID(b),a(c.target).attr("id",d)),c.target="#"+d}return Util.typeCheckConfig(b,c,i),c}},{key:"_getScrollTop",value:function(){return this._scrollElement===window?this._scrollElement.scrollY:this._scrollElement.scrollTop}},{key:"_getScrollHeight",value:function(){return this._scrollElement.scrollHeight||Math.max(document.body.scrollHeight,document.documentElement.scrollHeight)}},{key:"_process",value:function(){var a=this._getScrollTop()+this._config.offset,b=this._getScrollHeight(),c=this._config.offset+b-this._scrollElement.offsetHeight;if(this._scrollHeight!==b&&this.refresh(),a>=c){var d=this._targets[this._targets.length-1];this._activeTarget!==d&&this._activate(d)}if(this._activeTarget&&a<this._offsets[0])return this._activeTarget=null,void this._clear();for(var e=this._offsets.length;e--;){var f=this._activeTarget!==this._targets[e]&&a>=this._offsets[e]&&(void 0===this._offsets[e+1]||a<this._offsets[e+1]);f&&this._activate(this._targets[e])}}},{key:"_activate",value:function(b){this._activeTarget=b,this._clear();var c=this._selector.split(",");c=c.map(function(a){return a+'[data-target="'+b+'"],'+(a+'[href="'+b+'"]')});var d=a(c.join(","));d.hasClass(k.DROPDOWN_ITEM)?(d.closest(l.DROPDOWN).find(l.DROPDOWN_TOGGLE).addClass(k.ACTIVE),d.addClass(k.ACTIVE)):d.parents(l.LI).find(l.NAV_LINKS).addClass(k.ACTIVE),a(this._scrollElement).trigger(j.ACTIVATE,{relatedTarget:b})}},{key:"_clear",value:function(){a(this._selector).filter(l.ACTIVE).removeClass(k.ACTIVE)}}],[{key:"_jQueryInterface",value:function(b){return this.each(function(){var c=a(this).data(d),e="object"==typeof b&&b||null;if(c||(c=new f(this,e),a(this).data(d,c)),"string"==typeof b){if(void 0===c[b])throw new Error('No method named "'+b+'"');c[b]()}})}},{key:"VERSION",get:function(){return c}},{key:"Default",get:function(){return h}}]),f}();return a(window).on(j.LOAD_DATA_API,function(){for(var b=a.makeArray(a(l.DATA_SPY)),c=b.length;c--;){var d=a(b[c]);n._jQueryInterface.call(d,d.data())}}),a.fn[b]=n._jQueryInterface,a.fn[b].Constructor=n,a.fn[b].noConflict=function(){return a.fn[b]=g,n._jQueryInterface},n}(jQuery),_createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),Tab=function(a){var b="tab",c="4.0.0-alpha",d="bs.tab",e="."+d,f=".data-api",g=a.fn[b],h=150,i={HIDE:"hide"+e,HIDDEN:"hidden"+e,SHOW:"show"+e,SHOWN:"shown"+e,CLICK_DATA_API:"click"+e+f},j={DROPDOWN_MENU:"dropdown-menu",ACTIVE:"active",FADE:"fade",IN:"in"},k={A:"a",LI:"li",DROPDOWN:".dropdown",UL:"ul:not(.dropdown-menu)",FADE_CHILD:"> .nav-item .fade, > .fade",ACTIVE:".active",ACTIVE_CHILD:"> .nav-item > .active, > .active",DATA_TOGGLE:'[data-toggle="tab"], [data-toggle="pill"]',DROPDOWN_TOGGLE:".dropdown-toggle",DROPDOWN_ACTIVE_CHILD:"> .dropdown-menu .active"},l=function(){function b(a){_classCallCheck(this,b),this._element=a}return _createClass(b,[{key:"show",value:function(){var b=this;if(!this._element.parentNode||this._element.parentNode.nodeType!==Node.ELEMENT_NODE||!a(this._element).hasClass(j.ACTIVE)){var c=void 0,d=void 0,e=a(this._element).closest(k.UL)[0],f=Util.getSelectorFromElement(this._element);e&&(d=a.makeArray(a(e).find(k.ACTIVE)),d=d[d.length-1]);var g=a.Event(i.HIDE,{relatedTarget:this._element}),h=a.Event(i.SHOW,{relatedTarget:d});if(d&&a(d).trigger(g),a(this._element).trigger(h),!h.isDefaultPrevented()&&!g.isDefaultPrevented()){f&&(c=a(f)[0]),this._activate(this._element,e);var l=function(){var c=a.Event(i.HIDDEN,{relatedTarget:b._element}),e=a.Event(i.SHOWN,{relatedTarget:d});a(d).trigger(c),a(b._element).trigger(e)};c?this._activate(c,c.parentNode,l):l()}}}},{key:"dispose",value:function(){a.removeClass(this._element,d),this._element=null}},{key:"_activate",value:function(b,c,d){var e=a(c).find(k.ACTIVE_CHILD)[0],f=d&&Util.supportsTransitionEnd()&&(e&&a(e).hasClass(j.FADE)||Boolean(a(c).find(k.FADE_CHILD)[0])),g=a.proxy(this._transitionComplete,this,b,e,f,d);e&&f?a(e).one(Util.TRANSITION_END,g).emulateTransitionEnd(h):g(),e&&a(e).removeClass(j.IN)}},{key:"_transitionComplete",value:function(b,c,d,e){if(c){a(c).removeClass(j.ACTIVE);var f=a(c).find(k.DROPDOWN_ACTIVE_CHILD)[0];f&&a(f).removeClass(j.ACTIVE),c.setAttribute("aria-expanded",!1)}if(a(b).addClass(j.ACTIVE),b.setAttribute("aria-expanded",!0),d?(Util.reflow(b),a(b).addClass(j.IN)):a(b).removeClass(j.FADE),b.parentNode&&a(b.parentNode).hasClass(j.DROPDOWN_MENU)){var g=a(b).closest(k.DROPDOWN)[0];g&&a(g).find(k.DROPDOWN_TOGGLE).addClass(j.ACTIVE),b.setAttribute("aria-expanded",!0)}e&&e()}}],[{key:"_jQueryInterface",value:function(c){return this.each(function(){var e=a(this),f=e.data(d);if(f||(f=f=new b(this),e.data(d,f)),"string"==typeof c){if(void 0===f[c])throw new Error('No method named "'+c+'"');f[c]()}})}},{key:"VERSION",get:function(){return c}}]),b}();return a(document).on(i.CLICK_DATA_API,k.DATA_TOGGLE,function(b){b.preventDefault(),l._jQueryInterface.call(a(this),"show")}),a.fn[b]=l._jQueryInterface,a.fn[b].Constructor=l,a.fn[b].noConflict=function(){return a.fn[b]=g,l._jQueryInterface},l}(jQuery),_createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),Tooltip=function(a){if(void 0===window.Tether)throw new Error("Bootstrap tooltips require Tether (http://github.hubspot.com/tether/)");var b="tooltip",c="4.0.0-alpha",d="bs.tooltip",e="."+d,f=a.fn[b],g=150,h="bs-tether",i={animation:!0,template:'<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',trigger:"hover focus",title:"",delay:0,html:!1,selector:!1,placement:"top",offset:"0 0",constraints:[]},j={animation:"boolean",template:"string",title:"(string|element|function)",trigger:"string",delay:"(number|object)",html:"boolean",selector:"(string|boolean)",placement:"(string|function)",offset:"string",constraints:"array"},k={TOP:"bottom center",RIGHT:"middle left",BOTTOM:"top center",LEFT:"middle right"},l={IN:"in",OUT:"out"},m={HIDE:"hide"+e,HIDDEN:"hidden"+e,SHOW:"show"+e,SHOWN:"shown"+e,INSERTED:"inserted"+e,CLICK:"click"+e,FOCUSIN:"focusin"+e,FOCUSOUT:"focusout"+e,MOUSEENTER:"mouseenter"+e,MOUSELEAVE:"mouseleave"+e},n={FADE:"fade",IN:"in"},o={TOOLTIP:".tooltip",TOOLTIP_INNER:".tooltip-inner"},p={element:!1,enabled:!1},q={HOVER:"hover",FOCUS:"focus",
-CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this,f),this._isEnabled=!0,this._timeout=0,this._hoverState="",this._activeTrigger={},this._tether=null,this.element=a,this.config=this._getConfig(b),this.tip=null,this._setListeners()}return _createClass(f,[{key:"enable",value:function(){this._isEnabled=!0}},{key:"disable",value:function(){this._isEnabled=!1}},{key:"toggleEnabled",value:function(){this._isEnabled=!this._isEnabled}},{key:"toggle",value:function(b){if(b){var c=this.constructor.DATA_KEY,d=a(b.currentTarget).data(c);d||(d=new this.constructor(b.currentTarget,this._getDelegateConfig()),a(b.currentTarget).data(c,d)),d._activeTrigger.click=!d._activeTrigger.click,d._isWithActiveTrigger()?d._enter(null,d):d._leave(null,d)}else{if(a(this.getTipElement()).hasClass(n.IN))return void this._leave(null,this);this._enter(null,this)}}},{key:"dispose",value:function(){clearTimeout(this._timeout),this.cleanupTether(),a.removeData(this.element,this.constructor.DATA_KEY),a(this.element).off(this.constructor.EVENT_KEY),this.tip&&a(this.tip).remove(),this._isEnabled=null,this._timeout=null,this._hoverState=null,this._activeTrigger=null,this._tether=null,this.element=null,this.config=null,this.tip=null}},{key:"show",value:function(){var b=this,c=a.Event(this.constructor.Event.SHOW);if(this.isWithContent()&&this._isEnabled){a(this.element).trigger(c);var d=a.contains(this.element.ownerDocument.documentElement,this.element);if(c.isDefaultPrevented()||!d)return;var e=this.getTipElement(),g=Util.getUID(this.constructor.NAME);e.setAttribute("id",g),this.element.setAttribute("aria-describedby",g),this.setContent(),this.config.animation&&a(e).addClass(n.FADE);var i="function"==typeof this.config.placement?this.config.placement.call(this,e,this.element):this.config.placement,j=this._getAttachment(i);a(e).data(this.constructor.DATA_KEY,this).appendTo(document.body),a(this.element).trigger(this.constructor.Event.INSERTED),this._tether=new Tether({attachment:j,element:e,target:this.element,classes:p,classPrefix:h,offset:this.config.offset,constraints:this.config.constraints,addTargetClasses:!1}),Util.reflow(e),this._tether.position(),a(e).addClass(n.IN);var k=function(){var c=b._hoverState;b._hoverState=null,a(b.element).trigger(b.constructor.Event.SHOWN),c===l.OUT&&b._leave(null,b)};if(Util.supportsTransitionEnd()&&a(this.tip).hasClass(n.FADE))return void a(this.tip).one(Util.TRANSITION_END,k).emulateTransitionEnd(f._TRANSITION_DURATION);k()}}},{key:"hide",value:function(b){var c=this,d=this.getTipElement(),e=a.Event(this.constructor.Event.HIDE),f=function(){c._hoverState!==l.IN&&d.parentNode&&d.parentNode.removeChild(d),c.element.removeAttribute("aria-describedby"),a(c.element).trigger(c.constructor.Event.HIDDEN),c.cleanupTether(),b&&b()};a(this.element).trigger(e),e.isDefaultPrevented()||(a(d).removeClass(n.IN),Util.supportsTransitionEnd()&&a(this.tip).hasClass(n.FADE)?a(d).one(Util.TRANSITION_END,f).emulateTransitionEnd(g):f(),this._hoverState="")}},{key:"isWithContent",value:function(){return Boolean(this.getTitle())}},{key:"getTipElement",value:function(){return this.tip=this.tip||a(this.config.template)[0]}},{key:"setContent",value:function(){var b=a(this.getTipElement());this.setElementContent(b.find(o.TOOLTIP_INNER),this.getTitle()),b.removeClass(n.FADE).removeClass(n.IN),this.cleanupTether()}},{key:"setElementContent",value:function(b,c){var d=this.config.html;"object"==typeof c&&(c.nodeType||c.jquery)?d?a(c).parent().is(b)||b.empty().append(c):b.text(a(c).text()):b[d?"html":"text"](c)}},{key:"getTitle",value:function(){var a=this.element.getAttribute("data-original-title");return a||(a="function"==typeof this.config.title?this.config.title.call(this.element):this.config.title),a}},{key:"cleanupTether",value:function(){this._tether&&this._tether.destroy()}},{key:"_getAttachment",value:function(a){return k[a.toUpperCase()]}},{key:"_setListeners",value:function(){var b=this,c=this.config.trigger.split(" ");c.forEach(function(c){if("click"===c)a(b.element).on(b.constructor.Event.CLICK,b.config.selector,a.proxy(b.toggle,b));else if(c!==q.MANUAL){var d=c===q.HOVER?b.constructor.Event.MOUSEENTER:b.constructor.Event.FOCUSIN,e=c===q.HOVER?b.constructor.Event.MOUSELEAVE:b.constructor.Event.FOCUSOUT;a(b.element).on(d,b.config.selector,a.proxy(b._enter,b)).on(e,b.config.selector,a.proxy(b._leave,b))}}),this.config.selector?this.config=a.extend({},this.config,{trigger:"manual",selector:""}):this._fixTitle()}},{key:"_fixTitle",value:function(){var a=typeof this.element.getAttribute("data-original-title");(this.element.getAttribute("title")||"string"!==a)&&(this.element.setAttribute("data-original-title",this.element.getAttribute("title")||""),this.element.setAttribute("title",""))}},{key:"_enter",value:function(b,c){var d=this.constructor.DATA_KEY;return c=c||a(b.currentTarget).data(d),c||(c=new this.constructor(b.currentTarget,this._getDelegateConfig()),a(b.currentTarget).data(d,c)),b&&(c._activeTrigger["focusin"===b.type?q.FOCUS:q.HOVER]=!0),a(c.getTipElement()).hasClass(n.IN)||c._hoverState===l.IN?void(c._hoverState=l.IN):(clearTimeout(c._timeout),c._hoverState=l.IN,c.config.delay&&c.config.delay.show?void(c._timeout=setTimeout(function(){c._hoverState===l.IN&&c.show()},c.config.delay.show)):void c.show())}},{key:"_leave",value:function(b,c){var d=this.constructor.DATA_KEY;return c=c||a(b.currentTarget).data(d),c||(c=new this.constructor(b.currentTarget,this._getDelegateConfig()),a(b.currentTarget).data(d,c)),b&&(c._activeTrigger["focusout"===b.type?q.FOCUS:q.HOVER]=!1),c._isWithActiveTrigger()?void 0:(clearTimeout(c._timeout),c._hoverState=l.OUT,c.config.delay&&c.config.delay.hide?void(c._timeout=setTimeout(function(){c._hoverState===l.OUT&&c.hide()},c.config.delay.hide)):void c.hide())}},{key:"_isWithActiveTrigger",value:function(){for(var a in this._activeTrigger)if(this._activeTrigger[a])return!0;return!1}},{key:"_getConfig",value:function(c){return c=a.extend({},this.constructor.Default,a(this.element).data(),c),c.delay&&"number"==typeof c.delay&&(c.delay={show:c.delay,hide:c.delay}),Util.typeCheckConfig(b,c,this.constructor.DefaultType),c}},{key:"_getDelegateConfig",value:function(){var a={};if(this.config)for(var b in this.config)this.constructor.Default[b]!==this.config[b]&&(a[b]=this.config[b]);return a}}],[{key:"_jQueryInterface",value:function(b){return this.each(function(){var c=a(this).data(d),e="object"==typeof b?b:null;if((c||!/destroy|hide/.test(b))&&(c||(c=new f(this,e),a(this).data(d,c)),"string"==typeof b)){if(void 0===c[b])throw new Error('No method named "'+b+'"');c[b]()}})}},{key:"VERSION",get:function(){return c}},{key:"Default",get:function(){return i}},{key:"NAME",get:function(){return b}},{key:"DATA_KEY",get:function(){return d}},{key:"Event",get:function(){return m}},{key:"EVENT_KEY",get:function(){return e}},{key:"DefaultType",get:function(){return j}}]),f}();return a.fn[b]=r._jQueryInterface,a.fn[b].Constructor=r,a.fn[b].noConflict=function(){return a.fn[b]=f,r._jQueryInterface},r}(jQuery),_createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),_get=function(a,b,c){for(var d=!0;d;){var e=a,f=b,g=c;d=!1,null===e&&(e=Function.prototype);var h=Object.getOwnPropertyDescriptor(e,f);if(void 0!==h){if("value"in h)return h.value;var i=h.get;if(void 0===i)return;return i.call(g)}var j=Object.getPrototypeOf(e);if(null===j)return;a=j,b=f,c=g,d=!0,h=j=void 0}},Popover=function(a){var b="popover",c="4.0.0-alpha",d="bs.popover",e="."+d,f=a.fn[b],g=a.extend({},Tooltip.Default,{placement:"right",trigger:"click",content:"",template:'<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'}),h=a.extend({},Tooltip.DefaultType,{content:"(string|element|function)"}),i={FADE:"fade",IN:"in"},j={TITLE:".popover-title",CONTENT:".popover-content",ARROW:".popover-arrow"},k={HIDE:"hide"+e,HIDDEN:"hidden"+e,SHOW:"show"+e,SHOWN:"shown"+e,INSERTED:"inserted"+e,CLICK:"click"+e,FOCUSIN:"focusin"+e,FOCUSOUT:"focusout"+e,MOUSEENTER:"mouseenter"+e,MOUSELEAVE:"mouseleave"+e},l=function(f){function l(){_classCallCheck(this,l),_get(Object.getPrototypeOf(l.prototype),"constructor",this).apply(this,arguments)}return _inherits(l,f),_createClass(l,[{key:"isWithContent",value:function(){return this.getTitle()||this._getContent()}},{key:"getTipElement",value:function(){return this.tip=this.tip||a(this.config.template)[0]}},{key:"setContent",value:function(){var b=a(this.getTipElement());this.setElementContent(b.find(j.TITLE),this.getTitle()),this.setElementContent(b.find(j.CONTENT),this._getContent()),b.removeClass(i.FADE).removeClass(i.IN),this.cleanupTether()}},{key:"_getContent",value:function(){return this.element.getAttribute("data-content")||("function"==typeof this.config.content?this.config.content.call(this.element):this.config.content)}}],[{key:"_jQueryInterface",value:function(b){return this.each(function(){var c=a(this).data(d),e="object"==typeof b?b:null;if((c||!/destroy|hide/.test(b))&&(c||(c=new l(this,e),a(this).data(d,c)),"string"==typeof b)){if(void 0===c[b])throw new Error('No method named "'+b+'"');c[b]()}})}},{key:"VERSION",get:function(){return c}},{key:"Default",get:function(){return g}},{key:"NAME",get:function(){return b}},{key:"DATA_KEY",get:function(){return d}},{key:"Event",get:function(){return k}},{key:"EVENT_KEY",get:function(){return e}},{key:"DefaultType",get:function(){return h}}]),l}(Tooltip);return a.fn[b]=l._jQueryInterface,a.fn[b].Constructor=l,a.fn[b].noConflict=function(){return a.fn[b]=f,l._jQueryInterface},l}(jQuery);
+CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this,f),this._isEnabled=!0,this._timeout=0,this._hoverState="",this._activeTrigger={},this._tether=null,this.element=a,this.config=this._getConfig(b),this.tip=null,this._setListeners()}return _createClass(f,[{key:"enable",value:function(){this._isEnabled=!0}},{key:"disable",value:function(){this._isEnabled=!1}},{key:"toggleEnabled",value:function(){this._isEnabled=!this._isEnabled}},{key:"toggle",value:function(b){if(b){var c=this.constructor.DATA_KEY,d=a(b.currentTarget).data(c);d||(d=new this.constructor(b.currentTarget,this._getDelegateConfig()),a(b.currentTarget).data(c,d)),d._activeTrigger.click=!d._activeTrigger.click,d._isWithActiveTrigger()?d._enter(null,d):d._leave(null,d)}else{if(a(this.getTipElement()).hasClass(n.IN))return void this._leave(null,this);this._enter(null,this)}}},{key:"dispose",value:function(){clearTimeout(this._timeout),this.cleanupTether(),a.removeData(this.element,this.constructor.DATA_KEY),a(this.element).off(this.constructor.EVENT_KEY),this.tip&&a(this.tip).remove(),this._isEnabled=null,this._timeout=null,this._hoverState=null,this._activeTrigger=null,this._tether=null,this.element=null,this.config=null,this.tip=null}},{key:"show",value:function(){var b=this,c=a.Event(this.constructor.Event.SHOW);if(this.isWithContent()&&this._isEnabled){a(this.element).trigger(c);var d=a.contains(this.element.ownerDocument.documentElement,this.element);if(c.isDefaultPrevented()||!d)return;var e=this.getTipElement(),g=Util.getUID(this.constructor.NAME);e.setAttribute("id",g),this.element.setAttribute("aria-describedby",g),this.setContent(),this.config.animation&&a(e).addClass(n.FADE);var i="function"==typeof this.config.placement?this.config.placement.call(this,e,this.element):this.config.placement,j=this._getAttachment(i);a(e).data(this.constructor.DATA_KEY,this).appendTo(document.body),a(this.element).trigger(this.constructor.Event.INSERTED),this._tether=new Tether({attachment:j,element:e,target:this.element,classes:p,classPrefix:h,offset:this.config.offset,constraints:this.config.constraints,addTargetClasses:!1}),Util.reflow(e),this._tether.position(),a(e).addClass(n.IN);var k=function(){var c=b._hoverState;b._hoverState=null,a(b.element).trigger(b.constructor.Event.SHOWN),c===l.OUT&&b._leave(null,b)};if(Util.supportsTransitionEnd()&&a(this.tip).hasClass(n.FADE))return void a(this.tip).one(Util.TRANSITION_END,k).emulateTransitionEnd(f._TRANSITION_DURATION);k()}}},{key:"hide",value:function(b){var c=this,d=this.getTipElement(),e=a.Event(this.constructor.Event.HIDE),f=function(){c._hoverState!==l.IN&&d.parentNode&&d.parentNode.removeChild(d),c.element.removeAttribute("aria-describedby"),a(c.element).trigger(c.constructor.Event.HIDDEN),c.cleanupTether(),b&&b()};a(this.element).trigger(e),e.isDefaultPrevented()||(a(d).removeClass(n.IN),Util.supportsTransitionEnd()&&a(this.tip).hasClass(n.FADE)?a(d).one(Util.TRANSITION_END,f).emulateTransitionEnd(g):f(),this._hoverState="")}},{key:"isWithContent",value:function(){return Boolean(this.getTitle())}},{key:"getTipElement",value:function(){return this.tip=this.tip||a(this.config.template)[0]}},{key:"setContent",value:function(){var b=a(this.getTipElement());this.setElementContent(b.find(o.TOOLTIP_INNER),this.getTitle()),b.removeClass(n.FADE).removeClass(n.IN),this.cleanupTether()}},{key:"setElementContent",value:function(b,c){var d=this.config.html;"object"==typeof c&&(c.nodeType||c.jquery)?d?a(c).parent().is(b)||b.empty().append(c):b.text(a(c).text()):b[d?"html":"text"](c)}},{key:"getTitle",value:function(){var a=this.element.getAttribute("data-original-title");return a||(a="function"==typeof this.config.title?this.config.title.call(this.element):this.config.title),a}},{key:"cleanupTether",value:function(){this._tether&&this._tether.destroy()}},{key:"_getAttachment",value:function(a){return k[a.toUpperCase()]}},{key:"_setListeners",value:function(){var b=this,c=this.config.trigger.split(" ");c.forEach(function(c){if("click"===c)a(b.element).on(b.constructor.Event.CLICK,b.config.selector,a.proxy(b.toggle,b));else if(c!==q.MANUAL){var d=c===q.HOVER?b.constructor.Event.MOUSEENTER:b.constructor.Event.FOCUSIN,e=c===q.HOVER?b.constructor.Event.MOUSELEAVE:b.constructor.Event.FOCUSOUT;a(b.element).on(d,b.config.selector,a.proxy(b._enter,b)).on(e,b.config.selector,a.proxy(b._leave,b))}}),this.config.selector?this.config=a.extend({},this.config,{trigger:"manual",selector:""}):this._fixTitle()}},{key:"_fixTitle",value:function(){var a=typeof this.element.getAttribute("data-original-title");(this.element.getAttribute("title")||"string"!==a)&&(this.element.setAttribute("data-original-title",this.element.getAttribute("title")||""),this.element.setAttribute("title",""))}},{key:"_enter",value:function(b,c){var d=this.constructor.DATA_KEY;return c=c||a(b.currentTarget).data(d),c||(c=new this.constructor(b.currentTarget,this._getDelegateConfig()),a(b.currentTarget).data(d,c)),b&&(c._activeTrigger["focusin"===b.type?q.FOCUS:q.HOVER]=!0),a(c.getTipElement()).hasClass(n.IN)||c._hoverState===l.IN?void(c._hoverState=l.IN):(clearTimeout(c._timeout),c._hoverState=l.IN,c.config.delay&&c.config.delay.show?void(c._timeout=setTimeout(function(){c._hoverState===l.IN&&c.show()},c.config.delay.show)):void c.show())}},{key:"_leave",value:function(b,c){var d=this.constructor.DATA_KEY;return c=c||a(b.currentTarget).data(d),c||(c=new this.constructor(b.currentTarget,this._getDelegateConfig()),a(b.currentTarget).data(d,c)),b&&(c._activeTrigger["focusout"===b.type?q.FOCUS:q.HOVER]=!1),c._isWithActiveTrigger()?void 0:(clearTimeout(c._timeout),c._hoverState=l.OUT,c.config.delay&&c.config.delay.hide?void(c._timeout=setTimeout(function(){c._hoverState===l.OUT&&c.hide()},c.config.delay.hide)):void c.hide())}},{key:"_isWithActiveTrigger",value:function(){for(var a in this._activeTrigger)if(this._activeTrigger[a])return!0;return!1}},{key:"_getConfig",value:function(c){return c=a.extend({},this.constructor.Default,a(this.element).data(),c),c.delay&&"number"==typeof c.delay&&(c.delay={show:c.delay,hide:c.delay}),Util.typeCheckConfig(b,c,this.constructor.DefaultType),c}},{key:"_getDelegateConfig",value:function(){var a={};if(this.config)for(var b in this.config)this.constructor.Default[b]!==this.config[b]&&(a[b]=this.config[b]);return a}}],[{key:"_jQueryInterface",value:function(b){return this.each(function(){var c=a(this).data(d),e="object"==typeof b?b:null;if((c||!/destroy|hide/.test(b))&&(c||(c=new f(this,e),a(this).data(d,c)),"string"==typeof b)){if(void 0===c[b])throw new Error('No method named "'+b+'"');c[b]()}})}},{key:"VERSION",get:function(){return c}},{key:"Default",get:function(){return i}},{key:"NAME",get:function(){return b}},{key:"DATA_KEY",get:function(){return d}},{key:"Event",get:function(){return m}},{key:"EVENT_KEY",get:function(){return e}},{key:"DefaultType",get:function(){return j}}]),f}();return a.fn[b]=r._jQueryInterface,a.fn[b].Constructor=r,a.fn[b].noConflict=function(){return a.fn[b]=f,r._jQueryInterface},r}(jQuery),_createClass=function(){function a(a,b){for(var c=0;c<b.length;c++){var d=b[c];d.enumerable=d.enumerable||!1,d.configurable=!0,"value"in d&&(d.writable=!0),Object.defineProperty(a,d.key,d)}}return function(b,c,d){return c&&a(b.prototype,c),d&&a(b,d),b}}(),_get=function(a,b,c){for(var d=!0;d;){var e=a,f=b,g=c;d=!1,null===e&&(e=Function.prototype);var h=Object.getOwnPropertyDescriptor(e,f);if(void 0!==h){if("value"in h)return h.value;var i=h.get;return void 0===i?void 0:i.call(g)}var j=Object.getPrototypeOf(e);if(null===j)return void 0;a=j,b=f,c=g,d=!0,h=j=void 0}},Popover=function(a){var b="popover",c="4.0.0-alpha",d="bs.popover",e="."+d,f=a.fn[b],g=a.extend({},Tooltip.Default,{placement:"right",trigger:"click",content:"",template:'<div class="popover" role="tooltip"><div class="popover-arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'}),h=a.extend({},Tooltip.DefaultType,{content:"(string|element|function)"}),i={FADE:"fade",IN:"in"},j={TITLE:".popover-title",CONTENT:".popover-content",ARROW:".popover-arrow"},k={HIDE:"hide"+e,HIDDEN:"hidden"+e,SHOW:"show"+e,SHOWN:"shown"+e,INSERTED:"inserted"+e,CLICK:"click"+e,FOCUSIN:"focusin"+e,FOCUSOUT:"focusout"+e,MOUSEENTER:"mouseenter"+e,MOUSELEAVE:"mouseleave"+e},l=function(f){function l(){_classCallCheck(this,l),_get(Object.getPrototypeOf(l.prototype),"constructor",this).apply(this,arguments)}return _inherits(l,f),_createClass(l,[{key:"isWithContent",value:function(){return this.getTitle()||this._getContent()}},{key:"getTipElement",value:function(){return this.tip=this.tip||a(this.config.template)[0]}},{key:"setContent",value:function(){var b=a(this.getTipElement());this.setElementContent(b.find(j.TITLE),this.getTitle()),this.setElementContent(b.find(j.CONTENT),this._getContent()),b.removeClass(i.FADE).removeClass(i.IN),this.cleanupTether()}},{key:"_getContent",value:function(){return this.element.getAttribute("data-content")||("function"==typeof this.config.content?this.config.content.call(this.element):this.config.content)}}],[{key:"_jQueryInterface",value:function(b){return this.each(function(){var c=a(this).data(d),e="object"==typeof b?b:null;if((c||!/destroy|hide/.test(b))&&(c||(c=new l(this,e),a(this).data(d,c)),"string"==typeof b)){if(void 0===c[b])throw new Error('No method named "'+b+'"');c[b]()}})}},{key:"VERSION",get:function(){return c}},{key:"Default",get:function(){return g}},{key:"NAME",get:function(){return b}},{key:"DATA_KEY",get:function(){return d}},{key:"Event",get:function(){return k}},{key:"EVENT_KEY",get:function(){return e}},{key:"DefaultType",get:function(){return h}}]),l}(Tooltip);return a.fn[b]=l._jQueryInterface,a.fn[b].Constructor=l,a.fn[b].noConflict=function(){return a.fn[b]=f,l._jQueryInterface},l}(jQuery);
 /*!
  * Responsive Bootstrap Toolkit
  * Author:    Maciej Gurban
@@ -16524,11 +16524,11 @@ this["Handlebars"]["templates"]["video_inline"] = Handlebars.template({"1":funct
 
   return "<div id=\"video"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "Inline\" class=\"embed-responsive embed-responsive-16by9\">\n	<video "
+    + "Inline\" class=\"embed-responsive embed-responsive-16by9\">\r\n	<video "
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.controls : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + " class=\"embed-responsive-item\">\n		<source src=\""
+    + " class=\"embed-responsive-item\">\r\n		<source src=\""
     + alias4(((helper = (helper = helpers.src || (depth0 != null ? depth0.src : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"src","hash":{},"data":data}) : helper)))
-    + "\">\n	</video>\n</div>";
+    + "\">\r\n	</video>\r\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -16536,9 +16536,9 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 },"3":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return "				<div class=\"embed-responsive-item-overlay\">\n					<span class=\"video-transcript\"><small><a href=\""
+  return "				<div class=\"embed-responsive-item-overlay\">\r\n					<span class=\"video-transcript\"><small><a href=\""
     + container.escapeExpression(((helper = (helper = helpers.transcript || (depth0 != null ? depth0.transcript : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"transcript","hash":{},"data":data}) : helper)))
-    + "\">Download transcript</a></small></span>\n				</div>\n";
+    + "\">Download transcript</a></small></span>\r\n				</div>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -16546,13 +16546,13 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
     + "Modal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"videoModalLabel"
     + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\" role=\"document\">\n		<div class=\"modal-content modal-content-transparent\">\n\n			<div class=\"modal-header\">\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\n					<span class=\"sr-only\">Close</span>\n				</button>\n			</div>\n\n			<div class=\"embed-responsive embed-responsive-16by9 \">\n				<video "
+    + "\" aria-hidden=\"true\">\r\n	<div class=\"modal-dialog\" role=\"document\">\r\n		<div class=\"modal-content modal-content-transparent\">\r\n\r\n			<div class=\"modal-header\">\r\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\r\n					<span class=\"sr-only\">Close</span>\r\n				</button>\r\n			</div>\r\n\r\n			<div class=\"embed-responsive embed-responsive-16by9 \">\r\n				<video "
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.controls : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + " class=\"embed-responsive-item\">\n					<source src=\""
+    + " class=\"embed-responsive-item\">\r\n					<source src=\""
     + alias4(((helper = (helper = helpers.src || (depth0 != null ? depth0.src : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"src","hash":{},"data":data}) : helper)))
-    + "\" >\n				</video>\n"
+    + "\" >\r\n				</video>\r\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.transcript : depth0),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "			</div>\n			\n		</div>\n	</div>\n</div>";
+    + "			</div>\r\n			\r\n		</div>\r\n	</div>\r\n</div>";
 },"useData":true});
 /*!
  * Quickspot a fast flexible JSON powered in memory search.
@@ -17442,6 +17442,17 @@ if(typeof console === 'undefined'){
 	window.console = {"log":function(x){}};
 }
 
+/**
+ * Debug helper
+ * Log only shown when KENT.debug is true.
+ */
+ window.KENT  = window.KENT || {};
+
+ window.KENT.log = function(){
+ 	if(window.KENT.settings && window.KENT.settings.debug){
+ 		console.log(arguments.length === 1 ? arguments[0] : arguments);
+ 	}
+ };
 window.KENT  = window.KENT || {};
 
 /**
@@ -17454,10 +17465,11 @@ window.KENT.kat = {
 	 *  Track page view
 	 */
 	"page": function(path){
-		var trackers = _kat.trackers();
+		var trackers = this.trackers();
 		for(var t in trackers) {
 			try { trackers[t].send('pageview', {"page": path}); } catch(err) { /* Fail silently */ }
 		}
+		window.KENT.log("[Analytics] Pageview: " + path);
 		return true;
 	},
 
@@ -17466,7 +17478,7 @@ window.KENT.kat = {
 	 */
 	"event": function(category, action, label, value) {
 		var ns_category = 'w3beta-' + category;
-		return _kat.g_event(ns_category, action, label, value);
+		return this.g_event(ns_category, action, label, value);
 	},
 
 	/**
@@ -17474,7 +17486,7 @@ window.KENT.kat = {
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions
 	 */
 	"social": function(network, action, target){
-		var trackers = _kat.trackers();
+		var trackers = this.trackers();
 
 		// use current url if no target is provided
 		if(typeof target === 'undefined'){
@@ -17484,6 +17496,7 @@ window.KENT.kat = {
 		for(var t in trackers) {
 			try { trackers[t].send('social', network, action, target); } catch(err) { /* Fail silently */ }
 		}
+		window.KENT.log("[Analytics] Social", network, action, target);
 		return true;
 	},
 
@@ -17492,7 +17505,7 @@ window.KENT.kat = {
 	 */
 	"g_event": function(category, action, label, value) {
 		// send to all GA trackers
-		var trackers = _kat.trackers();
+		var trackers = this.trackers();
 
 		// if value is set, check its a number, if not set to 1
 		if(typeof value !== 'undefined'){
@@ -17502,6 +17515,8 @@ window.KENT.kat = {
 		for(var t in trackers) {
 			try { trackers[t].send('event', category, action, label, value); } catch(err) { /* Fail silently */ }
 		}
+
+		window.KENT.log("[Analytics] Event", category, action, label, value);
 		return true;
 	},
 
@@ -17514,8 +17529,20 @@ window.KENT.kat = {
 
 };
 
+/**
+ * Responsive helper
+ *
+ * Triggers events on resize and breakpoint changes
+ *
+ * Events:
+ * - viewport:resize - fired after every resize
+ * - viewport:change - fired only if resize triggers breakpoint change
+ *
+ * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
+ */
 (function($, viewport){
 
+	// Supported breakpoints
 	var visibilityDivs = {
 		'xs': $('<div class="hidden-sm-up"></div>'),
 		'sm': $('<div class="hidden-xs-down hidden-md-up"></div>'),
@@ -17526,7 +17553,6 @@ window.KENT.kat = {
 		'xxxl': $('<div class="hidden-xxl-down"></div>')
 
 	};
-
 	viewport.use('Custom', visibilityDivs);
 
 	// Add our custom event
@@ -17534,90 +17560,160 @@ window.KENT.kat = {
 	$(window).resize(
 		viewport.changed(function(){
 			var breakpoint = viewport.current();
-
+			// resize has occured, fire event
 			$(window).trigger('viewport:resize');
 
 			if(previousBreakpoint !== breakpoint){
-				 $(window).trigger('viewport:change');
-				 previousBreakpoint = breakpoint;
-				console.log(breakpoint);
+				// Debug
+				window.KENT.log("Breakpoint change: " + previousBreakpoint + ' -> ' + breakpoint);
+
+				// breakpoint has changed, fire evenet
+				$(window).trigger('viewport:change');
+				previousBreakpoint = breakpoint;
 			}
 		})
 	);
 
-
 })(jQuery, ResponsiveBootstrapToolkit);
 window.KENT  = window.KENT || {};
+/**
+ * Quickspot helper
+ *
+ * Centralises common configuration & initalisation options for QuickSpot search
+ *
+ * @uses https://github.com/thybag/quick-spot
+ */
+ (function(){
 
-window.KENT.quickspot = {
+ 	// create obj
+	window.KENT.quickspot = { config: {} };
+	var configs = window.KENT.quickspot.config;
 
-	display_handler : function (itm, qs) {
-		var locs = [itm.campus];
-		if (itm.additional_locations !== "") {
-			locs = locs.concat(itm.additional_locations.split(', '));
+	// Default config options
+	configs.default = {
+		"disable_occurrence_weighting": true,
+		"screenreader":	true,
+		"prevent_headers": true,
+		"max_results": 150,
+		"no_results": function (qs, val) {
+			return "<a class='quickspot-result selected'>Press enter to search...</a>";
+		},
+		"no_results_click": function (value, qs) {
+			window.location.href = "https://www.kent.ac.uk/search/?q=" + value;
 		}
-		locs = (locs.length > 1) ? [locs.slice(0, -1).join(', '), locs.slice(-1)[0]].join(' and ') : locs[0];
-		// Highlight searched word
-		return (itm.name + ' - ' + itm.award + ' <br> <span>' + locs + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
-	},
+	};
 
-	no_results: function (qs, val) {
-		return "<a class='quickspot-result selected'>Press enter to search...</a>";
-	},
+	// Module search
+	configs.modules = $.extend({}, configs.default, {
+		"url": window.KENT.settings.api_url + "v1/modules/collection/all",
+		"search_on": ["title", "sds_code"],
+		"key_value": "title",
+		"auto_highlight":true,
+		"display_handler": function(itm,qs){
+			return itm.title + "<br/><span>" + itm.sds_code + "</span>";
+		},
+		"click_handler":function(itm){
+			document.location.href = '/courses/modules/module/' + itm.sds_code;
+		},
+		"no_results_click": function (value, qs){
+		    window.location.href = "/courses/modules/?search=" + value;
+		},
+		"data_pre_parse": function(data, options){
+			return data.modules;
+		},
+		"loaded": function(){
+			qs.datastore.filter(function(o){ return o.running === true; });
+		}
+	});
 
-	no_results_click: function (value, qs) {
-		var url = "https://www.kent.ac.uk/search/courses?q=" + value;
-		window.location.href = url;
-	}
-};
+	// Scholarships search
+	configs.scholarships = $.extend({}, configs.default, {
+		"url": window.KENT.settings.api_url + "v1/scholarships/",
+		"key_value": "title",
+		"search_on": ["title", "code"],
+		"auto_highlight":true,
 
-KENT.quickspot.config = {
-	courses_defaults: {
-		"url":                          "https://webtools-test.kent.ac.uk/programmes/api/current/undergraduate/programmes",
-			"search_on":                    ["name", "award", "subject", "main_school", "ucas_code", "search_keywords"],
-			"disable_occurrence_weighting": true,
-			"screenreader":                 true,
-			"prevent_headers":              true,
+		"click_handler":function(itm){
+			document.location.href = '/scholarships/search/' + itm.code;
+		},
+		"display_handler": function(itm, qs){
+			return itm.title + "<br/><span>" + itm.code + "</span>";
+		},
+		"no_results_click": function (value, qs){
+			window.location.href = "/scholarships/search/?search=" + value;
+		}
+	});
 
-			"display_handler":  window.KENT.quickspot.display_handler,
-			"no_results": window.KENT.quickspot.no_results,
-			"no_results_click": window.KENT.quickspot.no_results_click,
+	// Default course configs, including callbacks
+	configs.courses_default = $.extend({}, configs.default, {
+		"search_on": ["name", "award", "subject", "main_school", "ucas_code", "search_keywords"],
+		"auto_highlight":false,
+		"display_handler" : function (itm, qs) {
 
-			"click_handler":    function (itm) {
+			// Generate locations list
+			var locations = [itm.campus];
+			if (itm.additional_locations !== "") {
+				locations = locations.concat(itm.additional_locations.split(', '));
+			}
+			locations = (locations.length > 1) ? [locations.slice(0, -1).join(', '), locations.slice(-1)[0]].join(' and ') : locations[0];
+
+			// Highlight searched word
+			return (itm.name + ' - ' + itm.award + ' <br> <span>' + locations + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
+		},
+		"click_handler": function (itm) {
 			document.location = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
+		},
+		"no_results_click": function (value, qs) {
+			window.location.href = "https://www.kent.ac.uk/search/courses?q=" + value;
 		}
-	}
-};
+	});
 
+	// UG
+	configs.ug_courses = $.extend({}, configs.courses_default, {
+		"url":	window.KENT.settings.api_url + "programmes/current/undergraduate/programmes",
+	});
 
-KENT.quickspot.config.ug_courses = $.extend({},KENT.quickspot.config.courses_defaults);
+	// PG
+	configs.pg_courses = $.extend({}, configs.courses_default, {
+		"url":	window.KENT.settings.api_url + "programmes/current/postgraduate/programmes",
+		"click_handler": function (itm) {
+			document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
+		}
+	});
 
-KENT.quickspot.config.pg_courses = $.extend({},KENT.quickspot.config.courses_defaults,{
+})();
 
-	"url":	"https://webtools-test.kent.ac.uk/programmes/api/current/postgraduate/programmes",
-	"click_handler":    function (itm) {
-		document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
-	}
-
-});
-
+/**
+ * Scan for inputs with data-quickspot-config attribute and initalise them as quickspot instances
+ */
 jQuery(document).ready(function($){
 
 	$('input[data-quickspot-config]').each(function(){
 
+		// Load config
+		var config = KENT.quickspot.config[$(this).data('quickspot-config')] || KENT.quickspot.config.defaults;
+		config = $.extend({}, config);
+
+		// Set additional options
+		config.target = $(this).attr('id');
+
+		// Override data source url
+		if($(this).data('quickspot-source')){
+			config.url = $(this).data('quickspot-source');
+		}
+
+		// Override results container location
+		if($(this).data('quickspot-target')){
+			config.results_container = $(this).data('quickspot-target');
+		}
+
+		// Boot quickspot
+		var qs = quickspot.attach(config);
 		$(this).attr('autocomplete','off');
-
-		var config = $(this).data('quickspot-config');
-		var target = $(this).data('quickspot-target');
-
-		config = KENT.quickspot.config[config] || KENT.quickspot.config.courses_defaults;
-
-		var qs = quickspot.attach($.extend({},config,{
-			target:$(this).attr('id'),
-			"results_container":target
-		}));
-
 		$(this).data('qs',qs);
+
+		// Debug
+		window.KENT.log("[Quickspot] Instance created on #" + $(this).attr('id') + " with config " + $(this).data('quickspot-config'));
 	});
 
 });
@@ -17625,20 +17721,29 @@ jQuery(document).ready(function($){
 
 
 
+
+/**
+ * Responsive Collapse
+ *
+ * Mirrors the behaviour of http://v4-alpha.getbootstrap.com/components/collapse/ in a breakpoint aware way
+ *
+ * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
+ * @uses responsive_util.js
+ */
 jQuery(document).ready(function(){
 
-    viewport = ResponsiveBootstrapToolkit;
-
+    var viewport = ResponsiveBootstrapToolkit;
     var $collabsables = $('[data-toggle="collapse_responsive"]');
 
     $collabsables.click(function(e){
         e.preventDefault();
 
-        var $this= $(this);
+        var $this = $(this);
         var isCollapsed = $(this).hasClass('collapsed');
-        var $parent = $($this.data('parent') || null);
-        var $target = $($this.data('target') || null);
+        var $parent = $($this).closest($this.data('parent')) || null;
+        var $target = $($this.data('target')) || null;
 
+		var $isTab = $parent.hasClass('tab-content');
         // If target isn't collapsed at this breakpoint, ignore.
         if( 
             !(
@@ -17651,26 +17756,32 @@ jQuery(document).ready(function(){
         ){
             return;
         }
-        // else, toggle it open / shut
 
+        // else, toggle it open / shut
         if($parent.length > 0){
             var $open = $parent.find('.in');
-            $open.removeClass('in')
+            $open.removeClass('in').removeClass('active')
                 .each(
                     function(){
                         $parent.find('[data-target="#' + $(this).attr('id') + '"]').addClass('collapsed');
+						if($isTab){
+							$parent.parent().find('.nav-link').removeClass('active');
+						}
                     }
             );
         }
 
         if($target.length > 0){
-            $target.toggleClass('in',isCollapsed);
+            $target.toggleClass('in',isCollapsed).toggleClass('active',isCollapsed);
             // Add expanded state (this only needs to be set when collapsing is possible)
             $this.toggleClass('collapsed',!isCollapsed).attr("aria-expanded", isCollapsed);
+			if($isTab){
+				$parent.parent().find('.nav-link[href="' + $this.data('target') + '"]').addClass('active');
+			}
         }
     });
 
-
+    // When breakpoint changes
     $(window).on("viewport:change", function(){
 
         $collabsables.each(function(){
@@ -17693,125 +17804,243 @@ jQuery(document).ready(function(){
 
 
 });
-// go go global nav
+window.KENT  = window.KENT || {};
+/**
+ * Global navigation 
+ *
+ * Switches between main menu & search menu on mobile.
+ * Toggles search on/off on large screens
+ *
+ */
 (function(){
+	// Menu references
+	// Store control class as data on the elements (just for conveniance)
+	var global_menu = $("#global-nav-menu").data("control-class", "show-global-menu");
+	var global_search = $("#global-nav-search").data("control-class", "show-global-search");
 
-	// store control class as data on the node (just for conveniance)
-	var global_menu = $(".global-nav-menu").data("control-class", "show-global-menu");
-	var global_search = $(".global-nav-search").data("control-class", "show-global-search");
+	// List of Menu toggle classes
+	// This will have the aria-extanded attribute toggled on them, whenever the menu state changes.
+	var global_menu_toggles = $(".menu-button");
+	var global_search_toggles = $(".search-button, .search-button-full, .close-search");
 
+	// Toggle a given menu's state
 	var toggleMenu = function(button, menu){
-		// If no menu is open, open this one, else this is a close action
+
+		// If this menu is NOT open, open it. Else close it.
 		if(!menu.hasClass("in")){
-			openMenu(button, menu);
+			return openMenu(button, menu);
 		}else{
-			closeMenu(button, menu);
+			return closeMenu(button, menu);
 		}
 	};
 
+	// Close a given menu (toggling its buttons)
 	var closeMenu = function(button, menu){
 
-		if(menu.hasClass("in") && ResponsiveBootstrapToolkit.is('<=sm')) {
-			$('.home-nav').delay(300).fadeIn();
+		// Cannot close already closed menu
+		if(!menu.hasClass("in")){
+			return false;
 		}
 
-		$("body").removeClass(menu.data("control-class"));
+		// Remove menu & body class
 		menu.removeClass("in");
-
+		$("body").removeClass(menu.data("control-class"));
+		
 		// Update button so it knows it's expanded area is collapsed
-		// aria-hidden is not needed on th element, since as the element is displayed none
+		// aria-hidden is not needed on the element, since as the element is displayed none
 		// the screen reader won't see it anyway.
 		button.attr("aria-expanded", "false");
+
+		// Trigger event
+		$(window).trigger("globalmenu:close", [menu]);
+
+		return true;
 	};
 
+	// Open a given menu (toggling its buttons)
 	var openMenu = function(button, menu){
-		// Select find
-		if(menu === global_search){
-			global_search.find("input[type='search']").focus();
+
+		// Cannot open already closed menu
+		if(menu.hasClass("in")){
+			return false;
 		}
 
-		$('.home-nav').hide();
-
-		$("body").addClass(menu.data("control-class"));
+		// Set menu & body classes
 		menu.addClass("in");
-		// update button so it knows it's expanded area is collapsed
+		$("body").addClass(menu.data("control-class"));
+
+		// Update button so it knows it's expanded area is collapsed
 		button.attr("aria-expanded", true);
+
+		// Fire events
+		$(window).trigger("globalmenu:open", [menu]);
+
+		return true;
 	};
 
-	var closeSearch = function(){
-		closeMenu($(".search-button, .search-button-full, .close-search"), global_search);
+	// Setup quick access methods to Menu functions
+	var global_nav = {
+		openSearchMenu: function(){
+			return openMenu(global_search_toggles, global_search);
+		},
+		closeSearchMenu: function(){
+			return closeMenu(global_search_toggles, global_search);
+		},
+		toggleSearchMenu: function(){
+			return toggleMenu(global_search_toggles, global_search);
+		},
+		openMainMenu: function(){
+			return openMenu(global_menu_toggles, global_menu);
+		},
+		closeMainMenu: function(){
+			return closeMenu(global_menu_toggles, global_menu);
+		},
+		toggleMainMenu: function(){
+			return toggleMenu(global_menu_toggles, global_menu);
+		}
 	};
 
-	// Hook up menu links
-	$(".menu-button").click(function(){
-		toggleMenu($(this), global_menu);	
-	});
-
-	$(".search-button, .search-button-full").click(function(e){
-		toggleMenu($(".search-button, .search-button-full, .close-search"), global_search);
+	// Toggle primary Menu (mobile Only)
+	global_search_toggles.click(function(e){
 		e.preventDefault();
+		window.KENT.global_nav.toggleSearchMenu();
 		return false;
 	});
 
-	$(".close-search").click(function(){
-		closeMenu($(this), global_search);
+	// Toggle Search Menu
+	global_menu_toggles.click(function(e){
+		e.preventDefault();
+		window.KENT.global_nav.toggleMainMenu();
+		return false;
 	});
 
+
+	// Ensure opening one menu, closes the other.
+	$(window).on("globalmenu:open", function(e, menu){
+		if(menu[0] === global_search[0]){
+			window.KENT.global_nav.closeMainMenu();
+		}else{
+			window.KENT.global_nav.closeSearchMenu();
+		}
+	});
+
+	// CLose all menu's if user hits escape
+	$(document).keyup(function(e){
+		if(e.which === 27){
+			window.KENT.global_nav.closeMainMenu();
+			window.KENT.global_nav.closeSearchMenu();
+		}
+	});
+
+	// Homepage Logic
+	if($('.home-nav').length > 0){
+		$(window).on("globalmenu:open", function(){
+			$('.home-nav').hide();	
+		});
+		$(window).on("globalmenu:close", function(e, menu){
+			//menu.hasClass("in") &&
+			if( ResponsiveBootstrapToolkit.is('<=sm')) {
+				$('.home-nav').delay(300).fadeIn();
+			}	
+		});
+		$(window).on("viewport:change", function(){
+
+			if(ResponsiveBootstrapToolkit.is('<=sm')){
+				// if menu isn't already open
+				if(!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
+					console.log("doesnt have body class");
+					$('.home-nav').delay(300).fadeIn();
+				}
+				
+			}else{
+				$('.home-nav').hide();
+			}
+		});
+	}
+
+	// Add to KENT object
+	window.KENT.global_nav = global_nav;
+})();
+
+window.KENT  = window.KENT || {};
+/**
+ * Global search 
+ *
+ * Super search located at the top of the page
+ *
+ * @uses global_nav.js
+ */
+ (function(){
+
+	// Get global search element.
+	var global_search = $("#global-nav-search");
+
+	// Hitting search on empty form closes search menu
 	global_search.find('form').submit(function(e){
 		if(global_search.find("input[type='search']").val()===''){
 			e.preventDefault();
-			closeSearch();
+			window.KENT.global_nav.closeSearchMenu();
 			return false;
 		}
 	});
 
-	global_search.find("input[type='search']").click(function(e){
-		e.preventDefault();
-		return false;
+	// Focus in search input if global search is toggled
+	$(window).on("globalmenu:open", function(e, menu){
+		if(menu[0] === global_search[0]){
+			global_search.find("input[type='search']").focus();
+		}
 	});
 
-	$('body').click(closeSearch);
-
-	$(document).keyup(function(e){
-		if(e.which === 27){
-			closeSearch();
+	// clicking menu
+	$('body').click(function(e){
+		if(!global_search.is(e.target) && global_search.has(e.target).length === 0){
+			window.KENT.global_nav.closeSearchMenu();
 		}
 	});
 
 })();
-
-$(window).on("viewport:change", function(){
-	if(ResponsiveBootstrapToolkit.is('<=sm')){
-		$('.home-nav').delay(300).fadeIn();
-	}else{
-		$('.home-nav').hide();
-	}
-});
-(function(){
+/**
+ * Primary Navigation
+ *
+ * Handles open/closing of the submenus in the global nav menu.
+ *
+ */
+ (function(){
 	var zTimer = null;
+
 	// Primary Nav
 	$(".global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a").click(function(){
 		clearTimeout(zTimer);
-		// was this item open?
-		var was_open = $(this).parent().hasClass("in");
 
-		// If a menu was already open, close other menu sections (setting expanded as we go)
-		if($(this).parent().parent().hasClass("in")){
-			var menus = $(this).parent().parent().find(".in").not($(this).parent());
-				menus.removeClass("in");
-				menus.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
-				menus.children(":first").attr("aria-expanded", "false");
+		// Get current menu item
+		var item = $(this).parent();
+		// Get menu container
+		var container = item.parent();
+
+		// Close submenus in provided menuItems
+		var closeSubMenus = function(menuItems){
+			return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+		};
+
+		if(container.hasClass("in")){
+			// If a menu was already open, 
+			// Close all menu items other than the one selected (setting expanded as we go)
+			var menus = container.find(".in").not(item);
+			menus.removeClass("in");
+			closeSubMenus(menus);
+
+			menus.children(":first").attr("aria-expanded", "false");
 		}else{
-			$(this).parent().parent().find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+			// If menu wasn't open, preperate submenus for being shown.
+			closeSubMenus(container);
 		}
 
-		if(was_open){
-			var $that = $(this);
-			// if the clicked item was open, close all
-			$that.parent().removeClass("in").parent().removeClass("in");
+		if(item.hasClass("in")){
+			// if the clicked menu item was open, close the menu
+			item.removeClass("in").parent().removeClass("in");
 
 			zTimer = setTimeout(function(){
-				$that.parent().find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');
+				closeSubMenus(item);
 			},600);
 
 		}else{
@@ -17827,6 +18056,8 @@ jQuery(document).ready(function(){
 	var sectional_nav = $('.departmental-nav .navbar-menu');
 	var toggler = $('.departmental-nav .navbar-toggler');
 
+	var viewport = ResponsiveBootstrapToolkit;
+	
 	// if no nav, don't bother booting menu
 	if(sectional_nav.length === 0){ return; } 
 
@@ -17884,72 +18115,103 @@ jQuery(document).ready(function(){
 
 	respond();
 });
-jQuery(document).ready(function(){
+/**
+ * Beta bar collapse
+ *
+ * Small bit of JS to facilitate the beta bar open/close logic.
+ * This will be removed once the product moves out of beta
+ */
+ jQuery(document).ready(function(){
+
 	var beta_bar = $('.beta-bar');
 
+	// Toggle beta bar
 	function toggleNav() {
 		if(beta_bar.hasClass('hidden')){
 			beta_bar.removeClass('hidden').slideDown();
-
-		}else {
+		} else {
 			beta_bar.addClass('hidden').slideUp();
 			Cookies.set('kentbeta_dismissed', '1', {expires: 365});
 		}
 	}
-
-	if(beta_bar.length >0 ) {
+	// If beta bar exists on page
+	if(beta_bar.length > 0) {
 
 		var toggler = $('.beta-toggler');
-
 		var dismissed = typeof Cookies.get('kentbeta_dismissed') !== 'undefined';
-
+		
+		// Apply show/hide state from cookie.
 		if(!dismissed) {
 			beta_bar.slideDown();
 		}else{
 			beta_bar.addClass('hidden');
-		}
+		}	
 
+		// hook up toggler
 		toggler.click(function () {
 			toggleNav();
 		});
 	}
 });
-jQuery(document).ready(function($){
-
+/**
+ * Toggles attribution text display on/off
+ */
+ jQuery(document).ready(function($){
 	$('.attribution').click(function(){
 		$(this).toggleClass('in');
 	});
-
+	// Debug
+	window.KENT.log("Initiating: Attribution");
+	window.KENT.log($('.attribution'));
 });
-// Disable scroll zooming and bind back the click event
-var onEmbedClickHandler;
+/**
+ * Click to interact logic
+ *
+ * Disable scrolling/zooming on iframes with .click-to-interact class
+ * User click activates scrolling behavior and loss of focus deactivates it
+ *
+ */
+(function(){
+	var onEmbedClickHandler, onEmbedMouseleaveHandler;
 
-var onEmbedMouseleaveHandler = function (event) {
-	var that = $(this);
+	// Disable pointer events
+	onEmbedMouseleaveHandler = function (event) {
+		// Re add the click to interact handler
+		$(this).on('click', onEmbedClickHandler);
+		// remove the leaving handler
+		$(this).off('mouseleave', onEmbedMouseleaveHandler);
+		// Disable pointer events
+		$(this).find('iframe').css("pointer-events", "none");
+	};
 
-	that.on('click', onEmbedClickHandler);
-	that.off('mouseleave', onEmbedMouseleaveHandler);
-	that.find('iframe').css("pointer-events", "none");
-};
+	// Enable pointer events
+	onEmbedClickHandler = function (event) {
+		// Disable the click handler until the user leaves the area
+		$(this).off('click', onEmbedClickHandler);
+		// Handle the mouse leave event
+		$(this).on('mouseleave', onEmbedMouseleaveHandler);
+		// Enable the pointer events
+		$(this).find('iframe').css("pointer-events", "auto");
+	};
 
-onEmbedClickHandler = function (event) {
-	var that = $(this);
+	jQuery(document).ready(function() {
+		// Disable pointer on class, and attach click action to re-enable them
+		$('.click-to-interact').on('click', onEmbedClickHandler).find('iframe').css("pointer-events", "none");
 
-	// Disable the click handler until the user leaves the area
-	that.off('click', onEmbedClickHandler);
+		window.KENT.log("Initiating: Click to interact");
+		window.KENT.log($('.click-to-interact'));
+	});
 
-	that.find('iframe').css("pointer-events", "auto");
+})();
 
-	// Handle the mouse leave event
-	that.on('mouseleave', onEmbedMouseleaveHandler);
-};
-
-jQuery(document).ready(function () {
-
-	$('.click-to-interact').on('click', onEmbedClickHandler);
-});
-
-var stellarActivated = false;
+/**
+ * Parallax
+ *
+ * Provides parallax functionality
+ *
+ * @uses https://github.com/markdalgleish/stellar.js
+ */
+ var stellarActivated = false;
 
 function react_to_window() {
 	if(ResponsiveBootstrapToolkit.is('xs')) {
@@ -17957,7 +18219,7 @@ function react_to_window() {
 			$(window).data('plugin_stellar').destroy();
 			stellarActivated = false;
 		}
-		$('.media-wrap-paralax').css('min-height','');
+		$('.media-wrap-parallax').css('min-height','');
 	} else {
 		if (stellarActivated === false) {
 
@@ -17999,7 +18261,7 @@ function react_to_window() {
 			stellarActivated = true;
 		}
 		var $ratio = ResponsiveBootstrapToolkit.is('<xl')?(9/16):(7/16);
-		$('.media-wrap-paralax').each(function () {
+		$('.media-wrap-parallax').each(function () {
 			$(this).css('min-height', ($(window).width() * $ratio) + 'px');
 		});
 		$(window).data('plugin_stellar').refresh();
@@ -18014,9 +18276,16 @@ $(window).on('viewport:resize',function(){
 $(document).ready(function(){
 	react_to_window();
 });
-
+/**
+ * Slider
+ *
+ * Provides carousel functionality to kent-theme
+ *
+ * @uses https://github.com/kenwheeler/slick/
+ */
 window.KENT  = window.KENT || {};
 
+// Default options
 window.KENT.kentslider = {
 
 	default: {
@@ -18028,21 +18297,24 @@ window.KENT.kentslider = {
 			accessibility: true
 		}
 	},
-
+	// react helper
 	react: function($el, breakpoint, config){
 		var loaded = $el.hasClass('slick-initialized');
 		if(ResponsiveBootstrapToolkit.is(breakpoint)) {
 			if(!loaded){
+				// init slider
 				$el.slick(config);
 			}
 		}else{
 			if(loaded){
+				// de-init slider
 				$el.slick("unslick");
 			}
 		}
 	}
 };
 
+// Settings for profile_feature
 window.KENT.kentslider.profile_feature = {
 	config: $.extend({},window.KENT.kentslider.default.config ,{
 		slidesToShow:2,
@@ -18052,10 +18324,10 @@ window.KENT.kentslider.profile_feature = {
 };
 
 $(document).ready(function(){
-
-
+	// If class is found, init slider
 	$('.kent-slider').each(function()
-	{
+	{	
+		// Load config
 		var slider_config = $(this).data('slider-config');
 
 		if(typeof slider_config ==='undefined') {
@@ -18064,19 +18336,24 @@ $(document).ready(function(){
 
 		var config = window.KENT.kentslider[slider_config].config;
 
+		// Does this carousel behave differently at different breakpoints
 		var breakpoint  = typeof window.KENT.kentslider[slider_config].breakpoint !=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;
 		if(breakpoint){
-
+			// react to inital size
 			window.KENT.kentslider.react($(this), breakpoint, config);
 			var $this = $(this);
+			// Handle resize on view port change
 			$(window).on('viewport:resize',function(){
 				window.KENT.kentslider.react($this, breakpoint, config);
 			});
 
 		}else{
+			// Init slider
 			$(this).slick(config);
 		}
 
+		// Debug
+		window.KENT.log("[Kent-slider] Instance created", $(this));
 	});
 
 });
@@ -18201,11 +18478,25 @@ $(document).ready(function(){
 			}
 		});
 
+		// Debug
+		window.KENT.log("[Video player] Instance created", $(this));
 	});
 });
+/**
+ * Social sharing icons
+ *
+ * Converts anything in a div with the class `content-social-share` in to a social sharing icon.
+ * Clicking the icons will launch a share this page window. 
+ * Will automatically pass share data to Google Analytics.
+ *
+ * @uses https://github.com/sapegin/social-likes
+ */
 (function(){
-	//add linkedin support (not included in current version of social-shares)
+
+	// Add additional social networks to the social-likes code.
 	window.socialLikesButtons = {
+
+		// Add linkedin support 
 		linkedin: {
 			counterUrl: 'http://www.linkedin.com/countserv/count/share?url={url}',
 			counter: function(jsonUrl, deferred) {
@@ -18223,8 +18514,7 @@ $(document).ready(function(){
 					};
 				}
 				options._[jsonUrl] = deferred;
-				$.getScript(jsonUrl)
-					.fail(deferred.reject);
+				$.getScript(jsonUrl).fail(deferred.reject);
 			},
 			popupUrl: 'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',
 			popupWidth: 650,
@@ -18232,18 +18522,49 @@ $(document).ready(function(){
 		}
 	};
 
+	// When jQuery is ready, hook up our social sharing icons.
 	$(function() {
+		// for all social share containers
 		var $likes = $(".content-social-share");
 		if ($likes.length > 0) {
+
+			// Init social likes on container + grab options
 			var options = $likes.socialLikes({"counters": false}).data().socialLikes.options;
 
-			// Populate "email link"
+			// Populate "email link" (Additional option we have added)
 			$likes.find("a.email").attr("href", "mailto:?subject=" + options.title + "&body=Link: " + options.url);
 
-			// Hook up social events
+			// Hook up social events via KAT
 			$likes.find("a").click(function(){
-				window.KENT.kat.social($(this).attr('title'), 'share');
+				window.KENT.kat.social($(this).attr('title'), 'share'); // current url is used, if no url is provided as the 3rd param.
 			});
 		}
+		// Debug
+		window.KENT.log("Initiating: Social Sharing");
+		window.KENT.log($likes);
 	});
+})();
+
+(function(){
+
+	//get all tabs
+	var $tabs = $('a[data-toggle="tab"]');
+
+	// when tab is hidden adjust related accordion tab-title accordingly
+	$tabs.on('hidden.bs.tab', function (e) {
+		$('.tab-title[data-target="' + $(e.target).attr('href') + '"]').addClass('collapsed').attr("aria-expanded", false);
+	});
+
+    // when tab is show adjust related accordion tab-title accordingly
+	$tabs.on('shown.bs.tab', function (e) {
+		$('.tab-title[data-target="' + $(e.target).attr('href') + '"]').removeClass('collapsed').attr("aria-expanded", true);
+	});
+
+	//endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
+	$(window).on('viewport:resize',function(){
+		$('.nav-tabs:visible').each(function(){
+			$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr("aria-expanded", true);
+		});
+	});
+
 })();

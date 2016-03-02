@@ -1,10 +1,26 @@
 @mixin showhide {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 300ms;
-  &.in {
-    max-height: 2000px;
-  }
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 300ms, padding 450ms;
+
+	.tab-content > &.tab-pane,
+	&.tab-pane{
+		background: darken(#f5f5f5,5%);
+		padding: 0 1rem;
+		display: block;
+		&.fade{
+			opacity: 1;
+		}
+	}
+
+	.tab-content > &.tab-pane.in,
+	&.in {
+		max-height: 2000px;
+		&.tab-pane{
+			padding: 1rem;
+		}
+	}
+
 }
 
 .collapse-xs-up{

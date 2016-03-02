@@ -77,6 +77,7 @@ $spacers: (
 );
 
 //COLOURS
+$kent-blue:			   #003882;
 $kent-primary:         #05345C;
 $kent-primary-tint:    #e8ebf2;
 
@@ -180,6 +181,21 @@ $btn-secondary-color:            $body-color;
 $btn-secondary-bg:               #e6e6e6;
 $btn-secondary-border:           #adadad;
 
+
+//NAVS
+
+///tabs
+//$nav-tabs-border-color:                     #ddd !default;
+
+$nav-tabs-link-border-width:                0;
+//$nav-tabs-link-hover-border-color:          $gray-lighter !default;
+
+//$nav-tabs-active-link-hover-bg:             $body-bg !default;
+$nav-tabs-active-link-hover-color:          #303030 ;
+//$nav-tabs-active-link-hover-border-color:   #ddd !default;
+
+//$nav-tabs-justified-link-border-color:            #ddd !default;
+//$nav-tabs-justified-active-link-border-color:     $body-bg !default;
 
 //CARDS
 

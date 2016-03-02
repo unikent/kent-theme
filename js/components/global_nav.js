@@ -1,94 +1,157 @@
-// go go global nav
+window.KENT  = window.KENT || {};
+/**
+ * Global navigation 
+ *
+ * Switches between main menu & search menu on mobile.
+ * Toggles search on/off on large screens
+ *
+ */
 (function(){
+	// Menu references
+	// Store control class as data on the elements (just for conveniance)
+	var global_menu = $("#global-nav-menu").data("control-class", "show-global-menu");
+	var global_search = $("#global-nav-search").data("control-class", "show-global-search");
 
-	// store control class as data on the node (just for conveniance)
-	var global_menu = $(".global-nav-menu").data("control-class", "show-global-menu");
-	var global_search = $(".global-nav-search").data("control-class", "show-global-search");
+	// List of Menu toggle classes
+	// This will have the aria-extanded attribute toggled on them, whenever the menu state changes.
+	var global_menu_toggles = $(".menu-button");
+	var global_search_toggles = $(".search-button, .search-button-full, .close-search");
 
+	// Toggle a given menu's state
 	var toggleMenu = function(button, menu){
-		// If no menu is open, open this one, else this is a close action
+
+		// If this menu is NOT open, open it. Else close it.
 		if(!menu.hasClass("in")){
-			openMenu(button, menu);
+			return openMenu(button, menu);
 		}else{
-			closeMenu(button, menu);
+			return closeMenu(button, menu);
 		}
 	};
 
+	// Close a given menu (toggling its buttons)
 	var closeMenu = function(button, menu){
 
-		if(menu.hasClass("in") && ResponsiveBootstrapToolkit.is('<=sm')) {
-			$('.home-nav').delay(300).fadeIn();
-		}
-
-		$("body").removeClass(menu.data("control-class"));
-		menu.removeClass("in");
-
-		// Update button so it knows it's expanded area is collapsed
-		// aria-hidden is not needed on th element, since as the element is displayed none
-		// the screen reader won't see it anyway.
-		button.attr("aria-expanded", "false");
-	};
-
-	var openMenu = function(button, menu){
-		// Select find
-		if(menu === global_search){
-			global_search.find("input[type='search']").focus();
-		}
-
-		$('.home-nav').hide();
-
-		$("body").addClass(menu.data("control-class"));
-		menu.addClass("in");
-		// update button so it knows it's expanded area is collapsed
-		button.attr("aria-expanded", true);
-	};
-
-	var closeSearch = function(){
-		closeMenu($(".search-button, .search-button-full, .close-search"), global_search);
-	};
-
-	// Hook up menu links
-	$(".menu-button").click(function(){
-		toggleMenu($(this), global_menu);	
-	});
-
-	$(".search-button, .search-button-full").click(function(e){
-		toggleMenu($(".search-button, .search-button-full, .close-search"), global_search);
-		e.preventDefault();
-		return false;
-	});
-
-	$(".close-search").click(function(){
-		closeMenu($(this), global_search);
-	});
-
-	global_search.find('form').submit(function(e){
-		if(global_search.find("input[type='search']").val()===''){
-			e.preventDefault();
-			closeSearch();
+		// Cannot close already closed menu
+		if(!menu.hasClass("in")){
 			return false;
 		}
-	});
 
-	global_search.find("input[type='search']").click(function(e){
+		// Remove menu & body class
+		menu.removeClass("in");
+		$("body").removeClass(menu.data("control-class"));
+		
+		// Update button so it knows it's expanded area is collapsed
+		// aria-hidden is not needed on the element, since as the element is displayed none
+		// the screen reader won't see it anyway.
+		button.attr("aria-expanded", "false");
+
+		// Trigger event
+		$(window).trigger("globalmenu:close", [menu]);
+
+		return true;
+	};
+
+	// Open a given menu (toggling its buttons)
+	var openMenu = function(button, menu){
+
+		// Cannot open already closed menu
+		if(menu.hasClass("in")){
+			return false;
+		}
+
+		// Set menu & body classes
+		menu.addClass("in");
+		$("body").addClass(menu.data("control-class"));
+
+		// Update button so it knows it's expanded area is collapsed
+		button.attr("aria-expanded", true);
+
+		// Fire events
+		$(window).trigger("globalmenu:open", [menu]);
+
+		return true;
+	};
+
+	// Setup quick access methods to Menu functions
+	var global_nav = {
+		openSearchMenu: function(){
+			return openMenu(global_search_toggles, global_search);
+		},
+		closeSearchMenu: function(){
+			return closeMenu(global_search_toggles, global_search);
+		},
+		toggleSearchMenu: function(){
+			return toggleMenu(global_search_toggles, global_search);
+		},
+		openMainMenu: function(){
+			return openMenu(global_menu_toggles, global_menu);
+		},
+		closeMainMenu: function(){
+			return closeMenu(global_menu_toggles, global_menu);
+		},
+		toggleMainMenu: function(){
+			return toggleMenu(global_menu_toggles, global_menu);
+		}
+	};
+
+	// Toggle primary Menu (mobile Only)
+	global_search_toggles.click(function(e){
 		e.preventDefault();
+		window.KENT.global_nav.toggleSearchMenu();
 		return false;
 	});
 
-	$('body').click(closeSearch);
+	// Toggle Search Menu
+	global_menu_toggles.click(function(e){
+		e.preventDefault();
+		window.KENT.global_nav.toggleMainMenu();
+		return false;
+	});
 
-	$(document).keyup(function(e){
-		if(e.which === 27){
-			closeSearch();
+
+	// Ensure opening one menu, closes the other.
+	$(window).on("globalmenu:open", function(e, menu){
+		if(menu[0] === global_search[0]){
+			window.KENT.global_nav.closeMainMenu();
+		}else{
+			window.KENT.global_nav.closeSearchMenu();
 		}
 	});
 
-})();
+	// CLose all menu's if user hits escape
+	$(document).keyup(function(e){
+		if(e.which === 27){
+			window.KENT.global_nav.closeMainMenu();
+			window.KENT.global_nav.closeSearchMenu();
+		}
+	});
 
-$(window).on("viewport:change", function(){
-	if(ResponsiveBootstrapToolkit.is('<=sm')){
-		$('.home-nav').delay(300).fadeIn();
-	}else{
-		$('.home-nav').hide();
+	// Homepage Logic
+	if($('.home-nav').length > 0){
+		$(window).on("globalmenu:open", function(){
+			$('.home-nav').hide();	
+		});
+		$(window).on("globalmenu:close", function(e, menu){
+			//menu.hasClass("in") &&
+			if( ResponsiveBootstrapToolkit.is('<=sm')) {
+				$('.home-nav').delay(300).fadeIn();
+			}	
+		});
+		$(window).on("viewport:change", function(){
+
+			if(ResponsiveBootstrapToolkit.is('<=sm')){
+				// if menu isn't already open
+				if(!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
+					console.log("doesnt have body class");
+					$('.home-nav').delay(300).fadeIn();
+				}
+				
+			}else{
+				$('.home-nav').hide();
+			}
+		});
 	}
-});
+
+	// Add to KENT object
+	window.KENT.global_nav = global_nav;
+})();

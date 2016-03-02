@@ -5,7 +5,7 @@ Class KentThemeHelper {
 
 	private static $theme_web_root = false;
 
-	public static function header($config= array()){
+	public static function header($config = array()){
 
 		$defaults = array(
 			'title' => 'Kent Theme Beta',
@@ -13,12 +13,12 @@ Class KentThemeHelper {
 			'meta' => array(),
 			'theme' => '',
 			'head_markup' => '',
-			'slim'=>false,
+			'slim'=> false,
 			'beta_bar'=>true,
 			'home_page' => false
 		);
 
-		$config = array_merge($defaults,$config);
+		$config = array_merge($defaults, $config);
 
 		extract($config);
 
@@ -62,7 +62,16 @@ Class KentThemeHelper {
 		include("inc/header.php");
 	}
 
-	public static function footer($foot_markup = ''){
+	public static function footer($foot_markup = '', $additional_js_config = array()){
+
+
+		// Config to be output in JS
+		$js_config = array(
+			"api_url" => API_URL,
+			"debug" => defined("DEBUG") ? ("true" == DEBUG) : false
+		);
+		$js_config = array_merge($js_config, $additional_js_config);
+
 		include("inc/footer.php");
 	}
 

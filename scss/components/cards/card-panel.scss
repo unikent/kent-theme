@@ -178,15 +178,6 @@
 		}
 	}
 
-	&.card-panel-padded {
-		.container,.card-panel-body {
-			padding: 2rem 0;
-			
-			@include media-breakpoint-up(sm) {
-				padding: 2rem 8%;
-			}
-		} 
-	}
 
 	.card-panel-body {
 		@extend .container;

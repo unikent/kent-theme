@@ -102,11 +102,13 @@ module.exports = function(grunt) {
 					'js/handlebars_templates.js',
 					'vendor/quick-spot/quickspot.js',
 					'vendor/jwplayer-official/bin-release/jwplayer.js',
+					'js/components/log.js',
 					'js/components/kat.js',
 					'js/components/responsive_util.js',
 					'js/components/quickspot.js',
 					'js/components/collapse_responsive.js',
 					'js/components/global_nav.js',
+					'js/components/global_search.js',
 					'js/components/primary_nav.js',
 					'js/components/sectional_nav.js',
 					'js/components/beta_bar.js',
@@ -115,7 +117,8 @@ module.exports = function(grunt) {
 					'js/components/paralax.js',
 					'js/components/slider.js',
 					'js/components/video.js',
-					'js/components/social-likes.js'
+					'js/components/social-likes.js',
+					'js/components/navigation.js'
 				],
 				dest: 'js/main.js'
 			}
@@ -205,7 +208,9 @@ module.exports = function(grunt) {
 				options:   {
 					htmlhint:false,
 					getData: {
-						webroot: '//beta.kent.ac.uk/'
+						webroot: '//beta.kent.ac.uk/',
+						api_url: 'https://api.kent.ac.uk/api/',
+						debug: false
 					}
 				},
 				files: [

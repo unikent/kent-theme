@@ -205,9 +205,19 @@
 	}
 
 	.card-img,
-	.card-img-top, .card-media-wrap{
+	.card-img-top,
+	.card-media-wrap{
 		&:first-child{
 			margin-bottom: 0.75rem;
+		}
+	}
+
+	.card-media-wrap,
+	.media-wrap,
+	.media-wrap-paralax{
+		.card-img:first-child,
+		.card-img-top:first-child{
+			margin-bottom: 0;
 		}
 	}
 
