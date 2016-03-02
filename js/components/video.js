@@ -26,15 +26,13 @@ $(document).ready(function(){
 			// get the right video container
 			var video_container = $(Handlebars.templates['video_' + mode]({
 				id: this.video_containerId,
-				// src: src,
-				vimertranscript: transcript,
-				// controls: controls
+				//transcript: transcript
 			}));
 
 			var player = false; // this will be an instance of jwplayer later on
 
 			var playVideo = function () {
-				player.play(true); console.log('playing');
+				player.play(true);
 			};
 
 			var pauseVideo = function () {
@@ -88,38 +86,58 @@ $(document).ready(function(){
 			player = jwplayer(player).setup({
 				file: src,
 				width: "100%",
-				aspectratio: "16:9", description: "some kind of description"
+				aspectratio: "16:9", description: "some kind of description",
+				controls: controls
 			});
+
+			// logic for when controls are disabled
+			if (!controls) {
+				player.on('displayClick', function () {console.log('here0', player.prevState);
+					toggleVideo();
+				});
+			}
 
 			player.on('play', function () {
 				$(This).closest('.card-overlay').addClass('card-media-enabled');
 				$(player.getContainer()).removeClass('video-launcher');
 			});
 
-			player.on('pause', function (state) { console.log('pausing');
+			player.on('pause', function (state) {
 				$(This).closest('.card-overlay').removeClass('card-media-enabled');
-				player.setControls(false);
-				player.prevState = state.oldstate;
 				$(player.getContainer()).addClass('video-launcher');
-				$(player.getContainer()).off('click').on('click', function (e){
-
-						player.trigger('displayClick'); return false;
-					
-				});
+				player.prevState = state.oldstate;
 				
-				player.on('displayClick', function (something) {
-					if (player.prevState !== 'playing') {
-						player.setControls(true);
-						player.play();
-						player.off('displayClick');
-					}
-					player.prevState = null;
-					return false;
-				});
+				// logic for when controls are disabled
+				if (!controls) {
+					$(player.getContainer()).off('click').on('click', function (e){
+						if (player.prevState !== 'playing') {
+							player.trigger('displayClick');
+						}
+						player.prevState = null;
+					});
+				}
+
+				// logic for when controls are not disabled
+				else {
+					player.setControls(false);
+					$(player.getContainer()).off('click').on('click', function (e){
+						player.trigger('displayClick'); return false;
+					});
+					
+					player.on('displayClick', function () {console.log('here1');
+						if (player.prevState !== 'playing') {
+							player.setControls(true);
+							playVideo();
+							player.off('displayClick');
+						}
+						player.prevState = null;
+						return false;
+					});
+
+				}
 			});
 
 			this.video_container = video_container;
-
 
 			//play it straight away when ready
 			player.onReady(function () {
