@@ -4,17 +4,19 @@
 	position:absolute\9; 
 }
 
+#quickspot-results-container {
+
+}
+
+
 .quickspot-results {
 	width: 100%;
 	background: #eee;
-	z-index:9999;
+
 	max-height:14rem;
 	overflow:auto;
 	
-	border:solid 1px #ccc;
-	border-top:0px;
-	display:block;
-	box-shadow:  3px 3px 5px 0px rgba(0, 0, 0, 0.3);	
+
 
 
 	.quickspot-result {
@@ -52,6 +54,10 @@
 		span {
 			font-style: italic;
 			color: $brand-accent;
+
+			&.level {
+				color: $gray-light;
+			}
 		}
 		&.selected {
 			background: #eee;
@@ -60,11 +66,11 @@
 	}
 
 
-	@include media-breakpoint-up(sm){
-		position:absolute;
+	@include media-breakpoint-up(sm){ 
+		//position:absolute;
 		//top:3.2rem;
-		left:0;	
-		width:100%;
+		//left:0;	
+		//width:100%;
 		
 	}
 
@@ -73,7 +79,32 @@
 
 /* Emulates form-group input sizing (to allow it to match with search element more easily) */
 #quickspot-results-container {
-		position:relative;
+	position:relative;
+	z-index:9999;
+	border:solid 1px #ccc;
+	border-top:0px;
+	display:block;
+	box-shadow:  3px 3px 5px 0px rgba(0, 0, 0, 0.3);
+
+
+	.course-links {
+		border-top: solid 1px #ccc;
+		background: #fff;
+		a {
+			width:33.3%;
+			display: inline-block;
+			
+			padding: 10px 0;
+			padding-left:10px;
+		}
+	}	
+
+	@include media-breakpoint-up(sm){ 
+		position:absolute;
+		//top:3.2rem;
+		left:0;	
+		width:100%;
+	}
 
 	@include media-breakpoint-up(md){
 		&.quickspot-contained {

@@ -30,7 +30,7 @@ window.KENT  = window.KENT || {};
 	//
 	// Instances using this config, should use
 	// _click_handler 
-	// _ display_handler
+	// _display_handler
 	// rather than the default methods
 	configs.searchWith = $.extend({}, configs.default, {
 		// Display Handler wrapper
@@ -143,11 +143,8 @@ window.KENT  = window.KENT || {};
 			}
 			locations = (locations.length > 1) ? [locations.slice(0, -1).join(', '), locations.slice(-1)[0]].join(' and ') : locations[0];
 
-
-
-
 			// Highlight searched word
-			return '<span class="'+ itm.level +'"></span>' + (itm.name + ' - ' + itm.award + ' <br> <span>' + locations + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
+			return (itm.name + ' - ' + itm.award + ' <span class="level"> &nbsp; ' + itm.level_name + '</span><br><span>' + locations + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
 		},
 		"_click_handler": function (itm) {
 			document.location = '/courses/' + ( (itm.level==='UG') ? 'undergraduate' : 'postgraduate') +'/' + itm.id + '/' + itm.slug;
@@ -156,17 +153,29 @@ window.KENT  = window.KENT || {};
 			for(var i in data){
 				data[i].qs_result_class = data[i].level.toLowerCase();
 
-				if(data[i].level == 'UG'){
-					data[i].level_name = 'undergraduate';
+				if(data[i].level === 'UG'){
+					data[i].level_name = 'Undergraduate';
 				}else{
+					var type = data[i].programme_type;
 					// taught /research
-					data[i].level_name = 'postgraduate';
+					if(type.indexOf("taught-research") !== -1)
+					{
+						data[i].level_name = 'Postgraduate Taught-research';
+					}
+					else if(type.indexOf("taught") !== -1)
+					{
+						data[i].level_name = 'Postgraduate Taught';
+					}
+					else
+					{
+						data[i].level_name = 'Postgraduate Research';
+					}
 				}
 			}
 			return data;
 		},
+		"results_footer": "<div class='course-links'><a href='/courses/undergraduate/search'>All Undergraduate <i class='kf-chevron-right'></i></a><a href='/courses/undergraduate/search'>All Postgraduate <i class='kf-chevron-right'></i></a><a href='/courses/part-time/index.html'>Short Courses <i class='kf-chevron-right'></i></a></div>"
 	});
-
 
 })();
 
