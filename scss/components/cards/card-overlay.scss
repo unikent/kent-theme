@@ -162,8 +162,13 @@
 	}
 
 	&.card-media-inline.card-media-enabled {
-		.card-title-wrap, .card-img-overlay-bottom {
+		.card-img-overlay-bottom {
 			opacity: 0;
+		}
+		@include media-breakpoint-up(md) {
+			.card-title-wrap {
+				opacity: 0;
+			}
 		}
 	}
 
