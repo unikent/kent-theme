@@ -92,8 +92,7 @@ $(document).ready(function(){
 
 			// logic for when controls are disabled
 			if (!controls) {
-				player.on('displayClick', function () {console.log('here0', player.prevState);
-					toggleVideo();
+				player.on('displayClick', function () {
 				});
 			}
 
@@ -124,7 +123,7 @@ $(document).ready(function(){
 						player.trigger('displayClick'); return false;
 					});
 					
-					player.on('displayClick', function () {console.log('here1');
+					player.on('displayClick', function () {
 						if (player.prevState !== 'playing') {
 							player.setControls(true);
 							playVideo();
