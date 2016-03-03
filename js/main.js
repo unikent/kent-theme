@@ -18367,6 +18367,7 @@ $(document).ready(function(){
 			var mode = $(this).data('mode') || 'modal'; //default to modal
 			var modal_down = $(this).data('modal-down') || 'xs';
 			var modal_up = $(this).data('modal-up') || false;
+			var image = $(this).data('image') || false;
 
 			// check that we have a video source & a template for this mode
 			if (!src || !Handlebars.templates['video_' + mode]) {
@@ -18376,6 +18377,12 @@ $(document).ready(function(){
 			// force modal mode if specified or we're at xs
 			if (viewport.is('<=' + modal_down) || (modal_up && viewport.is('>=' + modal_up))) {
 				mode = 'modal';
+			}
+
+			// if no image provided, use first <img> tag
+			if (!image) {
+				image = $(this).find('img').first();
+				image = (image.length !== 0) ? image.attr('src') : false;
 			}
 
 			// get the right video container
@@ -18441,8 +18448,9 @@ $(document).ready(function(){
 			player = jwplayer(player).setup({
 				file: src,
 				width: "100%",
-				aspectratio: "16:9", description: "some kind of description",
-				controls: controls
+				aspectratio: "16:9",
+				controls: controls,
+				image: image
 			});
 
 			// logic for when controls are disabled
@@ -18457,7 +18465,7 @@ $(document).ready(function(){
 				$(player.getContainer()).removeClass('video-launcher');
 			});
 
-			player.on('pause', function (state) {
+			player.on('pause complete', function (state) { 
 				$(This).closest('.card-overlay').removeClass('card-media-enabled');
 				$(player.getContainer()).addClass('video-launcher');
 				player.prevState = state.oldstate;
@@ -18472,7 +18480,7 @@ $(document).ready(function(){
 					});
 				}
 
-				// logic for when controls are not disabled
+				// logic for when controls are enabled
 				else {
 					player.setControls(false);
 					$(player.getContainer()).off('click').on('click', function (e){
