@@ -102,6 +102,7 @@ module.exports = function(grunt) {
 					'js/handlebars_templates.js',
 					'vendor/quick-spot/quickspot.js',
 					'vendor/jwplayer-official/bin-release/jwplayer.js',
+					'vendor/jwplayer-official/bin-release/polyfills.promise.js',
 					'vendor/jwplayer-official/bin-release/provider.youtube.js',
 					'js/components/log.js',
 					'js/components/kat.js',
