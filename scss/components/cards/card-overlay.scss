@@ -160,6 +160,7 @@
 	&.card-media-inline.card-media-enabled {
 		.card-img-overlay-bottom {
 			opacity: 0;
+			pointer-events: none;
 		}
 		@include media-breakpoint-up(md) {
 			.card-title-wrap {

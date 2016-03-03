@@ -8787,7 +8787,8 @@ button.beta-toggler {
         display: table;
         table-layout: fixed; } }
   .card.card-overlay.card-media-inline.card-media-enabled .card-img-overlay-bottom, .card.card-overlay.card-media-inline.card-media-enabled .card-img-overlay-bottom-shaded {
-    opacity: 0; }
+    opacity: 0;
+    pointer-events: none; }
   @media (min-width: 768px) {
     .card.card-overlay.card-media-inline.card-media-enabled .card-title-wrap {
       opacity: 0; } }
