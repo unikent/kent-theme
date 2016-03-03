@@ -9838,8 +9838,8 @@ blockquote.pull-quote {
 .quickspot-results {
   width: 100%;
   background: #eee;
-  max-height: 227.2px;
-  max-height: 14.2rem;
+  max-height: 364.8px;
+  max-height: 22.8rem;
   overflow: auto; }
   .quickspot-results .quickspot-result {
     padding: 8px 10px;

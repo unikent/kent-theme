@@ -174,7 +174,14 @@ window.KENT  = window.KENT || {};
 			}
 			return data;
 		},
-		"results_footer": "<div class='course-links'><a class='chevron-link' href='/courses/undergraduate/search'>All Undergraduate</a><a  class='chevron-link' href='/courses/undergraduate/search'>All Postgraduate </a><a class='chevron-link' href='/courses/part-time/index.html'>Short Courses</a></div>"
+		"results_footer": "<div class='course-links'><a class='chevron-link' href='/courses/undergraduate/search'>All Undergraduate</a><a  class='chevron-link' href='/courses/undergraduate/search'>All Postgraduate </a><a class='chevron-link' href='/courses/part-time/index.html'>Short Courses</a></div>",
+		"ready": function(qs){
+			// Override link action to pass search value
+			$(qs.container).find("div.course-links a").click(function(e){
+				e.preventDefault();
+				document.location.href = $(this).attr('href') + '?search=' + qs.lastValue;
+			});
+		}
 	});
 
 })();
