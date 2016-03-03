@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	var viewport = ResponsiveBootstrapToolkit;
 	var launcherCount = 0;
 	$('.video-launcher').each(function(){
 
@@ -93,6 +94,7 @@ $(document).ready(function(){
 			// logic for when controls are disabled
 			if (!controls) {
 				player.on('displayClick', function () {
+					toggleVideo();
 				});
 			}
 
