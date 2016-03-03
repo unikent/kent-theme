@@ -9838,8 +9838,8 @@ blockquote.pull-quote {
 .quickspot-results {
   width: 100%;
   background: #eee;
-  max-height: 224px;
-  max-height: 14rem;
+  max-height: 227.2px;
+  max-height: 14.2rem;
   overflow: auto; }
   .quickspot-results .quickspot-result {
     padding: 8px 10px;
@@ -9877,6 +9877,8 @@ blockquote.pull-quote {
     .quickspot-results .quickspot-result.selected {
       background: #eee;
       transition: background .25s; }
+    .quickspot-results .quickspot-result .kf-search {
+      color: #ccc; }
 
 /* Emulates form-group input sizing (to allow it to match with search element more easily) */
 #quickspot-results-container {
@@ -9890,12 +9892,18 @@ blockquote.pull-quote {
     border-top: solid 1px #ccc;
     background: #fff; }
     #quickspot-results-container .course-links a {
-      width: 33.3%;
       display: inline-block;
       font-size: 14.4px;
       font-size: 0.9rem;
-      padding: 10px 0;
-      text-align: center; }
+      padding: 10px;
+      width: 100%;
+      border-bottom: 1px solid #ddd; }
+      @media (min-width: 544px) {
+        #quickspot-results-container .course-links a {
+          width: 33.3%;
+          padding: 10px 0;
+          border-bottom: none;
+          text-align: center; } }
   @media (min-width: 544px) {
     #quickspot-results-container {
       position: absolute;

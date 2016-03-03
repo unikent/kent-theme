@@ -13,7 +13,7 @@
 	width: 100%;
 	background: #eee;
 
-	max-height:14rem;
+	max-height: 14.2rem;
 	overflow:auto;
 	
 
@@ -29,6 +29,7 @@
 		transition: background .25s;
 		position: relative;
 		margin-bottom: 1px;
+
 		&:before {
 			color: #ccc;
 			float: right;
@@ -38,7 +39,6 @@
 			right: .5rem;
 			top: 35%; // old browsers
 			top: calc(50% - 0.5rem);
-		
 		}
 
 		&.pg {
@@ -62,6 +62,10 @@
 		&.selected {
 			background: #eee;
 			transition: background .25s;
+		}
+
+		.kf-search {
+			color: #ccc;
 		}	
 	}
 }
@@ -81,11 +85,18 @@
 		border-top: solid 1px #ccc;
 		background: #fff;
 		a {
-			width:33.3%;
 			display: inline-block;
 			font-size: 0.9rem;
-			padding: 10px 0;
-			text-align:center;
+			padding: 10px;
+			width:100%;
+			border-bottom: 1px solid #ddd;
+
+			@include media-breakpoint-up(sm){
+				width:33.3%;
+				padding: 10px 0;
+				border-bottom: none;
+				text-align:center;
+			}
 		}
 	}	
 

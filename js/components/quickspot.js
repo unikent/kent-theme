@@ -38,7 +38,7 @@ window.KENT  = window.KENT || {};
 			return (itm.kent_search_with_option === true) ? this.kent_search_with(qs) : this._display_handler(itm, qs);
 		},
 		"kent_search_with": function(qs){
-			return "<i class='kf-search' style='color:#ccc;'></i> View all results for <strong>" + qs.lastValue + "</strong>";
+			return "<i class='kf-search'></i> View all results for <strong>" + qs.lastValue + "</strong>";
 		},
 		"click_handler": function (itm, qs) {
 			if(typeof itm.kent_search_with_option === 'boolean' && itm.kent_search_with_option === true){
