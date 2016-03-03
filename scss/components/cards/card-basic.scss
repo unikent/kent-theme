@@ -224,6 +224,7 @@
 	.card-media-wrap, .card-embed-wrap {
 
 		@extend .media-wrap;
+		transition: max-height 600ms;
 
 	}
 

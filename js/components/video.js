@@ -12,7 +12,7 @@ $(document).ready(function(){
 			var controls = typeof $(this).data('controls') === 'undefined' || ($(this).data('controls') === 'controls' || $(this).data('controls') === true) ? true : false;
 			var mode = $(this).data('mode') || 'modal'; //default to modal
 			var modal_down = $(this).data('modal-down') || 'xs';
-			var modal_up = $(this).data('modal-up') || false;
+			var modal_up = $(this).data('modal-up') || 'xxl';
 			var image = $(this).data('image') || false;
 
 			// check that we have a video source & a template for this mode

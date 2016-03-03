@@ -7889,6 +7889,8 @@ button.beta-toggler {
   .card .media-wrap-paralax .card-img:first-child,
   .card .media-wrap-paralax .card-img-top:first-child {
     margin-bottom: 0; }
+  .card .card-media-wrap, .card .card-embed-wrap {
+    transition: max-height 600ms; }
   .card.card-inverse .card-title, .card.card-backed-primary .card-title, .card-panel.cards-backed-primary .card .card-title, .cards-backed-primary.card-panel-flush .card .card-title,
   .card-panel.cards-backed .card.card-backed-primary .card-title, .cards-backed.card-panel-flush .card.card-backed-primary .card-title, .card.card-backed-accent .card-title, .card-panel.cards-backed-accent .card .card-title, .cards-backed-accent.card-panel-flush .card .card-title,
   .card-panel.cards-backed .card.card-backed-accent .card-title, .cards-backed.card-panel-flush .card.card-backed-accent .card-title, .card.card-backed-dark .card-title, .card-panel.cards-backed-dark .card .card-title, .cards-backed-dark.card-panel-flush .card .card-title,
@@ -8792,6 +8794,8 @@ button.beta-toggler {
   @media (min-width: 768px) {
     .card.card-overlay.card-media-inline.card-media-enabled .card-title-wrap {
       opacity: 0; } }
+  .card.card-overlay.card-media-inline.card-media-enabled .card-media-wrap, .card.card-overlay.card-media-inline.card-media-enabled .card-embed-wrap {
+    max-height: 150vh; }
   @media (min-width: 768px) {
     .card.card-overlay .card-title-wrap {
       position: absolute;

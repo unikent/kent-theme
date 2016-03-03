@@ -157,14 +157,19 @@
 
 	}
 
-	&.card-media-inline.card-media-enabled {
-		.card-img-overlay-bottom {
-			opacity: 0;
-			pointer-events: none;
-		}
-		@include media-breakpoint-up(md) {
-			.card-title-wrap {
+	&.card-media-inline{
+		&.card-media-enabled {
+			.card-img-overlay-bottom {
 				opacity: 0;
+				pointer-events: none;
+			}
+			@include media-breakpoint-up(md) {
+				.card-title-wrap {
+					opacity: 0;
+				}
+			}
+			.card-media-wrap, .card-embed-wrap {
+				max-height: 150vh;
 			}
 		}
 	}
