@@ -13,7 +13,7 @@
 		padding: 2rem;
 		background-color: $brand-primary;
 		color: #FFF;
-		transition: background-color 300ms;
+		transition: background-color 300ms, opacity 600ms;
 
 		&.pull-right{
 			float: none;
@@ -157,8 +157,22 @@
 
 	}
 
-
-
+	&.card-media-inline{
+		&.card-media-enabled {
+			.card-img-overlay-bottom {
+				opacity: 0;
+				pointer-events: none;
+			}
+			@include media-breakpoint-up(md) {
+				.card-title-wrap {
+					opacity: 0;
+				}
+			}
+			.card-media-wrap, .card-embed-wrap {
+				max-height: 150vh;
+			}
+		}
+	}
 
 	@include media-breakpoint-up(md){
 		.card-title-wrap {
