@@ -223,6 +223,10 @@
     @include media-breakpoint-up(md) {
       padding: 1rem 0;
     }
+
+	  .footer-section-title.collapsed{
+		  border-bottom: none;
+	  }
   }
 
   .global-footer-base{

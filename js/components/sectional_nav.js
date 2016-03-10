@@ -2,6 +2,8 @@ jQuery(document).ready(function(){
 	var sectional_nav = $('.departmental-nav .navbar-menu');
 	var toggler = $('.departmental-nav .navbar-toggler');
 
+	var viewport = ResponsiveBootstrapToolkit;
+	
 	// if no nav, don't bother booting menu
 	if(sectional_nav.length === 0){ return; } 
 

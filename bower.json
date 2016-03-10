@@ -22,10 +22,11 @@
 		"kent-font": "unikent/kent-font",
 		"modernizr": "~2.8.3",
 		"responsive-bootstrap-toolkit": "~2.5.1",
-        "jquery.stellar" : "unikent/stellarjs#master",
-        "slick-carousel": "1.5.9",
-        "quick-spot": "master",
-        "js-cookie": "2.1.0",
-		"handlebars": "~4.0.5"
+		"jquery.stellar" : "unikent/stellarjs#master",
+		"slick-carousel": "1.5.9",
+		"quick-spot": "master",
+		"js-cookie": "2.1.0",
+		"handlebars": "~4.0.5",
+		"jwplayer-official": "^7.0.0"
 	}
 }

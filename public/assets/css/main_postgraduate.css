@@ -3046,7 +3046,7 @@ input[type="button"].btn-block {
   .nav-tabs .nav-link {
     display: block;
     padding: 0.5em 1em;
-    border: 1px solid transparent; }
+    border: 0 solid transparent; }
     .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
       border-color: #eceeef #eceeef #ddd; }
     .nav-tabs .nav-link.disabled, .nav-tabs .nav-link.disabled:focus, .nav-tabs .nav-link.disabled:hover {
@@ -3057,7 +3057,7 @@ input[type="button"].btn-block {
   .nav-tabs .nav-item.open .nav-link,
   .nav-tabs .nav-item.open .nav-link:focus,
   .nav-tabs .nav-item.open .nav-link:hover {
-    color: #55595c;
+    color: #303030;
     background-color: #fff;
     border-color: #ddd #ddd transparent; }
 
@@ -5374,9 +5374,19 @@ body .kf.pull-right {
 .collapse-xs-up {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 300ms; }
-  .collapse-xs-up.in {
+  transition: max-height 300ms, padding 450ms; }
+  .tab-content > .collapse-xs-up.tab-pane, .collapse-xs-up.tab-pane {
+    background: #e8e8e8;
+    padding: 0 16px;
+    padding: 0 1rem;
+    display: block; }
+    .tab-content > .collapse-xs-up.tab-pane.fade, .collapse-xs-up.tab-pane.fade {
+      opacity: 1; }
+  .tab-content > .collapse-xs-up.tab-pane.in, .collapse-xs-up.in {
     max-height: 2000px; }
+    .tab-content > .collapse-xs-up.tab-pane.in.tab-pane, .collapse-xs-up.in.tab-pane {
+      padding: 16px;
+      padding: 1rem; }
 
 .collapse-sm-up,
 .collapse-md-up,
@@ -5388,40 +5398,82 @@ body .kf.pull-right {
   .collapse-sm-up {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms; }
-    .collapse-sm-up.in {
-      max-height: 2000px; } }
+    transition: max-height 300ms, padding 450ms; }
+    .tab-content > .collapse-sm-up.tab-pane, .collapse-sm-up.tab-pane {
+      background: #e8e8e8;
+      padding: 0 1rem;
+      display: block; }
+      .tab-content > .collapse-sm-up.tab-pane.fade, .collapse-sm-up.tab-pane.fade {
+        opacity: 1; }
+    .tab-content > .collapse-sm-up.tab-pane.in, .collapse-sm-up.in {
+      max-height: 2000px; }
+      .tab-content > .collapse-sm-up.tab-pane.in.tab-pane, .collapse-sm-up.in.tab-pane {
+        padding: 1rem; } }
 
 @media (min-width: 768px) {
   .collapse-md-up {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms; }
-    .collapse-md-up.in {
-      max-height: 2000px; } }
+    transition: max-height 300ms, padding 450ms; }
+    .tab-content > .collapse-md-up.tab-pane, .collapse-md-up.tab-pane {
+      background: #e8e8e8;
+      padding: 0 1rem;
+      display: block; }
+      .tab-content > .collapse-md-up.tab-pane.fade, .collapse-md-up.tab-pane.fade {
+        opacity: 1; }
+    .tab-content > .collapse-md-up.tab-pane.in, .collapse-md-up.in {
+      max-height: 2000px; }
+      .tab-content > .collapse-md-up.tab-pane.in.tab-pane, .collapse-md-up.in.tab-pane {
+        padding: 1rem; } }
 
 @media (min-width: 992px) {
   .collapse-lg-up {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms; }
-    .collapse-lg-up.in {
-      max-height: 2000px; } }
+    transition: max-height 300ms, padding 450ms; }
+    .tab-content > .collapse-lg-up.tab-pane, .collapse-lg-up.tab-pane {
+      background: #e8e8e8;
+      padding: 0 1rem;
+      display: block; }
+      .tab-content > .collapse-lg-up.tab-pane.fade, .collapse-lg-up.tab-pane.fade {
+        opacity: 1; }
+    .tab-content > .collapse-lg-up.tab-pane.in, .collapse-lg-up.in {
+      max-height: 2000px; }
+      .tab-content > .collapse-lg-up.tab-pane.in.tab-pane, .collapse-lg-up.in.tab-pane {
+        padding: 1rem; } }
 
 @media (min-width: 1200px) {
   .collapse-xl-up {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms; }
-    .collapse-xl-up.in {
-      max-height: 2000px; } }
+    transition: max-height 300ms, padding 450ms; }
+    .tab-content > .collapse-xl-up.tab-pane, .collapse-xl-up.tab-pane {
+      background: #e8e8e8;
+      padding: 0 1rem;
+      display: block; }
+      .tab-content > .collapse-xl-up.tab-pane.fade, .collapse-xl-up.tab-pane.fade {
+        opacity: 1; }
+    .tab-content > .collapse-xl-up.tab-pane.in, .collapse-xl-up.in {
+      max-height: 2000px; }
+      .tab-content > .collapse-xl-up.tab-pane.in.tab-pane, .collapse-xl-up.in.tab-pane {
+        padding: 1rem; } }
 
 .collapse-xl-down {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 300ms; }
-  .collapse-xl-down.in {
+  transition: max-height 300ms, padding 450ms; }
+  .tab-content > .collapse-xl-down.tab-pane, .collapse-xl-down.tab-pane {
+    background: #e8e8e8;
+    padding: 0 16px;
+    padding: 0 1rem;
+    display: block; }
+    .tab-content > .collapse-xl-down.tab-pane.fade, .collapse-xl-down.tab-pane.fade {
+      opacity: 1; }
+  .tab-content > .collapse-xl-down.tab-pane.in, .collapse-xl-down.in {
     max-height: 2000px; }
+    .tab-content > .collapse-xl-down.tab-pane.in.tab-pane, .collapse-xl-down.in.tab-pane {
+      padding: 16px;
+      padding: 1rem; }
 
 .collapse-xs-down,
 .collapse-sm-down,
@@ -5433,33 +5485,65 @@ body .kf.pull-right {
   .collapse-lg-down {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms; }
-    .collapse-lg-down.in {
-      max-height: 2000px; } }
+    transition: max-height 300ms, padding 450ms; }
+    .tab-content > .collapse-lg-down.tab-pane, .collapse-lg-down.tab-pane {
+      background: #e8e8e8;
+      padding: 0 1rem;
+      display: block; }
+      .tab-content > .collapse-lg-down.tab-pane.fade, .collapse-lg-down.tab-pane.fade {
+        opacity: 1; }
+    .tab-content > .collapse-lg-down.tab-pane.in, .collapse-lg-down.in {
+      max-height: 2000px; }
+      .tab-content > .collapse-lg-down.tab-pane.in.tab-pane, .collapse-lg-down.in.tab-pane {
+        padding: 1rem; } }
 
 @media (max-width: 991px) {
   .collapse-md-down {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms; }
-    .collapse-md-down.in {
-      max-height: 2000px; } }
+    transition: max-height 300ms, padding 450ms; }
+    .tab-content > .collapse-md-down.tab-pane, .collapse-md-down.tab-pane {
+      background: #e8e8e8;
+      padding: 0 1rem;
+      display: block; }
+      .tab-content > .collapse-md-down.tab-pane.fade, .collapse-md-down.tab-pane.fade {
+        opacity: 1; }
+    .tab-content > .collapse-md-down.tab-pane.in, .collapse-md-down.in {
+      max-height: 2000px; }
+      .tab-content > .collapse-md-down.tab-pane.in.tab-pane, .collapse-md-down.in.tab-pane {
+        padding: 1rem; } }
 
 @media (max-width: 767px) {
   .collapse-sm-down {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms; }
-    .collapse-sm-down.in {
-      max-height: 2000px; } }
+    transition: max-height 300ms, padding 450ms; }
+    .tab-content > .collapse-sm-down.tab-pane, .collapse-sm-down.tab-pane {
+      background: #e8e8e8;
+      padding: 0 1rem;
+      display: block; }
+      .tab-content > .collapse-sm-down.tab-pane.fade, .collapse-sm-down.tab-pane.fade {
+        opacity: 1; }
+    .tab-content > .collapse-sm-down.tab-pane.in, .collapse-sm-down.in {
+      max-height: 2000px; }
+      .tab-content > .collapse-sm-down.tab-pane.in.tab-pane, .collapse-sm-down.in.tab-pane {
+        padding: 1rem; } }
 
 @media (max-width: 543px) {
   .collapse-xs-down {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms; }
-    .collapse-xs-down.in {
-      max-height: 2000px; } }
+    transition: max-height 300ms, padding 450ms; }
+    .tab-content > .collapse-xs-down.tab-pane, .collapse-xs-down.tab-pane {
+      background: #e8e8e8;
+      padding: 0 1rem;
+      display: block; }
+      .tab-content > .collapse-xs-down.tab-pane.fade, .collapse-xs-down.tab-pane.fade {
+        opacity: 1; }
+    .tab-content > .collapse-xs-down.tab-pane.in, .collapse-xs-down.in {
+      max-height: 2000px; }
+      .tab-content > .collapse-xs-down.tab-pane.in.tab-pane, .collapse-xs-down.in.tab-pane {
+        padding: 1rem; } }
 
 h1, .h1 {
   font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
@@ -5699,7 +5783,9 @@ p + h6, p + .h6 {
     text-align: center;
     color: rgba(255, 255, 255, 0.7);
     transition: all 300ms;
-    transition-timing-function: linear; }
+    transition-timing-function: linear;
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%; }
     @media (min-width: 544px) {
       .video-launcher:after {
         left: calc(50% - 3.5rem);
@@ -5710,58 +5796,40 @@ p + h6, p + .h6 {
         width: 7rem;
         height: 7rem; } }
   .video-launcher:hover:after {
-    color: white;
-    left: calc(50% - 2.5rem);
-    top: calc(50% - 2.5rem);
-    font-size: 76px;
-    font-size: 4.75rem;
-    line-height: 76px;
-    line-height: 4.75rem;
-    line-height: calc(4.75rem);
-    width: 76px;
-    width: 4.75rem;
-    height: 76px;
-    height: 4.75rem; }
-    @media (min-width: 544px) {
-      .video-launcher:hover:after {
-        left: calc(50% - 3.75rem);
-        top: calc(50% - 3.75rem);
-        font-size: 7.5rem;
-        line-height: 7.5rem;
-        line-height: calc(7.5rem);
-        width: 7.5rem;
-        height: 7.5rem; } }
+    color: #FFF;
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1); }
 
-.media-wrap-letterbox, .media-wrap-paralax, .card.card-overlay .card-media-wrap {
+.media-wrap-letterbox, .media-wrap-parallax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
   position: relative;
   clear: both;
   overflow: hidden; }
   @media (min-width: 768px) {
-    .media-wrap-letterbox, .media-wrap-paralax, .card.card-overlay .card-media-wrap {
+    .media-wrap-letterbox, .media-wrap-parallax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
       min-height: 22rem; } }
   @media (min-width: 992px) {
-    .media-wrap-letterbox, .media-wrap-paralax, .card.card-overlay .card-media-wrap {
+    .media-wrap-letterbox, .media-wrap-parallax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
       max-height: 33rem; } }
-  .media-wrap-letterbox > img, .media-wrap-paralax > img, .card.card-overlay .card-media-wrap > img {
+  .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
     width: 100%;
     display: block;
     max-width: 100%;
     height: auto; }
     @media (min-width: 992px) {
-      .media-wrap-letterbox > img, .media-wrap-paralax > img, .card.card-overlay .card-media-wrap > img {
+      .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
         margin-top: -3rem; } }
   @media (min-width: 992px) and (min-width: 1200px) {
-    .media-wrap-letterbox > img, .media-wrap-paralax > img, .card.card-overlay .card-media-wrap > img {
+    .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
       margin-top: -6rem; } }
   @media (min-width: 992px) and (min-width: 1712px) {
-    .media-wrap-letterbox > img, .media-wrap-paralax > img, .card.card-overlay .card-media-wrap > img {
+    .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
       margin-top: -14rem; } }
   @media (min-width: 992px) and (min-width: 2400px) {
-    .media-wrap-letterbox > img, .media-wrap-paralax > img, .card.card-overlay .card-media-wrap > img {
+    .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
       margin-top: -20rem; } }
 
 @media (min-width: 544px) {
-  .media-wrap-paralax > img {
+  .media-wrap-parallax > img {
     position: absolute; } }
 
 figure {
@@ -5876,7 +5944,14 @@ figure.featured-image {
     padding-left: 8px;
     padding-left: 0.5rem;
     content: "";
-    font-family: "kentfont", sans-serif; }
+    font-family: "kentfont", sans-serif;
+    width: 20px;
+    width: 1.25rem;
+    text-align: left;
+    transition: all 300ms; }
+  .chevron-link:hover:after, .inline-links a:hover:after, nav.breadcrumb a:hover:after, .card-panel-profiles .card .back a:hover:after {
+    padding-left: 11.2px;
+    padding-left: 0.7rem; }
 
 .btn-primary {
   color: #fff;
@@ -6722,12 +6797,20 @@ select {
   overflow: hidden;
   margin-bottom: 32px;
   margin-bottom: 2rem; }
+  @media (min-width: 768px) {
+    .jump-links {
+      -webkit-column-count: 2;
+         -moz-column-count: 2;
+              column-count: 2;
+      -webkit-column-gap: 2rem;
+         -moz-column-gap: 2rem;
+              column-gap: 2rem; } }
+  .jump-links p {
+    -webkit-column-span: all;
+       -moz-column-span: all;
+            column-span: all; }
   .jump-links a {
     display: block; }
-    @media (min-width: 768px) {
-      .jump-links a {
-        width: 50%;
-        float: left; } }
     .jump-links a:before {
       font-family: "kentfont", sans-serif;
       content: "";
@@ -6735,6 +6818,46 @@ select {
       padding-right: .5rem;
       font-size: 14.4px;
       font-size: 0.9rem; }
+
+.nav.nav-tabs {
+  border-bottom: 1px solid #ddd; }
+  .nav.nav-tabs .nav-item .nav-link.active {
+    font-weight: bold;
+    border-bottom: 3px solid #671115; }
+
+.tab-content > .tab-title {
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 12px 16px;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+  font-size: 1rem;
+  color: #671115;
+  margin: 0;
+  font-weight: normal;
+  background: #f5f5f5; }
+  .tab-content > .tab-title:first-child {
+    border-top: 1px solid #ddd; }
+  .tab-content > .tab-title:after {
+    position: absolute;
+    display: inline-block;
+    content: "";
+    right: 16px;
+    right: 1rem;
+    font-family: "kentfont", sans-serif;
+    color: #671115; }
+  .tab-content > .tab-title.collapsed:after {
+    content: ""; }
+
+.tab-content > .tab-pane {
+  padding: 16px;
+  padding: 1rem; }
+  .tab-content > .tab-pane.in, .tab-content > .tab-pane.active {
+    border-bottom: 1px solid #ddd; }
 
 .audience-bar {
   background-color: #671115;
@@ -6850,7 +6973,7 @@ select {
       .global-nav .global-nav-links .global-nav-link nav {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 300ms; }
+        transition: none; }
         .global-nav .global-nav-links .global-nav-link nav a {
           font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
           text-transform: none;
@@ -6877,7 +7000,9 @@ select {
     .global-nav .global-nav-links.in .global-nav-link.in > a:after {
       content: ""; }
     .global-nav .global-nav-links.in .global-nav-link.in nav {
-      max-height: 100vh; }
+      transition: max-height 200ms;
+      max-height: 208px;
+      max-height: 13rem; }
   @media (min-width: 768px) {
     .global-nav {
       background-color: #FFF;
@@ -7697,7 +7822,8 @@ button.beta-toggler {
       .card .card-img-overlay.card-overlay-inline-xxxl.card-overlay-inline-nopad, .card .card-overlay-inline-xxxl.card-overlay-inline-nopad.card-img-overlay-bottom, .card .card-overlay-inline-xxxl.card-overlay-inline-nopad.card-img-overlay-bottom-shaded {
         padding: 0; }
   .card .card-img-overlay-bottom, .card .card-img-overlay-bottom-shaded {
-    top: auto; }
+    top: auto;
+    transition: opacity 600ms; }
   .card .card-img-overlay-bottom-shaded {
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
     padding-top: 48px;
@@ -7752,9 +7878,19 @@ button.beta-toggler {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
   .card .card-img:first-child,
-  .card .card-img-top:first-child, .card .card-media-wrap:first-child {
+  .card .card-img-top:first-child,
+  .card .card-media-wrap:first-child {
     margin-bottom: 12px;
     margin-bottom: 0.75rem; }
+  .card .card-media-wrap .card-img:first-child,
+  .card .card-media-wrap .card-img-top:first-child,
+  .card .media-wrap .card-img:first-child, .card .card-media-wrap .card-img:first-child, .card .card-embed-wrap .card-img:first-child,
+  .card .media-wrap .card-img-top:first-child, .card .card-media-wrap .card-img-top:first-child, .card .card-embed-wrap .card-img-top:first-child,
+  .card .media-wrap-paralax .card-img:first-child,
+  .card .media-wrap-paralax .card-img-top:first-child {
+    margin-bottom: 0; }
+  .card .card-media-wrap, .card .card-embed-wrap {
+    transition: max-height 600ms; }
   .card.card-inverse .card-title, .card.card-backed-primary .card-title, .card-panel.cards-backed-primary .card .card-title, .cards-backed-primary.card-panel-flush .card .card-title,
   .card-panel.cards-backed .card.card-backed-primary .card-title, .cards-backed.card-panel-flush .card.card-backed-primary .card-title, .card.card-backed-accent .card-title, .card-panel.cards-backed-accent .card .card-title, .cards-backed-accent.card-panel-flush .card .card-title,
   .card-panel.cards-backed .card.card-backed-accent .card-title, .cards-backed.card-panel-flush .card.card-backed-accent .card-title, .card.card-backed-dark .card-title, .card-panel.cards-backed-dark .card .card-title, .cards-backed-dark.card-panel-flush .card .card-title,
@@ -8385,16 +8521,10 @@ button.beta-toggler {
         margin-left: .4rem; }
   .card-panel a.card p.card-text, .card-panel-flush a.card p.card-text, .card-panel a.card:hover p.card-text, .card-panel-flush a.card:hover p.card-text, .card-panel a.card:focus p.card-text, .card-panel-flush a.card:focus p.card-text, .card-panel .card a p.card-text, .card-panel-flush .card a p.card-text, .card-panel .card a:hover p.card-text, .card-panel-flush .card a:hover p.card-text, .card-panel .card a:focus p.card-text, .card-panel-flush .card a:focus p.card-text {
     color: #171717; }
-  .card-panel a.card.card-inverse p.card-text, .card-panel-flush a.card.card-inverse p.card-text, .card-panel a.card.card-backed-primary p.card-text, .card-panel-flush a.card.card-backed-primary p.card-text, .card-panel.cards-backed-primary a.card p.card-text, .cards-backed-primary.card-panel-flush a.card p.card-text, .card-panel a.card.card-backed-accent p.card-text, .card-panel-flush a.card.card-backed-accent p.card-text, .card-panel.cards-backed-accent a.card p.card-text, .cards-backed-accent.card-panel-flush a.card p.card-text, .card-panel a.card.card-backed-dark p.card-text, .card-panel-flush a.card.card-backed-dark p.card-text, .card-panel.cards-backed-dark a.card p.card-text, .cards-backed-dark.card-panel-flush a.card p.card-text, .card-panel .card a.card.card-img-overlay-bottom p.card-text, .card .card-panel a.card.card-img-overlay-bottom p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom p.card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded p.card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded p.card-text, .card-panel a.card.editorial.editorial-primary p.card-text, .card-panel-flush a.card.editorial.editorial-primary p.card-text, .card-panel a.card.editorial.editorial-accent p.card-text, .card-panel-flush a.card.editorial.editorial-accent p.card-text, .card-panel a.card.editorial.editorial-dark p.card-text, .card-panel-flush a.card.editorial.editorial-dark p.card-text, .card-panel a.card.card-inverse:hover p.card-text, .card-panel-flush a.card.card-inverse:hover p.card-text, .card-panel a.card.card-backed-primary:hover p.card-text, .card-panel-flush a.card.card-backed-primary:hover p.card-text, .card-panel.cards-backed-primary a.card:hover p.card-text, .cards-backed-primary.card-panel-flush a.card:hover p.card-text, .card-panel a.card.card-backed-accent:hover p.card-text, .card-panel-flush a.card.card-backed-accent:hover p.card-text, .card-panel.cards-backed-accent a.card:hover p.card-text, .cards-backed-accent.card-panel-flush a.card:hover p.card-text, .card-panel a.card.card-backed-dark:hover p.card-text, .card-panel-flush a.card.card-backed-dark:hover p.card-text, .card-panel.cards-backed-dark a.card:hover p.card-text, .cards-backed-dark.card-panel-flush a.card:hover p.card-text, .card-panel .card a.card.card-img-overlay-bottom:hover p.card-text, .card .card-panel a.card.card-img-overlay-bottom:hover p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom:hover p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom:hover p.card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:hover p.card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:hover p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded:hover p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded:hover p.card-text, .card-panel a.card.editorial.editorial-primary:hover p.card-text, .card-panel-flush a.card.editorial.editorial-primary:hover p.card-text, .card-panel a.card.editorial.editorial-accent:hover p.card-text, .card-panel-flush a.card.editorial.editorial-accent:hover p.card-text, .card-panel a.card.editorial.editorial-dark:hover p.card-text, .card-panel-flush a.card.editorial.editorial-dark:hover p.card-text, .card-panel a.card.card-inverse:focus p.card-text, .card-panel-flush a.card.card-inverse:focus p.card-text, .card-panel a.card.card-backed-primary:focus p.card-text, .card-panel-flush a.card.card-backed-primary:focus p.card-text, .card-panel.cards-backed-primary a.card:focus p.card-text, .cards-backed-primary.card-panel-flush a.card:focus p.card-text, .card-panel a.card.card-backed-accent:focus p.card-text, .card-panel-flush a.card.card-backed-accent:focus p.card-text, .card-panel.cards-backed-accent a.card:focus p.card-text, .cards-backed-accent.card-panel-flush a.card:focus p.card-text, .card-panel a.card.card-backed-dark:focus p.card-text, .card-panel-flush a.card.card-backed-dark:focus p.card-text, .card-panel.cards-backed-dark a.card:focus p.card-text, .cards-backed-dark.card-panel-flush a.card:focus p.card-text, .card-panel .card a.card.card-img-overlay-bottom:focus p.card-text, .card .card-panel a.card.card-img-overlay-bottom:focus p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom:focus p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom:focus p.card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:focus p.card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:focus p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded:focus p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded:focus p.card-text, .card-panel a.card.editorial.editorial-primary:focus p.card-text, .card-panel-flush a.card.editorial.editorial-primary:focus p.card-text, .card-panel a.card.editorial.editorial-accent:focus p.card-text, .card-panel-flush a.card.editorial.editorial-accent:focus p.card-text, .card-panel a.card.editorial.editorial-dark:focus p.card-text, .card-panel-flush a.card.editorial.editorial-dark:focus p.card-text, .card-panel .card.card-inverse a p.card-text, .card-panel-flush .card.card-inverse a p.card-text, .card-panel .card.card-backed-primary a p.card-text, .card-panel-flush .card.card-backed-primary a p.card-text, .card-panel.cards-backed-primary .card a p.card-text, .card-panel-flush .card-panel.cards-backed-primary .card a p.card-text, .card-panel.cards-backed-primary .card-panel-flush .card a p.card-text, .card-panel .cards-backed-primary.card-panel-flush .card a p.card-text, .cards-backed-primary.card-panel-flush .card-panel .card a p.card-text, .cards-backed-primary.card-panel-flush .card a p.card-text,
-  .card-panel.cards-backed .card.card-backed-primary a p.card-text, .cards-backed.card-panel-flush .card.card-backed-primary a p.card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card a p.card-text, .card-panel.cards-backed-primary
-  .card-panel.cards-backed .card a p.card-text, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card a p.card-text, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card a p.card-text, .card-panel .card.card-backed-accent a p.card-text, .card-panel-flush .card.card-backed-accent a p.card-text, .card-panel.cards-backed-accent .card a p.card-text, .card-panel-flush .card-panel.cards-backed-accent .card a p.card-text, .card-panel.cards-backed-accent .card-panel-flush .card a p.card-text, .card-panel .cards-backed-accent.card-panel-flush .card a p.card-text, .cards-backed-accent.card-panel-flush .card-panel .card a p.card-text, .cards-backed-accent.card-panel-flush .card a p.card-text,
-  .card-panel.cards-backed .card.card-backed-accent a p.card-text, .cards-backed.card-panel-flush .card.card-backed-accent a p.card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card a p.card-text, .card-panel.cards-backed-accent
-  .card-panel.cards-backed .card a p.card-text, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card a p.card-text, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card a p.card-text, .card-panel .card.card-backed-dark a p.card-text, .card-panel-flush .card.card-backed-dark a p.card-text, .card-panel.cards-backed-dark .card a p.card-text, .card-panel-flush .card-panel.cards-backed-dark .card a p.card-text, .card-panel.cards-backed-dark .card-panel-flush .card a p.card-text, .card-panel .cards-backed-dark.card-panel-flush .card a p.card-text, .cards-backed-dark.card-panel-flush .card-panel .card a p.card-text, .cards-backed-dark.card-panel-flush .card a p.card-text,
-  .card-panel.cards-backed .card.card-backed-dark a p.card-text, .cards-backed.card-panel-flush .card.card-backed-dark a p.card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-dark .card a p.card-text, .card-panel.cards-backed-dark
-  .card-panel.cards-backed .card a p.card-text, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card a p.card-text, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card a p.card-text, .card-panel .card .card.card-img-overlay-bottom a p.card-text, .card .card-panel .card.card-img-overlay-bottom a p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom a p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom a p.card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a p.card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a p.card-text, .card-panel .card.editorial.editorial-primary a p.card-text, .card-panel-flush .card.editorial.editorial-primary a p.card-text, .card-panel .card.editorial.editorial-accent a p.card-text, .card-panel-flush .card.editorial.editorial-accent a p.card-text, .card-panel .card.editorial.editorial-dark a p.card-text, .card-panel-flush .card.editorial.editorial-dark a p.card-text, .card-panel .card.card-inverse a:hover p.card-text, .card-panel-flush .card.card-inverse a:hover p.card-text, .card-panel .card.card-backed-primary a:hover p.card-text, .card-panel-flush .card.card-backed-primary a:hover p.card-text, .card-panel.cards-backed-primary .card a:hover p.card-text, .cards-backed-primary.card-panel-flush .card a:hover p.card-text, .card-panel .card.card-backed-accent a:hover p.card-text, .card-panel-flush .card.card-backed-accent a:hover p.card-text, .card-panel.cards-backed-accent .card a:hover p.card-text, .cards-backed-accent.card-panel-flush .card a:hover p.card-text, .card-panel .card.card-backed-dark a:hover p.card-text, .card-panel-flush .card.card-backed-dark a:hover p.card-text, .card-panel.cards-backed-dark .card a:hover p.card-text, .cards-backed-dark.card-panel-flush .card a:hover p.card-text, .card-panel .card .card.card-img-overlay-bottom a:hover p.card-text, .card .card-panel .card.card-img-overlay-bottom a:hover p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom a:hover p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom a:hover p.card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:hover p.card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:hover p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a:hover p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a:hover p.card-text, .card-panel .card.editorial.editorial-primary a:hover p.card-text, .card-panel-flush .card.editorial.editorial-primary a:hover p.card-text, .card-panel .card.editorial.editorial-accent a:hover p.card-text, .card-panel-flush .card.editorial.editorial-accent a:hover p.card-text, .card-panel .card.editorial.editorial-dark a:hover p.card-text, .card-panel-flush .card.editorial.editorial-dark a:hover p.card-text, .card-panel .card.card-inverse a:focus p.card-text, .card-panel-flush .card.card-inverse a:focus p.card-text, .card-panel .card.card-backed-primary a:focus p.card-text, .card-panel-flush .card.card-backed-primary a:focus p.card-text, .card-panel.cards-backed-primary .card a:focus p.card-text, .cards-backed-primary.card-panel-flush .card a:focus p.card-text, .card-panel .card.card-backed-accent a:focus p.card-text, .card-panel-flush .card.card-backed-accent a:focus p.card-text, .card-panel.cards-backed-accent .card a:focus p.card-text, .cards-backed-accent.card-panel-flush .card a:focus p.card-text, .card-panel .card.card-backed-dark a:focus p.card-text, .card-panel-flush .card.card-backed-dark a:focus p.card-text, .card-panel.cards-backed-dark .card a:focus p.card-text, .cards-backed-dark.card-panel-flush .card a:focus p.card-text, .card-panel .card .card.card-img-overlay-bottom a:focus p.card-text, .card .card-panel .card.card-img-overlay-bottom a:focus p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom a:focus p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom a:focus p.card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:focus p.card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:focus p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a:focus p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a:focus p.card-text, .card-panel .card.editorial.editorial-primary a:focus p.card-text, .card-panel-flush .card.editorial.editorial-primary a:focus p.card-text, .card-panel .card.editorial.editorial-accent a:focus p.card-text, .card-panel-flush .card.editorial.editorial-accent a:focus p.card-text, .card-panel .card.editorial.editorial-dark a:focus p.card-text, .card-panel-flush .card.editorial.editorial-dark a:focus p.card-text {
+  .card-panel a.card.card-inverse p.card-text, .card-panel-flush a.card.card-inverse p.card-text, .card-panel a.card.card-backed-primary p.card-text, .card-panel-flush a.card.card-backed-primary p.card-text, .card-panel.cards-backed-primary a.card p.card-text, .cards-backed-primary.card-panel-flush a.card p.card-text, .card-panel a.card.card-backed-accent p.card-text, .card-panel-flush a.card.card-backed-accent p.card-text, .card-panel.cards-backed-accent a.card p.card-text, .cards-backed-accent.card-panel-flush a.card p.card-text, .card-panel a.card.card-backed-dark p.card-text, .card-panel-flush a.card.card-backed-dark p.card-text, .card-panel.cards-backed-dark a.card p.card-text, .cards-backed-dark.card-panel-flush a.card p.card-text, .card-panel .card a.card.card-img-overlay-bottom p.card-text, .card .card-panel a.card.card-img-overlay-bottom p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom p.card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded p.card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded p.card-text, .card-panel a.card.editorial.editorial-primary p.card-text, .card-panel-flush a.card.editorial.editorial-primary p.card-text, .card-panel a.card.editorial.editorial-accent p.card-text, .card-panel-flush a.card.editorial.editorial-accent p.card-text, .card-panel a.card.editorial.editorial-dark p.card-text, .card-panel-flush a.card.editorial.editorial-dark p.card-text, .card-panel a.card.card-inverse:hover p.card-text, .card-panel-flush a.card.card-inverse:hover p.card-text, .card-panel a.card.card-backed-primary:hover p.card-text, .card-panel-flush a.card.card-backed-primary:hover p.card-text, .card-panel.cards-backed-primary a.card:hover p.card-text, .cards-backed-primary.card-panel-flush a.card:hover p.card-text, .card-panel a.card.card-backed-accent:hover p.card-text, .card-panel-flush a.card.card-backed-accent:hover p.card-text, .card-panel.cards-backed-accent a.card:hover p.card-text, .cards-backed-accent.card-panel-flush a.card:hover p.card-text, .card-panel a.card.card-backed-dark:hover p.card-text, .card-panel-flush a.card.card-backed-dark:hover p.card-text, .card-panel.cards-backed-dark a.card:hover p.card-text, .cards-backed-dark.card-panel-flush a.card:hover p.card-text, .card-panel .card a.card.card-img-overlay-bottom:hover p.card-text, .card .card-panel a.card.card-img-overlay-bottom:hover p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom:hover p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom:hover p.card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:hover p.card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:hover p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded:hover p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded:hover p.card-text, .card-panel a.card.editorial.editorial-primary:hover p.card-text, .card-panel-flush a.card.editorial.editorial-primary:hover p.card-text, .card-panel a.card.editorial.editorial-accent:hover p.card-text, .card-panel-flush a.card.editorial.editorial-accent:hover p.card-text, .card-panel a.card.editorial.editorial-dark:hover p.card-text, .card-panel-flush a.card.editorial.editorial-dark:hover p.card-text, .card-panel a.card.card-inverse:focus p.card-text, .card-panel-flush a.card.card-inverse:focus p.card-text, .card-panel a.card.card-backed-primary:focus p.card-text, .card-panel-flush a.card.card-backed-primary:focus p.card-text, .card-panel.cards-backed-primary a.card:focus p.card-text, .cards-backed-primary.card-panel-flush a.card:focus p.card-text, .card-panel a.card.card-backed-accent:focus p.card-text, .card-panel-flush a.card.card-backed-accent:focus p.card-text, .card-panel.cards-backed-accent a.card:focus p.card-text, .cards-backed-accent.card-panel-flush a.card:focus p.card-text, .card-panel a.card.card-backed-dark:focus p.card-text, .card-panel-flush a.card.card-backed-dark:focus p.card-text, .card-panel.cards-backed-dark a.card:focus p.card-text, .cards-backed-dark.card-panel-flush a.card:focus p.card-text, .card-panel .card a.card.card-img-overlay-bottom:focus p.card-text, .card .card-panel a.card.card-img-overlay-bottom:focus p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom:focus p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom:focus p.card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:focus p.card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:focus p.card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded:focus p.card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded:focus p.card-text, .card-panel a.card.editorial.editorial-primary:focus p.card-text, .card-panel-flush a.card.editorial.editorial-primary:focus p.card-text, .card-panel a.card.editorial.editorial-accent:focus p.card-text, .card-panel-flush a.card.editorial.editorial-accent:focus p.card-text, .card-panel a.card.editorial.editorial-dark:focus p.card-text, .card-panel-flush a.card.editorial.editorial-dark:focus p.card-text, .card-panel .card.card-inverse a p.card-text, .card-panel-flush .card.card-inverse a p.card-text, .card-panel .card.card-backed-primary a p.card-text, .card-panel-flush .card.card-backed-primary a p.card-text, .card-panel.cards-backed-primary .card a p.card-text, .card-panel-flush .card-panel.cards-backed-primary .card a p.card-text, .card-panel.cards-backed-primary .card-panel-flush .card a p.card-text, .card-panel .cards-backed-primary.card-panel-flush .card a p.card-text, .cards-backed-primary.card-panel-flush .card-panel .card a p.card-text, .cards-backed-primary.card-panel-flush .card a p.card-text, .card-panel.cards-backed .card.card-backed-primary a p.card-text, .cards-backed.card-panel-flush .card.card-backed-primary a p.card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-primary .card a p.card-text, .card-panel.cards-backed-primary .card-panel.cards-backed .card a p.card-text, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card a p.card-text, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card a p.card-text, .card-panel .card.card-backed-accent a p.card-text, .card-panel-flush .card.card-backed-accent a p.card-text, .card-panel.cards-backed-accent .card a p.card-text, .card-panel-flush .card-panel.cards-backed-accent .card a p.card-text, .card-panel.cards-backed-accent .card-panel-flush .card a p.card-text, .card-panel .cards-backed-accent.card-panel-flush .card a p.card-text, .cards-backed-accent.card-panel-flush .card-panel .card a p.card-text, .cards-backed-accent.card-panel-flush .card a p.card-text, .card-panel.cards-backed .card.card-backed-accent a p.card-text, .cards-backed.card-panel-flush .card.card-backed-accent a p.card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-accent .card a p.card-text, .card-panel.cards-backed-accent .card-panel.cards-backed .card a p.card-text, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card a p.card-text, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card a p.card-text, .card-panel .card.card-backed-dark a p.card-text, .card-panel-flush .card.card-backed-dark a p.card-text, .card-panel.cards-backed-dark .card a p.card-text, .card-panel-flush .card-panel.cards-backed-dark .card a p.card-text, .card-panel.cards-backed-dark .card-panel-flush .card a p.card-text, .card-panel .cards-backed-dark.card-panel-flush .card a p.card-text, .cards-backed-dark.card-panel-flush .card-panel .card a p.card-text, .cards-backed-dark.card-panel-flush .card a p.card-text, .card-panel.cards-backed .card.card-backed-dark a p.card-text, .cards-backed.card-panel-flush .card.card-backed-dark a p.card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-dark .card a p.card-text, .card-panel.cards-backed-dark .card-panel.cards-backed .card a p.card-text, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card a p.card-text, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card a p.card-text, .card-panel .card .card.card-img-overlay-bottom a p.card-text, .card .card-panel .card.card-img-overlay-bottom a p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom a p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom a p.card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a p.card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a p.card-text, .card-panel .card.editorial.editorial-primary a p.card-text, .card-panel-flush .card.editorial.editorial-primary a p.card-text, .card-panel .card.editorial.editorial-accent a p.card-text, .card-panel-flush .card.editorial.editorial-accent a p.card-text, .card-panel .card.editorial.editorial-dark a p.card-text, .card-panel-flush .card.editorial.editorial-dark a p.card-text, .card-panel .card.card-inverse a:hover p.card-text, .card-panel-flush .card.card-inverse a:hover p.card-text, .card-panel .card.card-backed-primary a:hover p.card-text, .card-panel-flush .card.card-backed-primary a:hover p.card-text, .card-panel.cards-backed-primary .card a:hover p.card-text, .cards-backed-primary.card-panel-flush .card a:hover p.card-text, .card-panel .card.card-backed-accent a:hover p.card-text, .card-panel-flush .card.card-backed-accent a:hover p.card-text, .card-panel.cards-backed-accent .card a:hover p.card-text, .cards-backed-accent.card-panel-flush .card a:hover p.card-text, .card-panel .card.card-backed-dark a:hover p.card-text, .card-panel-flush .card.card-backed-dark a:hover p.card-text, .card-panel.cards-backed-dark .card a:hover p.card-text, .cards-backed-dark.card-panel-flush .card a:hover p.card-text, .card-panel .card .card.card-img-overlay-bottom a:hover p.card-text, .card .card-panel .card.card-img-overlay-bottom a:hover p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom a:hover p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom a:hover p.card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:hover p.card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:hover p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a:hover p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a:hover p.card-text, .card-panel .card.editorial.editorial-primary a:hover p.card-text, .card-panel-flush .card.editorial.editorial-primary a:hover p.card-text, .card-panel .card.editorial.editorial-accent a:hover p.card-text, .card-panel-flush .card.editorial.editorial-accent a:hover p.card-text, .card-panel .card.editorial.editorial-dark a:hover p.card-text, .card-panel-flush .card.editorial.editorial-dark a:hover p.card-text, .card-panel .card.card-inverse a:focus p.card-text, .card-panel-flush .card.card-inverse a:focus p.card-text, .card-panel .card.card-backed-primary a:focus p.card-text, .card-panel-flush .card.card-backed-primary a:focus p.card-text, .card-panel.cards-backed-primary .card a:focus p.card-text, .cards-backed-primary.card-panel-flush .card a:focus p.card-text, .card-panel .card.card-backed-accent a:focus p.card-text, .card-panel-flush .card.card-backed-accent a:focus p.card-text, .card-panel.cards-backed-accent .card a:focus p.card-text, .cards-backed-accent.card-panel-flush .card a:focus p.card-text, .card-panel .card.card-backed-dark a:focus p.card-text, .card-panel-flush .card.card-backed-dark a:focus p.card-text, .card-panel.cards-backed-dark .card a:focus p.card-text, .cards-backed-dark.card-panel-flush .card a:focus p.card-text, .card-panel .card .card.card-img-overlay-bottom a:focus p.card-text, .card .card-panel .card.card-img-overlay-bottom a:focus p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom a:focus p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom a:focus p.card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:focus p.card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:focus p.card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a:focus p.card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a:focus p.card-text, .card-panel .card.editorial.editorial-primary a:focus p.card-text, .card-panel-flush .card.editorial.editorial-primary a:focus p.card-text, .card-panel .card.editorial.editorial-accent a:focus p.card-text, .card-panel-flush .card.editorial.editorial-accent a:focus p.card-text, .card-panel .card.editorial.editorial-dark a:focus p.card-text, .card-panel-flush .card.editorial.editorial-dark a:focus p.card-text {
     color: rgba(255, 255, 255, 0.75); }
 
 .card-panel-flush {
@@ -8523,7 +8653,7 @@ button.beta-toggler {
     padding: 2rem;
     background-color: #671115;
     color: #FFF;
-    transition: background-color 300ms; }
+    transition: background-color 300ms, opacity 600ms; }
     .card.card-overlay .card-title-wrap.pull-right {
       float: none; }
     .card.card-overlay .card-title-wrap.card-title-wrap-link {
@@ -8586,287 +8716,16 @@ button.beta-toggler {
         font-size: 1.5rem; } }
     .card.card-overlay .card-img-overlay.card-img-overlay-block, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom-shaded {
       position: relative; }
-  .card.card-overlay .card-inverse .card-img-overlay, .card.card-overlay .card.card-backed-primary .card-img-overlay, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed-primary.card-panel-flush .card .card-img-overlay, .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay
-  .card-panel.cards-backed .card.card-backed-primary .card-img-overlay,
-  .card-panel.cards-backed .card.card-overlay .card.card-backed-primary .card-img-overlay, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-primary .card-img-overlay, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-primary .card-img-overlay, .card.card-overlay
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card .card-img-overlay,
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay, .card.card-overlay .card-panel.cards-backed-primary
-  .card-panel.cards-backed .card .card-img-overlay, .card-panel.cards-backed-primary
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card .card-img-overlay, .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay, .card.card-overlay .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card .card-img-overlay, .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay
-  .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card .card-img-overlay,
-  .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed-primary.card-panel-flush
-  .card-panel.cards-backed .card .card-img-overlay, .cards-backed-primary.card-panel-flush
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card .card-img-overlay, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay .card.card-backed-accent .card-img-overlay, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed-accent.card-panel-flush .card .card-img-overlay, .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay
-  .card-panel.cards-backed .card.card-backed-accent .card-img-overlay,
-  .card-panel.cards-backed .card.card-overlay .card.card-backed-accent .card-img-overlay, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-accent .card-img-overlay, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-accent .card-img-overlay, .card.card-overlay
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card .card-img-overlay,
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay, .card.card-overlay .card-panel.cards-backed-accent
-  .card-panel.cards-backed .card .card-img-overlay, .card-panel.cards-backed-accent
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card .card-img-overlay, .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay, .card.card-overlay .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card .card-img-overlay, .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay
-  .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card .card-img-overlay,
-  .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed-accent.card-panel-flush
-  .card-panel.cards-backed .card .card-img-overlay, .cards-backed-accent.card-panel-flush
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card .card-img-overlay, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay .card.card-backed-dark .card-img-overlay, .card.card-overlay .card-panel.cards-backed-dark .card .card-img-overlay, .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed-dark.card-panel-flush .card .card-img-overlay, .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay
-  .card-panel.cards-backed .card.card-backed-dark .card-img-overlay,
-  .card-panel.cards-backed .card.card-overlay .card.card-backed-dark .card-img-overlay, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-dark .card-img-overlay, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-dark .card-img-overlay, .card.card-overlay
-  .card-panel.cards-backed .card-panel.cards-backed-dark .card .card-img-overlay,
-  .card-panel.cards-backed .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay, .card.card-overlay .card-panel.cards-backed-dark
-  .card-panel.cards-backed .card .card-img-overlay, .card-panel.cards-backed-dark
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card .card-img-overlay, .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay, .card.card-overlay .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card .card-img-overlay, .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay
-  .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card .card-img-overlay,
-  .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed-dark.card-panel-flush
-  .card-panel.cards-backed .card .card-img-overlay, .cards-backed-dark.card-panel-flush
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card .card-img-overlay, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay, .card.card-overlay .card-img-overlay-bottom .card-img-overlay, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay, .card.card-overlay .card.editorial.editorial-dark .card-img-overlay, .card.card-overlay .card-inverse .card-img-overlay-bottom, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom, .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay
-  .card-panel.cards-backed .card.card-backed-primary .card-img-overlay-bottom,
-  .card-panel.cards-backed .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-primary .card-img-overlay-bottom, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom, .card.card-overlay
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card .card-img-overlay-bottom,
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-primary
-  .card-panel.cards-backed .card .card-img-overlay-bottom, .card-panel.cards-backed-primary
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card .card-img-overlay-bottom, .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card .card-img-overlay-bottom, .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay
-  .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom,
-  .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed-primary.card-panel-flush
-  .card-panel.cards-backed .card .card-img-overlay-bottom, .cards-backed-primary.card-panel-flush
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom, .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay
-  .card-panel.cards-backed .card.card-backed-accent .card-img-overlay-bottom,
-  .card-panel.cards-backed .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-accent .card-img-overlay-bottom, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom, .card.card-overlay
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card .card-img-overlay-bottom,
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-accent
-  .card-panel.cards-backed .card .card-img-overlay-bottom, .card-panel.cards-backed-accent
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card .card-img-overlay-bottom, .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card .card-img-overlay-bottom, .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay
-  .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom,
-  .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed-accent.card-panel-flush
-  .card-panel.cards-backed .card .card-img-overlay-bottom, .cards-backed-accent.card-panel-flush
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-dark .card .card-img-overlay-bottom, .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom, .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay
-  .card-panel.cards-backed .card.card-backed-dark .card-img-overlay-bottom,
-  .card-panel.cards-backed .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-dark .card-img-overlay-bottom, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom, .card.card-overlay
-  .card-panel.cards-backed .card-panel.cards-backed-dark .card .card-img-overlay-bottom,
-  .card-panel.cards-backed .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-dark
-  .card-panel.cards-backed .card .card-img-overlay-bottom, .card-panel.cards-backed-dark
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card .card-img-overlay-bottom, .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card .card-img-overlay-bottom, .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay
-  .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom,
-  .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed-dark.card-panel-flush
-  .card-panel.cards-backed .card .card-img-overlay-bottom, .cards-backed-dark.card-panel-flush
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-bottom, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom, .card.card-overlay .card.editorial.editorial-dark .card-img-overlay-bottom, .card.card-overlay .card-inverse .card-img-overlay-bottom-shaded, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom-shaded, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom-shaded, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom-shaded, .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay
-  .card-panel.cards-backed .card.card-backed-primary .card-img-overlay-bottom-shaded,
-  .card-panel.cards-backed .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-primary .card-img-overlay-bottom-shaded, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom-shaded, .card.card-overlay
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card .card-img-overlay-bottom-shaded,
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .card-panel.cards-backed-primary
-  .card-panel.cards-backed .card .card-img-overlay-bottom-shaded, .card-panel.cards-backed-primary
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card .card-img-overlay-bottom-shaded, .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded, .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay
-  .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom-shaded,
-  .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed-primary.card-panel-flush
-  .card-panel.cards-backed .card .card-img-overlay-bottom-shaded, .cards-backed-primary.card-panel-flush
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom-shaded, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom-shaded, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom-shaded, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom-shaded, .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay
-  .card-panel.cards-backed .card.card-backed-accent .card-img-overlay-bottom-shaded,
-  .card-panel.cards-backed .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-accent .card-img-overlay-bottom-shaded, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom-shaded, .card.card-overlay
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card .card-img-overlay-bottom-shaded,
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .card-panel.cards-backed-accent
-  .card-panel.cards-backed .card .card-img-overlay-bottom-shaded, .card-panel.cards-backed-accent
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card .card-img-overlay-bottom-shaded, .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded, .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay
-  .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom-shaded,
-  .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed-accent.card-panel-flush
-  .card-panel.cards-backed .card .card-img-overlay-bottom-shaded, .cards-backed-accent.card-panel-flush
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom-shaded, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom-shaded, .card.card-overlay .card-panel.cards-backed-dark .card .card-img-overlay-bottom-shaded, .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom-shaded, .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay
-  .card-panel.cards-backed .card.card-backed-dark .card-img-overlay-bottom-shaded,
-  .card-panel.cards-backed .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-dark .card-img-overlay-bottom-shaded, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom-shaded, .card.card-overlay
-  .card-panel.cards-backed .card-panel.cards-backed-dark .card .card-img-overlay-bottom-shaded,
-  .card-panel.cards-backed .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .card-panel.cards-backed-dark
-  .card-panel.cards-backed .card .card-img-overlay-bottom-shaded, .card-panel.cards-backed-dark
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card .card-img-overlay-bottom-shaded, .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded, .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay
-  .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom-shaded,
-  .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed-dark.card-panel-flush
-  .card-panel.cards-backed .card .card-img-overlay-bottom-shaded, .cards-backed-dark.card-panel-flush
-  .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom-shaded, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom-shaded, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-bottom-shaded, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom-shaded, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom-shaded, .card.card-overlay .card.editorial.editorial-dark .card-img-overlay-bottom-shaded {
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
-    .card.card-overlay .card-inverse .card-img-overlay .card-text, .card.card-overlay .card.card-backed-primary .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay .card-text, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed-primary.card-panel-flush .card .card-img-overlay .card-text, .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-primary .card-img-overlay .card-text,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-primary .card-img-overlay .card-text, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-primary .card-img-overlay .card-text, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-primary .card-img-overlay .card-text, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card .card-img-overlay .card-text,
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card .card-img-overlay .card-text, .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card .card-img-overlay .card-text, .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card .card-img-overlay .card-text, .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card .card-img-overlay .card-text,
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay .card-text, .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card .card-img-overlay .card-text, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay .card-text, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card.card-backed-accent .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay .card-text, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed-accent.card-panel-flush .card .card-img-overlay .card-text, .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-accent .card-img-overlay .card-text,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-accent .card-img-overlay .card-text, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-accent .card-img-overlay .card-text, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-accent .card-img-overlay .card-text, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card .card-img-overlay .card-text,
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card .card-img-overlay .card-text, .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card .card-img-overlay .card-text, .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card .card-img-overlay .card-text, .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card .card-img-overlay .card-text,
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay .card-text, .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card .card-img-overlay .card-text, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay .card-text, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card.card-backed-dark .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-dark .card .card-img-overlay .card-text, .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed-dark.card-panel-flush .card .card-img-overlay .card-text, .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-dark .card-img-overlay .card-text,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-dark .card-img-overlay .card-text, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-dark .card-img-overlay .card-text, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-dark .card-img-overlay .card-text, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card .card-img-overlay .card-text,
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card .card-img-overlay .card-text, .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card .card-img-overlay .card-text, .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card .card-img-overlay .card-text, .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card .card-img-overlay .card-text,
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay .card-text, .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card .card-img-overlay .card-text, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay .card-text, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay .card-text, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay .card-text, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay .card-text, .card.card-overlay .card.editorial.editorial-dark .card-img-overlay .card-text, .card.card-overlay .card-inverse .card-img-overlay-bottom .card-text, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom .card-text, .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-primary .card-img-overlay-bottom .card-text,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-primary .card-img-overlay-bottom .card-text, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom .card-text, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card .card-img-overlay-bottom .card-text,
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card .card-img-overlay-bottom .card-text, .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom .card-text,
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-text, .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom .card-text, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-text, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom .card-text, .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-accent .card-img-overlay-bottom .card-text,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-accent .card-img-overlay-bottom .card-text, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom .card-text, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card .card-img-overlay-bottom .card-text,
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card .card-img-overlay-bottom .card-text, .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom .card-text,
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-text, .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom .card-text, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-text, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-dark .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom .card-text, .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-dark .card-img-overlay-bottom .card-text,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-dark .card-img-overlay-bottom .card-text, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom .card-text, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card .card-img-overlay-bottom .card-text,
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card .card-img-overlay-bottom .card-text, .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-text, .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom .card-text,
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-text, .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom .card-text, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-text, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-bottom .card-text, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom .card-text, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom .card-text, .card.card-overlay .card.editorial.editorial-dark .card-img-overlay-bottom .card-text, .card.card-overlay .card-inverse .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom-shaded .card-text, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-primary .card-img-overlay-bottom-shaded .card-text,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-primary .card-img-overlay-bottom-shaded .card-text, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom-shaded .card-text, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card .card-img-overlay-bottom-shaded .card-text,
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-text, .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card .card-img-overlay-bottom-shaded .card-text, .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text,
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-text, .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom-shaded .card-text, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-accent .card-img-overlay-bottom-shaded .card-text,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-accent .card-img-overlay-bottom-shaded .card-text, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom-shaded .card-text, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card .card-img-overlay-bottom-shaded .card-text,
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-text, .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card .card-img-overlay-bottom-shaded .card-text, .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text,
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-text, .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-panel.cards-backed-dark .card .card-img-overlay-bottom-shaded .card-text, .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-dark .card-img-overlay-bottom-shaded .card-text,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-dark .card-img-overlay-bottom-shaded .card-text, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom-shaded .card-text, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card .card-img-overlay-bottom-shaded .card-text,
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-text, .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card .card-img-overlay-bottom-shaded .card-text, .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text,
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-text, .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-text, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card.editorial.editorial-dark .card-img-overlay-bottom-shaded .card-text {
-      color: #FFF; }
-    .card.card-overlay .card-inverse .card-img-overlay .card-subtitle, .card.card-overlay .card.card-backed-primary .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed-primary.card-panel-flush .card .card-img-overlay .card-subtitle, .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-primary .card-img-overlay .card-subtitle,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-primary .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-primary .card-img-overlay .card-subtitle, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-primary .card-img-overlay .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card .card-img-overlay .card-subtitle,
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card .card-img-overlay .card-subtitle, .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card .card-img-overlay .card-subtitle,
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay .card-subtitle, .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card .card-img-overlay .card-subtitle, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay .card-subtitle, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card.card-backed-accent .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed-accent.card-panel-flush .card .card-img-overlay .card-subtitle, .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-accent .card-img-overlay .card-subtitle,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-accent .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-accent .card-img-overlay .card-subtitle, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-accent .card-img-overlay .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card .card-img-overlay .card-subtitle,
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card .card-img-overlay .card-subtitle, .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card .card-img-overlay .card-subtitle,
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay .card-subtitle, .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card .card-img-overlay .card-subtitle, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay .card-subtitle, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card.card-backed-dark .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-dark .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed-dark.card-panel-flush .card .card-img-overlay .card-subtitle, .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-dark .card-img-overlay .card-subtitle,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-dark .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-dark .card-img-overlay .card-subtitle, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-dark .card-img-overlay .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card .card-img-overlay .card-subtitle,
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card .card-img-overlay .card-subtitle, .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card .card-img-overlay .card-subtitle, .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card .card-img-overlay .card-subtitle,
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay .card-subtitle, .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card .card-img-overlay .card-subtitle, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay .card-subtitle, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay .card-subtitle, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay .card-subtitle, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay .card-subtitle, .card.card-overlay .card.editorial.editorial-dark .card-img-overlay .card-subtitle, .card.card-overlay .card-inverse .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-primary .card-img-overlay-bottom .card-subtitle,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-primary .card-img-overlay-bottom .card-subtitle, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card .card-img-overlay-bottom .card-subtitle,
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card .card-img-overlay-bottom .card-subtitle, .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom .card-subtitle,
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-subtitle, .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-accent .card-img-overlay-bottom .card-subtitle,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-accent .card-img-overlay-bottom .card-subtitle, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card .card-img-overlay-bottom .card-subtitle,
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card .card-img-overlay-bottom .card-subtitle, .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom .card-subtitle,
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-subtitle, .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-dark .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-dark .card-img-overlay-bottom .card-subtitle,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-dark .card-img-overlay-bottom .card-subtitle, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card .card-img-overlay-bottom .card-subtitle,
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card .card-img-overlay-bottom .card-subtitle, .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom .card-subtitle,
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom .card-subtitle, .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom .card-subtitle, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card.editorial.editorial-dark .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-inverse .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary .card .card-img-overlay-bottom-shaded .card-subtitle, .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-primary .card-img-overlay-bottom-shaded .card-subtitle,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-primary .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-primary .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card .card-img-overlay-bottom-shaded .card-subtitle,
-    .card-panel.cards-backed .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-subtitle, .card-panel.cards-backed-primary
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed.card-panel-flush .card-panel.cards-backed-primary .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .card-panel.cards-backed-primary .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle,
-    .card-panel.cards-backed .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed-primary.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent .card .card-img-overlay-bottom-shaded .card-subtitle, .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-accent .card-img-overlay-bottom-shaded .card-subtitle,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-accent .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-accent .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card .card-img-overlay-bottom-shaded .card-subtitle,
-    .card-panel.cards-backed .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-subtitle, .card-panel.cards-backed-accent
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed.card-panel-flush .card-panel.cards-backed-accent .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .card-panel.cards-backed-accent .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle,
-    .card-panel.cards-backed .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed-accent.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-panel.cards-backed-dark .card .card-img-overlay-bottom-shaded .card-subtitle, .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card.card-backed-dark .card-img-overlay-bottom-shaded .card-subtitle,
-    .card-panel.cards-backed .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card.card-backed-dark .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed.card-panel-flush .card.card-overlay .card.card-backed-dark .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card .card-img-overlay-bottom-shaded .card-subtitle,
-    .card-panel.cards-backed .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-subtitle, .card-panel.cards-backed-dark
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed.card-panel-flush .card-panel.cards-backed-dark .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .card-panel.cards-backed-dark .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle,
-    .card-panel.cards-backed .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed-dark.card-panel-flush
-    .card-panel.cards-backed .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card .card-img-overlay-bottom-shaded .card-subtitle, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card.card-overlay .card .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card.editorial.editorial-primary .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card.editorial.editorial-accent .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card.editorial.editorial-dark .card-img-overlay-bottom-shaded .card-subtitle {
-      color: #FFF; }
-  .card.card-overlay .card-media-wrap {
+  .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-subtitle {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+    color: #fff; }
+  .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
     margin-bottom: 0; }
     .card.card-overlay .card-media-wrap > .card-img,
     .card.card-overlay .card-media-wrap > .card-img-bottom,
-    .card.card-overlay .card-media-wrap > .card-img-top {
+    .card.card-overlay .card-media-wrap > .card-img-top, .card.card-overlay .card-embed-wrap > .card-img,
+    .card.card-overlay .card-embed-wrap > .card-img-bottom,
+    .card.card-overlay .card-embed-wrap > .card-img-top {
       width: 100%;
       display: block;
       max-width: 100%;
@@ -8874,22 +8733,30 @@ button.beta-toggler {
       @media (min-width: 992px) {
         .card.card-overlay .card-media-wrap > .card-img,
         .card.card-overlay .card-media-wrap > .card-img-bottom,
-        .card.card-overlay .card-media-wrap > .card-img-top {
+        .card.card-overlay .card-media-wrap > .card-img-top, .card.card-overlay .card-embed-wrap > .card-img,
+        .card.card-overlay .card-embed-wrap > .card-img-bottom,
+        .card.card-overlay .card-embed-wrap > .card-img-top {
           margin-top: -3rem; } }
   @media (min-width: 992px) and (min-width: 1200px) {
     .card.card-overlay .card-media-wrap > .card-img,
     .card.card-overlay .card-media-wrap > .card-img-bottom,
-    .card.card-overlay .card-media-wrap > .card-img-top {
+    .card.card-overlay .card-media-wrap > .card-img-top, .card.card-overlay .card-embed-wrap > .card-img,
+    .card.card-overlay .card-embed-wrap > .card-img-bottom,
+    .card.card-overlay .card-embed-wrap > .card-img-top {
       margin-top: -6rem; } }
   @media (min-width: 992px) and (min-width: 1712px) {
     .card.card-overlay .card-media-wrap > .card-img,
     .card.card-overlay .card-media-wrap > .card-img-bottom,
-    .card.card-overlay .card-media-wrap > .card-img-top {
+    .card.card-overlay .card-media-wrap > .card-img-top, .card.card-overlay .card-embed-wrap > .card-img,
+    .card.card-overlay .card-embed-wrap > .card-img-bottom,
+    .card.card-overlay .card-embed-wrap > .card-img-top {
       margin-top: -14rem; } }
   @media (min-width: 992px) and (min-width: 2400px) {
     .card.card-overlay .card-media-wrap > .card-img,
     .card.card-overlay .card-media-wrap > .card-img-bottom,
-    .card.card-overlay .card-media-wrap > .card-img-top {
+    .card.card-overlay .card-media-wrap > .card-img-top, .card.card-overlay .card-embed-wrap > .card-img,
+    .card.card-overlay .card-embed-wrap > .card-img-bottom,
+    .card.card-overlay .card-embed-wrap > .card-img-top {
       margin-top: -20rem; } }
   .card.card-overlay .card-footer {
     padding: 0; }
@@ -8921,6 +8788,14 @@ button.beta-toggler {
         padding: 0.75rem 1.25rem;
         display: table;
         table-layout: fixed; } }
+  .card.card-overlay.card-media-inline.card-media-enabled .card-img-overlay-bottom, .card.card-overlay.card-media-inline.card-media-enabled .card-img-overlay-bottom-shaded {
+    opacity: 0;
+    pointer-events: none; }
+  @media (min-width: 768px) {
+    .card.card-overlay.card-media-inline.card-media-enabled .card-title-wrap {
+      opacity: 0; } }
+  .card.card-overlay.card-media-inline.card-media-enabled .card-media-wrap, .card.card-overlay.card-media-inline.card-media-enabled .card-embed-wrap {
+    max-height: 150vh; }
   @media (min-width: 768px) {
     .card.card-overlay .card-title-wrap {
       position: absolute;
@@ -8950,17 +8825,19 @@ button.beta-toggler {
     background: #333;
     padding: 32px;
     padding: 2rem; }
-    .card.header-card-overlay .card-title-wrap.card-title-wrap-link:after {
-      content: none; }
-    .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
-      text-decoration: none;
-      background-color: #404040; }
-    .card.header-card-overlay .card-title-wrap.card-title-wrap-link .card-title {
-      text-transform: none;
-      color: #fff; }
-    .card.header-card-overlay .card-title-wrap.card-title-wrap-link .card-text {
-      font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-      color: #fff; }
+    .card.header-card-overlay .card-title-wrap.card-title-wrap-link {
+      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
+      .card.header-card-overlay .card-title-wrap.card-title-wrap-link:after {
+        content: none; }
+      .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
+        text-decoration: none;
+        background-color: #404040; }
+      .card.header-card-overlay .card-title-wrap.card-title-wrap-link .card-title {
+        text-transform: none;
+        color: #fff; }
+      .card.header-card-overlay .card-title-wrap.card-title-wrap-link .card-text {
+        font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #fff; }
   @media (min-width: 768px) {
     .card.header-card-overlay {
       margin-top: -5rem; }
@@ -9098,7 +8975,7 @@ button.beta-toggler {
       top: 0;
       border-bottom: none; }
       .modal.modal-fullscreen .modal-dialog .modal-content .modal-header .close {
-        text-shadow: none;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
         color: #FFF;
         opacity: 0.5;
         font-size: 32px;
@@ -9925,6 +9802,8 @@ blockquote.pull-quote {
   @media (min-width: 768px) {
     .global-footer .global-footer-bottom {
       padding: 1rem 0; } }
+  .global-footer .global-footer-bottom .footer-section-title.collapsed {
+    border-bottom: none; }
   .global-footer .global-footer-base {
     padding: 8px 0 0;
     padding: 0.5rem 0 0;

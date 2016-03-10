@@ -146,18 +146,80 @@
 	background: $brand-primary-tint;
 	overflow: hidden;
 	margin-bottom: 2rem;
-
+	@include media-breakpoint-up(md) {
+		column-count: 2;
+		column-gap:   2rem;
+	}
+	p{
+		column-span: all;
+	}
 	a{
 		display: block;
-		@include media-breakpoint-up(md){
-			width: 50%;
-			float: left;
-		}
 		&:before{
 			font-family: $font-family-kentfont;
 			content: $kf-caret-down;
 			padding-right: .5rem;
 			font-size: 0.9rem;
+		}
+	}
+}
+
+
+.nav.nav-tabs{
+
+	border-bottom: 1px solid #ddd;
+
+	.nav-item{
+		.nav-link {
+			&.active {
+				font-weight: bold;
+				border-bottom: 3px solid $brand-primary;
+			}
+		}
+	}
+}
+
+.tab-content{
+
+	& > .tab-title{
+		cursor: pointer;
+		overflow:         hidden;
+		width:            100%;
+		display: block;
+		position: relative;
+		padding: 0.75rem 1rem;
+		border-bottom: 1px solid #ddd;
+		font-size: 1rem;
+		color: $brand-primary;
+		margin: 0;
+		font-weight: normal;
+		background: #f5f5f5;
+
+		&:first-child{
+			border-top: 1px solid #ddd;
+		}
+
+		&:after{
+			position: absolute;
+			display: inline-block;
+			content:$kf-angle-up;
+			right: 1rem;
+			font-family: $font-family-kentfont;
+			color: $brand-primary;
+		}
+		&.collapsed{
+			&:after{
+				content:$kf-angle-down;
+			}
+		}
+
+	}
+
+	& > .tab-pane {
+		padding: 1rem;
+
+		&.in,&.active{
+			border-bottom: 1px solid #ddd;
 		}
 	}
 }
