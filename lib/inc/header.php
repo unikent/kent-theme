@@ -94,7 +94,7 @@
 				<?php if($beta_bar){ ?>
 					<button class="beta-toggler">BETA</button>
 				<?php } ?>
-				<a class="main-logo kf-kent-block" href="/"><span class="sr-only">The University of Kent</span></a>
+				<a class="main-logo kf-kent-block" href="<?php echo defined("HOME_URL")?HOME_URL:'/'; ?>"><span class="sr-only">The University of Kent</span></a>
 
 				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" title="Open search"></button>
 
