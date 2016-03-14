@@ -142,7 +142,6 @@ window.KENT  = window.KENT || {};
 			if(ResponsiveBootstrapToolkit.is('<=sm')){
 				// if menu isn't already open
 				if(!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
-					console.log("doesnt have body class");
 					$('.home-nav').delay(300).fadeIn();
 				}
 				
