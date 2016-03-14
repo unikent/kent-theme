@@ -26,6 +26,8 @@
         "slick-carousel": "1.5.9",
         "quick-spot": "develop",
         "js-cookie": "2.1.0",
-		"handlebars": "~4.0.5"
+		"handlebars": "~4.0.5",
+		"jwplayer-official": "^7.0.0"
+
 	}
 }

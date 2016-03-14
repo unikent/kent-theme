@@ -101,6 +101,9 @@ module.exports = function(grunt) {
 					'vendor/js-cookie/src/js.cookie.js',
 					'js/handlebars_templates.js',
 					'vendor/quick-spot/quickspot.js',
+					'vendor/jwplayer-official/bin-release/jwplayer.js',
+					'vendor/jwplayer-official/bin-release/polyfills.promise.js',
+					'vendor/jwplayer-official/bin-release/provider.youtube.js',
 					'js/components/log.js',
 					'js/components/kat.js',
 					'js/components/responsive_util.js',
@@ -372,7 +375,13 @@ module.exports = function(grunt) {
 				}
 			}
 			
-		}
+		},
+		subgrunt: {
+			jwplayer: {
+				// you can use this array to add parameters:
+				'vendor/jwplayer-official': [ 'build-js' ]
+			}
+		},
 	});
 
 	// Load tasks
@@ -388,10 +397,11 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-php2html');
 	grunt.loadNpmTasks('grunt-metalsmith');
 	grunt.loadNpmTasks('grunt-contrib-handlebars');
+	grunt.loadNpmTasks('grunt-subgrunt');
 
 	// Define tasks
 	grunt.registerTask('development', [ 'jshint', 'handlebars', 'uglify:bootstrap', 'concat', 'copy', 'sass', 'postcss','patterns_local']);
-	grunt.registerTask('production', [ 'jshint', 'handlebars', 'uglify:bootstrap', 'concat', 'uglify:main', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr','patterns']);
+	grunt.registerTask('production', [ 'subgrunt', 'jshint', 'handlebars', 'uglify:bootstrap', 'concat', 'uglify:main', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr','patterns']);
 	grunt.registerTask('default', [ 'development' ]);
 	grunt.registerTask('patterns', [ 'php2html:production','metalsmith:production' ]);
 	grunt.registerTask('patterns_local', [ 'php2html:development','metalsmith:development' ]);

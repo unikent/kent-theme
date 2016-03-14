@@ -17,4 +17,6 @@ if(file_exists(dirname(dirname(__FILE__)."/.env"))){
 	}
 }
 
+defined("HOME_URL")?:define("HOME_URL","https://www.kent.ac.uk");
+
 include "theme-helper.php";
