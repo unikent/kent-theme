@@ -84,27 +84,34 @@
 		</section>
 		<?php } ?>
 		<header class="global-header">
-			<section class="audience-bar navbar">
-				<a class="navbar-brand kf-kent-horizontal" href="/" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a>
+			<section id="kentBar" class="audience-bar navbar">
+				<a class="navbar-brand kf-kent-horizontal" href="<?php echo HOME_URL; ?>" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a>
 				<span class="tag-line">The UK's European university</span>
-				<button class="kf pull-right menu-button" aria-controls="global-nav-menu" title="Open main menu" aria-expanded="false"></button>
-				<button class="kf-search pull-right search-button" aria-controls="global-nav-search" title="Open search" aria-expanded="false"></button>
+				<button class="menu-button" aria-controls="global-nav-menu" title="Open main menu" aria-expanded="false"></button>
+				<button class="search-button" aria-controls="global-nav-search" title="Open search" aria-expanded="false"></button>
+				<button class="audience-menu kf-user"></button>
+				<nav class="audience-nav-links" role="menu">
+					<a href="#" data-action="student" role="menuitem">Student</a>
+					<a href="#" data-action="staff" role="menuitem">Staff</a>
+					<a href="//www.kent.ac.uk/alumni/" role="menuitem">Alumni</a>
+					<a href="#" data-action="departments" role="menuitem">Departments</a>
+				</nav>
 			</section>
 			<section class="global-nav">
 				<?php if($beta_bar){ ?>
 					<button class="beta-toggler">BETA</button>
 				<?php } ?>
-				<a class="main-logo kf-kent-block" href="/"><span class="sr-only">The University of Kent</span></a>
+				<a class="main-logo kf-kent-block" href="<?php echo HOME_URL; ?>"><span class="sr-only">The University of Kent</span></a>
 
 				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" title="Open search"></button>
 
 				<div class="global-nav-menu" id="global-nav-menu" role="menubar">
 					<?php include 'global-nav.php'; ?>
 					<nav class="audience-nav-links" role="menu">
-						<a href="//www.kent.ac.uk/student/" role="menuitem">Student</a>
-						<a href="//www.kent.ac.uk/campusonline/" role="menuitem">Staff</a>
+						<a href="#" data-action="student" role="menuitem">Student</a>
+						<a href="#" data-action="staff" role="menuitem">Staff</a>
 						<a href="//www.kent.ac.uk/alumni/" role="menuitem">Alumni</a>
-						<a href="//www.kent.ac.uk/departments/" role="menuitem">Departments</a>
+						<a href="#" data-action="departments" role="menuitem">Departments</a>
 					</nav>
 				</div>
 				<div class="global-nav-search" id="global-nav-search">
