@@ -85,7 +85,7 @@
 		<?php } ?>
 		<header class="global-header">
 			<section id="kentBar" class="audience-bar navbar">
-				<a class="navbar-brand kf-kent-horizontal" href="/" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a>
+				<a class="navbar-brand kf-kent-horizontal" href="<?php echo HOME_URL; ?>" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a>
 				<span class="tag-line">The UK's European university</span>
 				<button class="menu-button" aria-controls="global-nav-menu" title="Open main menu" aria-expanded="false"></button>
 				<button class="search-button" aria-controls="global-nav-search" title="Open search" aria-expanded="false"></button>

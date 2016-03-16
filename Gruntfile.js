@@ -90,6 +90,7 @@ module.exports = function(grunt) {
 		concat: {
 			main: {
 				src:[
+					'vendor/kent-bar/build/deploy/assets/app.js',
 					'vendor/jquery/dist/jquery.js',
 					'vendor/tether/dist/js/tether.js',
 					'js/_bootstrap.js',
@@ -100,11 +101,9 @@ module.exports = function(grunt) {
 					'node_modules/social-likes/src/social-likes.js',
 					'vendor/js-cookie/src/js.cookie.js',
 					'js/handlebars_templates.js',
-					'vendor/quick-spot/quickspot.js',
 					'vendor/jwplayer-official/bin-release/jwplayer.js',
 					'vendor/jwplayer-official/bin-release/polyfills.promise.js',
 					'vendor/jwplayer-official/bin-release/provider.youtube.js',
-					'vendor/kent-bar/build/deploy/assets/app.js',
 					'js/components/log.js',
 					'js/components/kat.js',
 					'js/components/responsive_util.js',
@@ -213,6 +212,7 @@ module.exports = function(grunt) {
 					getData: {
 						webroot: '//beta.kent.ac.uk/',
 						api_url: 'https://api.kent.ac.uk/api/',
+						home_url: 'https://beta.kent.ac.uk/',
 						debug: false
 					}
 				},

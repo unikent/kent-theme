@@ -1,4 +1,5 @@
 window.KENT  = window.KENT || {};
+window.KENT.modules = window.KENT.modules || {};
 /**
  * Quickspot helper
  *
@@ -211,7 +212,7 @@ jQuery(document).ready(function($){
 		}
 
 		// Boot quickspot
-		var qs = quickspot.attach(config);
+		var qs = window.KENT.modules.quickspot.attach(config);
 		$(this).attr('autocomplete','off');
 		$(this).data('qs',qs);
 
