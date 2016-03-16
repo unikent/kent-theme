@@ -182,6 +182,17 @@
 		<script>
 			window.KENT  = window.KENT || {};
 			window.KENT.settings = <?php echo json_encode($js_config); ?>;
+			window.KENT.kentbar = {
+				config:{
+					target:'#kentBar',
+					render:false,
+					styles:{
+						kentfont:false,
+						fonts:false,
+						base:false
+					}
+				}
+			};
 		</script>
 		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/main.js"></script>
 		<?php echo $foot_markup ;?>
