@@ -10131,24 +10131,20 @@ blockquote.pull-quote {
 
 .quickspot-results {
   width: 100%;
-  background: #fff;
-  z-index: 9999;
-  max-height: 224px;
-  max-height: 14rem;
-  overflow: auto;
-  border: solid 1px #ccc;
-  border-top: 0px;
-  display: block;
-  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3); }
+  background: #eee;
+  max-height: 364.8px;
+  max-height: 22.8rem;
+  overflow: auto; }
   .quickspot-results .quickspot-result {
     padding: 8px 10px;
     display: block;
     text-decoration: none;
     cursor: pointer;
     color: #171717;
-    border-bottom: 1px solid #eee;
+    background: #fff;
     transition: background .25s;
-    position: relative; }
+    position: relative;
+    margin-bottom: 1px; }
     .quickspot-results .quickspot-result:before {
       color: #ccc;
       float: right;
@@ -10159,23 +10155,54 @@ blockquote.pull-quote {
       right: .5rem;
       top: 35%;
       top: calc(50% - 0.5rem); }
+    .quickspot-results .quickspot-result.pg {
+      border-left: solid 8px #671115;
+      border-left: solid 0.5rem #671115; }
+    .quickspot-results .quickspot-result.ug {
+      border-left: solid 8px #05345C;
+      border-left: solid 0.5rem #05345C; }
     .quickspot-results .quickspot-result strong {
       color: #000; }
     .quickspot-results .quickspot-result span {
       font-style: italic;
       color: #937227; }
+      .quickspot-results .quickspot-result span.level {
+        color: #818a91; }
     .quickspot-results .quickspot-result.selected {
       background: #eee;
       transition: background .25s; }
-  @media (min-width: 544px) {
-    .quickspot-results {
-      position: absolute;
-      left: 0;
-      width: 100%; } }
+    .quickspot-results .quickspot-result .kf-search {
+      color: #ccc; }
 
 /* Emulates form-group input sizing (to allow it to match with search element more easily) */
 #quickspot-results-container {
-  position: relative; }
+  position: relative;
+  z-index: 9999;
+  border: solid 1px #ccc;
+  border-top: 0px;
+  display: block;
+  box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3); }
+  #quickspot-results-container .course-links {
+    border-top: solid 1px #ccc;
+    background: #fff; }
+    #quickspot-results-container .course-links a {
+      display: inline-block;
+      font-size: 14.4px;
+      font-size: 0.9rem;
+      padding: 10px;
+      width: 100%;
+      border-bottom: 1px solid #ddd; }
+      @media (min-width: 544px) {
+        #quickspot-results-container .course-links a {
+          width: 33.3%;
+          padding: 10px 0;
+          border-bottom: none;
+          text-align: center; } }
+  @media (min-width: 544px) {
+    #quickspot-results-container {
+      position: absolute;
+      left: 0;
+      width: 100%; } }
   @media (min-width: 768px) {
     #quickspot-results-container.quickspot-contained {
       margin-left: 15%;
