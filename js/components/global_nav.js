@@ -118,31 +118,47 @@ window.KENT  = window.KENT || {};
 		}
 	});
 
+	global_menu.find(".audience-nav-links a").click(function(e){
+		e.preventDefault();
+		var menu_name = e.target.getAttribute("data-action");
+		if (menu_name !== null) {
+			window.KENT.kentbar.toggleMenu(menu_name, e.target);
+			window.KENT.global_nav.closeMainMenu();
+		}
+		return false;
+	});
+
 	// CLose all menu's if user hits escape
 	$(document).keyup(function(e){
 		if(e.which === 27){
 			window.KENT.global_nav.closeMainMenu();
 			window.KENT.global_nav.closeSearchMenu();
+			window.KENT.kentbar.closeMenus();
 		}
 	});
 
 	// Homepage Logic
 	if($('.home-nav').length > 0){
-		$(window).on("globalmenu:open", function(){
+
+		$(window).on("globalmenu:open kentbar_menu:open kentbar_mobilemenu:open", function(){
 			$('.home-nav').hide();	
 		});
-		$(window).on("globalmenu:close", function(e, menu){
-			//menu.hasClass("in") &&
-			if( ResponsiveBootstrapToolkit.is('<=sm')) {
-				$('.home-nav').delay(300).fadeIn();
-			}	
+
+		$(window).on("globalmenu:close kentbar_menu:close kentbar_mobilemenu:close", function(e, menu){
+			$body = $('body');
+			if(!($body.hasClass('show-global-menu') || $body.hasClass('show-global-search') || $body.hasClass('show-kentbar-menu'))) {
+				if (ResponsiveBootstrapToolkit.is('<=sm')) {
+					$('.home-nav').delay(300).fadeIn();
+				}
+			}
 		});
+
 		$(window).on("viewport:change", function(){
 
 			if(ResponsiveBootstrapToolkit.is('<=sm')){
 				// if menu isn't already open
 				if(!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
-					console.log("doesnt have body class");
+
 					$('.home-nav').delay(300).fadeIn();
 				}
 				
