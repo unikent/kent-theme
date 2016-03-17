@@ -186,6 +186,12 @@
 				config:{
 					target:'#kentBar',
 					render:false,
+					components: [
+						"student",
+						"staff",
+						"departments",
+						"alumni"
+					],
 					styles:{
 						kentfont:false,
 						fonts:false,
