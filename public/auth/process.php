@@ -15,7 +15,7 @@ if(defined("ENV") && ENV !=="dev") {
 
 		$attrs = $saml->getAttributes();
 
-		setcookie('kent_jwt',$attrs['jwt'],null,"/");
+		setcookie('kent_jwt',$attrs['jwt'][0],null,"/");
 		header("Location: " . $returnTo);
 		exit();
 	}else{
