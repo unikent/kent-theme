@@ -17,14 +17,14 @@ if(defined("ENV") && ENV !=="dev") {
 
 		setcookie('kent_jwt',$attrs['jwt'],null,"/");
 		header("Location: " . $returnTo);
-		die();
+		exit();
 	}else{
 		header("Location: " . HOME_URL . "auth/login.php?returnTo=" . $returnTo);
-		die();
+		exit();
 	}
 }else{
 	$jwt = file_get_contents(dirname(dirname(dirname(__FILE__))) . "/jwt_example.json");
 	setcookie('kent_jwt',$jwt,null,"/");
 	header("Location: " . $returnTo);
-	die();
+	exit();
 }
