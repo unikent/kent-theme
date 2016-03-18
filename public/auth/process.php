@@ -19,7 +19,7 @@ if(defined("ENV") && ENV !=="dev") {
 		header("Location: " . $returnTo);
 		die();
 	}else{
-		header("Location: " . HOME_URL . "/auth/login.php?returnTo=" . $returnTo);
+		header("Location: " . HOME_URL . "auth/login.php?returnTo=" . $returnTo);
 		die();
 	}
 }else{

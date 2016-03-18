@@ -14,7 +14,7 @@ if(defined("ENV") && ENV !=="dev") {
 
 	if(!$saml->isAuthenticated()) {
 		$saml->requireAuth(array(
-							   'ReturnTo' => HOME_URL . "/auth/process.php?returnURL=" . $returnTo
+							   'ReturnTo' => HOME_URL . "auth/process.php?returnTo=" . $returnTo
 						   ));
 	}else{
 		include "process.php";
