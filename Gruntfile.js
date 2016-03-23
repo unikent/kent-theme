@@ -90,6 +90,7 @@ module.exports = function(grunt) {
 		concat: {
 			main: {
 				src:[
+					'vendor/kent-bar/build/deploy/assets/app.js',
 					'vendor/jquery/dist/jquery.js',
 					'vendor/tether/dist/js/tether.js',
 					'js/_bootstrap.js',
@@ -100,7 +101,6 @@ module.exports = function(grunt) {
 					'node_modules/social-likes/src/social-likes.js',
 					'vendor/js-cookie/src/js.cookie.js',
 					'js/handlebars_templates.js',
-					'vendor/quick-spot/quickspot.js',
 					'vendor/jwplayer-official/bin-release/jwplayer.js',
 					'vendor/jwplayer-official/bin-release/polyfills.promise.js',
 					'vendor/jwplayer-official/bin-release/provider.youtube.js',
@@ -212,6 +212,7 @@ module.exports = function(grunt) {
 					getData: {
 						webroot: '//beta.kent.ac.uk/',
 						api_url: 'https://api.kent.ac.uk/api/',
+						home_url: 'https://beta.kent.ac.uk/',
 						debug: false
 					}
 				},
@@ -378,7 +379,6 @@ module.exports = function(grunt) {
 		},
 		subgrunt: {
 			jwplayer: {
-				// you can use this array to add parameters:
 				'vendor/jwplayer-official': [ 'build-js' ]
 			}
 		},
@@ -401,7 +401,8 @@ module.exports = function(grunt) {
 
 	// Define tasks
 	grunt.registerTask('development', [ 'jshint', 'handlebars', 'uglify:bootstrap', 'concat', 'copy', 'sass', 'postcss','patterns_local']);
-	grunt.registerTask('production', [ 'subgrunt', 'jshint', 'handlebars', 'uglify:bootstrap', 'concat', 'uglify:main', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr','patterns']);
+	grunt.registerTask('production', [ 'jshint', 'handlebars', 'uglify:bootstrap', 'concat', 'uglify:main', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr','patterns']);
+	grunt.registerTask('jwplayer', [ 'subgrunt:jwplayer']);
 	grunt.registerTask('default', [ 'development' ]);
 	grunt.registerTask('patterns', [ 'php2html:production','metalsmith:production' ]);
 	grunt.registerTask('patterns_local', [ 'php2html:development','metalsmith:development' ]);

@@ -67,6 +67,7 @@ Class KentThemeHelper {
 
 		// Config to be output in JS
 		$js_config = array(
+			"home_url" => HOME_URL,
 			"api_url" => API_URL,
 			"debug" => defined("DEBUG") ? ("true" == DEBUG) : false
 		);

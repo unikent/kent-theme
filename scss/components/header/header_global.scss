@@ -148,18 +148,7 @@
 		}
 
 		.audience-nav-links {
-			position:absolute;
-			top: 0;
-			right: 2rem;
-			margin-top:.2rem;
-			a {
-				color:#fff;
-				display:inline-block;
-				padding: 0 0 0 1rem;
-				font-size: 0.9rem;
-				border:none;
-				&::after { display:none; }
-			}
+			display: none;
 		}
 		
 		.search-button-full {
@@ -351,18 +340,20 @@
 	overflow-y:hidden;
 
 	.global-header {
-
-		button.menu-button::before, button.search-button::before{
-			content: $kf-close;
-		}
-
-		.global-nav-menu.in,
-		.global-nav-search.in {
-			opacity: 1;
-			height:100vh;
-			width: 100vw;
+		#kentBar, .kent-bar {
+			button.menu-button::before, button.search-button::before {
+				content: $kf-close;
+			}
 		}
 	}
+
+	.global-nav-menu.in,
+	.global-nav-search.in {
+		opacity: 1;
+		height:100vh;
+		width: 100vw;
+	}
+
 
 	@include media-breakpoint-up(md) {
 		overflow-y:auto;
@@ -411,12 +402,30 @@
 }
 
 /* Swap buttons in header */
-.show-global-menu .global-header{
-	button.search-button {display:none;}
+.show-global-menu .global-header {
+	#kentBar,.kent-bar {
+		button.search-button,
+		button.audience-menu {
+			display: none;
+		}
+	}
 }
 .show-global-search .global-header{
-	button.menu-button {display:none;}
+	#kentBar,.kent-bar {
+		button.menu-button,
+		button.audience-menu {
+			display: none;
+		}
+	}
 }
+
+#kentBar.in,.kent-bar.in {
+	button.menu-button,
+	button.search-button {
+		display: none;
+	}
+}
+
 
 
 
@@ -494,7 +503,7 @@ body{
 
 			.global-nav-links {
 
-				height: $global-nav-height - 3.1;
+				height: $global-nav-height - 2.9;
 
 				.global-nav-link {
 					background: transparent;

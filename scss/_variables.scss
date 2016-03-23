@@ -81,6 +81,10 @@ $kent-blue:			   #003882;
 $kent-primary:         #05345C;
 $kent-primary-tint:    #e8ebf2;
 
+$kent-pg-primary: #671115;
+$kent-pg-primary-tint: #E0D4D4;
+
+
 $brand-primary:         $kent-primary !default;
 $brand-primary-tint:    $kent-primary-tint !default;
 
@@ -161,6 +165,8 @@ $headings-font-family-alt:   Arial, "Helvetica Neue", Helvetica, sans-serif;
 
 $font-family-kentfont:		"kentfont", sans-serif;
 
+$font-size-root: 16px;
+
 
 $font-size-h1:               2.827rem;
 $font-size-h2:               1.602rem;
@@ -228,3 +234,6 @@ $border-radius-sm:       0;
 
 // modals
 $modal-backdrop-opacity:      .95;
+
+$kentbar-height: 48px;
+$kentbar-height-desktop: 30px;

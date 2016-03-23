@@ -1,12 +1,14 @@
-.audience-bar {
+#kentBar.kent-bar,
+#kentBar.audience-bar{
 	background-color: $brand-primary;
 	color: #fff;
 	padding: 0;
-	font-size: 0.9rem;
+	font-size: 1rem;
 
 	a.navbar-brand {
 		font-size: 1.2rem;
-		padding: .8rem  1rem;
+		padding: .8rem 0 .8rem 1rem;
+		margin: 0;
 		color: #fff;
 		display:block;
 	}
@@ -16,11 +18,16 @@
 	}
 
 	button {
+		@extend .kf;
 		width: 3rem;
 		padding: .8rem;
 		background-color: lighten($brand-primary, 3%);
     	border: none;
     	font-size:1.2rem;
+		float: right;
+		&:focus,&:active{
+			outline: none;
+		}
 	}
 	
 	button.menu-button {
@@ -30,15 +37,14 @@
 			content: $kf-menu;
 		}
 	}
-
-	nav {
-		font-size:0.9rem;
-		padding: 0.2rem;
-
-		a {
-			color: #fff;
-			margin-left: .5rem;
+	button.search-button {
+		&:before {
+			content: $kf-search;
 		}
+	}
+
+	.audience-nav-links{
+		margin-right: 2rem;
 	}
 
 	@include media-breakpoint-up(md) {
