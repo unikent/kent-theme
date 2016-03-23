@@ -9,7 +9,7 @@ window.KENT.modules = window.KENT.modules || {};
  */
  (function(){
 
- 	// create obj
+	// create obj
 	window.KENT.quickspot = { config: {} };
 	var configs = window.KENT.quickspot.config;
 
@@ -20,17 +20,17 @@ window.KENT.modules = window.KENT.modules || {};
 		"prevent_headers": true,
 		"max_results": 150,
 		"no_results": function (qs, val) {
-			return "<a class='quickspot-result selected'>Press enter to search...</a>";
-		}, 
+			return "<a class=\"quickspot-result selected\">Press enter to search...</a>";
+		},
 		"no_results_click": function (value, qs) {
 			window.location.href = "https://www.kent.ac.uk/search/?q=" + value;
-		},
+		}
 	};
 
 	// Default config options for QS instances with a "View all results for" top result
 	//
 	// Instances using this config, should use
-	// _click_handler 
+	// _click_handler
 	// _display_handler
 	// rather than the default methods
 	configs.searchWith = $.extend({}, configs.default, {
@@ -39,10 +39,10 @@ window.KENT.modules = window.KENT.modules || {};
 			return (itm.kent_search_with_option === true) ? this.kent_search_with(qs) : this._display_handler(itm, qs);
 		},
 		"kent_search_with": function(qs){
-			return "<i class='kf-search'></i> View all results for <strong>" + qs.lastValue + "</strong>";
+			return "<i class=\"kf-search\"></i> View all results for <strong>" + qs.lastValue + "</strong>";
 		},
 		"click_handler": function (itm, qs) {
-			if(typeof itm.kent_search_with_option === 'boolean' && itm.kent_search_with_option === true){
+			if (typeof itm.kent_search_with_option === "boolean" && itm.kent_search_with_option === true){
 				return this.no_results_click(qs.lastValue);
 			}
 			return this._click_handler(itm, qs);
@@ -60,19 +60,19 @@ window.KENT.modules = window.KENT.modules || {};
 		"search_on": ["title", "sds_code"],
 		"key_value": "title",
 		"auto_highlight":true,
-		"display_handler": function(itm,qs){
+		"display_handler": function(itm, qs){
 			return itm.title + "<br/><span>" + itm.sds_code + "</span>";
 		},
 		"click_handler":function(itm){
-			document.location.href = '/courses/modules/module/' + itm.sds_code;
+			document.location.href = "/courses/modules/module/" + itm.sds_code;
 		},
 		"no_results_click": function (value, qs){
-		    window.location.href = "/courses/modules/?search=" + value;
+			window.location.href = "/courses/modules/?search=" + value;
 		},
 		"data_pre_parse": function(data, options){
 			return data.modules;
 		},
-		"loaded": function(){
+		"loaded": function(qs){
 			qs.datastore.filter(function(o){ return o.running === true; });
 		}
 	});
@@ -85,7 +85,7 @@ window.KENT.modules = window.KENT.modules || {};
 		"auto_highlight":true,
 
 		"click_handler":function(itm){
-			document.location.href = '/scholarships/search/' + itm.code;
+			document.location.href = "/scholarships/search/" + itm.code;
 		},
 		"display_handler": function(itm, qs){
 			return itm.title + "<br/><span>" + itm.code + "</span>";
@@ -103,15 +103,15 @@ window.KENT.modules = window.KENT.modules || {};
 			// Generate locations list
 			var locations = [itm.campus];
 			if (itm.additional_locations !== "") {
-				locations = locations.concat(itm.additional_locations.split(', '));
+				locations = locations.concat(itm.additional_locations.split(", "));
 			}
-			locations = (locations.length > 1) ? [locations.slice(0, -1).join(', '), locations.slice(-1)[0]].join(' and ') : locations[0];
+			locations = (locations.length > 1) ? [locations.slice(0, -1).join(", "), locations.slice(-1)[0]].join(" and ") : locations[0];
 
 			// Highlight searched word
-			return (itm.name + ' - ' + itm.award + ' <br> <span>' + locations + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
+			return (itm.name + " - " + itm.award + " <br> <span>" + locations + "</span>").replace( new RegExp("(" + qs.lastValue + ")", "i"), "<strong>$1</strong>");
 		},
 		"_click_handler": function (itm) {
-			document.location = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
+			document.location = "/courses/undergraduate/" + itm.id + "/" + itm.slug;
 		},
 		"no_results_click": function (value, qs) {
 			window.location.href = "https://www.kent.ac.uk/search/courses?q=" + value;
@@ -120,14 +120,14 @@ window.KENT.modules = window.KENT.modules || {};
 
 	// UG
 	configs.ug_courses = $.extend({}, configs.courses_default, {
-		"url":	window.KENT.settings.api_url + "programmes/current/undergraduate/programmes",
+		"url":	window.KENT.settings.api_url + "programmes/current/undergraduate/programmes"
 	});
 
 	// PG
 	configs.pg_courses = $.extend({}, configs.courses_default, {
 		"url":	window.KENT.settings.api_url + "programmes/current/postgraduate/programmes",
 		"_click_handler": function (itm) {
-			document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
+			document.location = "/courses/postgraduate/" + itm.id + "/" + itm.slug;
 		}
 	});
 
@@ -140,47 +140,42 @@ window.KENT.modules = window.KENT.modules || {};
 			// Generate locations list
 			var locations = [itm.campus];
 			if (itm.additional_locations !== "") {
-				locations = locations.concat(itm.additional_locations.split(', '));
+				locations = locations.concat(itm.additional_locations.split(", "));
 			}
-			locations = (locations.length > 1) ? [locations.slice(0, -1).join(', '), locations.slice(-1)[0]].join(' and ') : locations[0];
+			locations = (locations.length > 1) ? [locations.slice(0, -1).join(", "), locations.slice(-1)[0]].join(" and ") : locations[0];
 
 			// Highlight searched word
-			return (itm.name + ' - ' + itm.award + ' <span class="level"> &nbsp; ' + itm.level_name + '</span><br><span>' + locations + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
+			return (itm.name + " - " + itm.award + " <span class=\"level\"> &nbsp; " + itm.level_name + "</span><br><span>" + locations + "</span>").replace( new RegExp("(" + qs.lastValue + ")", "i"), "<strong>$1</strong>");
 		},
 		"_click_handler": function (itm) {
-			document.location = '/courses/' + ( (itm.level==='UG') ? 'undergraduate' : 'postgraduate') +'/' + itm.id + '/' + itm.slug;
+			document.location = "/courses/" + ( (itm.level === "UG") ? "undergraduate" : "postgraduate") + "/" + itm.id + "/" + itm.slug;
 		},
 		"data_pre_parse": function(data, options){
-			for(var i in data){
+			for (var i in data){
 				data[i].qs_result_class = data[i].level.toLowerCase();
 
-				if(data[i].level === 'UG'){
-					data[i].level_name = 'Undergraduate';
-				}else{
+				if (data[i].level === "UG"){
+					data[i].level_name = "Undergraduate";
+				} else {
 					var type = data[i].programme_type;
 					// taught /research
-					if(type.indexOf("taught-research") !== -1)
-					{
-						data[i].level_name = 'Postgraduate Taught-research';
-					}
-					else if(type.indexOf("taught") !== -1)
-					{
-						data[i].level_name = 'Postgraduate Taught';
-					}
-					else
-					{
-						data[i].level_name = 'Postgraduate Research';
+					if (type.indexOf("taught-research") !== -1) {
+						data[i].level_name = "Postgraduate Taught-research";
+					} else if (type.indexOf("taught") !== -1) {
+						data[i].level_name = "Postgraduate Taught";
+					} else {
+						data[i].level_name = "Postgraduate Research";
 					}
 				}
 			}
 			return data;
 		},
-		"results_footer": "<div class='course-links'><a class='chevron-link' href='/courses/undergraduate/search'>All Undergraduate</a><a  class='chevron-link' href='/courses/undergraduate/search'>All Postgraduate </a><a class='chevron-link' href='/courses/part-time/index.html'>Short Courses</a></div>",
+		"results_footer": "<div class=\"course-links\"><a class=\"chevron-link\" href=\"/courses/undergraduate/search\">All Undergraduate</a><a  class=\"chevron-link\" href=\"/courses/undergraduate/search\">All Postgraduate </a><a class=\"chevron-link\" href=\"/courses/part-time/index.html\">Short Courses</a></div>",
 		"ready": function(qs){
 			// Override link action to pass search value
 			$(qs.container).find("div.course-links a").click(function(e){
 				e.preventDefault();
-				document.location.href = $(this).attr('href') + '?search=' + qs.lastValue;
+				document.location.href = $(this).attr("href") + "?search=" + qs.lastValue;
 			});
 		}
 	});
@@ -192,35 +187,32 @@ window.KENT.modules = window.KENT.modules || {};
  */
 jQuery(document).ready(function($){
 
-	$('input[data-quickspot-config]').each(function(){
+	$("input[data-quickspot-config]").each(function(){
 
 		// Load config
-		var config = KENT.quickspot.config[$(this).data('quickspot-config')] || KENT.quickspot.config.defaults;
+		var config = window.KENT.quickspot.config[$(this).data("quickspot-config")] || window.KENT.quickspot.config.defaults;
 		config = $.extend({}, config);
 
 		// Set additional options
-		config.target = $(this).attr('id');
+		config.target = $(this).attr("id");
 
 		// Override data source url
-		if($(this).data('quickspot-source')){
-			config.url = $(this).data('quickspot-source');
+		if ($(this).data("quickspot-source")){
+			config.url = $(this).data("quickspot-source");
 		}
 
 		// Override results container location
-		if($(this).data('quickspot-target')){
-			config.results_container = $(this).data('quickspot-target');
+		if ($(this).data("quickspot-target")){
+			config.results_container = $(this).data("quickspot-target");
 		}
 
 		// Boot quickspot
 		var qs = window.KENT.modules.quickspot.attach(config);
-		$(this).attr('autocomplete','off');
-		$(this).data('qs',qs);
+		$(this).attr("autocomplete", "off");
+		$(this).data("qs", qs);
 
 		// Debug
-		window.KENT.log("[Quickspot] Instance created on #" + $(this).attr('id') + " with config " + $(this).data('quickspot-config'));
+		window.KENT.log("[Quickspot] Instance created on #" + $(this).attr("id") + " with config " + $(this).data("quickspot-config"));
 	});
 
 });
-
-
-
