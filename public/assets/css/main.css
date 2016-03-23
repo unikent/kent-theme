@@ -5537,7 +5537,8 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
   left: 0;
   top: 48px;
   color: #05345C;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 16px; }
   #kent-bar #kent-bar-menu .search-services::before, .kent-bar #kent-bar-menu .search-services::before {
     content: "";
     font-family: "kentfont", sans-serif;
@@ -5655,7 +5656,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
       top: 40px;
       right: 10px;
       left: auto;
-      width: 600px;
+      width: 450px;
       max-width: 50%;
       border: 1px solid #ccc;
       box-shadow: 1px 1px 3px #BFBFBF; }
@@ -7173,8 +7174,7 @@ select {
   background-color: #05345C;
   color: #fff;
   padding: 0;
-  font-size: 16px;
-  font-size: 1rem; }
+  font-size: 14.4px; }
   #kentBar.kent-bar a.navbar-brand,
   #kentBar.audience-bar a.navbar-brand {
     font-size: 19.2px;
@@ -7216,7 +7216,8 @@ select {
   #kentBar.kent-bar .audience-nav-links,
   #kentBar.audience-bar .audience-nav-links {
     margin-right: 32px;
-    margin-right: 2rem; }
+    margin-right: 2rem;
+    font-size: 14.4px; }
   @media (min-width: 768px) {
     #kentBar.kent-bar a.navbar-brand, #kentBar.kent-bar button,
     #kentBar.audience-bar a.navbar-brand,

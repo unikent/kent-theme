@@ -3,7 +3,8 @@
 	background-color: $brand-primary;
 	color: #fff;
 	padding: 0;
-	font-size: 1rem;
+	// set px size as this shouldn't change when base font is bumped
+	font-size: 14.4px;
 
 	a.navbar-brand {
 		font-size: 1.2rem;
@@ -45,6 +46,8 @@
 
 	.audience-nav-links{
 		margin-right: 2rem;
+		// set px size as this shouldn't change when base font is bumped
+		font-size: 14.4px;
 	}
 
 	@include media-breakpoint-up(md) {
