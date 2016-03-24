@@ -11166,7 +11166,6 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 })(jQuery);
 
 ;(function($, window, document, undefined) {
-
 	var pluginName = 'stellar',
 		defaults = {
 			scrollProperty: 'scroll',
@@ -11380,6 +11379,10 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 			});
 		},
 		refresh: function(options) {
+
+
+			console.log("refreshing parallaxes");
+
 			var self = this,
 				oldLeft = self._getScrollLeft(),
 				oldTop = self._getScrollTop();
@@ -11423,6 +11426,7 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 			this.viewportOffsetLeft = (hasOffsets ? viewportOffsets.left : 0);
 		},
 		_findParticles: function() {
+
 			var self = this,
 				scrollLeft = this._getScrollLeft(),
 				scrollTop = this._getScrollTop();
@@ -11605,14 +11609,16 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 					startingValueLeft: backgroundPosition[0],
 					startingValueTop: backgroundPosition[1],
 					startingBackgroundPositionLeft: (isNaN(parseInt(backgroundPosition[0], 10)) ? 0 : parseInt(backgroundPosition[0], 10)),
+                    startingBackgroundPositionLeftUnit: backgroundPosition[0] === '0%' ? 'px' : backgroundPosition[0].substr((parseInt(backgroundPosition[0], 10)+"").length),
 					startingBackgroundPositionTop: (isNaN(parseInt(backgroundPosition[1], 10)) ? 0 : parseInt(backgroundPosition[1], 10)),
+                    startingBackgroundPositionTopUnit: backgroundPosition[1] === '0%' ? 'px' : backgroundPosition[1].substr((parseInt(backgroundPosition[1], 10)+"").length),
 					startingPositionLeft: $this.position().left,
 					startingPositionTop: $this.position().top,
 					startingOffsetLeft: offsetLeft,
 					startingOffsetTop: offsetTop,
 					parentOffsetLeft: parentOffsetLeft,
 					parentOffsetTop: parentOffsetTop,
-					stellarRatio: ($this.data('stellar-background-ratio') === undefined ? 1 : $this.data('stellar-background-ratio'))
+					stellarRatio: ($this.attr('data-stellar-background-ratio') === undefined ? 1 : $this.attr('data-stellar-background-ratio'))
 				});
 			});
 		},
@@ -11644,12 +11650,14 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 			}
 		},
 		destroy: function() {
+
 			this._reset();
 
-			this.$scrollElement.unbind('resize.' + this.options.name).unbind('scroll.' + this.options.name);
+			console.log("unbind " + this.options.name);
+			this.$scrollElement.off('resize.' + this.options.name).off('scroll.' + this.options.name);
 			this._animationLoop = $.noop;
 
-			$(window).unbind('load.' + this.options.name).unbind('resize.' + this.options.name);
+			$(window).off('load.' + this.options.name).off('resize.' + this.options.name);
 		},
 		_setOffsets: function() {
 			var self = this,
@@ -11660,6 +11668,7 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 			if (typeof this.options.horizontalOffset === 'function') {
 				this.horizontalOffset = this.options.horizontalOffset();
 				$window.bind('resize.horizontal-' + this.options.name, function() {
+					console.log('resize.horizontal-' + this.options.name);
 					self.horizontalOffset = self.options.horizontalOffset();
 				});
 			} else {
@@ -11669,6 +11678,7 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 			if (typeof this.options.verticalOffset === 'function') {
 				this.verticalOffset = this.options.verticalOffset();
 				$window.bind('resize.vertical-' + this.options.name, function() {
+					console.log('resize.vertical-' + this.options.name);
 					self.verticalOffset = self.options.verticalOffset();
 				});
 			} else {
@@ -11752,8 +11762,10 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 				background = this.backgrounds[i];
 
 				fixedRatioOffset = (background.isFixed ? 0 : 1);
-				bgLeft = (this.options.horizontalScrolling ? (scrollLeft + background.horizontalOffset - this.viewportOffsetLeft - background.startingOffsetLeft + background.parentOffsetLeft - background.startingBackgroundPositionLeft) * (fixedRatioOffset - background.stellarRatio) + 'px' : background.startingValueLeft);
-				bgTop = (this.options.verticalScrolling ? (scrollTop + background.verticalOffset - this.viewportOffsetTop - background.startingOffsetTop + background.parentOffsetTop - background.startingBackgroundPositionTop) * (fixedRatioOffset - background.stellarRatio) + 'px' : background.startingValueTop);
+                var bgLeftUsingPercentagePosition = background.startingBackgroundPositionLeftUnit === '%';
+				bgLeft = (this.options.horizontalScrolling ? ((scrollLeft + background.horizontalOffset - this.viewportOffsetLeft - background.startingOffsetLeft + background.parentOffsetLeft - background.startingBackgroundPositionLeft * (bgLeftUsingPercentagePosition ? 0 : 1)) * (bgLeftUsingPercentagePosition ? 100 / parseInt(background.$element.css('width'), 10) : 1) * (fixedRatioOffset - background.stellarRatio) - background.startingBackgroundPositionLeft * (bgLeftUsingPercentagePosition ? 1 : 0)) * (bgLeftUsingPercentagePosition ? -1 : 1) + background.startingBackgroundPositionLeftUnit : background.startingValueLeft);
+                var bgTopUsingPercentagePosition = background.startingBackgroundPositionTopUnit === '%';
+				bgTop = (this.options.verticalScrolling ? ((scrollTop + background.verticalOffset - this.viewportOffsetTop - background.startingOffsetTop + background.parentOffsetTop - background.startingBackgroundPositionTop * (bgTopUsingPercentagePosition ? 0 : 1)) * (bgTopUsingPercentagePosition ? 100 / parseInt(background.$element.css('height'), 10) : 1) * (fixedRatioOffset - background.stellarRatio) - background.startingBackgroundPositionTop * (bgTopUsingPercentagePosition ? 1 : 0)) * (bgTopUsingPercentagePosition ? -1 : 1) + background.startingBackgroundPositionTopUnit : background.startingValueTop);
 
 				setBackgroundPosition(background.$element, bgLeft, bgTop);
 			}
@@ -11768,12 +11780,15 @@ CLICK:"click",MANUAL:"manual"},r=function(){function f(a,b){_classCallCheck(this
 			};
 
 			var requestTick = function() {
+				
+				console.log("sroll tik");
 				if (!ticking) {
 					requestAnimFrame(update);
 					ticking = true;
 				}
 			};
 			
+			console.log("bind scroll." + this.options.name);
 			this.$scrollElement.bind('scroll.' + this.options.name, requestTick);
 			requestTick();
 		},
@@ -17410,18 +17425,17 @@ jQuery(document).ready(function($){
  *
  * @uses https://github.com/markdalgleish/stellar.js
  */
- var stellarActivated = false;
+(function(){
 
-function react_to_window() {
-	if (ResponsiveBootstrapToolkit.is("xs")) {
-		if (stellarActivated === true) {
-			$(window).data("plugin_stellar").destroy();
-			stellarActivated = false;
-		}
-		$(".media-wrap-parallax").css("min-height", "");
-	} else {
-		if (stellarActivated === false) {
+	var stellarSetup = false;
+	var stellarActive = false;
 
+	// Enable stellar.js
+	var initStellar = function(){
+
+		if (stellarSetup === true){
+			$(window).data("plugin_stellar").init();
+		} else {
 			$.stellar({
 				// Set scrolling to be in either one or both directions
 				horizontalScrolling: false,
@@ -17455,26 +17469,50 @@ function react_to_window() {
 				hideElement: function($elem) { $elem.hide(); },
 				showElement: function($elem) { $elem.show(); }
 			});
-
-			$(window).data("plugin_stellar").init();
-			stellarActivated = true;
+			stellarSetup = true;
 		}
-		var $ratio = ResponsiveBootstrapToolkit.is("<xl") ? ( 9 / 16 ) : ( 7 / 16 );
-		$(".media-wrap-parallax").each(function () {
-			$(this).css("min-height", ($(window).width() * $ratio) + "px");
-		});
-		$(window).data("plugin_stellar").refresh();
+		stellarActive = true;
+	};
+
+	// Disable stellar.js
+	var disableStellar = function(){
+		$(window).data("plugin_stellar").destroy();
+		stellarActive = false;
+	};
+
+	// Handle resize
+	function react_to_window() {
+
+		if (ResponsiveBootstrapToolkit.is("xs")) {
+
+			if (stellarActive){
+				disableStellar();
+			}
+			$(".media-wrap-parallax").css("min-height", "");
+
+		} else {
+
+			if (!stellarActive){
+				initStellar();
+			}
+
+			// Set ratio's
+			var $ratio = ResponsiveBootstrapToolkit.is("<xl") ? ( 9 / 16 ) : ( 7 / 16 );
+			$(".media-wrap-parallax").each(function () {
+				$(this).css("min-height", ($(window).width() * $ratio) + "px");
+			});
+			$(window).data("plugin_stellar").refresh();
+		}
 	}
-}
 
-$(window).on("viewport:resize", function(){
-	react_to_window();
-});
+	$(window).on("viewport:resize", function(){
+		react_to_window();
+	});
 
-
-$(document).ready(function(){
-	react_to_window();
-});
+	$(document).ready(function(){
+		react_to_window();
+	});
+})();
 
 /**
  * Slider

@@ -93,11 +93,12 @@
 .media-wrap-parallax {
 	@extend .media-wrap-letterbox;
 
-	& > img{
+	& > img {
+		margin: 0 !important; // This should never not be the case!
+
 		@include media-breakpoint-up(sm) {
 			position: absolute;
 		}
-
 	}
 }
 
@@ -206,6 +207,7 @@ figure{
 figure.featured-image{
 
 	overflow: visible;
+	margin-top: 0px;
 
 	@include media-breakpoint-up(md){
 		margin-top:-3.5rem;
