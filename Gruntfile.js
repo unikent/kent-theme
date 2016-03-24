@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 	require("time-grunt")(grunt);
 
 	// Load configs
-	var initConfig = require("./config/get-config.js")(grunt);
+	var initConfig = require("./build_config/get-config.js")(grunt);
 	grunt.initConfig(initConfig);
 
 	// Load tasks
