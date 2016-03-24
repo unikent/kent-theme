@@ -1,7 +1,7 @@
 module.exports = {
 	build: {
 		options: {
-			configFile: "config/_eslint_build.json"
+			configFile: "build_config/_eslint_build.json"
 		},
 		src: [
 			"config/*.js",
@@ -10,7 +10,7 @@ module.exports = {
 	},
 	app: {
 		options: {
-			configFile: "config/_eslint_app.json"
+			configFile: "build_config/_eslint_app.json"
 		},
 		src: [
 			"js/*.js",
