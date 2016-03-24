@@ -1,6 +1,6 @@
 window.KENT  = window.KENT || {};
 /**
- * Global navigation 
+ * Global navigation
  *
  * Switches between main menu & search menu on mobile.
  * Toggles search on/off on large screens
@@ -21,9 +21,9 @@ window.KENT  = window.KENT || {};
 	var toggleMenu = function(button, menu){
 
 		// If this menu is NOT open, open it. Else close it.
-		if(!menu.hasClass("in")){
+		if (!menu.hasClass("in")){
 			return openMenu(button, menu);
-		}else{
+		} else {
 			return closeMenu(button, menu);
 		}
 	};
@@ -32,14 +32,14 @@ window.KENT  = window.KENT || {};
 	var closeMenu = function(button, menu){
 
 		// Cannot close already closed menu
-		if(!menu.hasClass("in")){
+		if (!menu.hasClass("in")){
 			return false;
 		}
 
 		// Remove menu & body class
 		menu.removeClass("in");
 		$("body").removeClass(menu.data("control-class"));
-		
+
 		// Update button so it knows it's expanded area is collapsed
 		// aria-hidden is not needed on the element, since as the element is displayed none
 		// the screen reader won't see it anyway.
@@ -55,7 +55,7 @@ window.KENT  = window.KENT || {};
 	var openMenu = function(button, menu){
 
 		// Cannot open already closed menu
-		if(menu.hasClass("in")){
+		if (menu.hasClass("in")){
 			return false;
 		}
 
@@ -111,9 +111,9 @@ window.KENT  = window.KENT || {};
 
 	// Ensure opening one menu, closes the other.
 	$(window).on("globalmenu:open", function(e, menu){
-		if(menu[0] === global_search[0]){
+		if (menu[0] === global_search[0]){
 			window.KENT.global_nav.closeMainMenu();
-		}else{
+		} else {
 			window.KENT.global_nav.closeSearchMenu();
 		}
 	});
@@ -130,7 +130,7 @@ window.KENT  = window.KENT || {};
 
 	// CLose all menu's if user hits escape
 	$(document).keyup(function(e){
-		if(e.which === 27){
+		if (e.which === 27){
 			window.KENT.global_nav.closeMainMenu();
 			window.KENT.global_nav.closeSearchMenu();
 			window.KENT.kentbar.closeMenus();
@@ -138,32 +138,33 @@ window.KENT  = window.KENT || {};
 	});
 
 	// Homepage Logic
-	if($('.home-nav').length > 0){
+	if ($(".home-nav").length > 0){
 
 		$(window).on("globalmenu:open kentbar_menu:open kentbar_mobilemenu:open", function(){
-			$('.home-nav').hide();	
+			$(".home-nav").hide();
 		});
 
 		$(window).on("globalmenu:close kentbar_menu:close kentbar_mobilemenu:close", function(e, menu){
-			$body = $('body');
-			if(!($body.hasClass('show-global-menu') || $body.hasClass('show-global-search') || $body.hasClass('show-kentbar-menu'))) {
-				if (ResponsiveBootstrapToolkit.is('<=sm')) {
-					$('.home-nav').delay(300).fadeIn();
+
+			var $body = $("body");
+
+			if (!($body.hasClass("show-global-menu") || $body.hasClass("show-global-search") || $body.hasClass("show-kentbar-menu"))) {
+				if (ResponsiveBootstrapToolkit.is("<=sm")) {
+					$(".home-nav").delay(300).fadeIn();
 				}
 			}
 		});
 
 		$(window).on("viewport:change", function(){
 
-			if(ResponsiveBootstrapToolkit.is('<=sm')){
-				// if menu isn't already open
-				if(!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
+			if (ResponsiveBootstrapToolkit.is("<=sm")){
+				// if menu isn"t already open
+				if (!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
 
-					$('.home-nav').delay(300).fadeIn();
+					$(".home-nav").delay(300).fadeIn();
 				}
-				
-			}else{
-				$('.home-nav').hide();
+			} else {
+				$(".home-nav").hide();
 			}
 		});
 	}
