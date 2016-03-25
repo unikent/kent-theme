@@ -1,5 +1,5 @@
 module.exports = {
 	jwplayer: {
-		"vendor/jwplayer-official": [ "build-js" ]
+		"node_modules/jwplayer": [ "build-js" ]
 	}
 };
