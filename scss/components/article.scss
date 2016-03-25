@@ -1,50 +1,50 @@
-.byline{
-	margin: 2rem 0;
-	overflow: hidden;
-	position: relative;
-	color: #737373;
+.byline {
+    margin:   2rem 0;
+    overflow: hidden;
+    position: relative;
+    color:    #737373;
 
-	@include media-breakpoint-up(sm) {
-		display:     flex;
-		align-items: center;
-	}
-	img {
-		@extend .img-fluid;
-		@extend .img-circle;
-		height: 3rem;
-		float: left;
-		margin-right:.5rem;
-	}
-	address{
-		color: $brand-accent;
-		margin-bottom: 0;
-		@include media-breakpoint-up(sm){
-			padding-right: .5rem;
-			border-right: 1px solid #ccc;
-			margin-right: .5rem;
-		}
+    @include media-breakpoint-up(sm) {
+        display:     flex;
+        align-items: center;
+    }
+    img {
+        @extend .img-fluid;
+        @extend .img-circle;
+        height:       3rem;
+        float:        left;
+        margin-right: .5rem;
+    }
+    address {
+        color:         $brand-accent;
+        margin-bottom: 0;
+        @include media-breakpoint-up(sm) {
+            padding-right: .5rem;
+            border-right:  1px solid #CCCCCC;
+            margin-right:  .5rem;
+        }
 
-		a,a:hover,a:focus{
-			color: $brand-accent;
-		}
-		a:hover,a:focus{
-			text-decoration: underline;
-		}
-	}
+        a, a:hover, a:focus {
+            color: $brand-accent;
+        }
+        a:hover, a:focus {
+            text-decoration: underline;
+        }
+    }
 }
 
-.content-tags{
-	overflow: hidden;
-	clear:both;
-	margin-top:.5rem;
-	margin-bottom: 1.25rem;
+.content-tags {
+    overflow:      hidden;
+    clear:         both;
+    margin-top:    .5rem;
+    margin-bottom: 1.25rem;
 
-	.content-tag{
-		float:left;
-		display: inline-block;
-		margin: 0 0.5rem 0.5rem 0;
-		&:last-child{
-			margin-right: 0;
-		}
-	}
+    .content-tag {
+        float:   left;
+        display: inline-block;
+        margin:  0 0.5rem 0.5rem 0;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }

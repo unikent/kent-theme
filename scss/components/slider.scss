@@ -1,145 +1,138 @@
-.kent-slider{
+.kent-slider {
 
-	
+    .slick-list {
+        width: 100%;
+    }
+    .kent-slide {
+        position: relative;
+        cursor:   -webkit-grab;
+        width:    100%;
+    }
+    .slick-prev, .slick-next {
+        z-index:  1;
+        position: absolute;
+        bottom:   50%;
+        bottom:   calc(50% - 1.5rem);
+        @include text-hide();
+        border:   none;
+        padding:  0;
+        width:    3rem;
+        height:   3rem;
+        display:  block;
+        &:focus {
+            outline: none;
+        }
+        &:after {
+            position:    absolute;
+            font-family: $font-family-kentfont;
+            color:       rgba(255, 255, 255, 0.7);
+            display:     block;
+            width:       3rem;
+            height:      3rem;
+            top:         0;
+            line-height: 3rem;
+            line-height: calc(3rem); // IE11 workaround
+            text-align:  center;
+            font-size:   3rem;
+            transition:  color .3s ease-in-out;
+        }
+        &:hover {
+            &:after {
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+    .slick-prev {
+        left: 0;
+        &:after {
+            content: $kf-chevron-left-square;
+        }
+    }
+    .slick-next {
+        right: 0;
+        &:after {
+            content: $kf-chevron-right-square;
+        }
+    }
 
-	.slick-list{
-		width: 100%;
-	}
-	.kent-slide{
-		position: relative;
-		cursor: -webkit-grab;
-		width:100%;
-	}
-	.slick-prev,.slick-next{
-		z-index: 1;
-		position: absolute;
-		bottom: 50%;
-		bottom: calc( 50% - 1.5rem);
-		@include text-hide();
-		border:none;
-		padding: 0;
-		width: 3rem;
-		height: 3rem;
-		display: block;
-		&:focus{
-			outline: none;
-		}
-		&:after{
-			position: absolute;
-			font-family: $font-family-kentfont;
-			color: rgba(255,255,255,0.7);
-			display: block;
-			width: 3rem;
-			height: 3rem;
-			top:0;
-			line-height: 3rem;
-			line-height: calc(3rem); // IE11 workaround
-			text-align: center;
-			font-size: 3rem;
-			transition: color .3s ease-in-out;
-		}
-		&:hover{
-			&:after{
-				color: rgba(255,255,255,1);
-			}
-		}
-	}
-	.slick-prev{
-		left:0;
-		&:after{
-			content: $kf-chevron-left-square;
-		}
-	}
-	.slick-next{
-		right:0;
-		&:after{
-			content: $kf-chevron-right-square;
-		}
-	}
+    .kent-slider-dots {
+        position:   absolute;
+        bottom:     0;
+        text-align: center;
+        list-style: none;
+        width:      100%;
+        margin:     0;
+        padding:    0;
+        li {
+            display: inline-block;
+            padding: 0;
+            &:before {
+                display: none;
+            }
+            button {
 
+                display: block;
+                padding: 0;
+                width:   1rem;
+                height:  1rem;
+                @include text-hide();
+                &:after {
+                    position:    absolute;
+                    font-family: $font-family-kentfont;
+                    color:       rgba(255, 255, 255, 0.5);
+                    display:     block;
+                    width:       1rem;
+                    height:      1rem;
+                    top:         0;
+                    line-height: 1rem;
+                    line-height: calc(1rem); // IE11 workaround
+                    text-align:  center;
+                    font-size:   0.9rem;
+                    content:     $kf-circle;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
 
+            &.slick-active {
+                button {
+                    &:after {
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
 
+    @each $name, $color in $brand-colors-dark {
+        &.kent-slider-#{$name} {
+            background: $color;
+            color:      #FFFFFF;
 
-
-	.kent-slider-dots{
-		position: absolute;
-		bottom: 0;
-		text-align: center;
-		list-style: none;
-		width: 100%;
-		margin:0;
-		padding: 0;
-		li{
-			display: inline-block;
-			padding: 0;
-			&:before{
-				display:none;
-			}
-			button{
-
-				display: block;
-				padding: 0;
-				width: 1rem;
-				height: 1rem;
-				@include text-hide();
-				&:after{
-					position: absolute;
-					font-family: $font-family-kentfont;
-					color: rgba(255,255,255,0.5);
-					display: block;
-					width: 1rem;
-					height: 1rem;
-					top:0;
-					line-height: 1rem;
-					line-height: calc(1rem); // IE11 workaround
-					text-align: center;
-					font-size: 0.9rem;
-					content: $kf-circle;
-				}
-				&:focus{
-					outline: none;
-				}
-			}
-
-			&.slick-active{
-				button{
-					&:after{
-						color: #FFF;
-					}
-				}
-			}
-		}
-	}
-
-
-	@each $name, $color in $brand-colors-dark {
-		&.kent-slider-#{$name}
-		{
-			background: $color;
-			color: #fff;
-
-			.card-img-overlay {
-				background: transparent;
-			}
-		}
-	}
+            .card-img-overlay {
+                background: transparent;
+            }
+        }
+    }
 }
+
 .header-card-overlay {
-	.kent-slider{
-		.slick-prev,.slick-next{
-			top: 30%;
-			top: calc( 30% - 1.5rem);
-			bottom: auto;
-			@include media-breakpoint-up(sm){
-				top: 35%;
-				top: calc( 35% - 1.5rem);
-				bottom: auto;
-			}
-			@include media-breakpoint-up(md){
-				top: 50%;
-				top: calc( 50% - 1.5rem);
-				bottom: auto;
-			}
-		}
-	}
+    .kent-slider {
+        .slick-prev, .slick-next {
+            top:    30%;
+            top:    calc(30% - 1.5rem);
+            bottom: auto;
+            @include media-breakpoint-up(sm) {
+                top:    35%;
+                top:    calc(35% - 1.5rem);
+                bottom: auto;
+            }
+            @include media-breakpoint-up(md) {
+                top:    50%;
+                top:    calc(50% - 1.5rem);
+                bottom: auto;
+            }
+        }
+    }
 }

@@ -9,6 +9,7 @@ module.exports = function (grunt) {
 		modernizr: require("./modernizr"),
 		watch: require("./watch"),
 		eslint: require("./eslint"),
+        sasslint: require("./sasslint"),
 		postcss: require("./postcss"),
 		cssnano: require("./cssnano"),
 		php2html: require("./php2html"),

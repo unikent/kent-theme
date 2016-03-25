@@ -1,338 +1,337 @@
 .card {
-	display:block;
-	border: none;
-	background: none;
-	margin-bottom:1rem;
+    display:       block;
+    border:        none;
+    background:    none;
+    margin-bottom: 1rem;
 
-	/*
-		apply a background color to a card, also adds padding
-	 	to sides so images have to be pulled back out
-  	*/
-	&.card-backed{
-		padding-left: $grid-gutter-width/2;
-		padding-right: $grid-gutter-width/2;
-		padding-bottom: 0.1px; //to stop margin collapse
-		background: #FFF;
+    /*
+        apply a background color to a card, also adds padding
+         to sides so images have to be pulled back out
+      */
+    &.card-backed {
+        padding-left:   $grid-gutter-width/2;
+        padding-right:  $grid-gutter-width/2;
+        padding-bottom: 0.1px; //to stop margin collapse
+        background:     #FFFFFF;
 
-		.card-header {
-			border:none;
-		}
+        .card-header {
+            border: none;
+        }
 
-		.card-media-wrap,
-		.card-img,
-		.card-img-top {
-			&:first-child {
-				margin-left:  -$grid-gutter-width/2;
-				margin-right: -$grid-gutter-width/2;
-				max-width:    calc(100% + #{$grid-gutter-width});
+        .card-media-wrap,
+        .card-img,
+        .card-img-top {
+            &:first-child {
+                margin-left:  -$grid-gutter-width/2;
+                margin-right: -$grid-gutter-width/2;
+                max-width:    calc(100% + #{$grid-gutter-width});
 
-				&:before {
-					display:block;
-					height:50%;
-					width:100%;
-					background:red;
-				}
+                &:before {
+                    display:    block;
+                    height:     50%;
+                    width:      100%;
+                    background: red;
+                }
 
-			}
-		}
-		.card-media-wrap{
-			.card-img,
-			.card-img-top {
-				&:first-child {
-					margin: 0;
-				}
-			}
-		}
-	}
+            }
+        }
+        .card-media-wrap {
+            .card-img,
+            .card-img-top {
+                &:first-child {
+                    margin: 0;
+                }
+            }
+        }
+    }
 
-	@each $name, $color in $brand-colors-light {
+    @each $name, $color in $brand-colors-light {
 
-		&.card-backed-#{$name},
-		.card-panel.cards-backed &.card-backed-#{$name}{
-			background: $color;
-		}
+        &.card-backed-#{$name},
+        .card-panel.cards-backed &.card-backed-#{$name} {
+            background: $color;
+        }
 
-		.card-panel.card-panel-#{$name} &.card-backed.card-header-split .card-header,
-		.card-panel.card-panel-#{$name}.cards-header-split &.card-backed .card-header,
-		.card-panel.card-panel-#{$name}.cards-backed.cards-header-split & .card-header{
-			background: linear-gradient($color 50%, transparent 50%);
-		}
+        .card-panel.card-panel-#{$name} &.card-backed.card-header-split .card-header,
+        .card-panel.card-panel-#{$name}.cards-header-split &.card-backed .card-header,
+        .card-panel.card-panel-#{$name}.cards-backed.cards-header-split & .card-header {
+            background: linear-gradient($color 50%, transparent 50%);
+        }
 
-	}
+    }
 
-	@each $name, $color in $brand-colors-dark {
+    @each $name, $color in $brand-colors-dark {
 
-		&.card-backed-#{$name},
-		.card-panel.cards-backed &.card-backed-#{$name}{
-			background: $color;
-			@extend .card-inverse;
-		}
+        &.card-backed-#{$name},
+        .card-panel.cards-backed &.card-backed-#{$name} {
+            background: $color;
+            @extend .card-inverse;
+        }
 
-		.card-panel.card-panel-#{$name} &.card-backed.card-header-split .card-header,
-		.card-panel.card-panel-#{$name}.cards-header-split &.card-backed .card-header,
-		.card-panel.card-panel-#{$name}.cards-backed.cards-header-split & .card-header{
-				background: linear-gradient($color 50%, transparent 50%);
-		}
+        .card-panel.card-panel-#{$name} &.card-backed.card-header-split .card-header,
+        .card-panel.card-panel-#{$name}.cards-header-split &.card-backed .card-header,
+        .card-panel.card-panel-#{$name}.cards-backed.cards-header-split & .card-header {
+            background: linear-gradient($color 50%, transparent 50%);
+        }
 
-	}
+    }
 
-	&.card-centered {
-		@extend .text-xs-center;
-	}
+    &.card-centered {
+        @extend .text-xs-center;
+    }
 
-	.card-img-overlay {
-		padding: 1rem;
-		display:block;
-		
-		@each $breakpoint, $width in $grid-breakpoints {
-			&.card-overlay-inline-#{$breakpoint} {
-				@include media-breakpoint-down($breakpoint){
-					position: inherit;
-					padding: 2rem;
-					clear: both;
-					background: $brand-dark;
-					color: #fff; 
+    .card-img-overlay {
+        padding: 1rem;
+        display: block;
 
-					// If at some point we want other colours on the overlay inlines
-					// 
-					//@each $name, $color in $brand-colors-dark {
-					//	
-					//	&.card-overlay-inline-#{$name} {
-					//		background: $color;
-					//		color: #fff;
-					//	}			
-					//}
+        @each $breakpoint, $width in $grid-breakpoints {
+            &.card-overlay-inline-#{$breakpoint} {
+                @include media-breakpoint-down($breakpoint) {
+                    position:   inherit;
+                    padding:    2rem;
+                    clear:      both;
+                    background: $brand-dark;
+                    color:      #FFFFFF;
 
-					&.card-overlay-inline-nopad{
-						padding: 0;
-					}
-				}
-			}
-		}
+                    // If at some point we want other colours on the overlay inlines
+                    //
+                    //@each $name, $color in $brand-colors-dark {
+                    //
+                    //	&.card-overlay-inline-#{$name} {
+                    //		background: $color;
+                    //		color: #fff;
+                    //	}
+                    //}
 
+                    &.card-overlay-inline-nopad {
+                        padding: 0;
+                    }
+                }
+            }
+        }
 
-	}
+    }
 
-	.card-img-overlay-bottom{
-		@extend .card-inverse;
-		@extend .card-img-overlay;
-		top:auto;
-		transition: opacity 600ms;
-	}
+    .card-img-overlay-bottom {
+        @extend .card-inverse;
+        @extend .card-img-overlay;
+        top:        auto;
+        transition: opacity 600ms;
+    }
 
-	.card-img-overlay-bottom-shaded{
-		@extend .card-img-overlay-bottom;
-		background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
-		padding-top: 3rem;
-	}
+    .card-img-overlay-bottom-shaded {
+        @extend .card-img-overlay-bottom;
+        background:  linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        padding-top: 3rem;
+    }
 
-	.card-body{
-		display: block;
-		position: relative;
-	}
+    .card-body {
+        display:  block;
+        position: relative;
+    }
 
-	.card-split{
-		position: relative;
-		padding: 0;
-		overflow: hidden;
+    .card-split {
+        position: relative;
+        padding:  0;
+        overflow: hidden;
 
-	}
-	.card-half{
-		position: relative;
-		float:left;
-		width: 50%;
-	}
+    }
+    .card-half {
+        position: relative;
+        float:    left;
+        width:    50%;
+    }
 
-	&.card-flip{
-		position: relative;
+    &.card-flip {
+        position: relative;
 
-		.front{
-			transition: opacity 600ms;
-			position: relative;
-			z-index: 1;
-		}
-		&:hover {
-			.front {
-				opacity: 0;
-				pointer-events: none;
-			}
-		}
-		.back{
-			position: absolute;
-			top:0;
-			left:0;
-			bottom: 0;
-			right:0;
-		}
-	}
+        .front {
+            transition: opacity 600ms;
+            position:   relative;
+            z-index:    1;
+        }
+        &:hover {
+            .front {
+                opacity:        0;
+                pointer-events: none;
+            }
+        }
+        .back {
+            position: absolute;
+            top:      0;
+            left:     0;
+            bottom:   0;
+            right:    0;
+        }
+    }
 
-	.card-footer{
-		background: transparent;
-	}
+    .card-footer {
+        background: transparent;
+    }
 
-	.card-title{
-		font-family: $headings-font-family-alt;
-		font-weight: normal;
-		color: $kent-primary;
-		font-size: 1.1rem;
-	}
+    .card-title {
+        font-family: $headings-font-family-alt;
+        font-weight: normal;
+        color:       $kent-primary;
+        font-size:   1.1rem;
+    }
 
-	.card-meta{
-		color: $text-muted;
-		font-family: $font-family-sans-serif;
-		font-size: 0.85rem;
-		margin-bottom: 0.3rem;
-	}
+    .card-meta {
+        color:         $text-muted;
+        font-family:   $font-family-sans-serif;
+        font-size:     0.85rem;
+        margin-bottom: 0.3rem;
+    }
 
-	.card-subtitle {
-		color: $brand-primary;
+    .card-subtitle {
+        color: $brand-primary;
 
-	}
+    }
 
-	& >	.card-text,
-	& >	.card-subtitle,
-	& >	.card-meta,
-	& >	.card-badge{
-		&:last-child{
-			margin-bottom: $spacer;
-		}
-	}
+    & > .card-text,
+    & > .card-subtitle,
+    & > .card-meta,
+    & > .card-badge {
+        &:last-child {
+            margin-bottom: $spacer;
+        }
+    }
 
-	.card-img,
-	.card-img-top,
-	.card-img-bottom{
-		@extend .img-fluid;
-	}
+    .card-img,
+    .card-img-top,
+    .card-img-bottom {
+        @extend .img-fluid;
+    }
 
-	.card-img,
-	.card-img-top,
-	.card-media-wrap{
-		&:first-child{
-			margin-bottom: 0.75rem;
-		}
-	}
+    .card-img,
+    .card-img-top,
+    .card-media-wrap {
+        &:first-child {
+            margin-bottom: 0.75rem;
+        }
+    }
 
-	.card-media-wrap,
-	.media-wrap,
-	.media-wrap-paralax{
-		.card-img:first-child,
-		.card-img-top:first-child{
-			margin-bottom: 0;
-		}
-	}
+    .card-media-wrap,
+    .media-wrap,
+    .media-wrap-paralax {
+        .card-img:first-child,
+        .card-img-top:first-child {
+            margin-bottom: 0;
+        }
+    }
 
-	.card-media-wrap, .card-embed-wrap {
+    .card-media-wrap, .card-embed-wrap {
 
-		@extend .media-wrap;
-		transition: max-height 600ms;
+        @extend .media-wrap;
+        transition: max-height 600ms;
 
-	}
+    }
 
-	&.card-inverse, .card-inverse{
+    &.card-inverse, .card-inverse {
 
-		&,& .card-title-wrap {
-			.card-title {
-				color: #FFFFFF;
-			}
-			.card-subtitle {
-				color: #FFFFFF;
-				//color: rgba(255,255,255,.65);
-			}
+        &, & .card-title-wrap {
+            .card-title {
+                color: #FFFFFF;
+            }
+            .card-subtitle {
+                color: #FFFFFF;
+                //color: rgba(255,255,255,.65);
+            }
 
-			.card-link,
-			.card-text,
-			.card-blockquote > footer {
-				color: rgba(255, 255, 255, .75);
-			}
+            .card-link,
+            .card-text,
+            .card-blockquote > footer {
+                color: rgba(255, 255, 255, .75);
+            }
 
-			a {
-				color: #FFFFFF;
+            a {
+                color: #FFFFFF;
 
-				&:hover, &:active, &:focus {
-					color: rgba(255, 255, 255, .75);
-				}
-			}
-		}
-	}
+                &:hover, &:active, &:focus {
+                    color: rgba(255, 255, 255, .75);
+                }
+            }
+        }
+    }
 
-	ul{
-		@include bullet-list;
-	}
+    ul {
+        @include bullet-list;
+    }
 
-	.card-badge {
-		text-decoration:none;
-		margin-bottom: 1rem;
+    .card-badge {
+        text-decoration: none;
+        margin-bottom:   1rem;
 
-		&:before {
-			color: $brand-accent; 
-			margin-right:.2rem;
-			position: relative;
-			bottom: 0.1rem;
-		}
-	}
+        &:before {
+            color:        $brand-accent;
+            margin-right: .2rem;
+            position:     relative;
+            bottom:       0.1rem;
+        }
+    }
 
-	.card-author {
-		display:block;
-		font-size: .9rem;
-	    color: $gray;
-	    
-	    padding: .5em 0;
-	    overflow:hidden;
-	    line-height: 2rem;
-	    margin-bottom: 1rem;
-	    text-decoration: none;
+    .card-author {
+        display:         block;
+        font-size:       .9rem;
+        color:           $gray;
 
-	    img {
-			@extend .img-fluid;
-			@extend .img-circle;
-	    	height: 2rem;
-	    	float: left;
-	    	margin-right:.5rem;
-	    }
-	}
+        padding:         .5em 0;
+        overflow:        hidden;
+        line-height:     2rem;
+        margin-bottom:   1rem;
+        text-decoration: none;
 
-	.card-bordered-item {
-		border-bottom: 1px solid #ccc;
-	    border-top: 1px solid #ccc;
-	}
+        img {
+            @extend .img-fluid;
+            @extend .img-circle;
+            height:       2rem;
+            float:        left;
+            margin-right: .5rem;
+        }
+    }
 
-	.card-header{
-		padding: inherit;
-		background-color: transparent;
-		border: none;
-	}
+    .card-bordered-item {
+        border-bottom: 1px solid #CCCCCC;
+        border-top:    1px solid #CCCCCC;
+    }
 
-	&.card-header-split {
-		.card-header {
-			background: linear-gradient(#ffffff 50%, transparent 50%);
-			margin-left:  -$grid-gutter-width/2;
-			margin-right: -$grid-gutter-width/2;
+    .card-header {
+        padding:          inherit;
+        background-color: transparent;
+        border:           none;
+    }
 
-			.card-img,
-			.card-img-top, 
-			.card-media-wrap{
-				&:first-child{
-					width:70%;
-					margin-left:15%;
-					margin-right:15%;
-				}
-			}
-		}
-	}
+    &.card-header-split {
+        .card-header {
+            background:   linear-gradient(#FFFFFF 50%, transparent 50%);
+            margin-left:  -$grid-gutter-width/2;
+            margin-right: -$grid-gutter-width/2;
 
-	// if card is an A
-	// @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
-	@at-root a#{&}, a {
+            .card-img,
+            .card-img-top,
+            .card-media-wrap {
+                &:first-child {
+                    width:        70%;
+                    margin-left:  15%;
+                    margin-right: 15%;
+                }
+            }
+        }
+    }
 
-		img{
-			transition: all 600ms;
-		}
+    // if card is an A
+    // @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
+    @at-root a#{&}, a {
 
-		&:hover, &:focus {
-			text-decoration: none;
-			img{
-				filter: opacity(70%);
-			}
-		}
-	}
+        img {
+            transition: all 600ms;
+        }
+
+        &:hover, &:focus {
+            text-decoration: none;
+            img {
+                filter: opacity(70%);
+            }
+        }
+    }
 }

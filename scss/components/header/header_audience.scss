@@ -1,62 +1,62 @@
 #kentBar.kent-bar,
-#kentBar.audience-bar{
-	background-color: $brand-primary;
-	color: #fff;
-	padding: 0;
-	// set px size as this shouldn't change when base font is bumped
-	font-size: 14.4px;
+#kentBar.audience-bar {
+    background-color: $brand-primary;
+    color:            #FFFFFF;
+    padding:          0;
+    // set px size as this shouldn't change when base font is bumped
+    font-size:        14.4px;
 
-	a.navbar-brand {
-		font-size: 1.2rem;
-		padding: .8rem 0 .8rem 1rem;
-		margin: 0;
-		color: #fff;
-		display:block;
-	}
-	.tag-line {
-		padding:0.3rem 0 0.3rem 2rem;
-		display:none;
-	}
+    a.navbar-brand {
+        font-size: 1.2rem;
+        padding:   .8rem 0 .8rem 1rem;
+        margin:    0;
+        color:     #FFFFFF;
+        display:   block;
+    }
+    .tag-line {
+        padding: 0.3rem 0 0.3rem 2rem;
+        display: none;
+    }
 
-	button {
-		@extend .kf;
-		width: 3rem;
-		padding: .8rem;
-		background-color: lighten($brand-primary, 3%);
-    	border: none;
-    	font-size:1.2rem;
-		float: right;
-		&:focus,&:active{
-			outline: none;
-		}
-	}
-	
-	button.menu-button {
-		background-color: lighten($brand-primary, 6%);
+    button {
+        @extend .kf;
+        width:            3rem;
+        padding:          .8rem;
+        background-color: lighten($brand-primary, 3%);
+        border:           none;
+        font-size:        1.2rem;
+        float:            right;
+        &:focus, &:active {
+            outline: none;
+        }
+    }
 
-		&:before {
-			content: $kf-menu;
-		}
-	}
-	button.search-button {
-		&:before {
-			content: $kf-search;
-		}
-	}
+    button.menu-button {
+        background-color: lighten($brand-primary, 6%);
 
-	.audience-nav-links{
-		margin-right: 2rem;
-		// set px size as this shouldn't change when base font is bumped
-		font-size: 14.4px;
-	}
+        &:before {
+            content: $kf-menu;
+        }
+    }
+    button.search-button {
+        &:before {
+            content: $kf-search;
+        }
+    }
 
-	@include media-breakpoint-up(md) {
-		a.navbar-brand, button {
-			display:none;
-		}
+    .audience-nav-links {
+        margin-right: 2rem;
+        // set px size as this shouldn't change when base font is bumped
+        font-size:    14.4px;
+    }
 
-		.tag-line {
-			display: inline-block;
-		}
-	}
+    @include media-breakpoint-up(md) {
+        a.navbar-brand, button {
+            display: none;
+        }
+
+        .tag-line {
+            display: inline-block;
+        }
+    }
 }

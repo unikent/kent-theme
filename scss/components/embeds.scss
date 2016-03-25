@@ -1,24 +1,24 @@
-.embed-responsive{
-	.embed-responsive-item-overlay{
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		padding: 1rem;
-		a {
-			color: #FFF;
-		}
-		.video-transcript {
-			float: right;
-			@include media-breakpoint-down(lg){
-				padding-bottom: 1.5rem;
-			}
-		}
-	} 
+.embed-responsive {
+    .embed-responsive-item-overlay {
+        position: absolute;
+        bottom:   0;
+        left:     0;
+        right:    0;
+        padding:  1rem;
+        a {
+            color: #FFFFFF;
+        }
+        .video-transcript {
+            float: right;
+            @include media-breakpoint-down(lg) {
+                padding-bottom: 1.5rem;
+            }
+        }
+    }
 }
 
-.click-to-interact{
-	iframe{
-		pointer-events: none;
-	}
+.click-to-interact {
+    iframe {
+        pointer-events: none;
+    }
 }
