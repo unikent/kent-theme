@@ -6998,6 +6998,20 @@ select {
 .has-danger .c-select, .has-danger .card-panel .card-panel-header .card-panel-filter select, .card-panel .card-panel-header .card-panel-filter .has-danger select, .has-danger .card-panel-flush .card-panel-header .card-panel-filter select, .card-panel-flush .card-panel-header .card-panel-filter .has-danger select {
   border-color: #d9534f; }
 
+.validation-error {
+  display: none; }
+
+.has-error .validation-error {
+  display: block;
+  clear: both;
+  color: #d9534f;
+  padding: 4px 0;
+  padding: 0.25rem 0; }
+
+.validation-group + .validation-error {
+  margin-top: -12px;
+  margin-top: -.75rem; }
+
 .mobile-nav-links a, .global-nav .audience-nav-links a, .departmental-nav .navbar-menu a {
   display: block;
   color: #EEEEEE;
@@ -9323,6 +9337,9 @@ button.beta-toggler {
       color: #FFFFFF; }
       .modal.modal-fullscreen .modal-dialog .modal-content .modal-footer a {
         color: #FFFFFF; }
+
+.popover {
+  box-shadow: 1px 1px 3px #BFBFBF; }
 
 blockquote, .blockquote {
   border: none;
