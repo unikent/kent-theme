@@ -8,12 +8,12 @@
  var stellarActivated = false;
 
 function react_to_window() {
-	if(ResponsiveBootstrapToolkit.is('xs')) {
+	if (ResponsiveBootstrapToolkit.is("xs")) {
 		if (stellarActivated === true) {
-			$(window).data('plugin_stellar').destroy();
+			$(window).data("plugin_stellar").destroy();
 			stellarActivated = false;
 		}
-		$('.media-wrap-parallax').css('min-height','');
+		$(".media-wrap-parallax").css("min-height", "");
 	} else {
 		if (stellarActivated === false) {
 
@@ -30,14 +30,14 @@ function react_to_window() {
 				responsive: false,
 
 				// Select which property is used to calculate scroll.
-				// Choose 'scroll', 'position', 'margin' or 'transform',
-				// or write your own 'scrollProperty' plugin.
-				scrollProperty: 'scroll',
+				// Choose "scroll", "position", "margin" or "transform",
+				// or write your own "scrollProperty" plugin.
+				scrollProperty: "scroll",
 
 				// Select which property is used to position elements.
-				// Choose between 'position' or 'transform',
-				// or write your own 'positionProperty' plugin.
-				positionProperty: 'transform',
+				// Choose between "position" or "transform",
+				// or write your own "positionProperty" plugin.
+				positionProperty: "transform",
 
 				// Enable or disable the two types of parallax
 				parallaxBackgrounds: true,
@@ -51,18 +51,18 @@ function react_to_window() {
 				showElement: function($elem) { $elem.show(); }
 			});
 
-			$(window).data('plugin_stellar').init();
+			$(window).data("plugin_stellar").init();
 			stellarActivated = true;
 		}
-		var $ratio = ResponsiveBootstrapToolkit.is('<xl')?(9/16):(7/16);
-		$('.media-wrap-parallax').each(function () {
-			$(this).css('min-height', ($(window).width() * $ratio) + 'px');
+		var $ratio = ResponsiveBootstrapToolkit.is("<xl") ? ( 9 / 16 ) : ( 7 / 16 );
+		$(".media-wrap-parallax").each(function () {
+			$(this).css("min-height", ($(window).width() * $ratio) + "px");
 		});
-		$(window).data('plugin_stellar').refresh();
+		$(window).data("plugin_stellar").refresh();
 	}
 }
 
-$(window).on('viewport:resize',function(){
+$(window).on("viewport:resize", function(){
 	react_to_window();
 });
 

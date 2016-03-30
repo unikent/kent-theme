@@ -13,7 +13,7 @@ window.KENT.kentslider = {
 	default: {
 		config: {
 			dots:          true,
-			dotsClass:     'kent-slider-dots',
+			dotsClass:     "kent-slider-dots",
 			mobileFirst:   true,
 			useTransform:  true,
 			accessibility: true
@@ -21,14 +21,14 @@ window.KENT.kentslider = {
 	},
 	// react helper
 	react: function($el, breakpoint, config){
-		var loaded = $el.hasClass('slick-initialized');
-		if(ResponsiveBootstrapToolkit.is(breakpoint)) {
-			if(!loaded){
+		var loaded = $el.hasClass("slick-initialized");
+		if (ResponsiveBootstrapToolkit.is(breakpoint)) {
+			if (!loaded){
 				// init slider
 				$el.slick(config);
 			}
-		}else{
-			if(loaded){
+		} else {
+			if (loaded){
 				// de-init slider
 				$el.slick("unslick");
 			}
@@ -38,38 +38,39 @@ window.KENT.kentslider = {
 
 // Settings for profile_feature
 window.KENT.kentslider.profile_feature = {
-	config: $.extend({},window.KENT.kentslider.default.config ,{
-		slidesToShow:2,
-		slidesToScroll:2
+	config: $.extend({}, window.KENT.kentslider.default.config, {
+		slidesToShow: 2,
+		slidesToScroll: 2
 	}),
-	breakpoint:'<=md'
+	breakpoint:"<=md"
 };
 
 $(document).ready(function(){
 	// If class is found, init slider
-	$('.kent-slider').each(function()
-	{	
-		// Load config
-		var slider_config = $(this).data('slider-config');
+	$(".kent-slider").each(function(){
 
-		if(typeof slider_config ==='undefined') {
-			slider_config = 'default';
+		// Load config
+		var slider_config = $(this).data("slider-config");
+
+		if (typeof slider_config === "undefined") {
+			slider_config = "default";
 		}
 
 		var config = window.KENT.kentslider[slider_config].config;
 
 		// Does this carousel behave differently at different breakpoints
-		var breakpoint  = typeof window.KENT.kentslider[slider_config].breakpoint !=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;
-		if(breakpoint){
+		var breakpoint  = typeof window.KENT.kentslider[slider_config].breakpoint !== "undefined" ? window.KENT.kentslider[slider_config].breakpoint : false;
+
+		if (breakpoint){
 			// react to inital size
 			window.KENT.kentslider.react($(this), breakpoint, config);
 			var $this = $(this);
 			// Handle resize on view port change
-			$(window).on('viewport:resize',function(){
+			$(window).on("viewport:resize", function(){
 				window.KENT.kentslider.react($this, breakpoint, config);
 			});
 
-		}else{
+		} else {
 			// Init slider
 			$(this).slick(config);
 		}

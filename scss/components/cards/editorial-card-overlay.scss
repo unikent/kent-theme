@@ -1,85 +1,84 @@
-.card.editorial{
+.card.editorial {
 
-	.card-title-wrap{
-		background-color: #FFF;
+    .card-title-wrap {
+        background-color: #FFFFFF;
 
+        .card-text {
+            color:       $body-color;
+            font-family: $font-family-sans-serif;
 
-		.card-text{
-			color: $body-color;
-			font-family: $font-family-sans-serif;
+        }
+        .card-title {
+            color:          $brand-primary;
+            text-transform: uppercase;
+            font-size:      2rem;
+            @include media-breakpoint-up(md) {
+                font-size: 2.2rem;
+            }
+        }
 
-		}
-		.card-title{
-			color: $brand-primary;
-			text-transform: uppercase;
-			font-size: 2rem;
-			@include media-breakpoint-up(md){
-				font-size: 2.2rem;
-			}
-		}
+        @include media-breakpoint-up(md) {
+            background-color: rgba(255, 255, 255, .9);
+            top:              1rem;
+            left:             1rem;
+            bottom:           1rem;
+            max-height:       100%;
 
-		@include media-breakpoint-up(md) {
-			background-color: rgba(255, 255, 255, .9);
-			top:1rem;
-			left:1rem;
-			bottom:1rem;
-			max-height: 100%;
+            width:            66.6666%;
 
-			width: 66.6666%;
+            &.expanded {
+                top:    0;
+                left:   0;
+                bottom: 0;
+            }
 
-			&.expanded{
-				top:0;
-				left:0;
-				bottom:0;
-			}
+            &.pull-right {
+                left:  auto;
+                right: 1rem;
+                &.expanded {
+                    right: 0;
+                }
+            }
 
-			&.pull-right{
-				left:auto;
-				right:1rem;
-				&.expanded{
-					right:0;
-				}
-			}
+        }
+        @include media-breakpoint-up(xl) {
+            width: 40%;
+        }
 
-		}
-		@include media-breakpoint-up(xl){
-			width: 40%;
-		}
+    }
 
-	}
+    &.card-inverse, .card-inverse {
+        .card-title-wrap {
+            background-color: #000000;
+            @include media-breakpoint-up(md) {
+                background-color: rgba(0, 0, 0, .9);
+            }
+        }
+        .card-text {
+            color: #FFFFFF;
+        }
+    }
 
-	&.card-inverse, .card-inverse {
-		.card-title-wrap{
-			background-color: #000;
-			@include media-breakpoint-up(md) {
-				background-color: rgba(0,0,0,.9);
-			}
-		}
-		.card-text{
-			color: #FFF;
-		}
-	}
-
-	@each $name, $color in $brand-colors-light {
-		&.editorial-#{$name} {
-			.card-title-wrap{
-				background-color: $color;
-				@include media-breakpoint-up(md) {
-					background-color: rgba($color, 0.9);
-				}
-			}
-		}
-	}
-	@each $name, $color in $brand-colors-dark {
-		&.editorial-#{$name} {
-			@extend .card-inverse;
-			.card-title-wrap{
-				background-color: $color;
-				@include media-breakpoint-up(md) {
-					background-color: rgba($color, 0.9);
-				}
-			}
-		}
-	}
+    @each $name, $color in $brand-colors-light {
+        &.editorial-#{$name} {
+            .card-title-wrap {
+                background-color: $color;
+                @include media-breakpoint-up(md) {
+                    background-color: rgba($color, 0.9);
+                }
+            }
+        }
+    }
+    @each $name, $color in $brand-colors-dark {
+        &.editorial-#{$name} {
+            @extend .card-inverse;
+            .card-title-wrap {
+                background-color: $color;
+                @include media-breakpoint-up(md) {
+                    background-color: rgba($color, 0.9);
+                }
+            }
+        }
+    }
 
 }
