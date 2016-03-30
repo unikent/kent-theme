@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-sass");
 	grunt.loadNpmTasks("grunt-eslint");
-    grunt.loadNpmTasks('grunt-sass-lint');
+	grunt.loadNpmTasks("grunt-sass-lint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-cssnano");
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-subgrunt");
 
 	// Define tasks
-	grunt.registerTask("development", [ "sasslint", "eslint", "handlebars", "uglify:bootstrap", "concat", "copy", "sass", "postcss", "patterns_local"]);
+	grunt.registerTask("development", [ "eslint", "handlebars", "uglify:bootstrap", "concat", "copy", "sass", "postcss", "patterns_local"]);
 	grunt.registerTask("production", [ "eslint", "handlebars", "uglify:bootstrap", "concat", "uglify:main", "copy", "sass", "postcss", "cssnano", "modernizr", "patterns"]);
 	grunt.registerTask("jwplayer", [ "subgrunt:jwplayer"]);
 	grunt.registerTask("default", [ "development" ]);

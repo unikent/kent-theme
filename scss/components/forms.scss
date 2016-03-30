@@ -17,3 +17,22 @@ input:-ms-input-placeholder {
 select {
     border-radius: 0;
 }
+
+// Form validation states
+.has-success {
+    .c-select{
+       border-color: $brand-success;
+    }
+}
+
+.has-warning {
+    .c-select{
+        border-color: $brand-warning;
+    }
+}
+
+.has-danger {
+    .c-select{
+        border-color: $brand-danger;
+    }
+}
