@@ -1,0 +1,79 @@
+@mixin kent-alert-variant($border, $color, $icon) {
+    background-color: $alert-bg;
+    border-color: $border;
+    color: $body-color;
+
+    hr {
+        border-top-color: darken($border, 5%);
+    }
+
+    .alert-heading, strong{
+        color: $color;
+
+        &:before{
+            content: $icon;
+        }
+    }
+
+    .alert-link {
+        color: darken($body-color, 10%);
+    }
+}
+
+
+.alert {
+
+    background-color: $alert-bg;
+
+    .alert-heading{
+        position: relative;
+        display: block;
+        padding-left: 2.5rem;
+
+        &:before{
+            font-family: $font-family-kentfont;
+            font-size: 2rem;
+            position: absolute;
+            top: -.35rem;
+            left: 0;
+            display: block;
+            width: 2rem;
+            height: 2rem;
+            line-height: 2rem;
+            text-align: center;
+        }
+
+    }
+
+    > ul {
+        margin-left: 4rem;
+        padding-left: 0;
+
+        li{
+            line-height: 1.4rem;
+        }
+    }
+
+    a{
+        border-bottom: 1px solid #CCCCCC;
+        text-decoration: none;
+
+        &:hover, &:focus {
+            text-decoration: none;
+            border-bottom: 1px solid $link-hover-color;
+        }
+    }
+}
+
+.alert-success {
+    @include kent-alert-variant($alert-success-border, $alert-success-text, $kf-check-circle);
+}
+.alert-info {
+    @include kent-alert-variant($alert-info-border, $alert-info-text, $kf-info-circle);
+}
+.alert-warning {
+    @include kent-alert-variant($alert-warning-border, $alert-warning-text, $kf-exclamation-circle);
+}
+.alert-danger {
+    @include kent-alert-variant($alert-danger-border, $alert-danger-text, $kf-exclamation-circle);
+}

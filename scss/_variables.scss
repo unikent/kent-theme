@@ -93,6 +93,12 @@ $brand-accent: #937227; //use on light backgrounds
 $brand-accent-light: #CE9716; //use on dark backgrounds
 
 $brand-dark: #333333;
+
+$brand-success:             #5cb85c;
+$brand-info:                $kent-primary;
+$brand-warning:             #bcaa12;
+$brand-danger:              #d9534f;
+
 $border-gray: #E6E6E6;
 
 $gray-dark-trans: rgba(0, 0, 0, 0.8);
@@ -227,6 +233,29 @@ $modal-backdrop-opacity: .95;
 
 //popovers
 $popover-box-shadow: 1px 1px 3px #BFBFBF;
+
+
+//alerts
+
+$alert-border-width: 1px;
+
+$alert-bg: #fff;
+
+$alert-success-bg:            $alert-bg;
+$alert-success-text:          $brand-success;
+$alert-success-border:        $brand-success;
+
+$alert-info-bg:               $alert-bg;
+$alert-info-text:             $brand-info;
+$alert-info-border:           $brand-info;
+
+$alert-warning-bg:            $alert-bg;
+$alert-warning-text:          $brand-warning;
+$alert-warning-border:        $brand-warning;
+
+$alert-danger-bg:             $alert-bg;
+$alert-danger-text:           $brand-danger;
+$alert-danger-border:         $brand-danger;
 
 //KENT BAR OVERRIDES
 $kentbar-height: 48px;
