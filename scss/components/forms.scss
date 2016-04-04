@@ -18,10 +18,19 @@ select {
     border-radius: 0;
 }
 
+.form-control-label{
+    font-weight: bold;
+    padding-left:0;
+    padding-right: 0;
+}
+
 // Form validation states
 .has-success {
     .c-select{
        border-color: $brand-success;
+    }
+    .form-control-label{
+        color: $body-color;
     }
 }
 
@@ -29,10 +38,58 @@ select {
     .c-select{
         border-color: $brand-warning;
     }
+    .form-control-label{
+        color: $body-color;
+    }
 }
 
 .has-danger {
     .c-select{
         border-color: $brand-danger;
     }
+}
+
+.validation-error{
+    display:none;
+}
+
+.has-danger{
+    .validation-error{
+        display: block !important; //because jquery will add an inline style
+        clear:both;
+        color: $brand-danger;
+        padding: 0.25rem 0;
+    }
+}
+
+.validation-group {
+
+    &.has-danger{
+
+        & + .validation-group-errors{
+
+            margin-top: -.75rem;
+            margin-bottom: 1rem;
+
+            .validation-error{
+                display: block !important; //because jquery will add an inline style
+                clear:both;
+                color: $brand-danger;
+                padding: 0.25rem 0;
+            }
+        }
+    }
+
+}
+
+//suppress spinners for number fields
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
 }
