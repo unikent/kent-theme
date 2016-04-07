@@ -93,7 +93,6 @@
 .media-wrap-parallax {
     @extend .media-wrap-letterbox;
 
-<<<<<<< HEAD
 	& > img {
 		margin: 0 !important; // This should never not be the case!
 
@@ -101,14 +100,6 @@
 			position: absolute;
 		}
 	}
-=======
-    & > img {
-        @include media-breakpoint-up(sm) {
-            position: absolute;
-        }
-
-    }
->>>>>>> e138afaf63a63c2aceb42af5afea8cb7b7ea7db4
 }
 
 figure {
@@ -214,13 +205,8 @@ figure {
 }
 
 figure.featured-image {
-
-<<<<<<< HEAD
 	overflow: visible;
 	margin-top: 0px;
-=======
-    overflow:      visible;
->>>>>>> e138afaf63a63c2aceb42af5afea8cb7b7ea7db4
 
     @include media-breakpoint-up(md) {
         margin-top: -3.5rem;
