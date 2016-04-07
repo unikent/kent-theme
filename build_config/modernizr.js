@@ -1,6 +1,6 @@
 module.exports = {
 	build: {
-		devFile: "vendor/modernizr/modernizr.js",
+		devFile: "node_modules/modernizr/src/Modernizr.js",
 		outputFile: "public/assets/js/modernizr.min.js",
 		files: {
 			"src": [

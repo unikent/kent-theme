@@ -1,95 +1,94 @@
 @mixin showhide {
-	max-height: 0;
-	overflow: hidden;
-	transition: max-height 300ms, padding 450ms;
+    max-height: 0;
+    overflow:   hidden;
+    transition: max-height 300ms, padding 450ms;
 
-	.tab-content > &.tab-pane,
-	&.tab-pane{
-		background: darken(#f5f5f5,5%);
-		padding: 0 1rem;
-		display: block;
-		&.fade{
-			opacity: 1;
-		}
-	}
+    .tab-content > &.tab-pane,
+    &.tab-pane {
+        background: darken(#F5F5F5, 5%);
+        padding:    0 1rem;
+        display:    block;
+        &.fade {
+            opacity: 1;
+        }
+    }
 
-	.tab-content > &.tab-pane.in,
-	&.in {
-		max-height: 2000px;
-		&.tab-pane{
-			padding: 1rem;
-		}
-	}
+    .tab-content > &.tab-pane.in,
+    &.in {
+        max-height: 2000px;
+        &.tab-pane {
+            padding: 1rem;
+        }
+    }
 
 }
 
-.collapse-xs-up{
-  @include showhide;
+.collapse-xs-up {
+    @include showhide;
 }
+
 .collapse-sm-up,
 .collapse-md-up,
 .collapse-lg-up,
-.collapse-xl-ip{
-  max-height: 2000px;
+.collapse-xl-ip {
+    max-height: 2000px;
 }
-@include media-breakpoint-up(sm){
-  .collapse-sm-up{
+
+@include media-breakpoint-up(sm) {
+    .collapse-sm-up {
+        @include showhide;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .collapse-md-up {
+        @include showhide;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .collapse-lg-up {
+        @include showhide;
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .collapse-xl-up {
+        @include showhide;
+    }
+}
+
+.collapse-xl-down {
     @include showhide;
-  }
-}
-
-
-@include media-breakpoint-up(md){
-  .collapse-md-up{
-    @include showhide;
-  }
-}
-
-@include media-breakpoint-up(lg){
-  .collapse-lg-up{
-    @include showhide;
-  }
-}
-
-@include media-breakpoint-up(xl){
-  .collapse-xl-up{
-    @include showhide;
-  }
-}
-
-
-.collapse-xl-down{
-  @include showhide;
 }
 
 .collapse-xs-down,
 .collapse-sm-down,
 .collapse-md-down,
-.collapse-lg-down{
-  max-height: 2000px;
+.collapse-lg-down {
+    max-height: 2000px;
 }
 
-@include media-breakpoint-down(lg){
-  .collapse-lg-down{
-    @include showhide;
-  }
+@include media-breakpoint-down(lg) {
+    .collapse-lg-down {
+        @include showhide;
+    }
 }
 
-
-@include media-breakpoint-down(md){
-  .collapse-md-down{
-    @include showhide;
-  }
+@include media-breakpoint-down(md) {
+    .collapse-md-down {
+        @include showhide;
+    }
 }
 
-@include media-breakpoint-down(sm){
-  .collapse-sm-down{
-    @include showhide;
-  }
+@include media-breakpoint-down(sm) {
+    .collapse-sm-down {
+        @include showhide;
+    }
 }
 
-@include media-breakpoint-down(xs){
-  .collapse-xs-down{
-    @include showhide;
-  }
+@include media-breakpoint-down(xs) {
+    .collapse-xs-down {
+        @include showhide;
+    }
 }

@@ -1,147 +1,143 @@
-@mixin bullet-list{
-	list-style: none;
-	padding:0;
-	li{
-		padding-left: 0.8rem;
-		position: relative;
-		&:before{
-			font-family: $font-family-kentfont;
-			content:$kf-square;
-			color: $brand-primary;
-			font-size: 0.35rem;
-			left:0;
-			position: absolute;
-			padding-top: 0.45rem;
-		}
-		ul{
-			list-style: none;
-			padding-left: 2rem;
-			li{
-				&:before{
-					color: $gray-light;
-				}
-			}
-		}
-	}
+@mixin bullet-list {
+    list-style: none;
+    padding:    0;
+    li {
+        padding-left: 0.8rem;
+        position:     relative;
+        &:before {
+            font-family: $font-family-kentfont;
+            content:     $kf-square;
+            color:       $brand-primary;
+            font-size:   0.35rem;
+            left:        0;
+            position:    absolute;
+            padding-top: 0.45rem;
+        }
+        ul {
+            list-style:   none;
+            padding-left: 2rem;
+            li {
+                &:before {
+                    color: $gray-light;
+                }
+            }
+        }
+    }
 }
 
-@mixin link-list{
+@mixin link-list {
 
-	list-style: none;
-	padding: 0;
-	li{
-		padding: 0.5rem 0;
-		border-bottom: 1px solid $border-gray;
-		a{
-			display: inline-block;
-			vertical-align: middle;
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-			width: 100%;
-			&:hover{
-				text-decoration: underline;
-			}
-		}
-		span{
-			display: block;
-			color: $brand-accent;
-			line-height: 0.9rem;
-			margin-bottom: 0.2rem;
-		}
-	}
+    list-style: none;
+    padding:    0;
+    li {
+        padding:       0.5rem 0;
+        border-bottom: 1px solid $border-gray;
+        a {
+            display:        inline-block;
+            vertical-align: middle;
+            overflow:       hidden;
+            text-overflow:  ellipsis;
+            white-space:    nowrap;
+            width:          100%;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        span {
+            display:       block;
+            color:         $brand-accent;
+            line-height:   0.9rem;
+            margin-bottom: 0.2rem;
+        }
+    }
 
 }
 
-
-h1,.h1 {
-  font-family: $font-family-serif;
-	color: $kent-primary;
+h1, .h1 {
+    font-family: $font-family-serif;
+    color:       $kent-primary;
 }
 
-h2,.h2,
-h3,.h3,
-h4,.h4,
-h5,.h5,
-h6,.h6{
-  color: $kent-primary;
-  font-weight: bold;
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    color:       $kent-primary;
+    font-weight: bold;
 }
 
-
-h2,.h2 {
-	margin-bottom: 1.125rem;
+h2, .h2 {
+    margin-bottom: 1.125rem;
 }
 
-p+h2, p+.h2{
-	margin-top: 2.566rem;		
+p + h2, p + .h2 {
+    margin-top: 2.566rem;
 }
 
-p+h3, p+.h3 {
-	margin-top: 1.802rem;
+p + h3, p + .h3 {
+    margin-top: 1.802rem;
 }
 
-
-p+h4, p+.h4,
-p+h5, p+.h5,
-p+h6, p+.h6{
- 	margin-top: 1.266em;
+p + h4, p + .h4,
+p + h5, p + .h5,
+p + h6, p + .h6 {
+    margin-top: 1.266em;
 }
 
-
-.lead{
-	font-family: $font-family-serif;
-	color: $brand-primary;
-	margin-bottom: 2.25rem;
-	font-weight: bold;
-	font-size: 1.2rem;
+.lead {
+    font-family:   $font-family-serif;
+    color:         $brand-primary;
+    margin-bottom: 2.25rem;
+    font-weight:   bold;
+    font-size:     1.2rem;
 }
 
 .strap-line {
-	font-family: $font-family-serif;
-	color: $brand-primary;
-	text-transform: uppercase;
-	font-weight: normal;
-	margin-bottom: 0.5rem;
+    font-family:    $font-family-serif;
+    color:          $brand-primary;
+    text-transform: uppercase;
+    font-weight:    normal;
+    margin-bottom:  0.5rem;
 
-	span {
-		color: $brand-accent;
-	}
+    span {
+        color: $brand-accent;
+    }
 }
 
-
 @include media-breakpoint-up(xl) {
-  html {
-    font-size: 18px;
-  }
+    html {
+        font-size: 18px;
+    }
 }
 
 @include media-breakpoint-up(xxxl) {
-	html {
-		font-size: 20px;
-	}
+    html {
+        font-size: 20px;
+    }
 }
 
-.content-header{
-	h1{
-		margin-bottom: 2rem;
-	}
+.content-header {
+    h1 {
+        margin-bottom: 2rem;
+    }
 }
-.content-container{
 
-	& > ul{
-		@include bullet-list();
-		padding-left: 2rem;
-	}
+.content-container {
 
-	p{
-		a {
-			border-bottom: 1px solid #CCCCCC;
+    & > ul {
+        @include bullet-list();
+        padding-left: 2rem;
+    }
 
-			&:hover, &:focus {
-				border-bottom: 1px solid $link-hover-color;
-			}
-		}
-	}
+    p {
+        a {
+            border-bottom: 1px solid #CCCCCC;
+
+            &:hover, &:focus {
+                border-bottom: 1px solid $link-hover-color;
+            }
+        }
+    }
 }
 
