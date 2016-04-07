@@ -6137,9 +6137,11 @@ p + h6, p + .h6 {
     .media-wrap-letterbox > img, .media-wrap-parallax > img, .card.card-overlay .card-media-wrap > img, .card.card-overlay .card-embed-wrap > img {
       margin-top: -20rem; } }
 
-@media (min-width: 544px) {
-  .media-wrap-parallax > img {
-    position: absolute; } }
+.media-wrap-parallax > img {
+  margin: 0 !important; }
+  @media (min-width: 544px) {
+    .media-wrap-parallax > img {
+      position: absolute; } }
 
 figure {
   position: relative;
@@ -6232,6 +6234,7 @@ figure {
 
 figure.featured-image {
   overflow: visible;
+  margin-top: 0px;
   margin-bottom: 0; }
   @media (min-width: 768px) {
     figure.featured-image {

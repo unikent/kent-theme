@@ -5,18 +5,17 @@
  *
  * @uses https://github.com/markdalgleish/stellar.js
  */
- var stellarActivated = false;
+(function(){
 
-function react_to_window() {
-	if (ResponsiveBootstrapToolkit.is("xs")) {
-		if (stellarActivated === true) {
-			$(window).data("plugin_stellar").destroy();
-			stellarActivated = false;
-		}
-		$(".media-wrap-parallax").css("min-height", "");
-	} else {
-		if (stellarActivated === false) {
+	var stellarSetup = false;
+	var stellarActive = false;
 
+	// Enable stellar.js
+	var initStellar = function(){
+
+		if (stellarSetup === true){
+			$(window).data("plugin_stellar").init();
+		} else {
 			$.stellar({
 				// Set scrolling to be in either one or both directions
 				horizontalScrolling: false,
@@ -50,23 +49,47 @@ function react_to_window() {
 				hideElement: function($elem) { $elem.hide(); },
 				showElement: function($elem) { $elem.show(); }
 			});
-
-			$(window).data("plugin_stellar").init();
-			stellarActivated = true;
+			stellarSetup = true;
 		}
-		var $ratio = ResponsiveBootstrapToolkit.is("<xl") ? ( 9 / 16 ) : ( 7 / 16 );
-		$(".media-wrap-parallax").each(function () {
-			$(this).css("min-height", ($(window).width() * $ratio) + "px");
-		});
-		$(window).data("plugin_stellar").refresh();
+		stellarActive = true;
+	};
+
+	// Disable stellar.js
+	var disableStellar = function(){
+		$(window).data("plugin_stellar").destroy();
+		stellarActive = false;
+	};
+
+	// Handle resize
+	function react_to_window() {
+
+		if (ResponsiveBootstrapToolkit.is("xs")) {
+
+			if (stellarActive){
+				disableStellar();
+			}
+			$(".media-wrap-parallax").css("min-height", "");
+
+		} else {
+
+			if (!stellarActive){
+				initStellar();
+			}
+
+			// Set ratio's
+			var $ratio = ResponsiveBootstrapToolkit.is("<xl") ? ( 9 / 16 ) : ( 7 / 16 );
+			$(".media-wrap-parallax").each(function () {
+				$(this).css("min-height", ($(window).width() * $ratio) + "px");
+			});
+			$(window).data("plugin_stellar").refresh();
+		}
 	}
-}
 
-$(window).on("viewport:resize", function(){
-	react_to_window();
-});
+	$(window).on("viewport:resize", function(){
+		react_to_window();
+	});
 
-
-$(document).ready(function(){
-	react_to_window();
-});
+	$(document).ready(function(){
+		react_to_window();
+	});
+})();
