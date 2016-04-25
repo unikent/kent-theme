@@ -70,12 +70,25 @@
     }
 
     .footer-section {
+        padding:       0 1rem;
+        margin-right:  -($grid-gutter-width/2);
+        margin-left:   -($grid-gutter-width/2);
+
         &.in {
-            margin-right:  -($grid-gutter-width/2);
-            margin-left:   -($grid-gutter-width/2);
-            padding:       0 1rem 0.5rem;
+            padding-bottom: 0.5rem;
             border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         }
+
+        @include media-breakpoint-up(sm){
+            &.collapse-xs-down{
+                &.in{
+                    margin:        0;
+                    padding:       0;
+                    border-bottom: none;
+                }
+            }
+        }
+
         @include media-breakpoint-up(md) {
             margin-bottom: 0.5rem;
 

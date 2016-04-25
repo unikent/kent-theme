@@ -5304,12 +5304,9 @@ a.text-danger:focus, a.text-danger:hover {
 [class^="kf-"],
 [class*=" kf-"] {
   display: inline-block;
-  -webkit-font-feature-settings: normal;
-          font-feature-settings: normal;
-  -webkit-font-kerning: auto;
-          font-kerning: auto;
-  -webkit-font-language-override: normal;
-          font-language-override: normal;
+  font-feature-settings: normal;
+  font-kerning: auto;
+  font-language-override: normal;
   font-size: inherit;
   font-size-adjust: none;
   font-stretch: normal;
@@ -7361,6 +7358,9 @@ input[type=number]::-webkit-outer-spin-button {
     margin-right: 32px;
     margin-right: 2rem;
     font-size: 14.4px; }
+  #kentBar.kent-bar.in .audience-nav-links,
+  #kentBar.audience-bar.in .audience-nav-links {
+    height: 166px; }
   @media (min-width: 768px) {
     #kentBar.kent-bar a.navbar-brand, #kentBar.kent-bar button,
     #kentBar.audience-bar a.navbar-brand,
@@ -7368,7 +7368,10 @@ input[type=number]::-webkit-outer-spin-button {
       display: none; }
     #kentBar.kent-bar .tag-line,
     #kentBar.audience-bar .tag-line {
-      display: inline-block; } }
+      display: inline-block; }
+    #kentBar.kent-bar.in .audience-nav-links,
+    #kentBar.audience-bar.in .audience-nav-links {
+      height: auto; } }
 
 .global-header {
   position: relative;
@@ -8031,19 +8034,23 @@ nav.breadcrumb {
     margin-bottom: 0.5rem;
     margin-top: -3.2px;
     margin-top: -0.2rem; }
-  .beta-bar .beta-toggler {
+  .beta-bar button.beta-toggler {
     cursor: pointer;
     position: absolute;
     right: 16px;
     right: 1rem;
     top: 12px;
-    top: .75rem; }
-    .beta-bar .beta-toggler:after {
+    top: .75rem;
+    left: auto;
+    background: none; }
+    .beta-bar button.beta-toggler:after {
       font-size: 24px;
       font-size: 1.5rem;
       content: "";
       font-family: "kentfont", sans-serif;
       color: #05345C; }
+    .beta-bar button.beta-toggler:hover, .beta-bar button.beta-toggler:focus, .beta-bar button.beta-toggler:active {
+      background: none; }
 
 button.beta-toggler {
   position: absolute;
@@ -10176,21 +10183,29 @@ blockquote.pull-quote {
           border-bottom: none; }
         .global-footer .footer-section-title:after {
           display: none; } }
-  .global-footer .footer-section.in {
+  .global-footer .footer-section {
+    padding: 0 16px;
+    padding: 0 1rem;
     margin-right: -15px;
     margin-right: -0.9375rem;
     margin-left: -15px;
-    margin-left: -0.9375rem;
-    padding: 0 16px 8px;
-    padding: 0 1rem 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
-  @media (min-width: 768px) {
-    .global-footer .footer-section {
-      margin-bottom: 0.5rem; }
-      .global-footer .footer-section.in {
+    margin-left: -0.9375rem; }
+    .global-footer .footer-section.in {
+      padding-bottom: 8px;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5); }
+    @media (min-width: 544px) {
+      .global-footer .footer-section.collapse-xs-down.in {
         margin: 0;
         padding: 0;
         border-bottom: none; } }
+    @media (min-width: 768px) {
+      .global-footer .footer-section {
+        margin-bottom: 0.5rem; }
+        .global-footer .footer-section.in {
+          margin: 0;
+          padding: 0;
+          border-bottom: none; } }
   .global-footer .footer-section-open .footer-section-title {
     cursor: default; }
     .global-footer .footer-section-open .footer-section-title:after {

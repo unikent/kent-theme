@@ -23,7 +23,7 @@
         margin-bottom:    0.5rem;
         margin-top:       -0.2rem;
     }
-    .beta-toggler {
+    button.beta-toggler {
         cursor:   pointer;
         &:after {
             font-size:   1.5rem;
@@ -34,6 +34,11 @@
         position: absolute;
         right:    1rem;
         top:      .75rem;
+        left:auto;
+        background: none;
+        &:hover, &:focus, &:active {
+            background: none;
+        }
     }
 }
 

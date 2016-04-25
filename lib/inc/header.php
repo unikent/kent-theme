@@ -1,6 +1,6 @@
 <?php use unikent\kent_theme\KentThemeHelper; ?>
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 	<head>
 		<title><?php echo $page_title; ?></title>
 
@@ -66,10 +66,12 @@
 		<?php echo $head_markup ;?>
 	</head>
 	<body<?php echo !empty($home_page) ? ' class="global-header-transparent"' :'' ; ?>>
+		<?php if(!$home_page){ ?>
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
+		<?php } ?>
 		<a href="#main_content" class="sr-only">Jump to content</a>
 		<?php if($beta_bar){ ?>
-		<section class="beta-bar navbar">
+		<section id="beta-bar" class="beta-bar navbar" role="banner">
 			<p><span class="beta-bar-beta">BETA</span></p>
 
 			<p>We're testing <a href="<?php echo isset($beta_bar['about_url']) ? $beta_bar['about_url'] : 'https://blogs.kent.ac.uk/webdev/2015/12/04/beta-kent/' ?>">a new design</a>.</p>
@@ -80,15 +82,15 @@
 			<p>
 				<button class="btn btn-secondary feedback" onclick="return window.usabilla_live('click');">Give us feedback</button>
 			</p>
-			<span class="beta-toggler"></span>
+			<button class="beta-toggler" aria-expanded="true" aria-controls="beta-bar" title="Hide the Beta bar"></button>
 		</section>
 		<?php } ?>
-		<header class="global-header">
-			<section id="kentBar" class="audience-bar navbar">
+		<header class="global-header" role="navigation">
+			<section id="kentBar" class="audience-bar navbar" role="menubar">
 				<a class="navbar-brand kf-kent-horizontal" href="<?php echo HOME_URL; ?>" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a>
 				<span class="tag-line">The UK's European university</span>
-				<button class="menu-button" aria-controls="global-nav-menu" title="Open main menu" aria-expanded="false"></button>
-				<button class="search-button" aria-controls="global-nav-search" title="Open search" aria-expanded="false"></button>
+				<button class="menu-button" aria-controls="global-nav-menu" aria-expanded="false"><span class="sr-only">Open main menu</span></button>
+				<button class="search-button" aria-controls="global-nav-search" aria-expanded="false"><span class="sr-only">Open search</span></button>
 				<button class="audience-menu kf-user"></button>
 				<nav class="audience-nav-links" role="menu">
 					<a href="#" data-action="student" role="menuitem">Student</a>
@@ -99,11 +101,11 @@
 			</section>
 			<section class="global-nav">
 				<?php if($beta_bar){ ?>
-					<button class="beta-toggler">BETA</button>
+					<button class="beta-toggler" aria-expanded="true" aria-controls="beta-bar" title="Show/hide the Beta bar">BETA</button>
 				<?php } ?>
 				<a class="main-logo kf-kent-block" href="<?php echo HOME_URL; ?>"><span class="sr-only">The University of Kent</span></a>
 
-				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" title="Open search"></button>
+				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" aria-expanded="false"><span class="sr-only">Open search</span></button>
 
 				<div class="global-nav-menu" id="global-nav-menu" role="menubar">
 					<?php include 'global-nav.php'; ?>
@@ -122,7 +124,7 @@
 							<div class="input-group input-group-lg">
 								<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department. keyword... " autocomplete="off">
 								<span class="input-group-btn">
-									<button type="submit" class="btn btn-accent btn-icon kf-search" aria-label="Search"></button>
+									<button type="submit" class="btn btn-accent btn-icon kf-search" aria-label="Search"><span class="sr-only">Search</span></button>
 								</span>
 							</div>
 						</div>
@@ -148,4 +150,7 @@
 			} ?>
 		</header>
 
-		<main id="main_content" class=" <?php echo !empty($main_class) ? $main_class :'' ; ?>">
+		<main id="main_content" class=" <?php echo !empty($main_class) ? $main_class :'' ; ?>" role="main">
+		<?php if($home_page){ ?>
+		<h1 class="sr-only">The University of Kent</h1>
+		<?php } ?>
