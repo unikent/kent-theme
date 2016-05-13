@@ -1,25 +1,20 @@
 // Variable overrides and custom variables
 @import "_variables";
-
 // Bootstrap
 @import "_bootstrap";
-
 // Fonts
 @import "_fonts";
-
 // Vendor
-
-@import "../vendor/kent-font/build/less/_kentfont";
-@import "../vendor/slick-carousel/slick/slick.scss";
-
-@import "../vendor/kent-bar/src/scss/bar";
-@import "../vendor/kent-bar/src/scss/menu";
-
+@import "../node_modules/kent-font/build/less/_kentfont";
+@import "../node_modules/slick-carousel/slick/slick.scss";
+@import "../node_modules/kent-bar/src/scss/bar";
+@import "../node_modules/kent-bar/src/scss/menu";
 // Theme components
 @import "components/responsive_utils";
 @import "components/typography";
 @import "components/scaffolding";
 @import "components/images";
+@import "components/alerts";
 @import "components/buttons";
 @import "components/forms";
 @import "components/navigation";
@@ -40,5 +35,4 @@
 @import "components/footer";
 @import "components/table";
 // Modules
-
 @import "components/modules/quickspot";

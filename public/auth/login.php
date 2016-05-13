@@ -13,9 +13,9 @@ if(defined("ENV") && ENV !=="dev") {
 	$saml = new SimpleSAML_Auth_Simple($sp);
 
 	if(!$saml->isAuthenticated()) {
-		$saml->requireAuth([
-							   'ReturnTo' => HOME_URL . "/auth/process.php?returnURL=" . $returnTo
-						   ]);
+		$saml->requireAuth(array(
+							   'ReturnTo' => HOME_URL . "auth/process.php?returnTo=" . $returnTo
+						   ));
 	}else{
 		include "process.php";
 	}

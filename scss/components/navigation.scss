@@ -1,225 +1,219 @@
 .mobile-nav-links {
- 	a {
-		display:block;
-		color: #eee;
-		padding: 0.75rem 1rem;
-		position: relative;
-		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-		font-size: 1rem;
-		&:after{
-			position: absolute;
-			display: inline-block;
-			content:$kf-angle-right;
-			right: 1rem;
-			font-family: $font-family-kentfont;
-		}
+    a {
+        display:       block;
+        color:         #EEEEEE;
+        padding:       0.75rem 1rem;
+        position:      relative;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        font-size:     1rem;
+        &:after {
+            position:    absolute;
+            display:     inline-block;
+            content:     $kf-angle-right;
+            right:       1rem;
+            font-family: $font-family-kentfont;
+        }
 
-		&:hover{
-			background-color: rgba(255,255,255,0.1);
-		}
-		&.active{
-			background-color: rgba(255,255,255,0.1);
-		}
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        &.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
 
-
-	}
+    }
 }
 
-.card-panel.nav-links-panel, .nav-links-panel{
-	padding: 0;
+.card-panel.nav-links-panel, .nav-links-panel {
+    padding: 0;
 
-	.card-panel-body{
-		padding: 0;
-	}
+    .card-panel-body {
+        padding: 0;
+    }
 
-	nav{
-		overflow:         hidden;
-		width:            100%;
-		padding:          0;
-		a{
-			display: block;
-			position: relative;
-			padding: 0.75rem 1rem;
-			border-bottom: 1px solid #ddd;
-			font-size: 1rem;
-			color: $brand-primary;
-			.nav-link-desc {
-				display: none;
-			}
-			&:first-child{
-				border-top: 1px solid #ddd;
-			}
+    nav {
+        overflow: hidden;
+        width:    100%;
+        padding:  0;
+        a {
+            display:       block;
+            position:      relative;
+            padding:       0.75rem 1rem;
+            border-bottom: 1px solid #DDDDDD;
+            font-size:     1rem;
+            color:         $brand-primary;
+            .nav-link-desc {
+                display: none;
+            }
+            &:first-child {
+                border-top: 1px solid #DDDDDD;
+            }
 
-			&:after{
-				position: absolute;
-				display: inline-block;
-				content:$kf-angle-right;
-				right: 1rem;
-				font-family: $font-family-kentfont;
-				color: $brand-accent;
-			}
-		}
-	}
+            &:after {
+                position:    absolute;
+                display:     inline-block;
+                content:     $kf-angle-right;
+                right:       1rem;
+                font-family: $font-family-kentfont;
+                color:       $brand-accent;
+            }
+        }
+    }
 
-	@include media-breakpoint-up(md) {
-		padding: 1rem;
+    @include media-breakpoint-up(md) {
+        padding: 1rem;
 
-		.card-panel-body{
-			@extend .container;
-		}
-		nav {
-			display:          table;
-			table-layout:     fixed;
+        nav {
+            display:      table;
+            table-layout: fixed;
 
-			a {
-				min-width:        1%;
-				display:          table-cell;
+            a {
+                min-width:        1%;
+                display:          table-cell;
 
-				border:           0;
-				color:            $brand-primary;
-				line-height:      1.25rem;
-				text-align:       left;
-				padding:          0.75rem;
-				text-decoration:  none;
-				height:           $global-nav-height - 1.2;
-				background-color: transparent;
-				transition:       background-color 300ms;
-				&:hover, &:focus, &:active {
-					outline:          none;
-					background-color: rgba(255,255,255,0.7);
-				}
-				&:first-child{
-					border: none;
-				}
-				.nav-link-desc {
-					margin-top:  .4rem;
-					font-family: $font-family-sans-serif;
-					display:     inline-block;
-					font-size:   0.85rem;
-					width:       100%;
-					color:       $gray-dark;
-					line-height: 1rem;
-				}
-				&:after {
-					display: none;
-				}
-				.nav-link-title {
-					font-family: $headings-font-family-alt;
-					font-size:   1.2rem;
-					&:after {
-						content:      $kf-angle-right;
-						font-family:  $font-family-kentfont;
-						color:        $brand-accent;
-						padding-left: .5rem;
-					}
-				}
-				@include media-breakpoint-up(lg) {
-					.nav-link-title {
-						font-size: 1.4rem;
-					}
-					line-height: 1.4rem;
-					padding:     1rem;
-					.nav-link-desc {
-						font-size:   0.9rem;
-						line-height: 1rem;
+                border:           0;
+                color:            $brand-primary;
+                line-height:      1.25rem;
+                text-align:       left;
+                padding:          0.75rem;
+                text-decoration:  none;
+                height:           $global-nav-height - 1.2;
+                background-color: transparent;
+                transition:       background-color 300ms;
+                &:hover, &:focus, &:active {
+                    outline:          none;
+                    background-color: rgba(255, 255, 255, 0.7);
+                }
+                &:first-child {
+                    border: none;
+                }
+                .nav-link-desc {
+                    margin-top:  .4rem;
+                    font-family: $font-family-sans-serif;
+                    display:     inline-block;
+                    font-size:   0.85rem;
+                    width:       100%;
+                    color:       $gray-dark;
+                    line-height: 1rem;
+                }
+                &:after {
+                    display: none;
+                }
+                .nav-link-title {
+                    font-family: $headings-font-family-alt;
+                    font-size:   1.2rem;
+                    &:after {
+                        content:      $kf-angle-right;
+                        font-family:  $font-family-kentfont;
+                        color:        $brand-accent;
+                        padding-left: .5rem;
+                    }
+                }
+                @include media-breakpoint-up(lg) {
+                    .nav-link-title {
+                        font-size: 1.4rem;
+                    }
+                    line-height: 1.4rem;
+                    padding:     1rem;
+                    .nav-link-desc {
+                        font-size:   0.9rem;
+                        line-height: 1rem;
 
-					}
-				}
-			}
-		}
-	}
+                    }
+                }
+            }
+        }
+    }
 }
 
 .inline-links {
-	padding-top:.5rem;
-	a {
-		@extend .chevron-link;
+    padding-top: .5rem;
+    a {
+        @extend .chevron-link;
 
-		margin-left: .5rem;
-		font-size:0.9rem;
-	}
+        margin-left: .5rem;
+        font-size:   0.9rem;
+    }
 }
 
-
-.jump-links{
-	padding: 1rem;
-	background: $brand-primary-tint;
-	overflow: hidden;
-	margin-bottom: 2rem;
-	@include media-breakpoint-up(md) {
-		column-count: 2;
-		column-gap:   2rem;
-	}
-	p{
-		column-span: all;
-	}
-	a{
-		display: block;
-		&:before{
-			font-family: $font-family-kentfont;
-			content: $kf-caret-down;
-			padding-right: .5rem;
-			font-size: 0.9rem;
-		}
-	}
+.jump-links {
+    padding:       1rem;
+    background:    $brand-primary-tint;
+    overflow:      hidden;
+    margin-bottom: 2rem;
+    @include media-breakpoint-up(md) {
+        column-count: 2;
+        column-gap:   2rem;
+    }
+    p {
+        column-span: all;
+    }
+    a {
+        display: block;
+        &:before {
+            font-family:   $font-family-kentfont;
+            content:       $kf-caret-down;
+            padding-right: .5rem;
+            font-size:     0.9rem;
+        }
+    }
 }
 
+.nav.nav-tabs {
 
-.nav.nav-tabs{
+    border-bottom: 1px solid #DDDDDD;
 
-	border-bottom: 1px solid #ddd;
-
-	.nav-item{
-		.nav-link {
-			&.active {
-				font-weight: bold;
-				border-bottom: 3px solid $brand-primary;
-			}
-		}
-	}
+    .nav-item {
+        .nav-link {
+            &.active {
+                font-weight:   bold;
+                border-bottom: 3px solid $brand-primary;
+            }
+        }
+    }
 }
 
-.tab-content{
+.tab-content {
 
-	& > .tab-title{
-		cursor: pointer;
-		overflow:         hidden;
-		width:            100%;
-		display: block;
-		position: relative;
-		padding: 0.75rem 1rem;
-		border-bottom: 1px solid #ddd;
-		font-size: 1rem;
-		color: $brand-primary;
-		margin: 0;
-		font-weight: normal;
-		background: #f5f5f5;
+    & > .tab-title {
+        cursor:        pointer;
+        overflow:      hidden;
+        width:         100%;
+        display:       block;
+        position:      relative;
+        padding:       0.75rem 1rem;
+        border-bottom: 1px solid #DDDDDD;
+        font-size:     1rem;
+        color:         $brand-primary;
+        margin:        0;
+        font-weight:   normal;
+        background:    #F5F5F5;
 
-		&:first-child{
-			border-top: 1px solid #ddd;
-		}
+        &:first-child {
+            border-top: 1px solid #DDDDDD;
+        }
 
-		&:after{
-			position: absolute;
-			display: inline-block;
-			content:$kf-angle-up;
-			right: 1rem;
-			font-family: $font-family-kentfont;
-			color: $brand-primary;
-		}
-		&.collapsed{
-			&:after{
-				content:$kf-angle-down;
-			}
-		}
+        &:after {
+            position:    absolute;
+            display:     inline-block;
+            content:     $kf-angle-up;
+            right:       1rem;
+            font-family: $font-family-kentfont;
+            color:       $brand-primary;
+        }
+        &.collapsed {
+            &:after {
+                content: $kf-angle-down;
+            }
+        }
 
-	}
+    }
 
-	& > .tab-pane {
-		padding: 1rem;
+    & > .tab-pane {
+        padding: 1rem;
 
-		&.in,&.active{
-			border-bottom: 1px solid #ddd;
-		}
-	}
+        &.in, &.active {
+            border-bottom: 1px solid #DDDDDD;
+        }
+    }
 }

@@ -1,216 +1,218 @@
 @mixin kent-button-variant($color, $background, $border) {
-	color: $color;
-	background-color: $background;
-	border-color: $border;
-	//  $shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
-	//  .box-shadow($shadow);
+    color:            $color;
+    background-color: $background;
+    border-color:     $border;
+    //  $shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
+    //  .box-shadow($shadow);
 
-	$active-background: lighten($background, 10%);
-	$active-border: lighten($border, 12%);
+    $active-background: lighten($background, 10%);
+    $active-border: lighten($border, 12%);
 
-	&:focus,
-	&.focus,
-	&:active,
-	&.active,
-	.open > &.dropdown-toggle {
-		color: $color;
-		background-color: $active-background;
-		border-color: $active-border;
-	}
-	@include hover {
-		color: $color;
-		background-color: $active-background;
-		border-color: $active-border;
-		text-decoration: underline;
-	}
-	&:active,
-	&.active,
-	.open > &.dropdown-toggle {
-		// Remove the gradient for the pressed/active state
-		background-image: none;
-		@include box-shadow(inset 0 3px 5px rgba(0,0,0,.125));
-	}
-	&.disabled,
-	&:disabled,
-	fieldset[disabled] & {
-		&:focus,
-		&.focus {
-			background-color: $background;
-			border-color: $border;
-		}
-		@include hover {
-			background-color: $background;
-			border-color: $border;
-		}
-	}
+    &:focus,
+    &.focus,
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        color:            $color;
+        background-color: $active-background;
+        border-color:     $active-border;
+    }
+    @include hover {
+        color:            $color;
+        background-color: $active-background;
+        border-color:     $active-border;
+        text-decoration:  underline;
+    }
+    &:active,
+    &.active,
+    .open > &.dropdown-toggle {
+        // Remove the gradient for the pressed/active state
+        background-image: none;
+        @include box-shadow(inset 0 3px 5px rgba(0, 0, 0, .125));
+    }
+    &.disabled,
+    &:disabled,
+    fieldset[disabled] & {
+        &:focus,
+        &.focus {
+            background-color: $background;
+            border-color:     $border;
+        }
+        @include hover {
+            background-color: $background;
+            border-color:     $border;
+        }
+    }
 }
 
-@mixin icon-circle{
-	@extend .btn;
-	@include button-outline-variant(#aaa);
-	font-size: 1.7rem;
-	line-height: 1.9rem;
-	padding: 0;
-	border-radius: 50%;
-	width: 3rem;
-	height: 3rem;
-	text-align: center;
-	&:before{
-		font-family: $font-family-kentfont;
-		line-height: 3rem;
-		line-height: calc(3rem); // for reasons unknown to science, this means IE11 will now actually listen to the rem value
-	}
+@mixin icon-circle {
+    @extend .btn;
+    @include button-outline-variant(#AAAAAA);
+    font-size:     1.7rem;
+    line-height:   1.9rem;
+    padding:       0;
+    border-radius: 50%;
+    width:         3rem;
+    height:        3rem;
+    text-align:    center;
+    &:before {
+        font-family: $font-family-kentfont;
+        line-height: 3rem;
+        line-height: calc(3rem); // for reasons unknown to science, this means IE11 will now actually listen to the rem value
+    }
 }
 
-.chevron-link{
-  font-family: $font-family-sans-serif;
+.chevron-link {
+    font-family: $font-family-sans-serif;
 
-  &:after{
-    display: inline-block;
-    padding-left: 0.5rem;
-    content:$kf-angle-right;
-    font-family: $font-family-kentfont;
-    width:1.25rem;
-    text-align: left;
-	  transition: all 300ms;
-  }
-	&:hover{
-		&:after{
-			padding-left: 0.7rem;
-		}
-	}
+    &:after {
+        display:      inline-block;
+        padding-left: 0.5rem;
+        content:      $kf-angle-right;
+        font-family:  $font-family-kentfont;
+        width:        1.25rem;
+        text-align:   left;
+        transition:   all 300ms;
+    }
+    &:hover {
+        &:after {
+            padding-left: 0.7rem;
+        }
+    }
 }
-
 
 .btn-primary {
-	@include kent-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
-}
-.btn-secondary {
-	@include kent-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
-}
-.btn-tertiary{
-	@include kent-button-variant($body-color, $brand-tertiary, darken($brand-tertiary,20%));
-}
-.btn-accent{
-	@include kent-button-variant(#FFF, $brand-accent, $brand-accent);
+    @include kent-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
 
-.btn-label{
-	@include kent-button-variant(#737373, #efefef, #efefef);
-	border-radius: 4px;
-	padding: 0.35rem 0.55rem;
+.btn-secondary {
+    @include kent-button-variant($btn-secondary-color, $btn-secondary-bg, $btn-secondary-border);
+}
+
+.btn-tertiary {
+    @include kent-button-variant($body-color, $brand-tertiary, darken($brand-tertiary, 20%));
+}
+
+.btn-accent {
+    @include kent-button-variant(#FFFFFF, $brand-accent, $brand-accent);
+}
+
+.btn-label {
+    @include kent-button-variant(#737373, #EFEFEF, #EFEFEF);
+    border-radius: 4px;
+    padding:       0.35rem 0.55rem;
 }
 
 .btn-info {
-	@include kent-button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
-}
-.btn-success {
-	@include kent-button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
-}
-.btn-warning {
-	@include kent-button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
-}
-.btn-danger {
-	@include kent-button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+    @include kent-button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 }
 
+.btn-success {
+    @include kent-button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+
+.btn-warning {
+    @include kent-button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+
+.btn-danger {
+    @include kent-button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+}
 
 .btn-gray-outline {
-   	@include button-outline-variant(#aaa);
+    @include button-outline-variant(#AAAAAA);
 }
 
-.btn-gray-icon{
-	@include button-outline-variant(#aaa);
-	background-color: rgba(255,255,255,0.9);
-	font-size: 1.4rem;
-	line-height: 1rem;
-	padding: .5rem;
+.btn-gray-icon {
+    @include button-outline-variant(#AAAAAA);
+    background-color: rgba(255, 255, 255, 0.9);
+    font-size:        1.4rem;
+    line-height:      1rem;
+    padding:          .5rem;
 }
 
-
-.btn-icon{
-	padding: 0;
-	&:before, &[class^="kf-"]:before, &[class*=" kf-"]:before{
-		font-size: 1.5rem;
-		line-height: 1.5rem;
-		line-height: calc(1.5rem); // IE11 workaround
-		width:1.5rem;
-		vertical-align: middle;
-	}
-	&:hover,&:active,&:focus{
-		text-decoration: none;
-	}
+.btn-icon {
+    padding: 0;
+    &:before, &[class^="kf-"]:before, &[class*=" kf-"]:before {
+        font-size:      1.5rem;
+        line-height:    1.5rem;
+        line-height:    calc(1.5rem); // IE11 workaround
+        width:          1.5rem;
+        vertical-align: middle;
+    }
+    &:hover, &:active, &:focus {
+        text-decoration: none;
+    }
 }
 
 .input-group-lg > .input-group-btn > .btn.btn-icon,
-.btn-lg.btn-icon{
-  padding: 0.75rem;
+.btn-lg.btn-icon {
+    padding: 0.75rem;
 }
 
-
-.social-link{
-	display: inline-block;
-	line-height: 2rem;
-	i{
-		@include icon-circle();
-		@each $network, $color in $social-networks {
-			&.kf-#{$network} {
-				@include hover {
-					color: #fff;
-					background-color: $color;
-					border-color: $color;
-				}
-			}
-		}
-	}
-	@include hover {
-		i{
-			@each $network, $color in $social-networks {
-				&.kf-#{$network} {
-					color: #fff;
-					background-color: $color;
-					border-color: $color;
-				}
-			}
-		}
-	}
+.social-link {
+    display:     inline-block;
+    line-height: 2rem;
+    i {
+        @include icon-circle();
+        @each $network, $color in $social-networks {
+            &.kf-#{$network} {
+                @include hover {
+                    color:            #FFFFFF;
+                    background-color: $color;
+                    border-color:     $color;
+                }
+            }
+        }
+    }
+    @include hover {
+        i {
+            @each $network, $color in $social-networks {
+                &.kf-#{$network} {
+                    color:            #FFFFFF;
+                    background-color: $color;
+                    border-color:     $color;
+                }
+            }
+        }
+    }
 
 }
 
-.content-social{
-	position: relative;
-	overflow: hidden;
-	a, .content-social-link {
-		@include icon-circle();
-		float:       left;
-		margin-left: .4rem;
-		margin-bottom: .4rem;
-		&:first-child{
-			margin-left: 0;
-		}
-		@each $network, $color in $social-networks {
-			&.kf-#{$network} {
-				@include hover {
-					color: #fff;
-					background-color: $color;
-					border-color: $color;
-				}
-			}
-		}
-	}
+.content-social {
+    position: relative;
+    overflow: hidden;
+    a, .content-social-link {
+        @include icon-circle();
+        float:         left;
+        margin-left:   .4rem;
+        margin-bottom: .4rem;
+        &:first-child {
+            margin-left: 0;
+        }
+        @each $network, $color in $social-networks {
+            &.kf-#{$network} {
+                @include hover {
+                    color:            #FFFFFF;
+                    background-color: $color;
+                    border-color:     $color;
+                }
+            }
+        }
+    }
 
-	&.content-social-colored{
-		a, .content-social-link {
-			@each $network, $color in $social-networks {
-				&.kf-#{$network} {
-					@include button-outline-variant($color);
-				}
-			}
-		}
-	}
-	&.content-social-head{
-		a, .content-social-link {
-			margin-left: 0;
-		}
-	}
+    &.content-social-colored {
+        a, .content-social-link {
+            @each $network, $color in $social-networks {
+                &.kf-#{$network} {
+                    @include button-outline-variant($color);
+                }
+            }
+        }
+    }
+    &.content-social-head {
+        a, .content-social-link {
+            margin-left: 0;
+        }
+    }
 }
