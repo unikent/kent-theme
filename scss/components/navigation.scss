@@ -63,9 +63,6 @@
     @include media-breakpoint-up(md) {
         padding: 1rem;
 
-        .card-panel-body {
-            @extend .container;
-        }
         nav {
             display:      table;
             table-layout: fixed;

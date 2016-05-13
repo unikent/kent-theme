@@ -16,7 +16,6 @@ window.KENT.modules = window.KENT.modules || {};
 	// Default config options
 	configs.default = {
 		"disable_occurrence_weighting": true,
-		"screenreader":	true,
 		"prevent_headers": true,
 		"max_results": 150,
 		"no_results": function (qs, val) {
@@ -48,7 +47,7 @@ window.KENT.modules = window.KENT.modules || {};
 			return this._click_handler(itm, qs);
 		},
 		"parse_results": function (results, options){
-			results.unshift({"kent_search_with_option": true});
+			results.unshift({"kent_search_with_option": true, "qs_screenreader_text": "View full search results"});
 			return results;
 		}
 	});

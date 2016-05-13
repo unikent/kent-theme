@@ -1,7 +1,7 @@
 module.exports = {
 	js: {
 		files: [ "js/*.js", "js/**/*.js", "!js/_*.js", "js/templates/*.hbs" ],
-		tasks: [ "jshint", "handlebars", "concat", "copy:mainjs", "uglify:main" ]
+		tasks: [ "eslint", "handlebars", "concat", "copy:mainjs", "uglify:main" ]
 	},
 	sass: {
 		files: [ "scss/*.scss", "scss/**/*.scss" ],

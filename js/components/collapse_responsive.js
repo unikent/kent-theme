@@ -12,6 +12,32 @@ jQuery(document).ready(function(){
 	var viewport = ResponsiveBootstrapToolkit;
 	var $collabsables = $("[data-toggle=\"collapse_responsive\"]");
 
+	var viewportChange = function(){
+
+		window.KENT.log("Initiating: Collapse Responsive");
+		window.KENT.log($collabsables);
+
+		$collabsables.each(function(){
+			var $target = $($(this).data("target") || null);
+
+			if (
+				!(
+					($target.hasClass("collapse-xl-down") && viewport.is("<=xl")) ||
+					($target.hasClass("collapse-lg-down") && viewport.is("<=lg")) ||
+					($target.hasClass("collapse-md-down") && viewport.is("<=md")) ||
+					($target.hasClass("collapse-sm-down") && viewport.is("<=sm")) ||
+					($target.hasClass("collapse-xs-down") && viewport.is("<=xs"))
+				)
+			){
+				$(this).removeClass("collapsed").removeAttr("aria-expanded", "true");
+				$target.addClass("in");
+			} else {
+				$(this).addClass("collapsed").attr("aria-expanded", "false");
+				$target.removeClass("in");
+			}
+		});
+	};
+
 	$collabsables.click(function(e){
 		e.preventDefault();
 
@@ -51,7 +77,7 @@ jQuery(document).ready(function(){
 		if ($target.length > 0){
 			$target.toggleClass("in", isCollapsed).toggleClass("active", isCollapsed);
 			// Add expanded state (this only needs to be set when collapsing is possible)
-			$this.toggleClass("collapsed", !isCollapsed).attr("aria-expanded", isCollapsed);
+			$this.toggleClass("collapsed", !isCollapsed).attr("aria-expanded", (!isCollapsed ? "false" : "true"));
 			if ($isTab){
 				$parent.parent().find(".nav-link[href=\"" + $this.data("target") + "\"]").addClass("active");
 			}
@@ -59,23 +85,8 @@ jQuery(document).ready(function(){
 	});
 
 	// When breakpoint changes
-	$(window).on("viewport:change", function(){
+	$(window).on("viewport:change", viewportChange);
 
-		$collabsables.each(function(){
-			var $target = $($(this).data("target") || null);
-
-			if (
-				!(
-					($target.hasClass("collapse-xl-down") && viewport.is("<=xl")) ||
-					($target.hasClass("collapse-lg-down") && viewport.is("<=lg")) ||
-					($target.hasClass("collapse-md-down") && viewport.is("<=md")) ||
-					($target.hasClass("collapse-sm-down") && viewport.is("<=sm")) ||
-					($target.hasClass("collapse-xs-down") && viewport.is("<=xs"))
-				)
-			){
-				// Remove expanded state for none collapsible elements
-				$(this).attr("aria-expanded", "");
-			}
-		});
-	});
+	//init
+	viewportChange();
 });

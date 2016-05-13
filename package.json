@@ -42,11 +42,8 @@
     "metalsmith-layouts": "~1.4.4",
     "metalsmith-navigation": "^0.2.5",
     "metalsmith-text-replace": "^1.0.1",
-    "napa": "^2.3.0",
     "pixrem": "^3.0.0",
-    "time-grunt": "~1.0.0"
-  },
-  "dependencies": {
+    "time-grunt": "~1.0.0",
     "bootstrap": "4.0.0-alpha.2",
     "jquery": "~2.2.2",
     "jquery.stellar": "git+ssh://git@github.com/unikent/stellarjs.git",
@@ -55,9 +52,11 @@
     "kent-font": "git+ssh://git@github.com/unikent/kent-font.git",
     "handlebars": "^4.0.5",
     "modernizr": "~3.3.1",
-    "quick-spot": "^0.8.2",
     "slick-carousel": "1.5.9",
     "social-likes": "^3.1.0",
     "tether": "~1.2.0"
+  },
+  "dependencies": {
+    "napa": "^2.3.0"
   }
 }

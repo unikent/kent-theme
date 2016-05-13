@@ -50,6 +50,12 @@
         font-size:    14.4px;
     }
 
+    &.in{
+        .audience-nav-links {
+            height: 166px;
+        }
+    }
+
     @include media-breakpoint-up(md) {
         a.navbar-brand, button {
             display: none;
@@ -57,6 +63,12 @@
 
         .tag-line {
             display: inline-block;
+        }
+
+        &.in{
+            .audience-nav-links {
+                height: auto;
+            }
         }
     }
 }
