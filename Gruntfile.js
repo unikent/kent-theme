@@ -12,6 +12,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-sass");
 	grunt.loadNpmTasks("grunt-eslint");
+	grunt.loadNpmTasks("grunt-sass-lint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-cssnano");
