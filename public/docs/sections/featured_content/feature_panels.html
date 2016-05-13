@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" class="no-js">
 	<head>
 		<title>Pattern Library</title>
 
@@ -59,14 +59,14 @@
 
 			</head>
 	<body>
-		<a href="#section_menu" class="sr-only">Jump to section menu</a>
-		<a href="#main_content" class="sr-only">Jump to content</a>
-				<header class="global-header">
-			<section id="kentBar" class="audience-bar navbar">
+				<a href="#section_menu" class="sr-only">Jump to section menu</a>
+				<a href="#main_content" class="sr-only">Jump to content</a>
+				<header class="global-header" role="navigation">
+			<section id="kentBar" class="audience-bar navbar" role="menubar">
 				<a class="navbar-brand kf-kent-horizontal" href="https://beta.kent.ac.uk/" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a>
 				<span class="tag-line">The UK's European university</span>
-				<button class="menu-button" aria-controls="global-nav-menu" title="Open main menu" aria-expanded="false"></button>
-				<button class="search-button" aria-controls="global-nav-search" title="Open search" aria-expanded="false"></button>
+				<button class="menu-button" aria-controls="global-nav-menu" aria-expanded="false"><span class="sr-only">Open main menu</span></button>
+				<button class="search-button" aria-controls="global-nav-search" aria-expanded="false"><span class="sr-only">Open search</span></button>
 				<button class="audience-menu kf-user"></button>
 				<nav class="audience-nav-links" role="menu">
 					<a href="#" data-action="student" role="menuitem">Student</a>
@@ -78,7 +78,7 @@
 			<section class="global-nav">
 								<a class="main-logo kf-kent-block" href="https://beta.kent.ac.uk/"><span class="sr-only">The University of Kent</span></a>
 
-				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" title="Open search"></button>
+				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" aria-expanded="false"><span class="sr-only">Open search</span></button>
 
 				<div class="global-nav-menu" id="global-nav-menu" role="menubar">
 					<nav class="global-nav-links" role="menu">
@@ -166,7 +166,7 @@
 							<div class="input-group input-group-lg">
 								<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department. keyword... " autocomplete="off">
 								<span class="input-group-btn">
-									<button type="submit" class="btn btn-accent btn-icon kf-search" aria-label="Search"></button>
+									<button type="submit" class="btn btn-accent btn-icon kf-search" aria-label="Search"><span class="sr-only">Search</span></button>
 								</span>
 							</div>
 						</div>
@@ -179,6 +179,7 @@
 					<header>Pattern Library</header>
 					<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
 					<nav class="navbar-menu" id="navbar-menu" role="menu">
+						<a href="//beta.kent.ac.uk/patterns/.DS_Store"></a>
 						<a href="//beta.kent.ac.uk/patterns/index.html">Home</a>
 						<a href="//beta.kent.ac.uk/patterns/principles.html">Guiding Principles</a>
 						<a href="//beta.kent.ac.uk/patterns/technical.html">Technical Documentation</a>
@@ -186,13 +187,13 @@
 				</section>
 					</header>
 
-		<main id="main_content" class=" content-page">
-	<nav class="breadcrumb">
-		<a href="/">University of Kent</a>
-		<a href="//beta.kent.ac.uk/patterns//index.html">Pattern library</a>
-		<a href="//beta.kent.ac.uk/patterns//index.html">Featured Content</a>
-		<span>Feature panels</span>
-	</nav>	<div class="content-header">
+		<main id="main_content" class=" content-page" role="main">
+			<nav class="breadcrumb">
+				<a href="/">University of Kent</a>
+				<a href="//beta.kent.ac.uk/patterns//index.html">Pattern library</a>
+				<a href="//beta.kent.ac.uk/patterns//index.html">Featured Content</a>
+				<span>Feature panels</span>
+			</nav>	<div class="content-header">
 		<h1 class="">Feature panels</h1>
 	</div>
 	<div class="content-container">
@@ -297,7 +298,7 @@
 
 <h3 id="block-heading-1"><!-- block-heading-1 -->Block heading</h3>
 <p>This displays the topic heading. To keep it looking smart and tight, use a short heading and try stick to two links on desktop. You&apos;ll need to create short titles - about 32 characters.</p>
-<p>This can be positioned to the right of left of the panel. Place the heading with consideration to the subject of the panel image. You don&apos;t want to the block heading to cover a key part of the image.</p>
+<p>This can be positioned to the right or left of the panel. Place the heading with consideration to the subject of the panel image. You don&apos;t want to the block heading to cover a key part of the image.</p>
 <p>When there are multiple panel features used on a page, it add interest to alternate the position of the block heading from right to left.</p>
 
 
@@ -723,6 +724,12 @@
 
 <div class="content-container">
 
+
+<h3 id="panel-images"><!-- panel-images -->Panel images</h3>
+<p>The split panel images should be in a ratio of 4:2 with the subject matter roughly centred (minimum size of 1200x900px).</p>
+
+
+
 	<h2 id="hero-feature-panel"><!-- hero-feature-panel -->Hero feature panel</h2>
 <br><br><br><br>
 </div>
@@ -898,18 +905,35 @@
 
 
 
+
+
+
+
 <div class="card-panel-profiles card-panel-tertiary card-panel-flush cards-flip">
-				<a class="card card-double">
-					<h3 class="card-title" id="staff-profiles"><!-- staff-profiles -->Staff Profiles</h3>
-					<p class="card-subtitle">these are some staff profiles, they are all great people...mostly! Blah blah blah ldkfjgldkf lkjdfkjgdf dflgdfllkdf dflkdfl fgldf ldfhg ldhf dflkghdlfg</p>
+				<a class="card card-double" href="https://www.kent.ac.uk/courses/undergraduate/profiles/index.html">
+					<h3 class="card-title" id="what-our-students-say"><!-- what-our-students-say -->What our students say</h3>
+					<p class="card-subtitle">No one knows better than our students what it&#x2019;s really like to be a student at Kent.</p>
 				</a>
 				<div class="kent-slider" data-slider-config="profile_feature">
 					<div class="card card-backed-primary">
 						<div class="front">
-							<img class="card-img" src="/media/images/profile-1.jpg">
+							<img class="card-img" src="/media/images/profiles/student-abigail.jpg">
 							<div class="card-img-overlay-bottom-shaded">
-								<h3 class="card-title" id="dr-ursular-fish"><!-- dr-ursular-fish -->Dr Ursular Fish</h3>
-								<p class="card-subtitle">Lecturer in Marine Biology</p>
+								<h3 class="card-title" id="abigail-hoffman"><!-- abigail-hoffman -->Abigail Hoffman</h3>
+								<p class="card-subtitle">Biochemistry</p>
+							</div>
+						</div>
+						<div class="back">
+							<p class="card-text">&quot;It is great to have the chance to meet people from all over the world and exchange great experiences.&quot;</p>
+							<p><a href="#">View Profile</a></p>
+						</div>
+					</div>
+					<div class="card card-backed-primary">
+						<div class="front">
+							<img class="card-img" src="/media/images/profiles/student-osiyemi.jpg">
+							<div class="card-img-overlay-bottom-shaded">
+								<h3 class="card-title" id="osiyemi-osipitan"><!-- osiyemi-osipitan -->Osiyemi Osipitan</h3>
+								<p class="card-subtitle">Business administration</p>
 							</div>
 						</div>
 						<div class="back">
@@ -919,10 +943,10 @@
 					</div>
 					<div class="card card-backed-primary">
 						<div class="front">
-							<img class="card-img" src="/media/images/profile-2.jpg">
+							<img class="card-img" src="/media/images/profiles/student-angelika.jpg">
 							<div class="card-img-overlay-bottom-shaded">
-								<h3 class="card-title" id="dr-victor-crow"><!-- dr-victor-crow -->Dr Victor Crow</h3>
-								<p class="card-subtitle">Lecturer in Human Flight</p>
+								<h3 class="card-title" id="angelika-wallace-whitfield"><!-- angelika-wallace-whitfield -->Angelika Wallace-Whitfield</h3>
+								<p class="card-subtitle">Computer science</p>
 							</div>
 						</div>
 						<div class="back">
@@ -932,10 +956,10 @@
 					</div>
 					<div class="card card-backed-primary">
 						<div class="front">
-							<img class="card-img" src="/media/images/profile-3.jpg">
+							<img class="card-img" src="/media/images/profiles/student-edward.jpg">
 							<div class="card-img-overlay-bottom-shaded">
-								<h3 class="card-title" id="dr-veronica-ferret"><!-- dr-veronica-ferret -->Dr Veronica Ferret</h3>
-								<p class="card-subtitle">Senior Lecturer in Espionage</p>
+								<h3 class="card-title" id="edward-powe"><!-- edward-powe -->Edward Powe</h3>
+								<p class="card-subtitle">Bioscience</p>
 							</div>
 						</div>
 						<div class="back">
@@ -945,52 +969,59 @@
 					</div>
 					<div class="card card-backed-primary">
 						<div class="front">
-							<img class="card-img" src="/media/images/profile-4.jpg">
+							<img class="card-img" src="/media/images/profiles/student-christa.jpg">
 							<div class="card-img-overlay-bottom-shaded">
-								<h3 class="card-title" id="prof-mark-porpoise"><!-- prof-mark-porpoise -->Prof Mark Porpoise</h3>
-								<p class="card-subtitle">Senior Lecturer in Pseudo Science</p>
+								<h3 class="card-title" id="christa-thavapalan"><!-- christa-thavapalan -->Christa Thavapalan</h3>
+								<p class="card-subtitle">Comparative Literature</p>
 							</div>
 						</div>
 						<div class="back">
-							<p class="card-text">Integer euismod, mauris quis maximus egestas, elit nibh maximus justo, et elementum tortor erat in odio. Donec ut vehicula velit.</p>
+							<p class="card-text">&quot;I can&#x2019;t think of anyone who isn&#x2019;t catered for by all the clubs and societies, and I&#x2019;d never even heard of some of the sports on offer.&quot;</p>
 							<p><a href="#">View Profile</a></p>
 						</div>
 					</div>
 					<div class="card card-backed-primary">
 						<div class="front">
-							<img class="card-img" src="/media/images/profile-5.jpg">
+							<img class="card-img" src="/media/images/profiles/student-alex.jpg">
 							<div class="card-img-overlay-bottom-shaded">
-								<h3 class="card-title" id="dr-nicholas-badger"><!-- dr-nicholas-badger -->Dr Nicholas Badger</h3>
-								<p class="card-subtitle">Lecturer in Forestry</p>
+								<h3 class="card-title" id="alex-barnes"><!-- alex-barnes -->Alex Barnes</h3>
+								<p class="card-subtitle">Fine Art</p>
 							</div>
 						</div>
 						<div class="back">
-							<p class="card-text">Integer euismod, mauris quis maximus egestas, elit nibh maximus justo, et elementum tortor erat in odio. Donec ut vehicula velit.</p>
-							<p><a href="#">View Profile</a></p>
-						</div>
-					</div>
-					<div class="card card-backed-primary">
-						<div class="front">
-							<img class="card-img" src="/media/images/pingpong-1x1.jpg">
-							<div class="card-img-overlay-bottom-shaded">
-								<h3 class="card-title" id="dr-ping-pong"><!-- dr-ping-pong -->Dr Ping Pong</h3>
-								<p class="card-subtitle">Senior Lecturer in Astrofrench</p>
-							</div>
-						</div>
-						<div class="back">
-							<p class="card-text">Ping Pong is a dolphin, and as we all know dolphins are smart! Pingpong is fluent in all dialects of Astrofrench and is considered a world expert!</p>
+							<p class="card-text">&quot;It&apos;s easy to get to galleries in London. My most recent visit was [for] an exhibition by Ai Weiwei, one of the greatest artists of our time.&quot;</p>
 							<p><a href="#">View Profile</a></p>
 						</div>
 					</div>
 				</div>
+
 			</div>
 
 
 
 
-
-
 <div class="content-container">
+
+
+
+<h3 id="block-heading-2"><!-- block-heading-2 -->Block heading</h3>
+<p>Keep it short and succinct. Try stick to one line of text on desktop - about 20 characters </p>
+
+
+<h3 id="block-description-text-1"><!-- block-description-text-1 -->Block description text</h3>
+<p>Keep the block description text short. Keep to 4 lines on desktop - about 150 characters.</p>
+
+
+<h3 id="profile-image"><!-- profile-image -->Profile image</h3>
+<p>Follow the guidelines for <a href="../core_elements/images_video.html#profiles">taking good profile images</a></p>
+<p>The profile image is square (minimum 380x380 pixels) and uses a shoulder and head crop. The head should be placed within the top 75% of the square so that the title text doesn&apos;t cover the face.</p>
+
+
+<h3 id="profile-description"><!-- profile-description -->Profile description</h3>
+<p>This is the short description you see when hovering over the profile image. Keep to about 4 lines on desktop - about 120 characters.</p>
+
+
+
 	<h2 id="impact-statement"><!-- impact-statement -->Impact statement</h2>
 </div>
 
@@ -1006,20 +1037,22 @@
 		<br>
 		<br>
 		</main>
-		<footer class="global-footer">
+		<footer id="footer" class="global-footer" role="region" aria-labelledby="footer_sr">
+			<h2 id="footer_sr" class="sr-only">Page Footer</h2>
 			<section class="global-footer-top">
 				<div class="container">
 					<div class="row">
 						<div itemscope itemtype="http://schema.org/CollegeOrUniversity" class="col-md-6">
-							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-contact-us" aria-controls="footer-contact-us"  data-parent=".global-footer">Contact Us</h4>
+							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-contact-us" aria-controls="footer-contact-us" aria-expanded="false" data-parent=".global-footer">Contact Us</h4>
 							<div id="footer-contact-us" class="footer-section collapse-xs-down" role="complementary">
 								<div class="row">
 									<div itemscope="" class="col-sm-6">
 										Recruitment and admissions:<br>
-										<a itemprop="email" href="mailto:information@kent.ac.uk">information@kent.ac.uk</a><br>
-										<a href="tel:+441227827272"><span itemprop="telephone">+44 1227 827272</span></a>
+										<span class="sr-only">Email: </span><a itemprop="email" href="mailto:information@kent.ac.uk">information@kent.ac.uk</a><br>
+										<span class="sr-only">Telephone: </span><a href="tel:+441227827272"><span itemprop="telephone">+44 1227 827272</span></a>
 									</div>
 									<div class="col-sm-6">
+										<span class="sr-only">Address: </span>
 										<span itemprop="name">University of Kent</span>,<br>
 										<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 											<span itemprop="addressLocality">Canterbury</span>,<br>
@@ -1037,7 +1070,7 @@
 							</div>
 						</div>
 						<div class="col-md-6">
-							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-open-days" aria-controls="footer-open-days" data-parent=".global-footer">Open days in 2015/16</h4>
+							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-open-days" aria-controls="footer-open-days" aria-expanded="false"  data-parent=".global-footer">Open days in 2015/16</h4>
 							<div id="footer-open-days" class="footer-section collapse-xs-down" role="complementary">
 								<div class="row">
 									<div class="col-sm-6">
@@ -1075,8 +1108,8 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-3">
-							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-explore" aria-controls="footer-explore" data-parent=".global-footer">Explore</h5>
-							<nav id="footer-explore" class="footer-section footer-section-links collapse-sm-down">
+							<h5 id="footer-explore-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-explore" aria-controls="footer-explore" aria-expanded="false" data-parent=".global-footer">Explore</h5>
+							<nav id="footer-explore" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-explore-heading">
 								<a href="//www.kent.ac.uk/european/">The UK's European University</a>
 								<a href="//www.kent.ac.uk/about/impact/">Making a difference</a>
 								<a href="//www.kent.ac.uk/locations/">Superb locations</a>
@@ -1086,78 +1119,77 @@
 								<a href="/news/">News Centre</a>
 								<a href="//www.kent.ac.uk/jobs/">Jobs and vacancies</a>
 							</nav>
-							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-research" aria-controls="footer-research" data-parent=".global-footer">Research</h5>
-							<nav id="footer-research" class="footer-section footer-section-links collapse-sm-down">
-								<a href="//www.kent.ac.uk/research/">Academic excellence</a>
-								<a href="//www.kent.ac.uk/research/impact/">Research impact</a>
-								<a href="//www.kent.ac.uk/research/expertise/">Find an expert</a>
-								<a href="//www.kent.ac.uk/enterprise/">Innovation and enterprise</a>
-								<a href="//www.kent.ac.uk/enterprise/practical-partnering/">Business partnerships</a>
-								<a href="//www.kent.ac.uk/courses/postgraduate/search/programme_type/research">Research degrees</a>
+							<h5 id="footer-research-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-research" aria-controls="footer-research" aria-expanded="false" data-parent=".global-footer">Research</h5>
+							<nav id="footer-research" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-research-heading">
+								<a href="//www.kent.ac.uk/research/" role="menuitem">Academic excellence</a>
+								<a href="//www.kent.ac.uk/research/impact/" role="menuitem">Research impact</a>
+								<a href="//www.kent.ac.uk/research/expertise/" role="menuitem">Find an expert</a>
+								<a href="//www.kent.ac.uk/enterprise/" role="menuitem">Innovation and enterprise</a>
+								<a href="//www.kent.ac.uk/enterprise/practical-partnering/" role="menuitem">Business partnerships</a>
+								<a href="//www.kent.ac.uk/courses/postgraduate/search/programme_type/research" role="menuitem">Research degrees</a>
 							</nav>
 						</div>
 						<div class="col-md-3">
-							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-study" aria-controls="footer-study" data-parent=".global-footer">Study</h5>
-							<nav id="footer-study" class="footer-section footer-section-links collapse-sm-down">
-								<a href="//www.kent.ac.uk/courses/">Inspiring teaching</a>
-								<a href="//www.kent.ac.uk/courses/undergraduate/">Undergraduates</a>
-								<a href="//www.kent.ac.uk/courses/postgraduate/">Postgraduates</a>
-								<a href="//www.kent.ac.uk/internationalstudent/">International students</a>
-								<a href="//www.kent.ac.uk/courses/part-time/">Part-time and short courses</a>
-								<a href="//www.kent.ac.uk/goabroad/">Study abroad</a>
-								<a href="//www.kent.ac.uk/courses/funding/">Fees and funding</a>
-								<a href="//www.kent.ac.uk/scholarships/">Scholarships</a>
+							<h5 id="footer-study-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-study" aria-controls="footer-study" aria-expanded="false" data-parent=".global-footer">Study</h5>
+							<nav id="footer-study" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-study-heading">
+								<a href="//www.kent.ac.uk/courses/" role="menuitem">Inspiring teaching</a>
+								<a href="//www.kent.ac.uk/courses/undergraduate/" role="menuitem">Undergraduates</a>
+								<a href="//www.kent.ac.uk/courses/postgraduate/" role="menuitem">Postgraduates</a>
+								<a href="//www.kent.ac.uk/internationalstudent/" role="menuitem">International students</a>
+								<a href="//www.kent.ac.uk/courses/part-time/" role="menuitem">Part-time and short courses</a>
+								<a href="//www.kent.ac.uk/goabroad/" role="menuitem">Study abroad</a>
+								<a href="//www.kent.ac.uk/courses/funding/" role="menuitem">Fees and funding</a>
+								<a href="//www.kent.ac.uk/scholarships/" role="menuitem">Scholarships</a>
 							</nav>
-							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-governance" aria-controls="footer-governance" data-parent=".global-footer">Governance and planning</h5>
-							<nav id="footer-governance" class="footer-section footer-section-links collapse-sm-down">
-								<a href="//www.kent.ac.uk/about/plan/">Planning and strategy</a>
-								<a href="//www.kent.ac.uk/governance/">Governance</a>
-								<a href="//www.kent.ac.uk/ovc/">Office of the Vice-Chancellor</a>
+							<h5 id="footer-governance-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-governance" aria-controls="footer-governance" aria-expanded="false" data-parent=".global-footer">Governance and planning</h5>
+							<nav id="footer-governance" class="footer-section footer-section-links collapse-sm-down" role="menu">
+								<a href="//www.kent.ac.uk/about/plan/" role="menuitem">Planning and strategy</a>
+								<a href="//www.kent.ac.uk/governance/" role="menuitem">Governance</a>
+								<a href="//www.kent.ac.uk/ovc/" role="menuitem">Office of the Vice-Chancellor</a>
 							</nav>
 						</div>
 						<div class="col-md-3">
-							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-whats-on" aria-controls="footer-whats-on" data-parent=".global-footer">What's on?</h5>
-							<nav id="footer-whats-on" class="footer-section footer-section-links collapse-sm-down">
-								
-								<a href="//www.kent.ac.uk/calendar/">Events calendar</a>
-								<a href="//www.thegulbenkian.co.uk">Gulbenkian - theatre and cinema</a>
-								<a href="//www.kent.ac.uk/music/whatson.html">Coyler-Fergusson - music at Kent</a>
-								<a href="//www.kent.ac.uk/sports/">Sports Centre</a>
+							<h5 id="footer-whats-on-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-whats-on" aria-expanded="false" aria-controls="footer-whats-on" data-parent=".global-footer">What's on?</h5>
+							<nav id="footer-whats-on" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-whats-on-heading">
+								<a href="//www.kent.ac.uk/calendar/" role="menuitem">Events calendar</a>
+								<a href="//www.thegulbenkian.co.uk" role="menuitem">Gulbenkian - theatre and cinema</a>
+								<a href="//www.kent.ac.uk/music/whatson.html" role="menuitem">Coyler-Fergusson - music at Kent</a>
+								<a href="//www.kent.ac.uk/sports/" role="menuitem">Sports Centre</a>
 							</nav>
-							<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-information" aria-controls="footer-information" data-parent=".global-footer">Information for</h5>
-							<nav id="footer-information" class="footer-section footer-section-links collapse-sm-down">
-								<a href="//www.kent.ac.uk/applicants/">Applicants</a>
-								<a href="//www.kent.ac.uk/gettingstarted/">Arriving students</a>
-								<a href="//www.kent.ac.uk/student/">Current students</a>
-								<a href="//www.kent.ac.uk/internationalstudent/">International students</a>
-								<a href="//www.kent.ac.uk/parents/">Parents and family</a>
-								<a href="//www.kent.ac.uk/alumni/">Alumni (former students)</a>
-								<a href="//www.kent.ac.uk/campusonline/">Staff</a>
+							<h5 id="footer-information-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-information" aria-expanded="false" aria-controls="footer-information" data-parent=".global-footer">Information for</h5>
+							<nav id="footer-information" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-information-heading">
+								<a href="//www.kent.ac.uk/applicants/" role="menuitem">Applicants</a>
+								<a href="//www.kent.ac.uk/gettingstarted/" role="menuitem">Arriving students</a>
+								<a href="//www.kent.ac.uk/student/" role="menuitem">Current students</a>
+								<a href="//www.kent.ac.uk/internationalstudent/" role="menuitem">International students</a>
+								<a href="//www.kent.ac.uk/parents/" role="menuitem">Parents and family</a>
+								<a href="//www.kent.ac.uk/alumni/" role="menuitem">Alumni (former students)</a>
+								<a href="//www.kent.ac.uk/campusonline/" role="menuitem">Staff</a>
 							</nav>
 						</div>
 						<div class="col-md-3">
 							<div class="footer-section-panel footer-section-open">
-								<h5 class="footer-section-title">Connect</h5>
-								<nav id="footer-social" class="footer-section footer-section-social content-social">
-									<a title="facebook" href="//www.facebook.com/UniversityofKent" class="kf-facebook"></a>
-									<a title="twitter" href="//twitter.com/unikent" class="kf-twitter"></a>
-									<a title="linkedin" href="//www.linkedin.com/company/university-of-kent" class="kf-linkedin"></a>
-									<a title="youtube" href="//www.youtube.com/user/UniversityofKent" class="kf-youtube"></a>
-									<a title="flickr" href="//www.flickr.com/photos/universityofkent/" class="kf-flickr"></a>
-									<a title="rss" href="//www.kent.ac.uk/communications/rss/" class="kf-rss"></a>
-									<a title="tumblr" href="//universitykent.tumblr.com" class="kf-tumblr"></a>
-									<a title="instagram" href="//instagram.com/unikentlive" class="kf-instagram"></a>
-									<a title="pinterest" href="//www.pinterest.com/KentUni/" class="kf-pinterest"></a>
+								<h5 id="footer-social-heading" class="footer-section-title">Connect</h5>
+								<nav id="footer-social" class="footer-section footer-section-social content-social" role="menu" aria-labelledby="footer-social-heading">
+									<a title="facebook" href="//www.facebook.com/UniversityofKent" class="kf-facebook" role="menuitem"></a>
+									<a title="twitter" href="//twitter.com/unikent" class="kf-twitter" role="menuitem"></a>
+									<a title="linkedin" href="//www.linkedin.com/company/university-of-kent" class="kf-linkedin" role="menuitem"></a>
+									<a title="youtube" href="//www.youtube.com/user/UniversityofKent" class="kf-youtube" role="menuitem"></a>
+									<a title="flickr" href="//www.flickr.com/photos/universityofkent/" class="kf-flickr" role="menuitem"></a>
+									<a title="rss" href="//www.kent.ac.uk/communications/rss/" class="kf-rss" role="menuitem"></a>
+									<a title="tumblr" href="//universitykent.tumblr.com" class="kf-tumblr" role="menuitem"></a>
+									<a title="instagram" href="//instagram.com/unikentlive" class="kf-instagram" role="menuitem"></a>
+									<a title="pinterest" href="//www.pinterest.com/KentUni/" class="kf-pinterest" role="menuitem"></a>
 								</nav>
 							</div>
 							<div class="footer-section-panel">
-								<h5 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-giving" aria-controls="footer-giving" data-parent=".global-footer">Giving to Kent</h5>
-								<nav id="footer-giving" class="footer-section footer-section-links collapse-sm-down">
-									<a href="//www.kent.ac.uk/giving/">Support us</a>
-									<a href="//www.kent.ac.uk/giving/give/">How to give</a>
-									<a href="//www.kent.ac.uk/giving/lawcampaign/">Kent Law Campaign</a>
-									<a href="//www.kent.ac.uk/giving/opportunityfund/">Kent Opportunity Fund</a>
-									<a href="//www.kent.ac.uk/giving/hkcp/">Hong Kong and China portal</a>
+								<h5 id="footer-giving-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-giving" aria-controls="footer-giving" aria-expanded="false" data-parent=".global-footer">Giving to Kent</h5>
+								<nav id="footer-giving" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-giving-heading">
+									<a href="//www.kent.ac.uk/giving/" role="menuitem">Support us</a>
+									<a href="//www.kent.ac.uk/giving/give/" role="menuitem">How to give</a>
+									<a href="//www.kent.ac.uk/giving/lawcampaign/" role="menuitem">Kent Law Campaign</a>
+									<a href="//www.kent.ac.uk/giving/opportunityfund/" role="menuitem">Kent Opportunity Fund</a>
+									<a href="//www.kent.ac.uk/giving/hkcp/" role="menuitem">Hong Kong and China portal</a>
 								</nav>
 							</div>
 						</div>
@@ -1168,7 +1200,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
-							<h6 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" data-parent=".global-footer">Affiliations</h6>
+							<h6 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" aria-expanded="false" data-parent=".global-footer">Affiliations</h6>
 							<div id="footer-affiliations" class="footer-section collapse-sm-down" role="list">
 								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//sgroup.be/"><img src="//beta.kent.ac.uk/assets/images/logo-sgroup-white.png" class="img-fluid" alt="SGroup European Universities Network"></a>
 								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//www.kent.ac.uk/about/partnerships/eastern-arc.html"><img src="//beta.kent.ac.uk/assets/images/logo-arc-white.png" class="img-fluid" alt="Eastern Academic Research Consortium"></a>
@@ -1180,8 +1212,8 @@
 				</div>
 			</section>
 			<section class="global-footer-base">
-				<div class="container">
-					<a href="#">&copy; University of Kent</a> <a href="#">Accessibility</a> <a href="//www.kent.ac.uk/contact">Contact us</a> <a href="#">Feedback</a> <a href="//www.kent.ac.uk/legal">Legal</a> <a href="//www.kent.ac.uk/legal/cookies.html">Cookie Policy</a>
+				<div class="container" role="menu">
+					<a href="https://beta.kent.ac.uk/" role="menuitem">&copy; University of Kent</a> <a href="#" role="menuitem">Accessibility</a> <a href="//www.kent.ac.uk/contact" role="menuitem">Contact us</a> <a href="#" role="menuitem">Feedback</a> <a href="//www.kent.ac.uk/legal" role="menuitem">Legal</a> <a href="//www.kent.ac.uk/legal/cookies.html" role="menuitem">Cookie Policy</a>
 				</div>
 			</section>
 		</footer>
