@@ -412,14 +412,14 @@
 
     a.card, .card a {
         &, &:hover, &:focus {
-            p.card-text {
+            .card-text {
                 color: $body-color;
             }
         }
     }
     a.card.card-inverse, .card.card-inverse a {
         &, &:hover, &:focus {
-            p.card-text {
+            .card-text {
                 color: rgba(255, 255, 255, .75);
             }
         }
