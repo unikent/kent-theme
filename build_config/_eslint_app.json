@@ -1,6 +1,7 @@
 {
 	"env": {
-		"browser": true
+		"browser": true,
+		"es6": true
 	},
 	"globals": {
 		"jQuery": true,
@@ -180,7 +181,7 @@
 		"no-console": 2,
 
 		// TBD
-		"quotes": [2, "double"],
+		"quotes": [2, "single", {"allowTemplateLiterals": true}],
 		"eol-last": 2,
 		"space-infix-ops": 2
 		

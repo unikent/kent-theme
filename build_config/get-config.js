@@ -15,6 +15,7 @@ module.exports = function (grunt) {
 		php2html: require("./php2html"),
 		metalsmith: require("./metalsmith"),
 		handlebars: require("./handlebars"),
+		babel: require("./babel"),
 		subgrunt: require("./subgrunt")
 	};
 	return config;

@@ -14,7 +14,7 @@
 
 		// Add linkedin support
 		linkedin: {
-			counterUrl: "http://www.linkedin.com/countserv/count/share?url={url}",
+			counterUrl: 'http://www.linkedin.com/countserv/count/share?url={url}',
 			counter: function(jsonUrl, deferred) {
 				var options = window.socialLikesButtons.linkedin;
 				if (!options._) {
@@ -32,7 +32,7 @@
 				options._[jsonUrl] = deferred;
 				$.getScript(jsonUrl).fail(deferred.reject);
 			},
-			popupUrl: "http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}",
+			popupUrl: 'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',
 			popupWidth: 650,
 			popupHeight: 500
 		}
@@ -41,22 +41,22 @@
 	// When jQuery is ready, hook up our social sharing icons.
 	$(function() {
 		// for all social share containers
-		var $likes = $(".content-social-share");
+		var $likes = $('.content-social-share');
 		if ($likes.length > 0) {
 
 			// Init social likes on container + grab options
-			var options = $likes.socialLikes({"counters": false}).data().socialLikes.options;
+			var options = $likes.socialLikes({'counters': false}).data().socialLikes.options;
 
-			// Populate "email link" (Additional option we have added)
-			$likes.find("a.email").attr("href", "mailto:?subject=" + options.title + "&body=Link: " + options.url);
+			// Populate 'email link' (Additional option we have added)
+			$likes.find('a.email').attr('href', 'mailto:?subject=' + options.title + '&body=Link: ' + options.url);
 
 			// Hook up social events via KAT
-			$likes.find("a").click(function(){
-				window.KENT.kat.social($(this).attr("title"), "share"); // current url is used, if no url is provided as the 3rd param.
+			$likes.find('a').click(function(){
+				window.KENT.kat.social($(this).attr('title'), 'share'); // current url is used, if no url is provided as the 3rd param.
 			});
 		}
 		// Debug
-		window.KENT.log("Initiating: Social Sharing");
+		window.KENT.log('Initiating: Social Sharing');
 		window.KENT.log($likes);
 	});
 })();

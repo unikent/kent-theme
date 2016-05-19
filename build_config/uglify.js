@@ -16,8 +16,10 @@ module.exports = {
 		dest: "js/_bootstrap.js"
 	},
 	main: {
-		files: {
-			"public/assets/js/main.min.js" : "js/main.js"
-		}
+		src:[
+			"js/_bootstrap.js",
+			"js/main.js"
+		],
+		dest: "public/assets/js/main.min.js"
 	}
 };

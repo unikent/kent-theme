@@ -39,7 +39,7 @@ module.exports = {
 			}
 		},
 		files: {
-			"js/handlebars_templates.js": ["js/templates/*.hbs"]
+			"tmp/handlebars_templates.js": ["js/templates/*.hbs"]
 		}
 	}
 };
