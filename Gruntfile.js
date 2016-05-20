@@ -22,19 +22,16 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-php2html');
 	grunt.loadNpmTasks('grunt-metalsmith');
 	grunt.loadNpmTasks('grunt-contrib-handlebars');
-	grunt.loadNpmTasks('grunt-subgrunt');
 
 
 	// Common tasks
-	grunt.registerTask('build_js', ['handlebars', 'concat:bootstrap', 'concat:vendor', 'concat:main', 'babel',  'concat:build']);
-
+	grunt.registerTask('build_js', ['handlebars', 'concat:bootstrap', 'concat:vendor', 'concat:main', 'babel',  'concat:build', 'copy:mainjs']);
 
 	// Define tasks
-	grunt.registerTask('default', [ 'development' ]);
-	grunt.registerTask('development', [ 'eslint', 'build_js', 'copy', 'sass', 'postcss', 'patterns_local']);
-	grunt.registerTask('production', [ 'eslint', 'build_js', 'uglify:main', 'copy', 'sass', 'postcss', 'cssnano', 'modernizr', 'patterns']);
-
-	grunt.registerTask('jwplayer', [ 'subgrunt:jwplayer']);
+	grunt.registerTask('development', [ 'eslint', 'build_js', 'copy:kentfonts', 'copy:fonts', 'sass', 'postcss', 'patterns_local']);
+	grunt.registerTask('production', [ 'eslint', 'build_js', 'uglify:main', 'copy:kentfonts', 'copy:fonts', 'sass', 'postcss', 'cssnano', 'modernizr', 'patterns']);
 	grunt.registerTask('patterns', [ 'php2html:production', 'metalsmith:production' ]);
 	grunt.registerTask('patterns_local', [ 'php2html:development', 'metalsmith:development' ]);
+
+	grunt.registerTask('default', [ 'development' ]);
 };

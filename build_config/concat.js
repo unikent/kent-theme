@@ -28,9 +28,10 @@ module.exports = {
 			"node_modules/social-likes/src/social-likes.js",
 			"node_modules/js-cookie/src/js.cookie.js",
 			"tmp/handlebars_templates.js",
-			"node_modules/jwplayer/bin-release/jwplayer.js",
-			"node_modules/jwplayer/bin-release/polyfills.promise.js",
-			"node_modules/jwplayer/bin-release/provider.youtube.js",
+			"node_modules/plyr/src/plyr.js",
+		//	"node_modules/jwplayer/bin-release/jwplayer.js",
+		//	"node_modules/jwplayer/bin-release/polyfills.promise.js",
+		//	"node_modules/jwplayer/bin-release/provider.youtube.js",
 		],
 		dest: "tmp/vendor.js"
 	},
