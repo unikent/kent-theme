@@ -8034,6 +8034,10 @@ nav.breadcrumb {
     margin-bottom: 0.5rem;
     margin-top: -3.2px;
     margin-top: -0.2rem; }
+  .beta-bar a {
+    border-bottom: 1px solid #CCCCCC; }
+    .beta-bar a:hover, .beta-bar a:focus {
+      border-bottom: 1px solid #00263d; }
   .beta-bar button.beta-toggler {
     cursor: pointer;
     position: absolute;

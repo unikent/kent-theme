@@ -76,8 +76,8 @@
 
 			<p>We're testing <a href="<?php echo isset($beta_bar['about_url']) ? $beta_bar['about_url'] : 'https://blogs.kent.ac.uk/webdev/2015/12/04/beta-kent/' ?>">a new design</a>.</p>
 			<p>It may not be complete or work as intended.</p>
-			<p>
-				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="btn btn-link">Go to original site</a>
+			<p class="p-x-1">
+				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="">Go to original site</a>
 			</p>
 			<p>
 				<button class="btn btn-secondary feedback" onclick="return window.usabilla_live('click');">Give us feedback</button>
