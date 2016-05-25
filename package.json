@@ -59,6 +59,7 @@
     "time-grunt": "~1.0.0"
   },
   "dependencies": {
-    "napa": "^2.3.0"
+    "napa": "^2.3.0",
+    "plyr": "^1.6.12"
   }
 }

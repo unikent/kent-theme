@@ -9,3 +9,4 @@ www_docroot
 /lib/pattern-wrappers/dev/
 .env
 /public/media/
+/tmp
