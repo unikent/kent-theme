@@ -27,11 +27,11 @@ module.exports = {
 			"js/components/beta_bar.js",
 			"js/components/attribution.js",
 			"js/components/embeds.js",
-			"js/components/paralax.js",
 			"js/components/slider.js",
 			"js/components/video.js",
 			"js/components/social-likes.js",
-			"js/components/navigation.js"
+			"js/components/navigation.js",
+			"js/components/paralax.js" //parallax last as it needs page to be rendered correctly (especially sliders)
 		],
 		dest: "js/main.js"
 	}
