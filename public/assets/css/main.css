@@ -5899,6 +5899,10 @@ p + h6, p + .h6 {
   .strap-line span {
     color: #937227; }
 
+@media (max-width: 543px) {
+  h1 {
+    font-size: 2.281rem; } }
+
 @media (min-width: 1200px) {
   html {
     font-size: 18px; } }
@@ -5942,98 +5946,150 @@ p + h6, p + .h6 {
   .content-container p a:hover, .content-container p a:focus {
     border-bottom: 1px solid #00263d; }
 
-.content-page .content-container {
-  padding: 0 16px;
-  padding: 0 1rem;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: column wrap;
-      -ms-flex-flow: column wrap;
-          flex-flow: column wrap; }
-  @media (min-width: 544px) {
-    .content-page .content-container {
-      padding: 0 12%; } }
-  @media (min-width: 768px) {
-    .content-page .content-container {
-      display: block;
-      padding: 0 33.333333333% 0 12%; } }
-  @media (min-width: 992px) {
-    .content-page .content-container {
-      padding: 0 38.333333333% 0 14.333333333%; } }
-  @media (min-width: 1200px) {
-    .content-page .content-container {
-      padding: 0 38.333333333% 0 14.33333333%; } }
-  @media (min-width: 1328px) {
-    .content-page .content-container {
-      margin: 0 auto;
-      max-width: 1140px;
-      padding: 0 415px 0 95px; } }
-
 .content-page .content-header {
-  position: relative; }
-
-.content-page .content-header, .content-page .content-container-full {
-  padding: 0 16px;
-  padding: 0 1rem; }
+  position: relative;
+  width: 100%;
+  padding: 0 15px;
+  padding: 0 0.9375rem; }
   @media (min-width: 544px) {
-    .content-page .content-header, .content-page .content-container-full {
-      padding: 0 12%; } }
+    .content-page .content-header {
+      padding-left: 5%;
+      padding-right: 5%; } }
   @media (min-width: 768px) {
-    .content-page .content-header, .content-page .content-container-full {
-      padding: 0 12%; } }
+    .content-page .content-header {
+      padding-left: 12%;
+      padding-right: 12%; } }
   @media (min-width: 992px) {
-    .content-page .content-header, .content-page .content-container-full {
-      padding: 0 14.333333333%; } }
-  @media (min-width: 1200px) {
-    .content-page .content-header, .content-page .content-container-full {
-      padding: 0 14.33333333%; } }
+    .content-page .content-header {
+      padding-left: calc(5% + 0.9375rem);
+      padding-right: 5%; }
+      .content-page .content-header.content-header-centered {
+        width: 72%;
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto; }
+      .content-page .content-header.content-header-with-social {
+        padding-left: calc(5% + 5.9375rem); } }
   @media (min-width: 1328px) {
-    .content-page .content-header, .content-page .content-container-full {
+    .content-page .content-header {
       margin: 0 auto;
       max-width: 1140px;
-      padding: 0 0 0 95px; } }
+      padding: 0 0.9375rem; }
+      .content-page .content-header.content-header-centered {
+        max-width: 900px; }
+      .content-page .content-header.content-header-with-social {
+        padding: 0 0.9375rem; } }
+  @media (min-width: 992px) {
+    .content-page .content-header.content-header-centered .content-social.content-social-head {
+      left: -4rem; } }
+  @media (min-width: 1328px) {
+    .content-page .content-header.content-header-centered .content-social.content-social-head {
+      left: -4rem; } }
 
-.content-page .content-sidebar {
-  -webkit-order: 9999;
-      -ms-flex-order: 9999;
-          order: 9999;
-  margin: 48px 0;
-  margin: 3rem 0; }
-  .content-page .content-sidebar h3 {
+.content-page .content-body {
+  overflow: hidden;
+  width: 100%; }
+
+.content-page .content-container {
+  width: 100%;
+  margin-left: -15px;
+  margin-left: -0.9375rem;
+  margin-right: -15px;
+  margin-right: -0.9375rem; }
+  .content-page .content-container::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .content-page .content-container .content-main,
+  .content-page .content-container .content-aside {
+    width: 100%;
+    padding: 0 0 0 31px;
+    padding: 0 0 0 1.9375rem;
+    margin-bottom: 32px;
+    margin-bottom: 2rem; }
+  .content-page .content-container .content-aside h3 {
     font-size: 20.256px;
     font-size: 1.266rem; }
-  .content-page .content-sidebar nav {
+  .content-page .content-container .content-aside nav {
     margin-bottom: 48px;
     margin-bottom: 3rem; }
-    .content-page .content-sidebar nav ul {
+    .content-page .content-container .content-aside nav ul {
       list-style: none;
       padding: 0; }
-      .content-page .content-sidebar nav ul li {
+      .content-page .content-container .content-aside nav ul li {
         padding: 8px 0;
         padding: 0.5rem 0;
         border-bottom: 1px solid #E6E6E6; }
-        .content-page .content-sidebar nav ul li a {
+        .content-page .content-container .content-aside nav ul li a {
           display: inline-block;
           vertical-align: middle;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
           width: 100%; }
-          .content-page .content-sidebar nav ul li a:hover {
+          .content-page .content-container .content-aside nav ul li a:hover {
             text-decoration: underline; }
-        .content-page .content-sidebar nav ul li span {
+        .content-page .content-container .content-aside nav ul li span {
           display: block;
           color: #937227;
           line-height: 14.4px;
           line-height: 0.9rem;
           margin-bottom: 3.2px;
           margin-bottom: 0.2rem; }
+  @media (min-width: 544px) {
+    .content-page .content-container .content-main,
+    .content-page .content-container .content-aside {
+      padding-left: calc(5% + 0.9375rem);
+      padding-right: 5%; } }
   @media (min-width: 768px) {
-    .content-page .content-sidebar {
-      float: right;
-      margin: 0 -46.6666666% 0 0;
-      width: 38.333333%; } }
+    .content-page .content-container .content-main,
+    .content-page .content-container .content-aside {
+      padding-left: calc(12% + 0.9375rem);
+      padding-right: 12%; } }
+  @media (min-width: 992px) {
+    .content-page .content-container .content-main,
+    .content-page .content-container .content-aside {
+      float: left;
+      margin-bottom: 0; }
+    .content-page .content-container .content-main {
+      width: 67%;
+      padding: 0 0.9375rem 0 calc(5% + 1.875rem); }
+      .content-page .content-container .content-main.content-main-centered {
+        float: none;
+        width: calc(62% - 1.875rem);
+        padding: 0;
+        margin-left: auto;
+        margin-right: auto; }
+    .content-page .content-container .content-aside {
+      width: 33%;
+      padding: 0 calc(5% + 1.875rem) 0 0.9375rem; } }
+  @media (min-width: 1200px) {
+    .content-page .content-container .content-main,
+    .content-page .content-container .content-aside {
+      float: left; }
+    .content-page .content-container .content-main {
+      padding: 0 0.9375rem 0 calc(12% + 1.875rem); }
+      .content-page .content-container .content-main.content-main-centered {
+        padding: 0; }
+    .content-page .content-container .content-aside {
+      padding: 0 calc(12% + 1.875rem) 0 0.9375rem; } }
+  @media (min-width: 1328px) {
+    .content-page .content-container {
+      margin: 0 auto;
+      max-width: 1140px; }
+      .content-page .content-container .content-main,
+      .content-page .content-container .content-aside {
+        padding: 0 0.9375rem; }
+      .content-page .content-container .content-main {
+        padding-right: 4.9375rem; }
+        .content-page .content-container .content-main.content-main-centered {
+          padding: 0; } }
+  @media (max-width: 1199px) {
+    .content-page .content-container {
+      font-size: 17px; } }
+  @media (max-width: 991px) {
+    .content-page .content-container {
+      font-size: 18px; } }
 
 .content-page .content-social {
   margin-bottom: 16px;
@@ -6050,9 +6106,12 @@ p + h6, p + .h6 {
     @media (min-width: 768px) {
       .content-page .content-social.content-social-head {
         display: block; } }
+    @media (min-width: 992px) {
+      .content-page .content-social.content-social-head {
+        left: 5rem; } }
     @media (min-width: 1328px) {
       .content-page .content-social.content-social-head {
-        left: 0; } }
+        left: -3rem; } }
 
 .container-padded {
   padding: 16px 0;
@@ -6212,9 +6271,11 @@ figure {
     figure.figure-right {
       max-width: 50%;
       float: right;
-      margin-right: -20%;
       margin-left: 2rem;
       margin-bottom: 2rem; } }
+  @media (min-width: 992px) {
+    figure.figure-right {
+      margin-right: -20%; } }
   figure figcaption {
     color: #818a91;
     font-size: 14.4px;
@@ -6222,12 +6283,59 @@ figure {
     padding: 4px 0 0 8px;
     padding: 0.25rem 0 0 0.5rem; }
 
-.container > figure, .container-padded > figure, .card-panel.card-panel-contained > figure, .card-panel-contained.card-panel-flush > figure, .card-panel .card-panel-body > figure, .card-panel-flush .card-panel-body > figure, .card-panel .card-panel-header > figure, .card-panel-flush .card-panel-header > figure, main > blockquote > figure, .content-container > figure, .content-container-full > figure {
+.container figure, .container-padded figure, .card-panel.card-panel-contained figure, .card-panel-contained.card-panel-flush figure, .card-panel .card-panel-body figure, .card-panel-flush .card-panel-body figure, .card-panel .card-panel-header figure, .card-panel-flush .card-panel-header figure, main > blockquote figure, .content-container figure {
   clear: none;
   overflow: visible;
   margin-top: 0; }
-  .container > figure figcaption, .container-padded > figure figcaption, .card-panel.card-panel-contained > figure figcaption, .card-panel-contained.card-panel-flush > figure figcaption, .card-panel .card-panel-body > figure figcaption, .card-panel-flush .card-panel-body > figure figcaption, .card-panel .card-panel-header > figure figcaption, .card-panel-flush .card-panel-header > figure figcaption, main > blockquote > figure figcaption, .content-container > figure figcaption, .content-container-full > figure figcaption {
+  .container figure figcaption, .container-padded figure figcaption, .card-panel.card-panel-contained figure figcaption, .card-panel-contained.card-panel-flush figure figcaption, .card-panel .card-panel-body figure figcaption, .card-panel-flush .card-panel-body figure figcaption, .card-panel .card-panel-header figure figcaption, .card-panel-flush .card-panel-header figure figcaption, main > blockquote figure figcaption, .content-container figure figcaption {
     padding-left: 0; }
+
+.content-container .content-main figure.full-width {
+  overflow: visible; }
+  .content-container .content-main figure.full-width .media-wrap-letterbox, .content-container .content-main figure.full-width .media-wrap-parallax, .content-container .content-main figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-media-wrap, .content-container .content-main figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-embed-wrap,
+  .content-container .content-main figure.full-width figcaption {
+    position: relative;
+    width: 100vw;
+    left: -15px;
+    left: -0.9375rem; }
+    @media (min-width: 544px) {
+      .content-container .content-main figure.full-width .media-wrap-letterbox, .content-container .content-main figure.full-width .media-wrap-parallax, .content-container .content-main figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-media-wrap, .content-container .content-main figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-embed-wrap,
+      .content-container .content-main figure.full-width figcaption {
+        left: -5.6%; } }
+    @media (min-width: 768px) {
+      .content-container .content-main figure.full-width .media-wrap-letterbox, .content-container .content-main figure.full-width .media-wrap-parallax, .content-container .content-main figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-media-wrap, .content-container .content-main figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-embed-wrap,
+      .content-container .content-main figure.full-width figcaption {
+        left: calc( -11.5% - 1.875rem); } }
+    @media (min-width: 992px) {
+      .content-container .content-main figure.full-width .media-wrap-letterbox, .content-container .content-main figure.full-width .media-wrap-parallax, .content-container .content-main figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-media-wrap, .content-container .content-main figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-embed-wrap,
+      .content-container .content-main figure.full-width figcaption {
+        left: calc( -6% - 1.875rem); } }
+    @media (min-width: 1200px) {
+      .content-container .content-main figure.full-width .media-wrap-letterbox, .content-container .content-main figure.full-width .media-wrap-parallax, .content-container .content-main figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-media-wrap, .content-container .content-main figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-embed-wrap,
+      .content-container .content-main figure.full-width figcaption {
+        left: calc( -12.5% - 4.75rem); } }
+    @media (min-width: 1328px) {
+      .content-container .content-main figure.full-width .media-wrap-letterbox, .content-container .content-main figure.full-width .media-wrap-parallax, .content-container .content-main figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-media-wrap, .content-container .content-main figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-embed-wrap,
+      .content-container .content-main figure.full-width figcaption {
+        left: calc( -50vw + 552px); } }
+  .content-container .content-main figure.full-width figcaption {
+    padding: 4px 0 0 8px;
+    padding: 0.25rem 0 0 0.5rem; }
+
+@media (min-width: 992px) {
+  .content-container .content-main.content-main-centered figure.full-width .media-wrap-letterbox, .content-container .content-main.content-main-centered figure.full-width .media-wrap-parallax, .content-container .content-main.content-main-centered figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main.content-main-centered figure.full-width .card-media-wrap, .content-container .content-main.content-main-centered figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main.content-main-centered figure.full-width .card-embed-wrap,
+  .content-container .content-main.content-main-centered figure.full-width figcaption {
+    left: calc( -27.5% - 1.875rem); } }
+
+@media (min-width: 1200px) {
+  .content-container .content-main.content-main-centered figure.full-width .media-wrap-letterbox, .content-container .content-main.content-main-centered figure.full-width .media-wrap-parallax, .content-container .content-main.content-main-centered figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main.content-main-centered figure.full-width .card-media-wrap, .content-container .content-main.content-main-centered figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main.content-main-centered figure.full-width .card-embed-wrap,
+  .content-container .content-main.content-main-centered figure.full-width figcaption {
+    left: calc( -20.5% - 4.75rem); } }
+
+@media (min-width: 1328px) {
+  .content-container .content-main.content-main-centered figure.full-width .media-wrap-letterbox, .content-container .content-main.content-main-centered figure.full-width .media-wrap-parallax, .content-container .content-main.content-main-centered figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main.content-main-centered figure.full-width .card-media-wrap, .content-container .content-main.content-main-centered figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main.content-main-centered figure.full-width .card-embed-wrap,
+  .content-container .content-main.content-main-centered figure.full-width figcaption {
+    left: calc( -50vw + 345px); } }
 
 figure.featured-image {
   overflow: visible;
@@ -7972,9 +8080,13 @@ main > nav.breadcrumb {
     margin-bottom: 8px;
     margin-bottom: .5rem; }
   main > nav.breadcrumb a:after {
-    padding-left: 16px;
-    padding-left: 1rem;
+    padding-left: 12px;
+    padding-left: 0.75rem;
     padding-right: 0; }
+  main > nav.breadcrumb:hover:after, main > nav.breadcrumb:active:after, main > nav.breadcrumb:focus:after {
+    padding-left: 0;
+    padding-right: 8px;
+    padding-right: 0.5rem; }
   @media (min-width: 768px) {
     main > nav.breadcrumb {
       padding: 0.75rem 1rem 0.25rem;
@@ -8002,6 +8114,11 @@ nav.breadcrumb {
     line-height: 1rem;
     vertical-align: middle; }
   nav.breadcrumb a:after {
+    padding-left: 12px;
+    padding-left: 0.75rem;
+    padding-right: 8px;
+    padding-right: 0.5rem; }
+  nav.breadcrumb a:hover:after, nav.breadcrumb a:active:after, nav.breadcrumb a:focus:after {
     padding-left: 12px;
     padding-left: 0.75rem;
     padding-right: 8px;
