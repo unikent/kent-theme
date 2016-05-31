@@ -27,8 +27,9 @@ module.exports = {
 			"node_modules/handlebars/dist/handlebars.runtime.js",
 			"node_modules/social-likes/src/social-likes.js",
 			"node_modules/js-cookie/src/js.cookie.js",
+			"node_modules/moment/moment.js",
 			"tmp/handlebars_templates.js",
-			"node_modules/plyr/src/plyr.js",
+			"node_modules/plyr/src/js/plyr.js",
 		//	"node_modules/jwplayer/bin-release/jwplayer.js",
 		//	"node_modules/jwplayer/bin-release/polyfills.promise.js",
 		//	"node_modules/jwplayer/bin-release/provider.youtube.js",
@@ -49,11 +50,11 @@ module.exports = {
 			"js/components/beta_bar.js",
 			"js/components/attribution.js",
 			"js/components/embeds.js",
-			"js/components/paralax.js",
 			"js/components/slider.js",
 			"js/components/video.js",
 			"js/components/social-likes.js",
-			"js/components/navigation.js"
+			"js/components/navigation.js",
+			"js/components/paralax.js" // must run later than slider
 		],
 		dest: "tmp/main.js"
 	},

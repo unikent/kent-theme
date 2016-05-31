@@ -52,14 +52,15 @@
     "metalsmith-navigation": "^0.2.5",
     "metalsmith-text-replace": "^1.0.1",
     "modernizr": "~3.3.1",
+    "moment": "^2.13.0",
     "pixrem": "^3.0.0",
+    "plyr": "^1.6.12",
     "slick-carousel": "1.5.9",
     "social-likes": "^3.1.0",
     "tether": "~1.2.0",
     "time-grunt": "~1.0.0"
   },
   "dependencies": {
-    "napa": "^2.3.0",
-    "plyr": "^1.6.12"
+    "napa": "^2.3.0"
   }
 }

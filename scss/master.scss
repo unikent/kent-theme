@@ -9,11 +9,14 @@
 @import "../node_modules/slick-carousel/slick/slick.scss";
 @import "../node_modules/kent-bar/src/scss/bar";
 @import "../node_modules/kent-bar/src/scss/menu";
+@import "../node_modules/plyr/src/scss/plyr";
+
 // Theme components
 @import "components/responsive_utils";
 @import "components/typography";
 @import "components/scaffolding";
 @import "components/images";
+@import "components/video";
 @import "components/alerts";
 @import "components/buttons";
 @import "components/forms";

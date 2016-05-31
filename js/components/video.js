@@ -1,7 +1,174 @@
 $(document).ready(function(){
 	var viewport = ResponsiveBootstrapToolkit;
-	var launcherCount = 0;
+	
+	var Modal = new function(){
+
+		this.player = null;
+		this.el = $(Handlebars.templates['video_modal']({}));
+
+		//init
+		$("body").append(this.el);
+		this.el.modal({show:false});
+
+		this.el.on("hide.bs.modal", () => {
+			this.player.pause();
+		});
+
+		this.populate = function(player){
+			// don't update if unchanged
+			if(player == this.player) return true;
+
+			console.log("player has changed?");
+			
+			this.player = player;
+			this.el.find(".video-container").append(this.player.video_el);
+			//if(data.transcript) modal.find(".video-transcript").append(player.transcript);
+		}
+
+		this.show = function(){
+			console.log("show popup");
+			this.el.modal('show');
+		}
+
+		this.hide = function(){
+			this.el.modal('hide');
+		}
+	};
+
+	var Player = function($owner){
+
+		this.trigger = $owner;
+		this.video_el = $owner.find(".video-player").first();
+		this.placeholder = $owner.find("img").first();
+
+		this.plyr = null;
+		
+		this.settings = {
+			controls:  typeof $owner.data('controls') === 'undefined' || ( $owner.data('controls') === 'controls' ||  $owner.data('controls') === true),
+			transcript:  $owner.data('transcript') || false,
+			mode:  $owner.data('mode') || 'modal',
+			modal_down: $owner.data('modal-down') || 'xs',
+			modal_up:  $owner.data('modal-up') || 'xxl',
+			image:  $owner.data('image') || false
+		};
+
+		this.init = function(){
+
+			console.log("create player");
+			// if no image provided, use first <img> tag
+			if (!this.settings.image) {
+				this.settings.image = $(this).find('img').first();
+				this.settings.image = (this.settings.image.length !== 0) ? this.settings.image.attr('src') : false;
+			}
+
+			this.plyr = plyr.setup(this.video_el[0], {
+				autoplay: true
+			})[0];
+		};
+
+		this.show = function(){
+			console.log("show player");
+
+
+			// force modal mode if specified or we're at xs
+			//if (viewport.is('<=' + this.settings.modal_down) || (this.settings.modal_up && viewport.is('>=' + this.settings.modal_up))) {
+			//	this.settings.mode = 'modal';
+			//}
+			console.log(this.settings.mode);
+			if (this.settings.mode === 'inline'){
+				$owner.addClass("playing");
+				$owner.closest('.card-media-inline').addClass('card-media-enabled');
+			} else {
+				console.log(this.ply);
+				$owner.addClass("playing");
+				this.plyr.toggleFullscreen();
+				//Modal.populate(this);
+				//Modal.show();
+			}
+
+			this.play();
+		};
+
+		this.hide = function(){
+			$owner.removeClass("playing");
+		};
+
+
+
+		this.play = function(){
+			console.log("!!!!!!!");
+			window.test = this.plyr;
+			this.plyr.play();
+		}
+		this.pause = function(){
+			this.plyr.pause();
+		}
+		this.stop = function(){
+			this.plyr.pause();
+			// re add cover image
+
+			//this.plyr.play();
+		}
+
+
+
+
+
+
+
+		this.init();
+
+		
+
+
+
+
+
+		
+
+
+		/*
+		// get the right video container
+		var video_container = $(Handlebars.templates['video_' + this.settings.mode]({
+			id: this.video_containerId
+			//transcript: transcript
+		}));
+		*/
+
+		//window.KENT.log('tada');
+		//window.KENT.log(this.settings);
+
+
+
+
+	};
 	$('.video-launcher').each(function(){
+
+		let _container = $(this);
+
+		$(this).find("img").click(function(){
+			
+			let player = null;
+			if (_container.data('player')){
+				player = _container.data('player');
+			} else {
+				player = new Player(_container);
+				_container.data("player", player);
+			}
+		
+			player.show();
+
+		});
+	});
+
+
+
+
+
+	/*
+	var viewport = ResponsiveBootstrapToolkit;
+	var launcherCount = 0;
+	$('.old-video-launcher').each(function(){
 
 		// initiate and show the video as a modal
 		var init = function () {
@@ -168,4 +335,5 @@ $(document).ready(function(){
 		// Debug
 		window.KENT.log('[Video player] Instance created', $(this));
 	});
+	*/
 });
