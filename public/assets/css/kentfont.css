@@ -117,6 +117,9 @@
 .kf-wheelchair:before {
   content: "\f193";
 }
+.kf-academia-edu:before {
+  content: "\e010";
+}
 .kf-angle-down:before {
   content: "\f107";
 }
@@ -129,6 +132,9 @@
 .kf-angle-up:before {
   content: "\f106";
 }
+.kf-backward:before {
+  content: "\f04a";
+}
 .kf-ban:before {
   content: "\f05e";
 }
@@ -137,6 +143,12 @@
 }
 .kf-camera:before {
   content: "\f030";
+}
+.kf-captions-off:before {
+  content: "\e00e";
+}
+.kf-captions:before {
+  content: "\e00d";
 }
 .kf-caret-down:before {
   content: "\f0d7";
@@ -183,17 +195,29 @@
 .kf-comment:before {
   content: "\f075";
 }
+.kf-compress:before {
+  content: "\f066";
+}
 .kf-email-o:before {
   content: "\f003";
 }
 .kf-exclamation-circle:before {
   content: "\f06a";
 }
+.kf-expand:before {
+  content: "\f065";
+}
 .kf-external-link:before {
   content: "\f08e";
 }
+.kf-file-text:before {
+  content: "\f0f6";
+}
 .kf-flickr:before {
   content: "\f16e";
+}
+.kf-forward:before {
+  content: "\f102";
 }
 .kf-frown:before {
   content: "\f119";
@@ -224,6 +248,9 @@
 }
 .kf-meh:before {
   content: "\f11a";
+}
+.kf-mendeley:before {
+  content: "\e00f";
 }
 .kf-menu:before {
   content: "\f0c9";
@@ -284,6 +311,9 @@
 }
 .kf-tumblr:before {
   content: "\f173";
+}
+.kf-undo:before {
+  content: "\f0e2";
 }
 .kf-users:before {
   content: "\f0c0";
