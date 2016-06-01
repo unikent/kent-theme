@@ -48,6 +48,16 @@
         }
     }
 
+    &.cards-list {
+        & > .card-panel-body > .card-panel-list {
+            width: 100%;
+        }
+
+       .card {
+           @extend .card-in-list;
+       }
+   }
+
     &.cards-backed {
         .card {
 
@@ -283,16 +293,6 @@
                     }
                 }
 
-            }
-
-        }
-
-        .card-panel-list-full-width {
-            @extend .card-panel-list;
-            width: 100%;
-
-            & > div.card > img.card-img:first-child {
-                max-width: 20%;
             }
         }
 
