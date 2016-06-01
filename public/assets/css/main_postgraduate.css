@@ -5945,7 +5945,7 @@ p + h6, p + .h6 {
       .content-page .content-header.content-header-with-social {
         padding-left: calc(5% + 5.9375rem); }
       .content-page .content-header.content-header-centered {
-        width: 72%;
+        width: 62%;
         padding: 0;
         margin-left: auto;
         margin-right: auto; } }
@@ -5957,7 +5957,7 @@ p + h6, p + .h6 {
       .content-page .content-header.content-header-with-social {
         padding: 0 0.9375rem; }
       .content-page .content-header.content-header-centered {
-        max-width: 900px; } }
+        width: 710px; } }
   @media (min-width: 992px) {
     .content-page .content-header.content-header-centered .content-social.content-social-head {
       left: -4rem; } }
@@ -6055,7 +6055,8 @@ p + h6, p + .h6 {
   @media (min-width: 1328px) {
     .content-page .content-container {
       margin: 0 auto;
-      max-width: 1140px; }
+      max-width: 1140px;
+      font-size: 19px; }
       .content-page .content-container .content-main,
       .content-page .content-container .content-aside {
         padding: 0 0.9375rem; }

@@ -24,7 +24,7 @@
             }
 
             &.content-header-centered{
-                width: 72%;
+                width: 62%;
                 padding: 0;
                 margin-left: auto;
                 margin-right: auto;
@@ -44,7 +44,7 @@
             }
 
             &.content-header-centered{
-                max-width: 900px;
+                width: 710px;
             }
 
         }
@@ -159,6 +159,9 @@
 
             margin:    0 auto;
             max-width: 1140px;
+
+            font-size: 19px;
+
             .content-main,
             .content-aside{
                 padding: 0 ($grid-gutter-width / 2);
@@ -178,7 +181,6 @@
         @include media-breakpoint-down(md){
             font-size: 18px;
         }
-
 
     }
 
