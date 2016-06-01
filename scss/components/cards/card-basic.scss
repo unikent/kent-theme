@@ -42,12 +42,6 @@
         @extend .faux-link-block;
     }
 
-    &.card-in-list {
-       img.card-img:first-child {
-           max-width: 20%;
-       }
-   }
-
     /*
         apply a background color to a card, also adds padding
          to sides so images have to be pulled back out
