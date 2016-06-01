@@ -176,15 +176,20 @@ figure {
         img {
             width: 100%;
         }
+
         @include media-breakpoint-up(md) {
             max-width:     50%;
             float:         right;
-            margin-right:  -20%;
             margin-left:   2rem;
             margin-bottom: 2rem;
         }
 
+        @include media-breakpoint-up(lg) {
+            margin-right:  -20%;
+        }
+
     }
+
 
     figcaption {
         color:     $text-muted;
@@ -193,8 +198,8 @@ figure {
     }
 }
 
-.container, .content-container, .content-container-full {
-    & > figure {
+.container, .content-container {
+    figure {
         clear:      none;
         overflow:   visible;
         margin-top: 0;
@@ -202,6 +207,66 @@ figure {
             padding-left: 0;
         }
     }
+}
+
+.content-container .content-main{
+
+    figure.full-width{
+
+        overflow: visible;
+
+        .media-wrap-letterbox,
+        figcaption{
+            position: relative;
+            width:    100vw;
+            left:-($grid-gutter-width/2);
+
+            @include media-breakpoint-up(sm){
+                left: -5.6%;
+            }
+
+            @include media-breakpoint-up(md){
+                left: calc( -11.5% - #{$grid-gutter-width});
+            }
+            @include media-breakpoint-up(lg){
+                left: calc( -6% - #{$grid-gutter-width});
+            }
+
+            @include media-breakpoint-up(xl){
+                left: calc( -12.5% - #{4.75rem} );
+            }
+
+            @media (min-width: $article-max-breakpoint) {
+                left: calc( -50vw + #{552px})
+            }
+        }
+
+        figcaption{
+            padding:   0.25rem 0 0 0.5rem;
+        }
+
+    }
+
+    &.content-main-centered{
+        figure.full-width{
+            .media-wrap-letterbox,
+            figcaption{
+
+                @include media-breakpoint-up(lg){
+                    left: calc( -27.5% - #{$grid-gutter-width});
+                }
+
+                @include media-breakpoint-up(xl){
+                    left: calc( -20.5% - #{4.75rem} );
+                }
+
+                @media (min-width: $article-max-breakpoint) {
+                    left: calc( -50vw + #{345px})
+                }
+            }
+        }
+    }
+
 }
 
 figure.featured-image {

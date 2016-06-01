@@ -19,12 +19,11 @@ KentThemeHelper::header(array(
 		<h1 class="">{{sub_title}}</h1>
 	</div>
 	<div class="content-container">
-
-		{{>subnav}}
-
+		<div class="content-main">
 		<p class="lead">{{lead}}</p>
-
 		{{>page_nav}}
+		</div>
+		{{>subnav}}
 	</div>
 
 		{{{contents}}}

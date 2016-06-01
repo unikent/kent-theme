@@ -5,6 +5,7 @@ module.exports = {
 			"node_modules/jquery/dist/jquery.js",
 			"node_modules/tether/dist/js/tether.js",
 			"js/_bootstrap.js",
+			"node_modules/moment/moment.js",
 			"node_modules/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.js",
 			"node_modules/jquery.stellar/jquery.stellar.js",
 			"node_modules/slick-carousel/slick/slick.js",
@@ -27,11 +28,11 @@ module.exports = {
 			"js/components/beta_bar.js",
 			"js/components/attribution.js",
 			"js/components/embeds.js",
-			"js/components/paralax.js",
 			"js/components/slider.js",
 			"js/components/video.js",
 			"js/components/social-likes.js",
-			"js/components/navigation.js"
+			"js/components/navigation.js",
+			"js/components/paralax.js" //parallax last as it needs page to be rendered correctly (especially sliders)
 		],
 		dest: "js/main.js"
 	}
