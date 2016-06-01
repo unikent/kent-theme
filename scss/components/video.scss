@@ -54,15 +54,14 @@
 		& > img {display:none;}
 		&::after {display:none;}
 
-
-		.plyr--muted .kf-volume-medium {
+		// plyr - hide icon toggles
+		.plyr--muted .kf-volume-medium,
+		.plyr--fullscreen-active .kf-expand,
+		.plyr--captions-active .kf-captions-off {
 			display:none;
 		}
-		.plyr--fullscreen-active .kf-compress{
-			display:none;
-		}
 
-		
+		// style primary play button in brand
 		.plyr__play-large {
 			background:none;
 			border:none;

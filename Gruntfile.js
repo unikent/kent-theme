@@ -28,8 +28,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('build_js', ['handlebars', 'concat:bootstrap', 'concat:vendor', 'concat:main', 'babel',  'concat:build', 'copy:mainjs']);
 
 	// Define tasks
-	grunt.registerTask('development', [ 'eslint', 'build_js', 'copy:kentfonts', 'copy:fonts', 'sass', 'postcss', 'patterns_local']);
-	grunt.registerTask('production', [ 'eslint', 'build_js', 'uglify:main', 'copy:kentfonts', 'copy:fonts', 'sass', 'postcss', 'cssnano', 'modernizr', 'patterns']);
+	grunt.registerTask('development', [ 'eslint', 'build_js', 'copy:kentfont', 'copy:fonts', 'sass', 'postcss', 'patterns_local']);
+	grunt.registerTask('production', [ 'eslint', 'build_js', 'uglify:main', 'copy:kentfont', 'copy:fonts', 'sass', 'postcss', 'cssnano', 'modernizr', 'patterns']);
 	grunt.registerTask('patterns', [ 'php2html:production', 'metalsmith:production' ]);
 	grunt.registerTask('patterns_local', [ 'php2html:development', 'metalsmith:development' ]);
 

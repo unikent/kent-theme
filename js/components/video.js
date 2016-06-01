@@ -1,8 +1,8 @@
 $(document).ready(function(){
-	var viewport = ResponsiveBootstrapToolkit;
+	const viewport = ResponsiveBootstrapToolkit;
 
 	// Plyr controls template - Use kf icons
-	var plyr_controls = `
+	const plyr_controls = `
 		<button type="button" data-plyr="play" class="plyr__play-large">
 			<span class="kf-play-circle"></span>
 			<span class="plyr__sr-only">Play</span>
@@ -11,12 +11,12 @@ $(document).ready(function(){
 		<div class='plyr__controls'>
 			<button type='button' data-plyr='play'>
 				<span class="kf-play"></span>
-				<span class='plyr__sr-only'>Play</span>
+				<span class="plyr__tooltip">Play</span>
 			</button>
 
 			<button type='button' data-plyr='pause'>
 				<span class="kf-pause"></span>
-				<span class='plyr__sr-only'>Pause</span>
+				<span class="plyr__tooltip">Pause</span>
 			</button>
 
 			<span class='plyr__progress'>
@@ -41,7 +41,7 @@ $(document).ready(function(){
 			<button type='button' data-plyr='mute'>
 				<span class="kf-volume-mute icon--muted"></span>
 				<span class="kf-volume-medium"></span>
-				<span class='plyr__sr-only'>Toggle Mute</span>
+				<span class='plyr__tooltip'>Toggle Mute</span>
 			</button>
 
 			<span class='plyr__volume'>
@@ -53,26 +53,31 @@ $(document).ready(function(){
 			<button type='button' data-plyr='captions'>
 				<span class="kf-captions icon--captions-on"></span>
 				<span class="kf-captions-off"></span>
-				<span class='plyr__sr-only'>Toggle Captions</span>
+				<span class='plyr__tooltip'>Toggle Captions</span>
 			</button>
 
-			<button type='button' class="download-transcript">Transcript</button>
+			<button type='button' class="download-transcript">
+				<span class="kf-file-text"></span>
+				<span class='plyr__tooltip'>Access Transcript</span>
+			</button>
 
 			<button type='button' data-plyr='fullscreen'>
-				<span class="kf-collapse icon--exit-fullscreen"></span>
+				<span class="kf-compress icon--exit-fullscreen"></span>
 				<span class="kf-expand"></span>
-				<span class='plyr__sr-only'>Toggle Fullscreen</span>
+				<span class='plyr__tooltip'>Toggle Fullscreen</span>
 			</button>
 		</div>
 	`;
-
+	/**
+	 * Control class for "player" instances
+	 */
 	var Player = function($container){
 		// vars
 		this.container = $container;
-		this.video = $container.find(".video-player").first();
-		this.placeholder = $container.find("img").first();
+		this.video = $container.find('.video-player').first();
+		this.placeholder = $container.find('img').first();
 		this.plyr = null;
-		
+
 		// settings for instance
 		this.settings = {
 			transcript:  $container.data('transcript') || false,
@@ -88,11 +93,13 @@ $(document).ready(function(){
 
 			this.placeholder.click( () => {
 				// if Player isn't booted, boot it
-				if (!this.plyr) this.boot();
+				if (!this.plyr){
+					this.boot();
+				}
 				// show player
 				this.show();
 			});
-		}
+		};
 
 		/**
 		 * When user attempts to play video, initalise video player instance
@@ -105,11 +112,13 @@ $(document).ready(function(){
 				html: plyr_controls
 			})[0];
 
-			// Hookup events	
-			this.video.on("ready", () => { this.setupTranscript(); });
+			// Hookup events
+			this.video.on('ready', () => { this.setupTranscript(); });
 			this.video.on('pause', () => {
 				// hide on pause if not full screen
-				if(!this.plyr.isFullscreen()) this.hide();
+				if (!this.plyr.isFullscreen()){
+					this.hide();
+				}
 			});
 			this.video.on('exitfullscreen', () => {
 				this.hide();
@@ -123,24 +132,23 @@ $(document).ready(function(){
 		 * Setup transcription link
 		 */
 		this.setupTranscript = function(){
-			const button = this.video.find(".download-transcript");
-			if(this.settings.transcript){
+			const button = this.video.find('.download-transcript');
+			if (this.settings.transcript) {
 				button.click(() => { document.location.href = this.settings.transcript; });
-			}else{
+			} else {
 				button.hide();
 			}
-		}
+		};
 
 		/**
 		 * Show video
 		 * Display video and play it ( use attributes to determine whether to play inline or "fullscreen")
 		 */
 		this.show = function(){
-			this.container.addClass("playing");
+			this.container.addClass('playing');
 			this.container.closest('.card-media-inline').addClass('card-media-enabled');
 
-			if (this.settings.mode == 'modal' || viewport.is('<=' + this.settings.modal_down) || (this.settings.modal_up && viewport.is('>=' + this.settings.modal_up))) {
-				console.log("full screen it");
+			if (this.settings.mode === 'modal' || viewport.is('<=' + this.settings.modal_down) || (this.settings.modal_up && viewport.is('>=' + this.settings.modal_up))) {
 				this.plyr.toggleFullscreen();
 			}
 
@@ -153,7 +161,7 @@ $(document).ready(function(){
 		 */
 		this.hide = function(){
 			this.pause();
-			this.container.removeClass("playing");
+			this.container.removeClass('playing');
 			this.container.closest('.card-media-inline').removeClass('card-media-enabled');
 		};
 
@@ -181,7 +189,6 @@ $(document).ready(function(){
 		this.init();
 	};
 
-
 	$('.video-launcher').each(function(){
 		// create player instance
 		new Player($(this));
@@ -189,11 +196,4 @@ $(document).ready(function(){
 		// Debug
 		window.KENT.log('[Video player] Instance created');
 	});
-
-
-
-
-
-		
-
 });

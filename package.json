@@ -43,7 +43,7 @@
     "jquery.stellar": "git+ssh://git@github.com/unikent/stellarjs.git",
     "js-cookie": "2.1.0",
     "kent-bar": "git+ssh://git@github.com/unikent/kent-bar.git",
-    "kent-font": "git+ssh://git@github.com/unikent/kent-font.git#1.0.1",
+    "kent-font": "git+ssh://git@github.com/unikent/kent-font.git#1.0.2",
     "load-grunt-tasks": "~1.0.0",
     "metalsmith": "^2.1.0",
     "metalsmith-headings": "^0.1.0",
