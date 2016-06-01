@@ -5967,22 +5967,22 @@ p + h6, p + .h6 {
     .content-page .content-header {
       padding-left: calc(5% + 0.9375rem);
       padding-right: 5%; }
+      .content-page .content-header.content-header-with-social {
+        padding-left: calc(5% + 5.9375rem); }
       .content-page .content-header.content-header-centered {
-        width: 72%;
+        width: 62%;
         padding: 0;
         margin-left: auto;
-        margin-right: auto; }
-      .content-page .content-header.content-header-with-social {
-        padding-left: calc(5% + 5.9375rem); } }
+        margin-right: auto; } }
   @media (min-width: 1328px) {
     .content-page .content-header {
       margin: 0 auto;
       max-width: 1140px;
       padding: 0 0.9375rem; }
-      .content-page .content-header.content-header-centered {
-        max-width: 900px; }
       .content-page .content-header.content-header-with-social {
-        padding: 0 0.9375rem; } }
+        padding: 0 0.9375rem; }
+      .content-page .content-header.content-header-centered {
+        width: 710px; } }
   @media (min-width: 992px) {
     .content-page .content-header.content-header-centered .content-social.content-social-head {
       left: -4rem; } }
@@ -6080,7 +6080,8 @@ p + h6, p + .h6 {
   @media (min-width: 1328px) {
     .content-page .content-container {
       margin: 0 auto;
-      max-width: 1140px; }
+      max-width: 1140px;
+      font-size: 19px; }
       .content-page .content-container .content-main,
       .content-page .content-container .content-aside {
         padding: 0 0.9375rem; }
@@ -8263,6 +8264,8 @@ button.beta-toggler {
         apply a background color to a card, also adds padding
          to sides so images have to be pulled back out
       */ }
+  .card.card-in-list img.card-img:first-child, .card-panel.cards-list .card img.card-img:first-child, .cards-list.card-panel-flush .card img.card-img:first-child {
+    max-width: 20%; }
   .card.card-backed, .card-panel.cards-backed .card, .cards-backed.card-panel-flush .card {
     padding-left: 15px;
     padding-left: 0.9375rem;
@@ -8765,6 +8768,8 @@ button.beta-toggler {
       color: rgba(255, 255, 255, 0.75); }
     .card-panel.card-panel-inverse.nav-links-panel .nav-link:hover, .card-panel.nav-links-panel.card-panel-primary .nav-link:hover, .nav-links-panel.card-panel-primary.card-panel-flush .nav-link:hover, .card-panel.nav-links-panel.card-panel-accent .nav-link:hover, .nav-links-panel.card-panel-accent.card-panel-flush .nav-link:hover, .card-panel.nav-links-panel.card-panel-dark .nav-link:hover, .nav-links-panel.card-panel-dark.card-panel-flush .nav-link:hover, .card-panel-inverse.nav-links-panel.card-panel-flush .nav-link:hover, .card-panel.card-panel-inverse.nav-links-panel .nav-link:active, .card-panel.nav-links-panel.card-panel-primary .nav-link:active, .nav-links-panel.card-panel-primary.card-panel-flush .nav-link:active, .card-panel.nav-links-panel.card-panel-accent .nav-link:active, .nav-links-panel.card-panel-accent.card-panel-flush .nav-link:active, .card-panel.nav-links-panel.card-panel-dark .nav-link:active, .nav-links-panel.card-panel-dark.card-panel-flush .nav-link:active, .card-panel-inverse.nav-links-panel.card-panel-flush .nav-link:active, .card-panel.card-panel-inverse.nav-links-panel .nav-link:focus, .card-panel.nav-links-panel.card-panel-primary .nav-link:focus, .nav-links-panel.card-panel-primary.card-panel-flush .nav-link:focus, .card-panel.nav-links-panel.card-panel-accent .nav-link:focus, .nav-links-panel.card-panel-accent.card-panel-flush .nav-link:focus, .card-panel.nav-links-panel.card-panel-dark .nav-link:focus, .nav-links-panel.card-panel-dark.card-panel-flush .nav-link:focus, .card-panel-inverse.nav-links-panel.card-panel-flush .nav-link:focus {
       background-color: rgba(255, 255, 255, 0.1); }
+  .card-panel.cards-list > .card-panel-body > .card-panel-list, .cards-list.card-panel-flush > .card-panel-body > .card-panel-list {
+    width: 100%; }
   @media (min-width: 544px) {
     .card-panel.cards-backed .card, .cards-backed.card-panel-flush .card {
       border-width: 0 0.9375rem 0 0.9375rem;
@@ -8772,8 +8777,7 @@ button.beta-toggler {
       border-color: #FFFFFF; } }
   .card-panel.cards-backed .card-panel-body .card-panel-grid, .cards-backed.card-panel-flush .card-panel-body .card-panel-grid,
   .card-panel.cards-backed .card-panel-body .card-panel-single, .cards-backed.card-panel-flush .card-panel-body .card-panel-single,
-  .card-panel.cards-backed .card-panel-body .card-panel-list, .cards-backed.card-panel-flush .card-panel-body .card-panel-list,
-  .card-panel.cards-backed .card-panel-body .card-panel-list-full-width, .cards-backed.card-panel-flush .card-panel-body .card-panel-list-full-width {
+  .card-panel.cards-backed .card-panel-body .card-panel-list, .cards-backed.card-panel-flush .card-panel-body .card-panel-list {
     padding: 0; }
   .card-panel.card-panel-primary-tint .card-panel-full > div.expanded, .card-panel-primary-tint.card-panel-flush .card-panel-full > div.expanded {
     width: calc(100% + 1.875rem); }
@@ -9005,20 +9009,20 @@ button.beta-toggler {
     .card-panel .card-panel-body .card-panel-full, .card-panel-flush .card-panel-body .card-panel-full,
     .card-panel .card-panel-body .card-panel-grid, .card-panel-flush .card-panel-body .card-panel-grid,
     .card-panel .card-panel-body .card-panel-single, .card-panel-flush .card-panel-body .card-panel-single,
-    .card-panel .card-panel-body .card-panel-list, .card-panel-flush .card-panel-body .card-panel-list, .card-panel .card-panel-body .card-panel-list-full-width, .card-panel-flush .card-panel-body .card-panel-list-full-width {
+    .card-panel .card-panel-body .card-panel-list, .card-panel-flush .card-panel-body .card-panel-list {
       overflow: hidden;
       margin-bottom: 16px;
       margin-bottom: 1rem; }
       .card-panel .card-panel-body .card-panel-full:last-child, .card-panel-flush .card-panel-body .card-panel-full:last-child,
       .card-panel .card-panel-body .card-panel-grid:last-child, .card-panel-flush .card-panel-body .card-panel-grid:last-child,
       .card-panel .card-panel-body .card-panel-single:last-child, .card-panel-flush .card-panel-body .card-panel-single:last-child,
-      .card-panel .card-panel-body .card-panel-list:last-child, .card-panel-flush .card-panel-body .card-panel-list:last-child, .card-panel .card-panel-body .card-panel-list-full-width:last-child, .card-panel-flush .card-panel-body .card-panel-list-full-width:last-child {
+      .card-panel .card-panel-body .card-panel-list:last-child, .card-panel-flush .card-panel-body .card-panel-list:last-child {
         margin-bottom: 0; }
       @media (min-width: 768px) {
         .card-panel .card-panel-body .card-panel-full, .card-panel-flush .card-panel-body .card-panel-full,
         .card-panel .card-panel-body .card-panel-grid, .card-panel-flush .card-panel-body .card-panel-grid,
         .card-panel .card-panel-body .card-panel-single, .card-panel-flush .card-panel-body .card-panel-single,
-        .card-panel .card-panel-body .card-panel-list, .card-panel-flush .card-panel-body .card-panel-list, .card-panel .card-panel-body .card-panel-list-full-width, .card-panel-flush .card-panel-body .card-panel-list-full-width {
+        .card-panel .card-panel-body .card-panel-list, .card-panel-flush .card-panel-body .card-panel-list {
           position: relative;
           float: left;
           min-height: 1px;
@@ -9055,10 +9059,6 @@ button.beta-toggler {
             margin-right: 0.9375rem; }
           .card-panel .card-panel-body .card-panel-full:last-child > div, .card-panel-flush .card-panel-body .card-panel-full:last-child > div {
             margin-left: 0.9375rem; } }
-    .card-panel .card-panel-body .card-panel-list-full-width, .card-panel-flush .card-panel-body .card-panel-list-full-width {
-      width: 100%; }
-      .card-panel .card-panel-body .card-panel-list-full-width > div.card > img.card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list-full-width > div.card > img.card-img:first-child {
-        max-width: 20%; }
     .card-panel .card-panel-body .card-panel-single .card .card-title, .card-panel-flush .card-panel-body .card-panel-single .card .card-title {
       font-size: 20.256px;
       font-size: 1.266rem; }
@@ -9086,7 +9086,7 @@ button.beta-toggler {
         width: 50%; }
         .card-panel .card-panel-body .card-panel-grid .card:nth-child(odd), .card-panel-flush .card-panel-body .card-panel-grid .card:nth-child(odd) {
           clear: left; }
-    .card-panel .card-panel-body .card-panel-list .card, .card-panel-flush .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list-full-width .card, .card-panel-flush .card-panel-body .card-panel-list-full-width .card {
+    .card-panel .card-panel-body .card-panel-list .card, .card-panel-flush .card-panel-body .card-panel-list .card {
       position: relative;
       float: left;
       min-height: 1px;
@@ -9095,28 +9095,28 @@ button.beta-toggler {
       padding-right: 15px;
       padding-right: 0.9375rem; }
       @media (min-width: 544px) {
-        .card-panel .card-panel-body .card-panel-list .card, .card-panel-flush .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list-full-width .card, .card-panel-flush .card-panel-body .card-panel-list-full-width .card {
+        .card-panel .card-panel-body .card-panel-list .card, .card-panel-flush .card-panel-body .card-panel-list .card {
           padding: 0;
           width: 100%; } }
       @media (min-width: 992px) {
-        .card-panel .card-panel-body .card-panel-list .card, .card-panel-flush .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list-full-width .card, .card-panel-flush .card-panel-body .card-panel-list-full-width .card {
+        .card-panel .card-panel-body .card-panel-list .card, .card-panel-flush .card-panel-body .card-panel-list .card {
           padding: 0;
           width: 100%; } }
-      .card-panel .card-panel-body .card-panel-list .card .card-img-top, .card-panel-flush .card-panel-body .card-panel-list .card .card-img-top, .card-panel .card-panel-body .card-panel-list-full-width .card .card-img-top, .card-panel-flush .card-panel-body .card-panel-list-full-width .card .card-img-top,
-      .card-panel .card-panel-body .card-panel-list .card .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card .card-img:first-child, .card-panel .card-panel-body .card-panel-list-full-width .card .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list-full-width .card .card-img:first-child,
-      .card-panel .card-panel-body .card-panel-list .card img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card img:first-child, .card-panel .card-panel-body .card-panel-list-full-width .card img:first-child, .card-panel-flush .card-panel-body .card-panel-list-full-width .card img:first-child {
+      .card-panel .card-panel-body .card-panel-list .card .card-img-top, .card-panel-flush .card-panel-body .card-panel-list .card .card-img-top,
+      .card-panel .card-panel-body .card-panel-list .card .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card .card-img:first-child,
+      .card-panel .card-panel-body .card-panel-list .card img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card img:first-child {
         float: left;
         max-width: 40%;
         margin-right: 16px;
         margin-right: 1rem; }
-      .card-panel .card-panel-body .card-panel-list .card.card-backed, .card-panel-flush .card-panel-body .card-panel-list .card.card-backed, .card-panel .card-panel-body .card-panel-list-full-width .card.card-backed, .card-panel-flush .card-panel-body .card-panel-list-full-width .card.card-backed, .card-panel.cards-backed .card-panel-body .card-panel-list .card, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card, .card-panel.cards-backed .card-panel-body .card-panel-list-full-width .card, .card-panel-flush .card-panel-body .card-panel-list-full-width .card-panel.cards-backed .card, .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list-full-width .cards-backed.card-panel-flush .card, .cards-backed.card-panel-flush .card-panel-body .card-panel-list-full-width .card {
+      .card-panel .card-panel-body .card-panel-list .card.card-backed, .card-panel-flush .card-panel-body .card-panel-list .card.card-backed, .card-panel.cards-backed .card-panel-body .card-panel-list .card, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card, .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card {
         padding: 16px 16px 0;
         padding: 1rem 1rem 0; }
-        .card-panel .card-panel-body .card-panel-list .card.card-backed .card-img-top, .card-panel-flush .card-panel-body .card-panel-list .card.card-backed .card-img-top, .card-panel .card-panel-body .card-panel-list-full-width .card.card-backed .card-img-top, .card-panel-flush .card-panel-body .card-panel-list-full-width .card.card-backed .card-img-top, .card-panel.cards-backed .card-panel-body .card-panel-list .card .card-img-top, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card .card-img-top, .card-panel.cards-backed .card-panel-body .card-panel-list-full-width .card .card-img-top, .card-panel-flush .card-panel-body .card-panel-list-full-width .card-panel.cards-backed .card .card-img-top, .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card .card-img-top, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card .card-img-top, .card-panel .card-panel-body .card-panel-list-full-width .cards-backed.card-panel-flush .card .card-img-top, .cards-backed.card-panel-flush .card-panel-body .card-panel-list-full-width .card .card-img-top,
-        .card-panel .card-panel-body .card-panel-list .card.card-backed .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card.card-backed .card-img:first-child, .card-panel .card-panel-body .card-panel-list-full-width .card.card-backed .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list-full-width .card.card-backed .card-img:first-child, .card-panel.cards-backed .card-panel-body .card-panel-list .card .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card .card-img:first-child, .card-panel.cards-backed .card-panel-body .card-panel-list-full-width .card .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list-full-width .card-panel.cards-backed .card .card-img:first-child,
-        .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card .card-img:first-child, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card .card-img:first-child, .card-panel .card-panel-body .card-panel-list-full-width .cards-backed.card-panel-flush .card .card-img:first-child, .cards-backed.card-panel-flush .card-panel-body .card-panel-list-full-width .card .card-img:first-child,
-        .card-panel .card-panel-body .card-panel-list .card.card-backed img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card.card-backed img:first-child, .card-panel .card-panel-body .card-panel-list-full-width .card.card-backed img:first-child, .card-panel-flush .card-panel-body .card-panel-list-full-width .card.card-backed img:first-child, .card-panel.cards-backed .card-panel-body .card-panel-list .card img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card img:first-child, .card-panel.cards-backed .card-panel-body .card-panel-list-full-width .card img:first-child, .card-panel-flush .card-panel-body .card-panel-list-full-width .card-panel.cards-backed .card img:first-child,
-        .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card img:first-child, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card img:first-child, .card-panel .card-panel-body .card-panel-list-full-width .cards-backed.card-panel-flush .card img:first-child, .cards-backed.card-panel-flush .card-panel-body .card-panel-list-full-width .card img:first-child {
+        .card-panel .card-panel-body .card-panel-list .card.card-backed .card-img-top, .card-panel-flush .card-panel-body .card-panel-list .card.card-backed .card-img-top, .card-panel.cards-backed .card-panel-body .card-panel-list .card .card-img-top, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card .card-img-top, .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card .card-img-top, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card .card-img-top,
+        .card-panel .card-panel-body .card-panel-list .card.card-backed .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card.card-backed .card-img:first-child, .card-panel.cards-backed .card-panel-body .card-panel-list .card .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card .card-img:first-child,
+        .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card .card-img:first-child, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card .card-img:first-child,
+        .card-panel .card-panel-body .card-panel-list .card.card-backed img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card.card-backed img:first-child, .card-panel.cards-backed .card-panel-body .card-panel-list .card img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card img:first-child,
+        .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card img:first-child, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card img:first-child {
           margin-left: 0;
           margin-bottom: 16px;
           margin-bottom: 1rem; }
