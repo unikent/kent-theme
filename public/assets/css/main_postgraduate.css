@@ -8264,8 +8264,6 @@ button.beta-toggler {
         apply a background color to a card, also adds padding
          to sides so images have to be pulled back out
       */ }
-  .card.card-in-list img.card-img:first-child, .card-panel.cards-list .card img.card-img:first-child, .cards-list.card-panel-flush .card img.card-img:first-child {
-    max-width: 20%; }
   .card.card-backed, .card-panel.cards-backed .card, .cards-backed.card-panel-flush .card {
     padding-left: 15px;
     padding-left: 0.9375rem;
@@ -9109,6 +9107,15 @@ button.beta-toggler {
         max-width: 40%;
         margin-right: 16px;
         margin-right: 1rem; }
+      .card-panel .card-panel-body .card-panel-list .card.card-in-list > img.card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card.card-in-list > img.card-img:first-child, .card-panel.cards-list .card-panel-body .card-panel-list .card > img.card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-list .card > img.card-img:first-child, .card-panel .card-panel-body .card-panel-list .cards-list.card-panel-flush .card > img.card-img:first-child, .cards-list.card-panel-flush .card-panel-body .card-panel-list .card > img.card-img:first-child {
+        max-width: 15%;
+        min-width: 112px;
+        min-width: 7rem;
+        padding: 4px;
+        padding: 0.25rem; }
+        @media (min-width: 544px) {
+          .card-panel .card-panel-body .card-panel-list .card.card-in-list > img.card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card.card-in-list > img.card-img:first-child, .card-panel.cards-list .card-panel-body .card-panel-list .card > img.card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-list .card > img.card-img:first-child, .card-panel .card-panel-body .card-panel-list .cards-list.card-panel-flush .card > img.card-img:first-child, .cards-list.card-panel-flush .card-panel-body .card-panel-list .card > img.card-img:first-child {
+            padding: 0; } }
       .card-panel .card-panel-body .card-panel-list .card.card-backed, .card-panel-flush .card-panel-body .card-panel-list .card.card-backed, .card-panel.cards-backed .card-panel-body .card-panel-list .card, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card, .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card {
         padding: 16px 16px 0;
         padding: 1rem 1rem 0; }
