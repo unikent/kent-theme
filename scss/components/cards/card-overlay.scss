@@ -10,6 +10,7 @@
 
     padding-bottom: 1rem;
     .card-title-wrap {
+        pointer-events: none;
         padding:          2rem;
         background-color: $brand-primary;
         color:            #FFFFFF;
@@ -19,12 +20,14 @@
             float: none;
         }
 
-        &.card-title-wrap-link {
+        &.card-title-wrap-link{
+            pointer-events: auto;
+            @extend .faux-link-block;
+
             display:       block;
             color:         #FFFFFF;
             padding-right: 3rem;
             cursor:        pointer;
-            position:      relative;
 
             &:hover {
                 text-decoration:  none;

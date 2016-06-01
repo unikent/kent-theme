@@ -23,6 +23,15 @@
         margin-bottom:    0.5rem;
         margin-top:       -0.2rem;
     }
+
+    a {
+        border-bottom: 1px solid #CCCCCC;
+
+        &:hover, &:focus {
+            border-bottom: 1px solid $link-hover-color;
+        }
+    }
+
     button.beta-toggler {
         cursor:   pointer;
         &:after {

@@ -6,15 +6,8 @@
         background: #333333;
         padding:    2rem;
 
-        &.card-title-wrap-link {
+        &.card-title-wrap{
             text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
-            &:after {
-                content: none;
-            }
-            &:hover {
-                text-decoration:  none;
-                background-color: lighten(#333333, 5%);
-            }
             .card-title {
                 text-transform: none;
                 color:          #FFFFFF;
@@ -23,6 +16,17 @@
                 font-family: $font-family-sans-serif;
                 color:       #FFFFFF;
             }
+        }
+
+        &.card-title-wrap-link{
+            &:after {
+                content: none;
+            }
+            &:hover {
+                text-decoration:  none;
+                background-color: lighten(#333333, 5%);
+            }
+
         }
     }
     @include media-breakpoint-up(md) {

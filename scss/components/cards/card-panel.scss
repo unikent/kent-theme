@@ -26,13 +26,15 @@
             }
         }
         &.nav-links-panel {
-            .nav-link-title {
-                color: #FFFFFF;
-            }
-            .nav-link-desc {
-                color: rgba(255, 255, 255, .75);
-            }
-            a {
+            .nav-link{
+
+                .nav-link-title {
+                    display:block;
+                    color: #FFFFFF;
+                }
+                .nav-link-desc {
+                    color: rgba(255, 255, 255, .75);
+                }
                 &:hover, &:active, &:focus {
                     background-color: rgba(255, 255, 255, 0.1);
                 }
@@ -547,7 +549,7 @@
             position: absolute;
         }
     }
-    a.card-double {
+    .card-double.card-linked {
         &:after {
             position:    absolute;
             top:         50%;
