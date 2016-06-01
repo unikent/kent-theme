@@ -6593,12 +6593,15 @@ p + h6, p + .h6 {
       padding-left: calc(5% + 0.9375rem);
       padding-right: 5%; }
       .content-page .content-header.content-header-with-social {
-        padding-left: calc(5% + 5.9375rem); }
+        padding-left: calc(12% + 0.9375rem); }
       .content-page .content-header.content-header-centered {
         width: 62%;
         padding: 0;
         margin-left: auto;
         margin-right: auto; } }
+  @media (min-width: 1200px) {
+    .content-page .content-header {
+      padding-left: calc(12% + 0.9375rem); } }
   @media (min-width: 1328px) {
     .content-page .content-header {
       margin: 0 auto;
@@ -6607,7 +6610,9 @@ p + h6, p + .h6 {
       .content-page .content-header.content-header-with-social {
         padding: 0 0.9375rem; }
       .content-page .content-header.content-header-centered {
-        width: 710px; } }
+        width: 678px; }
+        .content-page .content-header.content-header-centered.content-header-with-social {
+          padding: 0; } }
   @media (min-width: 992px) {
     .content-page .content-header.content-header-centered .content-social.content-social-head {
       left: -4rem; } }
@@ -7550,6 +7555,14 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
       color: #FFFFFF;
       background-color: #DC4E41;
       border-color: #DC4E41; }
+    .social-link i.kf-mendeley:hover {
+      color: #FFFFFF;
+      background-color: #B22129;
+      border-color: #B22129; }
+    .social-link i.kf-academia-edu:hover {
+      color: #FFFFFF;
+      background-color: #222;
+      border-color: #222; }
   .social-link:hover i.kf-facebook {
     color: #FFFFFF;
     background-color: #3B5998;
@@ -7590,6 +7603,14 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
     color: #FFFFFF;
     background-color: #DC4E41;
     border-color: #DC4E41; }
+  .social-link:hover i.kf-mendeley {
+    color: #FFFFFF;
+    background-color: #B22129;
+    border-color: #B22129; }
+  .social-link:hover i.kf-academia-edu {
+    color: #FFFFFF;
+    background-color: #222;
+    border-color: #222; }
 
 .content-social {
   position: relative;
@@ -7676,6 +7697,14 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
       color: #FFFFFF;
       background-color: #DC4E41;
       border-color: #DC4E41; }
+    .content-social a.kf-mendeley:hover, .content-social .content-social-link.kf-mendeley:hover {
+      color: #FFFFFF;
+      background-color: #B22129;
+      border-color: #B22129; }
+    .content-social a.kf-academia-edu:hover, .content-social .content-social-link.kf-academia-edu:hover {
+      color: #FFFFFF;
+      background-color: #222;
+      border-color: #222; }
   .content-social.content-social-colored a.kf-facebook, .content-social.content-social-colored .content-social-link.kf-facebook {
     color: #3B5998;
     background-image: none;
@@ -7866,6 +7895,44 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
       border-color: #ec9e97; }
     .content-social.content-social-colored a.kf-google-plus.disabled:hover, .content-social.content-social-colored a.kf-google-plus:disabled:hover, .content-social.content-social-colored .content-social-link.kf-google-plus.disabled:hover, .content-social.content-social-colored .content-social-link.kf-google-plus:disabled:hover {
       border-color: #ec9e97; }
+  .content-social.content-social-colored a.kf-mendeley, .content-social.content-social-colored .content-social-link.kf-mendeley {
+    color: #B22129;
+    background-image: none;
+    background-color: transparent;
+    border-color: #B22129; }
+    .content-social.content-social-colored a.kf-mendeley:focus, .content-social.content-social-colored a.kf-mendeley.focus, .content-social.content-social-colored a.kf-mendeley:active, .content-social.content-social-colored a.kf-mendeley.active,
+    .open > .content-social.content-social-colored a.kf-mendeley.dropdown-toggle, .content-social.content-social-colored .content-social-link.kf-mendeley:focus, .content-social.content-social-colored .content-social-link.kf-mendeley.focus, .content-social.content-social-colored .content-social-link.kf-mendeley:active, .content-social.content-social-colored .content-social-link.kf-mendeley.active,
+    .open > .content-social.content-social-colored .content-social-link.kf-mendeley.dropdown-toggle {
+      color: #fff;
+      background-color: #B22129;
+      border-color: #B22129; }
+    .content-social.content-social-colored a.kf-mendeley:hover, .content-social.content-social-colored .content-social-link.kf-mendeley:hover {
+      color: #fff;
+      background-color: #B22129;
+      border-color: #B22129; }
+    .content-social.content-social-colored a.kf-mendeley.disabled:focus, .content-social.content-social-colored a.kf-mendeley.disabled.focus, .content-social.content-social-colored a.kf-mendeley:disabled:focus, .content-social.content-social-colored a.kf-mendeley:disabled.focus, .content-social.content-social-colored .content-social-link.kf-mendeley.disabled:focus, .content-social.content-social-colored .content-social-link.kf-mendeley.disabled.focus, .content-social.content-social-colored .content-social-link.kf-mendeley:disabled:focus, .content-social.content-social-colored .content-social-link.kf-mendeley:disabled.focus {
+      border-color: #e05960; }
+    .content-social.content-social-colored a.kf-mendeley.disabled:hover, .content-social.content-social-colored a.kf-mendeley:disabled:hover, .content-social.content-social-colored .content-social-link.kf-mendeley.disabled:hover, .content-social.content-social-colored .content-social-link.kf-mendeley:disabled:hover {
+      border-color: #e05960; }
+  .content-social.content-social-colored a.kf-academia-edu, .content-social.content-social-colored .content-social-link.kf-academia-edu {
+    color: #222;
+    background-image: none;
+    background-color: transparent;
+    border-color: #222; }
+    .content-social.content-social-colored a.kf-academia-edu:focus, .content-social.content-social-colored a.kf-academia-edu.focus, .content-social.content-social-colored a.kf-academia-edu:active, .content-social.content-social-colored a.kf-academia-edu.active,
+    .open > .content-social.content-social-colored a.kf-academia-edu.dropdown-toggle, .content-social.content-social-colored .content-social-link.kf-academia-edu:focus, .content-social.content-social-colored .content-social-link.kf-academia-edu.focus, .content-social.content-social-colored .content-social-link.kf-academia-edu:active, .content-social.content-social-colored .content-social-link.kf-academia-edu.active,
+    .open > .content-social.content-social-colored .content-social-link.kf-academia-edu.dropdown-toggle {
+      color: #fff;
+      background-color: #222;
+      border-color: #222; }
+    .content-social.content-social-colored a.kf-academia-edu:hover, .content-social.content-social-colored .content-social-link.kf-academia-edu:hover {
+      color: #fff;
+      background-color: #222;
+      border-color: #222; }
+    .content-social.content-social-colored a.kf-academia-edu.disabled:focus, .content-social.content-social-colored a.kf-academia-edu.disabled.focus, .content-social.content-social-colored a.kf-academia-edu:disabled:focus, .content-social.content-social-colored a.kf-academia-edu:disabled.focus, .content-social.content-social-colored .content-social-link.kf-academia-edu.disabled:focus, .content-social.content-social-colored .content-social-link.kf-academia-edu.disabled.focus, .content-social.content-social-colored .content-social-link.kf-academia-edu:disabled:focus, .content-social.content-social-colored .content-social-link.kf-academia-edu:disabled.focus {
+      border-color: #555555; }
+    .content-social.content-social-colored a.kf-academia-edu.disabled:hover, .content-social.content-social-colored a.kf-academia-edu:disabled:hover, .content-social.content-social-colored .content-social-link.kf-academia-edu.disabled:hover, .content-social.content-social-colored .content-social-link.kf-academia-edu:disabled:hover {
+      border-color: #555555; }
   .content-social.content-social-head a, .content-social.content-social-head .content-social-link {
     margin-left: 0; }
 
@@ -8383,7 +8450,8 @@ input[type=number]::-webkit-outer-spin-button {
                 padding: 0;
                 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
                 font-size: 1.2rem;
-                line-height: 1.25rem; }
+                line-height: 1.25rem;
+                border-bottom: none; }
                 .global-nav .global-nav-links .global-nav-link nav .nav-link .global-nav-link-title:after {
                   content: "";
                   font-family: "kentfont", sans-serif;
@@ -10694,6 +10762,46 @@ blockquote.social-quote {
       border-color: #ec9e97; }
     blockquote.social-quote.social-quote-google-plus button:before {
       content: ""; }
+  blockquote.social-quote.social-quote-mendeley button {
+    color: #B22129;
+    background-image: none;
+    background-color: transparent;
+    border-color: #B22129; }
+    blockquote.social-quote.social-quote-mendeley button:focus, blockquote.social-quote.social-quote-mendeley button.focus, blockquote.social-quote.social-quote-mendeley button:active, blockquote.social-quote.social-quote-mendeley button.active,
+    .open > blockquote.social-quote.social-quote-mendeley button.dropdown-toggle {
+      color: #fff;
+      background-color: #B22129;
+      border-color: #B22129; }
+    blockquote.social-quote.social-quote-mendeley button:hover {
+      color: #fff;
+      background-color: #B22129;
+      border-color: #B22129; }
+    blockquote.social-quote.social-quote-mendeley button.disabled:focus, blockquote.social-quote.social-quote-mendeley button.disabled.focus, blockquote.social-quote.social-quote-mendeley button:disabled:focus, blockquote.social-quote.social-quote-mendeley button:disabled.focus {
+      border-color: #e05960; }
+    blockquote.social-quote.social-quote-mendeley button.disabled:hover, blockquote.social-quote.social-quote-mendeley button:disabled:hover {
+      border-color: #e05960; }
+    blockquote.social-quote.social-quote-mendeley button:before {
+      content: ""; }
+  blockquote.social-quote.social-quote-academia-edu button {
+    color: #222;
+    background-image: none;
+    background-color: transparent;
+    border-color: #222; }
+    blockquote.social-quote.social-quote-academia-edu button:focus, blockquote.social-quote.social-quote-academia-edu button.focus, blockquote.social-quote.social-quote-academia-edu button:active, blockquote.social-quote.social-quote-academia-edu button.active,
+    .open > blockquote.social-quote.social-quote-academia-edu button.dropdown-toggle {
+      color: #fff;
+      background-color: #222;
+      border-color: #222; }
+    blockquote.social-quote.social-quote-academia-edu button:hover {
+      color: #fff;
+      background-color: #222;
+      border-color: #222; }
+    blockquote.social-quote.social-quote-academia-edu button.disabled:focus, blockquote.social-quote.social-quote-academia-edu button.disabled.focus, blockquote.social-quote.social-quote-academia-edu button:disabled:focus, blockquote.social-quote.social-quote-academia-edu button:disabled.focus {
+      border-color: #555555; }
+    blockquote.social-quote.social-quote-academia-edu button.disabled:hover, blockquote.social-quote.social-quote-academia-edu button:disabled:hover {
+      border-color: #555555; }
+    blockquote.social-quote.social-quote-academia-edu button:before {
+      content: ""; }
 
 main > blockquote.social-quote {
   padding: 32px 16px;

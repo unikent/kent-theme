@@ -20,7 +20,7 @@
             padding-right: 5%;
 
             &.content-header-with-social{
-                padding-left: calc(5% + #{5 + ($grid-gutter-width/2)});
+                padding-left: calc(12% + #{$grid-gutter-width/2});
             }
 
             &.content-header-centered{
@@ -31,6 +31,10 @@
             }
 
 
+        }
+
+        @include media-breakpoint-up(xl) {
+            padding-left: calc(12% + #{$grid-gutter-width/2});
         }
 
         @media (min-width: $article-max-breakpoint) {
@@ -44,7 +48,10 @@
             }
 
             &.content-header-centered{
-                width: 710px;
+                width: 678px;
+                &.content-header-with-social{
+                    padding: 0;
+                }
             }
 
         }
