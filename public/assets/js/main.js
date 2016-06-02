@@ -27900,9 +27900,9 @@ var plyr_controls='\n\t\t<button type="button" data-plyr="play" class="plyr__pla
 this.container=$container;this.video=$container.find('.video-player').first();this.placeholder=$container.find('img').first();this.plyr=null; // settings for instance
 this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',modal_down:$container.data('modal-down')||'xs',modal_up:$container.data('modal-up')||'xxl'}; /**
 		 * Initalise "video" element
-		 */this.init=function(){var _this=this;this.placeholder.click(function(){ // if Player isn't booted, boot it
-if(!_this.plyr){_this.boot();} // show player
-_this.show();});}; /**
+		 */this.init=function(){var _this=this;this.container.click(function(){ // if Player isn't booted, boot it
+if(!_this.plyr){window.KENT.log('[Video player] Init Plyr');_this.boot();} // Show player if not already playing
+if(!_this.container.hasClass('playing')){_this.show();}});}; /**
 		 * When user attempts to play video, initalise video player instance
 		 */this.boot=function(){var _this2=this; // Generate plyr instance
 this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls})[0]; // Hookup events

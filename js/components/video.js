@@ -91,13 +91,16 @@ $(document).ready(function(){
 		 */
 		this.init = function(){
 
-			this.placeholder.click( () => {
+			this.container.click( () => {
 				// if Player isn't booted, boot it
 				if (!this.plyr){
+					window.KENT.log('[Video player] Init Plyr');
 					this.boot();
 				}
-				// show player
-				this.show();
+				// Show player if not already playing
+				if (!this.container.hasClass('playing')){
+					this.show();
+				}
 			});
 		};
 
