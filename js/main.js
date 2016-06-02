@@ -27898,7 +27898,7 @@ var plyr_controls='\n\t\t<button type="button" data-plyr="play" class="plyr__pla
 	 * Control class for "player" instances
 	 */var Player=function Player($container){ // vars
 this.container=$container;this.video=$container.find('.video-player').first();this.placeholder=$container.find('img').first();this.plyr=null; // settings for instance
-this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',modal_down:$container.data('modal-down')||'xs',modal_up:$container.data('modal-up')||'xxl'}; /**
+this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',fullscreen_down:$container.data('fullscreen-down')||'xs',fullscreen_up:$container.data('fullscreen-up')||'xxl'}; /**
 		 * Initalise "video" element
 		 */this.init=function(){var _this=this;this.container.click(function(){ // if Player isn't booted, boot it
 if(!_this.plyr){window.KENT.log('[Video player] Init Plyr');_this.boot();} // Show player if not already playing
@@ -27912,7 +27912,7 @@ if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen'
 		 */this.setupTranscript=function(){var _this3=this;var button=this.video.find('.download-transcript');if(this.settings.transcript){button.click(function(){document.location.href=_this3.settings.transcript;});}else {button.hide();}}; /**
 		 * Show video
 		 * Display video and play it ( use attributes to determine whether to play inline or "fullscreen")
-		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='modal'||viewport.is('<='+this.settings.modal_down)||this.settings.modal_up&&viewport.is('>='+this.settings.modal_up)){this.plyr.toggleFullscreen();}this.play();}; /**
+		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();}; /**
 		 * Close video
 		 * Hide video and pause it
 		 */this.hide=function(){this.pause();this.container.removeClass('playing');this.container.closest('.card-media-inline').removeClass('card-media-enabled');}; /**

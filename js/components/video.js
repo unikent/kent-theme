@@ -82,8 +82,8 @@ $(document).ready(function(){
 		this.settings = {
 			transcript:  $container.data('transcript') || false,
 			mode:  $container.data('mode') || 'inline',
-			modal_down: $container.data('modal-down') || 'xs',
-			modal_up:  $container.data('modal-up') || 'xxl'
+			fullscreen_down: $container.data('fullscreen-down') || 'xs',
+			fullscreen_up:  $container.data('fullscreen-up') || 'xxl'
 		};
 
 		/**
@@ -151,7 +151,7 @@ $(document).ready(function(){
 			this.container.addClass('playing');
 			this.container.closest('.card-media-inline').addClass('card-media-enabled');
 
-			if (this.settings.mode === 'modal' || viewport.is('<=' + this.settings.modal_down) || (this.settings.modal_up && viewport.is('>=' + this.settings.modal_up))) {
+			if (this.settings.mode === 'fullscreen' || viewport.is('<=' + this.settings.fullscreen_down) || (this.settings.fullscreen_up && viewport.is('>=' + this.settings.fullscreen_up))) {
 				this.plyr.toggleFullscreen();
 			}
 
