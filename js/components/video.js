@@ -163,6 +163,10 @@ $(document).ready(function(){
 		 * Hide video and pause it
 		 */
 		this.hide = function(){
+			if (this.plyr.isFullscreen()){
+				return this.plyr.toggleFullscreen();
+			}
+
 			this.pause();
 			this.container.removeClass('playing');
 			this.container.closest('.card-media-inline').removeClass('card-media-enabled');
