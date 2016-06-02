@@ -6132,6 +6132,17 @@ p + h6, p + .h6 {
     width: 100%;
     height: auto; }
 
+.media-wrap-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0; }
+  .media-wrap-fill > img {
+    height: 100%;
+    width: auto;
+    margin: 0 auto; }
+
 .video-launcher {
   cursor: pointer; }
   .video-launcher:after {
@@ -6211,66 +6222,6 @@ figure {
   overflow: hidden;
   margin-top: 32px;
   margin-top: 2rem; }
-  figure .attribution {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #FFFFFF;
-    position: absolute;
-    display: inline-block;
-    font-size: 12px;
-    font-size: 0.75rem;
-    padding: 4.8px 12px;
-    padding: 0.3rem 0.75rem;
-    max-height: 32px;
-    max-height: 2rem;
-    cursor: pointer;
-    bottom: 0;
-    right: 0;
-    line-height: 24px;
-    line-height: 1.5rem;
-    min-width: 40px;
-    min-width: 2.5rem;
-    transition: all 300ms; }
-    figure .attribution:before {
-      content: " ";
-      display: block;
-      float: left;
-      width: 16px;
-      width: 1rem;
-      height: 16px;
-      height: 1rem;
-      transition: width 500ms; }
-    figure .attribution i {
-      font-size: 16px;
-      font-size: 1rem;
-      line-height: 16px;
-      line-height: 1rem;
-      position: absolute;
-      top: 6.4px;
-      top: 0.4rem;
-      left: 12px;
-      left: 0.75rem; }
-    figure .attribution span {
-      transition: max-height 150ms, max-width 150ms 150ms;
-      display: block;
-      max-width: 0;
-      overflow: hidden;
-      box-sizing: border-box;
-      max-height: 32px;
-      max-height: 2rem; }
-      figure .attribution span a {
-        color: #FFFFFF; }
-        figure .attribution span a:hover {
-          text-decoration: underline; }
-    figure .attribution.in {
-      max-height: 3000px; }
-      figure .attribution.in:before {
-        width: 28px;
-        width: 1.75rem;
-        transition: width 50ms; }
-      figure .attribution.in span {
-        transition: max-width 300ms, max-height 150ms 150ms;
-        max-height: 3000px;
-        max-width: 3000px; }
   figure.figure-right img {
     width: 100%; }
   @media (min-width: 768px) {
@@ -6359,6 +6310,67 @@ figure.featured-image {
         position: absolute;
         bottom: -1.5rem;
         right: 0; } }
+
+.attribution {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  position: absolute;
+  display: inline-block;
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding: 4.8px 12px;
+  padding: 0.3rem 0.75rem;
+  max-height: 32px;
+  max-height: 2rem;
+  cursor: pointer;
+  bottom: 0;
+  right: 0;
+  line-height: 24px;
+  line-height: 1.5rem;
+  min-width: 40px;
+  min-width: 2.5rem;
+  transition: all 300ms; }
+  .attribution:before {
+    content: " ";
+    display: block;
+    float: left;
+    width: 16px;
+    width: 1rem;
+    height: 16px;
+    height: 1rem;
+    transition: width 500ms; }
+  .attribution i {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 16px;
+    line-height: 1rem;
+    position: absolute;
+    top: 6.4px;
+    top: 0.4rem;
+    left: 12px;
+    left: 0.75rem; }
+  .attribution span {
+    transition: max-height 150ms, max-width 150ms 150ms;
+    display: block;
+    max-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-height: 32px;
+    max-height: 2rem; }
+    .attribution span a {
+      color: #FFFFFF; }
+      .attribution span a:hover {
+        text-decoration: underline; }
+  .attribution.in {
+    max-height: 3000px; }
+    .attribution.in:before {
+      width: 28px;
+      width: 1.75rem;
+      transition: width 50ms; }
+    .attribution.in span {
+      transition: max-width 300ms, max-height 150ms 150ms;
+      max-height: 3000px;
+      max-width: 3000px; }
 
 .alert {
   background-color: #fff; }
@@ -10267,6 +10279,8 @@ blockquote.pull-quote {
   position: relative;
   cursor: -webkit-grab;
   width: 100%; }
+  .kent-slider .kent-slide .media-wrap-fill {
+    background-color: #333; }
 
 .kent-slider .slick-prev, .kent-slider .slick-next {
   z-index: 1;
@@ -10328,7 +10342,8 @@ blockquote.pull-quote {
   z-index: 2; }
   .kent-slider .kent-slider-dots li {
     display: inline-block;
-    padding: 0; }
+    padding: 0;
+    position: relative; }
     .kent-slider .kent-slider-dots li:before {
       display: none; }
     .kent-slider .kent-slider-dots li button {
