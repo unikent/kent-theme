@@ -8827,8 +8827,8 @@ main > nav.breadcrumb {
       border-bottom: solid 1px #E6E6E6; } }
 
 nav.breadcrumb {
-  margin: -32px 0 16px;
-  margin: -2rem 0 1rem;
+  margin: 0 0 16px;
+  margin: 0 0 1rem;
   height: 0;
   overflow: hidden;
   background: #FFFFFF;
@@ -10225,7 +10225,9 @@ button.beta-toggler {
   .card.header-card-overlay .card-footer {
     padding: 0 8px;
     padding: 0 .5rem;
-    display: block; }
+    display: block;
+    margin-bottom: -24px;
+    margin-bottom: -1.5rem; }
     .card.header-card-overlay .card-footer .caption {
       text-align: right; }
 
