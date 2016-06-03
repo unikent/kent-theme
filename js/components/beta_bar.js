@@ -6,36 +6,36 @@
  */
 jQuery(document).ready(function(){
 
-	var beta_bar = $("#beta-bar");
-	var toggler = $(".beta-toggler");
+	var beta_bar = $('#beta-bar');
+	var toggler = $('.beta-toggler');
 
 	// Toggle beta bar
 	function toggleNav() {
-		if (beta_bar.hasClass("hidden")){
-			beta_bar.removeClass("hidden").slideDown();
+		if (beta_bar.hasClass('hidden')){
+			beta_bar.removeClass('hidden').slideDown();
 
 			toggler.each(function(){
-				$(this).attr("aria-expanded", "true");
+				$(this).attr('aria-expanded', 'true');
 			});
 
 		} else {
-			beta_bar.addClass("hidden").slideUp();
+			beta_bar.addClass('hidden').slideUp();
 			toggler.each(function(){
-				$(this).attr("aria-expanded", "false");
+				$(this).attr('aria-expanded', 'false');
 			});
-			window.Cookies.set("kentbeta_dismissed", "1", {expires: 365});
+			window.Cookies.set('kentbeta_dismissed', '1', {expires: 365});
 		}
 	}
 	// If beta bar exists on page
 	if (beta_bar.length > 0) {
 
-		var dismissed = typeof window.Cookies.get("kentbeta_dismissed") !== "undefined";
+		var dismissed = typeof window.Cookies.get('kentbeta_dismissed') !== 'undefined';
 
 		// Apply show/hide state from cookie.
 		if (!dismissed) {
-			beta_bar.removeClass("hidden").slideDown();
+			beta_bar.removeClass('hidden').slideDown();
 		} else {
-			beta_bar.addClass("hidden").slideUp();
+			beta_bar.addClass('hidden').slideUp();
 		}
 
 		// hook up toggler

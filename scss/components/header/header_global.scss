@@ -79,24 +79,27 @@
                 max-height: 0;
                 overflow:   hidden;
                 transition: none;
-                a {
-                    font-family:    $font-family-sans-serif;
-                    text-transform: none;
+                .nav-link {
+                    @extend .faux-link-block;
+                    display: block;
                     background:     $brand-tertiary;
                     border-bottom:  solid 1px #DDDDDD;
                     color:          $kent-primary;
-                    padding:        0 0 0 1rem;
                     position:       relative;
-                    &:after {
-                        position:    absolute;
-                        display:     inline-block;
-                        content:     $kf-chevron-right;
-                        right:       0;
-                        font-family: $font-family-kentfont;
-                        height:      3rem;
-                        width:       3rem;
-                        text-align:  center;
-                        border-left: solid 1px #DDDDDD;
+                    .global-nav-link-title{
+                        font-family:    $font-family-sans-serif;
+                        text-transform: none;
+                        &:after {
+                            position:    absolute;
+                            display:     inline-block;
+                            content:     $kf-chevron-right;
+                            right:       0;
+                            font-family: $font-family-kentfont;
+                            height:      3rem;
+                            width:       3rem;
+                            text-align:  center;
+                            border-left: solid 1px #DDDDDD;
+                        }
                     }
                     .global-nav-link-desc {
                         display: none;
@@ -234,7 +237,7 @@
 
                     padding:          10px 2rem 2rem;
                     background-color: $brand-tertiary;
-                    a {
+                    .nav-link {
                         min-width:        1%;
                         display:          table-cell;
                         position:         relative;
@@ -261,17 +264,23 @@
                             color:       $gray-dark;
                             line-height: 1rem;
                         }
-                        &:after {
-                            display: none;
-                        }
+
                         .global-nav-link-title {
+                            padding: 0;
                             font-family: $headings-font-family-alt;
                             font-size:   1.2rem;
+                            line-height: 1.25rem;
+                            border-bottom: none;
                             &:after {
                                 content:      $kf-angle-right;
                                 font-family:  $font-family-kentfont;
                                 color:        $brand-accent;
                                 padding-left: .5rem;
+                                border: 0;
+                                display: inline;
+                                width: auto;
+                                height: auto;
+                                right: auto;
                             }
                         }
                         @include media-breakpoint-up(lg) {
@@ -606,9 +615,10 @@ body {
                 width:            100%;
                 text-align:       left;
                 background-color: $brand-tertiary;
-                a {
+                .nav-link {
+                    @extend .faux-link-block;
+                    display: block;
                     line-height:   1.5rem;
-                    display:       block;
                     position:      relative;
                     color:         $kent-primary;
                     padding:       0.5rem 1rem 0.75rem;

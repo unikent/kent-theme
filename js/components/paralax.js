@@ -14,7 +14,7 @@
 	var initStellar = function(){
 
 		if (stellarSetup === true){
-			$(window).data("plugin_stellar").init();
+			$(window).data('plugin_stellar').init();
 		} else {
 			$.stellar({
 				// Set scrolling to be in either one or both directions
@@ -29,14 +29,14 @@
 				responsive: false,
 
 				// Select which property is used to calculate scroll.
-				// Choose "scroll", "position", "margin" or "transform",
-				// or write your own "scrollProperty" plugin.
-				scrollProperty: "scroll",
+				// Choose 'scroll', 'position', 'margin' or 'transform',
+				// or write your own 'scrollProperty' plugin.
+				scrollProperty: 'scroll',
 
 				// Select which property is used to position elements.
-				// Choose between "position" or "transform",
-				// or write your own "positionProperty" plugin.
-				positionProperty: "transform",
+				// Choose between 'position' or 'transform',
+				// or write your own 'positionProperty' plugin.
+				positionProperty: 'transform',
 
 				// Enable or disable the two types of parallax
 				parallaxBackgrounds: true,
@@ -56,19 +56,19 @@
 
 	// Disable stellar.js
 	var disableStellar = function(){
-		$(window).data("plugin_stellar").destroy();
+		$(window).data('plugin_stellar').destroy();
 		stellarActive = false;
 	};
 
 	// Handle resize
 	function react_to_window() {
 
-		if (ResponsiveBootstrapToolkit.is("xs")) {
+		if (ResponsiveBootstrapToolkit.is('xs')) {
 
 			if (stellarActive){
 				disableStellar();
 			}
-			$(".media-wrap-parallax").css("min-height", "");
+			$('.media-wrap-parallax').css('min-height', '');
 
 		} else {
 
@@ -77,15 +77,15 @@
 			}
 
 			// Set ratio's
-			var $ratio = ResponsiveBootstrapToolkit.is("<xl") ? ( 9 / 16 ) : ( 7 / 16 );
-			$(".media-wrap-parallax").each(function () {
-				$(this).css("min-height", ($(window).width() * $ratio) + "px");
+			var $ratio = ResponsiveBootstrapToolkit.is('<xl') ? ( 9 / 16 ) : ( 7 / 16 );
+			$('.media-wrap-parallax').each(function () {
+				$(this).css('min-height', ($(window).width() * $ratio) + 'px');
 			});
-			$(window).data("plugin_stellar").refresh();
+			$(window).data('plugin_stellar').refresh();
 		}
 	}
 
-	$(window).on("viewport:resize", function(){
+	$(window).on('viewport:resize', function(){
 		react_to_window();
 	});
 

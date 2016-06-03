@@ -1,31 +1,31 @@
-var path        = require("path");
-var Handlebars  = require("handlebars");
+var path        = require('path');
+var Handlebars  = require('handlebars');
 
-Handlebars.registerHelper("ifCond", function (v1, operator, v2, options) {
+Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
 
 	switch (operator) {
-		case "!=":
+		case '!=':
 			return (v1 !== v2) ? options.fn(this) : options.inverse(this);
-		case "==":
+		case '==':
 			return (v1 === v2) ? options.fn(this) : options.inverse(this);
-		case "<":
+		case '<':
 			return (v1 < v2) ? options.fn(this) : options.inverse(this);
-		case "<=":
+		case '<=':
 			return (v1 <= v2) ? options.fn(this) : options.inverse(this);
-		case ">":
+		case '>':
 			return (v1 > v2) ? options.fn(this) : options.inverse(this);
-		case ">=":
+		case '>=':
 			return (v1 >= v2) ? options.fn(this) : options.inverse(this);
-		case "&&":
+		case '&&':
 			return (v1 && v2) ? options.fn(this) : options.inverse(this);
-		case "||":
+		case '||':
 			return (v1 || v2) ? options.fn(this) : options.inverse(this);
 		default:
 			return options.inverse(this);
 	}
 });
 
-Handlebars.registerHelper("log", function(something) {
+Handlebars.registerHelper('log', function(something) {
 	console.log(something);
 });
 
@@ -33,13 +33,13 @@ Handlebars.registerHelper("log", function(something) {
 module.exports = {
 	compile: {
 		options: {
-			namespace: "Handlebars.templates",
+			namespace: 'Handlebars.templates',
 			processName: function(filePath) {
-				return filePath.replace(/js\/templates\/(.+)\.hbs$/, "$1").split("/").join(".");
+				return filePath.replace(/js\/templates\/(.+)\.hbs$/, '$1').split('/').join('.');
 			}
 		},
 		files: {
-			"js/handlebars_templates.js": ["js/templates/*.hbs"]
+			'tmp/handlebars_templates.js': ['js/templates/*.hbs']
 		}
 	}
 };

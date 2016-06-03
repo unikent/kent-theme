@@ -1,8 +1,46 @@
+&.faux-link-block{
+    position: relative;
+    a{
+        z-index: 1;
+        position: relative;
+    }
+
+    /*
+    this is not a mistake, self-selecting bumps the specificity of this rule for where something extends .faux-link-block
+    */
+    .faux-link-overlay.faux-link-overlay{
+        opacity: 0;
+        position: absolute;
+        z-index: 0;
+        top:0;
+        right:0;
+        left:0;
+        bottom: 0;
+        background: transparent;
+        overflow: hidden;
+        text-indent: 200%;
+        visibility: visible;
+        white-space: nowrap;
+    }
+
+    &:hover {
+        .chevron-link {
+            &:after {
+                padding-left: 0.7rem;
+            }
+        }
+    }
+}
+
 .card {
     display:       block;
     border:        none;
     background:    none;
     margin-bottom: 1rem;
+
+    &.card-linked{
+        @extend .faux-link-block;
+    }
 
     /*
         apply a background color to a card, also adds padding
@@ -43,6 +81,7 @@
                 }
             }
         }
+
     }
 
     @each $name, $color in $brand-colors-light {
@@ -80,7 +119,34 @@
         @extend .text-xs-center;
     }
 
+    &.card-list-item{
+
+        @include make-col();
+        @include media-breakpoint-up(sm) {
+            width:   100%;
+        }
+        @include media-breakpoint-up(lg) {
+            width:   100%;
+        }
+
+        .card-img-top,
+        .card-img:first-child,
+        img:first-child {
+            float:        left;
+            //max-width:    40%;
+            max-width: 15%;
+            min-width: 7rem;
+            margin-right: 1rem;
+            @include media-breakpoint-up(sm){
+                min-width: 9rem;
+            }
+        }
+
+
+    }
+
     .card-img-overlay {
+        pointer-events: none;
         padding: 1rem;
         display: block;
 
@@ -110,6 +176,19 @@
             }
         }
 
+        .card-text{
+            margin-bottom: 0;
+        }
+
+    }
+
+    .card-img-overlay-link{
+        pointer-events: auto;
+        @extend .faux-link-block;
+        position: absolute;
+        .card-subtitle {
+            @extend .chevron-link;
+        }
     }
 
     .card-img-overlay-bottom {
@@ -140,6 +219,7 @@
         position: relative;
         float:    left;
         width:    50%;
+        min-height: 1px; // stop missing image causing panels to move about
     }
 
     &.card-flip {
@@ -174,6 +254,11 @@
         font-weight: normal;
         color:       $kent-primary;
         font-size:   1.1rem;
+    }
+
+    .card-title-link,
+    .card-subtitle-link{
+        display:block;
     }
 
     .card-meta {
@@ -321,17 +406,32 @@
 
     // if card is an A
     // @see http://stackoverflow.com/questions/17268051/sass-combining-parent-using-ampersand-with-base-element
-    @at-root a#{&}, a {
+    @at-root a#{&}, a, .faux-link-block {
 
         img {
-            transition: all 600ms;
+            transition: all 300ms;
         }
 
         &:hover, &:focus {
             text-decoration: none;
             img {
-                filter: opacity(70%);
+                filter: brightness(85%);
             }
         }
     }
+}
+
+.cards-backed .card-list-item,
+.card-backed.card-list-item,
+.cards-list .card-backed,
+.cards-list.cards-backed .card{
+
+    padding: 1rem 1rem 0;
+    .card-img-top,
+    .card-img:first-child,
+    img:first-child {
+        margin-left:   0;
+        margin-bottom: 1rem;
+    }
+
 }

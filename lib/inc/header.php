@@ -65,7 +65,7 @@
 
 		<?php echo $head_markup ;?>
 	</head>
-	<body<?php echo !empty($home_page) ? ' class="global-header-transparent"' :'' ; ?>>
+	<body class="<?php echo !empty($home_page) ? ' global-header-transparent"' :'' ; ?><?php echo ($slim)?' slim-header':''; ?>">
 		<?php if(!$home_page){ ?>
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
 		<?php } ?>
@@ -74,10 +74,10 @@
 		<section id="beta-bar" class="beta-bar navbar" role="banner">
 			<p><span class="beta-bar-beta">BETA</span></p>
 
-			<p>We're testing <a href="<?php echo isset($beta_bar['about_url']) ? $beta_bar['about_url'] : 'https://blogs.kent.ac.uk/webdev/2015/12/04/beta-kent/' ?>">a new design</a>.</p>
+			<p>We're testing <a href="https://blogs.kent.ac.uk/webdev/2015/12/04/beta-kent/">a new design</a>.</p>
 			<p>It may not be complete or work as intended.</p>
-			<p>
-				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="btn btn-link">Go to original site</a>
+			<p class="p-x-1">
+				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="">Go to original site</a>
 			</p>
 			<p>
 				<button class="btn btn-secondary feedback" onclick="return window.usabilla_live('click');">Give us feedback</button>
@@ -145,7 +145,7 @@
 			} ?>
 		</header>
 
-		<main id="main_content" class=" <?php echo !empty($main_class) ? $main_class :'' ; ?>" role="main">
+		<main id="main_content" class="<?php echo !empty($main_class) ? $main_class :'' ; ?>" role="main">
 		<?php if($home_page){ ?>
 		<h1 class="sr-only">The University of Kent</h1>
 		<?php } ?>

@@ -105,6 +105,12 @@ p + h6, p + .h6 {
     }
 }
 
+@include media-breakpoint-down(xs){
+    h1{
+        font-size: 2.281rem;
+    }
+}
+
 @include media-breakpoint-up(xl) {
     html {
         font-size: 18px;

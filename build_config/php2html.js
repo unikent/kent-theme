@@ -3,18 +3,18 @@ module.exports = {
 		options: {
 			htmlhint:false,
 			getData: {
-				webroot: "//beta.kent.ac.uk/",
-				api_url: "https://api.kent.ac.uk/api/",
-				home_url: "https://beta.kent.ac.uk/",
+				webroot: '//beta.kent.ac.uk/',
+				api_url: 'https://api.kent.ac.uk/api/',
+				home_url: 'https://beta.kent.ac.uk/',
 				debug: false
 			}
 		},
 		files: [
 			{expand:  true,
-				cwd:  "lib/pattern-wrappers/",
-				src:  ["*.php"],
-				dest: "lib/pattern-wrappers",
-				ext:  ".html"
+				cwd:  'lib/pattern-wrappers/',
+				src:  ['*.php'],
+				dest: 'lib/pattern-wrappers',
+				ext:  '.html'
 			}
 		]
 
@@ -25,10 +25,10 @@ module.exports = {
 		},
 		files: [
 			{expand:  true,
-				cwd:  "lib/pattern-wrappers/",
-				src:  ["*.php"],
-				dest: "lib/pattern-wrappers/dev",
-				ext:  ".html"
+				cwd:  'lib/pattern-wrappers/',
+				src:  ['*.php'],
+				dest: 'lib/pattern-wrappers/dev',
+				ext:  '.html'
 			}
 		]
 	}

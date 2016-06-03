@@ -26,13 +26,15 @@
             }
         }
         &.nav-links-panel {
-            .nav-link-title {
-                color: #FFFFFF;
-            }
-            .nav-link-desc {
-                color: rgba(255, 255, 255, .75);
-            }
-            a {
+            .nav-link{
+
+                .nav-link-title {
+                    display:block;
+                    color: #FFFFFF;
+                }
+                .nav-link-desc {
+                    color: rgba(255, 255, 255, .75);
+                }
                 &:hover, &:active, &:focus {
                     background-color: rgba(255, 255, 255, 0.1);
                 }
@@ -45,6 +47,14 @@
             @extend .card-flip;
         }
     }
+
+    &.cards-list {
+        .card-panel-body {
+            .card {
+                @extend .card-list-item;
+            }
+        }
+   }
 
     &.cards-backed {
         .card {
@@ -282,7 +292,6 @@
                 }
 
             }
-
         }
 
         .card-panel-single {
@@ -299,7 +308,7 @@
                     width:   100%;
                 }
                 &.card-backed {
-                    padding: 1rem 1rem 0;
+                    padding: 0 1rem;
                 }
             }
         }
@@ -315,32 +324,13 @@
         }
         .card-panel-list {
             .card {
-                @include make-col();
+                @extend .card-list-item;
+
                 @include media-breakpoint-up(sm) {
-                    padding: 0;
-                    width:   100%;
+                   padding: 0;
                 }
                 @include media-breakpoint-up(lg) {
-                    padding: 0;
-                    width:   100%;
-                }
-
-                .card-img-top,
-                .card-img:first-child,
-                img:first-child {
-                    float:        left;
-                    max-width:    40%;
-                    margin-right: 1rem;
-                }
-
-                &.card-backed {
-                    padding: 1rem 1rem 0;
-                    .card-img-top,
-                    .card-img:first-child,
-                    img:first-child {
-                        margin-left:   0;
-                        margin-bottom: 1rem;
-                    }
+                   padding: 0;
                 }
             }
         }
@@ -547,7 +537,7 @@
             position: absolute;
         }
     }
-    a.card-double {
+    .card-double.card-linked {
         &:after {
             position:    absolute;
             top:         50%;
