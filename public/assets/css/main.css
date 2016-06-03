@@ -11053,7 +11053,9 @@ blockquote.pull-quote {
 
 .kent-slider .kent-slide {
   position: relative;
+  cursor: ew-resize;
   cursor: -webkit-grab;
+  cursor: -moz-grab;
   width: 100%; }
   .kent-slider .kent-slide .media-wrap-fill {
     background-color: #333; }
