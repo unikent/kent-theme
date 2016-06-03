@@ -50,6 +50,17 @@
         }
 
     }
+
+
+    .card-footer {
+        padding: 0 .5rem;
+        display: block;
+
+        .caption{
+            text-align: right;
+        }
+        margin-bottom: -1.5rem;
+    }
 }
 
 //adjust offset when multi-line departmental menu is open.
@@ -79,5 +90,13 @@
 
     @include media-breakpoint-up(md) {
         margin-top: -7rem;
+    }
+}
+
+.slim-header{
+    .card.header-card-overlay {
+        @include media-breakpoint-up(md) {
+            margin-top: -2.5rem;
+        }
     }
 }

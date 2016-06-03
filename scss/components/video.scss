@@ -1,0 +1,46 @@
+.video-launcher {
+
+	& > .video-player {
+		display:none;
+	}
+	& > img {
+		display:block;
+	}
+
+	// ensure playing selector is pretty strong
+	&.playing.playing.playing {
+		& > .video-player {
+			display:block;
+		}
+		& > img {display:none;}
+		&::after {display:none;}
+
+		// plyr - hide icon toggles
+		.plyr--muted .kf-volume-medium,
+		.plyr--fullscreen-active .kf-expand,
+		.plyr--captions-active .kf-captions-off {
+			display:none;
+		}
+
+		// style primary play button in brand
+		.plyr__play-large {
+			background:none;
+			border:none;
+			box-shadow:none;
+
+			font-size:7rem;
+			color: #FFF;
+            text-shadow: 0 0 20px #333;
+            opacity:.7;
+
+			.kf-play-circle {
+			    transition: all 300ms;
+			}
+
+			&:hover .kf-play-circle {
+				opacity: 1;
+				transform: scale(1.1, 1.1);
+			}
+		}
+	}
+}

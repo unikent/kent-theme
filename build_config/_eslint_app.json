@@ -1,13 +1,14 @@
 {
 	"env": {
-		"browser": true
+		"browser": true,
+		"es6": true
 	},
 	"globals": {
 		"jQuery": true,
 		"$": true,
 		"ResponsiveBootstrapToolkit": true,
 		"Handlebars": true,
-		"jwplayer": true
+		"plyr": true
 	},
 	"rules": {
 		// ES6
@@ -180,7 +181,7 @@
 		"no-console": 2,
 
 		// TBD
-		"quotes": [2, "double"],
+		"quotes": [2, "single", {"allowTemplateLiterals": true}],
 		"eol-last": 2,
 		"space-infix-ops": 2
 		

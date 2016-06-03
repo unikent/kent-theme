@@ -5681,6 +5681,634 @@ body.show-kentbar-menu {
     body.show-kentbar-menu {
       overflow-y: auto; } }
 
+@-webkit-keyframes plyr-progress {
+  to {
+    background-position: 25px 0; } }
+
+@keyframes plyr-progress {
+  to {
+    background-position: 25px 0; } }
+
+.plyr {
+  position: relative;
+  max-width: 100%;
+  min-width: 200px;
+  font-family: Avenir, "Avenir Next", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  direction: ltr; }
+  .plyr,
+  .plyr *,
+  .plyr *::after,
+  .plyr *::before {
+    box-sizing: border-box; }
+  .plyr a, .plyr button, .plyr input, .plyr label {
+    -ms-touch-action: manipulation;
+        touch-action: manipulation; }
+  .plyr video,
+  .plyr audio {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    border-radius: inherit; }
+  .plyr input[type='range'] {
+    display: block;
+    height: 20px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    cursor: pointer;
+    border: none;
+    background: transparent; }
+    .plyr input[type='range']::-webkit-slider-runnable-track {
+      height: 8px;
+      background: transparent;
+      border: 0;
+      border-radius: 4px;
+      -webkit-user-select: none;
+              user-select: none; }
+    .plyr input[type='range']::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      margin-top: -4px;
+      position: relative;
+      height: 16px;
+      width: 16px;
+      background: #fff;
+      border: 2px solid transparent;
+      border-radius: 100%;
+      transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
+      transition: background .2s ease, border .2s ease, transform .2s ease;
+      transition: background .2s ease, border .2s ease, transform .2s ease, -webkit-transform .2s ease;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
+      box-sizing: border-box; }
+    .plyr input[type='range']::-moz-range-track {
+      height: 8px;
+      background: transparent;
+      border: 0;
+      border-radius: 4px;
+      -moz-user-select: none;
+           user-select: none; }
+    .plyr input[type='range']::-moz-range-thumb {
+      position: relative;
+      height: 16px;
+      width: 16px;
+      background: #fff;
+      border: 2px solid transparent;
+      border-radius: 100%;
+      transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
+      transition: background .2s ease, border .2s ease, transform .2s ease;
+      transition: background .2s ease, border .2s ease, transform .2s ease, -webkit-transform .2s ease;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
+      box-sizing: border-box; }
+    .plyr input[type='range']::-ms-track {
+      height: 8px;
+      background: transparent;
+      border: 0;
+      color: transparent; }
+    .plyr input[type='range']::-ms-fill-upper {
+      height: 8px;
+      background: transparent;
+      border: 0;
+      border-radius: 4px;
+      -ms-user-select: none;
+          user-select: none; }
+    .plyr input[type='range']::-ms-fill-lower {
+      height: 8px;
+      background: transparent;
+      border: 0;
+      border-radius: 4px;
+      -ms-user-select: none;
+          user-select: none;
+      background: #3498db; }
+    .plyr input[type='range']::-ms-thumb {
+      position: relative;
+      height: 16px;
+      width: 16px;
+      background: #fff;
+      border: 2px solid transparent;
+      border-radius: 100%;
+      transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
+      transition: background .2s ease, border .2s ease, transform .2s ease;
+      transition: background .2s ease, border .2s ease, transform .2s ease, -webkit-transform .2s ease;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
+      box-sizing: border-box;
+      margin-top: 0; }
+    .plyr input[type='range']::-ms-tooltip {
+      display: none; }
+    .plyr input[type='range']:focus {
+      outline: 0; }
+    .plyr input[type='range']::-moz-focus-outer {
+      border: 0; }
+    .plyr input[type='range'].tab-focus:focus {
+      outline-offset: 3px; }
+    .plyr input[type='range']:active::-webkit-slider-thumb {
+      background: #3498db;
+      border-color: #fff;
+      -webkit-transform: scale(1.25);
+              transform: scale(1.25); }
+    .plyr input[type='range']:active::-moz-range-thumb {
+      background: #3498db;
+      border-color: #fff;
+      transform: scale(1.25); }
+    .plyr input[type='range']:active::-ms-thumb {
+      background: #3498db;
+      border-color: #fff;
+      transform: scale(1.25); }
+
+.plyr--video input[type='range'].tab-focus:focus {
+  outline: 1px dotted rgba(255, 255, 255, 0.5); }
+
+.plyr--audio input[type='range'].tab-focus:focus {
+  outline: 1px dotted rgba(86, 93, 100, 0.5); }
+
+.plyr__sr-only {
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  position: absolute !important;
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important; }
+
+.plyr__video-wrapper {
+  position: relative;
+  background: #000;
+  border-radius: inherit;
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC); }
+
+.plyr__video-embed {
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: inherit; }
+  .plyr__video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
+  .plyr__video-embed > div {
+    position: relative;
+    padding-bottom: 200%;
+    -webkit-transform: translateY(-35.95%);
+            transform: translateY(-35.95%); }
+
+.plyr .plyr__video-embed iframe {
+  pointer-events: none; }
+
+.plyr video::-webkit-media-text-track-container {
+  display: none; }
+
+.plyr__captions {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400; }
+  .plyr__captions span {
+    border-radius: 2px;
+    padding: 3px 10px;
+    background: rgba(0, 0, 0, 0.7); }
+  .plyr__captions span:empty {
+    display: none; }
+  @media (min-width: 768px) {
+    .plyr__captions {
+      font-size: 24px; } }
+
+.plyr--captions-active .plyr__captions {
+  display: block; }
+
+.plyr--fullscreen-active .plyr__captions {
+  font-size: 32px; }
+
+.plyr--hide-controls .plyr__captions {
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px); }
+
+.plyr ::-webkit-media-controls {
+  display: none; }
+
+.plyr__controls {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 1;
+  text-align: center;
+  transition: opacity .3s ease; }
+  .plyr__controls > button,
+  .plyr__controls .plyr__progress,
+  .plyr__controls .plyr__time {
+    margin-left: 5px; }
+    .plyr__controls > button:first-child,
+    .plyr__controls .plyr__progress:first-child,
+    .plyr__controls .plyr__time:first-child {
+      margin-left: 0; }
+  .plyr__controls .plyr__volume {
+    margin-left: 5px; }
+  .plyr__controls [data-plyr="pause"] {
+    margin-left: 0; }
+  .plyr__controls button {
+    position: relative;
+    display: inline-block;
+    -webkit-flex-shrink: 0;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+    overflow: visible;
+    vertical-align: middle;
+    padding: 7px;
+    border: 0;
+    background: transparent;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background .3s ease, color .3s ease, opacity .3s ease;
+    color: inherit; }
+    .plyr__controls button svg {
+      width: 18px;
+      height: 18px;
+      display: block;
+      fill: currentColor; }
+    .plyr__controls button:focus {
+      outline: 0; }
+  .plyr__controls .icon--exit-fullscreen,
+  .plyr__controls .icon--muted,
+  .plyr__controls .icon--captions-on {
+    display: none; }
+  @media (min-width: 480px) {
+    .plyr__controls > button,
+    .plyr__controls .plyr__progress,
+    .plyr__controls .plyr__time {
+      margin-left: 10px; } }
+
+.plyr--hide-controls .plyr__controls {
+  opacity: 0; }
+
+.plyr--video .plyr__controls {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 50px 10px 10px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5));
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+  color: #fff; }
+  .plyr--video .plyr__controls button.tab-focus:focus, .plyr--video .plyr__controls button:hover {
+    background: #3498db;
+    color: #fff; }
+
+.plyr--audio .plyr__controls {
+  padding: 10px;
+  border-radius: inherit;
+  background: #fff;
+  border: 1px solid #dbe3e8;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  color: #565D64; }
+  .plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover {
+    background: #3498db;
+    color: #fff; }
+
+.plyr__play-large {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  padding: 10px;
+  background: #3498db;
+  border: 4px solid currentColor;
+  border-radius: 100%;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  color: #fff;
+  transition: all .3s ease; }
+  .plyr__play-large svg {
+    position: relative;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    fill: currentColor; }
+  .plyr__play-large:focus {
+    outline: 1px dotted rgba(255, 255, 255, 0.5); }
+
+.plyr .plyr__play-large {
+  display: inline-block; }
+
+.plyr--audio .plyr__play-large {
+  display: none; }
+
+.plyr--playing .plyr__play-large {
+  opacity: 0;
+  visibility: hidden; }
+
+.plyr__controls [data-plyr='pause'],
+.plyr--playing .plyr__controls [data-plyr='play'] {
+  display: none; }
+
+.plyr--playing .plyr__controls [data-plyr='pause'] {
+  display: inline-block; }
+
+.plyr--fullscreen-active .icon--exit-fullscreen,
+.plyr--muted .plyr__controls .icon--muted,
+.plyr--captions-active .plyr__controls .icon--captions-on {
+  display: block; }
+  .plyr--fullscreen-active .icon--exit-fullscreen + svg,
+  .plyr--muted .plyr__controls .icon--muted + svg,
+  .plyr--captions-active .plyr__controls .icon--captions-on + svg {
+    display: none; }
+
+.plyr [data-plyr='captions'],
+.plyr [data-plyr='fullscreen'] {
+  display: none; }
+
+.plyr--captions-enabled [data-plyr='captions'],
+.plyr--fullscreen-enabled [data-plyr='fullscreen'] {
+  display: inline-block; }
+
+.plyr__tooltip {
+  position: absolute;
+  z-index: 2;
+  bottom: 100%;
+  margin-bottom: 10px;
+  padding: 5px 7.5px;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 3px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.3;
+  -webkit-transform: translate(-50%, 10px) scale(0.8);
+          transform: translate(-50%, 10px) scale(0.8);
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+  transition: opacity .2s .1s ease, -webkit-transform .2s .1s ease;
+  transition: transform .2s .1s ease, opacity .2s .1s ease;
+  transition: transform .2s .1s ease, opacity .2s .1s ease, -webkit-transform .2s .1s ease; }
+  .plyr__tooltip::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    bottom: -4px;
+    border-right: 4px solid transparent;
+    border-top: 4px solid rgba(0, 0, 0, 0.7);
+    border-left: 4px solid transparent;
+    z-index: 2; }
+
+.plyr button:hover .plyr__tooltip,
+.plyr button.tab-focus:focus .plyr__tooltip,
+.plyr__tooltip--visible {
+  opacity: 1;
+  -webkit-transform: translate(-50%, 0) scale(1);
+          transform: translate(-50%, 0) scale(1); }
+
+.plyr button:hover .plyr__tooltip {
+  z-index: 3; }
+
+.plyr__controls button:first-child .plyr__tooltip {
+  left: 0;
+  -webkit-transform: translate(0, 10px) scale(0.8);
+          transform: translate(0, 10px) scale(0.8);
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%; }
+  .plyr__controls button:first-child .plyr__tooltip::before {
+    left: 16px; }
+
+.plyr__controls button:last-child .plyr__tooltip {
+  right: 0;
+  -webkit-transform: translate(0, 10px) scale(0.8);
+          transform: translate(0, 10px) scale(0.8);
+  -webkit-transform-origin: 100% 100%;
+          transform-origin: 100% 100%; }
+  .plyr__controls button:last-child .plyr__tooltip::before {
+    left: auto;
+    right: 16px;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%); }
+
+.plyr__controls button:first-child:hover .plyr__tooltip,
+.plyr__controls button:first-child.tab-focus:focus .plyr__tooltip,
+.plyr__controls button:first-child .plyr__tooltip--visible,
+.plyr__controls button:last-child:hover .plyr__tooltip,
+.plyr__controls button:last-child.tab-focus:focus .plyr__tooltip,
+.plyr__controls button:last-child .plyr__tooltip--visible {
+  -webkit-transform: translate(0, 0) scale(1);
+          transform: translate(0, 0) scale(1); }
+
+.plyr__progress {
+  display: none;
+  position: relative;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }
+  .plyr__progress input[type="range"] {
+    position: relative;
+    z-index: 2; }
+    .plyr__progress input[type="range"]::-webkit-slider-runnable-track {
+      background: transparent; }
+    .plyr__progress input[type="range"]::-moz-range-track {
+      background: transparent; }
+    .plyr__progress input[type="range"]::-ms-fill-upper {
+      background: transparent; }
+  .plyr__progress .plyr__tooltip {
+    left: 0; }
+
+.plyr .plyr__progress {
+  display: inline-block; }
+
+.plyr__progress--buffer,
+.plyr__progress--played,
+.plyr__volume--display {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 8px;
+  margin: -4px 0 0;
+  padding: 0;
+  vertical-align: top;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  border-radius: 100px; }
+  .plyr__progress--buffer::-webkit-progress-bar,
+  .plyr__progress--played::-webkit-progress-bar,
+  .plyr__volume--display::-webkit-progress-bar {
+    background: transparent; }
+  .plyr__progress--buffer::-webkit-progress-value,
+  .plyr__progress--played::-webkit-progress-value,
+  .plyr__volume--display::-webkit-progress-value {
+    background: currentColor;
+    border-radius: 100px;
+    min-width: 8px; }
+  .plyr__progress--buffer::-moz-progress-bar,
+  .plyr__progress--played::-moz-progress-bar,
+  .plyr__volume--display::-moz-progress-bar {
+    background: currentColor;
+    border-radius: 100px;
+    min-width: 8px; }
+  .plyr__progress--buffer::-ms-fill,
+  .plyr__progress--played::-ms-fill,
+  .plyr__volume--display::-ms-fill {
+    border-radius: 100px; }
+
+.plyr__progress--played,
+.plyr__volume--display {
+  z-index: 1;
+  color: #3498db;
+  background: transparent;
+  transition: none; }
+  .plyr__progress--played::-webkit-progress-value,
+  .plyr__volume--display::-webkit-progress-value {
+    min-width: 8px;
+    max-width: 99%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: none; }
+  .plyr__progress--played::-moz-progress-bar,
+  .plyr__volume--display::-moz-progress-bar {
+    min-width: 8px;
+    max-width: 99%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    transition: none; }
+  .plyr__progress--played::-ms-fill,
+  .plyr__volume--display::-ms-fill {
+    display: none; }
+
+.plyr__progress--buffer::-webkit-progress-value {
+  transition: width .2s ease; }
+
+.plyr__progress--buffer::-moz-progress-bar {
+  transition: width .2s ease; }
+
+.plyr__progress--buffer::-ms-fill {
+  transition: width .2s ease; }
+
+.plyr--video .plyr__progress--buffer,
+.plyr--video .plyr__volume--display {
+  background: rgba(255, 255, 255, 0.25); }
+
+.plyr--video .plyr__progress--buffer {
+  color: rgba(255, 255, 255, 0.25); }
+
+.plyr--audio .plyr__progress--buffer,
+.plyr--audio .plyr__volume--display {
+  background: rgba(198, 214, 219, 0.67); }
+
+.plyr--audio .plyr__progress--buffer {
+  color: rgba(198, 214, 219, 0.67); }
+
+.plyr--loading .plyr__progress--buffer {
+  -webkit-animation: plyr-progress 1s linear infinite;
+          animation: plyr-progress 1s linear infinite;
+  background-size: 25px 25px;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
+  color: transparent; }
+
+.plyr--video.plyr--loading .plyr__progress--buffer {
+  background-color: rgba(255, 255, 255, 0.25); }
+
+.plyr--audio.plyr--loading .plyr__progress--buffer {
+  background-color: rgba(198, 214, 219, 0.67); }
+
+.plyr__time {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: .95; }
+
+.plyr__time + .plyr__time {
+  display: none; }
+  @media (min-width: 768px) {
+    .plyr__time + .plyr__time {
+      display: inline-block; } }
+  .plyr__time + .plyr__time::before {
+    content: '\2044';
+    margin-right: 10px; }
+
+.plyr__volume {
+  display: none; }
+
+.plyr .plyr__volume {
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative; }
+  .plyr .plyr__volume input[type="range"] {
+    position: relative;
+    z-index: 2; }
+  @media (min-width: 480px) {
+    .plyr .plyr__volume {
+      display: block;
+      max-width: 60px; } }
+  @media (min-width: 768px) {
+    .plyr .plyr__volume {
+      max-width: 100px; } }
+
+.plyr--is-ios .plyr__volume,
+.plyr--is-ios [data-plyr='mute'] {
+  display: none !important; }
+
+.plyr--fullscreen,
+.plyr--fullscreen-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10000000;
+  background: #000;
+  border-radius: 0; }
+  .plyr--fullscreen video,
+  .plyr--fullscreen-active video {
+    height: 100%; }
+  .plyr--fullscreen .plyr__video-wrapper,
+  .plyr--fullscreen-active .plyr__video-wrapper {
+    height: 100%;
+    width: 100%; }
+  .plyr--fullscreen .plyr__controls,
+  .plyr--fullscreen-active .plyr__controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0; }
+  .plyr--fullscreen.plyr--vimeo .plyr__video-wrapper,
+  .plyr--fullscreen-active.plyr--vimeo .plyr__video-wrapper {
+    height: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%); }
+
 .collapse-xs-up {
   max-height: 0;
   overflow: hidden;
@@ -5968,12 +6596,15 @@ p + h6, p + .h6 {
       padding-left: calc(5% + 0.9375rem);
       padding-right: 5%; }
       .content-page .content-header.content-header-with-social {
-        padding-left: calc(5% + 5.9375rem); }
+        padding-left: calc(12% + 0.9375rem); }
       .content-page .content-header.content-header-centered {
         width: 62%;
         padding: 0;
         margin-left: auto;
         margin-right: auto; } }
+  @media (min-width: 1200px) {
+    .content-page .content-header {
+      padding-left: calc(12% + 0.9375rem); } }
   @media (min-width: 1328px) {
     .content-page .content-header {
       margin: 0 auto;
@@ -5982,7 +6613,9 @@ p + h6, p + .h6 {
       .content-page .content-header.content-header-with-social {
         padding: 0 0.9375rem; }
       .content-page .content-header.content-header-centered {
-        width: 710px; } }
+        width: 678px; }
+        .content-page .content-header.content-header-centered.content-header-with-social {
+          padding: 0; } }
   @media (min-width: 992px) {
     .content-page .content-header.content-header-centered .content-social.content-social-head {
       left: -4rem; } }
@@ -6131,6 +6764,17 @@ p + h6, p + .h6 {
     width: 100%;
     height: auto; }
 
+.media-wrap-fill {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0; }
+  .media-wrap-fill > img {
+    height: 100%;
+    width: auto;
+    margin: 0 auto; }
+
 .video-launcher {
   cursor: pointer; }
   .video-launcher:after {
@@ -6151,11 +6795,14 @@ p + h6, p + .h6 {
     height: 72px;
     height: 4.5rem;
     text-align: center;
-    color: rgba(255, 255, 255, 0.7);
+    color: #FFF;
     transition: all 300ms;
     transition-timing-function: linear;
     -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%; }
+            transform-origin: 50% 50%;
+    pointer-events: none;
+    text-shadow: 0 0 20px #333;
+    opacity: 0.7; }
     @media (min-width: 544px) {
       .video-launcher:after {
         left: calc(50% - 3.5rem);
@@ -6166,7 +6813,7 @@ p + h6, p + .h6 {
         width: 7rem;
         height: 7rem; } }
   .video-launcher:hover:after {
-    color: #FFFFFF;
+    opacity: 1;
     -webkit-transform: scale(1.1, 1.1);
             transform: scale(1.1, 1.1); }
 
@@ -6210,66 +6857,6 @@ figure {
   overflow: hidden;
   margin-top: 32px;
   margin-top: 2rem; }
-  figure .attribution {
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #FFFFFF;
-    position: absolute;
-    display: inline-block;
-    font-size: 12px;
-    font-size: 0.75rem;
-    padding: 4.8px 12px;
-    padding: 0.3rem 0.75rem;
-    max-height: 32px;
-    max-height: 2rem;
-    cursor: pointer;
-    bottom: 0;
-    right: 0;
-    line-height: 24px;
-    line-height: 1.5rem;
-    min-width: 40px;
-    min-width: 2.5rem;
-    transition: all 300ms; }
-    figure .attribution:before {
-      content: " ";
-      display: block;
-      float: left;
-      width: 16px;
-      width: 1rem;
-      height: 16px;
-      height: 1rem;
-      transition: width 500ms; }
-    figure .attribution i {
-      font-size: 16px;
-      font-size: 1rem;
-      line-height: 16px;
-      line-height: 1rem;
-      position: absolute;
-      top: 6.4px;
-      top: 0.4rem;
-      left: 12px;
-      left: 0.75rem; }
-    figure .attribution span {
-      transition: max-height 150ms, max-width 150ms 150ms;
-      display: block;
-      max-width: 0;
-      overflow: hidden;
-      box-sizing: border-box;
-      max-height: 32px;
-      max-height: 2rem; }
-      figure .attribution span a {
-        color: #FFFFFF; }
-        figure .attribution span a:hover {
-          text-decoration: underline; }
-    figure .attribution.in {
-      max-height: 3000px; }
-      figure .attribution.in:before {
-        width: 28px;
-        width: 1.75rem;
-        transition: width 50ms; }
-      figure .attribution.in span {
-        transition: max-width 300ms, max-height 150ms 150ms;
-        max-height: 3000px;
-        max-width: 3000px; }
   figure.figure-right img {
     width: 100%; }
   @media (min-width: 768px) {
@@ -6281,12 +6868,15 @@ figure {
   @media (min-width: 992px) {
     figure.figure-right {
       margin-right: -20%; } }
-  figure figcaption {
-    color: #818a91;
-    font-size: 14.4px;
-    font-size: 0.9rem;
-    padding: 4px 0 0 8px;
-    padding: 0.25rem 0 0 0.5rem; }
+
+figure figcaption,
+.caption {
+  color: #818a91;
+  font-size: 14.4px;
+  font-size: 0.9rem;
+  padding: 4px 0 0 8px;
+  padding: 0.25rem 0 0 0.5rem;
+  margin: 0; }
 
 .container figure, .container-padded figure, .card-panel.card-panel-contained figure, .card-panel-contained.card-panel-flush figure, .card-panel .card-panel-body figure, .card-panel-flush .card-panel-body figure, .card-panel .card-panel-header figure, .card-panel-flush .card-panel-header figure, main > blockquote figure, .content-container figure {
   clear: none;
@@ -6342,22 +6932,102 @@ figure {
   .content-container .content-main.content-main-centered figure.full-width figcaption {
     left: calc( -50vw + 345px); } }
 
-figure.featured-image {
-  overflow: visible;
-  margin-top: 0px;
-  margin-bottom: 0; }
-  @media (min-width: 768px) {
-    figure.featured-image {
-      margin-top: -3.5rem; } }
-  figure.featured-image figcaption {
-    text-align: right;
-    padding-right: 8px;
-    padding-right: 0.5rem; }
-    @media (min-width: 768px) {
-      figure.featured-image figcaption {
-        position: absolute;
-        bottom: -1.5rem;
-        right: 0; } }
+.attribution {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #FFFFFF;
+  position: absolute;
+  display: inline-block;
+  font-size: 12px;
+  font-size: 0.75rem;
+  padding: 4.8px 12px;
+  padding: 0.3rem 0.75rem;
+  max-height: 32px;
+  max-height: 2rem;
+  cursor: pointer;
+  bottom: 0;
+  right: 0;
+  line-height: 24px;
+  line-height: 1.5rem;
+  min-width: 40px;
+  min-width: 2.5rem;
+  transition: all 300ms; }
+  .attribution:before {
+    content: " ";
+    display: block;
+    float: left;
+    width: 16px;
+    width: 1rem;
+    height: 16px;
+    height: 1rem;
+    transition: width 500ms; }
+  .attribution i {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 16px;
+    line-height: 1rem;
+    position: absolute;
+    top: 6.4px;
+    top: 0.4rem;
+    left: 12px;
+    left: 0.75rem; }
+  .attribution span {
+    transition: max-height 150ms, max-width 150ms 150ms;
+    display: block;
+    max-width: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    max-height: 32px;
+    max-height: 2rem; }
+    .attribution span a {
+      color: #FFFFFF; }
+      .attribution span a:hover {
+        text-decoration: underline; }
+  .attribution.in {
+    max-height: 3000px; }
+    .attribution.in:before {
+      width: 28px;
+      width: 1.75rem;
+      transition: width 50ms; }
+    .attribution.in span {
+      transition: max-width 300ms, max-height 150ms 150ms;
+      max-height: 3000px;
+      max-width: 3000px; }
+
+.video-launcher > .video-player {
+  display: none; }
+
+.video-launcher > img {
+  display: block; }
+
+.video-launcher.playing.playing.playing > .video-player {
+  display: block; }
+
+.video-launcher.playing.playing.playing > img {
+  display: none; }
+
+.video-launcher.playing.playing.playing::after {
+  display: none; }
+
+.video-launcher.playing.playing.playing .plyr--muted .kf-volume-medium,
+.video-launcher.playing.playing.playing .plyr--fullscreen-active .kf-expand,
+.video-launcher.playing.playing.playing .plyr--captions-active .kf-captions-off {
+  display: none; }
+
+.video-launcher.playing.playing.playing .plyr__play-large {
+  background: none;
+  border: none;
+  box-shadow: none;
+  font-size: 112px;
+  font-size: 7rem;
+  color: #FFF;
+  text-shadow: 0 0 20px #333;
+  opacity: .7; }
+  .video-launcher.playing.playing.playing .plyr__play-large .kf-play-circle {
+    transition: all 300ms; }
+  .video-launcher.playing.playing.playing .plyr__play-large:hover .kf-play-circle {
+    opacity: 1;
+    -webkit-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1); }
 
 .alert {
   background-color: #fff; }
@@ -6857,6 +7527,14 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
       color: #FFFFFF;
       background-color: #DC4E41;
       border-color: #DC4E41; }
+    .social-link i.kf-mendeley:hover {
+      color: #FFFFFF;
+      background-color: #B22129;
+      border-color: #B22129; }
+    .social-link i.kf-academia-edu:hover {
+      color: #FFFFFF;
+      background-color: #222;
+      border-color: #222; }
   .social-link:hover i.kf-facebook {
     color: #FFFFFF;
     background-color: #3B5998;
@@ -6897,6 +7575,14 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
     color: #FFFFFF;
     background-color: #DC4E41;
     border-color: #DC4E41; }
+  .social-link:hover i.kf-mendeley {
+    color: #FFFFFF;
+    background-color: #B22129;
+    border-color: #B22129; }
+  .social-link:hover i.kf-academia-edu {
+    color: #FFFFFF;
+    background-color: #222;
+    border-color: #222; }
 
 .content-social {
   position: relative;
@@ -6983,6 +7669,14 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
       color: #FFFFFF;
       background-color: #DC4E41;
       border-color: #DC4E41; }
+    .content-social a.kf-mendeley:hover, .content-social .content-social-link.kf-mendeley:hover {
+      color: #FFFFFF;
+      background-color: #B22129;
+      border-color: #B22129; }
+    .content-social a.kf-academia-edu:hover, .content-social .content-social-link.kf-academia-edu:hover {
+      color: #FFFFFF;
+      background-color: #222;
+      border-color: #222; }
   .content-social.content-social-colored a.kf-facebook, .content-social.content-social-colored .content-social-link.kf-facebook {
     color: #3B5998;
     background-image: none;
@@ -7173,6 +7867,44 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
       border-color: #ec9e97; }
     .content-social.content-social-colored a.kf-google-plus.disabled:hover, .content-social.content-social-colored a.kf-google-plus:disabled:hover, .content-social.content-social-colored .content-social-link.kf-google-plus.disabled:hover, .content-social.content-social-colored .content-social-link.kf-google-plus:disabled:hover {
       border-color: #ec9e97; }
+  .content-social.content-social-colored a.kf-mendeley, .content-social.content-social-colored .content-social-link.kf-mendeley {
+    color: #B22129;
+    background-image: none;
+    background-color: transparent;
+    border-color: #B22129; }
+    .content-social.content-social-colored a.kf-mendeley:focus, .content-social.content-social-colored a.kf-mendeley.focus, .content-social.content-social-colored a.kf-mendeley:active, .content-social.content-social-colored a.kf-mendeley.active,
+    .open > .content-social.content-social-colored a.kf-mendeley.dropdown-toggle, .content-social.content-social-colored .content-social-link.kf-mendeley:focus, .content-social.content-social-colored .content-social-link.kf-mendeley.focus, .content-social.content-social-colored .content-social-link.kf-mendeley:active, .content-social.content-social-colored .content-social-link.kf-mendeley.active,
+    .open > .content-social.content-social-colored .content-social-link.kf-mendeley.dropdown-toggle {
+      color: #fff;
+      background-color: #B22129;
+      border-color: #B22129; }
+    .content-social.content-social-colored a.kf-mendeley:hover, .content-social.content-social-colored .content-social-link.kf-mendeley:hover {
+      color: #fff;
+      background-color: #B22129;
+      border-color: #B22129; }
+    .content-social.content-social-colored a.kf-mendeley.disabled:focus, .content-social.content-social-colored a.kf-mendeley.disabled.focus, .content-social.content-social-colored a.kf-mendeley:disabled:focus, .content-social.content-social-colored a.kf-mendeley:disabled.focus, .content-social.content-social-colored .content-social-link.kf-mendeley.disabled:focus, .content-social.content-social-colored .content-social-link.kf-mendeley.disabled.focus, .content-social.content-social-colored .content-social-link.kf-mendeley:disabled:focus, .content-social.content-social-colored .content-social-link.kf-mendeley:disabled.focus {
+      border-color: #e05960; }
+    .content-social.content-social-colored a.kf-mendeley.disabled:hover, .content-social.content-social-colored a.kf-mendeley:disabled:hover, .content-social.content-social-colored .content-social-link.kf-mendeley.disabled:hover, .content-social.content-social-colored .content-social-link.kf-mendeley:disabled:hover {
+      border-color: #e05960; }
+  .content-social.content-social-colored a.kf-academia-edu, .content-social.content-social-colored .content-social-link.kf-academia-edu {
+    color: #222;
+    background-image: none;
+    background-color: transparent;
+    border-color: #222; }
+    .content-social.content-social-colored a.kf-academia-edu:focus, .content-social.content-social-colored a.kf-academia-edu.focus, .content-social.content-social-colored a.kf-academia-edu:active, .content-social.content-social-colored a.kf-academia-edu.active,
+    .open > .content-social.content-social-colored a.kf-academia-edu.dropdown-toggle, .content-social.content-social-colored .content-social-link.kf-academia-edu:focus, .content-social.content-social-colored .content-social-link.kf-academia-edu.focus, .content-social.content-social-colored .content-social-link.kf-academia-edu:active, .content-social.content-social-colored .content-social-link.kf-academia-edu.active,
+    .open > .content-social.content-social-colored .content-social-link.kf-academia-edu.dropdown-toggle {
+      color: #fff;
+      background-color: #222;
+      border-color: #222; }
+    .content-social.content-social-colored a.kf-academia-edu:hover, .content-social.content-social-colored .content-social-link.kf-academia-edu:hover {
+      color: #fff;
+      background-color: #222;
+      border-color: #222; }
+    .content-social.content-social-colored a.kf-academia-edu.disabled:focus, .content-social.content-social-colored a.kf-academia-edu.disabled.focus, .content-social.content-social-colored a.kf-academia-edu:disabled:focus, .content-social.content-social-colored a.kf-academia-edu:disabled.focus, .content-social.content-social-colored .content-social-link.kf-academia-edu.disabled:focus, .content-social.content-social-colored .content-social-link.kf-academia-edu.disabled.focus, .content-social.content-social-colored .content-social-link.kf-academia-edu:disabled:focus, .content-social.content-social-colored .content-social-link.kf-academia-edu:disabled.focus {
+      border-color: #555555; }
+    .content-social.content-social-colored a.kf-academia-edu.disabled:hover, .content-social.content-social-colored a.kf-academia-edu:disabled:hover, .content-social.content-social-colored .content-social-link.kf-academia-edu.disabled:hover, .content-social.content-social-colored .content-social-link.kf-academia-edu:disabled:hover {
+      border-color: #555555; }
   .content-social.content-social-head a, .content-social.content-social-head .content-social-link {
     margin-left: 0; }
 
@@ -7690,7 +8422,8 @@ input[type=number]::-webkit-outer-spin-button {
                 padding: 0;
                 font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
                 font-size: 1.2rem;
-                line-height: 1.25rem; }
+                line-height: 1.25rem;
+                border-bottom: none; }
                 .global-nav .global-nav-links .global-nav-link nav .nav-link .global-nav-link-title:after {
                   content: "";
                   font-family: "kentfont", sans-serif;
@@ -8098,8 +8831,8 @@ main > nav.breadcrumb {
       border-bottom: solid 1px #E6E6E6; } }
 
 nav.breadcrumb {
-  margin: 24px 0 16px;
-  margin: 1.5rem 0 1rem;
+  margin: 0 0 16px;
+  margin: 0 0 1rem;
   height: 0;
   overflow: hidden;
   background: #FFFFFF;
@@ -8471,7 +9204,8 @@ button.beta-toggler {
   .card .card-half {
     position: relative;
     float: left;
-    width: 50%; }
+    width: 50%;
+    min-height: 1px; }
   .card.card-flip, .card-panel.cards-flip .card, .cards-flip.card-panel-flush .card {
     position: relative; }
     .card.card-flip .front, .card-panel.cards-flip .card .front, .cards-flip.card-panel-flush .card .front {
@@ -9169,16 +9903,10 @@ button.beta-toggler {
         margin-left: .4rem; }
   .card-panel a.card .card-text, .card-panel-flush a.card .card-text, .card-panel a.card:hover .card-text, .card-panel-flush a.card:hover .card-text, .card-panel a.card:focus .card-text, .card-panel-flush a.card:focus .card-text, .card-panel .card a .card-text, .card-panel-flush .card a .card-text, .card-panel .card a:hover .card-text, .card-panel-flush .card a:hover .card-text, .card-panel .card a:focus .card-text, .card-panel-flush .card a:focus .card-text {
     color: #171717; }
-  .card-panel a.card.card-inverse .card-text, .card-panel-flush a.card.card-inverse .card-text, .card-panel a.card.card-backed-primary .card-text, .card-panel-flush a.card.card-backed-primary .card-text, .card-panel.cards-backed-primary a.card .card-text, .cards-backed-primary.card-panel-flush a.card .card-text, .card-panel a.card.card-backed-accent .card-text, .card-panel-flush a.card.card-backed-accent .card-text, .card-panel.cards-backed-accent a.card .card-text, .cards-backed-accent.card-panel-flush a.card .card-text, .card-panel a.card.card-backed-dark .card-text, .card-panel-flush a.card.card-backed-dark .card-text, .card-panel.cards-backed-dark a.card .card-text, .cards-backed-dark.card-panel-flush a.card .card-text, .card-panel .card a.card.card-img-overlay-bottom .card-text, .card .card-panel a.card.card-img-overlay-bottom .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded .card-text, .card-panel a.card.editorial.editorial-primary .card-text, .card-panel-flush a.card.editorial.editorial-primary .card-text, .card-panel a.card.editorial.editorial-accent .card-text, .card-panel-flush a.card.editorial.editorial-accent .card-text, .card-panel a.card.editorial.editorial-dark .card-text, .card-panel-flush a.card.editorial.editorial-dark .card-text, .card-panel a.card.card-inverse:hover .card-text, .card-panel-flush a.card.card-inverse:hover .card-text, .card-panel a.card.card-backed-primary:hover .card-text, .card-panel-flush a.card.card-backed-primary:hover .card-text, .card-panel.cards-backed-primary a.card:hover .card-text, .cards-backed-primary.card-panel-flush a.card:hover .card-text, .card-panel a.card.card-backed-accent:hover .card-text, .card-panel-flush a.card.card-backed-accent:hover .card-text, .card-panel.cards-backed-accent a.card:hover .card-text, .cards-backed-accent.card-panel-flush a.card:hover .card-text, .card-panel a.card.card-backed-dark:hover .card-text, .card-panel-flush a.card.card-backed-dark:hover .card-text, .card-panel.cards-backed-dark a.card:hover .card-text, .cards-backed-dark.card-panel-flush a.card:hover .card-text, .card-panel .card a.card.card-img-overlay-bottom:hover .card-text, .card .card-panel a.card.card-img-overlay-bottom:hover .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom:hover .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom:hover .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:hover .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:hover .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded:hover .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded:hover .card-text, .card-panel a.card.editorial.editorial-primary:hover .card-text, .card-panel-flush a.card.editorial.editorial-primary:hover .card-text, .card-panel a.card.editorial.editorial-accent:hover .card-text, .card-panel-flush a.card.editorial.editorial-accent:hover .card-text, .card-panel a.card.editorial.editorial-dark:hover .card-text, .card-panel-flush a.card.editorial.editorial-dark:hover .card-text, .card-panel a.card.card-inverse:focus .card-text, .card-panel-flush a.card.card-inverse:focus .card-text, .card-panel a.card.card-backed-primary:focus .card-text, .card-panel-flush a.card.card-backed-primary:focus .card-text, .card-panel.cards-backed-primary a.card:focus .card-text, .cards-backed-primary.card-panel-flush a.card:focus .card-text, .card-panel a.card.card-backed-accent:focus .card-text, .card-panel-flush a.card.card-backed-accent:focus .card-text, .card-panel.cards-backed-accent a.card:focus .card-text, .cards-backed-accent.card-panel-flush a.card:focus .card-text, .card-panel a.card.card-backed-dark:focus .card-text, .card-panel-flush a.card.card-backed-dark:focus .card-text, .card-panel.cards-backed-dark a.card:focus .card-text, .cards-backed-dark.card-panel-flush a.card:focus .card-text, .card-panel .card a.card.card-img-overlay-bottom:focus .card-text, .card .card-panel a.card.card-img-overlay-bottom:focus .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom:focus .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom:focus .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:focus .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:focus .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded:focus .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded:focus .card-text, .card-panel a.card.editorial.editorial-primary:focus .card-text, .card-panel-flush a.card.editorial.editorial-primary:focus .card-text, .card-panel a.card.editorial.editorial-accent:focus .card-text, .card-panel-flush a.card.editorial.editorial-accent:focus .card-text, .card-panel a.card.editorial.editorial-dark:focus .card-text, .card-panel-flush a.card.editorial.editorial-dark:focus .card-text, .card-panel .card.card-inverse a .card-text, .card-panel-flush .card.card-inverse a .card-text, .card-panel .card.card-backed-primary a .card-text, .card-panel-flush .card.card-backed-primary a .card-text, .card-panel.cards-backed-primary .card a .card-text, .card-panel-flush .card-panel.cards-backed-primary .card a .card-text, .card-panel.cards-backed-primary .card-panel-flush .card a .card-text, .card-panel .cards-backed-primary.card-panel-flush .card a .card-text, .cards-backed-primary.card-panel-flush .card-panel .card a .card-text, .cards-backed-primary.card-panel-flush .card a .card-text,
-  .card-panel.cards-backed .card.card-backed-primary a .card-text, .cards-backed.card-panel-flush .card.card-backed-primary a .card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card a .card-text, .card-panel.cards-backed-primary
-  .card-panel.cards-backed .card a .card-text, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card a .card-text, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card a .card-text, .card-panel .card.card-backed-accent a .card-text, .card-panel-flush .card.card-backed-accent a .card-text, .card-panel.cards-backed-accent .card a .card-text, .card-panel-flush .card-panel.cards-backed-accent .card a .card-text, .card-panel.cards-backed-accent .card-panel-flush .card a .card-text, .card-panel .cards-backed-accent.card-panel-flush .card a .card-text, .cards-backed-accent.card-panel-flush .card-panel .card a .card-text, .cards-backed-accent.card-panel-flush .card a .card-text,
-  .card-panel.cards-backed .card.card-backed-accent a .card-text, .cards-backed.card-panel-flush .card.card-backed-accent a .card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card a .card-text, .card-panel.cards-backed-accent
-  .card-panel.cards-backed .card a .card-text, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card a .card-text, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card a .card-text, .card-panel .card.card-backed-dark a .card-text, .card-panel-flush .card.card-backed-dark a .card-text, .card-panel.cards-backed-dark .card a .card-text, .card-panel-flush .card-panel.cards-backed-dark .card a .card-text, .card-panel.cards-backed-dark .card-panel-flush .card a .card-text, .card-panel .cards-backed-dark.card-panel-flush .card a .card-text, .cards-backed-dark.card-panel-flush .card-panel .card a .card-text, .cards-backed-dark.card-panel-flush .card a .card-text,
-  .card-panel.cards-backed .card.card-backed-dark a .card-text, .cards-backed.card-panel-flush .card.card-backed-dark a .card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-dark .card a .card-text, .card-panel.cards-backed-dark
-  .card-panel.cards-backed .card a .card-text, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card a .card-text, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card a .card-text, .card-panel .card .card.card-img-overlay-bottom a .card-text, .card .card-panel .card.card-img-overlay-bottom a .card-text, .card-panel-flush .card .card.card-img-overlay-bottom a .card-text, .card .card-panel-flush .card.card-img-overlay-bottom a .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a .card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a .card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a .card-text, .card-panel .card.editorial.editorial-primary a .card-text, .card-panel-flush .card.editorial.editorial-primary a .card-text, .card-panel .card.editorial.editorial-accent a .card-text, .card-panel-flush .card.editorial.editorial-accent a .card-text, .card-panel .card.editorial.editorial-dark a .card-text, .card-panel-flush .card.editorial.editorial-dark a .card-text, .card-panel .card.card-inverse a:hover .card-text, .card-panel-flush .card.card-inverse a:hover .card-text, .card-panel .card.card-backed-primary a:hover .card-text, .card-panel-flush .card.card-backed-primary a:hover .card-text, .card-panel.cards-backed-primary .card a:hover .card-text, .cards-backed-primary.card-panel-flush .card a:hover .card-text, .card-panel .card.card-backed-accent a:hover .card-text, .card-panel-flush .card.card-backed-accent a:hover .card-text, .card-panel.cards-backed-accent .card a:hover .card-text, .cards-backed-accent.card-panel-flush .card a:hover .card-text, .card-panel .card.card-backed-dark a:hover .card-text, .card-panel-flush .card.card-backed-dark a:hover .card-text, .card-panel.cards-backed-dark .card a:hover .card-text, .cards-backed-dark.card-panel-flush .card a:hover .card-text, .card-panel .card .card.card-img-overlay-bottom a:hover .card-text, .card .card-panel .card.card-img-overlay-bottom a:hover .card-text, .card-panel-flush .card .card.card-img-overlay-bottom a:hover .card-text, .card .card-panel-flush .card.card-img-overlay-bottom a:hover .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:hover .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:hover .card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a:hover .card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a:hover .card-text, .card-panel .card.editorial.editorial-primary a:hover .card-text, .card-panel-flush .card.editorial.editorial-primary a:hover .card-text, .card-panel .card.editorial.editorial-accent a:hover .card-text, .card-panel-flush .card.editorial.editorial-accent a:hover .card-text, .card-panel .card.editorial.editorial-dark a:hover .card-text, .card-panel-flush .card.editorial.editorial-dark a:hover .card-text, .card-panel .card.card-inverse a:focus .card-text, .card-panel-flush .card.card-inverse a:focus .card-text, .card-panel .card.card-backed-primary a:focus .card-text, .card-panel-flush .card.card-backed-primary a:focus .card-text, .card-panel.cards-backed-primary .card a:focus .card-text, .cards-backed-primary.card-panel-flush .card a:focus .card-text, .card-panel .card.card-backed-accent a:focus .card-text, .card-panel-flush .card.card-backed-accent a:focus .card-text, .card-panel.cards-backed-accent .card a:focus .card-text, .cards-backed-accent.card-panel-flush .card a:focus .card-text, .card-panel .card.card-backed-dark a:focus .card-text, .card-panel-flush .card.card-backed-dark a:focus .card-text, .card-panel.cards-backed-dark .card a:focus .card-text, .cards-backed-dark.card-panel-flush .card a:focus .card-text, .card-panel .card .card.card-img-overlay-bottom a:focus .card-text, .card .card-panel .card.card-img-overlay-bottom a:focus .card-text, .card-panel-flush .card .card.card-img-overlay-bottom a:focus .card-text, .card .card-panel-flush .card.card-img-overlay-bottom a:focus .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:focus .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:focus .card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a:focus .card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a:focus .card-text, .card-panel .card.editorial.editorial-primary a:focus .card-text, .card-panel-flush .card.editorial.editorial-primary a:focus .card-text, .card-panel .card.editorial.editorial-accent a:focus .card-text, .card-panel-flush .card.editorial.editorial-accent a:focus .card-text, .card-panel .card.editorial.editorial-dark a:focus .card-text, .card-panel-flush .card.editorial.editorial-dark a:focus .card-text {
+  .card-panel a.card.card-inverse .card-text, .card-panel-flush a.card.card-inverse .card-text, .card-panel a.card.card-backed-primary .card-text, .card-panel-flush a.card.card-backed-primary .card-text, .card-panel.cards-backed-primary a.card .card-text, .cards-backed-primary.card-panel-flush a.card .card-text, .card-panel a.card.card-backed-accent .card-text, .card-panel-flush a.card.card-backed-accent .card-text, .card-panel.cards-backed-accent a.card .card-text, .cards-backed-accent.card-panel-flush a.card .card-text, .card-panel a.card.card-backed-dark .card-text, .card-panel-flush a.card.card-backed-dark .card-text, .card-panel.cards-backed-dark a.card .card-text, .cards-backed-dark.card-panel-flush a.card .card-text, .card-panel .card a.card.card-img-overlay-bottom .card-text, .card .card-panel a.card.card-img-overlay-bottom .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded .card-text, .card-panel a.card.editorial.editorial-primary .card-text, .card-panel-flush a.card.editorial.editorial-primary .card-text, .card-panel a.card.editorial.editorial-accent .card-text, .card-panel-flush a.card.editorial.editorial-accent .card-text, .card-panel a.card.editorial.editorial-dark .card-text, .card-panel-flush a.card.editorial.editorial-dark .card-text, .card-panel a.card.card-inverse:hover .card-text, .card-panel-flush a.card.card-inverse:hover .card-text, .card-panel a.card.card-backed-primary:hover .card-text, .card-panel-flush a.card.card-backed-primary:hover .card-text, .card-panel.cards-backed-primary a.card:hover .card-text, .cards-backed-primary.card-panel-flush a.card:hover .card-text, .card-panel a.card.card-backed-accent:hover .card-text, .card-panel-flush a.card.card-backed-accent:hover .card-text, .card-panel.cards-backed-accent a.card:hover .card-text, .cards-backed-accent.card-panel-flush a.card:hover .card-text, .card-panel a.card.card-backed-dark:hover .card-text, .card-panel-flush a.card.card-backed-dark:hover .card-text, .card-panel.cards-backed-dark a.card:hover .card-text, .cards-backed-dark.card-panel-flush a.card:hover .card-text, .card-panel .card a.card.card-img-overlay-bottom:hover .card-text, .card .card-panel a.card.card-img-overlay-bottom:hover .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom:hover .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom:hover .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:hover .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:hover .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded:hover .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded:hover .card-text, .card-panel a.card.editorial.editorial-primary:hover .card-text, .card-panel-flush a.card.editorial.editorial-primary:hover .card-text, .card-panel a.card.editorial.editorial-accent:hover .card-text, .card-panel-flush a.card.editorial.editorial-accent:hover .card-text, .card-panel a.card.editorial.editorial-dark:hover .card-text, .card-panel-flush a.card.editorial.editorial-dark:hover .card-text, .card-panel a.card.card-inverse:focus .card-text, .card-panel-flush a.card.card-inverse:focus .card-text, .card-panel a.card.card-backed-primary:focus .card-text, .card-panel-flush a.card.card-backed-primary:focus .card-text, .card-panel.cards-backed-primary a.card:focus .card-text, .cards-backed-primary.card-panel-flush a.card:focus .card-text, .card-panel a.card.card-backed-accent:focus .card-text, .card-panel-flush a.card.card-backed-accent:focus .card-text, .card-panel.cards-backed-accent a.card:focus .card-text, .cards-backed-accent.card-panel-flush a.card:focus .card-text, .card-panel a.card.card-backed-dark:focus .card-text, .card-panel-flush a.card.card-backed-dark:focus .card-text, .card-panel.cards-backed-dark a.card:focus .card-text, .cards-backed-dark.card-panel-flush a.card:focus .card-text, .card-panel .card a.card.card-img-overlay-bottom:focus .card-text, .card .card-panel a.card.card-img-overlay-bottom:focus .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom:focus .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom:focus .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:focus .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:focus .card-text, .card-panel-flush .card a.card.card-img-overlay-bottom-shaded:focus .card-text, .card .card-panel-flush a.card.card-img-overlay-bottom-shaded:focus .card-text, .card-panel a.card.editorial.editorial-primary:focus .card-text, .card-panel-flush a.card.editorial.editorial-primary:focus .card-text, .card-panel a.card.editorial.editorial-accent:focus .card-text, .card-panel-flush a.card.editorial.editorial-accent:focus .card-text, .card-panel a.card.editorial.editorial-dark:focus .card-text, .card-panel-flush a.card.editorial.editorial-dark:focus .card-text, .card-panel .card.card-inverse a .card-text, .card-panel-flush .card.card-inverse a .card-text, .card-panel .card.card-backed-primary a .card-text, .card-panel-flush .card.card-backed-primary a .card-text, .card-panel.cards-backed-primary .card a .card-text, .card-panel-flush .card-panel.cards-backed-primary .card a .card-text, .card-panel.cards-backed-primary .card-panel-flush .card a .card-text, .card-panel .cards-backed-primary.card-panel-flush .card a .card-text, .cards-backed-primary.card-panel-flush .card-panel .card a .card-text, .cards-backed-primary.card-panel-flush .card a .card-text, .card-panel.cards-backed .card.card-backed-primary a .card-text, .cards-backed.card-panel-flush .card.card-backed-primary a .card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-primary .card a .card-text, .card-panel.cards-backed-primary .card-panel.cards-backed .card a .card-text, .cards-backed.card-panel-flush .cards-backed-primary.card-panel-flush .card a .card-text, .cards-backed-primary.card-panel-flush .cards-backed.card-panel-flush .card a .card-text, .card-panel .card.card-backed-accent a .card-text, .card-panel-flush .card.card-backed-accent a .card-text, .card-panel.cards-backed-accent .card a .card-text, .card-panel-flush .card-panel.cards-backed-accent .card a .card-text, .card-panel.cards-backed-accent .card-panel-flush .card a .card-text, .card-panel .cards-backed-accent.card-panel-flush .card a .card-text, .cards-backed-accent.card-panel-flush .card-panel .card a .card-text, .cards-backed-accent.card-panel-flush .card a .card-text, .card-panel.cards-backed .card.card-backed-accent a .card-text, .cards-backed.card-panel-flush .card.card-backed-accent a .card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-accent .card a .card-text, .card-panel.cards-backed-accent .card-panel.cards-backed .card a .card-text, .cards-backed.card-panel-flush .cards-backed-accent.card-panel-flush .card a .card-text, .cards-backed-accent.card-panel-flush .cards-backed.card-panel-flush .card a .card-text, .card-panel .card.card-backed-dark a .card-text, .card-panel-flush .card.card-backed-dark a .card-text, .card-panel.cards-backed-dark .card a .card-text, .card-panel-flush .card-panel.cards-backed-dark .card a .card-text, .card-panel.cards-backed-dark .card-panel-flush .card a .card-text, .card-panel .cards-backed-dark.card-panel-flush .card a .card-text, .cards-backed-dark.card-panel-flush .card-panel .card a .card-text, .cards-backed-dark.card-panel-flush .card a .card-text, .card-panel.cards-backed .card.card-backed-dark a .card-text, .cards-backed.card-panel-flush .card.card-backed-dark a .card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-dark .card a .card-text, .card-panel.cards-backed-dark .card-panel.cards-backed .card a .card-text, .cards-backed.card-panel-flush .cards-backed-dark.card-panel-flush .card a .card-text, .cards-backed-dark.card-panel-flush .cards-backed.card-panel-flush .card a .card-text, .card-panel .card .card.card-img-overlay-bottom a .card-text, .card .card-panel .card.card-img-overlay-bottom a .card-text, .card-panel-flush .card .card.card-img-overlay-bottom a .card-text, .card .card-panel-flush .card.card-img-overlay-bottom a .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a .card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a .card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a .card-text, .card-panel .card.editorial.editorial-primary a .card-text, .card-panel-flush .card.editorial.editorial-primary a .card-text, .card-panel .card.editorial.editorial-accent a .card-text, .card-panel-flush .card.editorial.editorial-accent a .card-text, .card-panel .card.editorial.editorial-dark a .card-text, .card-panel-flush .card.editorial.editorial-dark a .card-text, .card-panel .card.card-inverse a:hover .card-text, .card-panel-flush .card.card-inverse a:hover .card-text, .card-panel .card.card-backed-primary a:hover .card-text, .card-panel-flush .card.card-backed-primary a:hover .card-text, .card-panel.cards-backed-primary .card a:hover .card-text, .cards-backed-primary.card-panel-flush .card a:hover .card-text, .card-panel .card.card-backed-accent a:hover .card-text, .card-panel-flush .card.card-backed-accent a:hover .card-text, .card-panel.cards-backed-accent .card a:hover .card-text, .cards-backed-accent.card-panel-flush .card a:hover .card-text, .card-panel .card.card-backed-dark a:hover .card-text, .card-panel-flush .card.card-backed-dark a:hover .card-text, .card-panel.cards-backed-dark .card a:hover .card-text, .cards-backed-dark.card-panel-flush .card a:hover .card-text, .card-panel .card .card.card-img-overlay-bottom a:hover .card-text, .card .card-panel .card.card-img-overlay-bottom a:hover .card-text, .card-panel-flush .card .card.card-img-overlay-bottom a:hover .card-text, .card .card-panel-flush .card.card-img-overlay-bottom a:hover .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:hover .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:hover .card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a:hover .card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a:hover .card-text, .card-panel .card.editorial.editorial-primary a:hover .card-text, .card-panel-flush .card.editorial.editorial-primary a:hover .card-text, .card-panel .card.editorial.editorial-accent a:hover .card-text, .card-panel-flush .card.editorial.editorial-accent a:hover .card-text, .card-panel .card.editorial.editorial-dark a:hover .card-text, .card-panel-flush .card.editorial.editorial-dark a:hover .card-text, .card-panel .card.card-inverse a:focus .card-text, .card-panel-flush .card.card-inverse a:focus .card-text, .card-panel .card.card-backed-primary a:focus .card-text, .card-panel-flush .card.card-backed-primary a:focus .card-text, .card-panel.cards-backed-primary .card a:focus .card-text, .cards-backed-primary.card-panel-flush .card a:focus .card-text, .card-panel .card.card-backed-accent a:focus .card-text, .card-panel-flush .card.card-backed-accent a:focus .card-text, .card-panel.cards-backed-accent .card a:focus .card-text, .cards-backed-accent.card-panel-flush .card a:focus .card-text, .card-panel .card.card-backed-dark a:focus .card-text, .card-panel-flush .card.card-backed-dark a:focus .card-text, .card-panel.cards-backed-dark .card a:focus .card-text, .cards-backed-dark.card-panel-flush .card a:focus .card-text, .card-panel .card .card.card-img-overlay-bottom a:focus .card-text, .card .card-panel .card.card-img-overlay-bottom a:focus .card-text, .card-panel-flush .card .card.card-img-overlay-bottom a:focus .card-text, .card .card-panel-flush .card.card-img-overlay-bottom a:focus .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:focus .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:focus .card-text, .card-panel-flush .card .card.card-img-overlay-bottom-shaded a:focus .card-text, .card .card-panel-flush .card.card-img-overlay-bottom-shaded a:focus .card-text, .card-panel .card.editorial.editorial-primary a:focus .card-text, .card-panel-flush .card.editorial.editorial-primary a:focus .card-text, .card-panel .card.editorial.editorial-accent a:focus .card-text, .card-panel-flush .card.editorial.editorial-accent a:focus .card-text, .card-panel .card.editorial.editorial-dark a:focus .card-text, .card-panel-flush .card.editorial.editorial-dark a:focus .card-text {
     color: rgba(255, 255, 255, 0.75); }
 
 .card-panel-flush {
@@ -9448,7 +10176,8 @@ button.beta-toggler {
     pointer-events: none; }
   @media (min-width: 768px) {
     .card.card-overlay.card-media-inline.card-media-enabled .card-title-wrap {
-      opacity: 0; } }
+      opacity: 0;
+      pointer-events: none; } }
   .card.card-overlay.card-media-inline.card-media-enabled .card-media-wrap, .card.card-overlay.card-media-inline.card-media-enabled .card-embed-wrap {
     max-height: 150vh; }
   @media (min-width: 768px) {
@@ -9508,6 +10237,14 @@ button.beta-toggler {
           padding: 3rem 2rem 2rem; }
           .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); } }
+  .card.header-card-overlay .card-footer {
+    padding: 0 8px;
+    padding: 0 .5rem;
+    display: block;
+    margin-bottom: -24px;
+    margin-bottom: -1.5rem; }
+    .card.header-card-overlay .card-footer .caption {
+      text-align: right; }
 
 @media (min-width: 768px) {
   .show-departmental-menu .card.header-card-overlay {
@@ -9526,6 +10263,10 @@ button.beta-toggler {
 @media (min-width: 768px) {
   .global-header-transparent .header-card-overlay {
     margin-top: -7rem; } }
+
+@media (min-width: 768px) {
+  .slim-header .card.header-card-overlay {
+    margin-top: -2.5rem; } }
 
 .card.editorial .card-title-wrap {
   background-color: #FFFFFF; }
@@ -10016,6 +10757,46 @@ blockquote.social-quote {
       border-color: #ec9e97; }
     blockquote.social-quote.social-quote-google-plus button:before {
       content: ""; }
+  blockquote.social-quote.social-quote-mendeley button {
+    color: #B22129;
+    background-image: none;
+    background-color: transparent;
+    border-color: #B22129; }
+    blockquote.social-quote.social-quote-mendeley button:focus, blockquote.social-quote.social-quote-mendeley button.focus, blockquote.social-quote.social-quote-mendeley button:active, blockquote.social-quote.social-quote-mendeley button.active,
+    .open > blockquote.social-quote.social-quote-mendeley button.dropdown-toggle {
+      color: #fff;
+      background-color: #B22129;
+      border-color: #B22129; }
+    blockquote.social-quote.social-quote-mendeley button:hover {
+      color: #fff;
+      background-color: #B22129;
+      border-color: #B22129; }
+    blockquote.social-quote.social-quote-mendeley button.disabled:focus, blockquote.social-quote.social-quote-mendeley button.disabled.focus, blockquote.social-quote.social-quote-mendeley button:disabled:focus, blockquote.social-quote.social-quote-mendeley button:disabled.focus {
+      border-color: #e05960; }
+    blockquote.social-quote.social-quote-mendeley button.disabled:hover, blockquote.social-quote.social-quote-mendeley button:disabled:hover {
+      border-color: #e05960; }
+    blockquote.social-quote.social-quote-mendeley button:before {
+      content: ""; }
+  blockquote.social-quote.social-quote-academia-edu button {
+    color: #222;
+    background-image: none;
+    background-color: transparent;
+    border-color: #222; }
+    blockquote.social-quote.social-quote-academia-edu button:focus, blockquote.social-quote.social-quote-academia-edu button.focus, blockquote.social-quote.social-quote-academia-edu button:active, blockquote.social-quote.social-quote-academia-edu button.active,
+    .open > blockquote.social-quote.social-quote-academia-edu button.dropdown-toggle {
+      color: #fff;
+      background-color: #222;
+      border-color: #222; }
+    blockquote.social-quote.social-quote-academia-edu button:hover {
+      color: #fff;
+      background-color: #222;
+      border-color: #222; }
+    blockquote.social-quote.social-quote-academia-edu button.disabled:focus, blockquote.social-quote.social-quote-academia-edu button.disabled.focus, blockquote.social-quote.social-quote-academia-edu button:disabled:focus, blockquote.social-quote.social-quote-academia-edu button:disabled.focus {
+      border-color: #555555; }
+    blockquote.social-quote.social-quote-academia-edu button.disabled:hover, blockquote.social-quote.social-quote-academia-edu button:disabled:hover {
+      border-color: #555555; }
+    blockquote.social-quote.social-quote-academia-edu button:before {
+      content: ""; }
 
 main > blockquote.social-quote {
   padding: 32px 16px;
@@ -10180,6 +10961,8 @@ blockquote.pull-quote {
   position: relative;
   cursor: -webkit-grab;
   width: 100%; }
+  .kent-slider .kent-slide .media-wrap-fill {
+    background-color: #333; }
 
 .kent-slider .slick-prev, .kent-slider .slick-next {
   z-index: 1;
@@ -10241,7 +11024,8 @@ blockquote.pull-quote {
   z-index: 2; }
   .kent-slider .kent-slider-dots li {
     display: inline-block;
-    padding: 0; }
+    padding: 0;
+    position: relative; }
     .kent-slider .kent-slider-dots li:before {
       display: none; }
     .kent-slider .kent-slider-dots li button {

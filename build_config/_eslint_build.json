@@ -176,7 +176,7 @@
 		"space-unary-ops": 2,
 
 		// TBD
-		"quotes": [2, "double"],
+		"quotes": [2, "single", {"allowTemplateLiterals": true}],
 		"eol-last": 2
 		//"no-console": 2 - co9nsole allowed in build scripts
 	}

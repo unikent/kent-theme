@@ -13,7 +13,7 @@ window.KENT.kentslider = {
 	default: {
 		config: {
 			dots:          true,
-			dotsClass:     "kent-slider-dots",
+			dotsClass:     'kent-slider-dots',
 			mobileFirst:   true,
 			useTransform:  true,
 			accessibility: true
@@ -21,7 +21,7 @@ window.KENT.kentslider = {
 	},
 	// react helper
 	react: function($el, breakpoint, config){
-		var loaded = $el.hasClass("slick-initialized");
+		var loaded = $el.hasClass('slick-initialized');
 		if (ResponsiveBootstrapToolkit.is(breakpoint)) {
 			if (!loaded){
 				// init slider
@@ -30,7 +30,7 @@ window.KENT.kentslider = {
 		} else {
 			if (loaded){
 				// de-init slider
-				$el.slick("unslick");
+				$el.slick('unslick');
 			}
 		}
 	}
@@ -42,31 +42,31 @@ window.KENT.kentslider.profile_feature = {
 		slidesToShow: 2,
 		slidesToScroll: 2
 	}),
-	breakpoint:"<=md"
+	breakpoint:'<=md'
 };
 
 $(document).ready(function(){
 	// If class is found, init slider
-	$(".kent-slider").each(function(){
+	$('.kent-slider').each(function(){
 
 		// Load config
-		var slider_config = $(this).data("slider-config");
+		var slider_config = $(this).data('slider-config');
 
-		if (typeof slider_config === "undefined") {
-			slider_config = "default";
+		if (typeof slider_config === 'undefined') {
+			slider_config = 'default';
 		}
 
 		var config = window.KENT.kentslider[slider_config].config;
 
 		// Does this carousel behave differently at different breakpoints
-		var breakpoint  = typeof window.KENT.kentslider[slider_config].breakpoint !== "undefined" ? window.KENT.kentslider[slider_config].breakpoint : false;
+		var breakpoint  = typeof window.KENT.kentslider[slider_config].breakpoint !== 'undefined' ? window.KENT.kentslider[slider_config].breakpoint : false;
 
 		if (breakpoint){
 			// react to inital size
 			window.KENT.kentslider.react($(this), breakpoint, config);
 			var $this = $(this);
 			// Handle resize on view port change
-			$(window).on("viewport:resize", function(){
+			$(window).on('viewport:resize', function(){
 				window.KENT.kentslider.react($this, breakpoint, config);
 			});
 
@@ -76,7 +76,7 @@ $(document).ready(function(){
 		}
 
 		// Debug
-		window.KENT.log("[Kent-slider] Instance created", $(this));
+		window.KENT.log('[Kent-slider] Instance created', $(this));
 	});
 
 });

@@ -169,6 +169,7 @@
             @include media-breakpoint-up(md) {
                 .card-title-wrap {
                     opacity: 0;
+                    pointer-events: none;
                 }
             }
             .card-media-wrap, .card-embed-wrap {

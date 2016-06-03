@@ -9,19 +9,19 @@ window.KENT  = window.KENT || {};
 (function(){
 	// Menu references
 	// Store control class as data on the elements (just for conveniance)
-	var global_menu = $("#global-nav-menu").data("control-class", "show-global-menu");
-	var global_search = $("#global-nav-search").data("control-class", "show-global-search");
+	var global_menu = $('#global-nav-menu').data('control-class', 'show-global-menu');
+	var global_search = $('#global-nav-search').data('control-class', 'show-global-search');
 
 	// List of Menu toggle classes
 	// This will have the aria-extanded attribute toggled on them, whenever the menu state changes.
-	var global_menu_toggles = $(".menu-button");
-	var global_search_toggles = $(".search-button, .search-button-full, .close-search");
+	var global_menu_toggles = $('.menu-button');
+	var global_search_toggles = $('.search-button, .search-button-full, .close-search');
 
 	// Toggle a given menu's state
 	var toggleMenu = function(button, menu){
 
 		// If this menu is NOT open, open it. Else close it.
-		if (!menu.hasClass("in")){
+		if (!menu.hasClass('in')){
 			return openMenu(button, menu);
 		} else {
 			return closeMenu(button, menu);
@@ -32,21 +32,21 @@ window.KENT  = window.KENT || {};
 	var closeMenu = function(button, menu){
 
 		// Cannot close already closed menu
-		if (!menu.hasClass("in")){
+		if (!menu.hasClass('in')){
 			return false;
 		}
 
 		// Remove menu & body class
-		menu.removeClass("in");
-		$("body").removeClass(menu.data("control-class"));
+		menu.removeClass('in');
+		$('body').removeClass(menu.data('control-class'));
 
 		// Update button so it knows it's expanded area is collapsed
 		// aria-hidden is not needed on the element, since as the element is displayed none
 		// the screen reader won't see it anyway.
-		button.attr("aria-expanded", "false");
+		button.attr('aria-expanded', 'false');
 
 		// Trigger event
-		$(window).trigger("globalmenu:close", [menu]);
+		$(window).trigger('globalmenu:close', [menu]);
 
 		return true;
 	};
@@ -55,19 +55,19 @@ window.KENT  = window.KENT || {};
 	var openMenu = function(button, menu){
 
 		// Cannot open already closed menu
-		if (menu.hasClass("in")){
+		if (menu.hasClass('in')){
 			return false;
 		}
 
 		// Set menu & body classes
-		menu.addClass("in");
-		$("body").addClass(menu.data("control-class"));
+		menu.addClass('in');
+		$('body').addClass(menu.data('control-class'));
 
 		// Update button so it knows it's expanded area is collapsed
-		button.attr("aria-expanded", true);
+		button.attr('aria-expanded', true);
 
 		// Fire events
-		$(window).trigger("globalmenu:open", [menu]);
+		$(window).trigger('globalmenu:open', [menu]);
 
 		return true;
 	};
@@ -110,7 +110,7 @@ window.KENT  = window.KENT || {};
 
 
 	// Ensure opening one menu, closes the other.
-	$(window).on("globalmenu:open", function(e, menu){
+	$(window).on('globalmenu:open', function(e, menu){
 		if (menu[0] === global_search[0]){
 			window.KENT.global_nav.closeMainMenu();
 		} else {
@@ -118,9 +118,9 @@ window.KENT  = window.KENT || {};
 		}
 	});
 
-	global_menu.find(".audience-nav-links a").click(function(e){
+	global_menu.find('.audience-nav-links a').click(function(e){
 		e.preventDefault();
-		var menu_name = e.target.getAttribute("data-action");
+		var menu_name = e.target.getAttribute('data-action');
 		if (menu_name !== null) {
 			window.KENT.kentbar.toggleMenu(menu_name, e.target);
 			window.KENT.global_nav.closeMainMenu();
@@ -138,33 +138,33 @@ window.KENT  = window.KENT || {};
 	});
 
 	// Homepage Logic
-	if ($(".home-nav").length > 0){
+	if ($('.home-nav').length > 0){
 
-		$(window).on("globalmenu:open kentbar_menu:open kentbar_mobilemenu:open", function(){
-			$(".home-nav").hide();
+		$(window).on('globalmenu:open kentbar_menu:open kentbar_mobilemenu:open', function(){
+			$('.home-nav').hide();
 		});
 
-		$(window).on("globalmenu:close kentbar_menu:close kentbar_mobilemenu:close", function(e, menu){
+		$(window).on('globalmenu:close kentbar_menu:close kentbar_mobilemenu:close', function(e, menu){
 
-			var $body = $("body");
+			var $body = $('body');
 
-			if (!($body.hasClass("show-global-menu") || $body.hasClass("show-global-search") || $body.hasClass("show-kentbar-menu"))) {
-				if (ResponsiveBootstrapToolkit.is("<=sm")) {
-					$(".home-nav").delay(300).fadeIn();
+			if (!($body.hasClass('show-global-menu') || $body.hasClass('show-global-search') || $body.hasClass('show-kentbar-menu'))) {
+				if (ResponsiveBootstrapToolkit.is('<=sm')) {
+					$('.home-nav').delay(300).fadeIn();
 				}
 			}
 		});
 
-		$(window).on("viewport:change", function(){
+		$(window).on('viewport:change', function(){
 
-			if (ResponsiveBootstrapToolkit.is("<=sm")){
-				// if menu isn"t already open
-				if (!$("body").hasClass("show-global-menu") && !$("body").hasClass("show-global-search")){
+			if (ResponsiveBootstrapToolkit.is('<=sm')){
+				// if menu isn't already open
+				if (!$('body').hasClass('show-global-menu') && !$('body').hasClass('show-global-search')){
 
-					$(".home-nav").delay(300).fadeIn();
+					$('.home-nav').delay(300).fadeIn();
 				}
 			} else {
-				$(".home-nav").hide();
+				$('.home-nav').hide();
 			}
 		});
 	}
