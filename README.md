@@ -1,5 +1,7 @@
 # The Kent Theme
 
+# THIS THEME IS STILL IN BETA AND NOT FOR APPROVED FOR PRODUCTION USE
+
 ## Setup
 
 1. Make a copy of `.env.sample` and rename to `.env` 
