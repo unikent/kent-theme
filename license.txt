@@ -1,6 +1,14 @@
-The MIT License (MIT)
-
 Copyright (c) 2016 University of Kent
+
+External companies, agencies and partners are not allowed to use the 
+University logo without an agreed Memorandum of Understanding. This will 
+agree terms of use and timings.
+
+Kent Brand Enquiries <kentbrand@kent.ac.uk>
+
+The remainder of this software is licensed as below:
+
+The MIT License (MIT)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
