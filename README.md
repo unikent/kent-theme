@@ -2,6 +2,9 @@
 
 # THIS THEME IS STILL IN BETA AND NOT FOR APPROVED FOR PRODUCTION USE
 
+## Usage
+This theme is still in beta and not approved for production use, please refer to the current [brand guidleines](https://www.kent.ac.uk/brand) for use of the exisitng brand.
+
 ## Setup
 
 1. Make a copy of `.env.sample` and rename to `.env` 
