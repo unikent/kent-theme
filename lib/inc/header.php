@@ -65,7 +65,7 @@
 
 		<?php echo $head_markup ;?>
 	</head>
-	<body class="<?php echo !empty($home_page) ? ' global-header-transparent"' :'' ; ?><?php echo ($slim)?' slim-header':''; ?><?php echo (isset($brand_header) && $brand_header)?' brand-header':''; ?>">
+	<body class="<?php echo !empty($home_page) ? ' global-header-transparent"' :'' ; ?><?php echo ($slim)?' slim-header':''; ?><?php echo ($brand_header)?' brand-header':''; ?>">
 		<?php if(!$home_page){ ?>
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
 		<?php } ?>

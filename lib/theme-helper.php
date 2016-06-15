@@ -15,6 +15,7 @@ Class KentThemeHelper {
 			'head_markup' => '',
 			'slim'=> false,
 			'beta_bar'=>true,
+			'brand_header' => false,
 			'home_page' => false
 		);
 
