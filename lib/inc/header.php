@@ -131,7 +131,7 @@
 			<?php if(!$home_page){ ?>
 				<section class="departmental-nav<?php echo ($slim)?' slim':''; ?>" id="section_menu">
 					<header><?php echo $title; ?></header>
-					<?php if(is_array($menu_links) && sizeof($menu_links) > 0): ?>
+					<?php if(!empty($menu_links)): ?>
 						<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
 						<nav class="navbar-menu" id="navbar-menu" role="menu">
 							<?php echo $menu_links; ?>
