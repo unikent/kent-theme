@@ -72,7 +72,7 @@
 
             header {
                 font-size: 1.2rem;
-                padding:   .25rem 1.5rem;
+                padding:   .5rem 1.5rem;
             }
         }
 
@@ -157,6 +157,40 @@
 
             &.slim {
                 min-height: auto;
+            }
+        }
+    }
+}
+
+.brand-header {
+    .departmental-nav {
+        header{
+            border-top: none;
+            background-color: $brand-primary-light;
+        }
+
+        .navbar-toggler,
+        .navbar-menu {
+            background-color: $brand-nav-bg;
+            color: $brand-primary;
+        }
+
+        .navbar-menu {
+            a {
+                color: $brand-primary;
+
+                border-bottom: 1px solid $brand-nav-active;
+
+                &:hover {
+                    background-color: $brand-nav-active;
+                }
+                &.active {
+                    background-color: $brand-nav-active;
+                }
+
+                &:first-child{
+                    border-top: 1px solid $brand-nav-active;
+                }
             }
         }
     }

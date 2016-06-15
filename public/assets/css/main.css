@@ -5534,8 +5534,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
   left: 0;
   top: 48px;
   color: #05345C;
-  box-sizing: border-box;
-  font-size: 16px; }
+  box-sizing: border-box; }
   #kent-bar #kent-bar-menu .search-services::before, .kent-bar #kent-bar-menu .search-services::before {
     content: "";
     font-family: "kentfont", sans-serif;
@@ -5653,7 +5652,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
       top: 40px;
       right: 10px;
       left: auto;
-      width: 450px;
+      width: 600px;
       max-width: 50%;
       border: 1px solid #ccc;
       box-shadow: 1px 1px 3px #BFBFBF; }
@@ -8470,6 +8469,22 @@ input[type=number]::-webkit-outer-spin-button {
     .global-nav .global-nav-links {
       max-width: 1100px; } }
 
+@media (min-width: 768px) {
+  .brand-header .global-nav {
+    background-color: #05345C;
+    border-top: 1px solid #074479; } }
+
+.brand-header .global-nav .main-logo {
+  color: #FFF; }
+
+@media (min-width: 768px) {
+  .brand-header .global-nav .global-nav-links .global-nav-link {
+    background-color: #05345C; }
+    .brand-header .global-nav .global-nav-links .global-nav-link a {
+      color: #fff; }
+    .brand-header .global-nav .global-nav-links .global-nav-link nav .nav-link .global-nav-link-title {
+      color: #05345C; } }
+
 .show-global-menu, .show-global-search {
   overflow-y: hidden; }
   .show-global-menu .global-header #kentBar button.menu-button::before, .show-global-menu .global-header #kentBar button.search-button::before, .show-global-menu .global-header .kent-bar button.menu-button::before, .show-global-menu .global-header .kent-bar button.search-button::before, .show-global-search .global-header #kentBar button.menu-button::before, .show-global-search .global-header #kentBar button.search-button::before, .show-global-search .global-header .kent-bar button.menu-button::before, .show-global-search .global-header .kent-bar button.search-button::before {
@@ -8748,7 +8763,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
       min-height: 4.8rem; }
       .departmental-nav.slim header {
         font-size: 1.2rem;
-        padding: .25rem 1.5rem; }
+        padding: .5rem 1.5rem; }
     .departmental-nav .navbar-menu {
       max-height: 2.5rem;
       height: auto;
@@ -8806,6 +8821,25 @@ body.show-global-search .global-nav-menu .global-nav-links {
     .show-departmental-menu .departmental-nav.slim {
       min-height: auto; } }
 
+.brand-header .departmental-nav header {
+  border-top: none;
+  background-color: #95a9ce; }
+
+.brand-header .departmental-nav .navbar-toggler,
+.brand-header .departmental-nav .navbar-menu {
+  background-color: #f1f4f9;
+  color: #05345C; }
+
+.brand-header .departmental-nav .navbar-menu a {
+  color: #05345C;
+  border-bottom: 1px solid #e3e8f1; }
+  .brand-header .departmental-nav .navbar-menu a:hover {
+    background-color: #e3e8f1; }
+  .brand-header .departmental-nav .navbar-menu a.active {
+    background-color: #e3e8f1; }
+  .brand-header .departmental-nav .navbar-menu a:first-child {
+    border-top: 1px solid #e3e8f1; }
+
 main > nav.breadcrumb {
   margin: 0 32px 32px;
   margin: 0 2rem 2rem;
@@ -8850,16 +8884,20 @@ nav.breadcrumb {
     line-height: 16px;
     line-height: 1rem;
     vertical-align: middle; }
-  nav.breadcrumb a:after {
-    padding-left: 12px;
-    padding-left: 0.75rem;
-    padding-right: 8px;
-    padding-right: 0.5rem; }
-  nav.breadcrumb a:hover:after, nav.breadcrumb a:active:after, nav.breadcrumb a:focus:after {
-    padding-left: 12px;
-    padding-left: 0.75rem;
-    padding-right: 8px;
-    padding-right: 0.5rem; }
+  nav.breadcrumb a {
+    color: #937227; }
+    nav.breadcrumb a:after {
+      padding-left: 12px;
+      padding-left: 0.75rem;
+      padding-right: 8px;
+      padding-right: 0.5rem; }
+    nav.breadcrumb a:hover, nav.breadcrumb a:active, nav.breadcrumb a:focus {
+      color: #937227; }
+      nav.breadcrumb a:hover:after, nav.breadcrumb a:active:after, nav.breadcrumb a:focus:after {
+        padding-left: 12px;
+        padding-left: 0.75rem;
+        padding-right: 8px;
+        padding-right: 0.5rem; }
   nav.breadcrumb a:last-child:after {
     content: none;
     display: none; }
@@ -8940,6 +8978,14 @@ button.beta-toggler {
   body.show-global-search button.beta-toggler {
     visibility: hidden; } }
 
+.panel {
+  padding: 16px;
+  padding: 1rem;
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+  .panel *:last-child {
+    margin-bottom: 0; }
+
 .panel-primary-tint {
   background: #E8EBF2; }
 
@@ -8952,14 +8998,35 @@ button.beta-toggler {
 .panel-primary {
   background: #05345C;
   color: #FFFFFF; }
+  .panel-primary h1, .panel-primary .h1,
+  .panel-primary h2, .panel-primary .h2,
+  .panel-primary h3, .panel-primary .h3,
+  .panel-primary h4, .panel-primary .h4,
+  .panel-primary h5, .panel-primary .h5,
+  .panel-primary h6, .panel-primary .h6 {
+    color: #FFF; }
 
 .panel-accent {
   background: #937227;
   color: #FFFFFF; }
+  .panel-accent h1, .panel-accent .h1,
+  .panel-accent h2, .panel-accent .h2,
+  .panel-accent h3, .panel-accent .h3,
+  .panel-accent h4, .panel-accent .h4,
+  .panel-accent h5, .panel-accent .h5,
+  .panel-accent h6, .panel-accent .h6 {
+    color: #FFF; }
 
 .panel-dark {
   background: #333333;
   color: #FFFFFF; }
+  .panel-dark h1, .panel-dark .h1,
+  .panel-dark h2, .panel-dark .h2,
+  .panel-dark h3, .panel-dark .h3,
+  .panel-dark h4, .panel-dark .h4,
+  .panel-dark h5, .panel-dark .h5,
+  .panel-dark h6, .panel-dark .h6 {
+    color: #FFF; }
 
 .faux-link-block, .card-panel.nav-links-panel nav .nav-link, .nav-links-panel.card-panel-flush nav .nav-link, .nav-links-panel nav .nav-link, .global-nav .global-nav-links .global-nav-link nav .nav-link, .home-nav .global-nav-links .global-nav-link nav .nav-link, .card.card-linked, .card .card-img-overlay-link, .card.card-overlay .card-title-wrap.card-title-wrap-link {
   position: relative;
@@ -10363,7 +10430,7 @@ button.beta-toggler {
 
 @media (min-width: 768px) {
   .slim-header .card.header-card-overlay {
-    margin-top: -2.5rem; } }
+    margin-top: -5.3rem; } }
 
 .card.editorial .card-title-wrap {
   background-color: #FFFFFF; }
@@ -11293,6 +11360,9 @@ blockquote.pull-quote {
   .global-footer .footer-section-links a {
     display: block;
     width: 100%; }
+    @media (max-width: 991px) {
+      .global-footer .footer-section-links a {
+        line-height: 1.75rem; } }
   .global-footer .footer-section-social {
     text-align: center;
     font-size: 0; }
