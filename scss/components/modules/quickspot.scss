@@ -7,68 +7,6 @@
 
 #quickspot-results-container {
 
-}
-
-.quickspot-results {
-    width:      100%;
-    background: #EEEEEE;
-
-    max-height: 22.8rem;
-    overflow:   auto;
-
-    .quickspot-result {
-        padding:         8px 10px;
-        display:         block;
-        text-decoration: none;
-        cursor:          pointer;
-        color:           $body-color;
-        background:      #FFFFFF;
-        transition:      background .25s;
-        position:        relative;
-        margin-bottom:   1px;
-
-        &:before {
-            color:       #CCCCCC;
-            float:       right;
-            content:     $kf-chevron-right;
-            font-family: $font-family-kentfont;
-            position:    absolute;
-            right:       .5rem;
-            top:         35%; // old browsers
-            top:         calc(50% - 0.5rem);
-        }
-
-        &.pg {
-            border-left: solid .5rem $kent-pg-primary;
-        }
-        &.ug {
-            border-left: solid .5rem $kent-primary;
-        }
-
-        strong {
-            color: #000000;
-        }
-        span {
-            font-style: italic;
-            color:      $brand-accent;
-
-            &.level {
-                color: $gray-light;
-            }
-        }
-        &.selected {
-            background: #EEEEEE;
-            transition: background .25s;
-        }
-
-        .kf-search {
-            color: #CCCCCC;
-        }
-    }
-}
-
-/* Emulates form-group input sizing (to allow it to match with search element more easily) */
-#quickspot-results-container {
     position:   relative;
     z-index:    9999;
     border:     solid 1px #CCCCCC;
@@ -95,20 +33,70 @@
         }
     }
 
+    .quickspot-results {
+        width:      100%;
+        background: #eee;
+
+        max-height: 22.8rem;
+        overflow:   auto;
+
+        .quickspot-result {
+            padding:         8px 10px;
+            display:         block;
+            text-decoration: none;
+            cursor:          pointer;
+            color:           $body-color;
+            background:      #fff;
+            transition:      background .25s;
+            position:        relative;
+            margin-bottom:   1px;
+
+            &:before {
+                color:       #ccc;
+                float:       right;
+                content:     $kf-chevron-right;
+                font-family: $font-family-kentfont;
+                position:    absolute;
+                right:       .5rem;
+                top:         35%; // old browsers
+                top:         calc(50% - 0.5rem);
+            }
+
+            &.pg {
+                border-left: solid .5rem $kent-pg-primary;
+            }
+            &.ug {
+                border-left: solid .5rem $kent-primary;
+            }
+
+            strong {
+                color: #000;
+            }
+            span {
+                font-style: italic;
+                color:      $brand-accent;
+
+                &.level {
+                    color: $gray-light;
+                }
+            }
+            &.selected {
+                background: #eee;
+                transition: background .25s;
+            }
+
+            .kf-search {
+                color: #ccc;
+            }
+        }
+    }
+
     @include media-breakpoint-up(sm) {
         position: absolute;
         //top:3.2rem;
         left:     0;
         width:    100%;
     }
-
-    @include media-breakpoint-up(md) {
-        &.quickspot-contained {
-            margin-left:  15%;
-            margin-right: 15%;
-        }
-    }
-
 }
 
 /* style helper */

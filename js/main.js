@@ -24317,16 +24317,12 @@ return /******/ (function(modules) { // webpackBootstrap
 this["Handlebars"] = this["Handlebars"] || {};
 this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
 
-this["Handlebars"]["templates"]["video_html5"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div class=\"plyr\">\r\n	<video poster=\"/path/to/poster.jpg\" controls>\r\n		<!-- Video files -->\r\n		<source src=\"/path/to/video.mp4\" type=\"video/mp4\">\r\n		<source src=\"/path/to/video.webm\" type=\"video/webm\">\r\n\r\n		<!-- Text track file -->\r\n		<track kind=\"captions\" label=\"English captions\" src=\"/path/to/captions.vtt\" srclang=\"en\" default>\r\n\r\n		<!-- Fallback for browsers that don't support the <video> element -->\r\n		<a href=\"/path/to/movie.mp4\">Download</a>\r\n	</video>\r\n</div>";
-},"useData":true});
-
 this["Handlebars"]["templates"]["video_inline"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "<div id=\"video"
     + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"video-container\">\r\n	\r\n</div>";
+    + "\" class=\"video-container\">\n	\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -24334,19 +24330,19 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
   return "			<span class=\"video-transcript\"><small><a href=\""
     + container.escapeExpression(((helper = (helper = helpers.transcript || (depth0 != null ? depth0.transcript : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"transcript","hash":{},"data":data}) : helper)))
-    + "\">Download transcript</a></small></span>\r\n";
+    + "\">Download transcript</a></small></span>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {};
 
   return "<div class=\"modal fade modal-fullscreen\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"videoModalLabel"
     + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" aria-hidden=\"true\">\r\n	<div class=\"modal-dialog\" role=\"document\">\r\n		<div class=\"modal-content modal-content-transparent\">\r\n\r\n			<div class=\"modal-header\">\r\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\r\n					<span class=\"sr-only\">Close</span>\r\n				</button>\r\n			</div>\r\n\r\n			<div class=\"video-container\">\r\n				\r\n			</div>\r\n"
+    + "\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\" role=\"document\">\n		<div class=\"modal-content modal-content-transparent\">\n\n			<div class=\"modal-header\">\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\n					<span class=\"sr-only\">Close</span>\n				</button>\n			</div>\n\n			<div class=\"video-container\">\n				\n			</div>\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.transcript : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "			\r\n		</div>\r\n	</div>\r\n</div>";
+    + "			\n		</div>\n	</div>\n</div>";
 },"useData":true});
 // ==========================================================================
 // Plyr
-// plyr.js v1.6.19
+// plyr.js v1.7.0
 // https://github.com/selz/plyr
 // License: The MIT License (MIT)
 // ==========================================================================
@@ -24390,7 +24386,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         displayDuration:        true,
         loadSprite:             true,
         iconPrefix:             'plyr',
-        iconUrl:                'https://cdn.plyr.io/1.6.19/plyr.svg',
+        iconUrl:                'https://cdn.plyr.io/1.7.0/plyr.svg',
         clickToPlay:            true,
         hideControls:           true,
         showPosterOnEnd:        false,
@@ -24400,6 +24396,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             seek:               true
         },
         selectors: {
+            html5:              'video, audio',
+            embed:              '[data-type]',
             container:          '.plyr',
             controls: {
                 container:      null,
@@ -24669,6 +24667,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             else {
                 parent.appendChild(child);
             }
+
+            return child;
         }
     }
 
@@ -24748,6 +24748,17 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             }
         }
         return false;
+    }
+
+    // Element matches selector
+    function _matches(element, selector) {
+        var p = Element.prototype;
+
+        var f = p.matches || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || function(s) {
+            return [].indexOf.call(document.querySelectorAll(s), this) !== -1;
+        };
+
+        return f.call(element, selector);
     }
 
     // Bind event
@@ -25527,7 +25538,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 // Only load external sprite using AJAX
                 if (iconUrl.external) {
                     _log('Loading external SVG sprite');
-                    loadSprite(iconUrl.url);
+                    loadSprite(iconUrl.url, "sprite-plyr");
                 }
                 else {
                     _log('Sprite will be used inline');
@@ -27391,7 +27402,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
             // Get the div placeholder for YouTube and Vimeo
             if (!plyr.media) {
-                plyr.media = plyr.container.querySelectorAll('div')[0];
+                plyr.media = plyr.container.querySelectorAll('[data-type]')[0];
             }
 
             // Bail if nothing to setup
@@ -27560,8 +27571,13 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     }
 
     // Load a sprite
-    function loadSprite(url) {
+    function loadSprite(url, id) {
         var x = new XMLHttpRequest();
+
+        // If the id is set and sprite exists, bail
+        if (typeof id === 'string' && document.querySelector('#' + id) !== null) {
+            return;
+        }
 
         // Check for CORS support
         if ('withCredentials' in x) {
@@ -27575,6 +27591,9 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         x.onload = function() {
             var c = document.createElement('div');
             c.setAttribute('hidden', '');
+            if (typeof id === 'string') {
+                c.setAttribute('id', id);
+            }
             c.innerHTML = x.responseText;
             document.body.insertBefore(c, document.body.childNodes[0]);
         }
@@ -27623,7 +27642,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     // Setup function
     function setup(elements, options) {
         // Get the players
-        var instances = [];
+        var instances = [],
+            selector = [defaults.selectors.html5, defaults.selectors.embed].join(',');
 
         // Select the elements
         // Assume elements is a NodeList by default
@@ -27642,7 +27662,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             }
 
             // Use default selector
-            elements = document.querySelectorAll(defaults.selectors.container);
+            elements = document.querySelectorAll(selector);
         }
 
         // Bail if disabled or no basic support
@@ -27656,14 +27676,23 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             // Get the current element
             var element = elements[i];
 
+            // Custom settings passed as data attribute
+            var settings = element.getAttribute("data-plyr");
+
+            // Wrap each media element if needed
+            if (_matches(element, selector)) {
+                // Wrap in a <div>
+                element = _wrap(element, document.createElement('div'));
+            }
+
             // Setup a player instance and add to the element
             if (typeof element.plyr === 'undefined') {
                 // Create instance-specific config
-                var config = _extend(defaults, options, JSON.parse(element.getAttribute("data-plyr")));
+                var config = _extend({}, defaults, options, JSON.parse(settings));
 
                 // Bail if not enabled
                 if (!config.enabled) {
-                    return;
+                    return null;
                 }
 
                 // Create new instance
