@@ -7,6 +7,9 @@ $enable-gradients: false;
 $enable-transitions: true;
 $enable-hover-media-query: false;
 
+
+$fonts_dir: '../fonts/' !default;
+
 //GRID
 
 $grid-breakpoints: (

@@ -15,7 +15,7 @@ module.exports = {
 				'metalsmith-headings-identifier':{
 					linkTemplate:'<!-- %s -->'
 				},
-				'metalsmith-headings':{},
+				'metalsmith-headings':'h2.pattern',
 				'metalsmith-navigation':{
 					'navConfigs': {
 						header:{
@@ -78,7 +78,7 @@ module.exports = {
 				'metalsmith-headings-identifier':{
 					linkTemplate:'<!-- %s -->'
 				},
-				'metalsmith-headings':{},
+				'metalsmith-headings':'h2.pattern',
 				'metalsmith-navigation':{
 					'navConfigs': {
 						header:{

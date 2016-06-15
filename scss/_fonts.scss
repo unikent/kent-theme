@@ -12,12 +12,12 @@
 
 @font-face {
     font-family: 'ArialLight';
-    src:         url('../fonts/arialmt/arialmt-light-webfont.eot');
-    src:         url('../fonts/arialmt/arialmt-light-webfont.eot?#iefix') format('embedded-opentype'),
-                 url('../fonts/arialmt/arialmt-light-webfont.woff2') format('woff2'),
-                 url('../fonts/arialmt/arialmt-light-webfont.woff') format('woff'),
-                 url('../fonts/arialmt/arialmt-light-webfont.ttf') format('truetype'),
-                 url('../fonts/arialmt/arialmt-mtlight-webfont.svg#arial_mtmt_light') format('svg');
+    src:         url('#{$fonts_dir}arialmt/arialmt-light-webfont.eot');
+    src:         url('#{$fonts_dir}arialmt/arialmt-light-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('#{$fonts_dir}arialmt/arialmt-light-webfont.woff2') format('woff2'),
+                 url('#{$fonts_dir}arialmt/arialmt-light-webfont.woff') format('woff'),
+                 url('#{$fonts_dir}arialmt/arialmt-light-webfont.ttf') format('truetype'),
+                 url('#{$fonts_dir}arialmt/arialmt-mtlight-webfont.svg#arial_mtmt_light') format('svg');
     font-weight: normal;
     font-style:  normal;
 
@@ -25,12 +25,12 @@
 
 @font-face {
     font-family: 'ArialLight';
-    src:         url('../fonts/arialmt/arialmt-lightitalic-webfont.eot');
-    src:         url('../fonts/arialmt/arialmt-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
-                 url('../fonts/arialmt/arialmt-lightitalic-webfont.woff2') format('woff2'),
-                 url('../fonts/arialmt/arialmt-lightitalic-webfont.woff') format('woff'),
-                 url('../fonts/arialmt/arialmt-lightitalic-webfont.ttf') format('truetype'),
-                 url('../fonts/arialmt/arialmt-lightitalic-webfont.svg#arial_mtlight_italic') format('svg');
+    src:         url('#{$fonts_dir}arialmt/arialmt-lightitalic-webfont.eot');
+    src:         url('#{$fonts_dir}arialmt/arialmt-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('#{$fonts_dir}arialmt/arialmt-lightitalic-webfont.woff2') format('woff2'),
+                 url('#{$fonts_dir}arialmt/arialmt-lightitalic-webfont.woff') format('woff'),
+                 url('#{$fonts_dir}arialmt/arialmt-lightitalic-webfont.ttf') format('truetype'),
+                 url('#{$fonts_dir}arialmt/arialmt-lightitalic-webfont.svg#arial_mtlight_italic') format('svg');
     font-weight: normal;
     font-style:  italic;
 
@@ -38,12 +38,12 @@
 
 @font-face {
     font-family: 'ArialLight';
-    src:         url('../fonts/arialmt/arialmt-medium-webfont.eot');
-    src:         url('../fonts/arialmt/arialmt-medium-webfont.eot?#iefix') format('embedded-opentype'),
-                 url('../fonts/arialmt/arialmt-medium-webfont.woff2') format('woff2'),
-                 url('../fonts/arialmt/arialmt-medium-webfont.woff') format('woff'),
-                 url('../fonts/arialmt/arialmt-medium-webfont.ttf') format('truetype'),
-                 url('../fonts/arialmt/arialmt-medium-webfont.svg#arial_mtmedium') format('svg');
+    src:         url('#{$fonts_dir}arialmt/arialmt-medium-webfont.eot');
+    src:         url('#{$fonts_dir}arialmt/arialmt-medium-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('#{$fonts_dir}arialmt/arialmt-medium-webfont.woff2') format('woff2'),
+                 url('#{$fonts_dir}arialmt/arialmt-medium-webfont.woff') format('woff'),
+                 url('#{$fonts_dir}arialmt/arialmt-medium-webfont.ttf') format('truetype'),
+                 url('#{$fonts_dir}arialmt/arialmt-medium-webfont.svg#arial_mtmedium') format('svg');
     font-weight: bold;
     font-style:  normal;
 
@@ -51,12 +51,12 @@
 
 @font-face {
     font-family: 'ArialLight';
-    src:         url('../fonts/arialmt/arialmt-mediumitalic-webfont.eot');
-    src:         url('../fonts/arialmt/arialmt-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
-                 url('../fonts/arialmt/arialmt-mediumitalic-webfont.woff2') format('woff2'),
-                 url('../fonts/arialmt/arialmt-mediumitalic-webfont.woff') format('woff'),
-                 url('../fonts/arialmt/arialmt-mediumitalic-webfont.ttf') format('truetype'),
-                 url('../fonts/arialmt/arialmt-mediumitalic-webfont.svg#arial_mtmedium_italic') format('svg');
+    src:         url('#{$fonts_dir}arialmt/arialmt-mediumitalic-webfont.eot');
+    src:         url('#{$fonts_dir}arialmt/arialmt-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+                 url('#{$fonts_dir}arialmt/arialmt-mediumitalic-webfont.woff2') format('woff2'),
+                 url('#{$fonts_dir}arialmt/arialmt-mediumitalic-webfont.woff') format('woff'),
+                 url('#{$fonts_dir}arialmt/arialmt-mediumitalic-webfont.ttf') format('truetype'),
+                 url('#{$fonts_dir}arialmt/arialmt-mediumitalic-webfont.svg#arial_mtmedium_italic') format('svg');
     font-weight: bold;
     font-style:  italic;
 

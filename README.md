@@ -1,5 +1,10 @@
 # The Kent Theme
 
+# THIS THEME IS STILL IN BETA AND HAS NOT BEEN APPROVED FOR PRODUCTION USE
+
+## Usage
+This theme is still in beta and has not been approved for production use, please refer to the current [brand guidelines](https://www.kent.ac.uk/brand) for use of the existing brand.
+
 ## Setup
 
 1. Make a copy of `.env.sample` and rename to `.env` 

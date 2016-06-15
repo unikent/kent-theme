@@ -6571,39 +6571,36 @@ figure figcaption,
       max-height: 3000px;
       max-width: 3000px; }
 
-.video-launcher > .video-player {
-  display: none; }
-
-.video-launcher > img {
-  display: block; }
-
-.video-launcher.playing.playing.playing > .video-player {
-  display: block; }
-
-.video-launcher.playing.playing.playing > img {
-  display: none; }
-
-.video-launcher.playing.playing.playing::after {
-  display: none; }
-
-.video-launcher.playing.playing.playing .plyr--muted .kf-volume-medium,
-.video-launcher.playing.playing.playing .plyr--fullscreen-active .kf-expand,
-.video-launcher.playing.playing.playing .plyr--captions-active .kf-captions-off {
-  display: none; }
-
-.video-launcher.playing.playing.playing .plyr__play-large {
-  background: none;
-  border: none;
-  box-shadow: none;
-  font-size: 7rem;
-  color: #FFF;
-  text-shadow: 0 0 20px #333;
-  opacity: .7; }
-  .video-launcher.playing.playing.playing .plyr__play-large .kf-play-circle {
-    transition: all 300ms; }
-  .video-launcher.playing.playing.playing .plyr__play-large:hover .kf-play-circle {
-    opacity: 1;
-    transform: scale(1.1, 1.1); }
+.video-launcher {
+  position: relative; }
+  .video-launcher > .video-player {
+    display: none; }
+  .video-launcher > img {
+    display: block;
+    max-width: 100%; }
+  .video-launcher.playing.playing.playing > .video-player {
+    display: block; }
+  .video-launcher.playing.playing.playing > img {
+    display: none; }
+  .video-launcher.playing.playing.playing::after {
+    display: none; }
+  .video-launcher.playing.playing.playing .plyr--muted .kf-volume-medium,
+  .video-launcher.playing.playing.playing .plyr--fullscreen-active .kf-expand,
+  .video-launcher.playing.playing.playing .plyr--captions-active .kf-captions-off {
+    display: none; }
+  .video-launcher.playing.playing.playing .plyr__play-large {
+    background: none;
+    border: none;
+    box-shadow: none;
+    font-size: 7rem;
+    color: #FFF;
+    text-shadow: 0 0 20px #333;
+    opacity: .7; }
+    .video-launcher.playing.playing.playing .plyr__play-large .kf-play-circle {
+      transition: all 300ms; }
+    .video-launcher.playing.playing.playing .plyr__play-large:hover .kf-play-circle {
+      opacity: 1;
+      transform: scale(1.1, 1.1); }
 
 .alert {
   background-color: #fff; }
@@ -8464,13 +8461,6 @@ button.beta-toggler {
       margin-left: -0.9375rem;
       margin-right: -0.9375rem;
       max-width: calc(100% + 1.875rem); }
-      .card.card-backed .card-media-wrap:first-child:before, .card-panel.cards-backed .card .card-media-wrap:first-child:before, .cards-backed.card-panel-flush .card .card-media-wrap:first-child:before,
-      .card.card-backed .card-img:first-child:before, .card-panel.cards-backed .card .card-img:first-child:before, .cards-backed.card-panel-flush .card .card-img:first-child:before,
-      .card.card-backed .card-img-top:first-child:before, .card-panel.cards-backed .card .card-img-top:first-child:before, .cards-backed.card-panel-flush .card .card-img-top:first-child:before {
-        display: block;
-        height: 50%;
-        width: 100%;
-        background: red; }
     .card.card-backed .card-media-wrap .card-img:first-child, .card-panel.cards-backed .card .card-media-wrap .card-img:first-child, .cards-backed.card-panel-flush .card .card-media-wrap .card-img:first-child,
     .card.card-backed .card-media-wrap .card-img-top:first-child, .card-panel.cards-backed .card .card-media-wrap .card-img-top:first-child, .cards-backed.card-panel-flush .card .card-media-wrap .card-img-top:first-child {
       margin: 0; }
@@ -8997,6 +8987,48 @@ button.beta-toggler {
   .cards-list.cards-backed .card .card-img:first-child,
   .cards-list.cards-backed .card img:first-child {
     margin-left: 0;
+    margin-bottom: 1rem; }
+  .cards-backed .card-list-item .card-media-wrap:first-child .card-img-top, .cards-backed .card-panel.cards-list .card-panel-body .card .card-media-wrap:first-child .card-img-top, .card-panel.cards-list .card-panel-body .cards-backed .card .card-media-wrap:first-child .card-img-top, .cards-backed .cards-list.card-panel-flush .card-panel-body .card .card-media-wrap:first-child .card-img-top, .cards-list.card-panel-flush .card-panel-body .cards-backed .card .card-media-wrap:first-child .card-img-top, .cards-backed .card-panel .card-panel-body .card-panel-list .card .card-media-wrap:first-child .card-img-top, .card-panel .card-panel-body .card-panel-list .cards-backed .card .card-media-wrap:first-child .card-img-top, .cards-backed .card-panel-flush .card-panel-body .card-panel-list .card .card-media-wrap:first-child .card-img-top, .card-panel-flush .card-panel-body .card-panel-list .cards-backed .card .card-media-wrap:first-child .card-img-top,
+  .cards-backed .card-list-item .card-media-wrap:first-child .card-img:first-child,
+  .cards-backed .card-panel.cards-list .card-panel-body .card .card-media-wrap:first-child .card-img:first-child, .card-panel.cards-list .card-panel-body
+  .cards-backed .card .card-media-wrap:first-child .card-img:first-child,
+  .cards-backed .cards-list.card-panel-flush .card-panel-body .card .card-media-wrap:first-child .card-img:first-child, .cards-list.card-panel-flush .card-panel-body
+  .cards-backed .card .card-media-wrap:first-child .card-img:first-child,
+  .cards-backed .card-panel .card-panel-body .card-panel-list .card .card-media-wrap:first-child .card-img:first-child, .card-panel .card-panel-body .card-panel-list
+  .cards-backed .card .card-media-wrap:first-child .card-img:first-child,
+  .cards-backed .card-panel-flush .card-panel-body .card-panel-list .card .card-media-wrap:first-child .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list
+  .cards-backed .card .card-media-wrap:first-child .card-img:first-child,
+  .cards-backed .card-list-item .card-media-wrap:first-child img:first-child,
+  .cards-backed .card-panel.cards-list .card-panel-body .card .card-media-wrap:first-child img:first-child, .card-panel.cards-list .card-panel-body
+  .cards-backed .card .card-media-wrap:first-child img:first-child,
+  .cards-backed .cards-list.card-panel-flush .card-panel-body .card .card-media-wrap:first-child img:first-child, .cards-list.card-panel-flush .card-panel-body
+  .cards-backed .card .card-media-wrap:first-child img:first-child,
+  .cards-backed .card-panel .card-panel-body .card-panel-list .card .card-media-wrap:first-child img:first-child, .card-panel .card-panel-body .card-panel-list
+  .cards-backed .card .card-media-wrap:first-child img:first-child,
+  .cards-backed .card-panel-flush .card-panel-body .card-panel-list .card .card-media-wrap:first-child img:first-child, .card-panel-flush .card-panel-body .card-panel-list
+  .cards-backed .card .card-media-wrap:first-child img:first-child,
+  .card-backed.card-list-item .card-media-wrap:first-child .card-img-top, .card-panel.cards-list .card-panel-body .card-backed.card .card-media-wrap:first-child .card-img-top, .cards-list.card-panel-flush .card-panel-body .card-backed.card .card-media-wrap:first-child .card-img-top, .card-panel.cards-list .card-panel-body .card-panel.cards-backed .card .card-media-wrap:first-child .card-img-top, .card-panel.cards-backed .card-panel.cards-list .card-panel-body .card .card-media-wrap:first-child .card-img-top, .cards-list.card-panel-flush .card-panel-body .card-panel.cards-backed .card .card-media-wrap:first-child .card-img-top, .card-panel.cards-backed .cards-list.card-panel-flush .card-panel-body .card .card-media-wrap:first-child .card-img-top, .card-panel.cards-list .card-panel-body .cards-backed.card-panel-flush .card .card-media-wrap:first-child .card-img-top, .cards-backed.card-panel-flush .card-panel.cards-list .card-panel-body .card .card-media-wrap:first-child .card-img-top, .cards-list.card-panel-flush .card-panel-body .cards-backed.card-panel-flush .card .card-media-wrap:first-child .card-img-top, .cards-backed.card-panel-flush .cards-list.card-panel-flush .card-panel-body .card .card-media-wrap:first-child .card-img-top, .card-panel.cards-backed .card-list-item.card .card-media-wrap:first-child .card-img-top, .cards-backed.card-panel-flush .card-list-item.card .card-media-wrap:first-child .card-img-top, .card-panel.cards-backed .card-panel-body .card-panel-list .card .card-media-wrap:first-child .card-img-top, .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card .card-media-wrap:first-child .card-img-top, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card .card-media-wrap:first-child .card-img-top, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card .card-media-wrap:first-child .card-img-top, .card-panel .card-panel-body .card-panel-list .card-backed.card .card-media-wrap:first-child .card-img-top, .card-panel-flush .card-panel-body .card-panel-list .card-backed.card .card-media-wrap:first-child .card-img-top,
+  .card-backed.card-list-item .card-media-wrap:first-child .card-img:first-child, .card-panel.cards-list .card-panel-body .card-backed.card .card-media-wrap:first-child .card-img:first-child, .cards-list.card-panel-flush .card-panel-body .card-backed.card .card-media-wrap:first-child .card-img:first-child, .card-panel.cards-list .card-panel-body .card-panel.cards-backed .card .card-media-wrap:first-child .card-img:first-child, .card-panel.cards-backed .card-panel.cards-list .card-panel-body .card .card-media-wrap:first-child .card-img:first-child, .cards-list.card-panel-flush .card-panel-body .card-panel.cards-backed .card .card-media-wrap:first-child .card-img:first-child, .card-panel.cards-backed .cards-list.card-panel-flush .card-panel-body .card .card-media-wrap:first-child .card-img:first-child, .card-panel.cards-list .card-panel-body .cards-backed.card-panel-flush .card .card-media-wrap:first-child .card-img:first-child, .cards-backed.card-panel-flush .card-panel.cards-list .card-panel-body .card .card-media-wrap:first-child .card-img:first-child, .cards-list.card-panel-flush .card-panel-body .cards-backed.card-panel-flush .card .card-media-wrap:first-child .card-img:first-child, .cards-backed.card-panel-flush .cards-list.card-panel-flush .card-panel-body .card .card-media-wrap:first-child .card-img:first-child, .card-panel.cards-backed .card-list-item.card .card-media-wrap:first-child .card-img:first-child, .cards-backed.card-panel-flush .card-list-item.card .card-media-wrap:first-child .card-img:first-child, .card-panel.cards-backed .card-panel-body .card-panel-list .card .card-media-wrap:first-child .card-img:first-child, .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card .card-media-wrap:first-child .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card .card-media-wrap:first-child .card-img:first-child, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card .card-media-wrap:first-child .card-img:first-child, .card-panel .card-panel-body .card-panel-list .card-backed.card .card-media-wrap:first-child .card-img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card-backed.card .card-media-wrap:first-child .card-img:first-child,
+  .card-backed.card-list-item .card-media-wrap:first-child img:first-child, .card-panel.cards-list .card-panel-body .card-backed.card .card-media-wrap:first-child img:first-child, .cards-list.card-panel-flush .card-panel-body .card-backed.card .card-media-wrap:first-child img:first-child, .card-panel.cards-list .card-panel-body .card-panel.cards-backed .card .card-media-wrap:first-child img:first-child, .card-panel.cards-backed .card-panel.cards-list .card-panel-body .card .card-media-wrap:first-child img:first-child, .cards-list.card-panel-flush .card-panel-body .card-panel.cards-backed .card .card-media-wrap:first-child img:first-child, .card-panel.cards-backed .cards-list.card-panel-flush .card-panel-body .card .card-media-wrap:first-child img:first-child, .card-panel.cards-list .card-panel-body .cards-backed.card-panel-flush .card .card-media-wrap:first-child img:first-child, .cards-backed.card-panel-flush .card-panel.cards-list .card-panel-body .card .card-media-wrap:first-child img:first-child, .cards-list.card-panel-flush .card-panel-body .cards-backed.card-panel-flush .card .card-media-wrap:first-child img:first-child, .cards-backed.card-panel-flush .cards-list.card-panel-flush .card-panel-body .card .card-media-wrap:first-child img:first-child, .card-panel.cards-backed .card-list-item.card .card-media-wrap:first-child img:first-child, .cards-backed.card-panel-flush .card-list-item.card .card-media-wrap:first-child img:first-child, .card-panel.cards-backed .card-panel-body .card-panel-list .card .card-media-wrap:first-child img:first-child, .card-panel .card-panel-body .card-panel-list .cards-backed.card-panel-flush .card .card-media-wrap:first-child img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card-panel.cards-backed .card .card-media-wrap:first-child img:first-child, .cards-backed.card-panel-flush .card-panel-body .card-panel-list .card .card-media-wrap:first-child img:first-child, .card-panel .card-panel-body .card-panel-list .card-backed.card .card-media-wrap:first-child img:first-child, .card-panel-flush .card-panel-body .card-panel-list .card-backed.card .card-media-wrap:first-child img:first-child,
+  .cards-list .card-backed .card-media-wrap:first-child .card-img-top,
+  .cards-list .card-panel.cards-backed .card .card-media-wrap:first-child .card-img-top, .card-panel.cards-backed
+  .cards-list .card .card-media-wrap:first-child .card-img-top,
+  .cards-list .cards-backed.card-panel-flush .card .card-media-wrap:first-child .card-img-top, .cards-backed.card-panel-flush
+  .cards-list .card .card-media-wrap:first-child .card-img-top,
+  .cards-list .card-backed .card-media-wrap:first-child .card-img:first-child,
+  .cards-list .card-panel.cards-backed .card .card-media-wrap:first-child .card-img:first-child, .card-panel.cards-backed
+  .cards-list .card .card-media-wrap:first-child .card-img:first-child,
+  .cards-list .cards-backed.card-panel-flush .card .card-media-wrap:first-child .card-img:first-child, .cards-backed.card-panel-flush
+  .cards-list .card .card-media-wrap:first-child .card-img:first-child,
+  .cards-list .card-backed .card-media-wrap:first-child img:first-child,
+  .cards-list .card-panel.cards-backed .card .card-media-wrap:first-child img:first-child, .card-panel.cards-backed
+  .cards-list .card .card-media-wrap:first-child img:first-child,
+  .cards-list .cards-backed.card-panel-flush .card .card-media-wrap:first-child img:first-child, .cards-backed.card-panel-flush
+  .cards-list .card .card-media-wrap:first-child img:first-child,
+  .cards-list.cards-backed .card .card-media-wrap:first-child .card-img-top,
+  .cards-list.cards-backed .card .card-media-wrap:first-child .card-img:first-child,
+  .cards-list.cards-backed .card .card-media-wrap:first-child img:first-child {
+    margin-left: 1rem;
     margin-bottom: 1rem; }
 
 .card-panel, .card-panel-flush {
@@ -10300,7 +10332,9 @@ blockquote.pull-quote {
 
 .kent-slider .kent-slide {
   position: relative;
+  cursor: ew-resize;
   cursor: -webkit-grab;
+  cursor: -moz-grab;
   width: 100%; }
   .kent-slider .kent-slide .media-wrap-fill {
     background-color: #333; }

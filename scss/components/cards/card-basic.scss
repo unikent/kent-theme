@@ -63,14 +63,6 @@
                 margin-left:  -$grid-gutter-width/2;
                 margin-right: -$grid-gutter-width/2;
                 max-width:    calc(100% + #{$grid-gutter-width});
-
-                &:before {
-                    display:    block;
-                    height:     50%;
-                    width:      100%;
-                    background: red;
-                }
-
             }
         }
         .card-media-wrap {
@@ -133,7 +125,6 @@
         .card-img:first-child,
         img:first-child {
             float:        left;
-            //max-width:    40%;
             max-width: 15%;
             min-width: 7rem;
             margin-right: 1rem;
@@ -429,9 +420,17 @@
     padding: 1rem 1rem 0;
     .card-img-top,
     .card-img:first-child,
-    img:first-child {
+    img:first-child{
         margin-left:   0;
         margin-bottom: 1rem;
+    }
+    .card-media-wrap:first-child{
+        .card-img-top,
+        .card-img:first-child,
+        img:first-child{
+            margin-left: 1rem;
+            margin-bottom: 1rem;
+        }
     }
 
 }

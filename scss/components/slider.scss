@@ -4,8 +4,13 @@
         width: 100%;
     }
     .kent-slide {
+
         position: relative;
-        cursor:   -webkit-grab;
+        cursor: ew-resize;
+
+        cursor: -webkit-grab;
+        cursor: -moz-grab;
+
         width:    100%;
 
         .media-wrap-fill {
