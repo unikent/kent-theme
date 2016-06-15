@@ -5534,8 +5534,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
   left: 0;
   top: 48px;
   color: #05345C;
-  box-sizing: border-box;
-  font-size: 16px; }
+  box-sizing: border-box; }
   #kent-bar #kent-bar-menu .search-services::before, .kent-bar #kent-bar-menu .search-services::before {
     content: "";
     font-family: "kentfont", sans-serif;
@@ -5653,7 +5652,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
       top: 40px;
       right: 10px;
       left: auto;
-      width: 450px;
+      width: 600px;
       max-width: 50%;
       border: 1px solid #ccc;
       box-shadow: 1px 1px 3px #BFBFBF; }
@@ -9308,7 +9307,8 @@ button.beta-toggler {
       top: 0;
       left: 0;
       bottom: 0;
-      right: 0; }
+      right: 0;
+      z-index: 0; }
   .card .card-footer {
     background: transparent; }
   .card .card-title {
@@ -10119,6 +10119,10 @@ button.beta-toggler {
       font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 16px;
       font-size: 1rem; }
+    @media (max-width: 767px) {
+      .card-panel-profiles .card:hover .front.front {
+        opacity: 1;
+        pointer-events: all; } }
     .card-panel-profiles .card .back {
       padding: 24px;
       padding: 1.5rem;
