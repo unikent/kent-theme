@@ -138,6 +138,10 @@
         a {
             display: block;
             width:   100%;
+
+            @include media-breakpoint-down(md){
+                line-height: 1.75rem;
+            }
         }
     }
 

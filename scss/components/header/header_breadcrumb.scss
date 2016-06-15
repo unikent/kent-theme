@@ -47,12 +47,15 @@ nav.breadcrumb {
     a {
         @extend .chevron-link;
 
+        color: $brand-accent;
+
         &:after {
             padding-left:  0.75rem;
             padding-right: 0.5rem;
         }
 
         &:hover,&:active,&:focus{
+            color: $brand-accent;
             &:after {
                 padding-left:  0.75rem;
                 padding-right: 0.5rem;

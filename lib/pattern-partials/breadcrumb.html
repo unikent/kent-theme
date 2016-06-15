@@ -1,6 +1,6 @@
 <nav class="breadcrumb">
 	<a href="/">University of Kent</a>
 	<a href="{{@root.docsroot}}/index.html">Pattern library</a>
-	<a href="{{@root.docsroot}}/index.html">{{lookup section_names @root.section}}</a>
+	{{#if @root.section }}<a href="{{@root.docsroot}}/index.html">{{lookup section_names @root.section}}</a>{{/if}}
 	<span>{{@root.sub_title}}</span>
 </nav>
