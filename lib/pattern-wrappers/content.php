@@ -10,6 +10,7 @@ KentThemeHelper::header(array(
 			),
 			'beta_bar'=>false,
 			'slim'=>true,
+			'brand_header'=>true,
 			'main_class'=>'content-page'
 		)
 	); 

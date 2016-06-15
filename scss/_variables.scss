@@ -80,6 +80,12 @@ $spacers: (
 //COLOURS
 $kent-blue: #003882;
 $kent-primary: #05345C;
+
+$kent-primary-light: #8c92b2;
+
+$kent-nav-bg: #ebeef3;
+$kent-nav-active: #cad4dd;
+
 $kent-primary-tint: #E8EBF2;
 
 $kent-pg-primary: #671115;
@@ -87,6 +93,11 @@ $kent-pg-primary-tint: #E0D4D4;
 
 $brand-primary: $kent-primary !default;
 $brand-primary-tint: $kent-primary-tint !default;
+
+$brand-primary-light: $kent-primary-light !default;
+
+$brand-nav-bg: $kent-nav-bg !default;
+$brand-nav-active: $kent-nav-active !default;
 
 $brand-secondary: #F5F5F5;
 
