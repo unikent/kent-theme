@@ -1,3 +1,13 @@
+.panel{
+    padding: 1rem;
+
+    *:last-child{
+      margin-bottom: 0;
+    }
+
+    margin-bottom: 1rem;
+}
+
 @each $name, $color in $brand-colors-light {
     .panel-#{$name} {
         background: $color;
@@ -8,5 +18,14 @@
     .panel-#{$name} {
         background: $color;
         color:      #FFFFFF;
+
+        h1,.h1,
+        h2,.h2,
+        h3,.h3,
+        h4,.h4,
+        h5,.h5,
+        h6,.h6{
+            color: #FFF;
+        }
     }
 }
