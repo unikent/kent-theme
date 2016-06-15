@@ -483,6 +483,15 @@
             font-size:   1rem;
         }
 
+        @include media-breakpoint-down(sm) {
+            &:hover {
+                .front.front {
+                    opacity:        1;
+                    pointer-events: all;
+                }
+            }
+        }
+
         .back {
 
             padding:   1.5rem;
