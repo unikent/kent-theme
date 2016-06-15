@@ -5534,7 +5534,8 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
   left: 0;
   top: 48px;
   color: #05345C;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  font-size: 16px; }
   #kent-bar #kent-bar-menu .search-services::before, .kent-bar #kent-bar-menu .search-services::before {
     content: "";
     font-family: "kentfont", sans-serif;
@@ -5652,7 +5653,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
       top: 40px;
       right: 10px;
       left: auto;
-      width: 600px;
+      width: 450px;
       max-width: 50%;
       border: 1px solid #ccc;
       box-shadow: 1px 1px 3px #BFBFBF; }
@@ -8052,6 +8053,7 @@ input[type=number]::-webkit-outer-spin-button {
           .card-panel.nav-links-panel nav .nav-link:after, .nav-links-panel.card-panel-flush nav .nav-link:after, .nav-links-panel nav .nav-link:after {
             display: none; }
           .card-panel.nav-links-panel nav .nav-link .nav-link-title, .nav-links-panel.card-panel-flush nav .nav-link .nav-link-title, .nav-links-panel nav .nav-link .nav-link-title {
+            color: #05345C;
             font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
             font-size: 1.2rem; }
             .card-panel.nav-links-panel nav .nav-link .nav-link-title:after, .nav-links-panel.card-panel-flush nav .nav-link .nav-link-title:after, .nav-links-panel nav .nav-link .nav-link-title:after {
