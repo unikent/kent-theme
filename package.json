@@ -14,12 +14,12 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "install": "napa maciej-gurban/responsive-bootstrap-toolkit#2.5.1:responsive-bootstrap-toolkit && napa twbs/bootstrap#v4.0.0-alpha.2:bootstrap"
+    "install": "napa maciej-gurban/responsive-bootstrap-toolkit#2.5.1:responsive-bootstrap-toolkit && napa twbs/bootstrap#v4.0.0-alpha.2:bootstrap",
+    "start": "grunt && grunt watch"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babel-preset-es2015": "^6.9.0",
-    "bootstrap": "4.0.0-alpha.2",
     "cssnano": "^3.3.2",
     "dotenv": "^1.2.0",
     "grunt": "~0.4.5",
@@ -54,8 +54,8 @@
     "modernizr": "~3.3.1",
     "moment": "^2.13.0",
     "pixrem": "^3.0.0",
-    "plyr": "^1.6.16",
-    "slick-carousel": "1.5.9",
+    "plyr": "^1.8.2",
+    "slick-carousel": "1.6",
     "social-likes": "^3.1.0",
     "tether": "~1.2.0",
     "time-grunt": "~1.0.0"

@@ -112,8 +112,9 @@ $(document).ready(function(){
 			// Generate plyr instance
 			this.plyr = plyr.setup(this.video[0], {
 				autoplay: true,
-				html: plyr_controls
-			})[0];
+				html: plyr_controls,
+				disableContextMenu: false
+			})[0].plyr;
 
 			// Hookup events
 			this.video.on('ready', () => { this.setupTranscript(); });
