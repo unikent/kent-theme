@@ -5534,8 +5534,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
   left: 0;
   top: 48px;
   color: #05345C;
-  box-sizing: border-box;
-  font-size: 16px; }
+  box-sizing: border-box; }
   #kent-bar #kent-bar-menu .search-services::before, .kent-bar #kent-bar-menu .search-services::before {
     content: "";
     font-family: "kentfont", sans-serif;
@@ -5653,7 +5652,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
       top: 40px;
       right: 10px;
       left: auto;
-      width: 450px;
+      width: 600px;
       max-width: 50%;
       border: 1px solid #ccc;
       box-shadow: 1px 1px 3px #BFBFBF; }
@@ -10286,7 +10285,7 @@ button.beta-toggler {
         right: 5%; }
     .card.card-overlay .card-img-overlay.card-img-overlay-block, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom-shaded {
       position: absolute; }
-    .card.card-overlay .card-img-overlay .input-group, .card.card-overlay .card-img-overlay-bottom .input-group, .card.card-overlay .card-img-overlay-bottom-shaded .input-group {
+    .card.card-overlay .card-img-overlay .form-group, .card.card-overlay .card-img-overlay-bottom .form-group, .card.card-overlay .card-img-overlay-bottom-shaded .form-group {
       margin-left: 15%;
       margin-right: 15%; } }
 
@@ -11385,52 +11384,6 @@ blockquote.pull-quote {
   /*Oddly IE7 is fine without this, IE8 on the other hand gets a bit confused*/
   position: absolute \9; }
 
-.quickspot-results {
-  width: 100%;
-  background: #EEEEEE;
-  max-height: 364.8px;
-  max-height: 22.8rem;
-  overflow: auto; }
-  .quickspot-results .quickspot-result {
-    padding: 8px 10px;
-    display: block;
-    text-decoration: none;
-    cursor: pointer;
-    color: #171717;
-    background: #FFFFFF;
-    transition: background .25s;
-    position: relative;
-    margin-bottom: 1px; }
-    .quickspot-results .quickspot-result:before {
-      color: #CCCCCC;
-      float: right;
-      content: "";
-      font-family: "kentfont", sans-serif;
-      position: absolute;
-      right: 8px;
-      right: .5rem;
-      top: 35%;
-      top: calc(50% - 0.5rem); }
-    .quickspot-results .quickspot-result.pg {
-      border-left: solid 8px #671115;
-      border-left: solid 0.5rem #671115; }
-    .quickspot-results .quickspot-result.ug {
-      border-left: solid 8px #05345C;
-      border-left: solid 0.5rem #05345C; }
-    .quickspot-results .quickspot-result strong {
-      color: #000000; }
-    .quickspot-results .quickspot-result span {
-      font-style: italic;
-      color: #937227; }
-      .quickspot-results .quickspot-result span.level {
-        color: #818a91; }
-    .quickspot-results .quickspot-result.selected {
-      background: #EEEEEE;
-      transition: background .25s; }
-    .quickspot-results .quickspot-result .kf-search {
-      color: #CCCCCC; }
-
-/* Emulates form-group input sizing (to allow it to match with search element more easily) */
 #quickspot-results-container {
   position: relative;
   z-index: 9999;
@@ -11454,15 +11407,55 @@ blockquote.pull-quote {
           padding: 10px 0;
           border-bottom: none;
           text-align: center; } }
+  #quickspot-results-container .quickspot-results {
+    width: 100%;
+    background: #eee;
+    max-height: 364.8px;
+    max-height: 22.8rem;
+    overflow: auto; }
+    #quickspot-results-container .quickspot-results .quickspot-result {
+      padding: 8px 10px;
+      display: block;
+      text-decoration: none;
+      cursor: pointer;
+      color: #171717;
+      background: #fff;
+      transition: background .25s;
+      position: relative;
+      margin-bottom: 1px; }
+      #quickspot-results-container .quickspot-results .quickspot-result:before {
+        color: #ccc;
+        float: right;
+        content: "";
+        font-family: "kentfont", sans-serif;
+        position: absolute;
+        right: 8px;
+        right: .5rem;
+        top: 35%;
+        top: calc(50% - 0.5rem); }
+      #quickspot-results-container .quickspot-results .quickspot-result.pg {
+        border-left: solid 8px #671115;
+        border-left: solid 0.5rem #671115; }
+      #quickspot-results-container .quickspot-results .quickspot-result.ug {
+        border-left: solid 8px #05345C;
+        border-left: solid 0.5rem #05345C; }
+      #quickspot-results-container .quickspot-results .quickspot-result strong {
+        color: #000; }
+      #quickspot-results-container .quickspot-results .quickspot-result span {
+        font-style: italic;
+        color: #937227; }
+        #quickspot-results-container .quickspot-results .quickspot-result span.level {
+          color: #818a91; }
+      #quickspot-results-container .quickspot-results .quickspot-result.selected {
+        background: #eee;
+        transition: background .25s; }
+      #quickspot-results-container .quickspot-results .quickspot-result .kf-search {
+        color: #ccc; }
   @media (min-width: 544px) {
     #quickspot-results-container {
       position: absolute;
       left: 0;
       width: 100%; } }
-  @media (min-width: 768px) {
-    #quickspot-results-container.quickspot-contained {
-      margin-left: 15%;
-      margin-right: 15%; } }
 
 /* style helper */
 .quickspot-container .form-group {
