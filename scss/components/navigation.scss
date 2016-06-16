@@ -102,6 +102,7 @@
                     display: none;
                 }
                 .nav-link-title {
+                    color: $brand-primary;
                     font-family: $headings-font-family-alt;
                     font-size:   1.2rem;
                     &:after {

@@ -81,6 +81,9 @@
     }
 }
 
+.btn {
+    padding: 0.475rem 1rem;
+}
 .btn-primary {
     @include kent-button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }

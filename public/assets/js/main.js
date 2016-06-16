@@ -15587,7 +15587,7 @@ var Popover = (function ($) {
 |___/_|_|\___|_|\_(_)/ |___/
                    |__/
 
- Version: 1.5.9
+ Version: 1.6.0
   Author: Ken Wheeler
  Website: http://kenwheeler.github.io
     Docs: http://kenwheeler.github.io/slick
@@ -15633,7 +15633,7 @@ var Popover = (function ($) {
                 centerPadding: '50px',
                 cssEase: 'ease',
                 customPaging: function(slider, i) {
-                    return '<button type="button" data-role="none" role="button" aria-required="false" tabindex="0">' + (i + 1) + '</button>';
+                    return $('<button type="button" data-role="none" role="button" tabindex="0" />').text(i + 1);
                 },
                 dots: false,
                 dotsClass: 'slick-dots',
@@ -15647,6 +15647,7 @@ var Popover = (function ($) {
                 lazyLoad: 'ondemand',
                 mobileFirst: false,
                 pauseOnHover: true,
+                pauseOnFocus: true,
                 pauseOnDotsHover: false,
                 respondTo: 'window',
                 responsive: null,
@@ -15662,7 +15663,7 @@ var Popover = (function ($) {
                 touchMove: true,
                 touchThreshold: 5,
                 useCSS: true,
-                useTransform: false,
+                useTransform: true,
                 variableWidth: false,
                 vertical: false,
                 verticalSwiping: false,
@@ -15705,8 +15706,10 @@ var Popover = (function ($) {
             _.breakpoints = [];
             _.breakpointSettings = [];
             _.cssTransitions = false;
+            _.focussed = false;
+            _.interrupted = false;
             _.hidden = 'hidden';
-            _.paused = false;
+            _.paused = true;
             _.positionProp = null;
             _.respondTo = null;
             _.rowCount = 1;
@@ -15721,7 +15724,7 @@ var Popover = (function ($) {
 
             dataSettings = $(element).data('slick') || {};
 
-            _.options = $.extend({}, _.defaults, dataSettings, settings);
+            _.options = $.extend({}, _.defaults, settings, dataSettings);
 
             _.currentSlide = _.options.initialSlide;
 
@@ -15737,6 +15740,7 @@ var Popover = (function ($) {
 
             _.autoPlay = $.proxy(_.autoPlay, _);
             _.autoPlayClear = $.proxy(_.autoPlayClear, _);
+            _.autoPlayIterator = $.proxy(_.autoPlayIterator, _);
             _.changeSlide = $.proxy(_.changeSlide, _);
             _.clickHandler = $.proxy(_.clickHandler, _);
             _.selectHandler = $.proxy(_.selectHandler, _);
@@ -15744,7 +15748,6 @@ var Popover = (function ($) {
             _.swipeHandler = $.proxy(_.swipeHandler, _);
             _.dragHandler = $.proxy(_.dragHandler, _);
             _.keyHandler = $.proxy(_.keyHandler, _);
-            _.autoPlayIterator = $.proxy(_.autoPlayIterator, _);
 
             _.instanceUid = instanceUid++;
 
@@ -15756,13 +15759,23 @@ var Popover = (function ($) {
 
             _.registerBreakpoints();
             _.init(true);
-            _.checkResponsive(true);
 
         }
 
         return Slick;
 
     }());
+
+    Slick.prototype.activateADA = function() {
+        var _ = this;
+
+        _.$slideTrack.find('.slick-active').attr({
+            'aria-hidden': 'false'
+        }).find('a, input, button, select').attr({
+            'tabindex': '0'
+        });
+
+    };
 
     Slick.prototype.addSlide = Slick.prototype.slickAdd = function(markup, index, addBefore) {
 
@@ -15899,7 +15912,7 @@ var Popover = (function ($) {
 
     };
 
-    Slick.prototype.asNavFor = function(index) {
+    Slick.prototype.getNavTarget = function() {
 
         var _ = this,
             asNavFor = _.options.asNavFor;
@@ -15907,6 +15920,15 @@ var Popover = (function ($) {
         if ( asNavFor && asNavFor !== null ) {
             asNavFor = $(asNavFor).not(_.$slider);
         }
+
+        return asNavFor;
+
+    };
+
+    Slick.prototype.asNavFor = function(index) {
+
+        var _ = this,
+            asNavFor = _.getNavTarget();
 
         if ( asNavFor !== null && typeof asNavFor === 'object' ) {
             asNavFor.each(function() {
@@ -15942,13 +15964,10 @@ var Popover = (function ($) {
 
         var _ = this;
 
-        if (_.autoPlayTimer) {
-            clearInterval(_.autoPlayTimer);
-        }
+        _.autoPlayClear();
 
-        if (_.slideCount > _.options.slidesToShow && _.paused !== true) {
-            _.autoPlayTimer = setInterval(_.autoPlayIterator,
-                _.options.autoplaySpeed);
+        if ( _.slideCount > _.options.slidesToShow ) {
+            _.autoPlayTimer = setInterval( _.autoPlayIterator, _.options.autoplaySpeed );
         }
 
     };
@@ -15956,6 +15975,7 @@ var Popover = (function ($) {
     Slick.prototype.autoPlayClear = function() {
 
         var _ = this;
+
         if (_.autoPlayTimer) {
             clearInterval(_.autoPlayTimer);
         }
@@ -15964,34 +15984,30 @@ var Popover = (function ($) {
 
     Slick.prototype.autoPlayIterator = function() {
 
-        var _ = this;
+        var _ = this,
+            slideTo = _.currentSlide + _.options.slidesToScroll;
 
-        if (_.options.infinite === false) {
+        if ( !_.paused && !_.interrupted && !_.focussed ) {
 
-            if (_.direction === 1) {
+            if ( _.options.infinite === false ) {
 
-                if ((_.currentSlide + 1) === _.slideCount -
-                    1) {
+                if ( _.direction === 1 && ( _.currentSlide + 1 ) === ( _.slideCount - 1 )) {
                     _.direction = 0;
                 }
 
-                _.slideHandler(_.currentSlide + _.options.slidesToScroll);
+                else if ( _.direction === 0 ) {
 
-            } else {
+                    slideTo = _.currentSlide - _.options.slidesToScroll;
 
-                if ((_.currentSlide - 1 === 0)) {
-
-                    _.direction = 1;
+                    if ( _.currentSlide - 1 === 0 ) {
+                        _.direction = 1;
+                    }
 
                 }
 
-                _.slideHandler(_.currentSlide - _.options.slidesToScroll);
-
             }
 
-        } else {
-
-            _.slideHandler(_.currentSlide + _.options.slidesToScroll);
+            _.slideHandler( slideTo );
 
         }
 
@@ -16044,20 +16060,19 @@ var Popover = (function ($) {
     Slick.prototype.buildDots = function() {
 
         var _ = this,
-            i, dotString;
+            i, dot;
 
         if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
 
-            dotString = '<ul class="' + _.options.dotsClass + '">';
+            _.$slider.addClass('slick-dotted');
+
+            dot = $('<ul />').addClass(_.options.dotsClass);
 
             for (i = 0; i <= _.getDotCount(); i += 1) {
-                dotString += '<li>' + _.options.customPaging.call(this, _, i) + '</li>';
+                dot.append($('<li />').append(_.options.customPaging.call(this, _, i)));
             }
 
-            dotString += '</ul>';
-
-            _.$dots = $(dotString).appendTo(
-                _.options.appendDots);
+            _.$dots = dot.appendTo(_.options.appendDots);
 
             _.$dots.find('li').first().addClass('slick-active').attr('aria-hidden', 'false');
 
@@ -16144,7 +16159,7 @@ var Popover = (function ($) {
                 newSlides.appendChild(slide);
             }
 
-            _.$slider.html(newSlides);
+            _.$slider.empty().append(newSlides);
             _.$slider.children().children().children()
                 .css({
                     'width':(100 / _.options.slidesPerRow) + '%',
@@ -16246,7 +16261,7 @@ var Popover = (function ($) {
     Slick.prototype.changeSlide = function(event, dontAnimate) {
 
         var _ = this,
-            $target = $(event.target),
+            $target = $(event.currentTarget),
             indexOffset, slideOffset, unevenOffset;
 
         // If target is a link, prevent default action.
@@ -16320,17 +16335,14 @@ var Popover = (function ($) {
 
         if (_.options.dots && _.$dots !== null) {
 
-            $('li', _.$dots).off('click.slick', _.changeSlide);
-
-            if (_.options.pauseOnDotsHover === true && _.options.autoplay === true) {
-
-                $('li', _.$dots)
-                    .off('mouseenter.slick', $.proxy(_.setPaused, _, true))
-                    .off('mouseleave.slick', $.proxy(_.setPaused, _, false));
-
-            }
+            $('li', _.$dots)
+                .off('click.slick', _.changeSlide)
+                .off('mouseenter.slick', $.proxy(_.interrupt, _, true))
+                .off('mouseleave.slick', $.proxy(_.interrupt, _, false));
 
         }
+
+        _.$slider.off('focus.slick blur.slick');
 
         if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
             _.$prevArrow && _.$prevArrow.off('click.slick', _.changeSlide);
@@ -16346,8 +16358,7 @@ var Popover = (function ($) {
 
         $(document).off(_.visibilityChange, _.visibility);
 
-        _.$list.off('mouseenter.slick', $.proxy(_.setPaused, _, true));
-        _.$list.off('mouseleave.slick', $.proxy(_.setPaused, _, false));
+        _.cleanUpSlideEvents();
 
         if (_.options.accessibility === true) {
             _.$list.off('keydown.slick', _.keyHandler);
@@ -16365,6 +16376,16 @@ var Popover = (function ($) {
 
         $(window).off('load.slick.slick-' + _.instanceUid, _.setPosition);
         $(document).off('ready.slick.slick-' + _.instanceUid, _.setPosition);
+
+    };
+
+    Slick.prototype.cleanUpSlideEvents = function() {
+
+        var _ = this;
+
+        _.$list.off('mouseenter.slick', $.proxy(_.interrupt, _, true));
+        _.$list.off('mouseleave.slick', $.proxy(_.interrupt, _, false));
+
     };
 
     Slick.prototype.cleanUpRows = function() {
@@ -16374,7 +16395,7 @@ var Popover = (function ($) {
         if(_.options.rows > 1) {
             originalSlides = _.$slides.children().children();
             originalSlides.removeAttr('style');
-            _.$slider.html(originalSlides);
+            _.$slider.empty().append(originalSlides);
         }
 
     };
@@ -16413,7 +16434,7 @@ var Popover = (function ($) {
             _.$prevArrow
                 .removeClass('slick-disabled slick-arrow slick-hidden')
                 .removeAttr('aria-hidden aria-disabled tabindex')
-                .css("display","");
+                .css('display','');
 
             if ( _.htmlExpr.test( _.options.prevArrow )) {
                 _.$prevArrow.remove();
@@ -16425,7 +16446,7 @@ var Popover = (function ($) {
             _.$nextArrow
                 .removeClass('slick-disabled slick-arrow slick-hidden')
                 .removeAttr('aria-hidden aria-disabled tabindex')
-                .css("display","");
+                .css('display','');
 
             if ( _.htmlExpr.test( _.options.nextArrow )) {
                 _.$nextArrow.remove();
@@ -16457,6 +16478,7 @@ var Popover = (function ($) {
 
         _.$slider.removeClass('slick-slider');
         _.$slider.removeClass('slick-initialized');
+        _.$slider.removeClass('slick-dotted');
 
         _.unslicked = true;
 
@@ -16561,6 +16583,30 @@ var Popover = (function ($) {
 
     };
 
+    Slick.prototype.focusHandler = function() {
+
+        var _ = this;
+
+        _.$slider
+            .off('focus.slick blur.slick')
+            .on('focus.slick blur.slick',
+                '*:not(.slick-arrow)', function(event) {
+
+            event.stopImmediatePropagation();
+            var $sf = $(this);
+
+            setTimeout(function() {
+
+                if( _.options.pauseOnFocus ) {
+                    _.focussed = $sf.is(':focus');
+                    _.autoPlay();
+                }
+
+            }, 0);
+
+        });
+    };
+
     Slick.prototype.getCurrent = Slick.prototype.slickCurrentSlide = function() {
 
         var _ = this;
@@ -16584,7 +16630,9 @@ var Popover = (function ($) {
             }
         } else if (_.options.centerMode === true) {
             pagerQty = _.slideCount;
-        } else {
+        } else if(!_.options.asNavFor) {
+            pagerQty = 1 + Math.ceil((_.slideCount - _.options.slidesToShow) / _.options.slidesToScroll);
+        }else {
             while (breakPoint < _.slideCount) {
                 ++pagerQty;
                 breakPoint = counter + _.options.slidesToScroll;
@@ -16785,6 +16833,8 @@ var Popover = (function ($) {
             _.initializeEvents();
             _.updateArrows();
             _.updateDots();
+            _.checkResponsive(true);
+            _.focusHandler();
 
         }
 
@@ -16796,6 +16846,48 @@ var Popover = (function ($) {
             _.initADA();
         }
 
+        if ( _.options.autoplay ) {
+
+            _.paused = false;
+            _.autoPlay();
+
+        }
+
+    };
+
+    Slick.prototype.initADA = function() {
+        var _ = this;
+        _.$slides.add(_.$slideTrack.find('.slick-cloned')).attr({
+            'aria-hidden': 'true',
+            'tabindex': '-1'
+        }).find('a, input, button, select').attr({
+            'tabindex': '-1'
+        });
+
+        _.$slideTrack.attr('role', 'listbox');
+
+        _.$slides.not(_.$slideTrack.find('.slick-cloned')).each(function(i) {
+            $(this).attr({
+                'role': 'option',
+                'aria-describedby': 'slick-slide' + _.instanceUid + i + ''
+            });
+        });
+
+        if (_.$dots !== null) {
+            _.$dots.attr('role', 'tablist').find('li').each(function(i) {
+                $(this).attr({
+                    'role': 'presentation',
+                    'aria-selected': 'false',
+                    'aria-controls': 'navigation' + _.instanceUid + i + '',
+                    'id': 'slick-slide' + _.instanceUid + i + ''
+                });
+            })
+                .first().attr('aria-selected', 'true').end()
+                .find('button').attr('role', 'button').end()
+                .closest('div').attr('role', 'toolbar');
+        }
+        _.activateADA();
+
     };
 
     Slick.prototype.initArrowEvents = function() {
@@ -16803,12 +16895,16 @@ var Popover = (function ($) {
         var _ = this;
 
         if (_.options.arrows === true && _.slideCount > _.options.slidesToShow) {
-            _.$prevArrow.on('click.slick', {
-                message: 'previous'
-            }, _.changeSlide);
-            _.$nextArrow.on('click.slick', {
-                message: 'next'
-            }, _.changeSlide);
+            _.$prevArrow
+               .off('click.slick')
+               .on('click.slick', {
+                    message: 'previous'
+               }, _.changeSlide);
+            _.$nextArrow
+               .off('click.slick')
+               .on('click.slick', {
+                    message: 'next'
+               }, _.changeSlide);
         }
 
     };
@@ -16823,10 +16919,25 @@ var Popover = (function ($) {
             }, _.changeSlide);
         }
 
-        if (_.options.dots === true && _.options.pauseOnDotsHover === true && _.options.autoplay === true) {
+        if ( _.options.dots === true && _.options.pauseOnDotsHover === true ) {
+
             $('li', _.$dots)
-                .on('mouseenter.slick', $.proxy(_.setPaused, _, true))
-                .on('mouseleave.slick', $.proxy(_.setPaused, _, false));
+                .on('mouseenter.slick', $.proxy(_.interrupt, _, true))
+                .on('mouseleave.slick', $.proxy(_.interrupt, _, false));
+
+        }
+
+    };
+
+    Slick.prototype.initSlideEvents = function() {
+
+        var _ = this;
+
+        if ( _.options.pauseOnHover ) {
+
+            _.$list.on('mouseenter.slick', $.proxy(_.interrupt, _, true));
+            _.$list.on('mouseleave.slick', $.proxy(_.interrupt, _, false));
+
         }
 
     };
@@ -16838,6 +16949,7 @@ var Popover = (function ($) {
         _.initArrowEvents();
 
         _.initDotEvents();
+        _.initSlideEvents();
 
         _.$list.on('touchstart.slick mousedown.slick', {
             action: 'start'
@@ -16855,9 +16967,6 @@ var Popover = (function ($) {
         _.$list.on('click.slick', _.clickHandler);
 
         $(document).on(_.visibilityChange, $.proxy(_.visibility, _));
-
-        _.$list.on('mouseenter.slick', $.proxy(_.setPaused, _, true));
-        _.$list.on('mouseleave.slick', $.proxy(_.setPaused, _, false));
 
         if (_.options.accessibility === true) {
             _.$list.on('keydown.slick', _.keyHandler);
@@ -16895,12 +17004,6 @@ var Popover = (function ($) {
 
         }
 
-        if (_.options.autoplay === true) {
-
-            _.autoPlay();
-
-        }
-
     };
 
     Slick.prototype.keyHandler = function(event) {
@@ -16911,13 +17014,13 @@ var Popover = (function ($) {
             if (event.keyCode === 37 && _.options.accessibility === true) {
                 _.changeSlide({
                     data: {
-                        message: 'previous'
+                        message: _.options.rtl === true ? 'next' :  'previous'
                     }
                 });
             } else if (event.keyCode === 39 && _.options.accessibility === true) {
                 _.changeSlide({
                     data: {
-                        message: 'next'
+                        message: _.options.rtl === true ? 'previous' : 'next'
                     }
                 });
             }
@@ -16931,6 +17034,7 @@ var Popover = (function ($) {
             loadRange, cloneRange, rangeStart, rangeEnd;
 
         function loadImages(imagesScope) {
+
             $('img[data-lazy]', imagesScope).each(function() {
 
                 var image = $(this),
@@ -16938,6 +17042,7 @@ var Popover = (function ($) {
                     imageToLoad = document.createElement('img');
 
                 imageToLoad.onload = function() {
+
                     image
                         .animate({ opacity: 0 }, 100, function() {
                             image
@@ -16947,12 +17052,26 @@ var Popover = (function ($) {
                                         .removeAttr('data-lazy')
                                         .removeClass('slick-loading');
                                 });
+                            _.$slider.trigger('lazyLoaded', [_, image, imageSource]);
                         });
+
+                };
+
+                imageToLoad.onerror = function() {
+
+                    image
+                        .removeAttr( 'data-lazy' )
+                        .removeClass( 'slick-loading' )
+                        .addClass( 'slick-lazyload-error' );
+
+                    _.$slider.trigger('lazyLoadError', [ _, image, imageSource ]);
+
                 };
 
                 imageToLoad.src = imageSource;
 
             });
+
         }
 
         if (_.options.centerMode === true) {
@@ -16965,7 +17084,7 @@ var Popover = (function ($) {
             }
         } else {
             rangeStart = _.options.infinite ? _.options.slidesToShow + _.currentSlide : _.currentSlide;
-            rangeEnd = rangeStart + _.options.slidesToShow;
+            rangeEnd = Math.ceil(rangeStart + _.options.slidesToShow);
             if (_.options.fade === true) {
                 if (rangeStart > 0) rangeStart--;
                 if (rangeEnd <= _.slideCount) rangeEnd++;
@@ -17043,8 +17162,11 @@ var Popover = (function ($) {
 
         var _ = this;
 
-        _.paused = false;
         _.autoPlay();
+        _.options.autoplay = true;
+        _.paused = false;
+        _.focussed = false;
+        _.interrupted = false;
 
     };
 
@@ -17052,19 +17174,24 @@ var Popover = (function ($) {
 
         var _ = this;
 
-        _.$slider.trigger('afterChange', [_, index]);
+        if( !_.unslicked ) {
 
-        _.animating = false;
+            _.$slider.trigger('afterChange', [_, index]);
 
-        _.setPosition();
+            _.animating = false;
 
-        _.swipeLeft = null;
+            _.setPosition();
 
-        if (_.options.autoplay === true && _.paused === false) {
-            _.autoPlay();
-        }
-        if (_.options.accessibility === true) {
-            _.initADA();
+            _.swipeLeft = null;
+
+            if ( _.options.autoplay ) {
+                _.autoPlay();
+            }
+
+            if (_.options.accessibility === true) {
+                _.initADA();
+            }
+
         }
 
     };
@@ -17082,53 +17209,100 @@ var Popover = (function ($) {
     };
 
     Slick.prototype.preventDefault = function(event) {
+
         event.preventDefault();
+
     };
 
-    Slick.prototype.progressiveLazyLoad = function() {
+    Slick.prototype.progressiveLazyLoad = function( tryCount ) {
+
+        tryCount = tryCount || 1;
 
         var _ = this,
-            imgCount, targetImage;
+            $imgsToLoad = $( 'img[data-lazy]', _.$slider ),
+            image,
+            imageSource,
+            imageToLoad;
 
-        imgCount = $('img[data-lazy]', _.$slider).length;
+        if ( $imgsToLoad.length ) {
 
-        if (imgCount > 0) {
-            targetImage = $('img[data-lazy]', _.$slider).first();
-            targetImage.attr('src', null);
-            targetImage.attr('src', targetImage.attr('data-lazy')).removeClass('slick-loading').load(function() {
-                    targetImage.removeAttr('data-lazy');
+            image = $imgsToLoad.first();
+            imageSource = image.attr('data-lazy');
+            imageToLoad = document.createElement('img');
+
+            imageToLoad.onload = function() {
+
+                image
+                    .attr( 'src', imageSource )
+                    .removeAttr('data-lazy')
+                    .removeClass('slick-loading');
+
+                if ( _.options.adaptiveHeight === true ) {
+                    _.setPosition();
+                }
+
+                _.$slider.trigger('lazyLoaded', [ _, image, imageSource ]);
+                _.progressiveLazyLoad();
+
+            };
+
+            imageToLoad.onerror = function() {
+
+                if ( tryCount < 3 ) {
+
+                    /**
+                     * try to load the image 3 times,
+                     * leave a slight delay so we don't get
+                     * servers blocking the request.
+                     */
+                    setTimeout( function() {
+                        _.progressiveLazyLoad( tryCount + 1 );
+                    }, 500 );
+
+                } else {
+
+                    image
+                        .removeAttr( 'data-lazy' )
+                        .removeClass( 'slick-loading' )
+                        .addClass( 'slick-lazyload-error' );
+
+                    _.$slider.trigger('lazyLoadError', [ _, image, imageSource ]);
+
                     _.progressiveLazyLoad();
 
-                    if (_.options.adaptiveHeight === true) {
-                        _.setPosition();
-                    }
-                })
-                .error(function() {
-                    targetImage.removeAttr('data-lazy');
-                    _.progressiveLazyLoad();
-                });
+                }
+
+            };
+
+            imageToLoad.src = imageSource;
+
+        } else {
+
+            _.$slider.trigger('allImagesLoaded', [ _ ]);
+
         }
 
     };
 
     Slick.prototype.refresh = function( initializing ) {
 
-        var _ = this, currentSlide, firstVisible;
+        var _ = this, currentSlide, lastVisibleIndex;
 
-        firstVisible = _.slideCount - _.options.slidesToShow;
+        lastVisibleIndex = _.slideCount - _.options.slidesToShow;
 
-        // check that the new breakpoint can actually accept the
-        // "current slide" as the current slide, otherwise we need
-        // to set it to the closest possible value.
-        if ( !_.options.infinite ) {
-            if ( _.slideCount <= _.options.slidesToShow ) {
-                _.currentSlide = 0;
-            } else if ( _.currentSlide > firstVisible ) {
-                _.currentSlide = firstVisible;
-            }
+        // in non-infinite sliders, we don't want to go past the
+        // last visible index.
+        if( !_.options.infinite && ( _.currentSlide > lastVisibleIndex )) {
+            _.currentSlide = lastVisibleIndex;
         }
 
-         currentSlide = _.currentSlide;
+        // if less slides than to show, go to start.
+        if ( _.slideCount <= _.options.slidesToShow ) {
+            _.currentSlide = 0;
+
+        }
+
+        currentSlide = _.currentSlide;
 
         _.destroy(true);
 
@@ -17154,7 +17328,7 @@ var Popover = (function ($) {
         var _ = this, breakpoint, currentBreakpoint, l,
             responsiveSettings = _.options.responsive || null;
 
-        if ( $.type(responsiveSettings) === "array" && responsiveSettings.length ) {
+        if ( $.type(responsiveSettings) === 'array' && responsiveSettings.length ) {
 
             _.respondTo = _.options.respondTo || 'window';
 
@@ -17218,6 +17392,8 @@ var Popover = (function ($) {
         _.buildDots();
         _.updateDots();
         _.initDotEvents();
+        _.cleanUpSlideEvents();
+        _.initSlideEvents();
 
         _.checkResponsive(false, true);
 
@@ -17225,15 +17401,15 @@ var Popover = (function ($) {
             $(_.$slideTrack).children().on('click.slick', _.selectHandler);
         }
 
-        _.setSlideClasses(0);
+        _.setSlideClasses(typeof _.currentSlide === 'number' ? _.currentSlide : 0);
 
         _.setPosition();
+        _.focusHandler();
+
+        _.paused = !_.options.autoplay;
+        _.autoPlay();
 
         _.$slider.trigger('reInit', [_]);
-
-        if (_.options.autoplay === true) {
-            _.focusHandler();
-        }
 
     };
 
@@ -17398,33 +17574,100 @@ var Popover = (function ($) {
 
     };
 
-    Slick.prototype.setOption = Slick.prototype.slickSetOption = function(option, value, refresh) {
+    Slick.prototype.setOption =
+    Slick.prototype.slickSetOption = function() {
 
-        var _ = this, l, item;
+        /**
+         * accepts arguments in format of:
+         *
+         *  - for changing a single option's value:
+         *     .slick("setOption", option, value, refresh )
+         *
+         *  - for changing a set of responsive options:
+         *     .slick("setOption", 'responsive', [{}, ...], refresh )
+         *
+         *  - for updating multiple values at once (not responsive)
+         *     .slick("setOption", { 'option': value, ... }, refresh )
+         */
 
-        if( option === "responsive" && $.type(value) === "array" ) {
-            for ( item in value ) {
-                if( $.type( _.options.responsive ) !== "array" ) {
-                    _.options.responsive = [ value[item] ];
-                } else {
-                    l = _.options.responsive.length-1;
-                    // loop through the responsive object and splice out duplicates.
-                    while( l >= 0 ) {
-                        if( _.options.responsive[l].breakpoint === value[item].breakpoint ) {
-                            _.options.responsive.splice(l,1);
-                        }
-                        l--;
-                    }
-                    _.options.responsive.push( value[item] );
-                }
+        var _ = this, l, item, option, value, refresh = false, type;
+
+        if( $.type( arguments[0] ) === 'object' ) {
+
+            option =  arguments[0];
+            refresh = arguments[1];
+            type = 'multiple';
+
+        } else if ( $.type( arguments[0] ) === 'string' ) {
+
+            option =  arguments[0];
+            value = arguments[1];
+            refresh = arguments[2];
+
+            if ( arguments[0] === 'responsive' && $.type( arguments[1] ) === 'array' ) {
+
+                type = 'responsive';
+
+            } else if ( typeof arguments[1] !== 'undefined' ) {
+
+                type = 'single';
+
             }
-        } else {
-            _.options[option] = value;
+
         }
 
-        if (refresh === true) {
+        if ( type === 'single' ) {
+
+            _.options[option] = value;
+
+
+        } else if ( type === 'multiple' ) {
+
+            $.each( option , function( opt, val ) {
+
+                _.options[opt] = val;
+
+            });
+
+
+        } else if ( type === 'responsive' ) {
+
+            for ( item in value ) {
+
+                if( $.type( _.options.responsive ) !== 'array' ) {
+
+                    _.options.responsive = [ value[item] ];
+
+                } else {
+
+                    l = _.options.responsive.length-1;
+
+                    // loop through the responsive object and splice out duplicates.
+                    while( l >= 0 ) {
+
+                        if( _.options.responsive[l].breakpoint === value[item].breakpoint ) {
+
+                            _.options.responsive.splice(l,1);
+
+                        }
+
+                        l--;
+
+                    }
+
+                    _.options.responsive.push( value[item] );
+
+                }
+
+            }
+
+        }
+
+        if ( refresh ) {
+
             _.unload();
             _.reinit();
+
         }
 
     };
@@ -17658,18 +17901,15 @@ var Popover = (function ($) {
 
     };
 
-    Slick.prototype.setPaused = function(paused) {
+    Slick.prototype.interrupt = function( toggle ) {
 
         var _ = this;
 
-        if (_.options.autoplay === true && _.options.pauseOnHover === true) {
-            _.paused = paused;
-            if (!paused) {
-                _.autoPlay();
-            } else {
-                _.autoPlayClear();
-            }
+        if( !toggle ) {
+            _.autoPlay();
         }
+        _.interrupted = toggle;
+
     };
 
     Slick.prototype.selectHandler = function(event) {
@@ -17700,7 +17940,7 @@ var Popover = (function ($) {
     Slick.prototype.slideHandler = function(index, sync, dontAnimate) {
 
         var targetSlide, animSlide, oldSlide, slideLeft, targetLeft = null,
-            _ = this;
+            _ = this, navTarget;
 
         sync = sync || false;
 
@@ -17752,7 +17992,7 @@ var Popover = (function ($) {
             return;
         }
 
-        if (_.options.autoplay === true) {
+        if ( _.options.autoplay ) {
             clearInterval(_.autoPlayTimer);
         }
 
@@ -17780,6 +18020,17 @@ var Popover = (function ($) {
         _.currentSlide = animSlide;
 
         _.setSlideClasses(_.currentSlide);
+
+        if ( _.options.asNavFor ) {
+
+            navTarget = _.getNavTarget();
+            navTarget = navTarget.slick('getSlick');
+
+            if ( navTarget.slideCount <= navTarget.options.slidesToShow ) {
+                navTarget.setSlideClasses(_.currentSlide);
+            }
+
+        }
 
         _.updateDots();
         _.updateArrows();
@@ -17855,9 +18106,9 @@ var Popover = (function ($) {
         }
         if (_.options.verticalSwiping === true) {
             if ((swipeAngle >= 35) && (swipeAngle <= 135)) {
-                return 'left';
+                return 'down';
             } else {
-                return 'right';
+                return 'up';
             }
         }
 
@@ -17868,44 +18119,73 @@ var Popover = (function ($) {
     Slick.prototype.swipeEnd = function(event) {
 
         var _ = this,
-            slideCount;
+            slideCount,
+            direction;
 
         _.dragging = false;
+        _.interrupted = false;
+        _.shouldClick = ( _.touchObject.swipeLength > 10 ) ? false : true;
 
-        _.shouldClick = (_.touchObject.swipeLength > 10) ? false : true;
-
-        if (_.touchObject.curX === undefined) {
+        if ( _.touchObject.curX === undefined ) {
             return false;
         }
 
-        if (_.touchObject.edgeHit === true) {
-            _.$slider.trigger('edge', [_, _.swipeDirection()]);
+        if ( _.touchObject.edgeHit === true ) {
+            _.$slider.trigger('edge', [_, _.swipeDirection() ]);
         }
 
-        if (_.touchObject.swipeLength >= _.touchObject.minSwipe) {
+        if ( _.touchObject.swipeLength >= _.touchObject.minSwipe ) {
 
-            switch (_.swipeDirection()) {
+            direction = _.swipeDirection();
+
+            switch ( direction ) {
+
                 case 'left':
-                    slideCount = _.options.swipeToSlide ? _.checkNavigable(_.currentSlide + _.getSlideCount()) : _.currentSlide + _.getSlideCount();
-                    _.slideHandler(slideCount);
+                case 'down':
+
+                    slideCount =
+                        _.options.swipeToSlide ?
+                            _.checkNavigable( _.currentSlide + _.getSlideCount() ) :
+                            _.currentSlide + _.getSlideCount();
+
                     _.currentDirection = 0;
-                    _.touchObject = {};
-                    _.$slider.trigger('swipe', [_, 'left']);
+
                     break;
 
                 case 'right':
-                    slideCount = _.options.swipeToSlide ? _.checkNavigable(_.currentSlide - _.getSlideCount()) : _.currentSlide - _.getSlideCount();
-                    _.slideHandler(slideCount);
+                case 'up':
+
+                    slideCount =
+                        _.options.swipeToSlide ?
+                            _.checkNavigable( _.currentSlide - _.getSlideCount() ) :
+                            _.currentSlide - _.getSlideCount();
+
                     _.currentDirection = 1;
-                    _.touchObject = {};
-                    _.$slider.trigger('swipe', [_, 'right']);
+
                     break;
+
+                default:
+
+
             }
-        } else {
-            if (_.touchObject.startX !== _.touchObject.curX) {
-                _.slideHandler(_.currentSlide);
+
+            if( direction != 'vertical' ) {
+
+                _.slideHandler( slideCount );
                 _.touchObject = {};
+                _.$slider.trigger('swipe', [_, direction ]);
+
             }
+
+        } else {
+
+            if ( _.touchObject.startX !== _.touchObject.curX ) {
+
+                _.slideHandler( _.currentSlide );
+                _.touchObject = {};
+
+            }
+
         }
 
     };
@@ -18027,6 +18307,8 @@ var Popover = (function ($) {
 
         var _ = this,
             touches;
+
+        _.interrupted = true;
 
         if (_.touchObject.fingerCount !== 1 || _.slideCount <= _.options.slidesToShow) {
             _.touchObject = {};
@@ -18155,80 +18437,20 @@ var Popover = (function ($) {
 
         var _ = this;
 
-        if (document[_.hidden]) {
-            _.paused = true;
-            _.autoPlayClear();
-        } else {
-            if (_.options.autoplay === true) {
-                _.paused = false;
-                _.autoPlay();
+        if ( _.options.autoplay ) {
+
+            if ( document[_.hidden] ) {
+
+                _.interrupted = true;
+
+            } else {
+
+                _.interrupted = false;
+
             }
+
         }
 
-    };
-    Slick.prototype.initADA = function() {
-        var _ = this;
-        _.$slides.add(_.$slideTrack.find('.slick-cloned')).attr({
-            'aria-hidden': 'true',
-            'tabindex': '-1'
-        }).find('a, input, button, select').attr({
-            'tabindex': '-1'
-        });
-
-        _.$slideTrack.attr('role', 'listbox');
-
-        _.$slides.not(_.$slideTrack.find('.slick-cloned')).each(function(i) {
-            $(this).attr({
-                'role': 'option',
-                'aria-describedby': 'slick-slide' + _.instanceUid + i + ''
-            });
-        });
-
-        if (_.$dots !== null) {
-            _.$dots.attr('role', 'tablist').find('li').each(function(i) {
-                $(this).attr({
-                    'role': 'presentation',
-                    'aria-selected': 'false',
-                    'aria-controls': 'navigation' + _.instanceUid + i + '',
-                    'id': 'slick-slide' + _.instanceUid + i + ''
-                });
-            })
-                .first().attr('aria-selected', 'true').end()
-                .find('button').attr('role', 'button').end()
-                .closest('div').attr('role', 'toolbar');
-        }
-        _.activateADA();
-
-    };
-
-    Slick.prototype.activateADA = function() {
-        var _ = this;
-
-        _.$slideTrack.find('.slick-active').attr({
-            'aria-hidden': 'false'
-        }).find('a, input, button, select').attr({
-            'tabindex': '0'
-        });
-
-    };
-
-    Slick.prototype.focusHandler = function() {
-        var _ = this;
-        _.$slider.on('focus.slick blur.slick', '*', function(event) {
-            event.stopImmediatePropagation();
-            var sf = $(this);
-            setTimeout(function() {
-                if (_.isPlay) {
-                    if (sf.is(':focus')) {
-                        _.autoPlayClear();
-                        _.paused = true;
-                    } else {
-                        _.paused = false;
-                        _.autoPlay();
-                    }
-                }
-            }, 0);
-        });
     };
 
     $.fn.slick = function() {
@@ -24342,7 +24564,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 },"useData":true});
 // ==========================================================================
 // Plyr
-// plyr.js v1.6.20
+// plyr.js v1.8.2
 // https://github.com/selz/plyr
 // License: The MIT License (MIT)
 // ==========================================================================
@@ -24386,7 +24608,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         displayDuration:        true,
         loadSprite:             true,
         iconPrefix:             'plyr',
-        iconUrl:                'https://cdn.plyr.io/1.6.20/plyr.svg',
+        iconUrl:                'https://cdn.plyr.io/1.8.2/plyr.svg',
         clickToPlay:            true,
         hideControls:           true,
         showPosterOnEnd:        false,
@@ -24396,6 +24618,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             seek:               true
         },
         selectors: {
+            html5:              'video, audio',
+            embed:              '[data-type]',
             container:          '.plyr',
             controls: {
                 container:      null,
@@ -24515,51 +24739,61 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     // Credits: http://paypal.github.io/accessible-html5-video-player/
     // Unfortunately, due to mixed support, UA sniffing is required
     function _browserSniff() {
-        var nAgt = navigator.userAgent,
+        var ua = navigator.userAgent,
             name = navigator.appName,
             fullVersion = '' + parseFloat(navigator.appVersion),
             majorVersion = parseInt(navigator.appVersion, 10),
             nameOffset,
             verOffset,
-            ix;
+            ix,
+            isIE = false,
+            isFirefox = false,
+            isChrome = false,
+            isSafari = false;
 
         // MSIE 11
         if ((navigator.appVersion.indexOf('Windows NT') !== -1) && (navigator.appVersion.indexOf('rv:11') !== -1)) {
+            isIE = true;
             name = 'IE';
             fullVersion = '11;';
         }
         // MSIE
-        else if ((verOffset=nAgt.indexOf('MSIE')) !== -1) {
+        else if ((verOffset = ua.indexOf('MSIE')) !== -1) {
+            isIE = true;
             name = 'IE';
-            fullVersion = nAgt.substring(verOffset + 5);
+            fullVersion = ua.substring(verOffset + 5);
         }
         // Chrome
-        else if ((verOffset=nAgt.indexOf('Chrome')) !== -1) {
+        else if ((verOffset = ua.indexOf('Chrome')) !== -1) {
+            isChrome = true;
             name = 'Chrome';
-            fullVersion = nAgt.substring(verOffset + 7);
+            fullVersion = ua.substring(verOffset + 7);
         }
         // Safari
-        else if ((verOffset=nAgt.indexOf('Safari')) !== -1) {
+        else if ((verOffset = ua.indexOf('Safari')) !== -1) {
+            isSafari = true;
             name = 'Safari';
-            fullVersion = nAgt.substring(verOffset + 7);
-            if ((verOffset = nAgt.indexOf('Version')) !== -1) {
-                fullVersion = nAgt.substring(verOffset + 8);
+            fullVersion = ua.substring(verOffset + 7);
+            if ((verOffset = ua.indexOf('Version')) !== -1) {
+                fullVersion = ua.substring(verOffset + 8);
             }
         }
         // Firefox
-        else if ((verOffset=nAgt.indexOf('Firefox')) !== -1) {
+        else if ((verOffset = ua.indexOf('Firefox')) !== -1) {
+            isFirefox = true;
             name = 'Firefox';
-            fullVersion = nAgt.substring(verOffset + 8);
+            fullVersion = ua.substring(verOffset + 8);
         }
         // In most other browsers, 'name/version' is at the end of userAgent
-        else if ((nameOffset=nAgt.lastIndexOf(' ') + 1) < (verOffset=nAgt.lastIndexOf('/'))) {
-            name = nAgt.substring(nameOffset,verOffset);
-            fullVersion = nAgt.substring(verOffset + 1);
+        else if ((nameOffset = ua.lastIndexOf(' ') + 1) < (verOffset = ua.lastIndexOf('/'))) {
+            name = ua.substring(nameOffset,verOffset);
+            fullVersion = ua.substring(verOffset + 1);
 
             if (name.toLowerCase() == name.toUpperCase()) {
                 name = navigator.appName;
             }
         }
+
         // Trim the fullVersion string at semicolon/space if present
         if ((ix = fullVersion.indexOf(';')) !== -1) {
             fullVersion = fullVersion.substring(0, ix);
@@ -24567,6 +24801,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         if ((ix = fullVersion.indexOf(' ')) !== -1) {
             fullVersion = fullVersion.substring(0, ix);
         }
+
         // Get major version
         majorVersion = parseInt('' + fullVersion, 10);
         if (isNaN(majorVersion)) {
@@ -24578,6 +24813,10 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         return {
             name:       name,
             version:    majorVersion,
+            isIE:       isIE,
+            isFirefox:  isFirefox,
+            isChrome:   isChrome,
+            isSafari:   isSafari,
             ios:        /(iPad|iPhone|iPod)/g.test(navigator.platform),
             touch:      'ontouchstart' in document.documentElement
         };
@@ -24665,6 +24904,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             else {
                 parent.appendChild(child);
             }
+
+            return child;
         }
     }
 
@@ -24744,6 +24985,17 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             }
         }
         return false;
+    }
+
+    // Element matches selector
+    function _matches(element, selector) {
+        var p = Element.prototype;
+
+        var f = p.matches || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || function(s) {
+            return [].indexOf.call(document.querySelectorAll(s), this) !== -1;
+        };
+
+        return f.call(element, selector);
     }
 
     // Bind event
@@ -25251,8 +25503,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
                 // Disable unsupported browsers than report false positive
                 // Firefox bug: https://bugzilla.mozilla.org/show_bug.cgi?id=1033144
-                if ((plyr.browser.name === 'IE' && plyr.browser.version >= 10) ||
-                    (plyr.browser.name === 'Firefox' && plyr.browser.version >= 31)) {
+                if ((plyr.browser.isIE && plyr.browser.version >= 10) ||
+                    (plyr.browser.isFirefox && plyr.browser.version >= 31)) {
 
                     // Debugging
                     _log('Detected browser with known TextTrack issues - using manual fallback');
@@ -25518,15 +25770,16 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         function _injectControls() {
             // Sprite
             if (config.loadSprite) {
-                var iconUrl = _getIconUrl();
+                var iconUrl = _getIconUrl(),
+                    isExternal = iconUrl.external;
 
                 // Only load external sprite using AJAX
-                if (iconUrl.external) {
-                    _log('Loading external SVG sprite');
+                if (isExternal || plyr.browser.isIE) {
+                    _log('AJAX loading external SVG sprite' + (plyr.browser.isIE ? ' (due to IE)' : ''));
                     loadSprite(iconUrl.url, "sprite-plyr");
                 }
                 else {
-                    _log('Sprite will be used inline');
+                    _log('Sprite will be used as external resource directly');
                 }
             }
 
@@ -26368,7 +26621,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             _toggleState(plyr.buttons.fullscreen, plyr.isFullscreen);
 
             // Trigger an event
-            _triggerEvent(plyr.container, plyr.isFullscreen ? 'enterfullscreen' : 'exitfullscreen');
+            _triggerEvent(plyr.container, plyr.isFullscreen ? 'enterfullscreen' : 'exitfullscreen', true);
 
             // Restore scroll position
             if (!plyr.isFullscreen && nativeSupport) {
@@ -26556,7 +26809,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             _toggleClass(plyr.container, config.classes.captions.active, plyr.captionsEnabled);
 
             // Trigger an event
-            _triggerEvent(plyr.container, plyr.captionsEnabled ? 'captionsenabled' : 'captionsdisabled');
+            _triggerEvent(plyr.container, plyr.captionsEnabled ? 'captionsenabled' : 'captionsdisabled', true);
         }
 
         // Check if media is loading
@@ -27042,7 +27295,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         // Listen for control events
         function _controlListeners() {
             // IE doesn't support input event, so we fallback to change
-            var inputEvent = (plyr.browser.name == 'IE' ? 'change' : 'input');
+            var inputEvent = (plyr.browser.isIE ? 'change' : 'input');
 
             // Click play/pause helper
             function _togglePlay() {
@@ -27387,7 +27640,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
             // Get the div placeholder for YouTube and Vimeo
             if (!plyr.media) {
-                plyr.media = plyr.container.querySelectorAll('div')[0];
+                plyr.media = plyr.container.querySelectorAll('[data-type]')[0];
             }
 
             // Bail if nothing to setup
@@ -27521,7 +27774,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             _displayDuration();
 
             // Ready event
-            _triggerEvent(plyr.container, 'ready');
+            _triggerEvent(plyr.container, 'ready', true);
         }
 
         // Initialize instance
@@ -27589,7 +27842,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     // Check for support
     function supported(type) {
         var browser = _browserSniff(),
-            oldIE   = (browser.name === 'IE' && browser.version <= 9),
+            oldIE   = (browser.isIE && browser.version <= 9),
             iPhone  = /iPhone|iPod/i.test(navigator.userAgent),
             audio   = !!document.createElement('audio').canPlayType,
             video   = !!document.createElement('video').canPlayType,
@@ -27625,45 +27878,82 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     }
 
     // Setup function
-    function setup(elements, options) {
+    function setup(targets, options) {
         // Get the players
-        var instances = [];
+        var elements    = [],
+            containers  = [],
+            selector    = [defaults.selectors.html5, defaults.selectors.embed].join(',');
 
         // Select the elements
         // Assume elements is a NodeList by default
-        if (typeof elements === 'string') {
-            elements = document.querySelectorAll(elements);
+        if (typeof targets === 'string') {
+            targets = document.querySelectorAll(targets);
         }
         // Single HTMLElement passed
-        else if (elements instanceof HTMLElement) {
-            elements = [elements];
+        else if (targets instanceof HTMLElement) {
+            targets = [targets];
         }
         // No selector passed, possibly options as first argument
-        else if (!(elements instanceof NodeList) && typeof elements !== 'string')  {
+        else if (!(targets instanceof NodeList) && typeof targets !== 'string')  {
             // If options are the first argument
-            if (typeof options === 'undefined' && typeof elements === 'object') {
-                options = elements;
+            if (typeof options === 'undefined' && typeof targets === 'object') {
+                options = targets;
             }
 
             // Use default selector
-            elements = document.querySelectorAll(defaults.selectors.container);
+            targets = document.querySelectorAll(selector);
         }
 
         // Bail if disabled or no basic support
         // You may want to disable certain UAs etc
-        if (!supported().basic || !elements.length) {
+        if (!supported().basic || !targets.length) {
             return false;
         }
 
+        // Convert NodeList to array
+        if (targets instanceof NodeList) {
+            targets = Array.prototype.slice.call(targets);
+        }
+
+        // Check if the targets have multiple media elements
+        for (var i = 0; i < targets.length; i++) {
+            var target = targets[i];
+
+            // Get children
+            var children = target.querySelectorAll(selector);
+
+            // If there's more than one media element, wrap them
+            if (children.length > 1) {
+                for (var x = 0; x < children.length; x++) {
+                    containers.push({
+                        element: _wrap(children[x], document.createElement('div')),
+                        original: target
+                    });
+                }
+            }
+            else {
+                containers.push({
+                    element: target
+                });
+            }
+        }
+
         // Create a player instance for each element
-        for (var i = 0; i < elements.length; i++) {
-            // Get the current element
-            var element = elements[i];
+        for (var key in containers) {
+            var element = containers[key].element,
+                original = containers[key].original || element;
+
+            // Wrap each media element if is target is media element
+            // as opposed to a wrapper
+            if (_matches(element, selector)) {
+                // Wrap in a <div>
+                element = _wrap(element, document.createElement('div'));
+            }
 
             // Setup a player instance and add to the element
-            if (typeof element.plyr === 'undefined') {
+            if (!('plyr' in element)) {
                 // Create instance-specific config
-                var config = _extend(defaults, options, JSON.parse(element.getAttribute("data-plyr")));
+                var config = _extend({}, defaults, options, JSON.parse(original.getAttribute('data-plyr')));
 
                 // Bail if not enabled
                 if (!config.enabled) {
@@ -27677,14 +27967,16 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 element.plyr = (Object.keys(instance).length ? instance : false);
 
                 // Callback
-                _triggerEvent(element, 'setup', { plyr: element.plyr });
+                _triggerEvent(original, 'setup', true, { 
+                    plyr: element.plyr 
+                });
             }
 
             // Add to return array even if it's already setup
-            instances.push(element.plyr);
+            elements.push(element);
         }
 
-        return instances;
+        return elements;
     }
 
     return {
@@ -27909,7 +28201,7 @@ if(!_this.plyr){window.KENT.log('[Video player] Init Plyr');_this.boot();} // Sh
 if(!_this.container.hasClass('playing')){_this.show();}});}; /**
 		 * When user attempts to play video, initalise video player instance
 		 */this.boot=function(){var _this2=this; // Generate plyr instance
-this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls})[0]; // Hookup events
+this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0].plyr; // Hookup events
 this.video.on('ready',function(){_this2.setupTranscript();});this.video.on('pause',function(){ // hide on pause if not full screen
 if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen',function(){_this2.hide();});this.video.on('ended',function(){_this2.hide();});}; /**
 		 * Setup transcription link

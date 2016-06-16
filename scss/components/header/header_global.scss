@@ -92,7 +92,7 @@
                         &:after {
                             position:    absolute;
                             display:     inline-block;
-                            content:     $kf-chevron-right;
+                            content:     $kf-angle-right;
                             right:       0;
                             font-family: $font-family-kentfont;
                             height:      3rem;
@@ -351,6 +351,33 @@
         }
     }
 
+}
+
+.brand-header{
+    .global-nav {
+        @include media-breakpoint-up(md) {
+            background-color: $brand-primary;
+            border-top:       1px solid lighten($brand-primary, 6%);
+        }
+
+        .main-logo{
+            color: #FFF;
+        }
+
+        .global-nav-links {
+            .global-nav-link {
+                @include media-breakpoint-up(md) {
+                    background-color: $brand-primary;
+                    a {
+                        color: #fff;
+                    }
+                    nav .nav-link .global-nav-link-title{
+                        color: $brand-primary;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .show-global-menu, .show-global-search {

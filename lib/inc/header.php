@@ -65,7 +65,7 @@
 
 		<?php echo $head_markup ;?>
 	</head>
-	<body class="<?php echo !empty($home_page) ? ' global-header-transparent"' :'' ; ?><?php echo ($slim)?' slim-header':''; ?>">
+	<body class="<?php echo !empty($home_page) ? ' global-header-transparent"' :'' ; ?><?php echo ($slim)?' slim-header':''; ?><?php echo ($brand_header)?' brand-header':''; ?>">
 		<?php if(!$home_page){ ?>
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
 		<?php } ?>
@@ -87,7 +87,7 @@
 		<?php } ?>
 		<header class="global-header" role="navigation">
 			<section id="kentBar" class="audience-bar navbar" role="menubar">
-				<a class="navbar-brand kf-kent-horizontal" href="<?php echo HOME_URL; ?>" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a><span class="tag-line">The UK's European university</span><button class="menu-button" aria-controls="global-nav-menu" aria-expanded="false"><span class="sr-only">Open main menu</span></button><button class="search-button" aria-controls="global-nav-search" aria-expanded="false"><span class="sr-only">Open search</span></button><button class="audience-menu kf-user"></button><nav class="audience-nav-links" role="menu">
+				<a class="navbar-brand kf-kent-horizontal" href="<?php echo HOME_URL; ?>" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a><span class="tag-line">The UK's European university</span><button class="menu-button" aria-controls="global-nav-menu" aria-expanded="false"><span class="sr-only">Open main menu</span></button><button class="search-button" aria-controls="global-nav-search" aria-expanded="false"><span class="sr-only">Open search</span></button><button class="audience-menu kf-user"><span class="sr-only">Open audience menu</span></button><nav class="audience-nav-links" role="menu">
 					<a href="#" data-action="student" role="menuitem">Student</a>
 					<a href="#" data-action="staff" role="menuitem">Staff</a>
 					<a href="//www.kent.ac.uk/alumni/" role="menuitem">Alumni</a>
@@ -131,10 +131,12 @@
 			<?php if(!$home_page){ ?>
 				<section class="departmental-nav<?php echo ($slim)?' slim':''; ?>" id="section_menu">
 					<header><?php echo $title; ?></header>
-					<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
-					<nav class="navbar-menu" id="navbar-menu" role="menu">
-						<?php echo $menu_links; ?>
-					</nav>
+					<?php if(!empty($menu_links)): ?>
+						<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
+						<nav class="navbar-menu" id="navbar-menu" role="menu">
+							<?php echo $menu_links; ?>
+						</nav>
+					<?php endif; ?>
 				</section>
 			<?php }else{
 			?>

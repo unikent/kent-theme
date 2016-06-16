@@ -58,7 +58,7 @@
 		<script src="//beta.kent.ac.uk/assets/js/modernizr.min.js"></script>
 
 			</head>
-	<body class=" slim-header">
+	<body class=" slim-header brand-header">
 				<a href="#section_menu" class="sr-only">Jump to section menu</a>
 				<a href="#main_content" class="sr-only">Jump to content</a>
 				<header class="global-header" role="navigation">
@@ -184,13 +184,13 @@
 			</section>
 							<section class="departmental-nav slim" id="section_menu">
 					<header>Pattern Library</header>
-					<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
-					<nav class="navbar-menu" id="navbar-menu" role="menu">
-						<a href="//beta.kent.ac.uk/patterns/index.html">Home</a>
-						<a href="//beta.kent.ac.uk/patterns/principles.html">Guiding Principles</a>
-						<a href="//beta.kent.ac.uk/patterns/technical.html">Technical Documentation</a>
-					</nav>
-				</section>
+											<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
+						<nav class="navbar-menu" id="navbar-menu" role="menu">
+							<a href="//beta.kent.ac.uk/patterns/index.html">Home</a>
+							<a href="//beta.kent.ac.uk/patterns/principles.html">Guiding Principles</a>
+							<a href="//beta.kent.ac.uk/patterns/technical.html">Technical Documentation</a>
+						</nav>
+									</section>
 					</header>
 
 		<main id="main_content" class="content-page" role="main">
@@ -204,15 +204,14 @@
 	</div>
 	<div class="content-container">
 		<div class="content-main">
-		<p class="lead"></p>
+		<p class="lead">Feature layouts act as scaffolding for presenting navigation to featured content.</p>
 		<nav class="jump-links">
 			<p class="h5">On this page</p>
 			<a href="#standard-feature-layout">Standard feature layout</a>
 			<a href="#twin-feature">Twin feature</a>
+			<a href="#overlay-feature-with-grid">Overlay feature with grid</a>
 			<a href="#feature-with-list">Feature with list</a>
 			<a href="#feature-with-grid">Feature with grid</a>
-			<a href="#overlay-feature-with-grid">Overlay feature with grid</a>
-			<a href="#overlay-feature-with-list">Overlay feature with list</a>
 		</nav>		</div>
 		<aside class="content-aside">
 			<nav>
@@ -226,19 +225,307 @@
 		</aside>	</div>
 
 		
-
 <div class="content-container">
 	<div class="content-main">
 
-		<h2 id="standard-feature-layout"><!-- standard-feature-layout -->Standard feature layout</h2>
-		<h2 id="twin-feature"><!-- twin-feature -->Twin feature</h2>
-		<h2 id="feature-with-list"><!-- feature-with-list -->Feature with list</h2>
-		<h2 id="feature-with-grid"><!-- feature-with-grid -->Feature with grid</h2>
-		<h2 id="overlay-feature-with-grid"><!-- overlay-feature-with-grid -->Overlay feature with grid</h2>
-		<h2 id="overlay-feature-with-list"><!-- overlay-feature-with-list -->Overlay feature with list</h2>
+		<h2 class="pattern" id="standard-feature-layout"><!-- standard-feature-layout -->Standard feature layout</h2>
+		<p>Four featured items made of an image, heading, description and meta data. They can contain a group heading</p>
+
+		<p>The panel background colour can be changed to soft gold, soft grey, soft blue or dark primary blue.</p>
 
 	</div>
 </div>
+
+<div class="card-panel">
+	<div class="card-panel-header">
+		<h2 class="card-panel-title" id="group-heading"><!-- group-heading -->Group heading</h2>
+	</div>
+	<div class="card-panel-body">
+		<div class="card card-linked">
+			<img class="card-img" src="/media/images/promo-1.jpg">
+			<a href="#title" class="card-title-link"><h3 class="card-title" id="academic-excellence"><!-- academic-excellence -->Academic excellence</h3></a>
+			<p class="card-text">We rank amongst the best in the UK. Find out why we&apos;re more prestigious than many in the Russel Group.</p>
+			<a href="#overlay" class="faux-link-overlay" aria-hidden="true">Academic excellence</a>
+		</div>
+		<div class="card card-linked">
+			<img class="card-img" src="/media/images/promo-2.jpg">
+			<a href="#title" class="card-title-link"><h3 class="card-title" id="undergraduates"><!-- undergraduates -->Undergraduates</h3></a>
+			<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+			<a href="#overlay" class="faux-link-overlay" aria-hidden="true">Undergraduates</a>
+		</div>
+		<div class="card card-linked">
+			<img class="card-img" src="/media/images/promo-3.jpg">
+			<a href="#title" class="card-title-link"><h3 class="card-title" id="postgraduates"><!-- postgraduates -->Postgraduates</h3></a>
+			<p class="card-text">We&apos;ll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+			<a href="#overlay" class="faux-link-overlay" aria-hidden="true"></a>
+		</div>
+		<div class="card card-linked">
+			<img class="card-img" src="/media/images/promo-4.jpg">
+			<a href="#title" class="card-title-link"><h3 class="card-title" id="visit-kent"><!-- visit-kent -->Visit Kent</h3></a>
+			<p class="card-text">We&apos;re ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+			<a href="#overlay" class="faux-link-overlay" aria-hidden="true">Visit Kent</a>
+		</div>
+	</div>
+</div>
+
+<div class="card-panel card-panel-primary cards-backed m-b-5">
+	<div class="card-panel-header">
+		<h2 class="card-panel-title" id="popular"><!-- popular -->Popular</h2>
+	</div>
+	<div class="card-panel-body">
+		<div class="card card-linked">
+			<img class="card-img" src="https://static.kent.ac.uk/media/news/2016/03/dyslexia4-e1458047431708.jpg" alt="">
+			<a href="/news/kentlife/9205/national-launch-of-the-dyslexic-academic-network" class="card-title-link">
+				<h3 class="card-title" id="national-launch-of-the-dyslexic-academic-network"><!-- national-launch-of-the-dyslexic-academic-network -->National launch of the Dyslexic Academic Network</h3></a>
+			<p class="card-meta">15 March 2016</p>
+			<a href="/news/kentlife/9205/national-launch-of-the-dyslexic-academic-network" class="faux-link-overlay" aria-hidden="true">National launch of the Dyslexic Academic Network</a>
+		</div>
+		<div class="card card-linked">
+			<img class="card-img" src="https://static.kent.ac.uk/media/news/2016/03/Depression_in_women-e1458035344573.jpg" alt="">
+			<a href="/news/society/9193/postnatal-depression-makes-mothers-reluctant-to-have-more-children" class="card-title-link">
+				<h3 class="card-title" id="postnatally-depressed-mothers-reluctant-to-have-more-children"><!-- postnatally-depressed-mothers-reluctant-to-have-more-children -->Postnatally depressed mothers reluctant to have more children</h3></a>
+			<p class="card-meta">15 March 2016</p>
+			<a href="/news/society/9193/postnatal-depression-makes-mothers-reluctant-to-have-more-children" class="faux-link-overlay" aria-hidden="true">Postnatally depressed mothers reluctant to have more children</a>
+		</div>
+		<div class="card card-linked">
+			<img class="card-img" src="https://static.kent.ac.uk/media/news/2015/07/Graduation-at-Canterbury-Cathedral-e1441276703394.jpg" alt="">
+			<a href="/news/kentlife/6871/kent-shortlisted-for-university-of-the-year-in-the-awards-2015" class="card-title-link">
+				<h3 class="card-title" id="kent-shortlisted-for-university-of-the-year-2015"><!-- kent-shortlisted-for-university-of-the-year-2015 -->Kent shortlisted for University of the Year 2015</h3></a>
+			<p class="card-meta">26 November 2015</p>
+			<a href="/news/kentlife/6871/kent-shortlisted-for-university-of-the-year-in-the-awards-2015" class="faux-link-overlay" aria-hidden="true">Kent shortlisted for University of the Year 2015</a>
+		</div>
+		<div class="card card-linked">
+			<img class="card-img" src="https://static.kent.ac.uk/media/news/2016/01/PROJECTIONS_ClioBarnard-2-e1452677926590.jpg" alt="">
+			<a href="/news/culture/9110/yoko-ono-contributes-to-international-festival-of-projections" class="card-title-link">
+				<h3 class="card-title" id="yoko-ono-contributes-to-festival-of-projections"><!-- yoko-ono-contributes-to-festival-of-projections -->Yoko Ono contributes to Festival of Projections</h3></a>
+			<p class="card-meta">9 March 2016</p>
+			<a href="/news/culture/9110/yoko-ono-contributes-to-international-festival-of-projections" class="faux-link-overlay" aria-hidden="true">Yoko Ono contributes to Festival of Projections</a>
+		</div>
+	</div>
+</div>
+
+<div class="content-container">
+	<div class="content-main">
+		<h3 id="keep-content-length-short-and-equal"><!-- keep-content-length-short-and-equal -->Keep content length short and equal</h3>
+		<p>These feature are for giving a
+			<em>short teaser</em> of the content that it links to. Keep them brief and focussed.</p>
+		<p>Keep the design looking neat and balanced by using equal amounts of content for each feature. If headings and description text vary, the visual design will look unbalanced and messy. Follow the guidelines below for suggested character limits.</p>
+
+		<h3 id="image"><!-- image -->Image</h3>
+		<p>You need to prepare an image to the aspect ratio of 3:2 (1024x683px).</p>
+
+		<h3 id="heading"><!-- heading -->Heading</h3>
+		<p>Keep headings as short and focussed as possible. On a desktop, try avoid going on to three lines, but 1-2 lines is best, (about 55 characters). </p>
+
+		<h3 id="description"><!-- description -->Description</h3>
+		<p>On a desktop 2-3 lines is best (about 85 characters), 4 lines maximum.</p>
+
+		<h2 class="pattern" id="twin-feature"><!-- twin-feature -->Twin feature</h2>
+		<p>Two featured items made of an image, heading, description and meta data.</p>
+	</div>
+</div>
+
+<div class="card-panel">
+	<div class="card-panel-body">
+		<div class="card-panel-single">
+			<div class="card">
+				<img class="card-img" src="https://static.kent.ac.uk/media/news/2015/12/5670095730_2bb410e684_o-Puerto-Rican-Parrot-e1449841774142.jpg">
+				<h3 class="card-title" id="academic-excellence-1"><!-- academic-excellence-1 -->Academic excellence</h3>
+				<p class="card-text">We rank amongst the best in the UK. Find out why we&apos;re more prestigious than many in the Russel Group.</p>
+			</div>
+		</div>
+		<div class="card-panel-single">
+			<div class="card">
+				<img class="card-img" src="https://static.kent.ac.uk/media/news/2015/05/IMG_4960-e1430986200859-1024x684.jpg">
+				<h3 class="card-title" id="undergraduates-1"><!-- undergraduates-1 -->Undergraduates</h3>
+				<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="content-container">
+	<div class="content-main">
+		<h2 class="pattern" id="overlay-feature-with-grid"><!-- overlay-feature-with-grid -->Overlay feature with grid</h2>
+	</div>
+</div>
+
+<div class="card-panel m-b-5">
+	<div class="card-panel-body">
+		<div class="card-panel-full">
+			<div class="card">
+				<img class="card-img" src="/media/images/dorsay-clock-3x2.jpg">
+				<div class="card-img-overlay-bottom-shaded">
+					<h3 class="card-title" id="primary-feature-heading"><!-- primary-feature-heading -->Primary feature heading</h3>
+					<p class="card-subtitle">Short description text.</p>
+				</div>
+			</div>
+		</div>
+		<div class="card-panel-grid">
+			<div class="card">
+				<h2 class="card-title" id="heading-1"><!-- heading-1 -->Heading</h2>
+				<p class="card-text">Short description text.</p>
+			</div>
+			<div class="card">
+				<h2 class="card-title" id="heading-2"><!-- heading-2 -->Heading</h2>
+				<p class="card-text">Short description text.</p>
+			</div>
+			<div class="card">
+				<h2 class="card-title" id="heading-3"><!-- heading-3 -->Heading</h2>
+				<p class="card-text">Short description text.</p>
+			</div>
+			<div class="card">
+				<h2 class="card-title" id="heading-4"><!-- heading-4 -->Heading</h2>
+				<p class="card-text">Short description text.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="content-container">
+	<div class="content-main">
+		<h3 id="-example-with-primary-feature-on-the-right"><!-- -example-with-primary-feature-on-the-right --> Example with primary feature on the right</h3><br><br>
+	</div>
+</div>
+
+<div class="card-panel card-panel-tertiary m-b-5">
+	<div class="card-panel-body">
+
+		<div class="card-panel-grid">
+			<div class="card">
+				<h2 class="card-title" id="heading-5"><!-- heading-5 -->Heading</h2>
+				<p class="card-text">Short description text.</p>
+			</div>
+			<div class="card">
+				<h2 class="card-title" id="heading-6"><!-- heading-6 -->Heading</h2>
+				<p class="card-text">Short description text.</p>
+			</div>
+			<div class="card">
+				<h2 class="card-title" id="heading-7"><!-- heading-7 -->Heading</h2>
+				<p class="card-text">Short description text.</p>
+			</div>
+			<div class="card">
+				<h2 class="card-title" id="heading-8"><!-- heading-8 -->Heading</h2>
+				<p class="card-text">Short description text.</p>
+			</div>
+		</div>
+
+		<div class="card-panel-full">
+			<div class="card">
+				<img class="card-img" src="/media/images/bone-3x2.jpg">
+				<div class="card-img-overlay-bottom-shaded">
+					<h3 class="card-title" id="primary-feature-heading-1"><!-- primary-feature-heading-1 -->Primary feature heading</h3>
+					<p class="card-subtitle">Short description text.</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="content-container">
+	<div class="content-main">
+		<h3 id="-example-with-two-secondary-features-with-images"><!-- -example-with-two-secondary-features-with-images --> Example with two secondary features with images</h3><br><br>
+	</div>
+</div>
+
+<div class="card-panel m-b-5">
+	<div class="card-panel-body">
+		<div class="card-panel-full">
+			<div class="card">
+				<img class="card-img" src="/media/images/dorsay-clock-3x2.jpg">
+				<div class="card-img-overlay-bottom-shaded">
+					<h3 class="card-title" id="primary-feature-heading-2"><!-- primary-feature-heading-2 -->Primary feature heading</h3>
+					<p class="card-subtitle">Short description text.</p>
+				</div>
+			</div>
+		</div>
+		<div class="card-panel-grid">
+			<div class="card">
+				<img class="card-img" src="/media/images/kent-union-team-3x2.jpg">
+				<h3 class="card-title" id="undergraduates-2"><!-- undergraduates-2 -->Undergraduates</h3>
+				<p class="card-text">We have a renowned personal teaching style.</p>
+			</div>
+			<div class="card">
+				<img class="card-img" src="/media/images/templeman-3x2.jpg">
+				<h3 class="card-title" id="postgraduates-1"><!-- postgraduates-1 -->Postgraduates</h3>
+				<p class="card-text">We&apos;ll equip you with essential skills.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="content-container">
+	<div class="content-main">
+		<h2 class="pattern" id="feature-with-list"><!-- feature-with-list -->Feature with list</h2>
+		<p>Primary feature with three secondary features aranged in a list.</p>
+	</div>
+</div>
+
+<div class="card-panel card-panel-tertiary m-b-5">
+	<div class="card-panel-body">
+		<div class="card-panel-single">
+			<div class="card">
+				<img class="card-img" src="/media/images/growing-plant-3x2.jpg">
+				<h3 class="card-title" id="academic-excellence-2"><!-- academic-excellence-2 -->Academic excellence</h3>
+				<p class="card-text">We rank amongst the best in the UK. Find out why we&apos;re more prestigious than many in the Russel Group.</p>
+			</div>
+		</div>
+		<div class="card-panel-list">
+			<div class="card">
+				<img class="card-img" src="/media/images/kent-union-rock-climber-3x2.jpg">
+				<h3 class="card-title" id="undergraduates-3"><!-- undergraduates-3 -->Undergraduates</h3>
+				<p class="card-text">We have a renowned personal teaching style supported by our accessible and passionate academics.</p>
+			</div>
+			<div class="card">
+				<img class="card-img" src="/media/images/louvre-3x2.jpg">
+				<h3 class="card-title" id="postgraduates-2"><!-- postgraduates-2 -->Postgraduates</h3>
+				<p class="card-text">We&apos;ll equip you with essential skills to give you a competitive advantage when it comes to your career.</p>
+			</div>
+			<div class="card">
+				<img class="card-img" src="/media/images/promo-4.jpg">
+				<h3 class="card-title" id="visit-kent-1"><!-- visit-kent-1 -->Visit Kent</h3>
+				<p class="card-text">We&apos;re ranked one of the best universities for student satisfaction. Learn more why our students love Kent.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="content-container">
+	<div class="content-main">
+		<h2 class="pattern" id="feature-with-grid"><!-- feature-with-grid -->Feature with grid</h2>
+		<p>Primary feature with four secondary features aranged in a grid.</p>
+	</div>
+</div>
+
+<div class="card-panel card-panel-primary-tint m-b-5">
+	<div class="card-panel-body">
+		<div class="card-panel-single">
+			<div class="card">
+				<img class="card-img" src="/media/images/robotics-3x2.jpg">
+				<h3 class="card-title" id="academic-excellence-3"><!-- academic-excellence-3 -->Academic excellence</h3>
+				<p class="card-text">We rank amongst the best in the UK. Find out why we&apos;re more prestigious than many in the Russel Group.</p>
+			</div>
+		</div>
+		<div class="card-panel-grid">
+			<div class="card">
+				<img class="card-img" src="/media/images/kent-union-team-3x2.jpg">
+				<h3 class="card-title" id="undergraduates-4"><!-- undergraduates-4 -->Undergraduates</h3>
+				<p class="card-text">We have a renowned personal teaching style.</p>
+			</div>
+			<div class="card">
+				<img class="card-img" src="/media/images/templeman-3x2.jpg">
+				<h3 class="card-title" id="postgraduates-3"><!-- postgraduates-3 -->Postgraduates</h3>
+				<p class="card-text">We&apos;ll equip you with essential skills.</p>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+
 
 		<br>
 		<br>
@@ -276,7 +563,7 @@
 							</div>
 						</div>
 						<div class="col-md-6">
-							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-open-days" aria-controls="footer-open-days" aria-expanded="false"  data-parent=".global-footer">Open days in 2015/16</h4>
+							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-open-days" aria-controls="footer-open-days" aria-expanded="false"  data-parent=".global-footer">Open days</h4>
 							<div id="footer-open-days" class="footer-section collapse-xs-down" role="complementary">
 								<div class="row">
 									<div class="col-sm-6">
@@ -291,12 +578,7 @@
 										<strong>Medway</strong>
 										<p>
 										Sat 18 June 2016<br>
-										Tues 1 March 2016
-										</p>
-
-										<strong>Postgraduate</strong>
-										<p>
-										Sat 4 November 2016
+										Tues 15 October 2016
 										</p>
 									</div>
 								</div>
@@ -377,15 +659,15 @@
 							<div class="footer-section-panel footer-section-open">
 								<h5 id="footer-social-heading" class="footer-section-title">Connect</h5>
 								<nav id="footer-social" class="footer-section footer-section-social content-social" role="menu" aria-labelledby="footer-social-heading">
-									<a title="facebook" href="//www.facebook.com/UniversityofKent" class="kf-facebook" role="menuitem"></a>
-									<a title="twitter" href="//twitter.com/unikent" class="kf-twitter" role="menuitem"></a>
-									<a title="linkedin" href="//www.linkedin.com/company/university-of-kent" class="kf-linkedin" role="menuitem"></a>
-									<a title="youtube" href="//www.youtube.com/user/UniversityofKent" class="kf-youtube" role="menuitem"></a>
-									<a title="flickr" href="//www.flickr.com/photos/universityofkent/" class="kf-flickr" role="menuitem"></a>
-									<a title="rss" href="//www.kent.ac.uk/communications/rss/" class="kf-rss" role="menuitem"></a>
-									<a title="tumblr" href="//universitykent.tumblr.com" class="kf-tumblr" role="menuitem"></a>
-									<a title="instagram" href="//instagram.com/unikentlive" class="kf-instagram" role="menuitem"></a>
-									<a title="pinterest" href="//www.pinterest.com/KentUni/" class="kf-pinterest" role="menuitem"></a>
+									<a title="facebook" href="//www.facebook.com/UniversityofKent" class="kf-facebook" role="menuitem"><span class="sr-only">Connect with us on Facebook</span></a>
+									<a title="twitter" href="//twitter.com/unikent" class="kf-twitter" role="menuitem"><span class="sr-only">Follow us on Twitter</span></a>
+									<a title="linkedin" href="//www.linkedin.com/company/university-of-kent" class="kf-linkedin" role="menuitem"><span class="sr-only">Connect with us on LinkedIn</span></a>
+									<a title="youtube" href="//www.youtube.com/user/UniversityofKent" class="kf-youtube" role="menuitem"><span class="sr-only">Subscribe to us on Youtube</span></a>
+									<a title="flickr" href="//www.flickr.com/photos/universityofkent/" class="kf-flickr" role="menuitem"><span class="sr-only">Follow us on Flickr</span></a>
+									<a title="rss" href="//www.kent.ac.uk/communications/rss/" class="kf-rss" role="menuitem"><span class="sr-only">Subscribe via RSS</span></a>
+									<a title="tumblr" href="//universitykent.tumblr.com" class="kf-tumblr" role="menuitem"><span class="sr-only">Follow us on Tumblr</span></a>
+									<a title="instagram" href="//instagram.com/unikentlive" class="kf-instagram" role="menuitem"><span class="sr-only">Follow us on Instagram</span></a>
+									<a title="pinterest" href="//www.pinterest.com/KentUni/" class="kf-pinterest" role="menuitem"><span class="sr-only">Follow us on Pinterest</span></a>
 								</nav>
 							</div>
 							<div class="footer-section-panel">

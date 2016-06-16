@@ -1,10 +1,14 @@
 .video-launcher {
 
+	position: relative;
+
 	& > .video-player {
 		display:none;
 	}
+
 	& > img {
 		display:block;
+		max-width:100%;
 	}
 
 	// ensure playing selector is pretty strong
