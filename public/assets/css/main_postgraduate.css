@@ -7674,6 +7674,15 @@ blockquote.social-quote .btn-group-lg > button.btn-icon {
       color: #FFFFFF;
       background-color: #222;
       border-color: #222; }
+    .content-social a span, .content-social .content-social-link span {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      border: 0; }
   .content-social.content-social-colored a.kf-facebook, .content-social.content-social-colored .content-social-link.kf-facebook {
     color: #3B5998;
     background-image: none;
