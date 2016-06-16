@@ -28261,6 +28261,6 @@ parallaxBackgrounds:true,parallaxElements:true, // Hide parallax elements that m
 hideDistantElements:false, // Customise how elements are shown and hidden
 hideElement:function hideElement($elem){$elem.hide();},showElement:function showElement($elem){$elem.show();}});stellarSetup=true;}stellarActive=true;}; // Disable stellar.js
 var disableStellar=function disableStellar(){$(window).data('plugin_stellar').destroy();stellarActive=false;}; // Handle resize
-function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','');}else {if(!stellarActive){initStellar();} // Set ratio's
+function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','').find('img').removeAttr('style');}else {if(!stellarActive){initStellar();} // Set ratio's
 var $ratio=ResponsiveBootstrapToolkit.is('<xl')?9/16:7/16;$('.media-wrap-parallax').each(function(){$(this).css('min-height',$(window).width()*$ratio+'px');});$(window).data('plugin_stellar').refresh();}}$(window).on('viewport:resize',function(){react_to_window();});$(document).ready(function(){react_to_window();});})();
 //# sourceMappingURL=main.compiled.js.map
