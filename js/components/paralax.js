@@ -68,7 +68,7 @@
 			if (stellarActive){
 				disableStellar();
 			}
-			$('.media-wrap-parallax').css('min-height', '');
+			$('.media-wrap-parallax').css('min-height', '').find('img').removeAttr('style');
 
 		} else {
 
