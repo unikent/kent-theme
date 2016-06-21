@@ -63,6 +63,22 @@
 
 		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/modernizr.min.js"></script>
 
+		<?php
+		// Only embed on on live env
+		if(defined("ENV") && ENV == 'live'){ ?>
+			<!-- Hotjar Tracking Code for http://kent.ac.uk -->
+			<script>
+				(function(h,o,t,j,a,r){
+					h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+					h._hjSettings={hjid:235141,hjsv:5};
+					a=o.getElementsByTagName('head')[0];
+					r=o.createElement('script');r.async=1;
+					r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+					a.appendChild(r);
+				})(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+			</script>
+		<?php } ?>
+
 		<?php echo $head_markup ;?>
 	</head>
 	<body class="<?php echo !empty($home_page) ? ' global-header-transparent"' :'' ; ?><?php echo ($slim)?' slim-header':''; ?><?php echo ($brand_header)?' brand-header':''; ?>">
@@ -80,7 +96,7 @@
 				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="">Go to original site</a>
 			</p>
 			<p>
-				<button class="btn btn-secondary feedback" onclick="return window.usabilla_live('click');">Give us feedback</button>
+				<button class="btn btn-secondary feedback" onclick="hj('trigger', 'beta_feedback');">Give us feedback</button>
 			</p>
 			<button class="beta-toggler" aria-expanded="true" aria-controls="beta-bar" title="Hide the Beta bar"></button>
 		</section>
