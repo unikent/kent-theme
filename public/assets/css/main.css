@@ -8163,12 +8163,16 @@ input[type=number]::-webkit-outer-spin-button {
 
 #kentBar.kent-bar,
 #kentBar.audience-bar {
+  position: relative;
   background-color: #05345C;
   color: #FFFFFF;
   padding: 0;
   font-size: 14.4px; }
   #kentBar.kent-bar a.navbar-brand,
   #kentBar.audience-bar a.navbar-brand {
+    position: absolute;
+    bottom: 0;
+    float: none;
     font-size: 19.2px;
     font-size: 1.2rem;
     padding: 12.8px 0 12.8px 16px;
@@ -8915,12 +8919,19 @@ nav.breadcrumb {
       height: auto; } }
 
 .beta-bar {
-  display: none;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   background-color: #FBF5E9;
   padding: 20.8px 48px 0 20.8px;
   padding: 1.3rem 3rem 0 1.3rem;
   height: auto;
-  overflow: hidden; }
+  max-height: 300px;
+  overflow: hidden;
+  transition: max-height 300ms, padding 1ms; }
+  .beta-bar.hidden {
+    max-height: 0;
+    padding: 0;
+    transition: max-height 300ms, padding 1ms 300ms; }
   .beta-bar p {
     display: inline-block; }
   .beta-bar .btn, .beta-bar .social-link i, .social-link .beta-bar i, .beta-bar .content-social a, .content-social .beta-bar a, .beta-bar .content-social .content-social-link, .content-social .beta-bar .content-social-link, .beta-bar blockquote.social-quote button, blockquote.social-quote .beta-bar button {

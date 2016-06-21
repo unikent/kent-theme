@@ -1,10 +1,16 @@
 .beta-bar {
-    display:          none;
+    transform: translate3d(0,0,0);
     background-color: #FBF5E9;
     padding:          1.3rem 3rem 0 1.3rem;
     height:           auto;
+    max-height: 300px;
     overflow:         hidden;
-
+    transition: max-height 300ms, padding 1ms;
+    &.hidden{
+        max-height: 0;
+        padding: 0;
+        transition: max-height 300ms, padding 1ms 300ms;
+    }
     p {
         display: inline-block;
     }

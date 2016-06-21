@@ -1,5 +1,6 @@
 #kentBar.kent-bar,
 #kentBar.audience-bar {
+    position: relative;
     background-color: $brand-primary;
     color:            #FFFFFF;
     padding:          0;
@@ -7,6 +8,9 @@
     font-size:        14.4px;
 
     a.navbar-brand {
+        position: absolute;
+        bottom: 0;
+        float: none;
         font-size: 1.2rem;
         padding:   .8rem 0 .8rem 1rem;
         margin:    0;
