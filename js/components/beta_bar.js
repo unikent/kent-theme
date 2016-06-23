@@ -12,14 +12,14 @@ jQuery(document).ready(function(){
 	// Toggle beta bar
 	function toggleNav() {
 		if (beta_bar.hasClass('hidden')){
-			beta_bar.removeClass('hidden').slideDown();
+			beta_bar.removeClass('hidden');
 
 			toggler.each(function(){
 				$(this).attr('aria-expanded', 'true');
 			});
 
 		} else {
-			beta_bar.addClass('hidden').slideUp();
+			beta_bar.addClass('hidden');
 			toggler.each(function(){
 				$(this).attr('aria-expanded', 'false');
 			});
@@ -33,9 +33,9 @@ jQuery(document).ready(function(){
 
 		// Apply show/hide state from cookie.
 		if (!dismissed) {
-			beta_bar.removeClass('hidden').slideDown();
+			beta_bar.removeClass('hidden');
 		} else {
-			beta_bar.addClass('hidden').slideUp();
+			beta_bar.addClass('hidden');
 		}
 
 		// hook up toggler
