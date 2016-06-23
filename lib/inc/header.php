@@ -96,7 +96,7 @@
 				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="">Go to original site</a>
 			</p>
 			<p>
-				<button class="btn btn-secondary feedback" onclick="hj('trigger', 'beta_feedback');">Give us feedback</button>
+				<button class="btn btn-secondary feedback" href="https://insights.hotjar.com/s?siteId=235141&surveyId=11292">Give us feedback</button>
 			</p>
 			<button class="beta-toggler" aria-expanded="true" aria-controls="beta-bar" title="Hide the Beta bar"></button>
 		</section>
