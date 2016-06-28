@@ -44,7 +44,7 @@ $global_nav_links = array(
 			'url' 			=>	'//www.kent.ac.uk/internationalstudent'
 		)
 	),
-	'Experience'=> array(
+	'Engage'=> array(
 	array(
 		'title' 		=>	'What’s on',
 		'description' 	=> 	'Theatre, cinema, music, art, lectures and more',
