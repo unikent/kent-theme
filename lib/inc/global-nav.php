@@ -44,45 +44,45 @@ $global_nav_links = array(
 			'url' 			=>	'//www.kent.ac.uk/internationalstudent'
 		)
 	),
-	'Experience'=> array(
-	array(
-		'title' 		=>	'What’s on',
-		'description' 	=> 	'Theatre, cinema, music, art, lectures and more',
-		'url' 			=>	'//www.kent.ac.uk/events'
-	),
-	array(
-		'title' 		=>	'Superb locations',
-		'description' 	=> 	'Study in the UK or one of our European centres',
-		'url' 			=>	'//www.kent.ac.uk/locations'
-	),
-	array(
-		'title' 		=>	'Visiting Kent',
-		'description' 	=> 	'Come to our Open Day or book an informal visit',
-		'url' 			=>	'//www.kent.ac.uk/visit'
-	),
-	array(
-		'title' 		=>	'Accommodation',
-		'description' 	=> 	'Living at Kent – options to suit every budget',
-		'url' 			=>	'//www.kent.ac.uk/accommodation'
+	'Engage'=> array(
+		array(
+			'title' 		=>	'What’s on',
+			'description' 	=> 	'Theatre, cinema, music, art, lectures and more',
+			'url' 			=>	'//www.kent.ac.uk/events'
+		),
+		array(
+			'title' 		=>	'Superb locations',
+			'description' 	=> 	'Study in the UK or one of our European centres',
+			'url' 			=>	'//www.kent.ac.uk/locations'
+		),
+		array(
+			'title' 		=>	'Visiting Kent',
+			'description' 	=> 	'Come to our Open Day or book an informal visit',
+			'url' 			=>	'//www.kent.ac.uk/visit'
+		),
+		array(
+			'title' 		=>	'Accommodation',
+			'description' 	=> 	'Living at Kent – options to suit every budget',
+			'url' 			=>	'//www.kent.ac.uk/accommodation'
+		)
 	)
-)
 );
 ?>
 <nav class="global-nav-links" role="menu">
 	<?php foreach($global_nav_links as $key => $links){ ?>
-	<div class="global-nav-link">
-		<a aria-controls="menu-<?php echo strtolower($key); ?>" aria-expanded="false" role="menuitem"><?php echo $key; ?></a>
-		<div class="global-nav-link-submenu">
-			<nav id="menu-<?php echo strtolower($key); ?>" role="menu">
-				<?php foreach($links as $link){ ?>
-				<div class="nav-link">
-					<a role="menuitem" href="<?php echo $link['url']; ?>" class="global-nav-link-title"><?php echo $link['title']; ?></a>
-					<span class="global-nav-link-desc"><?php echo $link['description']; ?></span>
-					<a href="<?php echo $link['url']; ?>" class="faux-link-overlay" aria-hidden="true"><?php echo $link['title']; ?></a>
-				</div>
-				<?php } ?>
-			</nav>
+		<div class="global-nav-link">
+			<a aria-controls="menu-<?php echo strtolower($key); ?>" aria-expanded="false" role="menuitem"><?php echo $key; ?></a>
+			<div class="global-nav-link-submenu">
+				<nav id="menu-<?php echo strtolower($key); ?>" role="menu">
+					<?php foreach($links as $link){ ?>
+						<div class="nav-link">
+							<a role="menuitem" href="<?php echo $link['url']; ?>" class="global-nav-link-title"><?php echo $link['title']; ?></a>
+							<span class="global-nav-link-desc"><?php echo $link['description']; ?></span>
+							<a href="<?php echo $link['url']; ?>" class="faux-link-overlay" aria-hidden="true"><?php echo $link['title']; ?></a>
+						</div>
+					<?php } ?>
+				</nav>
+			</div>
 		</div>
-	</div>
 	<?php  } ?>
 </nav>
