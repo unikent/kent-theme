@@ -21,7 +21,7 @@ module.exports = {
 			'node_modules/jquery/dist/jquery.js',
 			'node_modules/tether/dist/js/tether.js',
 			'tmp/bootstrap.js',
-			'node_modules/responsive-bootstrap-toolkit/dist/bootstrap-toolkit.js',
+			'node_modules/responsive-toolkit/dist/bootstrap-toolkit.js',
 			'node_modules/jquery.stellar/jquery.stellar.js',
 			'node_modules/slick-carousel/slick/slick.js',
 			'node_modules/handlebars/dist/handlebars.runtime.js',
