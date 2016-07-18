@@ -48,6 +48,12 @@
         }
     }
 
+    &.cards-linked {
+        .card {
+            @extend .card-linked;
+        }
+    }
+
     &.cards-list {
         .card-panel-body {
             .card {
