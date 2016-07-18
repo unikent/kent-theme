@@ -10,3 +10,4 @@ www_docroot
 .env
 /public/media/
 /tmp
+/.env
