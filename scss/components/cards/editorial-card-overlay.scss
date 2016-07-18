@@ -2,6 +2,7 @@
 
     .card-title-wrap {
         background-color: #FFFFFF;
+        pointer-events: auto;
 
         .card-text {
             color:       $body-color;

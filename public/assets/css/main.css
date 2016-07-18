@@ -5664,9 +5664,11 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
         max-height: 251px; } }
 
 body.show-kentbar-menu {
+  height: 100%;
   overflow-y: hidden; }
   @media (min-width: 768px) {
     body.show-kentbar-menu {
+      height: 100%;
       overflow-y: auto; } }
 
 @keyframes plyr-progress {
@@ -8121,7 +8123,7 @@ input[type=number]::-webkit-outer-spin-button {
   #kentBar.kent-bar a.navbar-brand,
   #kentBar.audience-bar a.navbar-brand {
     position: absolute;
-    bottom: 0;
+    top: 0;
     float: none;
     font-size: 19.2px;
     font-size: 1.2rem;
@@ -10410,7 +10412,8 @@ button.beta-toggler {
     margin-top: -5.3rem; } }
 
 .card.editorial .card-title-wrap {
-  background-color: #FFFFFF; }
+  background-color: #FFFFFF;
+  pointer-events: auto; }
   .card.editorial .card-title-wrap .card-text {
     color: #171717;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
