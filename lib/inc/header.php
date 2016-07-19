@@ -61,6 +61,8 @@
 		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>assets/css/<?php echo $theme_style;?>" />
 		<link rel="stylesheet" href="<?php KentThemeHelper::getThemeWebRoot();?>assets/css/kentfont.css" />
 
+
+		<script src="https://cdn.optimizely.com/js/6368495248.js"></script>
 		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/modernizr.min.js"></script>
 
 		<?php
