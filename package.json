@@ -14,7 +14,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "install": "napa maciej-gurban/responsive-bootstrap-toolkit#2.5.1:responsive-bootstrap-toolkit && napa twbs/bootstrap#v4.0.0-alpha.2:bootstrap",
+    "install": "napa twbs/bootstrap#v4.0.0-alpha.2:bootstrap",
     "start": "grunt && grunt watch"
   },
   "devDependencies": {
@@ -43,7 +43,7 @@
     "jquery": "~2.2.2",
     "jquery.stellar": "git+ssh://git@github.com/unikent/stellarjs.git",
     "js-cookie": "2.1.0",
-    "kent-bar": "git+ssh://git@github.com/unikent/kent-bar.git",
+    "kent-bar": "git+ssh://git@github.com/unikent/kent-bar.git#1.0.2",
     "kent-font": "git+ssh://git@github.com/unikent/kent-font.git#1.0.2",
     "load-grunt-tasks": "~1.0.0",
     "metalsmith": "^2.1.0",
@@ -59,7 +59,8 @@
     "slick-carousel": "1.6",
     "social-likes": "^3.1.0",
     "tether": "~1.2.0",
-    "time-grunt": "~1.0.0"
+    "time-grunt": "~1.0.0",
+    "responsive-toolkit": "~2.6.1"
   },
   "dependencies": {
     "napa": "^2.3.0"

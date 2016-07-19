@@ -79,6 +79,12 @@
             padding-left: 0.7rem;
         }
     }
+
+    &.chevron-link-accent{
+        &:after {
+            color: $brand-accent;
+        }
+    }
 }
 
 .btn {
