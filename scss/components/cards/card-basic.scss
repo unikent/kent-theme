@@ -259,6 +259,19 @@
         font-weight: normal;
         color:       $kent-primary;
         font-size:   1.1rem;
+
+        &.card-title-figure{
+            margin-top: 1rem;
+            font-size: 3.5rem;
+            font-family: $font-family-serif;
+            text-transform: uppercase;
+            sup,sub{
+                font-size: 50%;
+            }
+            sup{
+                top:-1.2rem;
+            }
+        }
     }
 
     .card-title-link,
@@ -320,6 +333,9 @@
     &.card-inverse, .card-inverse {
 
         &, & .card-title-wrap {
+
+            color: #FFFFFF;
+
             .card-title {
                 color: #FFFFFF;
             }
@@ -331,7 +347,7 @@
             .card-link,
             .card-text,
             .card-blockquote > footer {
-                color: rgba(255, 255, 255, .75);
+                color: #FFFFFF;
             }
 
             a {
