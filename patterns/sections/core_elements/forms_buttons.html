@@ -9,10 +9,10 @@ nav_order: 4
 
 
 <div class="content-container">
-	<div class="content-main">
+<div class="content-main">
 
 
-<p>Basing your form design on a customer's perspective is the way to make for clearer and easier to use. A user should not be forced to adapt to a business process. Good form designs, and therefore higher conversion rates, come from testing with and understanding the context of your users.</p> 
+<p>Basing your form design on a customer's perspective is the way to make forms clearer and easier to use. A user should not be forced to adapt to a business process. Good form designs, and therefore higher conversion rates, come from testing with and understanding the context of your users.</p> 
 
 <p>There is no silver bullet for form design, it depends on what you are trying to achieve based on business goals, user needs and context.</p>
 
@@ -20,19 +20,11 @@ nav_order: 4
 <h2>Principles</h2>
 
 
-<p>Here are some principles for good form design:</p>
-
 <ul>
 <li>Reduce the inconvenience - keep forms as simple and easy-to-use as possible. Get rid of visual clutter.</li>
-
 <li>Show the path to completion - make the steps to accomplishing the goal clear</li>
-
 <li>Consider the context - what is the form being used for? How will it be used? Who is using it? Will they be using a mobile? An application form will differ from a marketing email form</li>
-
-<li>Keep form communication consistent - follow <a href="#">house style [follow up]</a>, use suitable <a href="https://www.kent.ac.uk/brand/writing/tone-of-voice.html">tone of voice</a>. Think of a form as a conversation that your customer has with your brand.</li>
-
-
-
+<li>Keep form communication consistent - think of a form as a conversation that your customer has with your brand.</li>
 </ul>
 
 
@@ -49,232 +41,19 @@ nav_order: 4
 
 <p> The tradeoff is that they take up more vertical space. Sometimes you want to slow users down when filling in an important form. In these instances a left-aligned label may be better.</p>
 
-
-
-
-
-
-
-		<h2 class="pattern">Input fields</h2>
- 
-
-
-
-
-
-
-					<form class="form" data-validate="true" method="POST" action="https://test.id.kent.ac.uk/staff/activate/new" novalidate="novalidate">
-						<div class="form-group validation-group">
-				<label for="dob_day" class="form-control-label">Date of birth</label><br>
-				<label for="dob_month" style="display: none">Date of birth</label>
-				<label for="dob_year" style="display: none">Date of birth</label>
-				<select id="dob_day" name="dob_day" class="c-select untouched" title="Day is required for Date of birth" required="" aria-required="true">
-					<option value="" disabled="" selected="">Day</option>
-											<option value="1">01</option>
-											<option value="2">02</option>
-											<option value="3">03</option>
-											<option value="4">04</option>
-											<option value="5">05</option>
-											<option value="6">06</option>
-											<option value="7">07</option>
-											<option value="8">08</option>
-											<option value="9">09</option>
-											<option value="10">10</option>
-											<option value="11">11</option>
-											<option value="12">12</option>
-											<option value="13">13</option>
-											<option value="14">14</option>
-											<option value="15">15</option>
-											<option value="16">16</option>
-											<option value="17">17</option>
-											<option value="18">18</option>
-											<option value="19">19</option>
-											<option value="20">20</option>
-											<option value="21">21</option>
-											<option value="22">22</option>
-											<option value="23">23</option>
-											<option value="24">24</option>
-											<option value="25">25</option>
-											<option value="26">26</option>
-											<option value="27">27</option>
-											<option value="28">28</option>
-											<option value="29">29</option>
-											<option value="30">30</option>
-											<option value="31">31</option>
-									</select>
-				<select id="dob_month" name="dob_month" class="c-select untouched" title="Month is required for Date of birth" required="" aria-required="true">
-					<option value="" disabled="" selected="">Month</option>
-											<option value="1">Jan</option>
-											<option value="2">Feb</option>
-											<option value="3">Mar</option>
-											<option value="4">Apr</option>
-											<option value="5">May</option>
-											<option value="6">Jun</option>
-											<option value="7">Jul</option>
-											<option value="8">Aug</option>
-											<option value="9">Sep</option>
-											<option value="10">Oct</option>
-											<option value="11">Nov</option>
-											<option value="12">Dec</option>
-									</select>
-				<select id="dob_year" name="dob_year" class="c-select untouched" title="Year is required for Date of birth" required="" aria-required="true">
-					<option value="" disabled="" selected="">Year</option>
-											<option value="2000">2000</option>
-										
-									</select>
-							</div>
-			<div class="form-group">
-				<label for="snumber" class="form-control-label">Staff number</label> <i tabindex="0" class="snumber-help kf kf-question-circle popover-trigger" data-content-selector=".popover--snumber"></i>
-
-				<input name="snumber" id="snumber" class="form-control" value="" required="" pattern="^[EeTt]?\d{8}[Aa]?$" maxlength="10" placeholder="e.g. E12345678" data-msg-required="This field is required" data-msg-pattern="The provided Staff number is invalid." aria-required="true">
-
-							</div>
-
-			<div class="popover-pe">
-				<div class="popover--snumber">
-											<p>This starts with an 'E' and is followed by 8 digits - it can be found in your employment confirmation letter.</p>
-									</div>
-			</div>
-		
-			<input type="hidden" name="_token" value="0swpi2l9a9MOwqa6QL8IeN4vUJgUMg5Ek0FfRuNO">
-
-			<div class="form-actions">
-							<button type="submit" class="btn btn-primary">Next <i class="kf-chevron-right"></i></button>
-						</div>
-		</form>
-			
-
-
-
-
-
-
-
-
-
-<form action="action_page.php" class="form">
-	
-
-	<div class="form-group validation-group">
-  <fieldset>
-    <legend>About you</legend>
-    <label  class="form-control-label" for="firstname">First name</label>
-    <input type="text" name="firstname" id="firstname"><br>
-    <label  class="form-control-label" for="lastnames">Last name</label>
-    <input type="text" name="lastname" id="lastname"><br><br>
-  </fieldset>
+<h2 class="pattern">Input fields</h2>
+<h2 class="pattern">Select</h2>
+<h2 class="pattern">Radio</h2>
+<h2 class="pattern">Checkbox</h2>
+<h2 class="pattern">Validation</h2>
+<h2 class="pattern">Fieldsets</h2>
+<h2 class="pattern">Help text</h2>
+<h2 class="pattern">Tooltips</h2>
+<h2 class="pattern">Address/postcode search</h2>
+<h2 class="pattern">Search</h2>
+<h2 class="pattern">Quickspot search</h2>
+<h2 class="pattern">Autocomplete results</h2>
+<h2 class="pattern">Search filter</h2>
+<h2 class="pattern">Buttons</h2>
 </div>
-
-
-
-<div class="form-group validation-group">
-  <fieldset>
-    <legend>Additional information</legend>
-    <label  class="form-control-label" for="firstname">First name</label>
-    <input type="text" name="firstname" id="firstname"><br>
-    <label  class="form-control-label" for="lastnames">Last name</label>
-    <input type="text" name="lastname" id="lastname"><br><br>
-
-
-    <div class="form-group yesno">
-		<div class="label-group">Do you have a disability? <em class="icon-asterisk required"><span class="collapse-text">(required)</span></em> </div>
-
-		<label class="radio inline">
-		<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" aria-required="true">
-		Yes
-		</label>
-		<label class="radio inline">
-		<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" aria-required="true">
-		No
-		</label>
-	</div>
-
-
-
-
-
-
-  </fieldset>
-</div>
-
-
-
-</form>
-
-
-
-
-
-
-
-
-
-		<div class="form-group">
-				<label for="snumber" class="form-control-label">Student number</label>
-
-				<input name="snumber" id="snumber" class="form-control" value="" required="" pattern="^[EeTt]?\d{8}[Aa]?$" maxlength="10" placeholder="e.g. 12345678" data-msg-required="This field is required" data-msg-pattern="The provided Student number is invalid." aria-required="true">
-
-							</div>
-
-		<h2 class="pattern">Select</h2>
-
-		
-
-
-
-		<form class="form">
-						
-			<div id="typeContainer" class="form-group">
-				<label for="type" class="form-control-label">I am a...</label>
-				<select id="type" name="type" class="c-select form-control" title="Select who you are" required="" aria-required="true">
-					<option value="" disabled="" selected="">Please select</option>
-					<option value="student">Student</option>
-					<option value="staff">Staff member</option>
-				</select>
-							</div>
-			
-		</form>
-
-
-
-
-
-			<form class="form">
-						
-			<div class="form-group">
-				<label for="snumber" class="form-control-label">Student number</label>
-				<input name="snumber" id="snumber" class="form-control" value="" required="" maxlength="10" placeholder="e.g. 12345678" data-msg-required="This field is required" data-msg-pattern="The provided Student number is invalid." aria-required="true" />
-			</div>
-			
-		</form>
-
-
-
-
-
-		<h2 class="pattern">Radio</h2>
-
-
-
-
-
-
-
-
-
-
-
-
-		<h2 class="pattern">Checkbox</h2>
-		<h2 class="pattern">Validation</h2>
-		<h2 class="pattern">Fieldsets</h2>
-		<h2 class="pattern">Help text</h2>
-		<h2 class="pattern">Tooltips</h2>
-		<h2 class="pattern">Address/postcode search</h2>
-		<h2 class="pattern">Search</h2>
-		<h2 class="pattern">Quickspot search</h2>
-		<h2 class="pattern">Autocomplete results</h2>
-		<h2 class="pattern">Search filter</h2>
-		<h2 class="pattern">Buttons</h2>
-	</div>
 </div>
