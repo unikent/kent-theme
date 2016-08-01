@@ -80,6 +80,7 @@ $spacers: (
 //COLOURS
 $kent-blue: #003882;
 $kent-primary: #05345C;
+$kent-energy: #2abed9;
 
 $kent-primary-light: #95a9ce;
 
@@ -89,12 +90,16 @@ $kent-nav-active: #e3e8f1;
 $kent-primary-tint: #E8EBF2;
 
 $kent-pg-primary: #671115;
+$kent-pg-energy: #de5433;
 $kent-pg-primary-tint: #E0D4D4;
+$kent-pg-primary-light: #ab777d;
 
 $brand-primary: $kent-primary !default;
 $brand-primary-tint: $kent-primary-tint !default;
 
 $brand-primary-light: $kent-primary-light !default;
+
+$brand-energy: $kent-energy !default;
 
 $brand-nav-bg: $kent-nav-bg !default;
 $brand-nav-active: $kent-nav-active !default;
@@ -130,7 +135,9 @@ $brand-colors: (
                    tertiary: $brand-tertiary,
                    primary: $brand-primary,
                    accent: $brand-accent,
-                   dark: $brand-dark
+                   dark: $brand-dark,
+                   primary-light: $brand-primary-light,
+                   energy: $brand-energy
                );
 
 $brand-colors-light: (
@@ -141,8 +148,10 @@ $brand-colors-light: (
 
 $brand-colors-dark: (
                         primary: $brand-primary,
+                        primary-light: $brand-primary-light,
                         accent: $brand-accent,
-                        dark: $brand-dark
+                        dark: $brand-dark,
+                        energy: $brand-energy
                     );
 
 /// Social
