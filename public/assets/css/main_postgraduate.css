@@ -4351,7 +4351,8 @@ button.close {
     @media all and (transform-3d), (-webkit-transform-3d) {
       .carousel-inner > .carousel-item {
         transition: transform .6s ease-in-out;
-        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
         perspective: 1000px; }
         .carousel-inner > .carousel-item.next, .carousel-inner > .carousel-item.active.right {
           left: 0;
@@ -6959,12 +6960,12 @@ figure figcaption,
 
 .alert {
   background-color: #fff; }
-  .alert .alert-heading {
+  .alert .alert-heading, .alert strong {
     position: relative;
     display: block;
     padding-left: 40px;
     padding-left: 2.5rem; }
-    .alert .alert-heading:before {
+    .alert .alert-heading:before, .alert strong:before {
       font-family: "kentfont", sans-serif;
       font-size: 32px;
       font-size: 2rem;
