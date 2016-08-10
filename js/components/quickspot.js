@@ -55,7 +55,7 @@ window.KENT.modules = window.KENT.modules || {};
 
 	// Module search
 	configs.modules = $.extend({}, configs.default, {
-		'url': window.KENT.settings.api_url + 'v1/modules/collection/all',
+		'url': window.KENT.settings.api_url + '/v1/modules/collection/all',
 		'search_on': ['title', 'sds_code'],
 		'key_value': 'title',
 		'auto_highlight':true,
@@ -78,7 +78,7 @@ window.KENT.modules = window.KENT.modules || {};
 
 	// Scholarships search
 	configs.scholarships = $.extend({}, configs.default, {
-		'url': window.KENT.settings.api_url + 'v1/scholarships/',
+		'url': window.KENT.settings.api_url + '/v1/scholarships/',
 		'key_value': 'title',
 		'search_on': ['title', 'code'],
 		'auto_highlight':true,
@@ -119,12 +119,12 @@ window.KENT.modules = window.KENT.modules || {};
 
 	// UG
 	configs.ug_courses = $.extend({}, configs.courses_default, {
-		'url':	window.KENT.settings.api_url + 'programmes/current/undergraduate/programmes'
+		'url':	window.KENT.settings.api_url + '/programmes/current/undergraduate/programmes'
 	});
 
 	// PG
 	configs.pg_courses = $.extend({}, configs.courses_default, {
-		'url':	window.KENT.settings.api_url + 'programmes/current/postgraduate/programmes',
+		'url':	window.KENT.settings.api_url + '/programmes/current/postgraduate/programmes',
 		'_click_handler': function (itm) {
 			document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
 		}
@@ -132,7 +132,7 @@ window.KENT.modules = window.KENT.modules || {};
 
 	// Combined
 	configs.all_courses = $.extend({}, configs.courses_default, {
-		'url':	'https://webtools-test.kent.ac.uk/programmes/api/2016/all/programmes/',
+		'url':	window.KENT.settings.api_url + '/programmes/current/all/programmes/',
 
 		'_display_handler' : function (itm, qs) {
 
