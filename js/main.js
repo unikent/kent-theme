@@ -24543,12 +24543,16 @@ return /******/ (function(modules) { // webpackBootstrap
 this["Handlebars"] = this["Handlebars"] || {};
 this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
 
+this["Handlebars"]["templates"]["video_html5"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"plyr\">\r\n	<video poster=\"/path/to/poster.jpg\" controls>\r\n		<!-- Video files -->\r\n		<source src=\"/path/to/video.mp4\" type=\"video/mp4\">\r\n		<source src=\"/path/to/video.webm\" type=\"video/webm\">\r\n\r\n		<!-- Text track file -->\r\n		<track kind=\"captions\" label=\"English captions\" src=\"/path/to/captions.vtt\" srclang=\"en\" default>\r\n\r\n		<!-- Fallback for browsers that don't support the <video> element -->\r\n		<a href=\"/path/to/movie.mp4\">Download</a>\r\n	</video>\r\n</div>";
+},"useData":true});
+
 this["Handlebars"]["templates"]["video_inline"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "<div id=\"video"
     + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"video-container\">\n	\n</div>";
+    + "\" class=\"video-container\">\r\n	\r\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -24556,15 +24560,15 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
   return "			<span class=\"video-transcript\"><small><a href=\""
     + container.escapeExpression(((helper = (helper = helpers.transcript || (depth0 != null ? depth0.transcript : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"transcript","hash":{},"data":data}) : helper)))
-    + "\">Download transcript</a></small></span>\n";
+    + "\">Download transcript</a></small></span>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {};
 
   return "<div class=\"modal fade modal-fullscreen\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"videoModalLabel"
     + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\" role=\"document\">\n		<div class=\"modal-content modal-content-transparent\">\n\n			<div class=\"modal-header\">\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\n					<span class=\"sr-only\">Close</span>\n				</button>\n			</div>\n\n			<div class=\"video-container\">\n				\n			</div>\n"
+    + "\" aria-hidden=\"true\">\r\n	<div class=\"modal-dialog\" role=\"document\">\r\n		<div class=\"modal-content modal-content-transparent\">\r\n\r\n			<div class=\"modal-header\">\r\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\r\n					<span class=\"sr-only\">Close</span>\r\n				</button>\r\n			</div>\r\n\r\n			<div class=\"video-container\">\r\n				\r\n			</div>\r\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.transcript : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "			\n		</div>\n	</div>\n</div>";
+    + "			\r\n		</div>\r\n	</div>\r\n</div>";
 },"useData":true});
 // ==========================================================================
 // Plyr
@@ -28265,11 +28269,15 @@ if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen'
 		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();}; /**
 		 * Close video
 		 * Hide video and pause it
+<<<<<<< HEAD
 		 */this.hide=function(){var _this4=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();} /**
 			 * This is horrible but it fixes a bug were safari crashes if you try and set a fullscreen element
 			 * to display:none. This queues it so it doesn't try and set display:none until safari has actually
 			 * completed the fullscreen exit.
 			 */setTimeout(function(){_this4.pause();_this4.container.removeClass('playing');_this4.container.closest('.card-media-inline').removeClass('card-media-enabled');},0);}; /**
+=======
+		 */this.hide=function(){if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();}this.pause();this.container.removeClass('playing');this.container.closest('.card-media-inline').removeClass('card-media-enabled');}; /**
+>>>>>>> 1b41477... Update & Rebuild
 		 * Play video
 		 */this.play=function(){this.plyr.play();}; /**
 		 * Pause video
@@ -28298,8 +28306,12 @@ window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(f
 var $tabs=$('a[data-toggle="tab"]'); // when tab is hidden adjust related accordion tab-title accordingly
 $tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);}); // when tab is show adjust related accordion tab-title accordingly
 $tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);}); //endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
+<<<<<<< HEAD
 $(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);var activeTab=$('[href="#'+hash+'"]');if(activeTab){activeTab.tab('show');} // Change hash for page-reload
 $('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})(); /**
+=======
+$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});})(); /**
+>>>>>>> 1b41477... Update & Rebuild
  * Parallax
  *
  * Provides parallax functionality
