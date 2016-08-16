@@ -8233,7 +8233,7 @@ input[type=number]::-webkit-outer-spin-button {
       .global-nav .global-nav-links .global-nav-link nav {
         max-height: 0;
         overflow: hidden;
-        transition: none; }
+        transition: max-height 200ms; }
         .global-nav .global-nav-links .global-nav-link nav .nav-link {
           display: block;
           background: #F7F2E1;
@@ -8260,7 +8260,6 @@ input[type=number]::-webkit-outer-spin-button {
     .global-nav .global-nav-links.in .global-nav-link.in > a:after {
       content: ""; }
     .global-nav .global-nav-links.in .global-nav-link.in nav {
-      transition: max-height 200ms;
       max-height: 208px;
       max-height: 13rem; }
   @media (min-width: 768px) {
@@ -8337,6 +8336,7 @@ input[type=number]::-webkit-outer-spin-button {
             overflow: hidden;
             width: 100%;
             table-layout: fixed;
+            transition: none;
             padding: 10px 2rem 2rem;
             background-color: #F7F2E1; }
             .global-nav .global-nav-links .global-nav-link nav .nav-link {
