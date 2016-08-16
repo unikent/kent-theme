@@ -8666,6 +8666,8 @@ body.show-global-search .global-nav-menu .global-nav-links {
   font-size: 17.6px;
   font-size: 1.1rem;
   text-transform: uppercase; }
+  .departmental-nav header a, .departmental-nav header a:hover, .departmental-nav header a:focus, .departmental-nav header a:active {
+    color: #fff; }
 
 .departmental-nav .navbar-toggler {
   background-color: rgba(0, 0, 0, 0.8);
