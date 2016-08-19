@@ -100,7 +100,7 @@
 			<p>
 				<a class="btn btn-secondary feedback" href="https://insights.hotjar.com/s?siteId=235141&surveyId=11292">Give us feedback</a>
 			</p>
-			<button class="beta-toggler" aria-expanded="true" aria-controls="beta-bar" title="Hide the Beta bar"></button>
+			<button class="beta-toggler" aria-expanded="true" aria-controls="beta-bar" aria-label="Hide the Beta bar" title="Hide the Beta bar"></button>
 		</section>
 		<?php } ?>
 		<header class="global-header" role="navigation">
