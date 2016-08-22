@@ -30,7 +30,6 @@
 
 	// Change hash for page-reload
 	$('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
-		hash = (hash.indexOf('#!') === 0) ? hash.substring(2) : '';
 		window.location.hash = e.target.hash;
 	});
 
