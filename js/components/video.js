@@ -168,9 +168,17 @@ $(document).ready(function(){
 				return this.plyr.toggleFullscreen();
 			}
 
-			this.pause();
-			this.container.removeClass('playing');
-			this.container.closest('.card-media-inline').removeClass('card-media-enabled');
+			/**
+			 * This is horrible but it fixes a bug were safari crashes if you try and set a fullscreen element
+			 * to display:none. This queues it so it doesn't try and set display:none until safari has actually
+			 * completed the fullscreen exit.
+			 */
+			setTimeout( () => {
+				this.pause();
+				this.container.removeClass('playing');
+				this.container.closest('.card-media-inline').removeClass('card-media-enabled');
+			}, 0);
+
 		};
 
 		/**

@@ -4,6 +4,7 @@ include dirname(dirname(__FILE__)) . "/pattern_bootstrap.php";
 
 KentThemeHelper::header(array(
 			"title" => "{{{title}}}",
+			"title_link" => HOME_URL . "/patterns",
 			'menu' => 'placeholder',
 			'meta' => array(
 					'title'=>'{{{title}}}'

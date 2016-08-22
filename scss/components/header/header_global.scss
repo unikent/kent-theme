@@ -78,7 +78,7 @@
             nav {
                 max-height: 0;
                 overflow:   hidden;
-                transition: none;
+                transition: max-height 200ms;
                 .nav-link {
                     @extend .faux-link-block;
                     display: block;
@@ -120,8 +120,6 @@
                     }
 
                     nav {
-                        // Speed it up a bit, was a bit slow without the 100vh to fill
-                        transition: max-height 200ms;
                         // 3 rem links * 4 + 1 rem for 4px margins
                         max-height: 13rem;
                     }
@@ -234,7 +232,7 @@
                     overflow:         hidden;
                     width:            100%;
                     table-layout:     fixed;
-
+                    transition:       none;
                     padding:          10px 2rem 2rem;
                     background-color: $brand-tertiary;
                     .nav-link {
