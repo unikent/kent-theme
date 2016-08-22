@@ -224,4 +224,14 @@
     @include media-breakpoint-up(sm) {
         padding: 2rem 8%;
     }
-} 
+}
+
+.container-padded-h {
+    @extend .container;
+
+    padding: 0;
+
+    @include media-breakpoint-up(sm) {
+        padding: 0 8%;
+    }
+}
