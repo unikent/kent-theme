@@ -28420,7 +28420,11 @@ if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen'
 		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();};/**
 		 * Close video
 		 * Hide video and pause it
-		 */this.hide=function(){if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();}this.pause();this.container.removeClass('playing');this.container.closest('.card-media-inline').removeClass('card-media-enabled');};/**
+		 */this.hide=function(){var _this4=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();}/**
+			 * This is horrible but it fixes a bug were safari crashes if you try and set a fullscreen element
+			 * to display:none. This queues it so it doesn't try and set display:none until safari has actually
+			 * completed the fullscreen exit.
+			 */setTimeout(function(){_this4.pause();_this4.container.removeClass('playing');_this4.container.closest('.card-media-inline').removeClass('card-media-enabled');},0);};/**
 		 * Play video
 		 */this.play=function(){this.plyr.play();};/**
 		 * Pause video
