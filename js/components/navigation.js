@@ -19,4 +19,19 @@
 			$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded', true);
 		});
 	});
+
+	var hash = location.hash;
+	hash = (hash.indexOf('#!') === 0) ? hash.substring(2) : hash.substring(1);
+	var activeTab = $('[href="#' + hash + '"]');
+
+	if (activeTab){
+		activeTab.tab('show');
+	}
+
+	// Change hash for page-reload
+	$('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+		hash = (hash.indexOf('#!') === 0) ? hash.substring(2) : '';
+		window.location.hash = e.target.hash;
+	});
+
 })();
