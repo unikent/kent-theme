@@ -15,6 +15,13 @@
             }
         }
     }
+
+    height: 66vh;
+
+    video {
+        object-fit: cover;
+    }
+
 }
 
 .click-to-interact {
