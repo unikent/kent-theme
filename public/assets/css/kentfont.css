@@ -86,9 +86,6 @@
 .kf-location:before {
   content: "\f124";
 }
-.kf-lock:before {
-  content: "\f023";
-}
 .kf-moodle:before {
   content: "\e004";
 }
@@ -296,9 +293,6 @@
 .kf-sort:before {
   content: "\f0dc";
 }
-.kf-soundcloud:before {
-  content: "\f1be";
-}
 .kf-star-o:before {
   content: "\f006";
 }
@@ -334,12 +328,6 @@
 }
 .kf-volume-mute:before {
   content: "\f026";
-}
-.kf-weibo:before {
-  content: "\f18a";
-}
-.kf-wifi:before {
-  content: "\f103";
 }
 .kf-youtube:before {
   content: "\f167";
@@ -407,9 +395,6 @@
 .kf-inverse {
   color: #fff;
 }
-.kf-stack-lock {
-  bottom: -9px;
-}
 .kf-spin {
   animation: kf-spin 2s infinite linear;
 }
@@ -462,4 +447,5 @@
 .kf-li.kf-lg {
   left: -1.85714286em;
 }
+
 /*# sourceMappingURL=kentfont.css.map */
