@@ -3405,12 +3405,10 @@ input[type="button"].btn-block {
 
 @media (min-width: 544px) {
   .card-columns {
-    -webkit-column-count: 3;
-       -moz-column-count: 3;
-            column-count: 3;
-    -webkit-column-gap: 1.25rem;
-       -moz-column-gap: 1.25rem;
-            column-gap: 1.25rem; }
+    -moz-column-count: 3;
+         column-count: 3;
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem; }
     .card-columns .card {
       display: inline-block;
       width: 100%; } }
@@ -3667,12 +3665,6 @@ a.label:focus, a.label:hover {
   .alert-danger .alert-link {
     color: #c9302c; }
 
-@-webkit-keyframes progress-bar-stripes {
-  from {
-    background-position: 1rem 0; }
-  to {
-    background-position: 0 0; } }
-
 @keyframes progress-bar-stripes {
   from {
     background-position: 1rem 0; }
@@ -3742,16 +3734,14 @@ a.label:focus, a.label:hover {
     background-size: 1rem 1rem; } }
 
 .progress-animated[value]::-webkit-progress-value {
-  -webkit-animation: progress-bar-stripes 2s linear infinite;
-          animation: progress-bar-stripes 2s linear infinite; }
+  animation: progress-bar-stripes 2s linear infinite; }
 
 .progress-animated[value]::-moz-progress-bar {
   animation: progress-bar-stripes 2s linear infinite; }
 
 @media screen and (min-width: 0\0) {
   .progress-animated .progress-bar-striped {
-    -webkit-animation: progress-bar-stripes 2s linear infinite;
-            animation: progress-bar-stripes 2s linear infinite; } }
+    animation: progress-bar-stripes 2s linear infinite; } }
 
 .progress-success[value]::-webkit-progress-value {
   background-color: #5cb85c; }
@@ -4070,14 +4060,10 @@ button.close {
   outline: 0;
   -webkit-overflow-scrolling: touch; }
   .modal.fade .modal-dialog {
-    transition: -webkit-transform .3s ease-out;
     transition: transform .3s ease-out;
-    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
-    -webkit-transform: translate(0, -25%);
-            transform: translate(0, -25%); }
+    transform: translate(0, -25%); }
   .modal.in .modal-dialog {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0); }
+    transform: translate(0, 0); }
 
 .modal-open .modal {
   overflow-x: hidden;
@@ -4364,25 +4350,19 @@ button.close {
       line-height: 1; }
     @media all and (transform-3d), (-webkit-transform-3d) {
       .carousel-inner > .carousel-item {
-        transition: -webkit-transform .6s ease-in-out;
         transition: transform .6s ease-in-out;
-        transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out;
         -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
-        -webkit-perspective: 1000px;
-                perspective: 1000px; }
+        perspective: 1000px; }
         .carousel-inner > .carousel-item.next, .carousel-inner > .carousel-item.active.right {
           left: 0;
-          -webkit-transform: translate3d(100%, 0, 0);
-                  transform: translate3d(100%, 0, 0); }
+          transform: translate3d(100%, 0, 0); }
         .carousel-inner > .carousel-item.prev, .carousel-inner > .carousel-item.active.left {
           left: 0;
-          -webkit-transform: translate3d(-100%, 0, 0);
-                  transform: translate3d(-100%, 0, 0); }
+          transform: translate3d(-100%, 0, 0); }
         .carousel-inner > .carousel-item.next.left, .carousel-inner > .carousel-item.prev.right, .carousel-inner > .carousel-item.active {
           left: 0;
-          -webkit-transform: translate3d(0, 0, 0);
-                  transform: translate3d(0, 0, 0); } }
+          transform: translate3d(0, 0, 0); } }
   .carousel-inner > .active,
   .carousel-inner > .next,
   .carousel-inner > .prev {
@@ -5283,12 +5263,9 @@ a.text-danger:focus, a.text-danger:hover {
 [class^="kf-"],
 [class*=" kf-"] {
   display: inline-block;
-  -webkit-font-feature-settings: normal;
-          font-feature-settings: normal;
-  -webkit-font-kerning: auto;
-          font-kerning: auto;
-  -webkit-font-language-override: normal;
-          font-language-override: normal;
+  font-feature-settings: normal;
+  font-kerning: auto;
+  font-language-override: normal;
   font-size: inherit;
   font-size-adjust: none;
   font-stretch: normal;
@@ -5298,8 +5275,7 @@ a.text-danger:focus, a.text-danger:hover {
   font-weight: normal;
   line-height: 1;
   text-rendering: auto;
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px); }
+  transform: translate(0px, 0px); }
   .kf:before, #kentBar.kent-bar button:before,
   #kentBar.audience-bar button:before,
   [class^="kf-"]:before,
@@ -5349,7 +5325,6 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .slick-track {
@@ -5515,8 +5490,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
           position: absolute;
           bottom: -18px;
           right: calc(50% - 7px);
-          -webkit-transform: rotate(45deg);
-                  transform: rotate(45deg);
+          transform: rotate(45deg);
           z-index: 100;
           border-top: 1px solid #ccc;
           border-left: 1px solid #ccc; } }
@@ -5675,10 +5649,6 @@ body.show-kentbar-menu {
     body.show-kentbar-menu {
       overflow-y: auto; } }
 
-@-webkit-keyframes plyr-progress {
-  to {
-    background-position: 25px 0; } }
-
 @keyframes plyr-progress {
   to {
     background-position: 25px 0; } }
@@ -5732,9 +5702,7 @@ body.show-kentbar-menu {
       background: #fff;
       border: 2px solid transparent;
       border-radius: 100%;
-      transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
       transition: background .2s ease, border .2s ease, transform .2s ease;
-      transition: background .2s ease, border .2s ease, transform .2s ease, -webkit-transform .2s ease;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
       box-sizing: border-box; }
     .plyr input[type='range']::-moz-range-track {
@@ -5751,9 +5719,7 @@ body.show-kentbar-menu {
       background: #fff;
       border: 2px solid transparent;
       border-radius: 100%;
-      transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
       transition: background .2s ease, border .2s ease, transform .2s ease;
-      transition: background .2s ease, border .2s ease, transform .2s ease, -webkit-transform .2s ease;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
       box-sizing: border-box; }
     .plyr input[type='range']::-ms-track {
@@ -5783,9 +5749,7 @@ body.show-kentbar-menu {
       background: #fff;
       border: 2px solid transparent;
       border-radius: 100%;
-      transition: background .2s ease, border .2s ease, -webkit-transform .2s ease;
       transition: background .2s ease, border .2s ease, transform .2s ease;
-      transition: background .2s ease, border .2s ease, transform .2s ease, -webkit-transform .2s ease;
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
       box-sizing: border-box;
       margin-top: 0; }
@@ -5800,8 +5764,7 @@ body.show-kentbar-menu {
     .plyr input[type='range']:active::-webkit-slider-thumb {
       background: #3498db;
       border-color: #fff;
-      -webkit-transform: scale(1.25);
-              transform: scale(1.25); }
+      transform: scale(1.25); }
     .plyr input[type='range']:active::-moz-range-thumb {
       background: #3498db;
       border-color: #fff;
@@ -5852,8 +5815,7 @@ body.show-kentbar-menu {
   .plyr__video-embed > div {
     position: relative;
     padding-bottom: 200%;
-    -webkit-transform: translateY(-35.95%);
-            transform: translateY(-35.95%); }
+    transform: translateY(-35.95%); }
 
 .plyr .plyr__video-embed iframe {
   pointer-events: none; }
@@ -5868,11 +5830,8 @@ body.show-kentbar-menu {
   left: 0;
   width: 100%;
   padding: 20px;
-  -webkit-transform: translateY(-60px);
-          transform: translateY(-60px);
-  transition: -webkit-transform .3s ease;
+  transform: translateY(-60px);
   transition: transform .3s ease;
-  transition: transform .3s ease, -webkit-transform .3s ease;
   color: #fff;
   font-size: 16px;
   text-align: center;
@@ -5897,19 +5856,16 @@ body.show-kentbar-menu {
   font-size: 32px; }
 
 .plyr--hide-controls .plyr__captions {
-  -webkit-transform: translateY(-20px);
-          transform: translateY(-20px); }
+  transform: translateY(-20px); }
 
 .plyr ::-webkit-media-controls {
   display: none; }
 
 .plyr__controls {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   line-height: 1;
   text-align: center; }
   .plyr__controls > button,
@@ -5927,9 +5883,8 @@ body.show-kentbar-menu {
   .plyr__controls button {
     position: relative;
     display: inline-block;
-    -webkit-flex-shrink: 0;
-        -ms-flex-negative: 0;
-            flex-shrink: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
     overflow: visible;
     vertical-align: middle;
     padding: 7px;
@@ -5991,8 +5946,7 @@ body.show-kentbar-menu {
   z-index: 1;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   padding: 10px;
   background: #3498db;
   border: 4px solid currentColor;
@@ -6057,21 +6011,16 @@ body.show-kentbar-menu {
   color: #fff;
   font-size: 14px;
   line-height: 1.3;
-  -webkit-transform: translate(-50%, 10px) scale(0.8);
-          transform: translate(-50%, 10px) scale(0.8);
-  -webkit-transform-origin: 50% 100%;
-          transform-origin: 50% 100%;
-  transition: opacity .2s .1s ease, -webkit-transform .2s .1s ease;
-  transition: transform .2s .1s ease, opacity .2s .1s ease;
-  transition: transform .2s .1s ease, opacity .2s .1s ease, -webkit-transform .2s .1s ease; }
+  transform: translate(-50%, 10px) scale(0.8);
+  transform-origin: 50% 100%;
+  transition: transform .2s .1s ease, opacity .2s .1s ease; }
   .plyr__tooltip::before {
     content: '';
     position: absolute;
     width: 0;
     height: 0;
     left: 50%;
-    -webkit-transform: translateX(-50%);
-            transform: translateX(-50%);
+    transform: translateX(-50%);
     bottom: -4px;
     border-right: 4px solid transparent;
     border-top: 4px solid rgba(0, 0, 0, 0.7);
@@ -6082,32 +6031,26 @@ body.show-kentbar-menu {
 .plyr button.tab-focus:focus .plyr__tooltip,
 .plyr__tooltip--visible {
   opacity: 1;
-  -webkit-transform: translate(-50%, 0) scale(1);
-          transform: translate(-50%, 0) scale(1); }
+  transform: translate(-50%, 0) scale(1); }
 
 .plyr button:hover .plyr__tooltip {
   z-index: 3; }
 
 .plyr__controls button:first-child .plyr__tooltip {
   left: 0;
-  -webkit-transform: translate(0, 10px) scale(0.8);
-          transform: translate(0, 10px) scale(0.8);
-  -webkit-transform-origin: 0 100%;
-          transform-origin: 0 100%; }
+  transform: translate(0, 10px) scale(0.8);
+  transform-origin: 0 100%; }
   .plyr__controls button:first-child .plyr__tooltip::before {
     left: 16px; }
 
 .plyr__controls button:last-child .plyr__tooltip {
   right: 0;
-  -webkit-transform: translate(0, 10px) scale(0.8);
-          transform: translate(0, 10px) scale(0.8);
-  -webkit-transform-origin: 100% 100%;
-          transform-origin: 100% 100%; }
+  transform: translate(0, 10px) scale(0.8);
+  transform-origin: 100% 100%; }
   .plyr__controls button:last-child .plyr__tooltip::before {
     left: auto;
     right: 16px;
-    -webkit-transform: translateX(50%);
-            transform: translateX(50%); }
+    transform: translateX(50%); }
 
 .plyr__controls button:first-child:hover .plyr__tooltip,
 .plyr__controls button:first-child.tab-focus:focus .plyr__tooltip,
@@ -6115,15 +6058,13 @@ body.show-kentbar-menu {
 .plyr__controls button:last-child:hover .plyr__tooltip,
 .plyr__controls button:last-child.tab-focus:focus .plyr__tooltip,
 .plyr__controls button:last-child .plyr__tooltip--visible {
-  -webkit-transform: translate(0, 0) scale(1);
-          transform: translate(0, 0) scale(1); }
+  transform: translate(0, 0) scale(1); }
 
 .plyr__progress {
   display: none;
   position: relative;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1; }
+  -ms-flex: 1;
+      flex: 1; }
   .plyr__progress input[type="range"] {
     position: relative;
     z-index: 2; }
@@ -6224,8 +6165,7 @@ body.show-kentbar-menu {
   color: rgba(198, 214, 219, 0.67); }
 
 .plyr--loading .plyr__progress--buffer {
-  -webkit-animation: plyr-progress 1s linear infinite;
-          animation: plyr-progress 1s linear infinite;
+  animation: plyr-progress 1s linear infinite;
   background-size: 25px 25px;
   background-repeat: repeat-x;
   background-image: linear-gradient(-45deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
@@ -6255,9 +6195,8 @@ body.show-kentbar-menu {
   display: none; }
 
 .plyr .plyr__volume {
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+      flex: 1;
   position: relative; }
   .plyr .plyr__volume input[type="range"] {
     position: relative;
@@ -6303,8 +6242,7 @@ body.show-kentbar-menu {
   .plyr--fullscreen-active.plyr--vimeo .plyr__video-wrapper {
     height: 0;
     top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%); }
+    transform: translateY(-50%); }
 
 .collapse-xs-up {
   max-height: 0;
@@ -6801,8 +6739,7 @@ p + h6, p + .h6 {
     color: #FFF;
     transition: all 300ms;
     transition-timing-function: linear;
-    -webkit-transform-origin: 50% 50%;
-            transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
     pointer-events: none;
     text-shadow: 0 0 20px #333;
     opacity: 0.7; }
@@ -6817,8 +6754,7 @@ p + h6, p + .h6 {
         height: 7rem; } }
   .video-launcher:hover:after {
     opacity: 1;
-    -webkit-transform: scale(1.1, 1.1);
-            transform: scale(1.1, 1.1); }
+    transform: scale(1.1, 1.1); }
 
 .media-wrap-letterbox, .media-wrap-parallax, .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
   position: relative;
@@ -7026,8 +6962,7 @@ figure figcaption,
       transition: all 300ms; }
     .video-launcher.playing.playing.playing .plyr__play-large:hover .kf-play-circle {
       opacity: 1;
-      -webkit-transform: scale(1.1, 1.1);
-              transform: scale(1.1, 1.1); }
+      transform: scale(1.1, 1.1); }
 
 .alert {
   background-color: #fff; }
@@ -8110,16 +8045,13 @@ input[type=number]::-webkit-outer-spin-button {
   margin-bottom: 2rem; }
   @media (min-width: 768px) {
     .jump-links {
-      -webkit-column-count: 2;
-         -moz-column-count: 2;
-              column-count: 2;
-      -webkit-column-gap: 2rem;
-         -moz-column-gap: 2rem;
-              column-gap: 2rem; } }
+      -moz-column-count: 2;
+           column-count: 2;
+      -moz-column-gap: 2rem;
+           column-gap: 2rem; } }
   .jump-links p {
-    -webkit-column-span: all;
-       -moz-column-span: all;
-            column-span: all; }
+    -moz-column-span: all;
+         column-span: all; }
   .jump-links a {
     display: block; }
     .jump-links a:before {
@@ -8396,8 +8328,7 @@ input[type=number]::-webkit-outer-spin-button {
               bottom: -3.1rem;
               left: 40%;
               left: calc(50% - 1.25rem);
-              -webkit-transform: rotate(45deg);
-                      transform: rotate(45deg); }
+              transform: rotate(45deg); }
           .global-nav .global-nav-links .global-nav-link .global-nav-link-submenu {
             max-height: 0;
             transition: max-height 200ms;
@@ -8678,8 +8609,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
           bottom: -3.1rem;
           left: 40%;
           left: calc(50% - 1.25rem);
-          -webkit-transform: rotate(45deg);
-                  transform: rotate(45deg); }
+          transform: rotate(45deg); }
       .home-nav .global-nav-links .global-nav-link .global-nav-link-submenu {
         max-height: 0;
         transition: max-height 200ms;
@@ -8930,8 +8860,7 @@ nav.breadcrumb {
       height: auto; } }
 
 .beta-bar {
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   background-color: #FBF5E9;
   padding: 20.8px 48px 0 20.8px;
   padding: 1.3rem 3rem 0 1.3rem;
@@ -9330,15 +9259,12 @@ button.beta-toggler {
     transition: opacity 600ms; }
   .card .card-img-overlay-centered {
     pointer-events: auto;
-    display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center; }
   .card .card-img-overlay-tinted {
     background-color: rgba(0, 0, 0, 0.3); }
   .card .card-img-overlay-bottom-shaded {
@@ -10069,12 +9995,10 @@ button.beta-toggler {
     padding: 0; }
     @media (min-width: 544px) {
       .card-panel .card-panel-body {
-        display: -webkit-flex;
         display: -ms-flexbox;
         display: flex;
-        -webkit-flex-wrap: wrap;
-            -ms-flex-wrap: wrap;
-                flex-wrap: wrap; } }
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; } }
     .card-panel .card-panel-body > .card {
       margin-top: 16px;
       margin-top: 1rem; }
@@ -10127,7 +10051,6 @@ button.beta-toggler {
     .card-panel .card-panel-body .card-panel-full {
       overflow: visible;
       padding: 0;
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
       width: 100%;
@@ -10228,31 +10151,19 @@ button.beta-toggler {
         margin-left: .4rem; }
   .card-panel a.card .card-text, .card-panel a.card:hover .card-text, .card-panel a.card:focus .card-text, .card-panel .card a .card-text, .card-panel .card a:hover .card-text, .card-panel .card a:focus .card-text {
     color: #171717; }
-  .card-panel a.card.card-inverse .card-text, .card-panel a.card.card-backed-primary .card-text, .card-panel.cards-backed-primary a.card .card-text, .card-panel a.card.card-backed-primary-light .card-text, .card-panel.cards-backed-primary-light a.card .card-text, .card-panel a.card.card-backed-accent .card-text, .card-panel.cards-backed-accent a.card .card-text, .card-panel a.card.card-backed-dark .card-text, .card-panel.cards-backed-dark a.card .card-text, .card-panel a.card.card-backed-energy .card-text, .card-panel.cards-backed-energy a.card .card-text, .card-panel .card a.card.card-img-overlay-bottom .card-text, .card .card-panel a.card.card-img-overlay-bottom .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded .card-text, .card-panel .card a.card.card-img-overlay-centered .card-text, .card .card-panel a.card.card-img-overlay-centered .card-text, .card-panel a.card.editorial.editorial-primary .card-text, .card-panel a.card.editorial.editorial-primary-light .card-text, .card-panel a.card.editorial.editorial-accent .card-text, .card-panel a.card.editorial.editorial-dark .card-text, .card-panel a.card.editorial.editorial-energy .card-text, .card-panel a.card.card-inverse:hover .card-text, .card-panel a.card.card-backed-primary:hover .card-text, .card-panel.cards-backed-primary a.card:hover .card-text, .card-panel a.card.card-backed-primary-light:hover .card-text, .card-panel.cards-backed-primary-light a.card:hover .card-text, .card-panel a.card.card-backed-accent:hover .card-text, .card-panel.cards-backed-accent a.card:hover .card-text, .card-panel a.card.card-backed-dark:hover .card-text, .card-panel.cards-backed-dark a.card:hover .card-text, .card-panel a.card.card-backed-energy:hover .card-text, .card-panel.cards-backed-energy a.card:hover .card-text, .card-panel .card a.card.card-img-overlay-bottom:hover .card-text, .card .card-panel a.card.card-img-overlay-bottom:hover .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:hover .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:hover .card-text, .card-panel .card a.card.card-img-overlay-centered:hover .card-text, .card .card-panel a.card.card-img-overlay-centered:hover .card-text, .card-panel a.card.editorial.editorial-primary:hover .card-text, .card-panel a.card.editorial.editorial-primary-light:hover .card-text, .card-panel a.card.editorial.editorial-accent:hover .card-text, .card-panel a.card.editorial.editorial-dark:hover .card-text, .card-panel a.card.editorial.editorial-energy:hover .card-text, .card-panel a.card.card-inverse:focus .card-text, .card-panel a.card.card-backed-primary:focus .card-text, .card-panel.cards-backed-primary a.card:focus .card-text, .card-panel a.card.card-backed-primary-light:focus .card-text, .card-panel.cards-backed-primary-light a.card:focus .card-text, .card-panel a.card.card-backed-accent:focus .card-text, .card-panel.cards-backed-accent a.card:focus .card-text, .card-panel a.card.card-backed-dark:focus .card-text, .card-panel.cards-backed-dark a.card:focus .card-text, .card-panel a.card.card-backed-energy:focus .card-text, .card-panel.cards-backed-energy a.card:focus .card-text, .card-panel .card a.card.card-img-overlay-bottom:focus .card-text, .card .card-panel a.card.card-img-overlay-bottom:focus .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:focus .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:focus .card-text, .card-panel .card a.card.card-img-overlay-centered:focus .card-text, .card .card-panel a.card.card-img-overlay-centered:focus .card-text, .card-panel a.card.editorial.editorial-primary:focus .card-text, .card-panel a.card.editorial.editorial-primary-light:focus .card-text, .card-panel a.card.editorial.editorial-accent:focus .card-text, .card-panel a.card.editorial.editorial-dark:focus .card-text, .card-panel a.card.editorial.editorial-energy:focus .card-text, .card-panel .card.card-inverse a .card-text, .card-panel .card.card-backed-primary a .card-text, .card-panel.cards-backed-primary .card a .card-text,
-  .card-panel.cards-backed .card.card-backed-primary a .card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-primary .card a .card-text, .card-panel.cards-backed-primary
-  .card-panel.cards-backed .card a .card-text, .card-panel .card.card-backed-primary-light a .card-text, .card-panel.cards-backed-primary-light .card a .card-text,
-  .card-panel.cards-backed .card.card-backed-primary-light a .card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-primary-light .card a .card-text, .card-panel.cards-backed-primary-light
-  .card-panel.cards-backed .card a .card-text, .card-panel .card.card-backed-accent a .card-text, .card-panel.cards-backed-accent .card a .card-text,
-  .card-panel.cards-backed .card.card-backed-accent a .card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-accent .card a .card-text, .card-panel.cards-backed-accent
-  .card-panel.cards-backed .card a .card-text, .card-panel .card.card-backed-dark a .card-text, .card-panel.cards-backed-dark .card a .card-text,
-  .card-panel.cards-backed .card.card-backed-dark a .card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-dark .card a .card-text, .card-panel.cards-backed-dark
-  .card-panel.cards-backed .card a .card-text, .card-panel .card.card-backed-energy a .card-text, .card-panel.cards-backed-energy .card a .card-text,
-  .card-panel.cards-backed .card.card-backed-energy a .card-text,
-  .card-panel.cards-backed .card-panel.cards-backed-energy .card a .card-text, .card-panel.cards-backed-energy
-  .card-panel.cards-backed .card a .card-text, .card-panel .card .card.card-img-overlay-bottom a .card-text, .card .card-panel .card.card-img-overlay-bottom a .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a .card-text, .card-panel .card .card.card-img-overlay-centered a .card-text, .card .card-panel .card.card-img-overlay-centered a .card-text, .card-panel .card.editorial.editorial-primary a .card-text, .card-panel .card.editorial.editorial-primary-light a .card-text, .card-panel .card.editorial.editorial-accent a .card-text, .card-panel .card.editorial.editorial-dark a .card-text, .card-panel .card.editorial.editorial-energy a .card-text, .card-panel .card.card-inverse a:hover .card-text, .card-panel .card.card-backed-primary a:hover .card-text, .card-panel.cards-backed-primary .card a:hover .card-text, .card-panel .card.card-backed-primary-light a:hover .card-text, .card-panel.cards-backed-primary-light .card a:hover .card-text, .card-panel .card.card-backed-accent a:hover .card-text, .card-panel.cards-backed-accent .card a:hover .card-text, .card-panel .card.card-backed-dark a:hover .card-text, .card-panel.cards-backed-dark .card a:hover .card-text, .card-panel .card.card-backed-energy a:hover .card-text, .card-panel.cards-backed-energy .card a:hover .card-text, .card-panel .card .card.card-img-overlay-bottom a:hover .card-text, .card .card-panel .card.card-img-overlay-bottom a:hover .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:hover .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:hover .card-text, .card-panel .card .card.card-img-overlay-centered a:hover .card-text, .card .card-panel .card.card-img-overlay-centered a:hover .card-text, .card-panel .card.editorial.editorial-primary a:hover .card-text, .card-panel .card.editorial.editorial-primary-light a:hover .card-text, .card-panel .card.editorial.editorial-accent a:hover .card-text, .card-panel .card.editorial.editorial-dark a:hover .card-text, .card-panel .card.editorial.editorial-energy a:hover .card-text, .card-panel .card.card-inverse a:focus .card-text, .card-panel .card.card-backed-primary a:focus .card-text, .card-panel.cards-backed-primary .card a:focus .card-text, .card-panel .card.card-backed-primary-light a:focus .card-text, .card-panel.cards-backed-primary-light .card a:focus .card-text, .card-panel .card.card-backed-accent a:focus .card-text, .card-panel.cards-backed-accent .card a:focus .card-text, .card-panel .card.card-backed-dark a:focus .card-text, .card-panel.cards-backed-dark .card a:focus .card-text, .card-panel .card.card-backed-energy a:focus .card-text, .card-panel.cards-backed-energy .card a:focus .card-text, .card-panel .card .card.card-img-overlay-bottom a:focus .card-text, .card .card-panel .card.card-img-overlay-bottom a:focus .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:focus .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:focus .card-text, .card-panel .card .card.card-img-overlay-centered a:focus .card-text, .card .card-panel .card.card-img-overlay-centered a:focus .card-text, .card-panel .card.editorial.editorial-primary a:focus .card-text, .card-panel .card.editorial.editorial-primary-light a:focus .card-text, .card-panel .card.editorial.editorial-accent a:focus .card-text, .card-panel .card.editorial.editorial-dark a:focus .card-text, .card-panel .card.editorial.editorial-energy a:focus .card-text {
+  .card-panel a.card.card-inverse .card-text, .card-panel a.card.card-backed-primary .card-text, .card-panel.cards-backed-primary a.card .card-text, .card-panel a.card.card-backed-primary-light .card-text, .card-panel.cards-backed-primary-light a.card .card-text, .card-panel a.card.card-backed-accent .card-text, .card-panel.cards-backed-accent a.card .card-text, .card-panel a.card.card-backed-dark .card-text, .card-panel.cards-backed-dark a.card .card-text, .card-panel a.card.card-backed-energy .card-text, .card-panel.cards-backed-energy a.card .card-text, .card-panel .card a.card.card-img-overlay-bottom .card-text, .card .card-panel a.card.card-img-overlay-bottom .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded .card-text, .card-panel .card a.card.card-img-overlay-centered .card-text, .card .card-panel a.card.card-img-overlay-centered .card-text, .card-panel a.card.editorial.editorial-primary .card-text, .card-panel a.card.editorial.editorial-primary-light .card-text, .card-panel a.card.editorial.editorial-accent .card-text, .card-panel a.card.editorial.editorial-dark .card-text, .card-panel a.card.editorial.editorial-energy .card-text, .card-panel a.card.card-inverse:hover .card-text, .card-panel a.card.card-backed-primary:hover .card-text, .card-panel.cards-backed-primary a.card:hover .card-text, .card-panel a.card.card-backed-primary-light:hover .card-text, .card-panel.cards-backed-primary-light a.card:hover .card-text, .card-panel a.card.card-backed-accent:hover .card-text, .card-panel.cards-backed-accent a.card:hover .card-text, .card-panel a.card.card-backed-dark:hover .card-text, .card-panel.cards-backed-dark a.card:hover .card-text, .card-panel a.card.card-backed-energy:hover .card-text, .card-panel.cards-backed-energy a.card:hover .card-text, .card-panel .card a.card.card-img-overlay-bottom:hover .card-text, .card .card-panel a.card.card-img-overlay-bottom:hover .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:hover .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:hover .card-text, .card-panel .card a.card.card-img-overlay-centered:hover .card-text, .card .card-panel a.card.card-img-overlay-centered:hover .card-text, .card-panel a.card.editorial.editorial-primary:hover .card-text, .card-panel a.card.editorial.editorial-primary-light:hover .card-text, .card-panel a.card.editorial.editorial-accent:hover .card-text, .card-panel a.card.editorial.editorial-dark:hover .card-text, .card-panel a.card.editorial.editorial-energy:hover .card-text, .card-panel a.card.card-inverse:focus .card-text, .card-panel a.card.card-backed-primary:focus .card-text, .card-panel.cards-backed-primary a.card:focus .card-text, .card-panel a.card.card-backed-primary-light:focus .card-text, .card-panel.cards-backed-primary-light a.card:focus .card-text, .card-panel a.card.card-backed-accent:focus .card-text, .card-panel.cards-backed-accent a.card:focus .card-text, .card-panel a.card.card-backed-dark:focus .card-text, .card-panel.cards-backed-dark a.card:focus .card-text, .card-panel a.card.card-backed-energy:focus .card-text, .card-panel.cards-backed-energy a.card:focus .card-text, .card-panel .card a.card.card-img-overlay-bottom:focus .card-text, .card .card-panel a.card.card-img-overlay-bottom:focus .card-text, .card-panel .card a.card.card-img-overlay-bottom-shaded:focus .card-text, .card .card-panel a.card.card-img-overlay-bottom-shaded:focus .card-text, .card-panel .card a.card.card-img-overlay-centered:focus .card-text, .card .card-panel a.card.card-img-overlay-centered:focus .card-text, .card-panel a.card.editorial.editorial-primary:focus .card-text, .card-panel a.card.editorial.editorial-primary-light:focus .card-text, .card-panel a.card.editorial.editorial-accent:focus .card-text, .card-panel a.card.editorial.editorial-dark:focus .card-text, .card-panel a.card.editorial.editorial-energy:focus .card-text, .card-panel .card.card-inverse a .card-text, .card-panel .card.card-backed-primary a .card-text, .card-panel.cards-backed-primary .card a .card-text, .card-panel.cards-backed .card.card-backed-primary a .card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-primary .card a .card-text, .card-panel.cards-backed-primary .card-panel.cards-backed .card a .card-text, .card-panel .card.card-backed-primary-light a .card-text, .card-panel.cards-backed-primary-light .card a .card-text, .card-panel.cards-backed .card.card-backed-primary-light a .card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-primary-light .card a .card-text, .card-panel.cards-backed-primary-light .card-panel.cards-backed .card a .card-text, .card-panel .card.card-backed-accent a .card-text, .card-panel.cards-backed-accent .card a .card-text, .card-panel.cards-backed .card.card-backed-accent a .card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-accent .card a .card-text, .card-panel.cards-backed-accent .card-panel.cards-backed .card a .card-text, .card-panel .card.card-backed-dark a .card-text, .card-panel.cards-backed-dark .card a .card-text, .card-panel.cards-backed .card.card-backed-dark a .card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-dark .card a .card-text, .card-panel.cards-backed-dark .card-panel.cards-backed .card a .card-text, .card-panel .card.card-backed-energy a .card-text, .card-panel.cards-backed-energy .card a .card-text, .card-panel.cards-backed .card.card-backed-energy a .card-text,
+  .card-panel.cards-backed .card-panel.cards-backed-energy .card a .card-text, .card-panel.cards-backed-energy .card-panel.cards-backed .card a .card-text, .card-panel .card .card.card-img-overlay-bottom a .card-text, .card .card-panel .card.card-img-overlay-bottom a .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a .card-text, .card-panel .card .card.card-img-overlay-centered a .card-text, .card .card-panel .card.card-img-overlay-centered a .card-text, .card-panel .card.editorial.editorial-primary a .card-text, .card-panel .card.editorial.editorial-primary-light a .card-text, .card-panel .card.editorial.editorial-accent a .card-text, .card-panel .card.editorial.editorial-dark a .card-text, .card-panel .card.editorial.editorial-energy a .card-text, .card-panel .card.card-inverse a:hover .card-text, .card-panel .card.card-backed-primary a:hover .card-text, .card-panel.cards-backed-primary .card a:hover .card-text, .card-panel .card.card-backed-primary-light a:hover .card-text, .card-panel.cards-backed-primary-light .card a:hover .card-text, .card-panel .card.card-backed-accent a:hover .card-text, .card-panel.cards-backed-accent .card a:hover .card-text, .card-panel .card.card-backed-dark a:hover .card-text, .card-panel.cards-backed-dark .card a:hover .card-text, .card-panel .card.card-backed-energy a:hover .card-text, .card-panel.cards-backed-energy .card a:hover .card-text, .card-panel .card .card.card-img-overlay-bottom a:hover .card-text, .card .card-panel .card.card-img-overlay-bottom a:hover .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:hover .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:hover .card-text, .card-panel .card .card.card-img-overlay-centered a:hover .card-text, .card .card-panel .card.card-img-overlay-centered a:hover .card-text, .card-panel .card.editorial.editorial-primary a:hover .card-text, .card-panel .card.editorial.editorial-primary-light a:hover .card-text, .card-panel .card.editorial.editorial-accent a:hover .card-text, .card-panel .card.editorial.editorial-dark a:hover .card-text, .card-panel .card.editorial.editorial-energy a:hover .card-text, .card-panel .card.card-inverse a:focus .card-text, .card-panel .card.card-backed-primary a:focus .card-text, .card-panel.cards-backed-primary .card a:focus .card-text, .card-panel .card.card-backed-primary-light a:focus .card-text, .card-panel.cards-backed-primary-light .card a:focus .card-text, .card-panel .card.card-backed-accent a:focus .card-text, .card-panel.cards-backed-accent .card a:focus .card-text, .card-panel .card.card-backed-dark a:focus .card-text, .card-panel.cards-backed-dark .card a:focus .card-text, .card-panel .card.card-backed-energy a:focus .card-text, .card-panel.cards-backed-energy .card a:focus .card-text, .card-panel .card .card.card-img-overlay-bottom a:focus .card-text, .card .card-panel .card.card-img-overlay-bottom a:focus .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:focus .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:focus .card-text, .card-panel .card .card.card-img-overlay-centered a:focus .card-text, .card .card-panel .card.card-img-overlay-centered a:focus .card-text, .card-panel .card.editorial.editorial-primary a:focus .card-text, .card-panel .card.editorial.editorial-primary-light a:focus .card-text, .card-panel .card.editorial.editorial-accent a:focus .card-text, .card-panel .card.editorial.editorial-dark a:focus .card-text, .card-panel .card.editorial.editorial-energy a:focus .card-text {
     color: rgba(255, 255, 255, 0.75); }
 
 .card-panel-flush {
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0; }
   @media (min-width: 768px) {
     .card-panel-flush {
@@ -10558,6 +10469,11 @@ button.beta-toggler {
       .card.header-card-overlay .card-title-wrap.card-title-wrap .card-text {
         font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
         color: #FFFFFF; }
+      @media (min-width: 1712px) {
+        .card.header-card-overlay .card-title-wrap.card-title-wrap .card-title {
+          font-size: 3rem; }
+        .card.header-card-overlay .card-title-wrap.card-title-wrap .card-text {
+          font-size: 1.5rem; } }
     .card.header-card-overlay .card-title-wrap.card-title-wrap-link:after {
       content: none; }
     .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
@@ -10586,6 +10502,8 @@ button.beta-toggler {
     margin-bottom: -1.5rem; }
     .card.header-card-overlay .card-footer .caption {
       text-align: right; }
+  .card.header-card-overlay .card-media-wrap {
+    max-height: 66vh; }
 
 @media (min-width: 768px) {
   .show-departmental-menu .card.header-card-overlay {
@@ -11195,6 +11113,17 @@ blockquote.pull-quote {
       .embed-responsive .embed-responsive-item-overlay .video-transcript {
         padding-bottom: 1.5rem; } }
 
+@media (min-width: 992px) {
+  .embed-responsive {
+    height: 66vh; } }
+
+@media (max-width: 1199px) {
+  .embed-responsive {
+    padding-bottom: 56.25%; } }
+
+.embed-responsive video {
+  object-fit: cover; }
+
 .click-to-interact iframe {
   pointer-events: none; }
 
@@ -11268,12 +11197,10 @@ blockquote.pull-quote {
   color: #737373; }
   @media (min-width: 544px) {
     .byline {
-      display: -webkit-flex;
       display: -ms-flexbox;
       display: flex;
-      -webkit-align-items: center;
-          -ms-flex-align: center;
-              align-items: center; } }
+      -ms-flex-align: center;
+          align-items: center; } }
   .byline img {
     height: 48px;
     height: 3rem;
