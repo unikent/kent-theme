@@ -9,12 +9,9 @@
 [class^="kf-"],
 [class*=" kf-"] {
   display: inline-block;
-  -webkit-font-feature-settings: normal;
-          font-feature-settings: normal;
-  -webkit-font-kerning: auto;
-          font-kerning: auto;
-  -webkit-font-language-override: normal;
-          font-language-override: normal;
+  font-feature-settings: normal;
+  font-kerning: auto;
+  font-language-override: normal;
   font-size: inherit;
   font-size-adjust: none;
   font-stretch: normal;
@@ -24,8 +21,7 @@
   font-weight: normal;
   line-height: 1;
   text-rendering: auto;
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
+  transform: translate(0px, 0px);
 }
 .kf:before,
 [class^="kf-"]:before,
@@ -400,56 +396,37 @@
   color: #fff;
 }
 .kf-spin {
-  -webkit-animation: kf-spin 2s infinite linear;
   animation: kf-spin 2s infinite linear;
 }
 .kf-pulse {
-  -webkit-animation: kf-spin 1s infinite steps(8);
   animation: kf-spin 1s infinite steps(8);
-}
-@-webkit-keyframes kf-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
 }
 @keyframes kf-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(359deg);
     transform: rotate(359deg);
   }
 }
 .kf-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
-  -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 .kf-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
-  -webkit-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 .kf-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-  -webkit-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 .kf-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
-  -webkit-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 .kf-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
-  -webkit-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 .kf-ul {
@@ -470,5 +447,4 @@
 .kf-li.kf-lg {
   left: -1.85714286em;
 }
-
 /*# sourceMappingURL=kentfont.css.map */
