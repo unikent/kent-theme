@@ -16,6 +16,17 @@
                 font-family: $font-family-sans-serif;
                 color:       #FFFFFF;
             }
+
+            @include media-breakpoint-up(xxl) {
+
+                .card-title {
+                    font-size: 3rem;
+                }
+
+                .card-text {
+                    font-size: 1.5rem;
+                }
+            }
         }
 
         &.card-title-wrap-link{
@@ -52,6 +63,8 @@
     }
 
 
+
+
     .card-footer {
         padding: 0 .5rem;
         display: block;
@@ -60,6 +73,10 @@
             text-align: right;
         }
         margin-bottom: -1.5rem;
+    }
+
+    .card-media-wrap{
+        max-height: 66vh;
     }
 }
 

@@ -77,7 +77,7 @@
 			}
 
 			// Set ratio's
-			var $ratio = ResponsiveBootstrapToolkit.is('<xl') ? ( 9 / 16 ) : ( 7 / 16 );
+			var $ratio = ResponsiveBootstrapToolkit.is('<xl') ? ( 9 / 16 ) : ( 6 / 16 );
 			$('.media-wrap-parallax').each(function () {
 				$(this).css('min-height', ($(window).width() * $ratio) + 'px');
 			});
