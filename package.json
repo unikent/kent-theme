@@ -55,7 +55,7 @@
     "modernizr": "~3.3.1",
     "moment": "^2.13.0",
     "pixrem": "^3.0.0",
-    "plyr": "^1.8.12",
+    "plyr": "1.8.12",
     "slick-carousel": "1.6",
     "social-likes": "^3.1.0",
     "tether": "~1.2.0",
