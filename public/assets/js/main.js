@@ -19753,16 +19753,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	var services = {
 		facebook: {
-			// https://developers.facebook.com/docs/reference/fql/link_stat/
-			counterUrl: 'https://graph.facebook.com/fql?q=SELECT+total_count+FROM+link_stat+WHERE+url%3D%22{url}%22&callback=?',
+			counterUrl: 'https://graph.facebook.com/?id={url}',
 			convertNumber: function(data) {
-				return data.data[0].total_count;
+				return data.share.share_count;
 			},
 			popupUrl: 'https://www.facebook.com/sharer/sharer.php?u={url}',
 			popupWidth: 600,
 			popupHeight: 359
 		},
 		twitter: {
+			counters: false,
 			popupUrl: 'https://twitter.com/intent/tweet?url={url}&text={title}',
 			popupWidth: 600,
 			popupHeight: 250,
@@ -20040,11 +20040,12 @@ return /******/ (function(modules) { // webpackBootstrap
 				}
 			}
 
+			this.countersLeft--;
+
 			if (this.countersLeft === 0) {
 				this.appear();
 				this.ready();
 			}
-			this.countersLeft--;
 		},
 		appear: function() {
 			this.container.addClass(prefix + '_visible');
@@ -20150,7 +20151,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			// Button
 			var button = $('<span>', {
 				'class': this.getElementClassNames('button'),
-				'text': widget.text()
+				'html': widget.html()
 			});
 			if (options.clickUrl) {
 				var url = makeUrl(options.clickUrl, {
@@ -28453,7 +28454,8 @@ window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(f
 var $tabs=$('a[data-toggle="tab"]');// when tab is hidden adjust related accordion tab-title accordingly
 $tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);});// when tab is show adjust related accordion tab-title accordingly
 $tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);});//endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
-$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});})();/**
+$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);var activeTab=$('[href="#'+hash+'"]');if(activeTab){activeTab.tab('show');}// Change hash for page-reload
+$('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})();/**
  * Parallax
  *
  * Provides parallax functionality
@@ -28475,5 +28477,5 @@ hideDistantElements:false,// Customise how elements are shown and hidden
 hideElement:function hideElement($elem){$elem.hide();},showElement:function showElement($elem){$elem.show();}});stellarSetup=true;}stellarActive=true;};// Disable stellar.js
 var disableStellar=function disableStellar(){$(window).data('plugin_stellar').destroy();stellarActive=false;};// Handle resize
 function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','').find('img').removeAttr('style');}else{if(!stellarActive){initStellar();}// Set ratio's
-var $ratio=ResponsiveBootstrapToolkit.is('<xl')?9/16:7/16;$('.media-wrap-parallax').each(function(){$(this).css('min-height',$(window).width()*$ratio+'px');});$(window).data('plugin_stellar').refresh();}}$(window).on('viewport:resize',function(){react_to_window();});$(document).ready(function(){react_to_window();});})();
+var $ratio=ResponsiveBootstrapToolkit.is('<xl')?9/16:6/16;$('.media-wrap-parallax').each(function(){$(this).css('min-height',$(window).width()*$ratio+'px');});$(window).data('plugin_stellar').refresh();}}$(window).on('viewport:resize',function(){react_to_window();});$(document).ready(function(){react_to_window();});})();
 //# sourceMappingURL=main.compiled.js.map

@@ -2,10 +2,9 @@
 
     header {
         font-family:      $font-family-serif;
-        background-color: $brand-primary;
+        background-color: $brand-primary-light;
         color:            #FFFFFF;
         padding:          .5rem 1rem;
-        border-top:       1px solid lighten($brand-primary, 6%);
         font-size:        1.1rem;
         text-transform:   uppercase;
         a{
@@ -15,8 +14,8 @@
         }
     }
     .navbar-toggler {
-        background-color: $gray-dark-trans;
-        color:            #FFFFFF;
+        background-color: $brand-nav-bg;
+        color: $brand-primary;
         cursor:           pointer;
 
         &:after {
@@ -34,13 +33,14 @@
     .navbar-menu {
         max-height:                 0px;
         overflow:                   hidden;
-        background-color:           $gray-dark-trans;
-        color:                      #FFFFFF;
+        background-color: $brand-nav-bg;
+        color: $brand-primary;
         transition:                 max-height 300ms;
         transition-timing-function: ease-in-out;
 
         position:                   relative;
         font-size:                  0;
+
         &.in {
             height:     auto;
             max-height: 1000px;
@@ -54,6 +54,18 @@
 
         & > a:first-child {
             border-top: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        a {
+            color: $brand-primary;
+            border-bottom: 1px solid $brand-nav-active;
+
+            &:hover, &.active {
+                background-color: $brand-nav-active;
+            }
+            &:first-child{
+                 border-top: 1px solid $brand-nav-active;
+            }
         }
 
     }
@@ -109,7 +121,7 @@
                 display:       inline-block;
                 padding:       0.5rem 1rem;
                 border-top:    none;
-                border-bottom: none;
+
                 &:first-child {
                     border-top: none;
                 }
@@ -162,40 +174,6 @@
 
             &.slim {
                 min-height: auto;
-            }
-        }
-    }
-}
-
-.brand-header {
-    .departmental-nav {
-        header{
-            border-top: none;
-            background-color: $brand-primary-light;
-        }
-
-        .navbar-toggler,
-        .navbar-menu {
-            background-color: $brand-nav-bg;
-            color: $brand-primary;
-        }
-
-        .navbar-menu {
-            a {
-                color: $brand-primary;
-
-                border-bottom: 1px solid $brand-nav-active;
-
-                &:hover {
-                    background-color: $brand-nav-active;
-                }
-                &.active {
-                    background-color: $brand-nav-active;
-                }
-
-                &:first-child{
-                    border-top: 1px solid $brand-nav-active;
-                }
             }
         }
     }
