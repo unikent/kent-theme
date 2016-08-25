@@ -259,7 +259,8 @@
         font-weight: normal;
         color:       $kent-primary;
         font-size:   1.1rem;
-
+        margin-top: 1rem;
+        display: inline-block;
         &.card-title-figure{
             margin-top: 1rem;
             font-size: 3.5rem;
@@ -310,14 +311,6 @@
         @extend .img-fluid;
     }
 
-    .card-img,
-    .card-img-top,
-    .card-media-wrap {
-        &:first-child {
-            margin-bottom: 0.75rem;
-        }
-    }
-
     .card-media-wrap,
     .media-wrap,
     .media-wrap-paralax {
@@ -364,9 +357,9 @@
         }
     }
 
-    ul {
-        @include bullet-list;
-    }
+    //ul {
+    //    @include bullet-list;
+    //}
 
     .card-badge {
         text-decoration: none;
@@ -427,6 +420,10 @@
                 }
             }
         }
+    }
+
+    .list-group-flush .list-group-item{
+        padding-left: 0;
     }
 
     // if card is an A
