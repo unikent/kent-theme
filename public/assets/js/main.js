@@ -19753,16 +19753,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	var services = {
 		facebook: {
-			// https://developers.facebook.com/docs/reference/fql/link_stat/
-			counterUrl: 'https://graph.facebook.com/fql?q=SELECT+total_count+FROM+link_stat+WHERE+url%3D%22{url}%22&callback=?',
+			counterUrl: 'https://graph.facebook.com/?id={url}',
 			convertNumber: function(data) {
-				return data.data[0].total_count;
+				return data.share.share_count;
 			},
 			popupUrl: 'https://www.facebook.com/sharer/sharer.php?u={url}',
 			popupWidth: 600,
 			popupHeight: 359
 		},
 		twitter: {
+			counters: false,
 			popupUrl: 'https://twitter.com/intent/tweet?url={url}&text={title}',
 			popupWidth: 600,
 			popupHeight: 250,
@@ -20040,11 +20040,12 @@ return /******/ (function(modules) { // webpackBootstrap
 				}
 			}
 
+			this.countersLeft--;
+
 			if (this.countersLeft === 0) {
 				this.appear();
 				this.ready();
 			}
-			this.countersLeft--;
 		},
 		appear: function() {
 			this.container.addClass(prefix + '_visible');
@@ -20150,7 +20151,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			// Button
 			var button = $('<span>', {
 				'class': this.getElementClassNames('button'),
-				'text': widget.text()
+				'html': widget.html()
 			});
 			if (options.clickUrl) {
 				var url = makeUrl(options.clickUrl, {
@@ -20501,7 +20502,7 @@ return /******/ (function(modules) { // webpackBootstrap
 }));
 
 //! moment.js
-//! version : 2.13.0
+//! version : 2.14.1
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
 //! momentjs.com
@@ -20526,6 +20527,19 @@ return /******/ (function(modules) { // webpackBootstrap
 
     function isArray(input) {
         return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
+    }
+
+    function isObject(input) {
+        return Object.prototype.toString.call(input) === '[object Object]';
+    }
+
+    function isObjectEmpty(obj) {
+        var k;
+        for (k in obj) {
+            // even if its not own property I'd still call it non-empty
+            return false;
+        }
+        return true;
     }
 
     function isDate(input) {
@@ -20723,7 +20737,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
     function absFloor (number) {
         if (number < 0) {
-            return Math.ceil(number);
+            // -0 -> 0
+            return Math.ceil(number) || 0;
         } else {
             return Math.floor(number);
         }
@@ -20796,10 +20811,6 @@ return /******/ (function(modules) { // webpackBootstrap
         return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
     }
 
-    function isObject(input) {
-        return Object.prototype.toString.call(input) === '[object Object]';
-    }
-
     function locale_set__set (config) {
         var prop, i;
         for (i in config) {
@@ -20831,6 +20842,14 @@ return /******/ (function(modules) { // webpackBootstrap
                 }
             }
         }
+        for (prop in parentConfig) {
+            if (hasOwnProp(parentConfig, prop) &&
+                    !hasOwnProp(childConfig, prop) &&
+                    isObject(parentConfig[prop])) {
+                // make sure changes to properties don't modify parent config
+                res[prop] = extend({}, res[prop]);
+            }
+        }
         return res;
     }
 
@@ -20856,161 +20875,83 @@ return /******/ (function(modules) { // webpackBootstrap
         };
     }
 
-    // internal storage for locale config files
-    var locales = {};
-    var globalLocale;
+    var defaultCalendar = {
+        sameDay : '[Today at] LT',
+        nextDay : '[Tomorrow at] LT',
+        nextWeek : 'dddd [at] LT',
+        lastDay : '[Yesterday at] LT',
+        lastWeek : '[Last] dddd [at] LT',
+        sameElse : 'L'
+    };
 
-    function normalizeLocale(key) {
-        return key ? key.toLowerCase().replace('_', '-') : key;
+    function locale_calendar__calendar (key, mom, now) {
+        var output = this._calendar[key] || this._calendar['sameElse'];
+        return isFunction(output) ? output.call(mom, now) : output;
     }
 
-    // pick the locale from the array
-    // try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
-    // substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
-    function chooseLocale(names) {
-        var i = 0, j, next, locale, split;
+    var defaultLongDateFormat = {
+        LTS  : 'h:mm:ss A',
+        LT   : 'h:mm A',
+        L    : 'MM/DD/YYYY',
+        LL   : 'MMMM D, YYYY',
+        LLL  : 'MMMM D, YYYY h:mm A',
+        LLLL : 'dddd, MMMM D, YYYY h:mm A'
+    };
 
-        while (i < names.length) {
-            split = normalizeLocale(names[i]).split('-');
-            j = split.length;
-            next = normalizeLocale(names[i + 1]);
-            next = next ? next.split('-') : null;
-            while (j > 0) {
-                locale = loadLocale(split.slice(0, j).join('-'));
-                if (locale) {
-                    return locale;
-                }
-                if (next && next.length >= j && compareArrays(split, next, true) >= j - 1) {
-                    //the next array item is better than a shallower substring of this one
-                    break;
-                }
-                j--;
-            }
-            i++;
+    function longDateFormat (key) {
+        var format = this._longDateFormat[key],
+            formatUpper = this._longDateFormat[key.toUpperCase()];
+
+        if (format || !formatUpper) {
+            return format;
         }
-        return null;
+
+        this._longDateFormat[key] = formatUpper.replace(/MMMM|MM|DD|dddd/g, function (val) {
+            return val.slice(1);
+        });
+
+        return this._longDateFormat[key];
     }
 
-    function loadLocale(name) {
-        var oldLocale = null;
-        // TODO: Find a better way to register and load all the locales in Node
-        if (!locales[name] && (typeof module !== 'undefined') &&
-                module && module.exports) {
-            try {
-                oldLocale = globalLocale._abbr;
-                require('./locale/' + name);
-                // because defineLocale currently also sets the global locale, we
-                // want to undo that for lazy loaded locales
-                locale_locales__getSetGlobalLocale(oldLocale);
-            } catch (e) { }
-        }
-        return locales[name];
+    var defaultInvalidDate = 'Invalid date';
+
+    function invalidDate () {
+        return this._invalidDate;
     }
 
-    // This function will load locale and then set the global locale.  If
-    // no arguments are passed in, it will simply return the current global
-    // locale key.
-    function locale_locales__getSetGlobalLocale (key, values) {
-        var data;
-        if (key) {
-            if (isUndefined(values)) {
-                data = locale_locales__getLocale(key);
-            }
-            else {
-                data = defineLocale(key, values);
-            }
+    var defaultOrdinal = '%d';
+    var defaultOrdinalParse = /\d{1,2}/;
 
-            if (data) {
-                // moment.duration._locale = moment._locale = data;
-                globalLocale = data;
-            }
-        }
-
-        return globalLocale._abbr;
+    function ordinal (number) {
+        return this._ordinal.replace('%d', number);
     }
 
-    function defineLocale (name, config) {
-        if (config !== null) {
-            config.abbr = name;
-            if (locales[name] != null) {
-                deprecateSimple('defineLocaleOverride',
-                        'use moment.updateLocale(localeName, config) to change ' +
-                        'an existing locale. moment.defineLocale(localeName, ' +
-                        'config) should only be used for creating a new locale');
-                config = mergeConfigs(locales[name]._config, config);
-            } else if (config.parentLocale != null) {
-                if (locales[config.parentLocale] != null) {
-                    config = mergeConfigs(locales[config.parentLocale]._config, config);
-                } else {
-                    // treat as if there is no base config
-                    deprecateSimple('parentLocaleUndefined',
-                            'specified parentLocale is not defined yet');
-                }
-            }
-            locales[name] = new Locale(config);
+    var defaultRelativeTime = {
+        future : 'in %s',
+        past   : '%s ago',
+        s  : 'a few seconds',
+        m  : 'a minute',
+        mm : '%d minutes',
+        h  : 'an hour',
+        hh : '%d hours',
+        d  : 'a day',
+        dd : '%d days',
+        M  : 'a month',
+        MM : '%d months',
+        y  : 'a year',
+        yy : '%d years'
+    };
 
-            // backwards compat for now: also set the locale
-            locale_locales__getSetGlobalLocale(name);
-
-            return locales[name];
-        } else {
-            // useful for testing
-            delete locales[name];
-            return null;
-        }
+    function relative__relativeTime (number, withoutSuffix, string, isFuture) {
+        var output = this._relativeTime[string];
+        return (isFunction(output)) ?
+            output(number, withoutSuffix, string, isFuture) :
+            output.replace(/%d/i, number);
     }
 
-    function updateLocale(name, config) {
-        if (config != null) {
-            var locale;
-            if (locales[name] != null) {
-                config = mergeConfigs(locales[name]._config, config);
-            }
-            locale = new Locale(config);
-            locale.parentLocale = locales[name];
-            locales[name] = locale;
-
-            // backwards compat for now: also set the locale
-            locale_locales__getSetGlobalLocale(name);
-        } else {
-            // pass null for config to unupdate, useful for tests
-            if (locales[name] != null) {
-                if (locales[name].parentLocale != null) {
-                    locales[name] = locales[name].parentLocale;
-                } else if (locales[name] != null) {
-                    delete locales[name];
-                }
-            }
-        }
-        return locales[name];
-    }
-
-    // returns locale data
-    function locale_locales__getLocale (key) {
-        var locale;
-
-        if (key && key._locale && key._locale._abbr) {
-            key = key._locale._abbr;
-        }
-
-        if (!key) {
-            return globalLocale;
-        }
-
-        if (!isArray(key)) {
-            //short-circuit everything else
-            locale = loadLocale(key);
-            if (locale) {
-                return locale;
-            }
-            key = [key];
-        }
-
-        return chooseLocale(key);
-    }
-
-    function locale_locales__listLocales() {
-        return keys(locales);
+    function pastFuture (diff, output) {
+        var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
+        return isFunction(format) ? format(output) : format.replace(/%s/i, output);
     }
 
     var aliases = {};
@@ -21041,6 +20982,23 @@ return /******/ (function(modules) { // webpackBootstrap
         return normalizedInput;
     }
 
+    var priorities = {};
+
+    function addUnitPriority(unit, priority) {
+        priorities[unit] = priority;
+    }
+
+    function getPrioritizedUnits(unitsObj) {
+        var units = [];
+        for (var u in unitsObj) {
+            units.push({unit: u, priority: priorities[u]});
+        }
+        units.sort(function (a, b) {
+            return a.priority - b.priority;
+        });
+        return units;
+    }
+
     function makeGetSet (unit, keepTime) {
         return function (value) {
             if (value != null) {
@@ -21066,11 +21024,21 @@ return /******/ (function(modules) { // webpackBootstrap
 
     // MOMENTS
 
-    function getSet (units, value) {
-        var unit;
+    function stringGet (units) {
+        units = normalizeUnits(units);
+        if (isFunction(this[units])) {
+            return this[units]();
+        }
+        return this;
+    }
+
+
+    function stringSet (units, value) {
         if (typeof units === 'object') {
-            for (unit in units) {
-                this.set(unit, units[unit]);
+            units = normalizeObjectUnits(units);
+            var prioritized = getPrioritizedUnits(units);
+            for (var i = 0; i < prioritized.length; i++) {
+                this[prioritized[i].unit](units[prioritized[i].unit]);
             }
         } else {
             units = normalizeUnits(units);
@@ -21310,6 +21278,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
     addUnitAlias('month', 'M');
 
+    // PRIORITY
+
+    addUnitPriority('month', 8);
+
     // PARSING
 
     addRegexToken('M',    match1to2);
@@ -21341,7 +21313,7 @@ return /******/ (function(modules) { // webpackBootstrap
     var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
     function localeMonths (m, format) {
         return isArray(this._months) ? this._months[m.month()] :
-            this._months[MONTHS_IN_FORMAT.test(format) ? 'format' : 'standalone'][m.month()];
+            this._months[(this._months.isFormat || MONTHS_IN_FORMAT).test(format) ? 'format' : 'standalone'][m.month()];
     }
 
     var defaultLocaleMonthsShort = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_');
@@ -21482,6 +21454,9 @@ return /******/ (function(modules) { // webpackBootstrap
                 return this._monthsShortRegex;
             }
         } else {
+            if (!hasOwnProp(this, '_monthsShortRegex')) {
+                this._monthsShortRegex = defaultMonthsShortRegex;
+            }
             return this._monthsShortStrictRegex && isStrict ?
                 this._monthsShortStrictRegex : this._monthsShortRegex;
         }
@@ -21499,6 +21474,9 @@ return /******/ (function(modules) { // webpackBootstrap
                 return this._monthsRegex;
             }
         } else {
+            if (!hasOwnProp(this, '_monthsRegex')) {
+                this._monthsRegex = defaultMonthsRegex;
+            }
             return this._monthsStrictRegex && isStrict ?
                 this._monthsStrictRegex : this._monthsRegex;
         }
@@ -21527,6 +21505,8 @@ return /******/ (function(modules) { // webpackBootstrap
         for (i = 0; i < 12; i++) {
             shortPieces[i] = regexEscape(shortPieces[i]);
             longPieces[i] = regexEscape(longPieces[i]);
+        }
+        for (i = 0; i < 24; i++) {
             mixedPieces[i] = regexEscape(mixedPieces[i]);
         }
 
@@ -21534,6 +21514,873 @@ return /******/ (function(modules) { // webpackBootstrap
         this._monthsShortRegex = this._monthsRegex;
         this._monthsStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
         this._monthsShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+    }
+
+    // FORMATTING
+
+    addFormatToken('Y', 0, 0, function () {
+        var y = this.year();
+        return y <= 9999 ? '' + y : '+' + y;
+    });
+
+    addFormatToken(0, ['YY', 2], 0, function () {
+        return this.year() % 100;
+    });
+
+    addFormatToken(0, ['YYYY',   4],       0, 'year');
+    addFormatToken(0, ['YYYYY',  5],       0, 'year');
+    addFormatToken(0, ['YYYYYY', 6, true], 0, 'year');
+
+    // ALIASES
+
+    addUnitAlias('year', 'y');
+
+    // PRIORITIES
+
+    addUnitPriority('year', 1);
+
+    // PARSING
+
+    addRegexToken('Y',      matchSigned);
+    addRegexToken('YY',     match1to2, match2);
+    addRegexToken('YYYY',   match1to4, match4);
+    addRegexToken('YYYYY',  match1to6, match6);
+    addRegexToken('YYYYYY', match1to6, match6);
+
+    addParseToken(['YYYYY', 'YYYYYY'], YEAR);
+    addParseToken('YYYY', function (input, array) {
+        array[YEAR] = input.length === 2 ? utils_hooks__hooks.parseTwoDigitYear(input) : toInt(input);
+    });
+    addParseToken('YY', function (input, array) {
+        array[YEAR] = utils_hooks__hooks.parseTwoDigitYear(input);
+    });
+    addParseToken('Y', function (input, array) {
+        array[YEAR] = parseInt(input, 10);
+    });
+
+    // HELPERS
+
+    function daysInYear(year) {
+        return isLeapYear(year) ? 366 : 365;
+    }
+
+    function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+    }
+
+    // HOOKS
+
+    utils_hooks__hooks.parseTwoDigitYear = function (input) {
+        return toInt(input) + (toInt(input) > 68 ? 1900 : 2000);
+    };
+
+    // MOMENTS
+
+    var getSetYear = makeGetSet('FullYear', true);
+
+    function getIsLeapYear () {
+        return isLeapYear(this.year());
+    }
+
+    function createDate (y, m, d, h, M, s, ms) {
+        //can't just apply() to create a date:
+        //http://stackoverflow.com/questions/181348/instantiating-a-javascript-object-by-calling-prototype-constructor-apply
+        var date = new Date(y, m, d, h, M, s, ms);
+
+        //the date constructor remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
+            date.setFullYear(y);
+        }
+        return date;
+    }
+
+    function createUTCDate (y) {
+        var date = new Date(Date.UTC.apply(null, arguments));
+
+        //the Date.UTC function remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
+            date.setUTCFullYear(y);
+        }
+        return date;
+    }
+
+    // start-of-first-week - start-of-year
+    function firstWeekOffset(year, dow, doy) {
+        var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
+            fwd = 7 + dow - doy,
+            // first-week day local weekday -- which local weekday is fwd
+            fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
+
+        return -fwdlw + fwd - 1;
+    }
+
+    //http://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+    function dayOfYearFromWeeks(year, week, weekday, dow, doy) {
+        var localWeekday = (7 + weekday - dow) % 7,
+            weekOffset = firstWeekOffset(year, dow, doy),
+            dayOfYear = 1 + 7 * (week - 1) + localWeekday + weekOffset,
+            resYear, resDayOfYear;
+
+        if (dayOfYear <= 0) {
+            resYear = year - 1;
+            resDayOfYear = daysInYear(resYear) + dayOfYear;
+        } else if (dayOfYear > daysInYear(year)) {
+            resYear = year + 1;
+            resDayOfYear = dayOfYear - daysInYear(year);
+        } else {
+            resYear = year;
+            resDayOfYear = dayOfYear;
+        }
+
+        return {
+            year: resYear,
+            dayOfYear: resDayOfYear
+        };
+    }
+
+    function weekOfYear(mom, dow, doy) {
+        var weekOffset = firstWeekOffset(mom.year(), dow, doy),
+            week = Math.floor((mom.dayOfYear() - weekOffset - 1) / 7) + 1,
+            resWeek, resYear;
+
+        if (week < 1) {
+            resYear = mom.year() - 1;
+            resWeek = week + weeksInYear(resYear, dow, doy);
+        } else if (week > weeksInYear(mom.year(), dow, doy)) {
+            resWeek = week - weeksInYear(mom.year(), dow, doy);
+            resYear = mom.year() + 1;
+        } else {
+            resYear = mom.year();
+            resWeek = week;
+        }
+
+        return {
+            week: resWeek,
+            year: resYear
+        };
+    }
+
+    function weeksInYear(year, dow, doy) {
+        var weekOffset = firstWeekOffset(year, dow, doy),
+            weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
+        return (daysInYear(year) - weekOffset + weekOffsetNext) / 7;
+    }
+
+    // FORMATTING
+
+    addFormatToken('w', ['ww', 2], 'wo', 'week');
+    addFormatToken('W', ['WW', 2], 'Wo', 'isoWeek');
+
+    // ALIASES
+
+    addUnitAlias('week', 'w');
+    addUnitAlias('isoWeek', 'W');
+
+    // PRIORITIES
+
+    addUnitPriority('week', 5);
+    addUnitPriority('isoWeek', 5);
+
+    // PARSING
+
+    addRegexToken('w',  match1to2);
+    addRegexToken('ww', match1to2, match2);
+    addRegexToken('W',  match1to2);
+    addRegexToken('WW', match1to2, match2);
+
+    addWeekParseToken(['w', 'ww', 'W', 'WW'], function (input, week, config, token) {
+        week[token.substr(0, 1)] = toInt(input);
+    });
+
+    // HELPERS
+
+    // LOCALES
+
+    function localeWeek (mom) {
+        return weekOfYear(mom, this._week.dow, this._week.doy).week;
+    }
+
+    var defaultLocaleWeek = {
+        dow : 0, // Sunday is the first day of the week.
+        doy : 6  // The week that contains Jan 1st is the first week of the year.
+    };
+
+    function localeFirstDayOfWeek () {
+        return this._week.dow;
+    }
+
+    function localeFirstDayOfYear () {
+        return this._week.doy;
+    }
+
+    // MOMENTS
+
+    function getSetWeek (input) {
+        var week = this.localeData().week(this);
+        return input == null ? week : this.add((input - week) * 7, 'd');
+    }
+
+    function getSetISOWeek (input) {
+        var week = weekOfYear(this, 1, 4).week;
+        return input == null ? week : this.add((input - week) * 7, 'd');
+    }
+
+    // FORMATTING
+
+    addFormatToken('d', 0, 'do', 'day');
+
+    addFormatToken('dd', 0, 0, function (format) {
+        return this.localeData().weekdaysMin(this, format);
+    });
+
+    addFormatToken('ddd', 0, 0, function (format) {
+        return this.localeData().weekdaysShort(this, format);
+    });
+
+    addFormatToken('dddd', 0, 0, function (format) {
+        return this.localeData().weekdays(this, format);
+    });
+
+    addFormatToken('e', 0, 0, 'weekday');
+    addFormatToken('E', 0, 0, 'isoWeekday');
+
+    // ALIASES
+
+    addUnitAlias('day', 'd');
+    addUnitAlias('weekday', 'e');
+    addUnitAlias('isoWeekday', 'E');
+
+    // PRIORITY
+    addUnitPriority('day', 11);
+    addUnitPriority('weekday', 11);
+    addUnitPriority('isoWeekday', 11);
+
+    // PARSING
+
+    addRegexToken('d',    match1to2);
+    addRegexToken('e',    match1to2);
+    addRegexToken('E',    match1to2);
+    addRegexToken('dd',   function (isStrict, locale) {
+        return locale.weekdaysMinRegex(isStrict);
+    });
+    addRegexToken('ddd',   function (isStrict, locale) {
+        return locale.weekdaysShortRegex(isStrict);
+    });
+    addRegexToken('dddd',   function (isStrict, locale) {
+        return locale.weekdaysRegex(isStrict);
+    });
+
+    addWeekParseToken(['dd', 'ddd', 'dddd'], function (input, week, config, token) {
+        var weekday = config._locale.weekdaysParse(input, token, config._strict);
+        // if we didn't get a weekday name, mark the date as invalid
+        if (weekday != null) {
+            week.d = weekday;
+        } else {
+            getParsingFlags(config).invalidWeekday = input;
+        }
+    });
+
+    addWeekParseToken(['d', 'e', 'E'], function (input, week, config, token) {
+        week[token] = toInt(input);
+    });
+
+    // HELPERS
+
+    function parseWeekday(input, locale) {
+        if (typeof input !== 'string') {
+            return input;
+        }
+
+        if (!isNaN(input)) {
+            return parseInt(input, 10);
+        }
+
+        input = locale.weekdaysParse(input);
+        if (typeof input === 'number') {
+            return input;
+        }
+
+        return null;
+    }
+
+    function parseIsoWeekday(input, locale) {
+        if (typeof input === 'string') {
+            return locale.weekdaysParse(input) % 7 || 7;
+        }
+        return isNaN(input) ? null : input;
+    }
+
+    // LOCALES
+
+    var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
+    function localeWeekdays (m, format) {
+        return isArray(this._weekdays) ? this._weekdays[m.day()] :
+            this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
+    }
+
+    var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
+    function localeWeekdaysShort (m) {
+        return this._weekdaysShort[m.day()];
+    }
+
+    var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
+    function localeWeekdaysMin (m) {
+        return this._weekdaysMin[m.day()];
+    }
+
+    function day_of_week__handleStrictParse(weekdayName, format, strict) {
+        var i, ii, mom, llc = weekdayName.toLocaleLowerCase();
+        if (!this._weekdaysParse) {
+            this._weekdaysParse = [];
+            this._shortWeekdaysParse = [];
+            this._minWeekdaysParse = [];
+
+            for (i = 0; i < 7; ++i) {
+                mom = create_utc__createUTC([2000, 1]).day(i);
+                this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
+                this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
+                this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
+            }
+        }
+
+        if (strict) {
+            if (format === 'dddd') {
+                ii = indexOf.call(this._weekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else if (format === 'ddd') {
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        } else {
+            if (format === 'dddd') {
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else if (format === 'ddd') {
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        }
+    }
+
+    function localeWeekdaysParse (weekdayName, format, strict) {
+        var i, mom, regex;
+
+        if (this._weekdaysParseExact) {
+            return day_of_week__handleStrictParse.call(this, weekdayName, format, strict);
+        }
+
+        if (!this._weekdaysParse) {
+            this._weekdaysParse = [];
+            this._minWeekdaysParse = [];
+            this._shortWeekdaysParse = [];
+            this._fullWeekdaysParse = [];
+        }
+
+        for (i = 0; i < 7; i++) {
+            // make the regex if we don't have it already
+
+            mom = create_utc__createUTC([2000, 1]).day(i);
+            if (strict && !this._fullWeekdaysParse[i]) {
+                this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
+                this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
+                this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
+            }
+            if (!this._weekdaysParse[i]) {
+                regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
+                this._weekdaysParse[i] = new RegExp(regex.replace('.', ''), 'i');
+            }
+            // test the regex
+            if (strict && format === 'dddd' && this._fullWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (strict && format === 'ddd' && this._shortWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (strict && format === 'dd' && this._minWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (!strict && this._weekdaysParse[i].test(weekdayName)) {
+                return i;
+            }
+        }
+    }
+
+    // MOMENTS
+
+    function getSetDayOfWeek (input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
+        if (input != null) {
+            input = parseWeekday(input, this.localeData());
+            return this.add(input - day, 'd');
+        } else {
+            return day;
+        }
+    }
+
+    function getSetLocaleDayOfWeek (input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
+        return input == null ? weekday : this.add(input - weekday, 'd');
+    }
+
+    function getSetISODayOfWeek (input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+
+        // behaves the same as moment#day except
+        // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
+        // as a setter, sunday should belong to the previous week.
+
+        if (input != null) {
+            var weekday = parseIsoWeekday(input, this.localeData());
+            return this.day(this.day() % 7 ? weekday : weekday - 7);
+        } else {
+            return this.day() || 7;
+        }
+    }
+
+    var defaultWeekdaysRegex = matchWord;
+    function weekdaysRegex (isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysStrictRegex;
+            } else {
+                return this._weekdaysRegex;
+            }
+        } else {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                this._weekdaysRegex = defaultWeekdaysRegex;
+            }
+            return this._weekdaysStrictRegex && isStrict ?
+                this._weekdaysStrictRegex : this._weekdaysRegex;
+        }
+    }
+
+    var defaultWeekdaysShortRegex = matchWord;
+    function weekdaysShortRegex (isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysShortStrictRegex;
+            } else {
+                return this._weekdaysShortRegex;
+            }
+        } else {
+            if (!hasOwnProp(this, '_weekdaysShortRegex')) {
+                this._weekdaysShortRegex = defaultWeekdaysShortRegex;
+            }
+            return this._weekdaysShortStrictRegex && isStrict ?
+                this._weekdaysShortStrictRegex : this._weekdaysShortRegex;
+        }
+    }
+
+    var defaultWeekdaysMinRegex = matchWord;
+    function weekdaysMinRegex (isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysMinStrictRegex;
+            } else {
+                return this._weekdaysMinRegex;
+            }
+        } else {
+            if (!hasOwnProp(this, '_weekdaysMinRegex')) {
+                this._weekdaysMinRegex = defaultWeekdaysMinRegex;
+            }
+            return this._weekdaysMinStrictRegex && isStrict ?
+                this._weekdaysMinStrictRegex : this._weekdaysMinRegex;
+        }
+    }
+
+
+    function computeWeekdaysParse () {
+        function cmpLenRev(a, b) {
+            return b.length - a.length;
+        }
+
+        var minPieces = [], shortPieces = [], longPieces = [], mixedPieces = [],
+            i, mom, minp, shortp, longp;
+        for (i = 0; i < 7; i++) {
+            // make the regex if we don't have it already
+            mom = create_utc__createUTC([2000, 1]).day(i);
+            minp = this.weekdaysMin(mom, '');
+            shortp = this.weekdaysShort(mom, '');
+            longp = this.weekdays(mom, '');
+            minPieces.push(minp);
+            shortPieces.push(shortp);
+            longPieces.push(longp);
+            mixedPieces.push(minp);
+            mixedPieces.push(shortp);
+            mixedPieces.push(longp);
+        }
+        // Sorting makes sure if one weekday (or abbr) is a prefix of another it
+        // will match the longer piece.
+        minPieces.sort(cmpLenRev);
+        shortPieces.sort(cmpLenRev);
+        longPieces.sort(cmpLenRev);
+        mixedPieces.sort(cmpLenRev);
+        for (i = 0; i < 7; i++) {
+            shortPieces[i] = regexEscape(shortPieces[i]);
+            longPieces[i] = regexEscape(longPieces[i]);
+            mixedPieces[i] = regexEscape(mixedPieces[i]);
+        }
+
+        this._weekdaysRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+        this._weekdaysShortRegex = this._weekdaysRegex;
+        this._weekdaysMinRegex = this._weekdaysRegex;
+
+        this._weekdaysStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+        this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+        this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
+    }
+
+    // FORMATTING
+
+    function hFormat() {
+        return this.hours() % 12 || 12;
+    }
+
+    function kFormat() {
+        return this.hours() || 24;
+    }
+
+    addFormatToken('H', ['HH', 2], 0, 'hour');
+    addFormatToken('h', ['hh', 2], 0, hFormat);
+    addFormatToken('k', ['kk', 2], 0, kFormat);
+
+    addFormatToken('hmm', 0, 0, function () {
+        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2);
+    });
+
+    addFormatToken('hmmss', 0, 0, function () {
+        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2) +
+            zeroFill(this.seconds(), 2);
+    });
+
+    addFormatToken('Hmm', 0, 0, function () {
+        return '' + this.hours() + zeroFill(this.minutes(), 2);
+    });
+
+    addFormatToken('Hmmss', 0, 0, function () {
+        return '' + this.hours() + zeroFill(this.minutes(), 2) +
+            zeroFill(this.seconds(), 2);
+    });
+
+    function meridiem (token, lowercase) {
+        addFormatToken(token, 0, 0, function () {
+            return this.localeData().meridiem(this.hours(), this.minutes(), lowercase);
+        });
+    }
+
+    meridiem('a', true);
+    meridiem('A', false);
+
+    // ALIASES
+
+    addUnitAlias('hour', 'h');
+
+    // PRIORITY
+    addUnitPriority('hour', 13);
+
+    // PARSING
+
+    function matchMeridiem (isStrict, locale) {
+        return locale._meridiemParse;
+    }
+
+    addRegexToken('a',  matchMeridiem);
+    addRegexToken('A',  matchMeridiem);
+    addRegexToken('H',  match1to2);
+    addRegexToken('h',  match1to2);
+    addRegexToken('HH', match1to2, match2);
+    addRegexToken('hh', match1to2, match2);
+
+    addRegexToken('hmm', match3to4);
+    addRegexToken('hmmss', match5to6);
+    addRegexToken('Hmm', match3to4);
+    addRegexToken('Hmmss', match5to6);
+
+    addParseToken(['H', 'HH'], HOUR);
+    addParseToken(['a', 'A'], function (input, array, config) {
+        config._isPm = config._locale.isPM(input);
+        config._meridiem = input;
+    });
+    addParseToken(['h', 'hh'], function (input, array, config) {
+        array[HOUR] = toInt(input);
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('hmm', function (input, array, config) {
+        var pos = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos));
+        array[MINUTE] = toInt(input.substr(pos));
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('hmmss', function (input, array, config) {
+        var pos1 = input.length - 4;
+        var pos2 = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos1));
+        array[MINUTE] = toInt(input.substr(pos1, 2));
+        array[SECOND] = toInt(input.substr(pos2));
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('Hmm', function (input, array, config) {
+        var pos = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos));
+        array[MINUTE] = toInt(input.substr(pos));
+    });
+    addParseToken('Hmmss', function (input, array, config) {
+        var pos1 = input.length - 4;
+        var pos2 = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos1));
+        array[MINUTE] = toInt(input.substr(pos1, 2));
+        array[SECOND] = toInt(input.substr(pos2));
+    });
+
+    // LOCALES
+
+    function localeIsPM (input) {
+        // IE8 Quirks Mode & IE7 Standards Mode do not allow accessing strings like arrays
+        // Using charAt should be more compatible.
+        return ((input + '').toLowerCase().charAt(0) === 'p');
+    }
+
+    var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
+    function localeMeridiem (hours, minutes, isLower) {
+        if (hours > 11) {
+            return isLower ? 'pm' : 'PM';
+        } else {
+            return isLower ? 'am' : 'AM';
+        }
+    }
+
+
+    // MOMENTS
+
+    // Setting the hour should keep the time, because the user explicitly
+    // specified which hour he wants. So trying to maintain the same hour (in
+    // a new timezone) makes sense. Adding/subtracting hours does not follow
+    // this rule.
+    var getSetHour = makeGetSet('Hours', true);
+
+    var baseConfig = {
+        calendar: defaultCalendar,
+        longDateFormat: defaultLongDateFormat,
+        invalidDate: defaultInvalidDate,
+        ordinal: defaultOrdinal,
+        ordinalParse: defaultOrdinalParse,
+        relativeTime: defaultRelativeTime,
+
+        months: defaultLocaleMonths,
+        monthsShort: defaultLocaleMonthsShort,
+
+        week: defaultLocaleWeek,
+
+        weekdays: defaultLocaleWeekdays,
+        weekdaysMin: defaultLocaleWeekdaysMin,
+        weekdaysShort: defaultLocaleWeekdaysShort,
+
+        meridiemParse: defaultLocaleMeridiemParse
+    };
+
+    // internal storage for locale config files
+    var locales = {};
+    var globalLocale;
+
+    function normalizeLocale(key) {
+        return key ? key.toLowerCase().replace('_', '-') : key;
+    }
+
+    // pick the locale from the array
+    // try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
+    // substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
+    function chooseLocale(names) {
+        var i = 0, j, next, locale, split;
+
+        while (i < names.length) {
+            split = normalizeLocale(names[i]).split('-');
+            j = split.length;
+            next = normalizeLocale(names[i + 1]);
+            next = next ? next.split('-') : null;
+            while (j > 0) {
+                locale = loadLocale(split.slice(0, j).join('-'));
+                if (locale) {
+                    return locale;
+                }
+                if (next && next.length >= j && compareArrays(split, next, true) >= j - 1) {
+                    //the next array item is better than a shallower substring of this one
+                    break;
+                }
+                j--;
+            }
+            i++;
+        }
+        return null;
+    }
+
+    function loadLocale(name) {
+        var oldLocale = null;
+        // TODO: Find a better way to register and load all the locales in Node
+        if (!locales[name] && (typeof module !== 'undefined') &&
+                module && module.exports) {
+            try {
+                oldLocale = globalLocale._abbr;
+                require('./locale/' + name);
+                // because defineLocale currently also sets the global locale, we
+                // want to undo that for lazy loaded locales
+                locale_locales__getSetGlobalLocale(oldLocale);
+            } catch (e) { }
+        }
+        return locales[name];
+    }
+
+    // This function will load locale and then set the global locale.  If
+    // no arguments are passed in, it will simply return the current global
+    // locale key.
+    function locale_locales__getSetGlobalLocale (key, values) {
+        var data;
+        if (key) {
+            if (isUndefined(values)) {
+                data = locale_locales__getLocale(key);
+            }
+            else {
+                data = defineLocale(key, values);
+            }
+
+            if (data) {
+                // moment.duration._locale = moment._locale = data;
+                globalLocale = data;
+            }
+        }
+
+        return globalLocale._abbr;
+    }
+
+    function defineLocale (name, config) {
+        if (config !== null) {
+            var parentConfig = baseConfig;
+            config.abbr = name;
+            if (locales[name] != null) {
+                deprecateSimple('defineLocaleOverride',
+                        'use moment.updateLocale(localeName, config) to change ' +
+                        'an existing locale. moment.defineLocale(localeName, ' +
+                        'config) should only be used for creating a new locale ' +
+                        'See http://momentjs.com/guides/#/warnings/define-locale/ for more info.');
+                parentConfig = locales[name]._config;
+            } else if (config.parentLocale != null) {
+                if (locales[config.parentLocale] != null) {
+                    parentConfig = locales[config.parentLocale]._config;
+                } else {
+                    // treat as if there is no base config
+                    deprecateSimple('parentLocaleUndefined',
+                            'specified parentLocale is not defined yet. See http://momentjs.com/guides/#/warnings/parent-locale/');
+                }
+            }
+            locales[name] = new Locale(mergeConfigs(parentConfig, config));
+
+            // backwards compat for now: also set the locale
+            locale_locales__getSetGlobalLocale(name);
+
+            return locales[name];
+        } else {
+            // useful for testing
+            delete locales[name];
+            return null;
+        }
+    }
+
+    function updateLocale(name, config) {
+        if (config != null) {
+            var locale, parentConfig = baseConfig;
+            // MERGE
+            if (locales[name] != null) {
+                parentConfig = locales[name]._config;
+            }
+            config = mergeConfigs(parentConfig, config);
+            locale = new Locale(config);
+            locale.parentLocale = locales[name];
+            locales[name] = locale;
+
+            // backwards compat for now: also set the locale
+            locale_locales__getSetGlobalLocale(name);
+        } else {
+            // pass null for config to unupdate, useful for tests
+            if (locales[name] != null) {
+                if (locales[name].parentLocale != null) {
+                    locales[name] = locales[name].parentLocale;
+                } else if (locales[name] != null) {
+                    delete locales[name];
+                }
+            }
+        }
+        return locales[name];
+    }
+
+    // returns locale data
+    function locale_locales__getLocale (key) {
+        var locale;
+
+        if (key && key._locale && key._locale._abbr) {
+            key = key._locale._abbr;
+        }
+
+        if (!key) {
+            return globalLocale;
+        }
+
+        if (!isArray(key)) {
+            //short-circuit everything else
+            locale = loadLocale(key);
+            if (locale) {
+                return locale;
+            }
+            key = [key];
+        }
+
+        return chooseLocale(key);
+    }
+
+    function locale_locales__listLocales() {
+        return keys(locales);
     }
 
     function checkOverflow (m) {
@@ -21676,157 +22523,11 @@ return /******/ (function(modules) { // webpackBootstrap
         'moment construction falls back to js Date. This is ' +
         'discouraged and will be removed in upcoming major ' +
         'release. Please refer to ' +
-        'https://github.com/moment/moment/issues/1407 for more info.',
+        'http://momentjs.com/guides/#/warnings/js-date/ for more info.',
         function (config) {
             config._d = new Date(config._i + (config._useUTC ? ' UTC' : ''));
         }
     );
-
-    function createDate (y, m, d, h, M, s, ms) {
-        //can't just apply() to create a date:
-        //http://stackoverflow.com/questions/181348/instantiating-a-javascript-object-by-calling-prototype-constructor-apply
-        var date = new Date(y, m, d, h, M, s, ms);
-
-        //the date constructor remaps years 0-99 to 1900-1999
-        if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
-            date.setFullYear(y);
-        }
-        return date;
-    }
-
-    function createUTCDate (y) {
-        var date = new Date(Date.UTC.apply(null, arguments));
-
-        //the Date.UTC function remaps years 0-99 to 1900-1999
-        if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
-            date.setUTCFullYear(y);
-        }
-        return date;
-    }
-
-    // FORMATTING
-
-    addFormatToken('Y', 0, 0, function () {
-        var y = this.year();
-        return y <= 9999 ? '' + y : '+' + y;
-    });
-
-    addFormatToken(0, ['YY', 2], 0, function () {
-        return this.year() % 100;
-    });
-
-    addFormatToken(0, ['YYYY',   4],       0, 'year');
-    addFormatToken(0, ['YYYYY',  5],       0, 'year');
-    addFormatToken(0, ['YYYYYY', 6, true], 0, 'year');
-
-    // ALIASES
-
-    addUnitAlias('year', 'y');
-
-    // PARSING
-
-    addRegexToken('Y',      matchSigned);
-    addRegexToken('YY',     match1to2, match2);
-    addRegexToken('YYYY',   match1to4, match4);
-    addRegexToken('YYYYY',  match1to6, match6);
-    addRegexToken('YYYYYY', match1to6, match6);
-
-    addParseToken(['YYYYY', 'YYYYYY'], YEAR);
-    addParseToken('YYYY', function (input, array) {
-        array[YEAR] = input.length === 2 ? utils_hooks__hooks.parseTwoDigitYear(input) : toInt(input);
-    });
-    addParseToken('YY', function (input, array) {
-        array[YEAR] = utils_hooks__hooks.parseTwoDigitYear(input);
-    });
-    addParseToken('Y', function (input, array) {
-        array[YEAR] = parseInt(input, 10);
-    });
-
-    // HELPERS
-
-    function daysInYear(year) {
-        return isLeapYear(year) ? 366 : 365;
-    }
-
-    function isLeapYear(year) {
-        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-    }
-
-    // HOOKS
-
-    utils_hooks__hooks.parseTwoDigitYear = function (input) {
-        return toInt(input) + (toInt(input) > 68 ? 1900 : 2000);
-    };
-
-    // MOMENTS
-
-    var getSetYear = makeGetSet('FullYear', true);
-
-    function getIsLeapYear () {
-        return isLeapYear(this.year());
-    }
-
-    // start-of-first-week - start-of-year
-    function firstWeekOffset(year, dow, doy) {
-        var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
-            fwd = 7 + dow - doy,
-            // first-week day local weekday -- which local weekday is fwd
-            fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
-
-        return -fwdlw + fwd - 1;
-    }
-
-    //http://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
-    function dayOfYearFromWeeks(year, week, weekday, dow, doy) {
-        var localWeekday = (7 + weekday - dow) % 7,
-            weekOffset = firstWeekOffset(year, dow, doy),
-            dayOfYear = 1 + 7 * (week - 1) + localWeekday + weekOffset,
-            resYear, resDayOfYear;
-
-        if (dayOfYear <= 0) {
-            resYear = year - 1;
-            resDayOfYear = daysInYear(resYear) + dayOfYear;
-        } else if (dayOfYear > daysInYear(year)) {
-            resYear = year + 1;
-            resDayOfYear = dayOfYear - daysInYear(year);
-        } else {
-            resYear = year;
-            resDayOfYear = dayOfYear;
-        }
-
-        return {
-            year: resYear,
-            dayOfYear: resDayOfYear
-        };
-    }
-
-    function weekOfYear(mom, dow, doy) {
-        var weekOffset = firstWeekOffset(mom.year(), dow, doy),
-            week = Math.floor((mom.dayOfYear() - weekOffset - 1) / 7) + 1,
-            resWeek, resYear;
-
-        if (week < 1) {
-            resYear = mom.year() - 1;
-            resWeek = week + weeksInYear(resYear, dow, doy);
-        } else if (week > weeksInYear(mom.year(), dow, doy)) {
-            resWeek = week - weeksInYear(mom.year(), dow, doy);
-            resYear = mom.year() + 1;
-        } else {
-            resYear = mom.year();
-            resWeek = week;
-        }
-
-        return {
-            week: resWeek,
-            year: resYear
-        };
-    }
-
-    function weeksInYear(year, dow, doy) {
-        var weekOffset = firstWeekOffset(year, dow, doy),
-            weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
-        return (daysInYear(year) - weekOffset + weekOffsetNext) / 7;
-    }
 
     // Pick the first defined of two or three arguments.
     function defaults(a, b, c) {
@@ -22024,9 +22725,9 @@ return /******/ (function(modules) { // webpackBootstrap
         }
 
         // clear _12h flag if hour is <= 12
-        if (getParsingFlags(config).bigHour === true &&
-                config._a[HOUR] <= 12 &&
-                config._a[HOUR] > 0) {
+        if (config._a[HOUR] <= 12 &&
+            getParsingFlags(config).bigHour === true &&
+            config._a[HOUR] > 0) {
             getParsingFlags(config).bigHour = undefined;
         }
 
@@ -22152,11 +22853,11 @@ return /******/ (function(modules) { // webpackBootstrap
             return new Moment(checkOverflow(input));
         } else if (isArray(format)) {
             configFromStringAndArray(config);
-        } else if (format) {
-            configFromStringAndFormat(config);
         } else if (isDate(input)) {
             config._d = input;
-        } else {
+        } else if (format) {
+            configFromStringAndFormat(config);
+        }  else {
             configFromInput(config);
         }
 
@@ -22197,6 +22898,11 @@ return /******/ (function(modules) { // webpackBootstrap
             strict = locale;
             locale = undefined;
         }
+
+        if ((isObject(input) && isObjectEmpty(input)) ||
+                (isArray(input) && input.length === 0)) {
+            input = undefined;
+        }
         // object construction must be done this way.
         // https://github.com/moment/moment/issues/1423
         c._isAMomentObject = true;
@@ -22214,19 +22920,19 @@ return /******/ (function(modules) { // webpackBootstrap
     }
 
     var prototypeMin = deprecate(
-         'moment().min is deprecated, use moment.max instead. https://github.com/moment/moment/issues/1548',
-         function () {
-             var other = local__createLocal.apply(null, arguments);
-             if (this.isValid() && other.isValid()) {
-                 return other < this ? this : other;
-             } else {
-                 return valid__createInvalid();
-             }
-         }
-     );
+        'moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/',
+        function () {
+            var other = local__createLocal.apply(null, arguments);
+            if (this.isValid() && other.isValid()) {
+                return other < this ? this : other;
+            } else {
+                return valid__createInvalid();
+            }
+        }
+    );
 
     var prototypeMax = deprecate(
-        'moment().max is deprecated, use moment.min instead. https://github.com/moment/moment/issues/1548',
+        'moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/',
         function () {
             var other = local__createLocal.apply(null, arguments);
             if (this.isValid() && other.isValid()) {
@@ -22645,7 +23351,8 @@ return /******/ (function(modules) { // webpackBootstrap
             var dur, tmp;
             //invert the arguments, but complain about it
             if (period !== null && !isNaN(+period)) {
-                deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period).');
+                deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period). ' +
+                'See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.');
                 tmp = val; val = period; period = tmp;
             }
 
@@ -22685,20 +23392,24 @@ return /******/ (function(modules) { // webpackBootstrap
     var add_subtract__add      = createAdder(1, 'add');
     var add_subtract__subtract = createAdder(-1, 'subtract');
 
-    function moment_calendar__calendar (time, formats) {
-        // We want to compare the start of today, vs this.
-        // Getting start-of-today depends on whether we're local/utc/offset or not.
-        var now = time || local__createLocal(),
-            sod = cloneWithOffset(now, this).startOf('day'),
-            diff = this.diff(sod, 'days', true),
-            format = diff < -6 ? 'sameElse' :
+    function getCalendarFormat(myMoment, now) {
+        var diff = myMoment.diff(now, 'days', true);
+        return diff < -6 ? 'sameElse' :
                 diff < -1 ? 'lastWeek' :
                 diff < 0 ? 'lastDay' :
                 diff < 1 ? 'sameDay' :
                 diff < 2 ? 'nextDay' :
                 diff < 7 ? 'nextWeek' : 'sameElse';
+    }
 
-        var output = formats && (isFunction(formats[format]) ? formats[format]() : formats[format]);
+    function moment_calendar__calendar (time, formats) {
+        // We want to compare the start of today, vs this.
+        // Getting start-of-today depends on whether we're local/utc/offset or not.
+        var now = time || local__createLocal(),
+            sod = cloneWithOffset(now, this).startOf('day'),
+            format = utils_hooks__hooks.calendarFormat(this, sod) || 'sameElse';
+
+        var output = formats && (isFunction(formats[format]) ? formats[format].call(this, now) : formats[format]);
 
         return this.format(output || this.localeData().calendar(format, this, local__createLocal(now)));
     }
@@ -22915,27 +23626,27 @@ return /******/ (function(modules) { // webpackBootstrap
         // the following switch intentionally omits break keywords
         // to utilize falling through the cases.
         switch (units) {
-        case 'year':
-            this.month(0);
-            /* falls through */
-        case 'quarter':
-        case 'month':
-            this.date(1);
-            /* falls through */
-        case 'week':
-        case 'isoWeek':
-        case 'day':
-        case 'date':
-            this.hours(0);
-            /* falls through */
-        case 'hour':
-            this.minutes(0);
-            /* falls through */
-        case 'minute':
-            this.seconds(0);
-            /* falls through */
-        case 'second':
-            this.milliseconds(0);
+            case 'year':
+                this.month(0);
+                /* falls through */
+            case 'quarter':
+            case 'month':
+                this.date(1);
+                /* falls through */
+            case 'week':
+            case 'isoWeek':
+            case 'day':
+            case 'date':
+                this.hours(0);
+                /* falls through */
+            case 'hour':
+                this.minutes(0);
+                /* falls through */
+            case 'minute':
+                this.seconds(0);
+                /* falls through */
+            case 'second':
+                this.milliseconds(0);
         }
 
         // weeks are a special case
@@ -22977,7 +23688,7 @@ return /******/ (function(modules) { // webpackBootstrap
     }
 
     function toDate () {
-        return this._offset ? new Date(this.valueOf()) : this._d;
+        return new Date(this.valueOf());
     }
 
     function toArray () {
@@ -23048,6 +23759,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
     addUnitAlias('weekYear', 'gg');
     addUnitAlias('isoWeekYear', 'GG');
+
+    // PRIORITY
+
+    addUnitPriority('weekYear', 1);
+    addUnitPriority('isoWeekYear', 1);
+
 
     // PARSING
 
@@ -23124,6 +23841,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
     addUnitAlias('quarter', 'Q');
 
+    // PRIORITY
+
+    addUnitPriority('quarter', 7);
+
     // PARSING
 
     addRegexToken('Q', match1);
@@ -23139,65 +23860,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
     // FORMATTING
 
-    addFormatToken('w', ['ww', 2], 'wo', 'week');
-    addFormatToken('W', ['WW', 2], 'Wo', 'isoWeek');
-
-    // ALIASES
-
-    addUnitAlias('week', 'w');
-    addUnitAlias('isoWeek', 'W');
-
-    // PARSING
-
-    addRegexToken('w',  match1to2);
-    addRegexToken('ww', match1to2, match2);
-    addRegexToken('W',  match1to2);
-    addRegexToken('WW', match1to2, match2);
-
-    addWeekParseToken(['w', 'ww', 'W', 'WW'], function (input, week, config, token) {
-        week[token.substr(0, 1)] = toInt(input);
-    });
-
-    // HELPERS
-
-    // LOCALES
-
-    function localeWeek (mom) {
-        return weekOfYear(mom, this._week.dow, this._week.doy).week;
-    }
-
-    var defaultLocaleWeek = {
-        dow : 0, // Sunday is the first day of the week.
-        doy : 6  // The week that contains Jan 1st is the first week of the year.
-    };
-
-    function localeFirstDayOfWeek () {
-        return this._week.dow;
-    }
-
-    function localeFirstDayOfYear () {
-        return this._week.doy;
-    }
-
-    // MOMENTS
-
-    function getSetWeek (input) {
-        var week = this.localeData().week(this);
-        return input == null ? week : this.add((input - week) * 7, 'd');
-    }
-
-    function getSetISOWeek (input) {
-        var week = weekOfYear(this, 1, 4).week;
-        return input == null ? week : this.add((input - week) * 7, 'd');
-    }
-
-    // FORMATTING
-
     addFormatToken('D', ['DD', 2], 'Do', 'date');
 
     // ALIASES
 
     addUnitAlias('date', 'D');
+
+    // PRIOROITY
+    addUnitPriority('date', 9);
 
     // PARSING
 
@@ -23218,332 +23888,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
     // FORMATTING
 
-    addFormatToken('d', 0, 'do', 'day');
-
-    addFormatToken('dd', 0, 0, function (format) {
-        return this.localeData().weekdaysMin(this, format);
-    });
-
-    addFormatToken('ddd', 0, 0, function (format) {
-        return this.localeData().weekdaysShort(this, format);
-    });
-
-    addFormatToken('dddd', 0, 0, function (format) {
-        return this.localeData().weekdays(this, format);
-    });
-
-    addFormatToken('e', 0, 0, 'weekday');
-    addFormatToken('E', 0, 0, 'isoWeekday');
-
-    // ALIASES
-
-    addUnitAlias('day', 'd');
-    addUnitAlias('weekday', 'e');
-    addUnitAlias('isoWeekday', 'E');
-
-    // PARSING
-
-    addRegexToken('d',    match1to2);
-    addRegexToken('e',    match1to2);
-    addRegexToken('E',    match1to2);
-    addRegexToken('dd',   function (isStrict, locale) {
-        return locale.weekdaysMinRegex(isStrict);
-    });
-    addRegexToken('ddd',   function (isStrict, locale) {
-        return locale.weekdaysShortRegex(isStrict);
-    });
-    addRegexToken('dddd',   function (isStrict, locale) {
-        return locale.weekdaysRegex(isStrict);
-    });
-
-    addWeekParseToken(['dd', 'ddd', 'dddd'], function (input, week, config, token) {
-        var weekday = config._locale.weekdaysParse(input, token, config._strict);
-        // if we didn't get a weekday name, mark the date as invalid
-        if (weekday != null) {
-            week.d = weekday;
-        } else {
-            getParsingFlags(config).invalidWeekday = input;
-        }
-    });
-
-    addWeekParseToken(['d', 'e', 'E'], function (input, week, config, token) {
-        week[token] = toInt(input);
-    });
-
-    // HELPERS
-
-    function parseWeekday(input, locale) {
-        if (typeof input !== 'string') {
-            return input;
-        }
-
-        if (!isNaN(input)) {
-            return parseInt(input, 10);
-        }
-
-        input = locale.weekdaysParse(input);
-        if (typeof input === 'number') {
-            return input;
-        }
-
-        return null;
-    }
-
-    // LOCALES
-
-    var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
-    function localeWeekdays (m, format) {
-        return isArray(this._weekdays) ? this._weekdays[m.day()] :
-            this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
-    }
-
-    var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
-    function localeWeekdaysShort (m) {
-        return this._weekdaysShort[m.day()];
-    }
-
-    var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
-    function localeWeekdaysMin (m) {
-        return this._weekdaysMin[m.day()];
-    }
-
-    function day_of_week__handleStrictParse(weekdayName, format, strict) {
-        var i, ii, mom, llc = weekdayName.toLocaleLowerCase();
-        if (!this._weekdaysParse) {
-            this._weekdaysParse = [];
-            this._shortWeekdaysParse = [];
-            this._minWeekdaysParse = [];
-
-            for (i = 0; i < 7; ++i) {
-                mom = create_utc__createUTC([2000, 1]).day(i);
-                this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
-                this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
-                this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
-            }
-        }
-
-        if (strict) {
-            if (format === 'dddd') {
-                ii = indexOf.call(this._weekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            } else if (format === 'ddd') {
-                ii = indexOf.call(this._shortWeekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            } else {
-                ii = indexOf.call(this._minWeekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            }
-        } else {
-            if (format === 'dddd') {
-                ii = indexOf.call(this._weekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._shortWeekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._minWeekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            } else if (format === 'ddd') {
-                ii = indexOf.call(this._shortWeekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._weekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._minWeekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            } else {
-                ii = indexOf.call(this._minWeekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._weekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._shortWeekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            }
-        }
-    }
-
-    function localeWeekdaysParse (weekdayName, format, strict) {
-        var i, mom, regex;
-
-        if (this._weekdaysParseExact) {
-            return day_of_week__handleStrictParse.call(this, weekdayName, format, strict);
-        }
-
-        if (!this._weekdaysParse) {
-            this._weekdaysParse = [];
-            this._minWeekdaysParse = [];
-            this._shortWeekdaysParse = [];
-            this._fullWeekdaysParse = [];
-        }
-
-        for (i = 0; i < 7; i++) {
-            // make the regex if we don't have it already
-
-            mom = create_utc__createUTC([2000, 1]).day(i);
-            if (strict && !this._fullWeekdaysParse[i]) {
-                this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
-                this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
-                this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
-            }
-            if (!this._weekdaysParse[i]) {
-                regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
-                this._weekdaysParse[i] = new RegExp(regex.replace('.', ''), 'i');
-            }
-            // test the regex
-            if (strict && format === 'dddd' && this._fullWeekdaysParse[i].test(weekdayName)) {
-                return i;
-            } else if (strict && format === 'ddd' && this._shortWeekdaysParse[i].test(weekdayName)) {
-                return i;
-            } else if (strict && format === 'dd' && this._minWeekdaysParse[i].test(weekdayName)) {
-                return i;
-            } else if (!strict && this._weekdaysParse[i].test(weekdayName)) {
-                return i;
-            }
-        }
-    }
-
-    // MOMENTS
-
-    function getSetDayOfWeek (input) {
-        if (!this.isValid()) {
-            return input != null ? this : NaN;
-        }
-        var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
-        if (input != null) {
-            input = parseWeekday(input, this.localeData());
-            return this.add(input - day, 'd');
-        } else {
-            return day;
-        }
-    }
-
-    function getSetLocaleDayOfWeek (input) {
-        if (!this.isValid()) {
-            return input != null ? this : NaN;
-        }
-        var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
-        return input == null ? weekday : this.add(input - weekday, 'd');
-    }
-
-    function getSetISODayOfWeek (input) {
-        if (!this.isValid()) {
-            return input != null ? this : NaN;
-        }
-        // behaves the same as moment#day except
-        // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
-        // as a setter, sunday should belong to the previous week.
-        return input == null ? this.day() || 7 : this.day(this.day() % 7 ? input : input - 7);
-    }
-
-    var defaultWeekdaysRegex = matchWord;
-    function weekdaysRegex (isStrict) {
-        if (this._weekdaysParseExact) {
-            if (!hasOwnProp(this, '_weekdaysRegex')) {
-                computeWeekdaysParse.call(this);
-            }
-            if (isStrict) {
-                return this._weekdaysStrictRegex;
-            } else {
-                return this._weekdaysRegex;
-            }
-        } else {
-            return this._weekdaysStrictRegex && isStrict ?
-                this._weekdaysStrictRegex : this._weekdaysRegex;
-        }
-    }
-
-    var defaultWeekdaysShortRegex = matchWord;
-    function weekdaysShortRegex (isStrict) {
-        if (this._weekdaysParseExact) {
-            if (!hasOwnProp(this, '_weekdaysRegex')) {
-                computeWeekdaysParse.call(this);
-            }
-            if (isStrict) {
-                return this._weekdaysShortStrictRegex;
-            } else {
-                return this._weekdaysShortRegex;
-            }
-        } else {
-            return this._weekdaysShortStrictRegex && isStrict ?
-                this._weekdaysShortStrictRegex : this._weekdaysShortRegex;
-        }
-    }
-
-    var defaultWeekdaysMinRegex = matchWord;
-    function weekdaysMinRegex (isStrict) {
-        if (this._weekdaysParseExact) {
-            if (!hasOwnProp(this, '_weekdaysRegex')) {
-                computeWeekdaysParse.call(this);
-            }
-            if (isStrict) {
-                return this._weekdaysMinStrictRegex;
-            } else {
-                return this._weekdaysMinRegex;
-            }
-        } else {
-            return this._weekdaysMinStrictRegex && isStrict ?
-                this._weekdaysMinStrictRegex : this._weekdaysMinRegex;
-        }
-    }
-
-
-    function computeWeekdaysParse () {
-        function cmpLenRev(a, b) {
-            return b.length - a.length;
-        }
-
-        var minPieces = [], shortPieces = [], longPieces = [], mixedPieces = [],
-            i, mom, minp, shortp, longp;
-        for (i = 0; i < 7; i++) {
-            // make the regex if we don't have it already
-            mom = create_utc__createUTC([2000, 1]).day(i);
-            minp = this.weekdaysMin(mom, '');
-            shortp = this.weekdaysShort(mom, '');
-            longp = this.weekdays(mom, '');
-            minPieces.push(minp);
-            shortPieces.push(shortp);
-            longPieces.push(longp);
-            mixedPieces.push(minp);
-            mixedPieces.push(shortp);
-            mixedPieces.push(longp);
-        }
-        // Sorting makes sure if one weekday (or abbr) is a prefix of another it
-        // will match the longer piece.
-        minPieces.sort(cmpLenRev);
-        shortPieces.sort(cmpLenRev);
-        longPieces.sort(cmpLenRev);
-        mixedPieces.sort(cmpLenRev);
-        for (i = 0; i < 7; i++) {
-            shortPieces[i] = regexEscape(shortPieces[i]);
-            longPieces[i] = regexEscape(longPieces[i]);
-            mixedPieces[i] = regexEscape(mixedPieces[i]);
-        }
-
-        this._weekdaysRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
-        this._weekdaysShortRegex = this._weekdaysRegex;
-        this._weekdaysMinRegex = this._weekdaysRegex;
-
-        this._weekdaysStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
-        this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
-        this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
-    }
-
-    // FORMATTING
-
     addFormatToken('DDD', ['DDDD', 3], 'DDDo', 'dayOfYear');
 
     // ALIASES
 
     addUnitAlias('dayOfYear', 'DDD');
+
+    // PRIORITY
+    addUnitPriority('dayOfYear', 4);
 
     // PARSING
 
@@ -23564,136 +23916,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
     // FORMATTING
 
-    function hFormat() {
-        return this.hours() % 12 || 12;
-    }
-
-    function kFormat() {
-        return this.hours() || 24;
-    }
-
-    addFormatToken('H', ['HH', 2], 0, 'hour');
-    addFormatToken('h', ['hh', 2], 0, hFormat);
-    addFormatToken('k', ['kk', 2], 0, kFormat);
-
-    addFormatToken('hmm', 0, 0, function () {
-        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2);
-    });
-
-    addFormatToken('hmmss', 0, 0, function () {
-        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2) +
-            zeroFill(this.seconds(), 2);
-    });
-
-    addFormatToken('Hmm', 0, 0, function () {
-        return '' + this.hours() + zeroFill(this.minutes(), 2);
-    });
-
-    addFormatToken('Hmmss', 0, 0, function () {
-        return '' + this.hours() + zeroFill(this.minutes(), 2) +
-            zeroFill(this.seconds(), 2);
-    });
-
-    function meridiem (token, lowercase) {
-        addFormatToken(token, 0, 0, function () {
-            return this.localeData().meridiem(this.hours(), this.minutes(), lowercase);
-        });
-    }
-
-    meridiem('a', true);
-    meridiem('A', false);
-
-    // ALIASES
-
-    addUnitAlias('hour', 'h');
-
-    // PARSING
-
-    function matchMeridiem (isStrict, locale) {
-        return locale._meridiemParse;
-    }
-
-    addRegexToken('a',  matchMeridiem);
-    addRegexToken('A',  matchMeridiem);
-    addRegexToken('H',  match1to2);
-    addRegexToken('h',  match1to2);
-    addRegexToken('HH', match1to2, match2);
-    addRegexToken('hh', match1to2, match2);
-
-    addRegexToken('hmm', match3to4);
-    addRegexToken('hmmss', match5to6);
-    addRegexToken('Hmm', match3to4);
-    addRegexToken('Hmmss', match5to6);
-
-    addParseToken(['H', 'HH'], HOUR);
-    addParseToken(['a', 'A'], function (input, array, config) {
-        config._isPm = config._locale.isPM(input);
-        config._meridiem = input;
-    });
-    addParseToken(['h', 'hh'], function (input, array, config) {
-        array[HOUR] = toInt(input);
-        getParsingFlags(config).bigHour = true;
-    });
-    addParseToken('hmm', function (input, array, config) {
-        var pos = input.length - 2;
-        array[HOUR] = toInt(input.substr(0, pos));
-        array[MINUTE] = toInt(input.substr(pos));
-        getParsingFlags(config).bigHour = true;
-    });
-    addParseToken('hmmss', function (input, array, config) {
-        var pos1 = input.length - 4;
-        var pos2 = input.length - 2;
-        array[HOUR] = toInt(input.substr(0, pos1));
-        array[MINUTE] = toInt(input.substr(pos1, 2));
-        array[SECOND] = toInt(input.substr(pos2));
-        getParsingFlags(config).bigHour = true;
-    });
-    addParseToken('Hmm', function (input, array, config) {
-        var pos = input.length - 2;
-        array[HOUR] = toInt(input.substr(0, pos));
-        array[MINUTE] = toInt(input.substr(pos));
-    });
-    addParseToken('Hmmss', function (input, array, config) {
-        var pos1 = input.length - 4;
-        var pos2 = input.length - 2;
-        array[HOUR] = toInt(input.substr(0, pos1));
-        array[MINUTE] = toInt(input.substr(pos1, 2));
-        array[SECOND] = toInt(input.substr(pos2));
-    });
-
-    // LOCALES
-
-    function localeIsPM (input) {
-        // IE8 Quirks Mode & IE7 Standards Mode do not allow accessing strings like arrays
-        // Using charAt should be more compatible.
-        return ((input + '').toLowerCase().charAt(0) === 'p');
-    }
-
-    var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
-    function localeMeridiem (hours, minutes, isLower) {
-        if (hours > 11) {
-            return isLower ? 'pm' : 'PM';
-        } else {
-            return isLower ? 'am' : 'AM';
-        }
-    }
-
-
-    // MOMENTS
-
-    // Setting the hour should keep the time, because the user explicitly
-    // specified which hour he wants. So trying to maintain the same hour (in
-    // a new timezone) makes sense. Adding/subtracting hours does not follow
-    // this rule.
-    var getSetHour = makeGetSet('Hours', true);
-
-    // FORMATTING
-
     addFormatToken('m', ['mm', 2], 0, 'minute');
 
     // ALIASES
 
     addUnitAlias('minute', 'm');
+
+    // PRIORITY
+
+    addUnitPriority('minute', 14);
 
     // PARSING
 
@@ -23712,6 +23943,10 @@ return /******/ (function(modules) { // webpackBootstrap
     // ALIASES
 
     addUnitAlias('second', 's');
+
+    // PRIORITY
+
+    addUnitPriority('second', 15);
 
     // PARSING
 
@@ -23757,6 +23992,10 @@ return /******/ (function(modules) { // webpackBootstrap
     // ALIASES
 
     addUnitAlias('millisecond', 'ms');
+
+    // PRIORITY
+
+    addUnitPriority('millisecond', 16);
 
     // PARSING
 
@@ -23807,7 +24046,7 @@ return /******/ (function(modules) { // webpackBootstrap
     momentPrototype__proto.fromNow           = fromNow;
     momentPrototype__proto.to                = to;
     momentPrototype__proto.toNow             = toNow;
-    momentPrototype__proto.get               = getSet;
+    momentPrototype__proto.get               = stringGet;
     momentPrototype__proto.invalidAt         = invalidAt;
     momentPrototype__proto.isAfter           = isAfter;
     momentPrototype__proto.isBefore          = isBefore;
@@ -23822,7 +24061,7 @@ return /******/ (function(modules) { // webpackBootstrap
     momentPrototype__proto.max               = prototypeMax;
     momentPrototype__proto.min               = prototypeMin;
     momentPrototype__proto.parsingFlags      = parsingFlags;
-    momentPrototype__proto.set               = getSet;
+    momentPrototype__proto.set               = stringSet;
     momentPrototype__proto.startOf           = startOf;
     momentPrototype__proto.subtract          = add_subtract__subtract;
     momentPrototype__proto.toArray           = toArray;
@@ -23882,7 +24121,6 @@ return /******/ (function(modules) { // webpackBootstrap
     momentPrototype__proto.parseZone            = setOffsetToParsedOffset;
     momentPrototype__proto.hasAlignedHourOffset = hasAlignedHourOffset;
     momentPrototype__proto.isDST                = isDaylightSavingTime;
-    momentPrototype__proto.isDSTShifted         = isDaylightSavingTimeShifted;
     momentPrototype__proto.isLocal              = isLocal;
     momentPrototype__proto.isUtcOffset          = isUtcOffset;
     momentPrototype__proto.isUtc                = isUtc;
@@ -23896,7 +24134,8 @@ return /******/ (function(modules) { // webpackBootstrap
     momentPrototype__proto.dates  = deprecate('dates accessor is deprecated. Use date instead.', getSetDayOfMonth);
     momentPrototype__proto.months = deprecate('months accessor is deprecated. Use month instead', getSetMonth);
     momentPrototype__proto.years  = deprecate('years accessor is deprecated. Use year instead', getSetYear);
-    momentPrototype__proto.zone   = deprecate('moment().zone is deprecated, use moment().utcOffset instead. https://github.com/moment/moment/issues/1779', getSetZone);
+    momentPrototype__proto.zone   = deprecate('moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/', getSetZone);
+    momentPrototype__proto.isDSTShifted = deprecate('isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information', isDaylightSavingTimeShifted);
 
     var momentPrototype = momentPrototype__proto;
 
@@ -23908,143 +24147,46 @@ return /******/ (function(modules) { // webpackBootstrap
         return local__createLocal.apply(null, arguments).parseZone();
     }
 
-    var defaultCalendar = {
-        sameDay : '[Today at] LT',
-        nextDay : '[Tomorrow at] LT',
-        nextWeek : 'dddd [at] LT',
-        lastDay : '[Yesterday at] LT',
-        lastWeek : '[Last] dddd [at] LT',
-        sameElse : 'L'
-    };
-
-    function locale_calendar__calendar (key, mom, now) {
-        var output = this._calendar[key];
-        return isFunction(output) ? output.call(mom, now) : output;
-    }
-
-    var defaultLongDateFormat = {
-        LTS  : 'h:mm:ss A',
-        LT   : 'h:mm A',
-        L    : 'MM/DD/YYYY',
-        LL   : 'MMMM D, YYYY',
-        LLL  : 'MMMM D, YYYY h:mm A',
-        LLLL : 'dddd, MMMM D, YYYY h:mm A'
-    };
-
-    function longDateFormat (key) {
-        var format = this._longDateFormat[key],
-            formatUpper = this._longDateFormat[key.toUpperCase()];
-
-        if (format || !formatUpper) {
-            return format;
-        }
-
-        this._longDateFormat[key] = formatUpper.replace(/MMMM|MM|DD|dddd/g, function (val) {
-            return val.slice(1);
-        });
-
-        return this._longDateFormat[key];
-    }
-
-    var defaultInvalidDate = 'Invalid date';
-
-    function invalidDate () {
-        return this._invalidDate;
-    }
-
-    var defaultOrdinal = '%d';
-    var defaultOrdinalParse = /\d{1,2}/;
-
-    function ordinal (number) {
-        return this._ordinal.replace('%d', number);
-    }
-
     function preParsePostFormat (string) {
         return string;
     }
 
-    var defaultRelativeTime = {
-        future : 'in %s',
-        past   : '%s ago',
-        s  : 'a few seconds',
-        m  : 'a minute',
-        mm : '%d minutes',
-        h  : 'an hour',
-        hh : '%d hours',
-        d  : 'a day',
-        dd : '%d days',
-        M  : 'a month',
-        MM : '%d months',
-        y  : 'a year',
-        yy : '%d years'
-    };
-
-    function relative__relativeTime (number, withoutSuffix, string, isFuture) {
-        var output = this._relativeTime[string];
-        return (isFunction(output)) ?
-            output(number, withoutSuffix, string, isFuture) :
-            output.replace(/%d/i, number);
-    }
-
-    function pastFuture (diff, output) {
-        var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
-        return isFunction(format) ? format(output) : format.replace(/%s/i, output);
-    }
-
     var prototype__proto = Locale.prototype;
 
-    prototype__proto._calendar       = defaultCalendar;
     prototype__proto.calendar        = locale_calendar__calendar;
-    prototype__proto._longDateFormat = defaultLongDateFormat;
     prototype__proto.longDateFormat  = longDateFormat;
-    prototype__proto._invalidDate    = defaultInvalidDate;
     prototype__proto.invalidDate     = invalidDate;
-    prototype__proto._ordinal        = defaultOrdinal;
     prototype__proto.ordinal         = ordinal;
-    prototype__proto._ordinalParse   = defaultOrdinalParse;
     prototype__proto.preparse        = preParsePostFormat;
     prototype__proto.postformat      = preParsePostFormat;
-    prototype__proto._relativeTime   = defaultRelativeTime;
     prototype__proto.relativeTime    = relative__relativeTime;
     prototype__proto.pastFuture      = pastFuture;
     prototype__proto.set             = locale_set__set;
 
     // Month
     prototype__proto.months            =        localeMonths;
-    prototype__proto._months           = defaultLocaleMonths;
     prototype__proto.monthsShort       =        localeMonthsShort;
-    prototype__proto._monthsShort      = defaultLocaleMonthsShort;
     prototype__proto.monthsParse       =        localeMonthsParse;
-    prototype__proto._monthsRegex      = defaultMonthsRegex;
     prototype__proto.monthsRegex       = monthsRegex;
-    prototype__proto._monthsShortRegex = defaultMonthsShortRegex;
     prototype__proto.monthsShortRegex  = monthsShortRegex;
 
     // Week
     prototype__proto.week = localeWeek;
-    prototype__proto._week = defaultLocaleWeek;
     prototype__proto.firstDayOfYear = localeFirstDayOfYear;
     prototype__proto.firstDayOfWeek = localeFirstDayOfWeek;
 
     // Day of Week
     prototype__proto.weekdays       =        localeWeekdays;
-    prototype__proto._weekdays      = defaultLocaleWeekdays;
     prototype__proto.weekdaysMin    =        localeWeekdaysMin;
-    prototype__proto._weekdaysMin   = defaultLocaleWeekdaysMin;
     prototype__proto.weekdaysShort  =        localeWeekdaysShort;
-    prototype__proto._weekdaysShort = defaultLocaleWeekdaysShort;
     prototype__proto.weekdaysParse  =        localeWeekdaysParse;
 
-    prototype__proto._weekdaysRegex      = defaultWeekdaysRegex;
     prototype__proto.weekdaysRegex       =        weekdaysRegex;
-    prototype__proto._weekdaysShortRegex = defaultWeekdaysShortRegex;
     prototype__proto.weekdaysShortRegex  =        weekdaysShortRegex;
-    prototype__proto._weekdaysMinRegex   = defaultWeekdaysMinRegex;
     prototype__proto.weekdaysMinRegex    =        weekdaysMinRegex;
 
     // Hours
     prototype__proto.isPM = localeIsPM;
-    prototype__proto._meridiemParse = defaultLocaleMeridiemParse;
     prototype__proto.meridiem = localeMeridiem;
 
     function lists__get (format, index, field, setter) {
@@ -24373,6 +24515,18 @@ return /******/ (function(modules) { // webpackBootstrap
         return substituteTimeAgo.apply(null, a);
     }
 
+    // This function allows you to set the rounding function for relative time strings
+    function duration_humanize__getSetRelativeTimeRounding (roundingFunction) {
+        if (roundingFunction === undefined) {
+            return round;
+        }
+        if (typeof(roundingFunction) === 'function') {
+            round = roundingFunction;
+            return true;
+        }
+        return false;
+    }
+
     // This function allows you to set a threshold for relative time strings
     function duration_humanize__getSetRelativeTimeThreshold (threshold, limit) {
         if (thresholds[threshold] === undefined) {
@@ -24505,7 +24659,7 @@ return /******/ (function(modules) { // webpackBootstrap
     // Side effect imports
 
 
-    utils_hooks__hooks.version = '2.13.0';
+    utils_hooks__hooks.version = '2.14.1';
 
     setHookCallback(local__createLocal);
 
@@ -24532,7 +24686,9 @@ return /******/ (function(modules) { // webpackBootstrap
     utils_hooks__hooks.locales               = locale_locales__listLocales;
     utils_hooks__hooks.weekdaysShort         = lists__listWeekdaysShort;
     utils_hooks__hooks.normalizeUnits        = normalizeUnits;
+    utils_hooks__hooks.relativeTimeRounding = duration_humanize__getSetRelativeTimeRounding;
     utils_hooks__hooks.relativeTimeThreshold = duration_humanize__getSetRelativeTimeThreshold;
+    utils_hooks__hooks.calendarFormat        = getCalendarFormat;
     utils_hooks__hooks.prototype             = momentPrototype;
 
     var _moment = utils_hooks__hooks;
@@ -28059,27 +28215,27 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     window.CustomEvent = CustomEvent;
 })();
 
-'use strict'; /**
+'use strict';/**
  * Debug helper
  * Log only shown when KENT.debug is true.
- */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){ /*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};window.KENT=window.KENT||{}; /**
+ */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){/*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};window.KENT=window.KENT||{};/**
  * Kent Analytics Tracker
  * A simple helper for pushing pages & events to multiple trackers.
- */window.KENT.kat={ /**
+ */window.KENT.kat={/**
 	 *  Track page view
-	 */'page':function page(path){var trackers=this.trackers();for(var t in trackers){try{trackers[t].send('pageview',{'page':path});}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Pageview: '+path);return true;}, /**
+	 */'page':function page(path){var trackers=this.trackers();for(var t in trackers){try{trackers[t].send('pageview',{'page':path});}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Pageview: '+path);return true;},/**
 	 *  Track event (namespaced)
-	 */'event':function event(category,action,label,value){var ns_category='w3beta-'+category;return this.g_event(ns_category,action,label,value);}, /**
+	 */'event':function event(category,action,label,value){var ns_category='w3beta-'+category;return this.g_event(ns_category,action,label,value);},/**
 	 * Track social
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions
-	 */'social':function social(network,action,target){var trackers=this.trackers(); // use current url if no target is provided
-if(typeof target==='undefined'){target=window.location.href;}for(var t in trackers){try{trackers[t].send('social',network,action,target);}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Social',network,action,target);return true;}, /**
+	 */'social':function social(network,action,target){var trackers=this.trackers();// use current url if no target is provided
+if(typeof target==='undefined'){target=window.location.href;}for(var t in trackers){try{trackers[t].send('social',network,action,target);}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Social',network,action,target);return true;},/**
 	 * Track global event
-	 */'g_event':function g_event(category,action,label,value){ // send to all GA trackers
-var trackers=this.trackers(); // if value is set, check its a number, if not set to 1
-if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,10);}for(var t in trackers){try{trackers[t].send('event',category,action,label,value);}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Event',category,action,label,value);return true;}, /**
+	 */'g_event':function g_event(category,action,label,value){// send to all GA trackers
+var trackers=this.trackers();// if value is set, check its a number, if not set to 1
+if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,10);}for(var t in trackers){try{trackers[t].send('event',category,action,label,value);}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Event',category,action,label,value);return true;},/**
 	 * Get trackers
-	 */trackers:function trackers(){return typeof window.ga.getAll!=='undefined'?window.ga.getAll():[];}}; /**
+	 */trackers:function trackers(){return typeof window.ga.getAll!=='undefined'?window.ga.getAll():[];}};/**
  * Responsive helper
  *
  * Triggers events on resize and breakpoint changes
@@ -28089,195 +28245,195 @@ if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,
  * - viewport:change - fired only if resize triggers breakpoint change
  *
  * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
- */(function($,viewport){ // Supported breakpoints
-var visibilityDivs={'xs':$('<div class="hidden-sm-up"></div>'),'sm':$('<div class="hidden-xs-down hidden-md-up"></div>'),'md':$('<div class="hidden-sm-down hidden-lg-up"></div>'),'lg':$('<div class="hidden-md-down hidden-xl-up"></div>'),'xl':$('<div class="hidden-lg-down hidden-xxl-up"></div>'),'xxl':$('<div class="hidden-xl-down hidden-xxxl-up"></div>'),'xxxl':$('<div class="hidden-xxl-down"></div>')};viewport.use('Custom',visibilityDivs); // Add our custom event
-var previousBreakpoint='';$(window).resize(viewport.changed(function(){var breakpoint=viewport.current(); // resize has occured, fire event
-$(window).trigger('viewport:resize');if(previousBreakpoint!==breakpoint){ // Debug
-window.KENT.log('Breakpoint change: '+previousBreakpoint+' -> '+breakpoint); // breakpoint has changed, fire evenet
-$(window).trigger('viewport:change');previousBreakpoint=breakpoint;}}));})(jQuery,ResponsiveBootstrapToolkit);window.KENT=window.KENT||{};window.KENT.modules=window.KENT.modules||{}; /**
+ */(function($,viewport){// Supported breakpoints
+var visibilityDivs={'xs':$('<div class="hidden-sm-up"></div>'),'sm':$('<div class="hidden-xs-down hidden-md-up"></div>'),'md':$('<div class="hidden-sm-down hidden-lg-up"></div>'),'lg':$('<div class="hidden-md-down hidden-xl-up"></div>'),'xl':$('<div class="hidden-lg-down hidden-xxl-up"></div>'),'xxl':$('<div class="hidden-xl-down hidden-xxxl-up"></div>'),'xxxl':$('<div class="hidden-xxl-down"></div>')};viewport.use('Custom',visibilityDivs);// Add our custom event
+var previousBreakpoint='';$(window).resize(viewport.changed(function(){var breakpoint=viewport.current();// resize has occured, fire event
+$(window).trigger('viewport:resize');if(previousBreakpoint!==breakpoint){// Debug
+window.KENT.log('Breakpoint change: '+previousBreakpoint+' -> '+breakpoint);// breakpoint has changed, fire evenet
+$(window).trigger('viewport:change');previousBreakpoint=breakpoint;}}));})(jQuery,ResponsiveBootstrapToolkit);window.KENT=window.KENT||{};window.KENT.modules=window.KENT.modules||{};/**
  * Quickspot helper
  *
  * Centralises common configuration & initalisation options for QuickSpot search
  *
  * @uses https://github.com/thybag/quick-spot
- */(function(){ // create obj
-window.KENT.quickspot={config:{}};var configs=window.KENT.quickspot.config; // Default config options
-configs.default={'disable_occurrence_weighting':true,'prevent_headers':true,'max_results':150,'no_results':function no_results(qs,val){return '<a class=\'quickspot-result selected\'>Press enter to search...</a>';},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/?q='+value;}}; // Default config options for QS instances with a 'View all results for' top result
+ */(function(){// create obj
+window.KENT.quickspot={config:{}};var configs=window.KENT.quickspot.config;// Default config options
+configs.default={'disable_occurrence_weighting':true,'prevent_headers':true,'max_results':150,'no_results':function no_results(qs,val){return'<a class=\'quickspot-result selected\'>Press enter to search...</a>';},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/?q='+value;}};// Default config options for QS instances with a 'View all results for' top result
 //
 // Instances using this config, should use
 // _click_handler
 // _display_handler
 // rather than the default methods
-configs.searchWith=$.extend({},configs.default,{ // Display Handler wrapper
-'display_handler':function display_handler(itm,qs){return itm.kent_search_with_option===true?this.kent_search_with(qs):this._display_handler(itm,qs);},'kent_search_with':function kent_search_with(qs){return '<i class=\'kf-search\'></i> View all results for <strong>'+qs.lastValue+'</strong>';},'click_handler':function click_handler(itm,qs){if(typeof itm.kent_search_with_option==='boolean'&&itm.kent_search_with_option===true){return this.no_results_click(qs.lastValue);}return this._click_handler(itm,qs);},'parse_results':function parse_results(results,options){results.unshift({'kent_search_with_option':true,'qs_screenreader_text':'View full search results'});return results;}}); // Module search
-configs.modules=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/modules/collection/all','search_on':['title','sds_code'],'key_value':'title','auto_highlight':true,'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.sds_code+'</span>';},'click_handler':function click_handler(itm){document.location.href='/courses/modules/module/'+itm.sds_code;},'no_results_click':function no_results_click(value,qs){window.location.href='/courses/modules/?search='+value;},'data_pre_parse':function data_pre_parse(data,options){return data.modules;},'loaded':function loaded(qs){qs.datastore.filter(function(o){return o.running===true;});}}); // Scholarships search
-configs.scholarships=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/scholarships/','key_value':'title','search_on':['title','code'],'auto_highlight':true,'click_handler':function click_handler(itm){document.location.href='/scholarships/search/'+itm.code;},'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.code+'</span>';},'no_results_click':function no_results_click(value,qs){window.location.href='/scholarships/search/?search='+value;}}); // Default course configs, including callbacks
-configs.courses_default=$.extend({},configs.searchWith,{'search_on':['name','award','subject','main_school','ucas_code','search_keywords'],'auto_highlight':false,'_display_handler':function _display_handler(itm,qs){ // Generate locations list
-var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0]; // Highlight searched word
-return (itm.name+' - '+itm.award+' <br> <span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/undergraduate/'+itm.id+'/'+itm.slug;},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/courses?q='+value;}}); // UG
-configs.ug_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/undergraduate/programmes'}); // PG
-configs.pg_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/postgraduate/programmes','_click_handler':function _click_handler(itm){document.location='/courses/postgraduate/'+itm.id+'/'+itm.slug;}}); // Combined
-configs.all_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/all/programmes/','_display_handler':function _display_handler(itm,qs){ // Generate locations list
-var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0]; // Highlight searched word
-return (itm.name+' - '+itm.award+' <span class=\'level\'> &nbsp; '+itm.level_name+'</span><br><span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/'+(itm.level==='UG'?'undergraduate':'postgraduate')+'/'+itm.id+'/'+itm.slug;},'data_pre_parse':function data_pre_parse(data,options){for(var i in data){data[i].qs_result_class=data[i].level.toLowerCase();if(data[i].level==='UG'){data[i].level_name='Undergraduate';}else {var type=data[i].programme_type; // taught /research
-if(type.indexOf('taught-research')!==-1){data[i].level_name='Postgraduate Taught-research';}else if(type.indexOf('taught')!==-1){data[i].level_name='Postgraduate Taught';}else {data[i].level_name='Postgraduate Research';}}}return data;},'results_footer':'<div class=\'course-links\'><a class=\'chevron-link\' href=\'/courses/undergraduate/search\'>All Undergraduate</a><a  class=\'chevron-link\' href=\'/courses/postgraduate/search\'>All Postgraduate </a><a class=\'chevron-link\' href=\'/courses/part-time/index.html\'>Short Courses</a></div>','ready':function ready(qs){ // Override link action to pass search value
-$(qs.container).find('div.course-links a').click(function(e){e.preventDefault();document.location.href=$(this).attr('href')+'?search='+qs.lastValue;});}});})(); /**
+configs.searchWith=$.extend({},configs.default,{// Display Handler wrapper
+'display_handler':function display_handler(itm,qs){return itm.kent_search_with_option===true?this.kent_search_with(qs):this._display_handler(itm,qs);},'kent_search_with':function kent_search_with(qs){return'<i class=\'kf-search\'></i> View all results for <strong>'+qs.lastValue+'</strong>';},'click_handler':function click_handler(itm,qs){if(typeof itm.kent_search_with_option==='boolean'&&itm.kent_search_with_option===true){return this.no_results_click(qs.lastValue);}return this._click_handler(itm,qs);},'parse_results':function parse_results(results,options){results.unshift({'kent_search_with_option':true,'qs_screenreader_text':'View full search results'});return results;}});// Module search
+configs.modules=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/modules/collection/all','search_on':['title','sds_code'],'key_value':'title','auto_highlight':true,'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.sds_code+'</span>';},'click_handler':function click_handler(itm){document.location.href='/courses/modules/module/'+itm.sds_code;},'no_results_click':function no_results_click(value,qs){window.location.href='/courses/modules/?search='+value;},'data_pre_parse':function data_pre_parse(data,options){return data.modules;},'loaded':function loaded(qs){qs.datastore.filter(function(o){return o.running===true;});}});// Scholarships search
+configs.scholarships=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/scholarships/','key_value':'title','search_on':['title','code'],'auto_highlight':true,'click_handler':function click_handler(itm){document.location.href='/scholarships/search/'+itm.code;},'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.code+'</span>';},'no_results_click':function no_results_click(value,qs){window.location.href='/scholarships/search/?search='+value;}});// Default course configs, including callbacks
+configs.courses_default=$.extend({},configs.searchWith,{'search_on':['name','award','subject','main_school','ucas_code','search_keywords'],'auto_highlight':false,'_display_handler':function _display_handler(itm,qs){// Generate locations list
+var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0];// Highlight searched word
+return(itm.name+' - '+itm.award+' <br> <span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/undergraduate/'+itm.id+'/'+itm.slug;},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/courses?q='+value;}});// UG
+configs.ug_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/undergraduate/programmes'});// PG
+configs.pg_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/postgraduate/programmes','_click_handler':function _click_handler(itm){document.location='/courses/postgraduate/'+itm.id+'/'+itm.slug;}});// Combined
+configs.all_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/all/programmes/','_display_handler':function _display_handler(itm,qs){// Generate locations list
+var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0];// Highlight searched word
+return(itm.name+' - '+itm.award+' <span class=\'level\'> &nbsp; '+itm.level_name+'</span><br><span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/'+(itm.level==='UG'?'undergraduate':'postgraduate')+'/'+itm.id+'/'+itm.slug;},'data_pre_parse':function data_pre_parse(data,options){for(var i in data){data[i].qs_result_class=data[i].level.toLowerCase();if(data[i].level==='UG'){data[i].level_name='Undergraduate';}else{var type=data[i].programme_type;// taught /research
+if(type.indexOf('taught-research')!==-1){data[i].level_name='Postgraduate Taught-research';}else if(type.indexOf('taught')!==-1){data[i].level_name='Postgraduate Taught';}else{data[i].level_name='Postgraduate Research';}}}return data;},'results_footer':'<div class=\'course-links\'><a class=\'chevron-link\' href=\'/courses/undergraduate/search\'>All Undergraduate</a><a  class=\'chevron-link\' href=\'/courses/postgraduate/search\'>All Postgraduate </a><a class=\'chevron-link\' href=\'/courses/part-time/index.html\'>Short Courses</a></div>','ready':function ready(qs){// Override link action to pass search value
+$(qs.container).find('div.course-links a').click(function(e){e.preventDefault();document.location.href=$(this).attr('href')+'?search='+qs.lastValue;});}});})();/**
  * Scan for inputs with data-quickspot-config attribute and initalise them as quickspot instances
- */jQuery(document).ready(function($){$('input[data-quickspot-config]').each(function(){ // Load config
-var config=window.KENT.quickspot.config[$(this).data('quickspot-config')]||window.KENT.quickspot.config.defaults;config=$.extend({},config); // Set additional options
-config.target=$(this).attr('id'); // Override data source url
-if($(this).data('quickspot-source')){config.url=$(this).data('quickspot-source');} // Override results container location
-if($(this).data('quickspot-target')){config.results_container=$(this).data('quickspot-target');} // Boot quickspot
-var qs=window.KENT.modules.quickspot.attach(config);$(this).attr('autocomplete','off');$(this).data('qs',qs); // Debug
-window.KENT.log('[Quickspot] Instance created on #'+$(this).attr('id')+' with config '+$(this).data('quickspot-config'));});}); /**
+ */jQuery(document).ready(function($){$('input[data-quickspot-config]').each(function(){// Load config
+var config=window.KENT.quickspot.config[$(this).data('quickspot-config')]||window.KENT.quickspot.config.defaults;config=$.extend({},config);// Set additional options
+config.target=$(this).attr('id');// Override data source url
+if($(this).data('quickspot-source')){config.url=$(this).data('quickspot-source');}// Override results container location
+if($(this).data('quickspot-target')){config.results_container=$(this).data('quickspot-target');}// Boot quickspot
+var qs=window.KENT.modules.quickspot.attach(config);$(this).attr('autocomplete','off');$(this).data('qs',qs);// Debug
+window.KENT.log('[Quickspot] Instance created on #'+$(this).attr('id')+' with config '+$(this).data('quickspot-config'));});});/**
  * Responsive Collapse
  *
  * Mirrors the behaviour of http://v4-alpha.getbootstrap.com/components/collapse/ in a breakpoint aware way
  *
  * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
  * @uses responsive_util.js
- */jQuery(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;var $collabsables=$('[data-toggle="collapse_responsive"]');var viewportChange=function viewportChange(){window.KENT.log('Initiating: Collapse Responsive');window.KENT.log($collabsables);$collabsables.each(function(){var $target=$($(this).data('target')||null);if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){$(this).removeClass('collapsed').removeAttr('aria-expanded','true');$target.addClass('in');}else {$(this).addClass('collapsed').attr('aria-expanded','false');$target.removeClass('in');}});};$collabsables.click(function(e){e.preventDefault();var $this=$(this);var isCollapsed=$(this).hasClass('collapsed');var $parent=$($this).closest($this.data('parent'))||null;var $target=$($this.data('target'))||null;var $isTab=$parent.hasClass('tab-content'); // If target isn't collapsed at this breakpoint, ignore.
-if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){return;} // else, toggle it open / shut
-if($parent.length>0){var $open=$parent.find('.in');$open.removeClass('in').removeClass('active').each(function(){$parent.find('[data-target=\'#'+$(this).attr('id')+'\']').addClass('collapsed');if($isTab){$parent.parent().find('.nav-link').removeClass('active');}});}if($target.length>0){$target.toggleClass('in',isCollapsed).toggleClass('active',isCollapsed); // Add expanded state (this only needs to be set when collapsing is possible)
-$this.toggleClass('collapsed',!isCollapsed).attr('aria-expanded',!isCollapsed?'false':'true');if($isTab){$parent.parent().find('.nav-link[href="'+$this.data('target')+'"]').addClass('active');}}}); // When breakpoint changes
-$(window).on('viewport:change',viewportChange); //init
-viewportChange();});window.KENT=window.KENT||{}; /**
+ */jQuery(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;var $collabsables=$('[data-toggle="collapse_responsive"]');var viewportChange=function viewportChange(){window.KENT.log('Initiating: Collapse Responsive');window.KENT.log($collabsables);$collabsables.each(function(){var $target=$($(this).data('target')||null);if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){$(this).removeClass('collapsed').removeAttr('aria-expanded','true');$target.addClass('in');}else{$(this).addClass('collapsed').attr('aria-expanded','false');$target.removeClass('in');}});};$collabsables.click(function(e){e.preventDefault();var $this=$(this);var isCollapsed=$(this).hasClass('collapsed');var $parent=$($this).closest($this.data('parent'))||null;var $target=$($this.data('target'))||null;var $isTab=$parent.hasClass('tab-content');// If target isn't collapsed at this breakpoint, ignore.
+if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){return;}// else, toggle it open / shut
+if($parent.length>0){var $open=$parent.find('.in');$open.removeClass('in').removeClass('active').each(function(){$parent.find('[data-target=\'#'+$(this).attr('id')+'\']').addClass('collapsed');if($isTab){$parent.parent().find('.nav-link').removeClass('active');}});}if($target.length>0){$target.toggleClass('in',isCollapsed).toggleClass('active',isCollapsed);// Add expanded state (this only needs to be set when collapsing is possible)
+$this.toggleClass('collapsed',!isCollapsed).attr('aria-expanded',!isCollapsed?'false':'true');if($isTab){$parent.parent().find('.nav-link[href="'+$this.data('target')+'"]').addClass('active');}}});// When breakpoint changes
+$(window).on('viewport:change',viewportChange);//init
+viewportChange();});window.KENT=window.KENT||{};/**
  * Global navigation
  *
  * Switches between main menu & search menu on mobile.
  * Toggles search on/off on large screens
  *
- */(function(){ // Menu references
+ */(function(){// Menu references
 // Store control class as data on the elements (just for conveniance)
-var global_menu=$('#global-nav-menu').data('control-class','show-global-menu');var global_search=$('#global-nav-search').data('control-class','show-global-search'); // List of Menu toggle classes
+var global_menu=$('#global-nav-menu').data('control-class','show-global-menu');var global_search=$('#global-nav-search').data('control-class','show-global-search');// List of Menu toggle classes
 // This will have the aria-extanded attribute toggled on them, whenever the menu state changes.
-var global_menu_toggles=$('.menu-button');var global_search_toggles=$('.search-button, .search-button-full, .close-search'); // Toggle a given menu's state
-var toggleMenu=function toggleMenu(button,menu){ // If this menu is NOT open, open it. Else close it.
-if(!menu.hasClass('in')){return openMenu(button,menu);}else {return closeMenu(button,menu);}}; // Close a given menu (toggling its buttons)
-var closeMenu=function closeMenu(button,menu){ // Cannot close already closed menu
-if(!menu.hasClass('in')){return false;} // Remove menu & body class
-menu.removeClass('in');$('body').removeClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
+var global_menu_toggles=$('.menu-button');var global_search_toggles=$('.search-button, .search-button-full, .close-search');// Toggle a given menu's state
+var toggleMenu=function toggleMenu(button,menu){// If this menu is NOT open, open it. Else close it.
+if(!menu.hasClass('in')){return openMenu(button,menu);}else{return closeMenu(button,menu);}};// Close a given menu (toggling its buttons)
+var closeMenu=function closeMenu(button,menu){// Cannot close already closed menu
+if(!menu.hasClass('in')){return false;}// Remove menu & body class
+menu.removeClass('in');$('body').removeClass(menu.data('control-class'));// Update button so it knows it's expanded area is collapsed
 // aria-hidden is not needed on the element, since as the element is displayed none
 // the screen reader won't see it anyway.
-button.attr('aria-expanded','false'); // Trigger event
-$(window).trigger('globalmenu:close',[menu]);return true;}; // Open a given menu (toggling its buttons)
-var openMenu=function openMenu(button,menu){ // Cannot open already closed menu
-if(menu.hasClass('in')){return false;} // Set menu & body classes
-menu.addClass('in');$('body').addClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
-button.attr('aria-expanded',true); // Fire events
-$(window).trigger('globalmenu:open',[menu]);return true;}; // Setup quick access methods to Menu functions
-var global_nav={openSearchMenu:function openSearchMenu(){return openMenu(global_search_toggles,global_search);},closeSearchMenu:function closeSearchMenu(){return closeMenu(global_search_toggles,global_search);},toggleSearchMenu:function toggleSearchMenu(){return toggleMenu(global_search_toggles,global_search);},openMainMenu:function openMainMenu(){return openMenu(global_menu_toggles,global_menu);},closeMainMenu:function closeMainMenu(){return closeMenu(global_menu_toggles,global_menu);},toggleMainMenu:function toggleMainMenu(){return toggleMenu(global_menu_toggles,global_menu);}}; // Toggle primary Menu (mobile Only)
-global_search_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleSearchMenu();return false;}); // Toggle Search Menu
-global_menu_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleMainMenu();return false;}); // Ensure opening one menu, closes the other.
-$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){window.KENT.global_nav.closeMainMenu();}else {window.KENT.global_nav.closeSearchMenu();}});global_menu.find('.audience-nav-links a').click(function(e){e.preventDefault();var menu_name=e.target.getAttribute('data-action');if(menu_name!==null){window.KENT.kentbar.toggleMenu(menu_name,e.target);window.KENT.global_nav.closeMainMenu();}return false;}); // CLose all menu's if user hits escape
-$(document).keyup(function(e){if(e.which===27){window.KENT.global_nav.closeMainMenu();window.KENT.global_nav.closeSearchMenu();window.KENT.kentbar.closeMenus();}}); // Homepage Logic
-if($('.home-nav').length>0){$(window).on('globalmenu:open kentbar_menu:open kentbar_mobilemenu:open',function(){$('.home-nav').hide();});$(window).on('globalmenu:close kentbar_menu:close kentbar_mobilemenu:close',function(e,menu){var $body=$('body');if(!($body.hasClass('show-global-menu')||$body.hasClass('show-global-search')||$body.hasClass('show-kentbar-menu'))){if(ResponsiveBootstrapToolkit.is('<=sm')){$('.home-nav').delay(300).fadeIn();}}});$(window).on('viewport:change',function(){if(ResponsiveBootstrapToolkit.is('<=sm')){ // if menu isn't already open
-if(!$('body').hasClass('show-global-menu')&&!$('body').hasClass('show-global-search')){$('.home-nav').delay(300).fadeIn();}}else {$('.home-nav').hide();}});} // Add to KENT object
-window.KENT.global_nav=global_nav;})();window.KENT=window.KENT||{}; /**
+button.attr('aria-expanded','false');// Trigger event
+$(window).trigger('globalmenu:close',[menu]);return true;};// Open a given menu (toggling its buttons)
+var openMenu=function openMenu(button,menu){// Cannot open already closed menu
+if(menu.hasClass('in')){return false;}// Set menu & body classes
+menu.addClass('in');$('body').addClass(menu.data('control-class'));// Update button so it knows it's expanded area is collapsed
+button.attr('aria-expanded',true);// Fire events
+$(window).trigger('globalmenu:open',[menu]);return true;};// Setup quick access methods to Menu functions
+var global_nav={openSearchMenu:function openSearchMenu(){return openMenu(global_search_toggles,global_search);},closeSearchMenu:function closeSearchMenu(){return closeMenu(global_search_toggles,global_search);},toggleSearchMenu:function toggleSearchMenu(){return toggleMenu(global_search_toggles,global_search);},openMainMenu:function openMainMenu(){return openMenu(global_menu_toggles,global_menu);},closeMainMenu:function closeMainMenu(){return closeMenu(global_menu_toggles,global_menu);},toggleMainMenu:function toggleMainMenu(){return toggleMenu(global_menu_toggles,global_menu);}};// Toggle primary Menu (mobile Only)
+global_search_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleSearchMenu();return false;});// Toggle Search Menu
+global_menu_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleMainMenu();return false;});// Ensure opening one menu, closes the other.
+$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){window.KENT.global_nav.closeMainMenu();}else{window.KENT.global_nav.closeSearchMenu();}});global_menu.find('.audience-nav-links a').click(function(e){e.preventDefault();var menu_name=e.target.getAttribute('data-action');if(menu_name!==null){window.KENT.kentbar.toggleMenu(menu_name,e.target);window.KENT.global_nav.closeMainMenu();}return false;});// CLose all menu's if user hits escape
+$(document).keyup(function(e){if(e.which===27){window.KENT.global_nav.closeMainMenu();window.KENT.global_nav.closeSearchMenu();window.KENT.kentbar.closeMenus();}});// Homepage Logic
+if($('.home-nav').length>0){$(window).on('globalmenu:open kentbar_menu:open kentbar_mobilemenu:open',function(){$('.home-nav').hide();});$(window).on('globalmenu:close kentbar_menu:close kentbar_mobilemenu:close',function(e,menu){var $body=$('body');if(!($body.hasClass('show-global-menu')||$body.hasClass('show-global-search')||$body.hasClass('show-kentbar-menu'))){if(ResponsiveBootstrapToolkit.is('<=sm')){$('.home-nav').delay(300).fadeIn();}}});$(window).on('viewport:change',function(){if(ResponsiveBootstrapToolkit.is('<=sm')){// if menu isn't already open
+if(!$('body').hasClass('show-global-menu')&&!$('body').hasClass('show-global-search')){$('.home-nav').delay(300).fadeIn();}}else{$('.home-nav').hide();}});}// Add to KENT object
+window.KENT.global_nav=global_nav;})();window.KENT=window.KENT||{};/**
  * Global search
  *
  * Super search located at the top of the page
  *
  * @uses global_nav.js
- */(function(){ // Get global search element.
-var global_search=$('#global-nav-search'); // Hitting search on empty form closes search menu
-global_search.find('form').submit(function(e){if(global_search.find('input[type="search"]').val()===''){e.preventDefault();window.KENT.global_nav.closeSearchMenu();return false;}}); // Focus in search input if global search is toggled
-$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){global_search.find('input[type="search"]').focus();}}); // clicking menu
-$('body').click(function(e){if(!global_search.is(e.target)&&global_search.has(e.target).length===0){window.KENT.global_nav.closeSearchMenu();}});})(); /**
+ */(function(){// Get global search element.
+var global_search=$('#global-nav-search');// Hitting search on empty form closes search menu
+global_search.find('form').submit(function(e){if(global_search.find('input[type="search"]').val()===''){e.preventDefault();window.KENT.global_nav.closeSearchMenu();return false;}});// Focus in search input if global search is toggled
+$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){global_search.find('input[type="search"]').focus();}});// clicking menu
+$('body').click(function(e){if(!global_search.is(e.target)&&global_search.has(e.target).length===0){window.KENT.global_nav.closeSearchMenu();}});})();/**
  * Primary Navigation
  *
  * Handles open/closing of the submenus in the global nav menu.
  *
- */(function(){var zTimer=null; // Primary Nav
-$('.global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a').click(function(){clearTimeout(zTimer); // Get current menu item
-var item=$(this).parent(); // Get menu container
-var container=item.parent(); // Close submenus in provided menuItems
-var closeSubMenus=function closeSubMenus(menuItems){return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');};if(container.hasClass('in')){ // If a menu was already open,
+ */(function(){var zTimer=null;// Primary Nav
+$('.global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a').click(function(){clearTimeout(zTimer);// Get current menu item
+var item=$(this).parent();// Get menu container
+var container=item.parent();// Close submenus in provided menuItems
+var closeSubMenus=function closeSubMenus(menuItems){return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');};if(container.hasClass('in')){// If a menu was already open,
 // Close all menu items other than the one selected (setting expanded as we go)
-var menus=container.find('.in').not(item);menus.removeClass('in');closeSubMenus(menus);menus.children(':first').attr('aria-expanded','false');}else { // If menu wasn't open, preperate submenus for being shown.
-closeSubMenus(container);}if(item.hasClass('in')){ // if the clicked menu item was open, close the menu
-item.removeClass('in').parent().removeClass('in');zTimer=setTimeout(function(){closeSubMenus(item);},600);}else { //  if not, tell item its expanded & toggle it all open
-var menu=$(this).attr('aria-expanded','true').parent().toggleClass('in');menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');menu.parent().addClass('in');}});})();jQuery(document).ready(function(){var sectional_nav=$('.departmental-nav .navbar-menu');var toggler=$('.departmental-nav .navbar-toggler');var viewport=ResponsiveBootstrapToolkit; // if no nav, don't bother booting menu
-if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else {sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var last=sectional_nav.find('a').last();return last.position().top>=last.height();}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else {openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();}); /**
+var menus=container.find('.in').not(item);menus.removeClass('in');closeSubMenus(menus);menus.children(':first').attr('aria-expanded','false');}else{// If menu wasn't open, preperate submenus for being shown.
+closeSubMenus(container);}if(item.hasClass('in')){// if the clicked menu item was open, close the menu
+item.removeClass('in').parent().removeClass('in');zTimer=setTimeout(function(){closeSubMenus(item);},600);}else{//  if not, tell item its expanded & toggle it all open
+var menu=$(this).attr('aria-expanded','true').parent().toggleClass('in');menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');menu.parent().addClass('in');}});})();jQuery(document).ready(function(){var sectional_nav=$('.departmental-nav .navbar-menu');var toggler=$('.departmental-nav .navbar-toggler');var viewport=ResponsiveBootstrapToolkit;// if no nav, don't bother booting menu
+if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else{sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var last=sectional_nav.find('a').last();return last.position().top>=last.height();}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else{openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();});/**
  * Beta bar collapse
  *
  * Small bit of JS to facilitate the beta bar open/close logic.
  * This will be removed once the product moves out of beta
- */jQuery(document).ready(function(){var beta_bar=$('#beta-bar');var toggler=$('.beta-toggler'); // Toggle beta bar
-function toggleNav(){if(beta_bar.hasClass('hidden')){beta_bar.removeClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','true');});}else {beta_bar.addClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','false');});window.Cookies.set('kentbeta_dismissed','1',{expires:365});}} // If beta bar exists on page
-if(beta_bar.length>0){var dismissed=typeof window.Cookies.get('kentbeta_dismissed')!=='undefined'; // Apply show/hide state from cookie.
-if(!dismissed){beta_bar.removeClass('hidden');}else {beta_bar.addClass('hidden');} // hook up toggler
-toggler.click(function(){toggleNav();});}}); /**
+ */jQuery(document).ready(function(){var beta_bar=$('#beta-bar');var toggler=$('.beta-toggler');// Toggle beta bar
+function toggleNav(){if(beta_bar.hasClass('hidden')){beta_bar.removeClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','true');});}else{beta_bar.addClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','false');});window.Cookies.set('kentbeta_dismissed','1',{expires:365});}}// If beta bar exists on page
+if(beta_bar.length>0){var dismissed=typeof window.Cookies.get('kentbeta_dismissed')!=='undefined';// Apply show/hide state from cookie.
+if(!dismissed){beta_bar.removeClass('hidden');}else{beta_bar.addClass('hidden');}// hook up toggler
+toggler.click(function(){toggleNav();});}});/**
  * Toggles attribution text display on/off
- */jQuery(document).ready(function($){$('.attribution').click(function(){$(this).toggleClass('in');}); // Debug
-window.KENT.log('Initiating: Attribution');window.KENT.log($('.attribution'));}); /**
+ */jQuery(document).ready(function($){$('.attribution').click(function(){$(this).toggleClass('in');});// Debug
+window.KENT.log('Initiating: Attribution');window.KENT.log($('.attribution'));});/**
  * Click to interact logic
  *
  * Disable scrolling/zooming on iframes with .click-to-interact class
  * User click activates scrolling behavior and loss of focus deactivates it
  *
- */(function(){var _onEmbedClickHandler,_onEmbedMouseleaveHandler; // Disable pointer events
-_onEmbedMouseleaveHandler=function onEmbedMouseleaveHandler(event){ // Re add the click to interact handler
-$(this).on('click',_onEmbedClickHandler); // remove the leaving handler
-$(this).off('mouseleave',_onEmbedMouseleaveHandler); // Disable pointer events
-$(this).find('iframe').css('pointer-events','none');}; // Enable pointer events
-_onEmbedClickHandler=function onEmbedClickHandler(event){ // Disable the click handler until the user leaves the area
-$(this).off('click',_onEmbedClickHandler); // Handle the mouse leave event
-$(this).on('mouseleave',_onEmbedMouseleaveHandler); // Enable the pointer events
-$(this).find('iframe').css('pointer-events','auto');};jQuery(document).ready(function(){ // Disable pointer on class, and attach click action to re-enable them
-$('.click-to-interact').on('click',_onEmbedClickHandler).find('iframe').css('pointer-events','none');window.KENT.log('Initiating: Click to interact');window.KENT.log($('.click-to-interact'));});})(); /**
+ */(function(){var _onEmbedClickHandler,_onEmbedMouseleaveHandler;// Disable pointer events
+_onEmbedMouseleaveHandler=function onEmbedMouseleaveHandler(event){// Re add the click to interact handler
+$(this).on('click',_onEmbedClickHandler);// remove the leaving handler
+$(this).off('mouseleave',_onEmbedMouseleaveHandler);// Disable pointer events
+$(this).find('iframe').css('pointer-events','none');};// Enable pointer events
+_onEmbedClickHandler=function onEmbedClickHandler(event){// Disable the click handler until the user leaves the area
+$(this).off('click',_onEmbedClickHandler);// Handle the mouse leave event
+$(this).on('mouseleave',_onEmbedMouseleaveHandler);// Enable the pointer events
+$(this).find('iframe').css('pointer-events','auto');};jQuery(document).ready(function(){// Disable pointer on class, and attach click action to re-enable them
+$('.click-to-interact').on('click',_onEmbedClickHandler).find('iframe').css('pointer-events','none');window.KENT.log('Initiating: Click to interact');window.KENT.log($('.click-to-interact'));});})();/**
  * Slider
  *
  * Provides carousel functionality to kent-theme
  *
  * @uses https://github.com/kenwheeler/slick/
- */window.KENT=window.KENT||{}; // Default options
-window.KENT.kentslider={default:{config:{dots:true,dotsClass:'kent-slider-dots',mobileFirst:true,useTransform:true,accessibility:true}}, // react helper
-react:function react($el,breakpoint,config){var loaded=$el.hasClass('slick-initialized');if(ResponsiveBootstrapToolkit.is(breakpoint)){if(!loaded){ // init slider
-$el.slick(config);}}else {if(loaded){ // de-init slider
-$el.slick('unslick');}}}}; // Settings for profile_feature
-window.KENT.kentslider.profile_feature={config:$.extend({},window.KENT.kentslider.default.config,{slidesToShow:2,slidesToScroll:2}),breakpoint:'<=md'};$(document).ready(function(){ // If class is found, init slider
-$('.kent-slider').each(function(){ // Load config
-var slider_config=$(this).data('slider-config');if(typeof slider_config==='undefined'){slider_config='default';}var config=window.KENT.kentslider[slider_config].config; // Does this carousel behave differently at different breakpoints
-var breakpoint=typeof window.KENT.kentslider[slider_config].breakpoint!=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;if(breakpoint){ // react to inital size
-window.KENT.kentslider.react($(this),breakpoint,config);var $this=$(this); // Handle resize on view port change
-$(window).on('viewport:resize',function(){window.KENT.kentslider.react($this,breakpoint,config);});}else { // Init slider
-$(this).slick(config);} // Debug
-window.KENT.log('[Kent-slider] Instance created',$(this));});});$(document).ready(function(){var viewport=ResponsiveBootstrapToolkit; // Plyr controls template - Use kf icons
-var plyr_controls='\n\t\t<button type="button" data-plyr="play" class="plyr__play-large">\n\t\t\t<span class="kf-play-circle"></span>\n\t\t\t<span class="plyr__sr-only">Play</span>\n\t\t</button>\n\n\t\t<div class=\'plyr__controls\'>\n\t\t\t<button type=\'button\' data-plyr=\'play\'>\n\t\t\t\t<span class="kf-play"></span>\n\t\t\t\t<span class="plyr__tooltip">Play</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'pause\'>\n\t\t\t\t<span class="kf-pause"></span>\n\t\t\t\t<span class="plyr__tooltip">Pause</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__progress\'>\n\t\t\t\t<label for=\'seek{id}\' class=\'plyr__sr-only\'>Seek</label>\n\t\t\t\t<input id=\'seek{id}\' class=\'plyr__progress--seek\' type=\'range\' min=\'0\' max=\'100\' step=\'0.1\' value=\'0\' data-plyr=\'seek\'>\n\t\t\t\t<progress class=\'plyr__progress--played\' max=\'100\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t\t<progress class=\'plyr__progress--buffer\' max=\'100\' value=\'0\'>\n\t\t\t\t\t<span>0</span>% buffered\n\t\t\t\t</progress>\n\t\t\t\t<span class=\'plyr__tooltip\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Current time</span>\n\t\t\t\t<span class=\'plyr__time--current\'>00:00</span>\n\t\t\t</span>\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Duration</span>\n\t\t\t\t<span class=\'plyr__time--duration\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'mute\'>\n\t\t\t\t<span class="kf-volume-mute icon--muted"></span>\n\t\t\t\t<span class="kf-volume-medium"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Mute</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__volume\'>\n\t\t\t\t<label for=\'volume{id}\' class=\'plyr__sr-only\'>Volume</label>\n\t\t\t\t<input id=\'volume{id}\' class=\'plyr__volume--input\' type=\'range\' min=\'0\' max=\'10\' value=\'5\' data-plyr=\'volume\'>\n\t\t\t\t<progress class=\'plyr__volume--display\' max=\'10\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'captions\'>\n\t\t\t\t<span class="kf-captions icon--captions-on"></span>\n\t\t\t\t<span class="kf-captions-off"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Captions</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' class="download-transcript">\n\t\t\t\t<span class="kf-file-text"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Access Transcript</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'fullscreen\'>\n\t\t\t\t<span class="kf-compress icon--exit-fullscreen"></span>\n\t\t\t\t<span class="kf-expand"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Fullscreen</span>\n\t\t\t</button>\n\t\t</div>\n\t'; /**
+ */window.KENT=window.KENT||{};// Default options
+window.KENT.kentslider={default:{config:{dots:true,dotsClass:'kent-slider-dots',mobileFirst:true,useTransform:true,accessibility:true}},// react helper
+react:function react($el,breakpoint,config){var loaded=$el.hasClass('slick-initialized');if(ResponsiveBootstrapToolkit.is(breakpoint)){if(!loaded){// init slider
+$el.slick(config);}}else{if(loaded){// de-init slider
+$el.slick('unslick');}}}};// Settings for profile_feature
+window.KENT.kentslider.profile_feature={config:$.extend({},window.KENT.kentslider.default.config,{slidesToShow:2,slidesToScroll:2}),breakpoint:'<=md'};$(document).ready(function(){// If class is found, init slider
+$('.kent-slider').each(function(){// Load config
+var slider_config=$(this).data('slider-config');if(typeof slider_config==='undefined'){slider_config='default';}var config=window.KENT.kentslider[slider_config].config;// Does this carousel behave differently at different breakpoints
+var breakpoint=typeof window.KENT.kentslider[slider_config].breakpoint!=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;if(breakpoint){// react to inital size
+window.KENT.kentslider.react($(this),breakpoint,config);var $this=$(this);// Handle resize on view port change
+$(window).on('viewport:resize',function(){window.KENT.kentslider.react($this,breakpoint,config);});}else{// Init slider
+$(this).slick(config);}// Debug
+window.KENT.log('[Kent-slider] Instance created',$(this));});});$(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;// Plyr controls template - Use kf icons
+var plyr_controls='\n\t\t<button type="button" data-plyr="play" class="plyr__play-large">\n\t\t\t<span class="kf-play-circle"></span>\n\t\t\t<span class="plyr__sr-only">Play</span>\n\t\t</button>\n\n\t\t<div class=\'plyr__controls\'>\n\t\t\t<button type=\'button\' data-plyr=\'play\'>\n\t\t\t\t<span class="kf-play"></span>\n\t\t\t\t<span class="plyr__tooltip">Play</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'pause\'>\n\t\t\t\t<span class="kf-pause"></span>\n\t\t\t\t<span class="plyr__tooltip">Pause</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__progress\'>\n\t\t\t\t<label for=\'seek{id}\' class=\'plyr__sr-only\'>Seek</label>\n\t\t\t\t<input id=\'seek{id}\' class=\'plyr__progress--seek\' type=\'range\' min=\'0\' max=\'100\' step=\'0.1\' value=\'0\' data-plyr=\'seek\'>\n\t\t\t\t<progress class=\'plyr__progress--played\' max=\'100\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t\t<progress class=\'plyr__progress--buffer\' max=\'100\' value=\'0\'>\n\t\t\t\t\t<span>0</span>% buffered\n\t\t\t\t</progress>\n\t\t\t\t<span class=\'plyr__tooltip\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Current time</span>\n\t\t\t\t<span class=\'plyr__time--current\'>00:00</span>\n\t\t\t</span>\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Duration</span>\n\t\t\t\t<span class=\'plyr__time--duration\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'mute\'>\n\t\t\t\t<span class="kf-volume-mute icon--muted"></span>\n\t\t\t\t<span class="kf-volume-medium"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Mute</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__volume\'>\n\t\t\t\t<label for=\'volume{id}\' class=\'plyr__sr-only\'>Volume</label>\n\t\t\t\t<input id=\'volume{id}\' class=\'plyr__volume--input\' type=\'range\' min=\'0\' max=\'10\' value=\'5\' data-plyr=\'volume\'>\n\t\t\t\t<progress class=\'plyr__volume--display\' max=\'10\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'captions\'>\n\t\t\t\t<span class="kf-captions icon--captions-on"></span>\n\t\t\t\t<span class="kf-captions-off"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Captions</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' class="download-transcript">\n\t\t\t\t<span class="kf-file-text"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Access Transcript</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'fullscreen\'>\n\t\t\t\t<span class="kf-compress icon--exit-fullscreen"></span>\n\t\t\t\t<span class="kf-expand"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Fullscreen</span>\n\t\t\t</button>\n\t\t</div>\n\t';/**
 	 * Control class for "player" instances
-	 */var Player=function Player($container){ // vars
-this.container=$container;this.video=$container.find('.video-player').first();this.placeholder=$container.find('img').first();this.plyr=null; // settings for instance
-this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',fullscreen_down:$container.data('fullscreen-down')||'xs',fullscreen_up:$container.data('fullscreen-up')||'xxl'}; /**
+	 */var Player=function Player($container){// vars
+this.container=$container;this.video=$container.find('.video-player').first();this.placeholder=$container.find('img').first();this.plyr=null;// settings for instance
+this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',fullscreen_down:$container.data('fullscreen-down')||'xs',fullscreen_up:$container.data('fullscreen-up')||'xxl'};/**
 		 * Initalise "video" element
-		 */this.init=function(){var _this=this;this.container.click(function(){ // if Player isn't booted, boot it
-if(!_this.plyr){window.KENT.log('[Video player] Init Plyr');_this.boot();} // Show player if not already playing
-if(!_this.container.hasClass('playing')){_this.show();}});}; /**
+		 */this.init=function(){var _this=this;this.container.click(function(){// if Player isn't booted, boot it
+if(!_this.plyr){window.KENT.log('[Video player] Init Plyr');_this.boot();}// Show player if not already playing
+if(!_this.container.hasClass('playing')){_this.show();}});};/**
 		 * When user attempts to play video, initalise video player instance
-		 */this.boot=function(){var _this2=this; // Generate plyr instance
-this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0].plyr; // Hookup events
-this.video.on('ready',function(){_this2.setupTranscript();});this.video.on('pause',function(){ // hide on pause if not full screen
-if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen',function(){_this2.hide();});this.video.on('ended',function(){_this2.hide();});}; /**
+		 */this.boot=function(){var _this2=this;// Generate plyr instance
+this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0].plyr;// Hookup events
+this.video.on('ready',function(){_this2.setupTranscript();});this.video.on('pause',function(){// hide on pause if not full screen
+if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen',function(){_this2.hide();});this.video.on('ended',function(){_this2.hide();});};/**
 		 * Setup transcription link
-		 */this.setupTranscript=function(){var _this3=this;var button=this.video.find('.download-transcript');if(this.settings.transcript){button.click(function(){document.location.href=_this3.settings.transcript;});}else {button.hide();}}; /**
+		 */this.setupTranscript=function(){var _this3=this;var button=this.video.find('.download-transcript');if(this.settings.transcript){button.click(function(){document.location.href=_this3.settings.transcript;});}else{button.hide();}};/**
 		 * Show video
 		 * Display video and play it ( use attributes to determine whether to play inline or "fullscreen")
-		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();}; /**
+		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();};/**
 		 * Close video
 		 * Hide video and pause it
-		 */this.hide=function(){var _this4=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();} /**
+		 */this.hide=function(){var _this4=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();}/**
 			 * This is horrible but it fixes a bug were safari crashes if you try and set a fullscreen element
 			 * to display:none. This queues it so it doesn't try and set display:none until safari has actually
 			 * completed the fullscreen exit.
-			 */setTimeout(function(){_this4.pause();_this4.container.removeClass('playing');_this4.container.closest('.card-media-inline').removeClass('card-media-enabled');},0);}; /**
+			 */setTimeout(function(){_this4.pause();_this4.container.removeClass('playing');_this4.container.closest('.card-media-inline').removeClass('card-media-enabled');},0);};/**
 		 * Play video
-		 */this.play=function(){this.plyr.play();}; /**
+		 */this.play=function(){this.plyr.play();};/**
 		 * Pause video
-		 */this.pause=function(){this.plyr.pause();}; /**
+		 */this.pause=function(){this.plyr.pause();};/**
 		 * Pause & hide video
-		 */this.stop=function(){this.hide();};this.init();};$('.video-launcher').each(function(){ // create player instance
-new Player($(this)); // Debug
-window.KENT.log('[Video player] Instance created');});}); /**
+		 */this.stop=function(){this.hide();};this.init();};$('.video-launcher').each(function(){// create player instance
+new Player($(this));// Debug
+window.KENT.log('[Video player] Instance created');});});/**
  * Social sharing icons
  *
  * Converts anything in a div with the class `content-social-share` in to a social sharing icon.
@@ -28285,41 +28441,41 @@ window.KENT.log('[Video player] Instance created');});}); /**
  * Will automatically pass share data to Google Analytics.
  *
  * @uses https://github.com/sapegin/social-likes
- */(function(){ // Add additional social networks to the social-likes code.
-window.socialLikesButtons={ // Add linkedin support
-linkedin:{counterUrl:'http://www.linkedin.com/countserv/count/share?url={url}',counter:function counter(jsonUrl,deferred){var options=window.socialLikesButtons.linkedin;if(!options._){options._={};if(!window.IN){window.IN={Tags:{}};}window.IN.Tags.Share={handleCount:function handleCount(params){var jsonUrl=options.counterUrl.replace(/{url}/g,encodeURIComponent(params.url));options._[jsonUrl].resolve(params.count);}};}options._[jsonUrl]=deferred;$.getScript(jsonUrl).fail(deferred.reject);},popupUrl:'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',popupWidth:650,popupHeight:500}}; // When jQuery is ready, hook up our social sharing icons.
-$(function(){ // for all social share containers
-var $likes=$('.content-social-share');if($likes.length>0){ // Init social likes on container + grab options
-var options=$likes.socialLikes({'counters':false}).data().socialLikes.options; // Populate 'email link' (Additional option we have added)
-$likes.find('a.email').attr('href','mailto:?subject='+options.title+'&body=Link: '+options.url); // Hook up social events via KAT
-$likes.find('a').click(function(){window.KENT.kat.social($(this).attr('title'),'share'); // current url is used, if no url is provided as the 3rd param.
-});} // Debug
-window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(function(){ //get all tabs
-var $tabs=$('a[data-toggle="tab"]'); // when tab is hidden adjust related accordion tab-title accordingly
-$tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);}); // when tab is show adjust related accordion tab-title accordingly
-$tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);}); //endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
-$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);var activeTab=$('[href="#'+hash+'"]');if(activeTab){activeTab.tab('show');} // Change hash for page-reload
-$('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})(); /**
+ */(function(){// Add additional social networks to the social-likes code.
+window.socialLikesButtons={// Add linkedin support
+linkedin:{counterUrl:'http://www.linkedin.com/countserv/count/share?url={url}',counter:function counter(jsonUrl,deferred){var options=window.socialLikesButtons.linkedin;if(!options._){options._={};if(!window.IN){window.IN={Tags:{}};}window.IN.Tags.Share={handleCount:function handleCount(params){var jsonUrl=options.counterUrl.replace(/{url}/g,encodeURIComponent(params.url));options._[jsonUrl].resolve(params.count);}};}options._[jsonUrl]=deferred;$.getScript(jsonUrl).fail(deferred.reject);},popupUrl:'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',popupWidth:650,popupHeight:500}};// When jQuery is ready, hook up our social sharing icons.
+$(function(){// for all social share containers
+var $likes=$('.content-social-share');if($likes.length>0){// Init social likes on container + grab options
+var options=$likes.socialLikes({'counters':false}).data().socialLikes.options;// Populate 'email link' (Additional option we have added)
+$likes.find('a.email').attr('href','mailto:?subject='+options.title+'&body=Link: '+options.url);// Hook up social events via KAT
+$likes.find('a').click(function(){window.KENT.kat.social($(this).attr('title'),'share');// current url is used, if no url is provided as the 3rd param.
+});}// Debug
+window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(function(){//get all tabs
+var $tabs=$('a[data-toggle="tab"]');// when tab is hidden adjust related accordion tab-title accordingly
+$tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);});// when tab is show adjust related accordion tab-title accordingly
+$tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);});//endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
+$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);var activeTab=$('[href="#'+hash+'"]');if(activeTab){activeTab.tab('show');}// Change hash for page-reload
+$('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})();/**
  * Parallax
  *
  * Provides parallax functionality
  *
  * @uses https://github.com/markdalgleish/stellar.js
- */(function(){var stellarSetup=false;var stellarActive=false; // Enable stellar.js
-var initStellar=function initStellar(){if(stellarSetup===true){$(window).data('plugin_stellar').init();}else {$.stellar({ // Set scrolling to be in either one or both directions
-horizontalScrolling:false,verticalScrolling:true, // Set the global alignment offsets
-horizontalOffset:0,verticalOffset:0, // Refreshes parallax content on window load and resize
-responsive:false, // Select which property is used to calculate scroll.
+ */(function(){var stellarSetup=false;var stellarActive=false;// Enable stellar.js
+var initStellar=function initStellar(){if(stellarSetup===true){$(window).data('plugin_stellar').init();}else{$.stellar({// Set scrolling to be in either one or both directions
+horizontalScrolling:false,verticalScrolling:true,// Set the global alignment offsets
+horizontalOffset:0,verticalOffset:0,// Refreshes parallax content on window load and resize
+responsive:false,// Select which property is used to calculate scroll.
 // Choose 'scroll', 'position', 'margin' or 'transform',
 // or write your own 'scrollProperty' plugin.
-scrollProperty:'scroll', // Select which property is used to position elements.
+scrollProperty:'scroll',// Select which property is used to position elements.
 // Choose between 'position' or 'transform',
 // or write your own 'positionProperty' plugin.
-positionProperty:'transform', // Enable or disable the two types of parallax
-parallaxBackgrounds:true,parallaxElements:true, // Hide parallax elements that move outside the viewport
-hideDistantElements:false, // Customise how elements are shown and hidden
-hideElement:function hideElement($elem){$elem.hide();},showElement:function showElement($elem){$elem.show();}});stellarSetup=true;}stellarActive=true;}; // Disable stellar.js
-var disableStellar=function disableStellar(){$(window).data('plugin_stellar').destroy();stellarActive=false;}; // Handle resize
-function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','').find('img').removeAttr('style');}else {if(!stellarActive){initStellar();} // Set ratio's
-var $ratio=ResponsiveBootstrapToolkit.is('<xl')?9/16:7/16;$('.media-wrap-parallax').each(function(){$(this).css('min-height',$(window).width()*$ratio+'px');});$(window).data('plugin_stellar').refresh();}}$(window).on('viewport:resize',function(){react_to_window();});$(document).ready(function(){react_to_window();});})();
+positionProperty:'transform',// Enable or disable the two types of parallax
+parallaxBackgrounds:true,parallaxElements:true,// Hide parallax elements that move outside the viewport
+hideDistantElements:false,// Customise how elements are shown and hidden
+hideElement:function hideElement($elem){$elem.hide();},showElement:function showElement($elem){$elem.show();}});stellarSetup=true;}stellarActive=true;};// Disable stellar.js
+var disableStellar=function disableStellar(){$(window).data('plugin_stellar').destroy();stellarActive=false;};// Handle resize
+function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','').find('img').removeAttr('style');}else{if(!stellarActive){initStellar();}// Set ratio's
+var $ratio=ResponsiveBootstrapToolkit.is('<xl')?9/16:6/16;$('.media-wrap-parallax').each(function(){$(this).css('min-height',$(window).width()*$ratio+'px');});$(window).data('plugin_stellar').refresh();}}$(window).on('viewport:resize',function(){react_to_window();});$(document).ready(function(){react_to_window();});})();
 //# sourceMappingURL=main.compiled.js.map
