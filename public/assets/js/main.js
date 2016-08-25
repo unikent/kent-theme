@@ -24699,12 +24699,16 @@ return /******/ (function(modules) { // webpackBootstrap
 this["Handlebars"] = this["Handlebars"] || {};
 this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
 
+this["Handlebars"]["templates"]["video_html5"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"plyr\">\r\n	<video poster=\"/path/to/poster.jpg\" controls>\r\n		<!-- Video files -->\r\n		<source src=\"/path/to/video.mp4\" type=\"video/mp4\">\r\n		<source src=\"/path/to/video.webm\" type=\"video/webm\">\r\n\r\n		<!-- Text track file -->\r\n		<track kind=\"captions\" label=\"English captions\" src=\"/path/to/captions.vtt\" srclang=\"en\" default>\r\n\r\n		<!-- Fallback for browsers that don't support the <video> element -->\r\n		<a href=\"/path/to/movie.mp4\">Download</a>\r\n	</video>\r\n</div>";
+},"useData":true});
+
 this["Handlebars"]["templates"]["video_inline"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper;
 
   return "<div id=\"video"
     + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"video-container\">\n	\n</div>";
+    + "\" class=\"video-container\">\r\n	\r\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -24712,15 +24716,15 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
   return "			<span class=\"video-transcript\"><small><a href=\""
     + container.escapeExpression(((helper = (helper = helpers.transcript || (depth0 != null ? depth0.transcript : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"transcript","hash":{},"data":data}) : helper)))
-    + "\">Download transcript</a></small></span>\n";
+    + "\">Download transcript</a></small></span>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {};
 
   return "<div class=\"modal fade modal-fullscreen\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"videoModalLabel"
     + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\" role=\"document\">\n		<div class=\"modal-content modal-content-transparent\">\n\n			<div class=\"modal-header\">\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\n					<span class=\"sr-only\">Close</span>\n				</button>\n			</div>\n\n			<div class=\"video-container\">\n				\n			</div>\n"
+    + "\" aria-hidden=\"true\">\r\n	<div class=\"modal-dialog\" role=\"document\">\r\n		<div class=\"modal-content modal-content-transparent\">\r\n\r\n			<div class=\"modal-header\">\r\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\r\n					<span class=\"sr-only\">Close</span>\r\n				</button>\r\n			</div>\r\n\r\n			<div class=\"video-container\">\r\n				\r\n			</div>\r\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.transcript : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "			\n		</div>\n	</div>\n</div>";
+    + "			\r\n		</div>\r\n	</div>\r\n</div>";
 },"useData":true});
 // ==========================================================================
 // Plyr
@@ -28215,27 +28219,27 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     window.CustomEvent = CustomEvent;
 })();
 
-'use strict';/**
+'use strict'; /**
  * Debug helper
  * Log only shown when KENT.debug is true.
- */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){/*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};window.KENT=window.KENT||{};/**
+ */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){ /*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};window.KENT=window.KENT||{}; /**
  * Kent Analytics Tracker
  * A simple helper for pushing pages & events to multiple trackers.
- */window.KENT.kat={/**
+ */window.KENT.kat={ /**
 	 *  Track page view
-	 */'page':function page(path){var trackers=this.trackers();for(var t in trackers){try{trackers[t].send('pageview',{'page':path});}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Pageview: '+path);return true;},/**
+	 */'page':function page(path){var trackers=this.trackers();for(var t in trackers){try{trackers[t].send('pageview',{'page':path});}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Pageview: '+path);return true;}, /**
 	 *  Track event (namespaced)
-	 */'event':function event(category,action,label,value){var ns_category='w3beta-'+category;return this.g_event(ns_category,action,label,value);},/**
+	 */'event':function event(category,action,label,value){var ns_category='w3beta-'+category;return this.g_event(ns_category,action,label,value);}, /**
 	 * Track social
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions
-	 */'social':function social(network,action,target){var trackers=this.trackers();// use current url if no target is provided
-if(typeof target==='undefined'){target=window.location.href;}for(var t in trackers){try{trackers[t].send('social',network,action,target);}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Social',network,action,target);return true;},/**
+	 */'social':function social(network,action,target){var trackers=this.trackers(); // use current url if no target is provided
+if(typeof target==='undefined'){target=window.location.href;}for(var t in trackers){try{trackers[t].send('social',network,action,target);}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Social',network,action,target);return true;}, /**
 	 * Track global event
-	 */'g_event':function g_event(category,action,label,value){// send to all GA trackers
-var trackers=this.trackers();// if value is set, check its a number, if not set to 1
-if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,10);}for(var t in trackers){try{trackers[t].send('event',category,action,label,value);}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Event',category,action,label,value);return true;},/**
+	 */'g_event':function g_event(category,action,label,value){ // send to all GA trackers
+var trackers=this.trackers(); // if value is set, check its a number, if not set to 1
+if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,10);}for(var t in trackers){try{trackers[t].send('event',category,action,label,value);}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Event',category,action,label,value);return true;}, /**
 	 * Get trackers
-	 */trackers:function trackers(){return typeof window.ga.getAll!=='undefined'?window.ga.getAll():[];}};/**
+	 */trackers:function trackers(){return typeof window.ga.getAll!=='undefined'?window.ga.getAll():[];}}; /**
  * Responsive helper
  *
  * Triggers events on resize and breakpoint changes
@@ -28245,195 +28249,195 @@ if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,
  * - viewport:change - fired only if resize triggers breakpoint change
  *
  * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
- */(function($,viewport){// Supported breakpoints
-var visibilityDivs={'xs':$('<div class="hidden-sm-up"></div>'),'sm':$('<div class="hidden-xs-down hidden-md-up"></div>'),'md':$('<div class="hidden-sm-down hidden-lg-up"></div>'),'lg':$('<div class="hidden-md-down hidden-xl-up"></div>'),'xl':$('<div class="hidden-lg-down hidden-xxl-up"></div>'),'xxl':$('<div class="hidden-xl-down hidden-xxxl-up"></div>'),'xxxl':$('<div class="hidden-xxl-down"></div>')};viewport.use('Custom',visibilityDivs);// Add our custom event
-var previousBreakpoint='';$(window).resize(viewport.changed(function(){var breakpoint=viewport.current();// resize has occured, fire event
-$(window).trigger('viewport:resize');if(previousBreakpoint!==breakpoint){// Debug
-window.KENT.log('Breakpoint change: '+previousBreakpoint+' -> '+breakpoint);// breakpoint has changed, fire evenet
-$(window).trigger('viewport:change');previousBreakpoint=breakpoint;}}));})(jQuery,ResponsiveBootstrapToolkit);window.KENT=window.KENT||{};window.KENT.modules=window.KENT.modules||{};/**
+ */(function($,viewport){ // Supported breakpoints
+var visibilityDivs={'xs':$('<div class="hidden-sm-up"></div>'),'sm':$('<div class="hidden-xs-down hidden-md-up"></div>'),'md':$('<div class="hidden-sm-down hidden-lg-up"></div>'),'lg':$('<div class="hidden-md-down hidden-xl-up"></div>'),'xl':$('<div class="hidden-lg-down hidden-xxl-up"></div>'),'xxl':$('<div class="hidden-xl-down hidden-xxxl-up"></div>'),'xxxl':$('<div class="hidden-xxl-down"></div>')};viewport.use('Custom',visibilityDivs); // Add our custom event
+var previousBreakpoint='';$(window).resize(viewport.changed(function(){var breakpoint=viewport.current(); // resize has occured, fire event
+$(window).trigger('viewport:resize');if(previousBreakpoint!==breakpoint){ // Debug
+window.KENT.log('Breakpoint change: '+previousBreakpoint+' -> '+breakpoint); // breakpoint has changed, fire evenet
+$(window).trigger('viewport:change');previousBreakpoint=breakpoint;}}));})(jQuery,ResponsiveBootstrapToolkit);window.KENT=window.KENT||{};window.KENT.modules=window.KENT.modules||{}; /**
  * Quickspot helper
  *
  * Centralises common configuration & initalisation options for QuickSpot search
  *
  * @uses https://github.com/thybag/quick-spot
- */(function(){// create obj
-window.KENT.quickspot={config:{}};var configs=window.KENT.quickspot.config;// Default config options
-configs.default={'disable_occurrence_weighting':true,'prevent_headers':true,'max_results':150,'no_results':function no_results(qs,val){return'<a class=\'quickspot-result selected\'>Press enter to search...</a>';},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/?q='+value;}};// Default config options for QS instances with a 'View all results for' top result
+ */(function(){ // create obj
+window.KENT.quickspot={config:{}};var configs=window.KENT.quickspot.config; // Default config options
+configs.default={'disable_occurrence_weighting':true,'prevent_headers':true,'max_results':150,'no_results':function no_results(qs,val){return '<a class=\'quickspot-result selected\'>Press enter to search...</a>';},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/?q='+value;}}; // Default config options for QS instances with a 'View all results for' top result
 //
 // Instances using this config, should use
 // _click_handler
 // _display_handler
 // rather than the default methods
-configs.searchWith=$.extend({},configs.default,{// Display Handler wrapper
-'display_handler':function display_handler(itm,qs){return itm.kent_search_with_option===true?this.kent_search_with(qs):this._display_handler(itm,qs);},'kent_search_with':function kent_search_with(qs){return'<i class=\'kf-search\'></i> View all results for <strong>'+qs.lastValue+'</strong>';},'click_handler':function click_handler(itm,qs){if(typeof itm.kent_search_with_option==='boolean'&&itm.kent_search_with_option===true){return this.no_results_click(qs.lastValue);}return this._click_handler(itm,qs);},'parse_results':function parse_results(results,options){results.unshift({'kent_search_with_option':true,'qs_screenreader_text':'View full search results'});return results;}});// Module search
-configs.modules=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/modules/collection/all','search_on':['title','sds_code'],'key_value':'title','auto_highlight':true,'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.sds_code+'</span>';},'click_handler':function click_handler(itm){document.location.href='/courses/modules/module/'+itm.sds_code;},'no_results_click':function no_results_click(value,qs){window.location.href='/courses/modules/?search='+value;},'data_pre_parse':function data_pre_parse(data,options){return data.modules;},'loaded':function loaded(qs){qs.datastore.filter(function(o){return o.running===true;});}});// Scholarships search
-configs.scholarships=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/scholarships/','key_value':'title','search_on':['title','code'],'auto_highlight':true,'click_handler':function click_handler(itm){document.location.href='/scholarships/search/'+itm.code;},'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.code+'</span>';},'no_results_click':function no_results_click(value,qs){window.location.href='/scholarships/search/?search='+value;}});// Default course configs, including callbacks
-configs.courses_default=$.extend({},configs.searchWith,{'search_on':['name','award','subject','main_school','ucas_code','search_keywords'],'auto_highlight':false,'_display_handler':function _display_handler(itm,qs){// Generate locations list
-var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0];// Highlight searched word
-return(itm.name+' - '+itm.award+' <br> <span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/undergraduate/'+itm.id+'/'+itm.slug;},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/courses?q='+value;}});// UG
-configs.ug_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/undergraduate/programmes'});// PG
-configs.pg_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/postgraduate/programmes','_click_handler':function _click_handler(itm){document.location='/courses/postgraduate/'+itm.id+'/'+itm.slug;}});// Combined
-configs.all_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/all/programmes/','_display_handler':function _display_handler(itm,qs){// Generate locations list
-var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0];// Highlight searched word
-return(itm.name+' - '+itm.award+' <span class=\'level\'> &nbsp; '+itm.level_name+'</span><br><span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/'+(itm.level==='UG'?'undergraduate':'postgraduate')+'/'+itm.id+'/'+itm.slug;},'data_pre_parse':function data_pre_parse(data,options){for(var i in data){data[i].qs_result_class=data[i].level.toLowerCase();if(data[i].level==='UG'){data[i].level_name='Undergraduate';}else{var type=data[i].programme_type;// taught /research
-if(type.indexOf('taught-research')!==-1){data[i].level_name='Postgraduate Taught-research';}else if(type.indexOf('taught')!==-1){data[i].level_name='Postgraduate Taught';}else{data[i].level_name='Postgraduate Research';}}}return data;},'results_footer':'<div class=\'course-links\'><a class=\'chevron-link\' href=\'/courses/undergraduate/search\'>All Undergraduate</a><a  class=\'chevron-link\' href=\'/courses/postgraduate/search\'>All Postgraduate </a><a class=\'chevron-link\' href=\'/courses/part-time/index.html\'>Short Courses</a></div>','ready':function ready(qs){// Override link action to pass search value
-$(qs.container).find('div.course-links a').click(function(e){e.preventDefault();document.location.href=$(this).attr('href')+'?search='+qs.lastValue;});}});})();/**
+configs.searchWith=$.extend({},configs.default,{ // Display Handler wrapper
+'display_handler':function display_handler(itm,qs){return itm.kent_search_with_option===true?this.kent_search_with(qs):this._display_handler(itm,qs);},'kent_search_with':function kent_search_with(qs){return '<i class=\'kf-search\'></i> View all results for <strong>'+qs.lastValue+'</strong>';},'click_handler':function click_handler(itm,qs){if(typeof itm.kent_search_with_option==='boolean'&&itm.kent_search_with_option===true){return this.no_results_click(qs.lastValue);}return this._click_handler(itm,qs);},'parse_results':function parse_results(results,options){results.unshift({'kent_search_with_option':true,'qs_screenreader_text':'View full search results'});return results;}}); // Module search
+configs.modules=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/modules/collection/all','search_on':['title','sds_code'],'key_value':'title','auto_highlight':true,'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.sds_code+'</span>';},'click_handler':function click_handler(itm){document.location.href='/courses/modules/module/'+itm.sds_code;},'no_results_click':function no_results_click(value,qs){window.location.href='/courses/modules/?search='+value;},'data_pre_parse':function data_pre_parse(data,options){return data.modules;},'loaded':function loaded(qs){qs.datastore.filter(function(o){return o.running===true;});}}); // Scholarships search
+configs.scholarships=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/scholarships/','key_value':'title','search_on':['title','code'],'auto_highlight':true,'click_handler':function click_handler(itm){document.location.href='/scholarships/search/'+itm.code;},'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.code+'</span>';},'no_results_click':function no_results_click(value,qs){window.location.href='/scholarships/search/?search='+value;}}); // Default course configs, including callbacks
+configs.courses_default=$.extend({},configs.searchWith,{'search_on':['name','award','subject','main_school','ucas_code','search_keywords'],'auto_highlight':false,'_display_handler':function _display_handler(itm,qs){ // Generate locations list
+var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0]; // Highlight searched word
+return (itm.name+' - '+itm.award+' <br> <span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/undergraduate/'+itm.id+'/'+itm.slug;},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/courses?q='+value;}}); // UG
+configs.ug_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/undergraduate/programmes'}); // PG
+configs.pg_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/postgraduate/programmes','_click_handler':function _click_handler(itm){document.location='/courses/postgraduate/'+itm.id+'/'+itm.slug;}}); // Combined
+configs.all_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/all/programmes/','_display_handler':function _display_handler(itm,qs){ // Generate locations list
+var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0]; // Highlight searched word
+return (itm.name+' - '+itm.award+' <span class=\'level\'> &nbsp; '+itm.level_name+'</span><br><span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/'+(itm.level==='UG'?'undergraduate':'postgraduate')+'/'+itm.id+'/'+itm.slug;},'data_pre_parse':function data_pre_parse(data,options){for(var i in data){data[i].qs_result_class=data[i].level.toLowerCase();if(data[i].level==='UG'){data[i].level_name='Undergraduate';}else {var type=data[i].programme_type; // taught /research
+if(type.indexOf('taught-research')!==-1){data[i].level_name='Postgraduate Taught-research';}else if(type.indexOf('taught')!==-1){data[i].level_name='Postgraduate Taught';}else {data[i].level_name='Postgraduate Research';}}}return data;},'results_footer':'<div class=\'course-links\'><a class=\'chevron-link\' href=\'/courses/undergraduate/search\'>All Undergraduate</a><a  class=\'chevron-link\' href=\'/courses/postgraduate/search\'>All Postgraduate </a><a class=\'chevron-link\' href=\'/courses/part-time/index.html\'>Short Courses</a></div>','ready':function ready(qs){ // Override link action to pass search value
+$(qs.container).find('div.course-links a').click(function(e){e.preventDefault();document.location.href=$(this).attr('href')+'?search='+qs.lastValue;});}});})(); /**
  * Scan for inputs with data-quickspot-config attribute and initalise them as quickspot instances
- */jQuery(document).ready(function($){$('input[data-quickspot-config]').each(function(){// Load config
-var config=window.KENT.quickspot.config[$(this).data('quickspot-config')]||window.KENT.quickspot.config.defaults;config=$.extend({},config);// Set additional options
-config.target=$(this).attr('id');// Override data source url
-if($(this).data('quickspot-source')){config.url=$(this).data('quickspot-source');}// Override results container location
-if($(this).data('quickspot-target')){config.results_container=$(this).data('quickspot-target');}// Boot quickspot
-var qs=window.KENT.modules.quickspot.attach(config);$(this).attr('autocomplete','off');$(this).data('qs',qs);// Debug
-window.KENT.log('[Quickspot] Instance created on #'+$(this).attr('id')+' with config '+$(this).data('quickspot-config'));});});/**
+ */jQuery(document).ready(function($){$('input[data-quickspot-config]').each(function(){ // Load config
+var config=window.KENT.quickspot.config[$(this).data('quickspot-config')]||window.KENT.quickspot.config.defaults;config=$.extend({},config); // Set additional options
+config.target=$(this).attr('id'); // Override data source url
+if($(this).data('quickspot-source')){config.url=$(this).data('quickspot-source');} // Override results container location
+if($(this).data('quickspot-target')){config.results_container=$(this).data('quickspot-target');} // Boot quickspot
+var qs=window.KENT.modules.quickspot.attach(config);$(this).attr('autocomplete','off');$(this).data('qs',qs); // Debug
+window.KENT.log('[Quickspot] Instance created on #'+$(this).attr('id')+' with config '+$(this).data('quickspot-config'));});}); /**
  * Responsive Collapse
  *
  * Mirrors the behaviour of http://v4-alpha.getbootstrap.com/components/collapse/ in a breakpoint aware way
  *
  * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
  * @uses responsive_util.js
- */jQuery(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;var $collabsables=$('[data-toggle="collapse_responsive"]');var viewportChange=function viewportChange(){window.KENT.log('Initiating: Collapse Responsive');window.KENT.log($collabsables);$collabsables.each(function(){var $target=$($(this).data('target')||null);if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){$(this).removeClass('collapsed').removeAttr('aria-expanded','true');$target.addClass('in');}else{$(this).addClass('collapsed').attr('aria-expanded','false');$target.removeClass('in');}});};$collabsables.click(function(e){e.preventDefault();var $this=$(this);var isCollapsed=$(this).hasClass('collapsed');var $parent=$($this).closest($this.data('parent'))||null;var $target=$($this.data('target'))||null;var $isTab=$parent.hasClass('tab-content');// If target isn't collapsed at this breakpoint, ignore.
-if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){return;}// else, toggle it open / shut
-if($parent.length>0){var $open=$parent.find('.in');$open.removeClass('in').removeClass('active').each(function(){$parent.find('[data-target=\'#'+$(this).attr('id')+'\']').addClass('collapsed');if($isTab){$parent.parent().find('.nav-link').removeClass('active');}});}if($target.length>0){$target.toggleClass('in',isCollapsed).toggleClass('active',isCollapsed);// Add expanded state (this only needs to be set when collapsing is possible)
-$this.toggleClass('collapsed',!isCollapsed).attr('aria-expanded',!isCollapsed?'false':'true');if($isTab){$parent.parent().find('.nav-link[href="'+$this.data('target')+'"]').addClass('active');}}});// When breakpoint changes
-$(window).on('viewport:change',viewportChange);//init
-viewportChange();});window.KENT=window.KENT||{};/**
+ */jQuery(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;var $collabsables=$('[data-toggle="collapse_responsive"]');var viewportChange=function viewportChange(){window.KENT.log('Initiating: Collapse Responsive');window.KENT.log($collabsables);$collabsables.each(function(){var $target=$($(this).data('target')||null);if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){$(this).removeClass('collapsed').removeAttr('aria-expanded','true');$target.addClass('in');}else {$(this).addClass('collapsed').attr('aria-expanded','false');$target.removeClass('in');}});};$collabsables.click(function(e){e.preventDefault();var $this=$(this);var isCollapsed=$(this).hasClass('collapsed');var $parent=$($this).closest($this.data('parent'))||null;var $target=$($this.data('target'))||null;var $isTab=$parent.hasClass('tab-content'); // If target isn't collapsed at this breakpoint, ignore.
+if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){return;} // else, toggle it open / shut
+if($parent.length>0){var $open=$parent.find('.in');$open.removeClass('in').removeClass('active').each(function(){$parent.find('[data-target=\'#'+$(this).attr('id')+'\']').addClass('collapsed');if($isTab){$parent.parent().find('.nav-link').removeClass('active');}});}if($target.length>0){$target.toggleClass('in',isCollapsed).toggleClass('active',isCollapsed); // Add expanded state (this only needs to be set when collapsing is possible)
+$this.toggleClass('collapsed',!isCollapsed).attr('aria-expanded',!isCollapsed?'false':'true');if($isTab){$parent.parent().find('.nav-link[href="'+$this.data('target')+'"]').addClass('active');}}}); // When breakpoint changes
+$(window).on('viewport:change',viewportChange); //init
+viewportChange();});window.KENT=window.KENT||{}; /**
  * Global navigation
  *
  * Switches between main menu & search menu on mobile.
  * Toggles search on/off on large screens
  *
- */(function(){// Menu references
+ */(function(){ // Menu references
 // Store control class as data on the elements (just for conveniance)
-var global_menu=$('#global-nav-menu').data('control-class','show-global-menu');var global_search=$('#global-nav-search').data('control-class','show-global-search');// List of Menu toggle classes
+var global_menu=$('#global-nav-menu').data('control-class','show-global-menu');var global_search=$('#global-nav-search').data('control-class','show-global-search'); // List of Menu toggle classes
 // This will have the aria-extanded attribute toggled on them, whenever the menu state changes.
-var global_menu_toggles=$('.menu-button');var global_search_toggles=$('.search-button, .search-button-full, .close-search');// Toggle a given menu's state
-var toggleMenu=function toggleMenu(button,menu){// If this menu is NOT open, open it. Else close it.
-if(!menu.hasClass('in')){return openMenu(button,menu);}else{return closeMenu(button,menu);}};// Close a given menu (toggling its buttons)
-var closeMenu=function closeMenu(button,menu){// Cannot close already closed menu
-if(!menu.hasClass('in')){return false;}// Remove menu & body class
-menu.removeClass('in');$('body').removeClass(menu.data('control-class'));// Update button so it knows it's expanded area is collapsed
+var global_menu_toggles=$('.menu-button');var global_search_toggles=$('.search-button, .search-button-full, .close-search'); // Toggle a given menu's state
+var toggleMenu=function toggleMenu(button,menu){ // If this menu is NOT open, open it. Else close it.
+if(!menu.hasClass('in')){return openMenu(button,menu);}else {return closeMenu(button,menu);}}; // Close a given menu (toggling its buttons)
+var closeMenu=function closeMenu(button,menu){ // Cannot close already closed menu
+if(!menu.hasClass('in')){return false;} // Remove menu & body class
+menu.removeClass('in');$('body').removeClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
 // aria-hidden is not needed on the element, since as the element is displayed none
 // the screen reader won't see it anyway.
-button.attr('aria-expanded','false');// Trigger event
-$(window).trigger('globalmenu:close',[menu]);return true;};// Open a given menu (toggling its buttons)
-var openMenu=function openMenu(button,menu){// Cannot open already closed menu
-if(menu.hasClass('in')){return false;}// Set menu & body classes
-menu.addClass('in');$('body').addClass(menu.data('control-class'));// Update button so it knows it's expanded area is collapsed
-button.attr('aria-expanded',true);// Fire events
-$(window).trigger('globalmenu:open',[menu]);return true;};// Setup quick access methods to Menu functions
-var global_nav={openSearchMenu:function openSearchMenu(){return openMenu(global_search_toggles,global_search);},closeSearchMenu:function closeSearchMenu(){return closeMenu(global_search_toggles,global_search);},toggleSearchMenu:function toggleSearchMenu(){return toggleMenu(global_search_toggles,global_search);},openMainMenu:function openMainMenu(){return openMenu(global_menu_toggles,global_menu);},closeMainMenu:function closeMainMenu(){return closeMenu(global_menu_toggles,global_menu);},toggleMainMenu:function toggleMainMenu(){return toggleMenu(global_menu_toggles,global_menu);}};// Toggle primary Menu (mobile Only)
-global_search_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleSearchMenu();return false;});// Toggle Search Menu
-global_menu_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleMainMenu();return false;});// Ensure opening one menu, closes the other.
-$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){window.KENT.global_nav.closeMainMenu();}else{window.KENT.global_nav.closeSearchMenu();}});global_menu.find('.audience-nav-links a').click(function(e){e.preventDefault();var menu_name=e.target.getAttribute('data-action');if(menu_name!==null){window.KENT.kentbar.toggleMenu(menu_name,e.target);window.KENT.global_nav.closeMainMenu();}return false;});// CLose all menu's if user hits escape
-$(document).keyup(function(e){if(e.which===27){window.KENT.global_nav.closeMainMenu();window.KENT.global_nav.closeSearchMenu();window.KENT.kentbar.closeMenus();}});// Homepage Logic
-if($('.home-nav').length>0){$(window).on('globalmenu:open kentbar_menu:open kentbar_mobilemenu:open',function(){$('.home-nav').hide();});$(window).on('globalmenu:close kentbar_menu:close kentbar_mobilemenu:close',function(e,menu){var $body=$('body');if(!($body.hasClass('show-global-menu')||$body.hasClass('show-global-search')||$body.hasClass('show-kentbar-menu'))){if(ResponsiveBootstrapToolkit.is('<=sm')){$('.home-nav').delay(300).fadeIn();}}});$(window).on('viewport:change',function(){if(ResponsiveBootstrapToolkit.is('<=sm')){// if menu isn't already open
-if(!$('body').hasClass('show-global-menu')&&!$('body').hasClass('show-global-search')){$('.home-nav').delay(300).fadeIn();}}else{$('.home-nav').hide();}});}// Add to KENT object
-window.KENT.global_nav=global_nav;})();window.KENT=window.KENT||{};/**
+button.attr('aria-expanded','false'); // Trigger event
+$(window).trigger('globalmenu:close',[menu]);return true;}; // Open a given menu (toggling its buttons)
+var openMenu=function openMenu(button,menu){ // Cannot open already closed menu
+if(menu.hasClass('in')){return false;} // Set menu & body classes
+menu.addClass('in');$('body').addClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
+button.attr('aria-expanded',true); // Fire events
+$(window).trigger('globalmenu:open',[menu]);return true;}; // Setup quick access methods to Menu functions
+var global_nav={openSearchMenu:function openSearchMenu(){return openMenu(global_search_toggles,global_search);},closeSearchMenu:function closeSearchMenu(){return closeMenu(global_search_toggles,global_search);},toggleSearchMenu:function toggleSearchMenu(){return toggleMenu(global_search_toggles,global_search);},openMainMenu:function openMainMenu(){return openMenu(global_menu_toggles,global_menu);},closeMainMenu:function closeMainMenu(){return closeMenu(global_menu_toggles,global_menu);},toggleMainMenu:function toggleMainMenu(){return toggleMenu(global_menu_toggles,global_menu);}}; // Toggle primary Menu (mobile Only)
+global_search_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleSearchMenu();return false;}); // Toggle Search Menu
+global_menu_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleMainMenu();return false;}); // Ensure opening one menu, closes the other.
+$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){window.KENT.global_nav.closeMainMenu();}else {window.KENT.global_nav.closeSearchMenu();}});global_menu.find('.audience-nav-links a').click(function(e){e.preventDefault();var menu_name=e.target.getAttribute('data-action');if(menu_name!==null){window.KENT.kentbar.toggleMenu(menu_name,e.target);window.KENT.global_nav.closeMainMenu();}return false;}); // CLose all menu's if user hits escape
+$(document).keyup(function(e){if(e.which===27){window.KENT.global_nav.closeMainMenu();window.KENT.global_nav.closeSearchMenu();window.KENT.kentbar.closeMenus();}}); // Homepage Logic
+if($('.home-nav').length>0){$(window).on('globalmenu:open kentbar_menu:open kentbar_mobilemenu:open',function(){$('.home-nav').hide();});$(window).on('globalmenu:close kentbar_menu:close kentbar_mobilemenu:close',function(e,menu){var $body=$('body');if(!($body.hasClass('show-global-menu')||$body.hasClass('show-global-search')||$body.hasClass('show-kentbar-menu'))){if(ResponsiveBootstrapToolkit.is('<=sm')){$('.home-nav').delay(300).fadeIn();}}});$(window).on('viewport:change',function(){if(ResponsiveBootstrapToolkit.is('<=sm')){ // if menu isn't already open
+if(!$('body').hasClass('show-global-menu')&&!$('body').hasClass('show-global-search')){$('.home-nav').delay(300).fadeIn();}}else {$('.home-nav').hide();}});} // Add to KENT object
+window.KENT.global_nav=global_nav;})();window.KENT=window.KENT||{}; /**
  * Global search
  *
  * Super search located at the top of the page
  *
  * @uses global_nav.js
- */(function(){// Get global search element.
-var global_search=$('#global-nav-search');// Hitting search on empty form closes search menu
-global_search.find('form').submit(function(e){if(global_search.find('input[type="search"]').val()===''){e.preventDefault();window.KENT.global_nav.closeSearchMenu();return false;}});// Focus in search input if global search is toggled
-$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){global_search.find('input[type="search"]').focus();}});// clicking menu
-$('body').click(function(e){if(!global_search.is(e.target)&&global_search.has(e.target).length===0){window.KENT.global_nav.closeSearchMenu();}});})();/**
+ */(function(){ // Get global search element.
+var global_search=$('#global-nav-search'); // Hitting search on empty form closes search menu
+global_search.find('form').submit(function(e){if(global_search.find('input[type="search"]').val()===''){e.preventDefault();window.KENT.global_nav.closeSearchMenu();return false;}}); // Focus in search input if global search is toggled
+$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){global_search.find('input[type="search"]').focus();}}); // clicking menu
+$('body').click(function(e){if(!global_search.is(e.target)&&global_search.has(e.target).length===0){window.KENT.global_nav.closeSearchMenu();}});})(); /**
  * Primary Navigation
  *
  * Handles open/closing of the submenus in the global nav menu.
  *
- */(function(){var zTimer=null;// Primary Nav
-$('.global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a').click(function(){clearTimeout(zTimer);// Get current menu item
-var item=$(this).parent();// Get menu container
-var container=item.parent();// Close submenus in provided menuItems
-var closeSubMenus=function closeSubMenus(menuItems){return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');};if(container.hasClass('in')){// If a menu was already open,
+ */(function(){var zTimer=null; // Primary Nav
+$('.global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a').click(function(){clearTimeout(zTimer); // Get current menu item
+var item=$(this).parent(); // Get menu container
+var container=item.parent(); // Close submenus in provided menuItems
+var closeSubMenus=function closeSubMenus(menuItems){return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');};if(container.hasClass('in')){ // If a menu was already open,
 // Close all menu items other than the one selected (setting expanded as we go)
-var menus=container.find('.in').not(item);menus.removeClass('in');closeSubMenus(menus);menus.children(':first').attr('aria-expanded','false');}else{// If menu wasn't open, preperate submenus for being shown.
-closeSubMenus(container);}if(item.hasClass('in')){// if the clicked menu item was open, close the menu
-item.removeClass('in').parent().removeClass('in');zTimer=setTimeout(function(){closeSubMenus(item);},600);}else{//  if not, tell item its expanded & toggle it all open
-var menu=$(this).attr('aria-expanded','true').parent().toggleClass('in');menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');menu.parent().addClass('in');}});})();jQuery(document).ready(function(){var sectional_nav=$('.departmental-nav .navbar-menu');var toggler=$('.departmental-nav .navbar-toggler');var viewport=ResponsiveBootstrapToolkit;// if no nav, don't bother booting menu
-if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else{sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var last=sectional_nav.find('a').last();return last.position().top>=last.height();}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else{openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();});/**
+var menus=container.find('.in').not(item);menus.removeClass('in');closeSubMenus(menus);menus.children(':first').attr('aria-expanded','false');}else { // If menu wasn't open, preperate submenus for being shown.
+closeSubMenus(container);}if(item.hasClass('in')){ // if the clicked menu item was open, close the menu
+item.removeClass('in').parent().removeClass('in');zTimer=setTimeout(function(){closeSubMenus(item);},600);}else { //  if not, tell item its expanded & toggle it all open
+var menu=$(this).attr('aria-expanded','true').parent().toggleClass('in');menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');menu.parent().addClass('in');}});})();jQuery(document).ready(function(){var sectional_nav=$('.departmental-nav .navbar-menu');var toggler=$('.departmental-nav .navbar-toggler');var viewport=ResponsiveBootstrapToolkit; // if no nav, don't bother booting menu
+if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else {sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var last=sectional_nav.find('a').last();return last.position().top>=last.height();}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else {openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();}); /**
  * Beta bar collapse
  *
  * Small bit of JS to facilitate the beta bar open/close logic.
  * This will be removed once the product moves out of beta
- */jQuery(document).ready(function(){var beta_bar=$('#beta-bar');var toggler=$('.beta-toggler');// Toggle beta bar
-function toggleNav(){if(beta_bar.hasClass('hidden')){beta_bar.removeClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','true');});}else{beta_bar.addClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','false');});window.Cookies.set('kentbeta_dismissed','1',{expires:365});}}// If beta bar exists on page
-if(beta_bar.length>0){var dismissed=typeof window.Cookies.get('kentbeta_dismissed')!=='undefined';// Apply show/hide state from cookie.
-if(!dismissed){beta_bar.removeClass('hidden');}else{beta_bar.addClass('hidden');}// hook up toggler
-toggler.click(function(){toggleNav();});}});/**
+ */jQuery(document).ready(function(){var beta_bar=$('#beta-bar');var toggler=$('.beta-toggler'); // Toggle beta bar
+function toggleNav(){if(beta_bar.hasClass('hidden')){beta_bar.removeClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','true');});}else {beta_bar.addClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','false');});window.Cookies.set('kentbeta_dismissed','1',{expires:365});}} // If beta bar exists on page
+if(beta_bar.length>0){var dismissed=typeof window.Cookies.get('kentbeta_dismissed')!=='undefined'; // Apply show/hide state from cookie.
+if(!dismissed){beta_bar.removeClass('hidden');}else {beta_bar.addClass('hidden');} // hook up toggler
+toggler.click(function(){toggleNav();});}}); /**
  * Toggles attribution text display on/off
- */jQuery(document).ready(function($){$('.attribution').click(function(){$(this).toggleClass('in');});// Debug
-window.KENT.log('Initiating: Attribution');window.KENT.log($('.attribution'));});/**
+ */jQuery(document).ready(function($){$('.attribution').click(function(){$(this).toggleClass('in');}); // Debug
+window.KENT.log('Initiating: Attribution');window.KENT.log($('.attribution'));}); /**
  * Click to interact logic
  *
  * Disable scrolling/zooming on iframes with .click-to-interact class
  * User click activates scrolling behavior and loss of focus deactivates it
  *
- */(function(){var _onEmbedClickHandler,_onEmbedMouseleaveHandler;// Disable pointer events
-_onEmbedMouseleaveHandler=function onEmbedMouseleaveHandler(event){// Re add the click to interact handler
-$(this).on('click',_onEmbedClickHandler);// remove the leaving handler
-$(this).off('mouseleave',_onEmbedMouseleaveHandler);// Disable pointer events
-$(this).find('iframe').css('pointer-events','none');};// Enable pointer events
-_onEmbedClickHandler=function onEmbedClickHandler(event){// Disable the click handler until the user leaves the area
-$(this).off('click',_onEmbedClickHandler);// Handle the mouse leave event
-$(this).on('mouseleave',_onEmbedMouseleaveHandler);// Enable the pointer events
-$(this).find('iframe').css('pointer-events','auto');};jQuery(document).ready(function(){// Disable pointer on class, and attach click action to re-enable them
-$('.click-to-interact').on('click',_onEmbedClickHandler).find('iframe').css('pointer-events','none');window.KENT.log('Initiating: Click to interact');window.KENT.log($('.click-to-interact'));});})();/**
+ */(function(){var _onEmbedClickHandler,_onEmbedMouseleaveHandler; // Disable pointer events
+_onEmbedMouseleaveHandler=function onEmbedMouseleaveHandler(event){ // Re add the click to interact handler
+$(this).on('click',_onEmbedClickHandler); // remove the leaving handler
+$(this).off('mouseleave',_onEmbedMouseleaveHandler); // Disable pointer events
+$(this).find('iframe').css('pointer-events','none');}; // Enable pointer events
+_onEmbedClickHandler=function onEmbedClickHandler(event){ // Disable the click handler until the user leaves the area
+$(this).off('click',_onEmbedClickHandler); // Handle the mouse leave event
+$(this).on('mouseleave',_onEmbedMouseleaveHandler); // Enable the pointer events
+$(this).find('iframe').css('pointer-events','auto');};jQuery(document).ready(function(){ // Disable pointer on class, and attach click action to re-enable them
+$('.click-to-interact').on('click',_onEmbedClickHandler).find('iframe').css('pointer-events','none');window.KENT.log('Initiating: Click to interact');window.KENT.log($('.click-to-interact'));});})(); /**
  * Slider
  *
  * Provides carousel functionality to kent-theme
  *
  * @uses https://github.com/kenwheeler/slick/
- */window.KENT=window.KENT||{};// Default options
-window.KENT.kentslider={default:{config:{dots:true,dotsClass:'kent-slider-dots',mobileFirst:true,useTransform:true,accessibility:true}},// react helper
-react:function react($el,breakpoint,config){var loaded=$el.hasClass('slick-initialized');if(ResponsiveBootstrapToolkit.is(breakpoint)){if(!loaded){// init slider
-$el.slick(config);}}else{if(loaded){// de-init slider
-$el.slick('unslick');}}}};// Settings for profile_feature
-window.KENT.kentslider.profile_feature={config:$.extend({},window.KENT.kentslider.default.config,{slidesToShow:2,slidesToScroll:2}),breakpoint:'<=md'};$(document).ready(function(){// If class is found, init slider
-$('.kent-slider').each(function(){// Load config
-var slider_config=$(this).data('slider-config');if(typeof slider_config==='undefined'){slider_config='default';}var config=window.KENT.kentslider[slider_config].config;// Does this carousel behave differently at different breakpoints
-var breakpoint=typeof window.KENT.kentslider[slider_config].breakpoint!=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;if(breakpoint){// react to inital size
-window.KENT.kentslider.react($(this),breakpoint,config);var $this=$(this);// Handle resize on view port change
-$(window).on('viewport:resize',function(){window.KENT.kentslider.react($this,breakpoint,config);});}else{// Init slider
-$(this).slick(config);}// Debug
-window.KENT.log('[Kent-slider] Instance created',$(this));});});$(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;// Plyr controls template - Use kf icons
-var plyr_controls='\n\t\t<button type="button" data-plyr="play" class="plyr__play-large">\n\t\t\t<span class="kf-play-circle"></span>\n\t\t\t<span class="plyr__sr-only">Play</span>\n\t\t</button>\n\n\t\t<div class=\'plyr__controls\'>\n\t\t\t<button type=\'button\' data-plyr=\'play\'>\n\t\t\t\t<span class="kf-play"></span>\n\t\t\t\t<span class="plyr__tooltip">Play</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'pause\'>\n\t\t\t\t<span class="kf-pause"></span>\n\t\t\t\t<span class="plyr__tooltip">Pause</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__progress\'>\n\t\t\t\t<label for=\'seek{id}\' class=\'plyr__sr-only\'>Seek</label>\n\t\t\t\t<input id=\'seek{id}\' class=\'plyr__progress--seek\' type=\'range\' min=\'0\' max=\'100\' step=\'0.1\' value=\'0\' data-plyr=\'seek\'>\n\t\t\t\t<progress class=\'plyr__progress--played\' max=\'100\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t\t<progress class=\'plyr__progress--buffer\' max=\'100\' value=\'0\'>\n\t\t\t\t\t<span>0</span>% buffered\n\t\t\t\t</progress>\n\t\t\t\t<span class=\'plyr__tooltip\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Current time</span>\n\t\t\t\t<span class=\'plyr__time--current\'>00:00</span>\n\t\t\t</span>\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Duration</span>\n\t\t\t\t<span class=\'plyr__time--duration\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'mute\'>\n\t\t\t\t<span class="kf-volume-mute icon--muted"></span>\n\t\t\t\t<span class="kf-volume-medium"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Mute</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__volume\'>\n\t\t\t\t<label for=\'volume{id}\' class=\'plyr__sr-only\'>Volume</label>\n\t\t\t\t<input id=\'volume{id}\' class=\'plyr__volume--input\' type=\'range\' min=\'0\' max=\'10\' value=\'5\' data-plyr=\'volume\'>\n\t\t\t\t<progress class=\'plyr__volume--display\' max=\'10\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'captions\'>\n\t\t\t\t<span class="kf-captions icon--captions-on"></span>\n\t\t\t\t<span class="kf-captions-off"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Captions</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' class="download-transcript">\n\t\t\t\t<span class="kf-file-text"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Access Transcript</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'fullscreen\'>\n\t\t\t\t<span class="kf-compress icon--exit-fullscreen"></span>\n\t\t\t\t<span class="kf-expand"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Fullscreen</span>\n\t\t\t</button>\n\t\t</div>\n\t';/**
+ */window.KENT=window.KENT||{}; // Default options
+window.KENT.kentslider={default:{config:{dots:true,dotsClass:'kent-slider-dots',mobileFirst:true,useTransform:true,accessibility:true}}, // react helper
+react:function react($el,breakpoint,config){var loaded=$el.hasClass('slick-initialized');if(ResponsiveBootstrapToolkit.is(breakpoint)){if(!loaded){ // init slider
+$el.slick(config);}}else {if(loaded){ // de-init slider
+$el.slick('unslick');}}}}; // Settings for profile_feature
+window.KENT.kentslider.profile_feature={config:$.extend({},window.KENT.kentslider.default.config,{slidesToShow:2,slidesToScroll:2}),breakpoint:'<=md'};$(document).ready(function(){ // If class is found, init slider
+$('.kent-slider').each(function(){ // Load config
+var slider_config=$(this).data('slider-config');if(typeof slider_config==='undefined'){slider_config='default';}var config=window.KENT.kentslider[slider_config].config; // Does this carousel behave differently at different breakpoints
+var breakpoint=typeof window.KENT.kentslider[slider_config].breakpoint!=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;if(breakpoint){ // react to inital size
+window.KENT.kentslider.react($(this),breakpoint,config);var $this=$(this); // Handle resize on view port change
+$(window).on('viewport:resize',function(){window.KENT.kentslider.react($this,breakpoint,config);});}else { // Init slider
+$(this).slick(config);} // Debug
+window.KENT.log('[Kent-slider] Instance created',$(this));});});$(document).ready(function(){var viewport=ResponsiveBootstrapToolkit; // Plyr controls template - Use kf icons
+var plyr_controls='\n\t\t<button type="button" data-plyr="play" class="plyr__play-large">\n\t\t\t<span class="kf-play-circle"></span>\n\t\t\t<span class="plyr__sr-only">Play</span>\n\t\t</button>\n\n\t\t<div class=\'plyr__controls\'>\n\t\t\t<button type=\'button\' data-plyr=\'play\'>\n\t\t\t\t<span class="kf-play"></span>\n\t\t\t\t<span class="plyr__tooltip">Play</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'pause\'>\n\t\t\t\t<span class="kf-pause"></span>\n\t\t\t\t<span class="plyr__tooltip">Pause</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__progress\'>\n\t\t\t\t<label for=\'seek{id}\' class=\'plyr__sr-only\'>Seek</label>\n\t\t\t\t<input id=\'seek{id}\' class=\'plyr__progress--seek\' type=\'range\' min=\'0\' max=\'100\' step=\'0.1\' value=\'0\' data-plyr=\'seek\'>\n\t\t\t\t<progress class=\'plyr__progress--played\' max=\'100\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t\t<progress class=\'plyr__progress--buffer\' max=\'100\' value=\'0\'>\n\t\t\t\t\t<span>0</span>% buffered\n\t\t\t\t</progress>\n\t\t\t\t<span class=\'plyr__tooltip\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Current time</span>\n\t\t\t\t<span class=\'plyr__time--current\'>00:00</span>\n\t\t\t</span>\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Duration</span>\n\t\t\t\t<span class=\'plyr__time--duration\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'mute\'>\n\t\t\t\t<span class="kf-volume-mute icon--muted"></span>\n\t\t\t\t<span class="kf-volume-medium"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Mute</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__volume\'>\n\t\t\t\t<label for=\'volume{id}\' class=\'plyr__sr-only\'>Volume</label>\n\t\t\t\t<input id=\'volume{id}\' class=\'plyr__volume--input\' type=\'range\' min=\'0\' max=\'10\' value=\'5\' data-plyr=\'volume\'>\n\t\t\t\t<progress class=\'plyr__volume--display\' max=\'10\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'captions\'>\n\t\t\t\t<span class="kf-captions icon--captions-on"></span>\n\t\t\t\t<span class="kf-captions-off"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Captions</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' class="download-transcript">\n\t\t\t\t<span class="kf-file-text"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Access Transcript</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'fullscreen\'>\n\t\t\t\t<span class="kf-compress icon--exit-fullscreen"></span>\n\t\t\t\t<span class="kf-expand"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Fullscreen</span>\n\t\t\t</button>\n\t\t</div>\n\t'; /**
 	 * Control class for "player" instances
-	 */var Player=function Player($container){// vars
-this.container=$container;this.video=$container.find('.video-player').first();this.placeholder=$container.find('img').first();this.plyr=null;// settings for instance
-this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',fullscreen_down:$container.data('fullscreen-down')||'xs',fullscreen_up:$container.data('fullscreen-up')||'xxl'};/**
+	 */var Player=function Player($container){ // vars
+this.container=$container;this.video=$container.find('.video-player').first();this.placeholder=$container.find('img').first();this.plyr=null; // settings for instance
+this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',fullscreen_down:$container.data('fullscreen-down')||'xs',fullscreen_up:$container.data('fullscreen-up')||'xxl'}; /**
 		 * Initalise "video" element
-		 */this.init=function(){var _this=this;this.container.click(function(){// if Player isn't booted, boot it
-if(!_this.plyr){window.KENT.log('[Video player] Init Plyr');_this.boot();}// Show player if not already playing
-if(!_this.container.hasClass('playing')){_this.show();}});};/**
+		 */this.init=function(){var _this=this;this.container.click(function(){ // if Player isn't booted, boot it
+if(!_this.plyr){window.KENT.log('[Video player] Init Plyr');_this.boot();} // Show player if not already playing
+if(!_this.container.hasClass('playing')){_this.show();}});}; /**
 		 * When user attempts to play video, initalise video player instance
-		 */this.boot=function(){var _this2=this;// Generate plyr instance
-this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0].plyr;// Hookup events
-this.video.on('ready',function(){_this2.setupTranscript();});this.video.on('pause',function(){// hide on pause if not full screen
-if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen',function(){_this2.hide();});this.video.on('ended',function(){_this2.hide();});};/**
+		 */this.boot=function(){var _this2=this; // Generate plyr instance
+this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0].plyr; // Hookup events
+this.video.on('ready',function(){_this2.setupTranscript();});this.video.on('pause',function(){ // hide on pause if not full screen
+if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen',function(){_this2.hide();});this.video.on('ended',function(){_this2.hide();});}; /**
 		 * Setup transcription link
-		 */this.setupTranscript=function(){var _this3=this;var button=this.video.find('.download-transcript');if(this.settings.transcript){button.click(function(){document.location.href=_this3.settings.transcript;});}else{button.hide();}};/**
+		 */this.setupTranscript=function(){var _this3=this;var button=this.video.find('.download-transcript');if(this.settings.transcript){button.click(function(){document.location.href=_this3.settings.transcript;});}else {button.hide();}}; /**
 		 * Show video
 		 * Display video and play it ( use attributes to determine whether to play inline or "fullscreen")
-		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();};/**
+		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();}; /**
 		 * Close video
 		 * Hide video and pause it
-		 */this.hide=function(){var _this4=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();}/**
+		 */this.hide=function(){var _this4=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();} /**
 			 * This is horrible but it fixes a bug were safari crashes if you try and set a fullscreen element
 			 * to display:none. This queues it so it doesn't try and set display:none until safari has actually
 			 * completed the fullscreen exit.
-			 */setTimeout(function(){_this4.pause();_this4.container.removeClass('playing');_this4.container.closest('.card-media-inline').removeClass('card-media-enabled');},0);};/**
+			 */setTimeout(function(){_this4.pause();_this4.container.removeClass('playing');_this4.container.closest('.card-media-inline').removeClass('card-media-enabled');},0);}; /**
 		 * Play video
-		 */this.play=function(){this.plyr.play();};/**
+		 */this.play=function(){this.plyr.play();}; /**
 		 * Pause video
-		 */this.pause=function(){this.plyr.pause();};/**
+		 */this.pause=function(){this.plyr.pause();}; /**
 		 * Pause & hide video
-		 */this.stop=function(){this.hide();};this.init();};$('.video-launcher').each(function(){// create player instance
-new Player($(this));// Debug
-window.KENT.log('[Video player] Instance created');});});/**
+		 */this.stop=function(){this.hide();};this.init();};$('.video-launcher').each(function(){ // create player instance
+new Player($(this)); // Debug
+window.KENT.log('[Video player] Instance created');});}); /**
  * Social sharing icons
  *
  * Converts anything in a div with the class `content-social-share` in to a social sharing icon.
@@ -28441,41 +28445,41 @@ window.KENT.log('[Video player] Instance created');});});/**
  * Will automatically pass share data to Google Analytics.
  *
  * @uses https://github.com/sapegin/social-likes
- */(function(){// Add additional social networks to the social-likes code.
-window.socialLikesButtons={// Add linkedin support
-linkedin:{counterUrl:'http://www.linkedin.com/countserv/count/share?url={url}',counter:function counter(jsonUrl,deferred){var options=window.socialLikesButtons.linkedin;if(!options._){options._={};if(!window.IN){window.IN={Tags:{}};}window.IN.Tags.Share={handleCount:function handleCount(params){var jsonUrl=options.counterUrl.replace(/{url}/g,encodeURIComponent(params.url));options._[jsonUrl].resolve(params.count);}};}options._[jsonUrl]=deferred;$.getScript(jsonUrl).fail(deferred.reject);},popupUrl:'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',popupWidth:650,popupHeight:500}};// When jQuery is ready, hook up our social sharing icons.
-$(function(){// for all social share containers
-var $likes=$('.content-social-share');if($likes.length>0){// Init social likes on container + grab options
-var options=$likes.socialLikes({'counters':false}).data().socialLikes.options;// Populate 'email link' (Additional option we have added)
-$likes.find('a.email').attr('href','mailto:?subject='+options.title+'&body=Link: '+options.url);// Hook up social events via KAT
-$likes.find('a').click(function(){window.KENT.kat.social($(this).attr('title'),'share');// current url is used, if no url is provided as the 3rd param.
-});}// Debug
-window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(function(){//get all tabs
-var $tabs=$('a[data-toggle="tab"]');// when tab is hidden adjust related accordion tab-title accordingly
-$tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);});// when tab is show adjust related accordion tab-title accordingly
-$tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);});//endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
-$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);var activeTab=$('[href="#'+hash+'"]');if(activeTab){activeTab.tab('show');}// Change hash for page-reload
-$('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})();/**
+ */(function(){ // Add additional social networks to the social-likes code.
+window.socialLikesButtons={ // Add linkedin support
+linkedin:{counterUrl:'http://www.linkedin.com/countserv/count/share?url={url}',counter:function counter(jsonUrl,deferred){var options=window.socialLikesButtons.linkedin;if(!options._){options._={};if(!window.IN){window.IN={Tags:{}};}window.IN.Tags.Share={handleCount:function handleCount(params){var jsonUrl=options.counterUrl.replace(/{url}/g,encodeURIComponent(params.url));options._[jsonUrl].resolve(params.count);}};}options._[jsonUrl]=deferred;$.getScript(jsonUrl).fail(deferred.reject);},popupUrl:'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',popupWidth:650,popupHeight:500}}; // When jQuery is ready, hook up our social sharing icons.
+$(function(){ // for all social share containers
+var $likes=$('.content-social-share');if($likes.length>0){ // Init social likes on container + grab options
+var options=$likes.socialLikes({'counters':false}).data().socialLikes.options; // Populate 'email link' (Additional option we have added)
+$likes.find('a.email').attr('href','mailto:?subject='+options.title+'&body=Link: '+options.url); // Hook up social events via KAT
+$likes.find('a').click(function(){window.KENT.kat.social($(this).attr('title'),'share'); // current url is used, if no url is provided as the 3rd param.
+});} // Debug
+window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(function(){ //get all tabs
+var $tabs=$('a[data-toggle="tab"]'); // when tab is hidden adjust related accordion tab-title accordingly
+$tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);}); // when tab is show adjust related accordion tab-title accordingly
+$tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);}); //endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
+$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);var activeTab=$('[href="#'+hash+'"]');if(activeTab){activeTab.tab('show');} // Change hash for page-reload
+$('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})(); /**
  * Parallax
  *
  * Provides parallax functionality
  *
  * @uses https://github.com/markdalgleish/stellar.js
- */(function(){var stellarSetup=false;var stellarActive=false;// Enable stellar.js
-var initStellar=function initStellar(){if(stellarSetup===true){$(window).data('plugin_stellar').init();}else{$.stellar({// Set scrolling to be in either one or both directions
-horizontalScrolling:false,verticalScrolling:true,// Set the global alignment offsets
-horizontalOffset:0,verticalOffset:0,// Refreshes parallax content on window load and resize
-responsive:false,// Select which property is used to calculate scroll.
+ */(function(){var stellarSetup=false;var stellarActive=false; // Enable stellar.js
+var initStellar=function initStellar(){if(stellarSetup===true){$(window).data('plugin_stellar').init();}else {$.stellar({ // Set scrolling to be in either one or both directions
+horizontalScrolling:false,verticalScrolling:true, // Set the global alignment offsets
+horizontalOffset:0,verticalOffset:0, // Refreshes parallax content on window load and resize
+responsive:false, // Select which property is used to calculate scroll.
 // Choose 'scroll', 'position', 'margin' or 'transform',
 // or write your own 'scrollProperty' plugin.
-scrollProperty:'scroll',// Select which property is used to position elements.
+scrollProperty:'scroll', // Select which property is used to position elements.
 // Choose between 'position' or 'transform',
 // or write your own 'positionProperty' plugin.
-positionProperty:'transform',// Enable or disable the two types of parallax
-parallaxBackgrounds:true,parallaxElements:true,// Hide parallax elements that move outside the viewport
-hideDistantElements:false,// Customise how elements are shown and hidden
-hideElement:function hideElement($elem){$elem.hide();},showElement:function showElement($elem){$elem.show();}});stellarSetup=true;}stellarActive=true;};// Disable stellar.js
-var disableStellar=function disableStellar(){$(window).data('plugin_stellar').destroy();stellarActive=false;};// Handle resize
-function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','').find('img').removeAttr('style');}else{if(!stellarActive){initStellar();}// Set ratio's
+positionProperty:'transform', // Enable or disable the two types of parallax
+parallaxBackgrounds:true,parallaxElements:true, // Hide parallax elements that move outside the viewport
+hideDistantElements:false, // Customise how elements are shown and hidden
+hideElement:function hideElement($elem){$elem.hide();},showElement:function showElement($elem){$elem.show();}});stellarSetup=true;}stellarActive=true;}; // Disable stellar.js
+var disableStellar=function disableStellar(){$(window).data('plugin_stellar').destroy();stellarActive=false;}; // Handle resize
+function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','').find('img').removeAttr('style');}else {if(!stellarActive){initStellar();} // Set ratio's
 var $ratio=ResponsiveBootstrapToolkit.is('<xl')?9/16:6/16;$('.media-wrap-parallax').each(function(){$(this).css('min-height',$(window).width()*$ratio+'px');});$(window).data('plugin_stellar').refresh();}}$(window).on('viewport:resize',function(){react_to_window();});$(document).ready(function(){react_to_window();});})();
 //# sourceMappingURL=main.compiled.js.map

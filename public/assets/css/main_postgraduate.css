@@ -8270,12 +8270,14 @@ input[type=number]::-webkit-outer-spin-button {
       max-height: 13rem; }
   @media (min-width: 768px) {
     .global-nav {
-      background-color: #FFFFFF;
+      background-color: #671115;
+      border-top: 1px solid #81151a;
       padding: 0 2rem; }
       .global-nav a.main-logo {
         display: block;
         float: left;
-        padding-left: 0; }
+        padding-left: 0;
+        color: #FFF; }
       .global-nav .audience-nav-links a:hover {
         background: transparent; }
       .global-nav .global-nav-menu {
@@ -8398,6 +8400,13 @@ input[type=number]::-webkit-outer-spin-button {
             .global-nav .global-nav-links .global-nav-link nav .nav-link .global-nav-link-desc {
               width: 80%;
               margin-right: 20%; } }
+      @media (min-width: 768px) and (min-width: 768px) {
+        .global-nav .global-nav-links .global-nav-link {
+          background-color: #671115; }
+          .global-nav .global-nav-links .global-nav-link a {
+            color: #fff; }
+          .global-nav .global-nav-links .global-nav-link nav .nav-link .global-nav-link-title {
+            color: #671115; } }
   @media (min-width: 768px) {
         .global-nav .global-nav-links.in {
           height: 13.6rem; }
@@ -8421,22 +8430,6 @@ input[type=number]::-webkit-outer-spin-button {
   @media (min-width: 1712px) {
     .global-nav .global-nav-links {
       max-width: 1100px; } }
-
-@media (min-width: 768px) {
-  .brand-header .global-nav {
-    background-color: #671115;
-    border-top: 1px solid #81151a; } }
-
-.brand-header .global-nav .main-logo {
-  color: #FFF; }
-
-@media (min-width: 768px) {
-  .brand-header .global-nav .global-nav-links .global-nav-link {
-    background-color: #671115; }
-    .brand-header .global-nav .global-nav-links .global-nav-link a {
-      color: #fff; }
-    .brand-header .global-nav .global-nav-links .global-nav-link nav .nav-link .global-nav-link-title {
-      color: #671115; } }
 
 .show-global-menu, .show-global-search {
   overflow-y: hidden; }
@@ -8664,11 +8657,10 @@ body.show-global-search .global-nav-menu .global-nav-links {
 
 .departmental-nav header {
   font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
-  background-color: #671115;
+  background-color: #ab777d;
   color: #FFFFFF;
   padding: 8px 16px;
   padding: .5rem 1rem;
-  border-top: 1px solid #81151a;
   font-size: 17.6px;
   font-size: 1.1rem;
   text-transform: uppercase; }
@@ -8676,8 +8668,8 @@ body.show-global-search .global-nav-menu .global-nav-links {
     color: #fff; }
 
 .departmental-nav .navbar-toggler {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #FFFFFF;
+  background-color: #f0e6e7;
+  color: #671115;
   cursor: pointer; }
   .departmental-nav .navbar-toggler:after {
     float: right;
@@ -8689,8 +8681,8 @@ body.show-global-search .global-nav-menu .global-nav-links {
 .departmental-nav .navbar-menu {
   max-height: 0px;
   overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: #FFFFFF;
+  background-color: #f0e6e7;
+  color: #671115;
   transition: max-height 300ms;
   transition-timing-function: ease-in-out;
   position: relative;
@@ -8702,6 +8694,13 @@ body.show-global-search .global-nav-menu .global-nav-links {
     border-bottom: none; }
   .departmental-nav .navbar-menu > a:first-child {
     border-top: 1px solid rgba(255, 255, 255, 0.5); }
+  .departmental-nav .navbar-menu a {
+    color: #671115;
+    border-bottom: 1px solid #e2cfd1; }
+    .departmental-nav .navbar-menu a:hover, .departmental-nav .navbar-menu a.active {
+      background-color: #e2cfd1; }
+    .departmental-nav .navbar-menu a:first-child {
+      border-top: 1px solid #e2cfd1; }
 
 @media (min-width: 768px) {
   .departmental-nav {
@@ -8738,8 +8737,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
       .departmental-nav .navbar-menu a {
         display: inline-block;
         padding: 0.5rem 1rem;
-        border-top: none;
-        border-bottom: none; }
+        border-top: none; }
         .departmental-nav .navbar-menu a:first-child {
           border-top: none; }
         .departmental-nav .navbar-menu a:after {
@@ -8774,25 +8772,6 @@ body.show-global-search .global-nav-menu .global-nav-links {
     min-height: 10rem; }
     .show-departmental-menu .departmental-nav.slim {
       min-height: auto; } }
-
-.brand-header .departmental-nav header {
-  border-top: none;
-  background-color: #ab777d; }
-
-.brand-header .departmental-nav .navbar-toggler,
-.brand-header .departmental-nav .navbar-menu {
-  background-color: #f0e6e7;
-  color: #671115; }
-
-.brand-header .departmental-nav .navbar-menu a {
-  color: #671115;
-  border-bottom: 1px solid #e2cfd1; }
-  .brand-header .departmental-nav .navbar-menu a:hover {
-    background-color: #e2cfd1; }
-  .brand-header .departmental-nav .navbar-menu a.active {
-    background-color: #e2cfd1; }
-  .brand-header .departmental-nav .navbar-menu a:first-child {
-    border-top: 1px solid #e2cfd1; }
 
 main > nav.breadcrumb {
   margin: 0 32px 32px;
@@ -10481,7 +10460,7 @@ button.beta-toggler {
       background-color: #404040; }
   @media (min-width: 768px) {
     .card.header-card-overlay {
-      margin-top: -5rem; }
+      margin-top: -7rem; }
       .card.header-card-overlay .card-title-wrap {
         width: 100%;
         bottom: 0;
