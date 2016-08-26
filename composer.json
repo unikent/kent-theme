@@ -7,5 +7,10 @@
             "email": "is-webdev@kent.ac.uk"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+    	"files": [
+        	"lib/theme-helper.php",
+        ]
+    }
 }
