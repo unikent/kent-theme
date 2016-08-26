@@ -10,7 +10,7 @@
     "require": {},
     "autoload": {
     	"files": [
-        	"lib/theme-helper.php",
+        	"lib/theme-helper.php"
         ]
     }
 }
