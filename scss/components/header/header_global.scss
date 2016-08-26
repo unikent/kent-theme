@@ -305,7 +305,7 @@
                 }
                 @include media-breakpoint-up(md) {
                     background-color: $brand-primary;
-                    
+
                     a {
                         color: #fff;
                     }
@@ -512,6 +512,9 @@ body {
 /* Home page variant */
 
 .global-header-transparent {
+    .global-nav-search.in {
+        margin-bottom: 0.125rem;
+    }
     @include media-breakpoint-up(md) {
 
         .global-nav {
