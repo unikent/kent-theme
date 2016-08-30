@@ -235,3 +235,37 @@
         padding: 0 8%;
     }
 }
+
+&.faux-link-block{
+    position: relative;
+    a{
+        z-index: 1;
+        position: relative;
+    }
+
+    /*
+    this is not a mistake, self-selecting bumps the specificity of this rule for where something extends .faux-link-block
+    */
+    .faux-link-overlay.faux-link-overlay{
+        opacity: 0;
+        position: absolute;
+        z-index: 0;
+        top:0;
+        right:0;
+        left:0;
+        bottom: 0;
+        background: transparent;
+        overflow: hidden;
+        text-indent: 200%;
+        visibility: visible;
+        white-space: nowrap;
+    }
+
+    &:hover {
+        .chevron-link {
+            &:after {
+                padding-left: 0.7rem;
+            }
+        }
+    }
+}

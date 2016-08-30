@@ -19,6 +19,18 @@
             }
         }
     }
+    @include media-breakpoint-up(lg) {
+        height: 66vh;
+    }
+
+    @include media-breakpoint-down(lg) {
+        padding-bottom: percentage(9 / 16);
+    }
+
+    video {
+        object-fit: cover;
+    }
+
 }
 
 .click-to-interact {

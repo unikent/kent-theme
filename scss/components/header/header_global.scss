@@ -133,14 +133,15 @@
     }
 
     @include media-breakpoint-up(md) {
-        background-color: #FFFFFF;
-
+        background-color: $brand-primary;
+        border-top:       1px solid lighten($brand-primary, 6%);
         padding:          0 2rem;
 
         a.main-logo {
             display:      block;
             float:        left;
             padding-left: 0;
+            color: #FFF;
         }
 
         .audience-nav-links a:hover {
@@ -302,6 +303,17 @@
 
                     }
                 }
+                @include media-breakpoint-up(md) {
+                    background-color: $brand-primary;
+                    
+                    a {
+                        color: #fff;
+                    }
+                    nav .nav-link .global-nav-link-title{
+                        color: $brand-primary;
+                    }
+                }
+
             }
 
             &.in {
@@ -322,7 +334,7 @@
                         }
                     }
                     &.in > a {
-                        color: $brand-accent;
+                        color: $brand-accent-light;
                         &:after {
                             opacity: 1;
 
@@ -349,33 +361,6 @@
         }
     }
 
-}
-
-.brand-header{
-    .global-nav {
-        @include media-breakpoint-up(md) {
-            background-color: $brand-primary;
-            border-top:       1px solid lighten($brand-primary, 6%);
-        }
-
-        .main-logo{
-            color: #FFF;
-        }
-
-        .global-nav-links {
-            .global-nav-link {
-                @include media-breakpoint-up(md) {
-                    background-color: $brand-primary;
-                    a {
-                        color: #fff;
-                    }
-                    nav .nav-link .global-nav-link-title{
-                        color: $brand-primary;
-                    }
-                }
-            }
-        }
-    }
 }
 
 .show-global-menu, .show-global-search {

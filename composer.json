@@ -1,0 +1,16 @@
+{
+    "name": "unikent/kent-theme",
+    "description": "Kent Theme",
+    "authors": [
+        {
+            "name": "Webdev",
+            "email": "is-webdev@kent.ac.uk"
+        }
+    ],
+    "require": {},
+    "autoload": {
+    	"files": [
+        	"lib/theme-helper.php"
+        ]
+    }
+}
