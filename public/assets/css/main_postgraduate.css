@@ -8780,6 +8780,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
       font-size: 1em;
       background-color: transparent;
       line-height: inherit;
+      border: none;
       /* Only show when overflown */
       display: none; }
       .departmental-nav .navbar-toggler:after {
@@ -11059,6 +11060,9 @@ blockquote.pull-quote {
     border-color: #937227; }
     blockquote.pull-quote.pull-quote-accent > p {
       color: #937227; }
+
+.embed-responsive-2_5by1 {
+  padding-bottom: 40%; }
 
 .embed-responsive .embed-responsive-item-overlay {
   position: absolute;

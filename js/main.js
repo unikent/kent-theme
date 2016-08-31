@@ -19753,16 +19753,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 	var services = {
 		facebook: {
-			counterUrl: 'https://graph.facebook.com/?id={url}',
+			// https://developers.facebook.com/docs/reference/fql/link_stat/
+			counterUrl: 'https://graph.facebook.com/fql?q=SELECT+total_count+FROM+link_stat+WHERE+url%3D%22{url}%22&callback=?',
 			convertNumber: function(data) {
-				return data.share.share_count;
+				return data.data[0].total_count;
 			},
 			popupUrl: 'https://www.facebook.com/sharer/sharer.php?u={url}',
 			popupWidth: 600,
 			popupHeight: 359
 		},
 		twitter: {
-			counters: false,
 			popupUrl: 'https://twitter.com/intent/tweet?url={url}&text={title}',
 			popupWidth: 600,
 			popupHeight: 250,
@@ -20040,12 +20040,11 @@ return /******/ (function(modules) { // webpackBootstrap
 				}
 			}
 
-			this.countersLeft--;
-
 			if (this.countersLeft === 0) {
 				this.appear();
 				this.ready();
 			}
+			this.countersLeft--;
 		},
 		appear: function() {
 			this.container.addClass(prefix + '_visible');
@@ -20151,7 +20150,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			// Button
 			var button = $('<span>', {
 				'class': this.getElementClassNames('button'),
-				'html': widget.html()
+				'text': widget.text()
 			});
 			if (options.clickUrl) {
 				var url = makeUrl(options.clickUrl, {
