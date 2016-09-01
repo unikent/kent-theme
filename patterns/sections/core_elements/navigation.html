@@ -1,18 +1,154 @@
 ---
 section: core_elements
 sub_title: Navigation
+lead: A list of the key elements that make up global, sectional and page navigation.
 nav_order: 5
 ---
 
 <div class="content-container">
 	<div class="content-main">
-		<h2 class="pattern">Horizontal section navigation</h2>
-		<h2 class="pattern">Breadcrumb</h2>
-		<h2 class="pattern">Side navigation</h2>
-		<h2 class="pattern">On-this-page jump links</h2>
-		<h2 class="pattern">Priority link feature</h2>
+		<p>Also see <a href="../featured_content/feature_panels.html">featured panels</a> and <a href="../featured_content/feature_layouts.html">feature layouts</a> and <a href="../featured_content/summary_listings.html">summary listings</a>.</p>
+
+
+
+		<h2 class="pattern">Main navigation elements</h2>
+		<img src="/media/images/pattern-page-navigation.png" alt="Diagramme showing navigation elements" style="max-width: 700px" />
+		
+
+		<br /><br />
 		<h2 class="pattern">Tabs</h2>
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#home" role="tab">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#messages" role="tab">Messages</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<div class="tab-pane fade in active" id="home" role="tabpanel">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
+			<div class="tab-pane fade" id="profile" role="tabpanel">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+			<div class="tab-pane fade" id="messages" role="tabpanel">Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+			<div class="tab-pane fade" id="settings" role="tabpanel">Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</div>
+		</div>
+
+
+		<br /><br /><br /><br />
+		<h3>Tabs collapse to accordion at SM</h3>
+		<ul class="nav nav-tabs hidden-sm-down" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#home1" role="tab">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#profile1" role="tab">Profile</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#messages1" role="tab">Messages</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#settings1" role="tab">Settings</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<h3 class="tab-title hidden-md-up" data-toggle="collapse_responsive" data-target="#home1" aria-controls="home" data-parent=".tab-content">Home</h3>
+			<div class="tab-pane fade in active collapse-sm-down" id="home1" role="tabpanel">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
+			<h3 class="tab-title hidden-md-up collapsed" data-toggle="collapse_responsive" data-target="#profile1" aria-controls="profile" data-parent=".tab-content">Profile</h3>
+			<div class="tab-pane fade collapse-sm-down" id="profile1" role="tabpanel">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+			<h3 class="tab-title hidden-md-up collapsed" data-toggle="collapse_responsive" data-target="#messages1" aria-controls="messages" data-parent=".tab-content">Messages</h3>
+			<div class="tab-pane fade collapse-sm-down" id="messages1" role="tabpanel">Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+			<h3 class="tab-title hidden-md-up collapsed" data-toggle="collapse_responsive" data-target="#settings1" aria-controls="settings" data-parent=".tab-content">Settings</h3>
+			<div class="tab-pane fade collapse-sm-down" id="settings1" role="tabpanel">Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</div>
+		</div>
+
+
+
+
+		<br /><br /><br /><br />
+
+
+		<h3>Tabs collapse to accordion at MD</h3>
+		<ul class="nav nav-tabs hidden-md-down" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link active" data-toggle="tab" href="#home2" role="tab">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#profile2" role="tab">Profile</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#messages2" role="tab">Messages</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-toggle="tab" href="#settings2" role="tab">Settings</a>
+			</li>
+		</ul>
+
+		<div class="tab-content">
+			<h3 class="tab-title hidden-lg-up" data-toggle="collapse_responsive" data-target="#home2" aria-controls="home" data-parent=".tab-content">Home</h3>
+			<div class="tab-pane fade in active collapse-md-down" id="home2" role="tabpanel">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
+			<h3 class="tab-title hidden-lg-up collapsed" data-toggle="collapse_responsive" data-target="#profile2" aria-controls="profile" data-parent=".tab-content">Profile</h3>
+			<div class="tab-pane fade collapse-md-down" id="profile2" role="tabpanel">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+			<h3 class="tab-title hidden-lg-up collapsed" data-toggle="collapse_responsive" data-target="#messages2" aria-controls="messages" data-parent=".tab-content">Messages</h3>
+			<div class="tab-pane fade collapse-md-down" id="messages2" role="tabpanel">Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+			<h3 class="tab-title hidden-lg-up collapsed" data-toggle="collapse_responsive" data-target="#settings2" aria-controls="settings" data-parent=".tab-content">Settings</h3>
+			<div class="tab-pane fade collapse-md-down" id="settings2" role="tabpanel">Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</div>
+		</div>
+
+
+
+		<br />	<br /><br /><br />
+		<h2 class="pattern">Top section links</h2>
+		<p>These are used at the top of a section landing page (e.g. department homepage). They provide the top four tasks.</p>
+		<p>In order to maintain a smart and balanced layout, keep the heading to a single line on desktop (20 characters) or a maximum of 2 lines (40 characters).</p>
+		<p>Keep the description text short - a maxiumum of 2 to 3 lines on desktop (about 50 characters).</p>
+
+	</div> 
+</div>
+
+
+
+
+<div class="card-panel card-panel-tertiary nav-links-panel">
+	<div class="card-panel-body">
+		<nav role="menu">
+			<div class="nav-link">
+				<a role="menuitem" href="//www.kent.ac.uk/about/" class="nav-link-title">Top 20 in the UK</a>
+				<span class="nav-link-desc">We rank amongst the best universities in the UK.</span>
+				<a href="//www.kent.ac.uk/about/" class="faux-link-overlay" aria-hidden="true">Top 20 in the UK</a>
+			</div>
+			<div class="nav-link">
+				<a role="menuitem" href="//www.kent.ac.uk/courses/undergraduate/" class="nav-link-title">Undergraduate</a>
+				<span class="nav-link-desc">Quality teaching with world-leading academics.</span>
+				<a href="//www.kent.ac.uk/courses/undergraduate/" class="faux-link-overlay" aria-hidden="true">Undergraduate</a>
+			</div>
+			<div class="nav-link">
+				<a role="menuitem" href="//www.kent.ac.uk/courses/postgraduate/" class="nav-link-title">Postgraduate</a>
+				<span class="nav-link-desc">Affordable programmes with leading researchers.</span>
+				<a href="//www.kent.ac.uk/courses/postgraduate/" class="faux-link-overlay" aria-hidden="true">Postgraduate</a>
+			</div>
+			<div class="nav-link">
+				<a role="menuitem" href="//www.kent.ac.uk/courses/visit/" class="nav-link-title">Visit us</a>
+				<span class="nav-link-desc">Stunning locations and safe, comfortable accommodation.</span>
+				<a href="//www.kent.ac.uk/courses/visit/" class="faux-link-overlay" aria-hidden="true">Visit us</a>
+			</div>
+		</nav>
+	</div>
+</div>
+
+
+
+<div class="content-container">
+	<div class="content-main">
+		<br /><br />
 		<h2 class="pattern">Categorised list of links</h2>
-		<h2 class="pattern">See search and quickspot search</h2>
+
+
 	</div>
 </div>

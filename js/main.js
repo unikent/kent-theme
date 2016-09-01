@@ -2,7 +2,7 @@
 var a="undefined"!=typeof window&&window.setImmediate,b="undefined"!=typeof window&&window.MutationObserver,c="undefined"!=typeof window&&window.postMessage&&window.addEventListener;if(a)return function(a){return window.setImmediate(a)};var d=[];if(b){var e=document.createElement("div"),f=new MutationObserver(function(){var a=d.slice();d.length=0,a.forEach(function(a){a()})});return f.observe(e,{attributes:!0}),function(a){d.length||e.setAttribute("yes","no"),d.push(a)}}return c?(window.addEventListener("message",function(a){var b=a.source;if((b===window||null===b)&&"process-tick"===a.data&&(a.stopPropagation(),d.length>0)){var c=d.shift();c()}},!0),function(a){d.push(a),window.postMessage("process-tick","*")}):function(a){setTimeout(a,0)}}(),e.title="browser",e.browser=!0,e.env={},e.argv=[],e.on=d,e.addListener=d,e.once=d,e.off=d,e.removeListener=d,e.removeAllListeners=d,e.emit=d,e.binding=function(a){throw new Error("process.binding is not supported")},e.cwd=function(){return"/"},e.chdir=function(a){throw new Error("process.chdir is not supported")}},{}],7:[function(a,b,c){"use strict";var d=a("./handlebars/base"),e=a("./handlebars/safe-string")["default"],f=a("./handlebars/exception")["default"],g=a("./handlebars/utils"),h=a("./handlebars/runtime"),i=function(){var a=new d.HandlebarsEnvironment;return g.extend(a,d),a.SafeString=e,a.Exception=f,a.Utils=g,a.escapeExpression=g.escapeExpression,a.VM=h,a.template=function(b){return h.template(b,a)},a},j=i();j.create=i,j["default"]=j,c["default"]=j},{"./handlebars/base":8,"./handlebars/exception":9,"./handlebars/runtime":10,"./handlebars/safe-string":11,"./handlebars/utils":12}],8:[function(a,b,c){"use strict";function d(a,b){this.helpers=a||{},this.partials=b||{},e(this)}function e(a){a.registerHelper("helperMissing",function(){if(1!==arguments.length)throw new g("Missing helper: '"+arguments[arguments.length-1].name+"'")}),a.registerHelper("blockHelperMissing",function(b,c){var d=c.inverse,e=c.fn;if(b===!0)return e(this);if(b===!1||null==b)return d(this);if(k(b))return b.length>0?(c.ids&&(c.ids=[c.name]),a.helpers.each(b,c)):d(this);if(c.data&&c.ids){var g=q(c.data);g.contextPath=f.appendContextPath(c.data.contextPath,c.name),c={data:g}}return e(b,c)}),a.registerHelper("each",function(a,b){if(!b)throw new g("Must pass iterator to #each");var c,d,e=b.fn,h=b.inverse,i=0,j="";if(b.data&&b.ids&&(d=f.appendContextPath(b.data.contextPath,b.ids[0])+"."),l(a)&&(a=a.call(this)),b.data&&(c=q(b.data)),a&&"object"==typeof a)if(k(a))for(var m=a.length;m>i;i++)c&&(c.index=i,c.first=0===i,c.last=i===a.length-1,d&&(c.contextPath=d+i)),j+=e(a[i],{data:c});else for(var n in a)a.hasOwnProperty(n)&&(c&&(c.key=n,c.index=i,c.first=0===i,d&&(c.contextPath=d+n)),j+=e(a[n],{data:c}),i++);return 0===i&&(j=h(this)),j}),a.registerHelper("if",function(a,b){return l(a)&&(a=a.call(this)),!b.hash.includeZero&&!a||f.isEmpty(a)?b.inverse(this):b.fn(this)}),a.registerHelper("unless",function(b,c){return a.helpers["if"].call(this,b,{fn:c.inverse,inverse:c.fn,hash:c.hash})}),a.registerHelper("with",function(a,b){l(a)&&(a=a.call(this));var c=b.fn;if(f.isEmpty(a))return b.inverse(this);if(b.data&&b.ids){var d=q(b.data);d.contextPath=f.appendContextPath(b.data.contextPath,b.ids[0]),b={data:d}}return c(a,b)}),a.registerHelper("log",function(b,c){var d=c.data&&null!=c.data.level?parseInt(c.data.level,10):1;a.log(d,b)}),a.registerHelper("lookup",function(a,b){return a&&a[b]})}var f=a("./utils"),g=a("./exception")["default"],h="2.0.0";c.VERSION=h;var i=6;c.COMPILER_REVISION=i;var j={1:"<= 1.0.rc.2",2:"== 1.0.0-rc.3",3:"== 1.0.0-rc.4",4:"== 1.x.x",5:"== 2.0.0-alpha.x",6:">= 2.0.0-beta.1"};c.REVISION_CHANGES=j;var k=f.isArray,l=f.isFunction,m=f.toString,n="[object Object]";c.HandlebarsEnvironment=d,d.prototype={constructor:d,logger:o,log:p,registerHelper:function(a,b){if(m.call(a)===n){if(b)throw new g("Arg not supported with multiple helpers");f.extend(this.helpers,a)}else this.helpers[a]=b},unregisterHelper:function(a){delete this.helpers[a]},registerPartial:function(a,b){m.call(a)===n?f.extend(this.partials,a):this.partials[a]=b},unregisterPartial:function(a){delete this.partials[a]}};var o={methodMap:{0:"debug",1:"info",2:"warn",3:"error"},DEBUG:0,INFO:1,WARN:2,ERROR:3,level:3,log:function(a,b){if(o.level<=a){var c=o.methodMap[a];"undefined"!=typeof console&&console[c]}}};c.logger=o;var p=o.log;c.log=p;var q=function(a){var b=f.extend({},a);return b._parent=a,b};c.createFrame=q},{"./exception":9,"./utils":12}],9:[function(a,b,c){"use strict";function d(a,b){var c;b&&b.firstLine&&(c=b.firstLine,a+=" - "+c+":"+b.firstColumn);for(var d=Error.prototype.constructor.call(this,a),f=0;f<e.length;f++)this[e[f]]=d[e[f]];c&&(this.lineNumber=c,this.column=b.firstColumn)}var e=["description","fileName","lineNumber","message","name","number","stack"];d.prototype=new Error,c["default"]=d},{}],10:[function(a,b,c){"use strict";function d(a){var b=a&&a[0]||1,c=l;if(b!==c){if(c>b){var d=m[c],e=m[b];throw new k("Template was precompiled with an older version of Handlebars than the current runtime. Please update your precompiler to a newer version ("+d+") or downgrade your runtime to an older version ("+e+").")}throw new k("Template was precompiled with a newer version of Handlebars than the current runtime. Please update your runtime to a newer version ("+a[1]+").")}}function e(a,b){if(!b)throw new k("No environment passed to template");if(!a||!a.main)throw new k("Unknown template object: "+typeof a);b.VM.checkRevision(a.compiler);var c=function(c,d,e,f,g,h,i,l,m){g&&(f=j.extend({},f,g));var n=b.VM.invokePartial.call(this,c,e,f,h,i,l,m);if(null==n&&b.compile){var o={helpers:h,partials:i,data:l,depths:m};i[e]=b.compile(c,{data:void 0!==l,compat:a.compat},b),n=i[e](f,o)}if(null!=n){if(d){for(var p=n.split("\n"),q=0,r=p.length;r>q&&(p[q]||q+1!==r);q++)p[q]=d+p[q];n=p.join("\n")}return n}throw new k("The partial "+e+" could not be compiled when running in runtime-only mode")},d={lookup:function(a,b){for(var c=a.length,d=0;c>d;d++)if(a[d]&&null!=a[d][b])return a[d][b]},lambda:function(a,b){return"function"==typeof a?a.call(b):a},escapeExpression:j.escapeExpression,invokePartial:c,fn:function(b){return a[b]},programs:[],program:function(a,b,c){var d=this.programs[a],e=this.fn(a);return b||c?d=f(this,a,e,b,c):d||(d=this.programs[a]=f(this,a,e)),d},data:function(a,b){for(;a&&b--;)a=a._parent;return a},merge:function(a,b){var c=a||b;return a&&b&&a!==b&&(c=j.extend({},b,a)),c},noop:b.VM.noop,compilerInfo:a.compiler},e=function(b,c){c=c||{};var f=c.data;e._setup(c),!c.partial&&a.useData&&(f=i(b,f));var g;return a.useDepths&&(g=c.depths?[b].concat(c.depths):[b]),a.main.call(d,b,d.helpers,d.partials,f,g)};return e.isTop=!0,e._setup=function(c){c.partial?(d.helpers=c.helpers,d.partials=c.partials):(d.helpers=d.merge(c.helpers,b.helpers),a.usePartial&&(d.partials=d.merge(c.partials,b.partials)))},e._child=function(b,c,e){if(a.useDepths&&!e)throw new k("must pass parent depths");return f(d,b,a[b],c,e)},e}function f(a,b,c,d,e){var f=function(b,f){return f=f||{},c.call(a,b,a.helpers,a.partials,f.data||d,e&&[b].concat(e))};return f.program=b,f.depth=e?e.length:0,f}function g(a,b,c,d,e,f,g){var h={partial:!0,helpers:d,partials:e,data:f,depths:g};if(void 0===a)throw new k("The partial "+b+" could not be found");return a instanceof Function?a(c,h):void 0}function h(){return""}function i(a,b){return b&&"root"in b||(b=b?n(b):{},b.root=a),b}var j=a("./utils"),k=a("./exception")["default"],l=a("./base").COMPILER_REVISION,m=a("./base").REVISION_CHANGES,n=a("./base").createFrame;c.checkRevision=d,c.template=e,c.program=f,c.invokePartial=g,c.noop=h},{"./base":8,"./exception":9,"./utils":12}],11:[function(a,b,c){"use strict";function d(a){this.string=a}d.prototype.toString=function(){return""+this.string},c["default"]=d},{}],12:[function(a,b,c){"use strict";function d(a){return j[a]}function e(a){for(var b=1;b<arguments.length;b++)for(var c in arguments[b])Object.prototype.hasOwnProperty.call(arguments[b],c)&&(a[c]=arguments[b][c]);return a}function f(a){return a instanceof i?a.toString():null==a?"":a?(a=""+a,l.test(a)?a.replace(k,d):a):a+""}function g(a){return a||0===a?!(!o(a)||0!==a.length):!0}function h(a,b){return(a?a+".":"")+b}var i=a("./safe-string")["default"],j={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","`":"&#x60;"},k=/[&<>"'`]/g,l=/[&<>"'`]/;c.extend=e;var m=Object.prototype.toString;c.toString=m;var n=function(a){return"function"==typeof a};n(/x/)&&(n=function(a){return"function"==typeof a&&"[object Function]"===m.call(a)});var n;c.isFunction=n;var o=Array.isArray||function(a){return a&&"object"==typeof a?"[object Array]"===m.call(a):!1};c.isArray=o,c.escapeExpression=f,c.isEmpty=g,c.appendContextPath=h},{"./safe-string":11}],13:[function(a,b,c){b.exports=a("./dist/cjs/handlebars.runtime")},{"./dist/cjs/handlebars.runtime":7}],14:[function(a,b,c){b.exports=a("handlebars/runtime")["default"]},{"handlebars/runtime":13}],15:[function(a,b,c){if(function(){var a=function(){this.datastore=null,this.results=[],this.selectedIndex=0,this.target=null,this.dom=null,this.container=null,this.lastValue="",this.resultsVisible=!1;var a=this,b={};this.attach=function(a){"complete"===document.readyState||a.safeload===!1?b.attach(a):d.addListener(window,"load",function(){b.attach(a)})},this.setDatastore=function(a){null!==this.datastore&&b.hideResults(),this.datastore=a,this.lastValue=""},this.showAll=function(c,d){this.target.focus(),this.target.value="",this.lastValue="";var e="function"==typeof d?d:function(a,b){return a.__keyvalue>b.__keyvalue?1:-1};a.results=a.datastore.all(c).sort_results_by(e).get(),b.render_results(a.results)},this.on=function(b,c){d.addListener(a.target,b,c)},this.showResults=function(){b.showResults()},this.hideResults=function(){b.hideResults()},b.attach=function(c){for(var e in c)a.options[e]=c[e];if(c.target&&(a.target=b.get_option_contents_as_node(a.options.target,!1),a.target)){if("undefined"==typeof a.options.display_name&&(a.options.display_name=a.options.key_value),"undefined"!=typeof a.options.url)d.ajaxGetJSON(c,b.initialise_data);else{if("undefined"==typeof a.options.data)return;b.initialise_data(c.data)}if(a.dom=document.createElement("div"),a.dom.className=a.options.css_class_prefix+"-results","undefined"==typeof a.options.results_container?(a.container=document.createElement("div"),a.target.parentNode.appendChild(a.container)):a.container=b.get_option_contents_as_node(a.options.results_container,!1),a.container.setAttribute("tabindex","100"),a.container.style.display="none",a.container.className=a.options.css_class_prefix+"-results-container","undefined"!=typeof c.results_header){var f=b.get_option_contents_as_node(c.results_header,!0);f&&a.container.appendChild(f)}if(a.container.appendChild(a.dom),"undefined"!=typeof c.results_footer){var g=b.get_option_contents_as_node(c.results_footer,!0);g&&a.container.appendChild(g)}d.addListener(a.target,"keydown",b.handleKeyUp),d.addListener(a.target,"keyup",b.handleKeyDown),d.addListener(a.target,"focus",b.handleFocus),d.addListener(a.target,"blur",b.handleBlur),d.addListener(a.container,"blur",b.handleBlur),d.addListener(a.container,"blur",b.handleKeyUp),"function"==typeof c.ready&&c.ready(a),"undefined"!=typeof c.screenreader&&c.screenreader===!0&&b.screenreaderHelper()}},b.get_option_contents_as_node=function(b,c){var d;if(b="function"==typeof b?b(a):b,"object"==typeof b&&b.nodeType&&1===b.nodeType)return b;if("string"==typeof b){if(-1===b.indexOf(" ")&&(d=1===b.indexOf("#")?document.getElementById(b.substring(1)):document.getElementById(b),null!==d))return d;if("undefined"!=typeof c&&c)return d=document.createElement("div"),d.innerHTML=b,d}return!1},b.screenreaderHelper=function(){var b=document.createElement("span");b.setAttribute("aria-live","assertive"),b.className="screenreader",b.setAttribute("style","position: absolute!important; clip: rect(1px 1px 1px 1px); clip: rect(1px,1px,1px,1px);"),a.target.parentNode.appendChild(b);var c;d.addListener(a.target,"quickspot:end",function(){c&&clearTimeout(c),c=setTimeout(function(){0===a.results.length?b.innerHTML="No suggestions found. Hit enter to search.":b.innerHTML="Found suggestions. Go to "+a.results[a.selectedIndex][a.options.display_name]+"?"},400)}),d.addListener(a.target,"quickspot:select",function(){b.innerHTML="Go to "+a.results[a.selectedIndex][a.options.display_name]+"?"}),d.addListener(a.target,"quickspot:activate",function(){b.innerHTML="Loading..."})},b.findResultsFor=function(c){return""===c?("function"==typeof a.options.no_search_handler&&a.options.no_search_handler(a.dom,a),a.results=[],void b.hideResults()):a.lastValue===c?(b.showResults(),void d.triggerEvent(a.target,"quickspot:result")):(d.triggerEvent(a.target,"quickspot:start"),a.lastValue=c,this.selectedIndex=0,a.results=a.datastore.search(c).get(),b.render_results(a.results),d.triggerEvent(a.target,"quickspot:end"),void d.triggerEvent(a.target,"quickspot:result"))},b.handleFocus=function(c){a.resultsVisible||b.findResultsFor(a.target.value)},b.handleKeyDown=function(c){var e=c.keyCode;return 13===e||38===e||40===e?d.preventDefault(c):void b.findResultsFor(a.target.value)},b.handleKeyUp=function(c){var e=c.keyCode;13===e&&b.handleSelection(a.results[a.selectedIndex]),38===e&&0!==a.results.length&&(b.selectIndex(a.selectedIndex-1),b.scrollResults("up"),d.triggerEvent(a.target,"quickspot:select")),40===e&&0!==a.results.length&&(b.selectIndex(a.selectedIndex+1),b.scrollResults("down"),d.triggerEvent(a.target,"quickspot:select")),13!==e&&38!==e&&40!==e||d.preventDefault(c)},b.handleBlur=function(c){"undefined"!=typeof a.options.hide_on_blur&&a.options.hide_on_blur===!1||setTimeout(function(){a.container!==document.activeElement&&a.target!==document.activeElement&&a.container.contains(document.activeElement)===!1&&b.hideResults()},150)},b.selectIndex=function(b){d.removeClass(a.dom.children[a.selectedIndex],"selected"),b>=a.results.length?a.selectedIndex=a.results.length-1:0>b?a.selectedIndex=0:a.selectedIndex=b,d.addClass(a.dom.children[a.selectedIndex],"selected")},b.scrollResults=function(b){var c=a.dom.clientHeight,d=a.dom.childNodes[a.selectedIndex],e=d.offsetHeight,f=d.offsetTop;"down"===b&&f+e-a.dom.scrollTop>c&&(a.dom.scrollTop=f+e-c),"up"===b&&f<a.dom.scrollTop&&(a.dom.scrollTop=f)},b.render_empty_results=function(){d.triggerEvent(a.target,"quickspot:noresults");var c=a.options.no_results(a,a.lastValue);return c===!1?b.hideResults():(a.dom.innerHTML=c,"undefined"!=typeof a.dom.childNodes[0]&&d.addListener(a.dom.childNodes[0],"click",function(a){b.handleSelection()}),b.showResults())},b.render_results=function(c){if("function"==typeof a.options.parse_results&&(c=a.options.parse_results(c,a.options)),0===c.length)return b.render_empty_results();var e,f,g,h=document.createDocumentFragment();"number"==typeof a.options.max_results&&0!==a.options.max_results&&c.length>a.options.max_results&&(c=c.slice(0,a.options.max_results)),c.forEach(function(c,i){f="function"==typeof a.options.display_handler?a.options.display_handler(c,a):c[a.options.display_name],"undefined"!=typeof a.options.auto_highlight&&a.options.auto_highlight===!0&&(f=f.replace(RegExp("("+a.lastValue+")(?![^<]*>|[^<>]*</)","i"),"<strong>$1</strong>")),e=document.createElement("a"),e.innerHTML=f,g=a.options.css_class_prefix+"-result "+a.options.css_class_prefix+"-result-"+i,"string"==typeof c.qs_result_class&&(g=c.qs_result_class+" "+g),e.className=g,d.addListener(e,"click",function(a){b.handleSelection(c)}),d.addListener(e,"mouseover",function(a){b.selectIndex(i)}),h.appendChild(e)}),d.triggerEvent(a.target,"quickspot:resultsfound"),a.dom.innerHTML="",a.dom.appendChild(h),b.showResults(),b.selectIndex(this.selectedIndex)},b.handleSelection=function(c){return"undefined"==typeof c?a.options.no_results_click(a.lastValue,a):(d.triggerEvent(a.target,"quickspot:activate"),void("undefined"!=typeof a.options.click_handler?a.options.click_handler(c,a):"string"==typeof c.url?window.location.href=c.url:(a.target.value=c[a.options.display_name],b.hideResults())))},b.no_results=function(b,c){return'<a class="'+a.options.css_class_prefix+'-result selected">No results...</a>'},b.initialise_data=function(b){a.setDatastore(c.create(b,a.options)),"undefined"!=typeof a.options.loaded&&a.options.loaded(a.datastore)},b.hideResults=function(){d.triggerEvent(a.target,"quickspot:hideresults"),"function"==typeof a.options.hide_results?a.options.hide_results(a.container,a):a.container.style.display="none",a.resultsVisible=!1},b.showResults=function(){d.triggerEvent(a.target,"quickspot:showresults"),"function"==typeof a.options.show_results?a.options.show_results(a.container,a):a.container.style.display="block",a.resultsVisible=!0},this.options={key_value:"name",css_class_prefix:"quickspot",no_results:b.no_results,no_results_click:function(a,b){}}},c=function(a,b){this.data=[],this.data_filtered=[],this.results=[];var c=this,e={};e.create=function(a,b){for(var d in b)c.options[d]=b[d];if(c.options.key_value||(c.options.key_value="name"),"function"==typeof b.data_pre_parse&&(a=b.data_pre_parse(a,b)),"object"==typeof a){var f=[];for(d in a)a.hasOwnProperty(d)&&f.push(a[d]);a=f}var g="undefined"!=typeof c.options.search_on?c.options.search_on:!1;for(d=0;d<a.length;d++)a[d]=e.pre_process(a[d],g);c.data_filtered=c.data=a},this.find=function(a,b){return a=c.options.string_filter(a),c.options.allow_partial_matches===!0?(c.results=this.data_filtered,a.split(" ").forEach(function(a){c.results=e.find(a,c.results,b)})):this.results=e.find(a,this.data_filtered,b),this},this.sort_results_by=function(a){return"function"==typeof a?this.results.sort(a):(a=c.options.string_filter(a),this.results=e.sort_by_match(this.results,a)),this},this.search=function(a){return this.find(a).sort_results_by(a),this},this.all=function(a){return this.results=a?this.data:this.data_filtered,this},this.filter=function(a,b){return"function"==typeof a?this.results=this.data_filtered=e.findByFunction(a,this.data_filtered):(a=c.options.string_filter(a),this.results=this.data_filtered=e.find(a,this.data_filtered,b)),this},this.clear_filters=function(){return this.data_filtered=this.data,this},this.add=function(a){if(a instanceof Array){for(var b=0;b<a.length;b++)this.add(a[b]);return this}var d="undefined"!=typeof c.options.search_on?c.options.search_on:!1;return this.data.push(e.pre_process(a,d)),this.data_filtered=this.data,this},this.get=function(){return this.results},e.pre_process=function(a,b){var d,e="";if("string"==typeof a.__searchvalues&&"string"==typeof a.__keyvalue)return a;if(b)for(d=0;d<b.length;d++)e+=" "+a[b[d]];else for(d in a)e+=" "+a[d];return a.__searchvalues=c.options.string_filter(e),a.__keyvalue=c.options.string_filter(a[c.options.key_value]),a},e.find=function(a,b,c){var d,e=0,f=[];for("undefined"==typeof c&&(c="__searchvalues"),e=0;e<b.length;e++)d=b[e],-1!==d[c].indexOf(a)&&f.push(d);return f},e.findByFunction=function(a,b){var c,d=0,e=[];for(d=0;d<b.length;d++)c=b[d],a(c)&&e.push(c);return e},e.sort_by_match=function(a,b){for(var d="undefined"==typeof c.options.gen_score?e.calculate_match_score:c.options.gen_score,f=0;f<a.length;f++)a[f].__score=d(a[f],b),a[f].__len_diff=Math.abs(b.length-a[f].__keyvalue.length);return a.sort(function(a,b){return a.__score===b.__score?a.__len_diff===b.__len_diff?a.__searchvalues>b.__searchvalues?1:-1:a.__len_diff>b.__len_diff?1:-1:a.__score<b.__score?1:-1}),a},e.calculate_match_score=function(a,b){var e,f=0;return e=a.__keyvalue.indexOf(b),!c.options.disable_occurrence_weighting&&b.length>2&&(f+=d.occurrences(a.__searchvalues,b)),f+=-1!==a.__searchvalues.indexOf(" "+b)?5:0,f+=-1!==e?10:0,f+=0===e?25:0,f+=0===e&&a.__keyvalue.length===b.length?10:0},e.simplfy_strings=function(a){return a=a.toLowerCase(),a=a.replace(/\&/g,"and"),a.replace(/[^a-z 0-9]/g,"").replace(/\s+/g," ").trim()},this.options={string_filter:e.simplfy_strings,disable_occurrence_weighting:!1,allow_partial_matches:!0},e.create(a,b)};c.create=function(a,b){return new c(a,b)};var d={};d.ajaxGetJSON=function(a,b){var c=null;try{c=window.XMLHttpRequest?new XMLHttpRequest:new ActiveXObject("Microsoft.XMLHTTP")}catch(d){}c.onreadystatechange=function(){4===c.readyState&&200===c.status&&b(JSON.parse(c.responseText))},c.open("GET",a.url,!0),"undefined"!=typeof a.prevent_headers&&a.prevent_headers!==!1||c.setRequestHeader("X-Requested-With","XMLHttpRequest"),c.send(null)},d.addListener=function(a,b,c){window.addEventListener?a.addEventListener(b,c,!1):a.attachEvent("on"+b,c)},d.removeListener=function(a,b,c){window.removeEventListener?a.removeEventListener(b,c,!1):a.detachEvent("on"+b,c)},d.triggerEvent=function(a,b){if(document.createEvent){var c=document.createEvent("HTMLEvents");c.initEvent(b,!0,!0),a.dispatchEvent(c)}},d.addClass=function(a,b){"undefined"!=typeof a&&null!==a&&(d.hasClass(a,b)||(a.className=(a.className+" "+b).trim()))},d.removeClass=function(a,b){"undefined"!=typeof a&&null!==a&&(a.className=a.className.replace(new RegExp("(^|\\s)"+b+"(\\s|$)"),"").trim())},d.hasClass=function(a,b){return"undefined"!=typeof a&&null!==a?null!==a.className.match(new RegExp("(^|\\s)"+b+"(\\s|$)")):void 0},d.preventDefault=function(a){a.preventDefault?a.preventDefault():a.returnValue=!1},d.occurrences=function(a,b){if(a+="",b+="",b.length<=0)return a.length+1;for(var c=0,d=0,e=b.length;;){if(d=a.indexOf(b,d),!(d>=0))break;c++,d+=e}return c};var e={};e.attach=function(b){var c=new a;return c.attach(b),c},e.datastore=function(a){if("undefined"!=typeof a.url){var b={};return d.ajaxGetJSON(a,function(d){b.store=c.create(d,a),"undefined"!=typeof a.loaded&&a.loaded(b.store)}),b}return"undefined"!=typeof a.data?{store:c.create(a.data,a)}:!1},"undefined"!=typeof b&&"undefined"!=typeof b.exports?b.exports=e:"function"==typeof define&&define.amd?define([],function(){return e}):window.quickspot=e}.call({}),"forEach"in Array.prototype||(Array.prototype.forEach=function(a,b){for(var c=0,d=this.length;d>c;c++)c in this&&a.call(b,this[c],c,this)}),String.prototype.trim||(String.prototype.trim=function(){return this.replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,"")}),"undefined"==typeof JSON){var d=document.createElement("script");d.src="//ajax.cdnjs.com/ajax/libs/json2/20110223/json2.js",document.getElementsByTagName("head")[0].appendChild(d)}"undefined"==typeof window.console&&(window.console={log:function(a){}})},{}],16:[function(a,b,c){window.KENT=window.KENT||{},window.KENT.kentbar=window.KENT.kentbar||{},window.KENT.modules=window.KENT.modules||{},window.KENT.modules.quickspot=a("quick-spot");var d=a("exoskeleton"),e=a("./views/bar.js"),f=a("backbone.nativeview"),g=a("./collections/services"),h=a("./collections/departments");d.View=f,d.ajax=a("backbone.nativeajax");try{new window.CustomEvent("test")}catch(i){var j=function(a,b){var c;return b=b||{bubbles:!1,cancelable:!1,detail:void 0},c=document.createEvent("CustomEvent"),c.initCustomEvent(a,b.bubbles,b.cancelable,b.detail),c};j.prototype=window.Event.prototype,window.CustomEvent=j}if(window.KENT.kentbar.defaults={target:!1,render:!0,components:["student","staff"],custom_link:!1,styles:{kentfont:!0,fonts:!0,base:!0}},window.KENT.kentbar.components={student:{title:"Student",action:"student"},staff:{title:"Staff",action:"staff"},alumni:{title:"Alumni",url:"https://www.kent.ac.uk/alumni/"},departments:{title:"Departments",action:"departments"}},window.KENT.kentbar.styles={base:"/assets/main.css",kentfont:"https://static-test.kent.ac.uk/pantheon/static/webfonts/kentfont/css/kentfont.css",fonts:"https://beta.kent.ac.uk/assets/fonts/arial-light.css"},"object"==typeof window.KENT.kentbar.config)for(var k in window.KENT.kentbar.defaults)window.KENT.kentbar.defaults.hasOwnProperty(k)&&"undefined"==typeof window.KENT.kentbar.config[k]&&(window.KENT.kentbar.config[k]=window.KENT.kentbar.defaults[k]);else window.KENT.kentbar.config=window.KENT.kentbar.defaults;var l={services:null,departments:null,container:null,bar:null,init:function(){"use strict";var a=window.KENT.kentbar.config.target,b=this;this.services=new g,this.departments=new h,document.addEventListener("DOMContentLoaded",function(){var c;a===!1&&(c=document.createElement("div"),c.id="kent-bar",b.applyContainerOffsets(c),document.body.insertBefore(c,document.body.childNodes[0]),a="#kent-bar"),b.container=document.querySelector(a),b.bar=new e({el:a}),window.KENT.kentbar.config.render&&b.bar.render(),b.bar.collections={services:b.services,departments:b.departments},b.insertStyles(),b.services.fetch({reset:!0}),b.departments.fetch({reset:!0}),d.history.start()})},insertStylesheet:function(a,b){var c=document.createElement("link");c.setAttribute("rel","stylesheet"),c.setAttribute("type","text/css"),c.href=a,document.getElementsByTagName("head")[0].appendChild(c)},insertStyles:function(){var a;for(a in window.KENT.kentbar.config.styles)window.KENT.kentbar.config.styles.hasOwnProperty(a)&&window.KENT.kentbar.config.styles[a]&&(window.KENT.kentbar.config.styles[a]===!0?"undefined"!=typeof window.KENT.kentbar.styles[a]&&this.insertStylesheet(window.KENT.kentbar.styles[a],a):this.insertStylesheet(window.KENT.kentbar.config.styles[a],a))},applyContainerOffsets:function(a){if("undefined"!=typeof window.getComputedStyle){var b,c,d=window.getComputedStyle(document.body);["Top","Left","Right"].forEach(function(e){b="margin"+e,c="padding"+e,"0px"!==d[b]&&(a.style[b]="-"+d[b]),"0px"!==d[c]&&(a.style[c]="-"+d[c])})}}};window.KENT.kentbar.app=l,window.KENT.kentbar.closeMenus=function(){window.KENT.kentbar.app.bar.mobileMenuClose(),window.KENT.kentbar.app.bar.menu&&window.KENT.kentbar.app.bar.menu.hide()},window.KENT.kentbar.toggleMenu=function(a,b){window.KENT.kentbar.app.bar.toggleMenu(a,b)},b.exports=l,l.init()},{"./collections/departments":18,"./collections/services":19,"./views/bar.js":27,"backbone.nativeajax":1,"backbone.nativeview":2,exoskeleton:4,"quick-spot":15}],17:[function(a,b,c){var d=a("exoskeleton"),e=a("../lib/api-base");b.exports=d.Collection.extend({api:e,cache_key:!1,did_fetch:!1,storeResponse:function(a){this.did_fetch&&this.cache_key&&localStorage.setItem(this.cache_key,JSON.stringify({timestamp:Date.now(),payload:a}))},fetch:function(a){var b=this;if(this.cache_key&&localStorage&&localStorage.getItem(this.cache_key)){var c=JSON.parse(localStorage.getItem(this.cache_key));if(c.timestamp>Date.now()-864e5){var e=c;c=c.payload;var f=a.reset?"reset":"set";return a.parse=!0,this[f](c,a),a.success&&a.success(b,c,a),this.trigger("sync",this,c,a),e}}return this.did_fetch=!0,d.Collection.prototype.fetch.call(this,a)}})},{"../lib/api-base":20,exoskeleton:4}],18:[function(a,b,c){var d=(a("exoskeleton"),a("./base")),e=a("../models/department");if("undefined"==typeof f)var f=a("es6-promise").Promise;b.exports=d.extend({cache_key:"kentbar.departments",model:e,ready:!1,loaded:!1,url:function(){return this.api.get()+"/v1/departments?flat=true"},initialize:function(){var a=this;this.loaded=new f(function(b,c){a.on("reset",function(){a.ready=!0,b(a)}),a.on("error",function(){a.ready=!1,c(a)})})},parse:function(a){return this.storeResponse(a),a}})},{"../models/department":23,"./base":17,"es6-promise":3,exoskeleton:4}],19:[function(a,b,c){var d=(a("exoskeleton"),a("./base")),e=a("../models/service");if("undefined"==typeof f)var f=a("es6-promise").Promise;b.exports=d.extend({cache_key:"kentbar.services",model:e,ready:!1,loaded:!1,url:function(){return this.api.get()+"/v1/services"},key_services:!1,initialize:function(){var a=this;this.loaded=new f(function(b,c){a.on("reset",function(){a.ready=!0,b(a)}),a.on("error",function(){a.ready=!1,c(a)})}),this.on("reset",this.populateKeyServices)},parse:function(a){return this.storeResponse(a),this.key_services=a.key_services,a.services},populateKeyServices:function(){var a,b,c;for(a in this.key_services)if(this.key_services.hasOwnProperty(a))for(b in this.key_services[a])if(this.key_services[a].hasOwnProperty(b)){c=[];for(var d=0;d<this.key_services[a][b].length;d++)c.push(this.get(this.key_services[a][b][d]));this.key_services[a][b]=c}},filterWithTags:function(a){return!a instanceof Array?this:this.filter(function(b){for(var c=0;c<a.length;c++)if(b.get("tags").indexOf(a[c])>-1)return!0;return!1})}})},{"../models/service":24,"./base":17,"es6-promise":3,exoskeleton:4}],20:[function(a,b,c){b.exports={get:function(){"use strict";return window.KENT=window.KENT||{},window.KENT.settings=window.KENT.settings||{},window.KENT.settings.api_url||"https://api.kent.ac.uk/api"}}},{}],21:[function(a,b,c){b.exports=new function(){this.addClass=function(a,b){"undefined"!=typeof a&&null!==a&&(this.hasClass(a,b)||(a.className=(a.className+" "+b).trim()))},this.removeClass=function(a,b){"undefined"!=typeof a&&null!==a&&(a.className=a.className.replace(new RegExp("(^|\\s)"+b+"(\\s|$)"),"").trim())},this.hasClass=function(a,b){return"undefined"!=typeof a&&null!==a?null!==a.className.match(new RegExp("(^|\\s)"+b+"(\\s|$)")):void 0},this.isNodeDecendantOf=function(a,b){for(var c=a,d=100,e=0;c&&c!==document.body&&d>e;){if(c===b)return!0;c=c.parentNode,e++}return!1}}},{}],22:[function(a,b,c){var d=a("exoskeleton"),e=a("../lib/api-base");b.exports=d.Model.extend({api:e,_parseQuickspotString:function(a){return a=a.toLowerCase(),a=a.replace(/\&/g,"and"),a.replace(/[^a-z 0-9]/g,"").replace(/\s+/g," ").trim()}})},{"../lib/api-base":20,exoskeleton:4}],23:[function(a,b,c){var d=(a("exoskeleton"),a("./base"));b.exports=d.extend({validate:function(a,b){return"string"!=typeof a.title?"Departments must have a title attribute":"string"!=typeof a.url?"Departments must have a url attribute":"undefined"!=typeof a.link?"Departments must NOT have a link attribute":void 0},parse:function(a){return"undefined"!=typeof a.url&&(a.link=a.url,delete a.url),"undefined"!=typeof a.title&&(this.__keyvalue=this._parseQuickspotString(a.title),this.__searchvalues=this.__keyvalue),a}})},{"./base":22,exoskeleton:4}],24:[function(a,b,c){var d=(a("exoskeleton"),a("./base"));b.exports=d.extend({validate:function(a,b){return"string"!=typeof a.title?"Service must have a title attribute":"string"!=typeof a.url?"Service must have a url attribute":"undefined"!=typeof a.link?"Service must NOT have a link attribute":void 0},parse:function(a){return"undefined"!=typeof a.url&&(a.link=a.url,delete a.url),"undefined"!=typeof a.title&&(this.__keyvalue=this._parseQuickspotString(a.title),this.__searchvalues=this.__keyvalue),a}})},{"./base":22,exoskeleton:4}],25:[function(a,b,c){var d=a("hbsfy/runtime");b.exports=d.template({1:function(a,b,c,d){return'<nav class="audience-nav-links" role="menu">\n	<a role="menuitem">Hi Bob</a>\n</nav>\n'},3:function(a,b,c,d){var e,f='<button class="audience-menu kf-user" title="Open audience menu" aria-expanded="false"></button>\n<nav class="audience-nav-links" role="menu">\n';return e=b.each.call(a,null!=a?a.components:a,{name:"each",hash:{},fn:this.program(4,d),inverse:this.noop,data:d}),null!=e&&(f+=e),f+"</nav>\n"},4:function(a,b,c,d){var e,f=this.lambda,g=this.escapeExpression,h='	<a role="menuitem"';return e=b["if"].call(a,null!=a?a.url:a,{name:"if",hash:{},fn:this.program(5,d),inverse:this.noop,data:d}),null!=e&&(h+=e),e=b["if"].call(a,null!=a?a.action:a,{name:"if",hash:{},fn:this.program(7,d),inverse:this.noop,data:d}),null!=e&&(h+=e),h+">"+g(f(null!=a?a.title:a,a))+"</a>\n"},5:function(a,b,c,d){var e=this.lambda,f=this.escapeExpression;return' href="'+f(e(null!=a?a.url:a,a))+'"'},7:function(a,b,c,d){var e=this.lambda,f=this.escapeExpression;return' data-action="'+f(e(null!=a?a.action:a,a))+'"'},compiler:[6,">= 2.0.0-beta.1"],main:function(a,b,c,d){var e,f='<a class="navbar-brand kf-kent-horizontal" href="/" title="The University of Kent" >\n<span class="sr-only">The University of Kent</span></a>\n\n';return e=b["if"].call(a,null!=a?a.user:a,{name:"if",hash:{},fn:this.program(1,d),inverse:this.program(3,d),data:d}),null!=e&&(f+=e),f},useData:!0})},{"hbsfy/runtime":14}],26:[function(a,b,c){var d=a("hbsfy/runtime");b.exports=d.template({
 compiler:[6,">= 2.0.0-beta.1"],main:function(a,b,c,d){return'<div class="user-section"></div>\n<div class="search-services"><input name="" id="kent-bar-search" /></div>\n<div class="user-services-section"></div>\n<div class="footer-section"><a href="#">Show all</a></div>'},useData:!0})},{"hbsfy/runtime":14}],27:[function(a,b,c){var d=a("./base"),e=a("../lib/helper"),f=a("./menu"),g=a("../templates/bar.hbs");b.exports=d.extend({events:{"click button.audience-menu":"mobileMenuToggle","click nav.audience-nav-links a":"menuClick"},collections:null,navLinksEl:null,menu:null,components:[],initialize:function(){var a=this;e.addClass(this.el,"kent-bar"),window.KENT.kentbar.config.components.forEach(function(b){"undefined"!=typeof window.KENT.kentbar.components[b]&&a.components.push(window.KENT.kentbar.components[b])}),"object"==typeof window.KENT.kentbar.config.custom_link&&"string"==typeof window.KENT.kentbar.config.custom_link.title&&"string"==typeof window.KENT.kentbar.config.custom_link.url&&this.components.push(window.KENT.kentbar.config.custom_link)},menuClick:function(a){var b=a.target,c=a.target.getAttribute("data-action");return null!==c&&(a.preventDefault(),this.toggleMenu(c,b),a.target.setAttribute("aria-expanded","true")),!1},toggleMenu:function(a,b){if(null!==a){if(!this.menu){this.menu=new f(this.collections),this.el.appendChild(this.menu.el);var c=this;this.menu.on("menu:open",function(a){e.addClass(c.el,"in"),window.dispatchEvent(new CustomEvent("kentbar_menu:open",{detail:{menu:a}}))}),this.menu.on("menu:close",function(a){c._clearLinkOpenStates(),e.removeClass(c.el,"in"),window.dispatchEvent(new CustomEvent("kentbar_menu:close",{detail:{menu:a}}))}),this.menu.on("menu:change",function(a){c._clearLinkOpenStates(a),window.dispatchEvent(new CustomEvent("kentbar_menu:change",{detail:{menu:a}}))})}e.addClass(b,"in"),this.menu.open(a)}else this.menu.hide()},mobileMenuToggle:function(a){e.hasClass(this.el,"in")?this.mobileMenuClose():this.mobileMenuOpen(),this.menu&&this.menu.isOpen&&this.menu.hide()},mobileMenuOpen:function(){var a=this.el.querySelector("button.audience-menu");a.setAttribute("aria-expanded","true"),e.addClass(this.el,"in"),window.dispatchEvent(new CustomEvent("kentbar_mobilemenu:open",{}))},mobileMenuClose:function(){var a=this.el.querySelector("button.audience-menu");a.setAttribute("aria-expanded","false"),e.removeClass(this.el,"in"),window.dispatchEvent(new CustomEvent("kentbar_mobilemenu:close",{}))},render:function(){"use strict";this.renderContent(g({components:this.components})),e.addClass(this.el.querySelector(".audience-nav-links"),"kent-bar-"+this.components.length+"-links")},_clearLinkOpenStates:function(a){for(var b=this.el.querySelectorAll("nav a.in"),c=0;c<b.length;++c)if(b.hasOwnProperty(c)){if(b[c].getAttribute("data-action")===a)continue;e.removeClass(b[c],"in"),b[c].setAttribute("aria-expanded","false")}}})},{"../lib/helper":21,"../templates/bar.hbs":25,"./base":28,"./menu":29}],28:[function(a,b,c){var d=a("exoskeleton"),e=a("backbone.nativeview");d.View=e,d.ajax=a("backbone.nativeajax"),b.exports=d.View.extend({renderContent:function(a){"use strict";this.el.innerHTML=a}})},{"backbone.nativeajax":1,"backbone.nativeview":2,exoskeleton:4}],29:[function(a,b,c){var d=(a("../app"),a("./base")),e=a("../lib/helper"),f=window.KENT.modules.quickspot,g=a("../templates/menu.hbs"),h=!1;b.exports=d.extend({currentMenu:!1,isOpen:!1,services:!1,departments:!1,sections:{},qs:{datastores:{}},initialize:function(a){h=this,this.el=document.createElement("div"),this.el.id="kent-bar-menu",this.el.innerHTML=g(),this.services=a.services,this.departments=a.departments,this.sections={user:this.el.querySelector(".user-section"),keyServices:this.el.querySelector(".user-services-section"),searchServices:this.el.querySelector(".search-services"),footer:this.el.querySelector(".footer-section")},this.qs.instance=this.initQuickspot(),document.body.addEventListener("click",function(a){h.isOpen&&(e.isNodeDecendantOf(a.target,window.KENT.kentbar.app.container.querySelector("#kent-bar-menu"))||e.isNodeDecendantOf(a.target,window.KENT.kentbar.app.container.querySelector(".audience-nav-links"))||h.hide())})},initQuickspot:function(){var a=f.attach({target:this.el.querySelector("#kent-bar-search"),data:{},disable_occurrence_weighting:!0,hide_on_blur:!1,display_handler:this.renderSearchResult,click_handler:this.handleSearchClick,css_class_prefix:"kentbar-quickspot",safeload:!1});return this.on("menu:open",function(){a.target.focus()}),a.on("quickspot:showresults",function(a){h.sections.keyServices.style.display="none"}),a.on("quickspot:hideresults",function(a){h.sections.keyServices.style.display="block"}),this.sections.footer.querySelector("a").addEventListener("click",function(a){h.showAllToggle(a)}),this.on("menu:change",function(){h.showAllToggle(!1,!0)}),a.on("quickspot:start",function(a){h.showAllToggle(a,!0)}),a},open:function(a){this.currentMenu===a&&this.isOpen?this.hide():(this.currentMenu!==a&&(this.render(a),this.currentMenu=a,this.trigger("menu:change",a)),this.show())},show:function(){this.el.style.display="block",this.isOpen=!0,e.addClass(document.body,"show-kentbar-menu"),this.trigger("menu:open")},hide:function(){this.el.style.display="none",this.isOpen=!1,e.removeClass(document.body,"show-kentbar-menu"),this.trigger("menu:close")},showAllToggle:function(a,b){var c=this.sections.footer.querySelector("a");return a&&a.preventDefault(),b===!0?(c.setAttribute("data-open","false"),void(c.innerText="Show all")):void(c.hasAttribute("data-open")&&"true"===c.getAttribute("data-open")?(c.setAttribute("data-open","false"),c.innerText="Show all",this.qs.instance.hideResults()):(c.setAttribute("data-open","true"),c.innerText="Hide all",this.qs.instance.showAll()))},render:function(a){"departments"===a?this.renderDepartments(a):this.renderServices(a)},renderServices:function(a){this.services.loaded.then(function(b){var c=[];"undefined"!=typeof b.key_services[a]&&(c=b.key_services[a]["default"]),h.renderKeyServices(c),h.renderServicesSearch(a)}),this.sections.footer.style.display="block"},renderDepartments:function(a){this.qs.instance.target.placeholder="Search departments...",this.departments.loaded.then(function(b){h._setQuickspotDataStore(a,function(){return b.models})}),this.sections.footer.style.display="none",this.sections.keyServices.innerHTML='<a href="https://www.kent.ac.uk/departments/" class="dept-a-z">Departments A-Z</a>'},renderSearchResult:function(a,b){return"departments"===h.currentMenu?h.renderDepartmentsSearchResult(a,b):h.highlightResult(b.lastValue.split(" "),a.get("title"))},highlightResult:function(a,b){var c;return a.forEach(function(a){0!==a.length&&(c=1===a.length?"i":"ig",b=b.replace(RegExp("("+a+")(?![^<]*>|[^<>]*</)",c),"<strong>$1</strong>"))}),b},renderDepartmentsSearchResult:function(a,b){var c=b.options.css_class_prefix+"-result-subtext",d="",e=a.get("type"),f=a.get("ancestors"),g=h.highlightResult(b.lastValue.split(" "),a.get("title"));return"academic"===e?(f.length>1&&(d+=f[1].title+" - "),f.length>0&&(d+=f[0].title.replace(/Faculty of /,""))):("non-academic"===e&&(e="Professional service department"),f.length>0&&(d+=f[0].title+" - "),d+=e.charAt(0).toUpperCase()+e.slice(1)),g+'<div class="'+c+'">'+d+"</div>"},handleSearchClick:function(a){return document.location.href=a.get("link"),!1},renderServicesSearch:function(a){this.qs.instance.target.placeholder="Search "+a+" systems and services...",this._setQuickspotDataStore(a,function(){return h.services.filterWithTags(["general",a])})},renderKeyServices:function(a){var b="";a.forEach(function(a){b+='<a href="'+a.get("link")+'" class="key-service '+a.get("icon")+'">'+a.get("title")+"</a>"}),this.sections.keyServices.innerHTML=b,this.sections.keyServices.style.display="block"},_setQuickspotDataStore:function(a,b){if("undefined"==typeof this.qs.datastores[a]){var c=b(),d=f.datastore({data:c});this.qs.datastores[a]=d.store}this.qs.instance.setDatastore(this.qs.datastores[a]),this.qs.instance.target.value=""}})},{"../app":16,"../lib/helper":21,"../templates/menu.hbs":26,"./base":28}]},{},[16]);
 /*!
- * jQuery JavaScript Library v2.2.4
+ * jQuery JavaScript Library v2.2.3
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -12,7 +12,7 @@ compiler:[6,">= 2.0.0-beta.1"],main:function(a,b,c,d){return'<div class="user-se
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-05-20T17:23Z
+ * Date: 2016-04-05T19:26Z
  */
 
 (function( global, factory ) {
@@ -68,7 +68,7 @@ var support = {};
 
 
 var
-	version = "2.2.4",
+	version = "2.2.3",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -5009,14 +5009,13 @@ jQuery.Event.prototype = {
 	isDefaultPrevented: returnFalse,
 	isPropagationStopped: returnFalse,
 	isImmediatePropagationStopped: returnFalse,
-	isSimulated: false,
 
 	preventDefault: function() {
 		var e = this.originalEvent;
 
 		this.isDefaultPrevented = returnTrue;
 
-		if ( e && !this.isSimulated ) {
+		if ( e ) {
 			e.preventDefault();
 		}
 	},
@@ -5025,7 +5024,7 @@ jQuery.Event.prototype = {
 
 		this.isPropagationStopped = returnTrue;
 
-		if ( e && !this.isSimulated ) {
+		if ( e ) {
 			e.stopPropagation();
 		}
 	},
@@ -5034,7 +5033,7 @@ jQuery.Event.prototype = {
 
 		this.isImmediatePropagationStopped = returnTrue;
 
-		if ( e && !this.isSimulated ) {
+		if ( e ) {
 			e.stopImmediatePropagation();
 		}
 
@@ -5964,6 +5963,19 @@ function getWidthOrHeight( elem, name, extra ) {
 		val = name === "width" ? elem.offsetWidth : elem.offsetHeight,
 		styles = getStyles( elem ),
 		isBorderBox = jQuery.css( elem, "boxSizing", false, styles ) === "border-box";
+
+	// Support: IE11 only
+	// In IE 11 fullscreen elements inside of an iframe have
+	// 100x too small dimensions (gh-1764).
+	if ( document.msFullscreenElement && window.top !== window ) {
+
+		// Support: IE11 only
+		// Running getBoundingClientRect on a disconnected node
+		// in IE throws an error.
+		if ( elem.getClientRects().length ) {
+			val = Math.round( elem.getBoundingClientRect()[ name ] * 100 );
+		}
+	}
 
 	// Some non-html elements return undefined for offsetWidth, so check for null/undefined
 	// svg - https://bugzilla.mozilla.org/show_bug.cgi?id=649285
@@ -7855,7 +7867,6 @@ jQuery.extend( jQuery.event, {
 	},
 
 	// Piggyback on a donor event to simulate a different one
-	// Used only for `focus(in | out)` events
 	simulate: function( type, elem, event ) {
 		var e = jQuery.extend(
 			new jQuery.Event(),
@@ -7863,10 +7874,27 @@ jQuery.extend( jQuery.event, {
 			{
 				type: type,
 				isSimulated: true
+
+				// Previously, `originalEvent: {}` was set here, so stopPropagation call
+				// would not be triggered on donor event, since in our own
+				// jQuery.event.stopPropagation function we had a check for existence of
+				// originalEvent.stopPropagation method, so, consequently it would be a noop.
+				//
+				// But now, this "simulate" function is used only for events
+				// for which stopPropagation() is noop, so there is no need for that anymore.
+				//
+				// For the 1.x branch though, guard for "click" and "submit"
+				// events is still used, but was moved to jQuery.event.stopPropagation function
+				// because `originalEvent` should point to the original event for the constancy
+				// with other events and for more focused logic
 			}
 		);
 
 		jQuery.event.trigger( e, null, elem );
+
+		if ( e.isDefaultPrevented() ) {
+			event.preventDefault();
+		}
 	}
 
 } );
@@ -20501,7 +20529,7 @@ return /******/ (function(modules) { // webpackBootstrap
 }));
 
 //! moment.js
-//! version : 2.14.1
+//! version : 2.13.0
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
 //! momentjs.com
@@ -20526,19 +20554,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
     function isArray(input) {
         return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
-    }
-
-    function isObject(input) {
-        return Object.prototype.toString.call(input) === '[object Object]';
-    }
-
-    function isObjectEmpty(obj) {
-        var k;
-        for (k in obj) {
-            // even if its not own property I'd still call it non-empty
-            return false;
-        }
-        return true;
     }
 
     function isDate(input) {
@@ -20736,8 +20751,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
     function absFloor (number) {
         if (number < 0) {
-            // -0 -> 0
-            return Math.ceil(number) || 0;
+            return Math.ceil(number);
         } else {
             return Math.floor(number);
         }
@@ -20810,6 +20824,10 @@ return /******/ (function(modules) { // webpackBootstrap
         return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
     }
 
+    function isObject(input) {
+        return Object.prototype.toString.call(input) === '[object Object]';
+    }
+
     function locale_set__set (config) {
         var prop, i;
         for (i in config) {
@@ -20841,14 +20859,6 @@ return /******/ (function(modules) { // webpackBootstrap
                 }
             }
         }
-        for (prop in parentConfig) {
-            if (hasOwnProp(parentConfig, prop) &&
-                    !hasOwnProp(childConfig, prop) &&
-                    isObject(parentConfig[prop])) {
-                // make sure changes to properties don't modify parent config
-                res[prop] = extend({}, res[prop]);
-            }
-        }
         return res;
     }
 
@@ -20874,83 +20884,161 @@ return /******/ (function(modules) { // webpackBootstrap
         };
     }
 
-    var defaultCalendar = {
-        sameDay : '[Today at] LT',
-        nextDay : '[Tomorrow at] LT',
-        nextWeek : 'dddd [at] LT',
-        lastDay : '[Yesterday at] LT',
-        lastWeek : '[Last] dddd [at] LT',
-        sameElse : 'L'
-    };
+    // internal storage for locale config files
+    var locales = {};
+    var globalLocale;
 
-    function locale_calendar__calendar (key, mom, now) {
-        var output = this._calendar[key] || this._calendar['sameElse'];
-        return isFunction(output) ? output.call(mom, now) : output;
+    function normalizeLocale(key) {
+        return key ? key.toLowerCase().replace('_', '-') : key;
     }
 
-    var defaultLongDateFormat = {
-        LTS  : 'h:mm:ss A',
-        LT   : 'h:mm A',
-        L    : 'MM/DD/YYYY',
-        LL   : 'MMMM D, YYYY',
-        LLL  : 'MMMM D, YYYY h:mm A',
-        LLLL : 'dddd, MMMM D, YYYY h:mm A'
-    };
+    // pick the locale from the array
+    // try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
+    // substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
+    function chooseLocale(names) {
+        var i = 0, j, next, locale, split;
 
-    function longDateFormat (key) {
-        var format = this._longDateFormat[key],
-            formatUpper = this._longDateFormat[key.toUpperCase()];
+        while (i < names.length) {
+            split = normalizeLocale(names[i]).split('-');
+            j = split.length;
+            next = normalizeLocale(names[i + 1]);
+            next = next ? next.split('-') : null;
+            while (j > 0) {
+                locale = loadLocale(split.slice(0, j).join('-'));
+                if (locale) {
+                    return locale;
+                }
+                if (next && next.length >= j && compareArrays(split, next, true) >= j - 1) {
+                    //the next array item is better than a shallower substring of this one
+                    break;
+                }
+                j--;
+            }
+            i++;
+        }
+        return null;
+    }
 
-        if (format || !formatUpper) {
-            return format;
+    function loadLocale(name) {
+        var oldLocale = null;
+        // TODO: Find a better way to register and load all the locales in Node
+        if (!locales[name] && (typeof module !== 'undefined') &&
+                module && module.exports) {
+            try {
+                oldLocale = globalLocale._abbr;
+                require('./locale/' + name);
+                // because defineLocale currently also sets the global locale, we
+                // want to undo that for lazy loaded locales
+                locale_locales__getSetGlobalLocale(oldLocale);
+            } catch (e) { }
+        }
+        return locales[name];
+    }
+
+    // This function will load locale and then set the global locale.  If
+    // no arguments are passed in, it will simply return the current global
+    // locale key.
+    function locale_locales__getSetGlobalLocale (key, values) {
+        var data;
+        if (key) {
+            if (isUndefined(values)) {
+                data = locale_locales__getLocale(key);
+            }
+            else {
+                data = defineLocale(key, values);
+            }
+
+            if (data) {
+                // moment.duration._locale = moment._locale = data;
+                globalLocale = data;
+            }
         }
 
-        this._longDateFormat[key] = formatUpper.replace(/MMMM|MM|DD|dddd/g, function (val) {
-            return val.slice(1);
-        });
-
-        return this._longDateFormat[key];
+        return globalLocale._abbr;
     }
 
-    var defaultInvalidDate = 'Invalid date';
+    function defineLocale (name, config) {
+        if (config !== null) {
+            config.abbr = name;
+            if (locales[name] != null) {
+                deprecateSimple('defineLocaleOverride',
+                        'use moment.updateLocale(localeName, config) to change ' +
+                        'an existing locale. moment.defineLocale(localeName, ' +
+                        'config) should only be used for creating a new locale');
+                config = mergeConfigs(locales[name]._config, config);
+            } else if (config.parentLocale != null) {
+                if (locales[config.parentLocale] != null) {
+                    config = mergeConfigs(locales[config.parentLocale]._config, config);
+                } else {
+                    // treat as if there is no base config
+                    deprecateSimple('parentLocaleUndefined',
+                            'specified parentLocale is not defined yet');
+                }
+            }
+            locales[name] = new Locale(config);
 
-    function invalidDate () {
-        return this._invalidDate;
+            // backwards compat for now: also set the locale
+            locale_locales__getSetGlobalLocale(name);
+
+            return locales[name];
+        } else {
+            // useful for testing
+            delete locales[name];
+            return null;
+        }
     }
 
-    var defaultOrdinal = '%d';
-    var defaultOrdinalParse = /\d{1,2}/;
+    function updateLocale(name, config) {
+        if (config != null) {
+            var locale;
+            if (locales[name] != null) {
+                config = mergeConfigs(locales[name]._config, config);
+            }
+            locale = new Locale(config);
+            locale.parentLocale = locales[name];
+            locales[name] = locale;
 
-    function ordinal (number) {
-        return this._ordinal.replace('%d', number);
+            // backwards compat for now: also set the locale
+            locale_locales__getSetGlobalLocale(name);
+        } else {
+            // pass null for config to unupdate, useful for tests
+            if (locales[name] != null) {
+                if (locales[name].parentLocale != null) {
+                    locales[name] = locales[name].parentLocale;
+                } else if (locales[name] != null) {
+                    delete locales[name];
+                }
+            }
+        }
+        return locales[name];
     }
 
-    var defaultRelativeTime = {
-        future : 'in %s',
-        past   : '%s ago',
-        s  : 'a few seconds',
-        m  : 'a minute',
-        mm : '%d minutes',
-        h  : 'an hour',
-        hh : '%d hours',
-        d  : 'a day',
-        dd : '%d days',
-        M  : 'a month',
-        MM : '%d months',
-        y  : 'a year',
-        yy : '%d years'
-    };
+    // returns locale data
+    function locale_locales__getLocale (key) {
+        var locale;
 
-    function relative__relativeTime (number, withoutSuffix, string, isFuture) {
-        var output = this._relativeTime[string];
-        return (isFunction(output)) ?
-            output(number, withoutSuffix, string, isFuture) :
-            output.replace(/%d/i, number);
+        if (key && key._locale && key._locale._abbr) {
+            key = key._locale._abbr;
+        }
+
+        if (!key) {
+            return globalLocale;
+        }
+
+        if (!isArray(key)) {
+            //short-circuit everything else
+            locale = loadLocale(key);
+            if (locale) {
+                return locale;
+            }
+            key = [key];
+        }
+
+        return chooseLocale(key);
     }
 
-    function pastFuture (diff, output) {
-        var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
-        return isFunction(format) ? format(output) : format.replace(/%s/i, output);
+    function locale_locales__listLocales() {
+        return keys(locales);
     }
 
     var aliases = {};
@@ -20981,23 +21069,6 @@ return /******/ (function(modules) { // webpackBootstrap
         return normalizedInput;
     }
 
-    var priorities = {};
-
-    function addUnitPriority(unit, priority) {
-        priorities[unit] = priority;
-    }
-
-    function getPrioritizedUnits(unitsObj) {
-        var units = [];
-        for (var u in unitsObj) {
-            units.push({unit: u, priority: priorities[u]});
-        }
-        units.sort(function (a, b) {
-            return a.priority - b.priority;
-        });
-        return units;
-    }
-
     function makeGetSet (unit, keepTime) {
         return function (value) {
             if (value != null) {
@@ -21023,21 +21094,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
     // MOMENTS
 
-    function stringGet (units) {
-        units = normalizeUnits(units);
-        if (isFunction(this[units])) {
-            return this[units]();
-        }
-        return this;
-    }
-
-
-    function stringSet (units, value) {
+    function getSet (units, value) {
+        var unit;
         if (typeof units === 'object') {
-            units = normalizeObjectUnits(units);
-            var prioritized = getPrioritizedUnits(units);
-            for (var i = 0; i < prioritized.length; i++) {
-                this[prioritized[i].unit](units[prioritized[i].unit]);
+            for (unit in units) {
+                this.set(unit, units[unit]);
             }
         } else {
             units = normalizeUnits(units);
@@ -21277,10 +21338,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
     addUnitAlias('month', 'M');
 
-    // PRIORITY
-
-    addUnitPriority('month', 8);
-
     // PARSING
 
     addRegexToken('M',    match1to2);
@@ -21312,7 +21369,7 @@ return /******/ (function(modules) { // webpackBootstrap
     var defaultLocaleMonths = 'January_February_March_April_May_June_July_August_September_October_November_December'.split('_');
     function localeMonths (m, format) {
         return isArray(this._months) ? this._months[m.month()] :
-            this._months[(this._months.isFormat || MONTHS_IN_FORMAT).test(format) ? 'format' : 'standalone'][m.month()];
+            this._months[MONTHS_IN_FORMAT.test(format) ? 'format' : 'standalone'][m.month()];
     }
 
     var defaultLocaleMonthsShort = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec'.split('_');
@@ -21453,9 +21510,6 @@ return /******/ (function(modules) { // webpackBootstrap
                 return this._monthsShortRegex;
             }
         } else {
-            if (!hasOwnProp(this, '_monthsShortRegex')) {
-                this._monthsShortRegex = defaultMonthsShortRegex;
-            }
             return this._monthsShortStrictRegex && isStrict ?
                 this._monthsShortStrictRegex : this._monthsShortRegex;
         }
@@ -21473,9 +21527,6 @@ return /******/ (function(modules) { // webpackBootstrap
                 return this._monthsRegex;
             }
         } else {
-            if (!hasOwnProp(this, '_monthsRegex')) {
-                this._monthsRegex = defaultMonthsRegex;
-            }
             return this._monthsStrictRegex && isStrict ?
                 this._monthsStrictRegex : this._monthsRegex;
         }
@@ -21504,8 +21555,6 @@ return /******/ (function(modules) { // webpackBootstrap
         for (i = 0; i < 12; i++) {
             shortPieces[i] = regexEscape(shortPieces[i]);
             longPieces[i] = regexEscape(longPieces[i]);
-        }
-        for (i = 0; i < 24; i++) {
             mixedPieces[i] = regexEscape(mixedPieces[i]);
         }
 
@@ -21513,873 +21562,6 @@ return /******/ (function(modules) { // webpackBootstrap
         this._monthsShortRegex = this._monthsRegex;
         this._monthsStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
         this._monthsShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
-    }
-
-    // FORMATTING
-
-    addFormatToken('Y', 0, 0, function () {
-        var y = this.year();
-        return y <= 9999 ? '' + y : '+' + y;
-    });
-
-    addFormatToken(0, ['YY', 2], 0, function () {
-        return this.year() % 100;
-    });
-
-    addFormatToken(0, ['YYYY',   4],       0, 'year');
-    addFormatToken(0, ['YYYYY',  5],       0, 'year');
-    addFormatToken(0, ['YYYYYY', 6, true], 0, 'year');
-
-    // ALIASES
-
-    addUnitAlias('year', 'y');
-
-    // PRIORITIES
-
-    addUnitPriority('year', 1);
-
-    // PARSING
-
-    addRegexToken('Y',      matchSigned);
-    addRegexToken('YY',     match1to2, match2);
-    addRegexToken('YYYY',   match1to4, match4);
-    addRegexToken('YYYYY',  match1to6, match6);
-    addRegexToken('YYYYYY', match1to6, match6);
-
-    addParseToken(['YYYYY', 'YYYYYY'], YEAR);
-    addParseToken('YYYY', function (input, array) {
-        array[YEAR] = input.length === 2 ? utils_hooks__hooks.parseTwoDigitYear(input) : toInt(input);
-    });
-    addParseToken('YY', function (input, array) {
-        array[YEAR] = utils_hooks__hooks.parseTwoDigitYear(input);
-    });
-    addParseToken('Y', function (input, array) {
-        array[YEAR] = parseInt(input, 10);
-    });
-
-    // HELPERS
-
-    function daysInYear(year) {
-        return isLeapYear(year) ? 366 : 365;
-    }
-
-    function isLeapYear(year) {
-        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
-    }
-
-    // HOOKS
-
-    utils_hooks__hooks.parseTwoDigitYear = function (input) {
-        return toInt(input) + (toInt(input) > 68 ? 1900 : 2000);
-    };
-
-    // MOMENTS
-
-    var getSetYear = makeGetSet('FullYear', true);
-
-    function getIsLeapYear () {
-        return isLeapYear(this.year());
-    }
-
-    function createDate (y, m, d, h, M, s, ms) {
-        //can't just apply() to create a date:
-        //http://stackoverflow.com/questions/181348/instantiating-a-javascript-object-by-calling-prototype-constructor-apply
-        var date = new Date(y, m, d, h, M, s, ms);
-
-        //the date constructor remaps years 0-99 to 1900-1999
-        if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
-            date.setFullYear(y);
-        }
-        return date;
-    }
-
-    function createUTCDate (y) {
-        var date = new Date(Date.UTC.apply(null, arguments));
-
-        //the Date.UTC function remaps years 0-99 to 1900-1999
-        if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
-            date.setUTCFullYear(y);
-        }
-        return date;
-    }
-
-    // start-of-first-week - start-of-year
-    function firstWeekOffset(year, dow, doy) {
-        var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
-            fwd = 7 + dow - doy,
-            // first-week day local weekday -- which local weekday is fwd
-            fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
-
-        return -fwdlw + fwd - 1;
-    }
-
-    //http://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
-    function dayOfYearFromWeeks(year, week, weekday, dow, doy) {
-        var localWeekday = (7 + weekday - dow) % 7,
-            weekOffset = firstWeekOffset(year, dow, doy),
-            dayOfYear = 1 + 7 * (week - 1) + localWeekday + weekOffset,
-            resYear, resDayOfYear;
-
-        if (dayOfYear <= 0) {
-            resYear = year - 1;
-            resDayOfYear = daysInYear(resYear) + dayOfYear;
-        } else if (dayOfYear > daysInYear(year)) {
-            resYear = year + 1;
-            resDayOfYear = dayOfYear - daysInYear(year);
-        } else {
-            resYear = year;
-            resDayOfYear = dayOfYear;
-        }
-
-        return {
-            year: resYear,
-            dayOfYear: resDayOfYear
-        };
-    }
-
-    function weekOfYear(mom, dow, doy) {
-        var weekOffset = firstWeekOffset(mom.year(), dow, doy),
-            week = Math.floor((mom.dayOfYear() - weekOffset - 1) / 7) + 1,
-            resWeek, resYear;
-
-        if (week < 1) {
-            resYear = mom.year() - 1;
-            resWeek = week + weeksInYear(resYear, dow, doy);
-        } else if (week > weeksInYear(mom.year(), dow, doy)) {
-            resWeek = week - weeksInYear(mom.year(), dow, doy);
-            resYear = mom.year() + 1;
-        } else {
-            resYear = mom.year();
-            resWeek = week;
-        }
-
-        return {
-            week: resWeek,
-            year: resYear
-        };
-    }
-
-    function weeksInYear(year, dow, doy) {
-        var weekOffset = firstWeekOffset(year, dow, doy),
-            weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
-        return (daysInYear(year) - weekOffset + weekOffsetNext) / 7;
-    }
-
-    // FORMATTING
-
-    addFormatToken('w', ['ww', 2], 'wo', 'week');
-    addFormatToken('W', ['WW', 2], 'Wo', 'isoWeek');
-
-    // ALIASES
-
-    addUnitAlias('week', 'w');
-    addUnitAlias('isoWeek', 'W');
-
-    // PRIORITIES
-
-    addUnitPriority('week', 5);
-    addUnitPriority('isoWeek', 5);
-
-    // PARSING
-
-    addRegexToken('w',  match1to2);
-    addRegexToken('ww', match1to2, match2);
-    addRegexToken('W',  match1to2);
-    addRegexToken('WW', match1to2, match2);
-
-    addWeekParseToken(['w', 'ww', 'W', 'WW'], function (input, week, config, token) {
-        week[token.substr(0, 1)] = toInt(input);
-    });
-
-    // HELPERS
-
-    // LOCALES
-
-    function localeWeek (mom) {
-        return weekOfYear(mom, this._week.dow, this._week.doy).week;
-    }
-
-    var defaultLocaleWeek = {
-        dow : 0, // Sunday is the first day of the week.
-        doy : 6  // The week that contains Jan 1st is the first week of the year.
-    };
-
-    function localeFirstDayOfWeek () {
-        return this._week.dow;
-    }
-
-    function localeFirstDayOfYear () {
-        return this._week.doy;
-    }
-
-    // MOMENTS
-
-    function getSetWeek (input) {
-        var week = this.localeData().week(this);
-        return input == null ? week : this.add((input - week) * 7, 'd');
-    }
-
-    function getSetISOWeek (input) {
-        var week = weekOfYear(this, 1, 4).week;
-        return input == null ? week : this.add((input - week) * 7, 'd');
-    }
-
-    // FORMATTING
-
-    addFormatToken('d', 0, 'do', 'day');
-
-    addFormatToken('dd', 0, 0, function (format) {
-        return this.localeData().weekdaysMin(this, format);
-    });
-
-    addFormatToken('ddd', 0, 0, function (format) {
-        return this.localeData().weekdaysShort(this, format);
-    });
-
-    addFormatToken('dddd', 0, 0, function (format) {
-        return this.localeData().weekdays(this, format);
-    });
-
-    addFormatToken('e', 0, 0, 'weekday');
-    addFormatToken('E', 0, 0, 'isoWeekday');
-
-    // ALIASES
-
-    addUnitAlias('day', 'd');
-    addUnitAlias('weekday', 'e');
-    addUnitAlias('isoWeekday', 'E');
-
-    // PRIORITY
-    addUnitPriority('day', 11);
-    addUnitPriority('weekday', 11);
-    addUnitPriority('isoWeekday', 11);
-
-    // PARSING
-
-    addRegexToken('d',    match1to2);
-    addRegexToken('e',    match1to2);
-    addRegexToken('E',    match1to2);
-    addRegexToken('dd',   function (isStrict, locale) {
-        return locale.weekdaysMinRegex(isStrict);
-    });
-    addRegexToken('ddd',   function (isStrict, locale) {
-        return locale.weekdaysShortRegex(isStrict);
-    });
-    addRegexToken('dddd',   function (isStrict, locale) {
-        return locale.weekdaysRegex(isStrict);
-    });
-
-    addWeekParseToken(['dd', 'ddd', 'dddd'], function (input, week, config, token) {
-        var weekday = config._locale.weekdaysParse(input, token, config._strict);
-        // if we didn't get a weekday name, mark the date as invalid
-        if (weekday != null) {
-            week.d = weekday;
-        } else {
-            getParsingFlags(config).invalidWeekday = input;
-        }
-    });
-
-    addWeekParseToken(['d', 'e', 'E'], function (input, week, config, token) {
-        week[token] = toInt(input);
-    });
-
-    // HELPERS
-
-    function parseWeekday(input, locale) {
-        if (typeof input !== 'string') {
-            return input;
-        }
-
-        if (!isNaN(input)) {
-            return parseInt(input, 10);
-        }
-
-        input = locale.weekdaysParse(input);
-        if (typeof input === 'number') {
-            return input;
-        }
-
-        return null;
-    }
-
-    function parseIsoWeekday(input, locale) {
-        if (typeof input === 'string') {
-            return locale.weekdaysParse(input) % 7 || 7;
-        }
-        return isNaN(input) ? null : input;
-    }
-
-    // LOCALES
-
-    var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
-    function localeWeekdays (m, format) {
-        return isArray(this._weekdays) ? this._weekdays[m.day()] :
-            this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
-    }
-
-    var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
-    function localeWeekdaysShort (m) {
-        return this._weekdaysShort[m.day()];
-    }
-
-    var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
-    function localeWeekdaysMin (m) {
-        return this._weekdaysMin[m.day()];
-    }
-
-    function day_of_week__handleStrictParse(weekdayName, format, strict) {
-        var i, ii, mom, llc = weekdayName.toLocaleLowerCase();
-        if (!this._weekdaysParse) {
-            this._weekdaysParse = [];
-            this._shortWeekdaysParse = [];
-            this._minWeekdaysParse = [];
-
-            for (i = 0; i < 7; ++i) {
-                mom = create_utc__createUTC([2000, 1]).day(i);
-                this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
-                this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
-                this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
-            }
-        }
-
-        if (strict) {
-            if (format === 'dddd') {
-                ii = indexOf.call(this._weekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            } else if (format === 'ddd') {
-                ii = indexOf.call(this._shortWeekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            } else {
-                ii = indexOf.call(this._minWeekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            }
-        } else {
-            if (format === 'dddd') {
-                ii = indexOf.call(this._weekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._shortWeekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._minWeekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            } else if (format === 'ddd') {
-                ii = indexOf.call(this._shortWeekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._weekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._minWeekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            } else {
-                ii = indexOf.call(this._minWeekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._weekdaysParse, llc);
-                if (ii !== -1) {
-                    return ii;
-                }
-                ii = indexOf.call(this._shortWeekdaysParse, llc);
-                return ii !== -1 ? ii : null;
-            }
-        }
-    }
-
-    function localeWeekdaysParse (weekdayName, format, strict) {
-        var i, mom, regex;
-
-        if (this._weekdaysParseExact) {
-            return day_of_week__handleStrictParse.call(this, weekdayName, format, strict);
-        }
-
-        if (!this._weekdaysParse) {
-            this._weekdaysParse = [];
-            this._minWeekdaysParse = [];
-            this._shortWeekdaysParse = [];
-            this._fullWeekdaysParse = [];
-        }
-
-        for (i = 0; i < 7; i++) {
-            // make the regex if we don't have it already
-
-            mom = create_utc__createUTC([2000, 1]).day(i);
-            if (strict && !this._fullWeekdaysParse[i]) {
-                this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
-                this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
-                this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
-            }
-            if (!this._weekdaysParse[i]) {
-                regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
-                this._weekdaysParse[i] = new RegExp(regex.replace('.', ''), 'i');
-            }
-            // test the regex
-            if (strict && format === 'dddd' && this._fullWeekdaysParse[i].test(weekdayName)) {
-                return i;
-            } else if (strict && format === 'ddd' && this._shortWeekdaysParse[i].test(weekdayName)) {
-                return i;
-            } else if (strict && format === 'dd' && this._minWeekdaysParse[i].test(weekdayName)) {
-                return i;
-            } else if (!strict && this._weekdaysParse[i].test(weekdayName)) {
-                return i;
-            }
-        }
-    }
-
-    // MOMENTS
-
-    function getSetDayOfWeek (input) {
-        if (!this.isValid()) {
-            return input != null ? this : NaN;
-        }
-        var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
-        if (input != null) {
-            input = parseWeekday(input, this.localeData());
-            return this.add(input - day, 'd');
-        } else {
-            return day;
-        }
-    }
-
-    function getSetLocaleDayOfWeek (input) {
-        if (!this.isValid()) {
-            return input != null ? this : NaN;
-        }
-        var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
-        return input == null ? weekday : this.add(input - weekday, 'd');
-    }
-
-    function getSetISODayOfWeek (input) {
-        if (!this.isValid()) {
-            return input != null ? this : NaN;
-        }
-
-        // behaves the same as moment#day except
-        // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
-        // as a setter, sunday should belong to the previous week.
-
-        if (input != null) {
-            var weekday = parseIsoWeekday(input, this.localeData());
-            return this.day(this.day() % 7 ? weekday : weekday - 7);
-        } else {
-            return this.day() || 7;
-        }
-    }
-
-    var defaultWeekdaysRegex = matchWord;
-    function weekdaysRegex (isStrict) {
-        if (this._weekdaysParseExact) {
-            if (!hasOwnProp(this, '_weekdaysRegex')) {
-                computeWeekdaysParse.call(this);
-            }
-            if (isStrict) {
-                return this._weekdaysStrictRegex;
-            } else {
-                return this._weekdaysRegex;
-            }
-        } else {
-            if (!hasOwnProp(this, '_weekdaysRegex')) {
-                this._weekdaysRegex = defaultWeekdaysRegex;
-            }
-            return this._weekdaysStrictRegex && isStrict ?
-                this._weekdaysStrictRegex : this._weekdaysRegex;
-        }
-    }
-
-    var defaultWeekdaysShortRegex = matchWord;
-    function weekdaysShortRegex (isStrict) {
-        if (this._weekdaysParseExact) {
-            if (!hasOwnProp(this, '_weekdaysRegex')) {
-                computeWeekdaysParse.call(this);
-            }
-            if (isStrict) {
-                return this._weekdaysShortStrictRegex;
-            } else {
-                return this._weekdaysShortRegex;
-            }
-        } else {
-            if (!hasOwnProp(this, '_weekdaysShortRegex')) {
-                this._weekdaysShortRegex = defaultWeekdaysShortRegex;
-            }
-            return this._weekdaysShortStrictRegex && isStrict ?
-                this._weekdaysShortStrictRegex : this._weekdaysShortRegex;
-        }
-    }
-
-    var defaultWeekdaysMinRegex = matchWord;
-    function weekdaysMinRegex (isStrict) {
-        if (this._weekdaysParseExact) {
-            if (!hasOwnProp(this, '_weekdaysRegex')) {
-                computeWeekdaysParse.call(this);
-            }
-            if (isStrict) {
-                return this._weekdaysMinStrictRegex;
-            } else {
-                return this._weekdaysMinRegex;
-            }
-        } else {
-            if (!hasOwnProp(this, '_weekdaysMinRegex')) {
-                this._weekdaysMinRegex = defaultWeekdaysMinRegex;
-            }
-            return this._weekdaysMinStrictRegex && isStrict ?
-                this._weekdaysMinStrictRegex : this._weekdaysMinRegex;
-        }
-    }
-
-
-    function computeWeekdaysParse () {
-        function cmpLenRev(a, b) {
-            return b.length - a.length;
-        }
-
-        var minPieces = [], shortPieces = [], longPieces = [], mixedPieces = [],
-            i, mom, minp, shortp, longp;
-        for (i = 0; i < 7; i++) {
-            // make the regex if we don't have it already
-            mom = create_utc__createUTC([2000, 1]).day(i);
-            minp = this.weekdaysMin(mom, '');
-            shortp = this.weekdaysShort(mom, '');
-            longp = this.weekdays(mom, '');
-            minPieces.push(minp);
-            shortPieces.push(shortp);
-            longPieces.push(longp);
-            mixedPieces.push(minp);
-            mixedPieces.push(shortp);
-            mixedPieces.push(longp);
-        }
-        // Sorting makes sure if one weekday (or abbr) is a prefix of another it
-        // will match the longer piece.
-        minPieces.sort(cmpLenRev);
-        shortPieces.sort(cmpLenRev);
-        longPieces.sort(cmpLenRev);
-        mixedPieces.sort(cmpLenRev);
-        for (i = 0; i < 7; i++) {
-            shortPieces[i] = regexEscape(shortPieces[i]);
-            longPieces[i] = regexEscape(longPieces[i]);
-            mixedPieces[i] = regexEscape(mixedPieces[i]);
-        }
-
-        this._weekdaysRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
-        this._weekdaysShortRegex = this._weekdaysRegex;
-        this._weekdaysMinRegex = this._weekdaysRegex;
-
-        this._weekdaysStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
-        this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
-        this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
-    }
-
-    // FORMATTING
-
-    function hFormat() {
-        return this.hours() % 12 || 12;
-    }
-
-    function kFormat() {
-        return this.hours() || 24;
-    }
-
-    addFormatToken('H', ['HH', 2], 0, 'hour');
-    addFormatToken('h', ['hh', 2], 0, hFormat);
-    addFormatToken('k', ['kk', 2], 0, kFormat);
-
-    addFormatToken('hmm', 0, 0, function () {
-        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2);
-    });
-
-    addFormatToken('hmmss', 0, 0, function () {
-        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2) +
-            zeroFill(this.seconds(), 2);
-    });
-
-    addFormatToken('Hmm', 0, 0, function () {
-        return '' + this.hours() + zeroFill(this.minutes(), 2);
-    });
-
-    addFormatToken('Hmmss', 0, 0, function () {
-        return '' + this.hours() + zeroFill(this.minutes(), 2) +
-            zeroFill(this.seconds(), 2);
-    });
-
-    function meridiem (token, lowercase) {
-        addFormatToken(token, 0, 0, function () {
-            return this.localeData().meridiem(this.hours(), this.minutes(), lowercase);
-        });
-    }
-
-    meridiem('a', true);
-    meridiem('A', false);
-
-    // ALIASES
-
-    addUnitAlias('hour', 'h');
-
-    // PRIORITY
-    addUnitPriority('hour', 13);
-
-    // PARSING
-
-    function matchMeridiem (isStrict, locale) {
-        return locale._meridiemParse;
-    }
-
-    addRegexToken('a',  matchMeridiem);
-    addRegexToken('A',  matchMeridiem);
-    addRegexToken('H',  match1to2);
-    addRegexToken('h',  match1to2);
-    addRegexToken('HH', match1to2, match2);
-    addRegexToken('hh', match1to2, match2);
-
-    addRegexToken('hmm', match3to4);
-    addRegexToken('hmmss', match5to6);
-    addRegexToken('Hmm', match3to4);
-    addRegexToken('Hmmss', match5to6);
-
-    addParseToken(['H', 'HH'], HOUR);
-    addParseToken(['a', 'A'], function (input, array, config) {
-        config._isPm = config._locale.isPM(input);
-        config._meridiem = input;
-    });
-    addParseToken(['h', 'hh'], function (input, array, config) {
-        array[HOUR] = toInt(input);
-        getParsingFlags(config).bigHour = true;
-    });
-    addParseToken('hmm', function (input, array, config) {
-        var pos = input.length - 2;
-        array[HOUR] = toInt(input.substr(0, pos));
-        array[MINUTE] = toInt(input.substr(pos));
-        getParsingFlags(config).bigHour = true;
-    });
-    addParseToken('hmmss', function (input, array, config) {
-        var pos1 = input.length - 4;
-        var pos2 = input.length - 2;
-        array[HOUR] = toInt(input.substr(0, pos1));
-        array[MINUTE] = toInt(input.substr(pos1, 2));
-        array[SECOND] = toInt(input.substr(pos2));
-        getParsingFlags(config).bigHour = true;
-    });
-    addParseToken('Hmm', function (input, array, config) {
-        var pos = input.length - 2;
-        array[HOUR] = toInt(input.substr(0, pos));
-        array[MINUTE] = toInt(input.substr(pos));
-    });
-    addParseToken('Hmmss', function (input, array, config) {
-        var pos1 = input.length - 4;
-        var pos2 = input.length - 2;
-        array[HOUR] = toInt(input.substr(0, pos1));
-        array[MINUTE] = toInt(input.substr(pos1, 2));
-        array[SECOND] = toInt(input.substr(pos2));
-    });
-
-    // LOCALES
-
-    function localeIsPM (input) {
-        // IE8 Quirks Mode & IE7 Standards Mode do not allow accessing strings like arrays
-        // Using charAt should be more compatible.
-        return ((input + '').toLowerCase().charAt(0) === 'p');
-    }
-
-    var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
-    function localeMeridiem (hours, minutes, isLower) {
-        if (hours > 11) {
-            return isLower ? 'pm' : 'PM';
-        } else {
-            return isLower ? 'am' : 'AM';
-        }
-    }
-
-
-    // MOMENTS
-
-    // Setting the hour should keep the time, because the user explicitly
-    // specified which hour he wants. So trying to maintain the same hour (in
-    // a new timezone) makes sense. Adding/subtracting hours does not follow
-    // this rule.
-    var getSetHour = makeGetSet('Hours', true);
-
-    var baseConfig = {
-        calendar: defaultCalendar,
-        longDateFormat: defaultLongDateFormat,
-        invalidDate: defaultInvalidDate,
-        ordinal: defaultOrdinal,
-        ordinalParse: defaultOrdinalParse,
-        relativeTime: defaultRelativeTime,
-
-        months: defaultLocaleMonths,
-        monthsShort: defaultLocaleMonthsShort,
-
-        week: defaultLocaleWeek,
-
-        weekdays: defaultLocaleWeekdays,
-        weekdaysMin: defaultLocaleWeekdaysMin,
-        weekdaysShort: defaultLocaleWeekdaysShort,
-
-        meridiemParse: defaultLocaleMeridiemParse
-    };
-
-    // internal storage for locale config files
-    var locales = {};
-    var globalLocale;
-
-    function normalizeLocale(key) {
-        return key ? key.toLowerCase().replace('_', '-') : key;
-    }
-
-    // pick the locale from the array
-    // try ['en-au', 'en-gb'] as 'en-au', 'en-gb', 'en', as in move through the list trying each
-    // substring from most specific to least, but move to the next array item if it's a more specific variant than the current root
-    function chooseLocale(names) {
-        var i = 0, j, next, locale, split;
-
-        while (i < names.length) {
-            split = normalizeLocale(names[i]).split('-');
-            j = split.length;
-            next = normalizeLocale(names[i + 1]);
-            next = next ? next.split('-') : null;
-            while (j > 0) {
-                locale = loadLocale(split.slice(0, j).join('-'));
-                if (locale) {
-                    return locale;
-                }
-                if (next && next.length >= j && compareArrays(split, next, true) >= j - 1) {
-                    //the next array item is better than a shallower substring of this one
-                    break;
-                }
-                j--;
-            }
-            i++;
-        }
-        return null;
-    }
-
-    function loadLocale(name) {
-        var oldLocale = null;
-        // TODO: Find a better way to register and load all the locales in Node
-        if (!locales[name] && (typeof module !== 'undefined') &&
-                module && module.exports) {
-            try {
-                oldLocale = globalLocale._abbr;
-                require('./locale/' + name);
-                // because defineLocale currently also sets the global locale, we
-                // want to undo that for lazy loaded locales
-                locale_locales__getSetGlobalLocale(oldLocale);
-            } catch (e) { }
-        }
-        return locales[name];
-    }
-
-    // This function will load locale and then set the global locale.  If
-    // no arguments are passed in, it will simply return the current global
-    // locale key.
-    function locale_locales__getSetGlobalLocale (key, values) {
-        var data;
-        if (key) {
-            if (isUndefined(values)) {
-                data = locale_locales__getLocale(key);
-            }
-            else {
-                data = defineLocale(key, values);
-            }
-
-            if (data) {
-                // moment.duration._locale = moment._locale = data;
-                globalLocale = data;
-            }
-        }
-
-        return globalLocale._abbr;
-    }
-
-    function defineLocale (name, config) {
-        if (config !== null) {
-            var parentConfig = baseConfig;
-            config.abbr = name;
-            if (locales[name] != null) {
-                deprecateSimple('defineLocaleOverride',
-                        'use moment.updateLocale(localeName, config) to change ' +
-                        'an existing locale. moment.defineLocale(localeName, ' +
-                        'config) should only be used for creating a new locale ' +
-                        'See http://momentjs.com/guides/#/warnings/define-locale/ for more info.');
-                parentConfig = locales[name]._config;
-            } else if (config.parentLocale != null) {
-                if (locales[config.parentLocale] != null) {
-                    parentConfig = locales[config.parentLocale]._config;
-                } else {
-                    // treat as if there is no base config
-                    deprecateSimple('parentLocaleUndefined',
-                            'specified parentLocale is not defined yet. See http://momentjs.com/guides/#/warnings/parent-locale/');
-                }
-            }
-            locales[name] = new Locale(mergeConfigs(parentConfig, config));
-
-            // backwards compat for now: also set the locale
-            locale_locales__getSetGlobalLocale(name);
-
-            return locales[name];
-        } else {
-            // useful for testing
-            delete locales[name];
-            return null;
-        }
-    }
-
-    function updateLocale(name, config) {
-        if (config != null) {
-            var locale, parentConfig = baseConfig;
-            // MERGE
-            if (locales[name] != null) {
-                parentConfig = locales[name]._config;
-            }
-            config = mergeConfigs(parentConfig, config);
-            locale = new Locale(config);
-            locale.parentLocale = locales[name];
-            locales[name] = locale;
-
-            // backwards compat for now: also set the locale
-            locale_locales__getSetGlobalLocale(name);
-        } else {
-            // pass null for config to unupdate, useful for tests
-            if (locales[name] != null) {
-                if (locales[name].parentLocale != null) {
-                    locales[name] = locales[name].parentLocale;
-                } else if (locales[name] != null) {
-                    delete locales[name];
-                }
-            }
-        }
-        return locales[name];
-    }
-
-    // returns locale data
-    function locale_locales__getLocale (key) {
-        var locale;
-
-        if (key && key._locale && key._locale._abbr) {
-            key = key._locale._abbr;
-        }
-
-        if (!key) {
-            return globalLocale;
-        }
-
-        if (!isArray(key)) {
-            //short-circuit everything else
-            locale = loadLocale(key);
-            if (locale) {
-                return locale;
-            }
-            key = [key];
-        }
-
-        return chooseLocale(key);
-    }
-
-    function locale_locales__listLocales() {
-        return keys(locales);
     }
 
     function checkOverflow (m) {
@@ -22522,11 +21704,157 @@ return /******/ (function(modules) { // webpackBootstrap
         'moment construction falls back to js Date. This is ' +
         'discouraged and will be removed in upcoming major ' +
         'release. Please refer to ' +
-        'http://momentjs.com/guides/#/warnings/js-date/ for more info.',
+        'https://github.com/moment/moment/issues/1407 for more info.',
         function (config) {
             config._d = new Date(config._i + (config._useUTC ? ' UTC' : ''));
         }
     );
+
+    function createDate (y, m, d, h, M, s, ms) {
+        //can't just apply() to create a date:
+        //http://stackoverflow.com/questions/181348/instantiating-a-javascript-object-by-calling-prototype-constructor-apply
+        var date = new Date(y, m, d, h, M, s, ms);
+
+        //the date constructor remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0 && isFinite(date.getFullYear())) {
+            date.setFullYear(y);
+        }
+        return date;
+    }
+
+    function createUTCDate (y) {
+        var date = new Date(Date.UTC.apply(null, arguments));
+
+        //the Date.UTC function remaps years 0-99 to 1900-1999
+        if (y < 100 && y >= 0 && isFinite(date.getUTCFullYear())) {
+            date.setUTCFullYear(y);
+        }
+        return date;
+    }
+
+    // FORMATTING
+
+    addFormatToken('Y', 0, 0, function () {
+        var y = this.year();
+        return y <= 9999 ? '' + y : '+' + y;
+    });
+
+    addFormatToken(0, ['YY', 2], 0, function () {
+        return this.year() % 100;
+    });
+
+    addFormatToken(0, ['YYYY',   4],       0, 'year');
+    addFormatToken(0, ['YYYYY',  5],       0, 'year');
+    addFormatToken(0, ['YYYYYY', 6, true], 0, 'year');
+
+    // ALIASES
+
+    addUnitAlias('year', 'y');
+
+    // PARSING
+
+    addRegexToken('Y',      matchSigned);
+    addRegexToken('YY',     match1to2, match2);
+    addRegexToken('YYYY',   match1to4, match4);
+    addRegexToken('YYYYY',  match1to6, match6);
+    addRegexToken('YYYYYY', match1to6, match6);
+
+    addParseToken(['YYYYY', 'YYYYYY'], YEAR);
+    addParseToken('YYYY', function (input, array) {
+        array[YEAR] = input.length === 2 ? utils_hooks__hooks.parseTwoDigitYear(input) : toInt(input);
+    });
+    addParseToken('YY', function (input, array) {
+        array[YEAR] = utils_hooks__hooks.parseTwoDigitYear(input);
+    });
+    addParseToken('Y', function (input, array) {
+        array[YEAR] = parseInt(input, 10);
+    });
+
+    // HELPERS
+
+    function daysInYear(year) {
+        return isLeapYear(year) ? 366 : 365;
+    }
+
+    function isLeapYear(year) {
+        return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+    }
+
+    // HOOKS
+
+    utils_hooks__hooks.parseTwoDigitYear = function (input) {
+        return toInt(input) + (toInt(input) > 68 ? 1900 : 2000);
+    };
+
+    // MOMENTS
+
+    var getSetYear = makeGetSet('FullYear', true);
+
+    function getIsLeapYear () {
+        return isLeapYear(this.year());
+    }
+
+    // start-of-first-week - start-of-year
+    function firstWeekOffset(year, dow, doy) {
+        var // first-week day -- which january is always in the first week (4 for iso, 1 for other)
+            fwd = 7 + dow - doy,
+            // first-week day local weekday -- which local weekday is fwd
+            fwdlw = (7 + createUTCDate(year, 0, fwd).getUTCDay() - dow) % 7;
+
+        return -fwdlw + fwd - 1;
+    }
+
+    //http://en.wikipedia.org/wiki/ISO_week_date#Calculating_a_date_given_the_year.2C_week_number_and_weekday
+    function dayOfYearFromWeeks(year, week, weekday, dow, doy) {
+        var localWeekday = (7 + weekday - dow) % 7,
+            weekOffset = firstWeekOffset(year, dow, doy),
+            dayOfYear = 1 + 7 * (week - 1) + localWeekday + weekOffset,
+            resYear, resDayOfYear;
+
+        if (dayOfYear <= 0) {
+            resYear = year - 1;
+            resDayOfYear = daysInYear(resYear) + dayOfYear;
+        } else if (dayOfYear > daysInYear(year)) {
+            resYear = year + 1;
+            resDayOfYear = dayOfYear - daysInYear(year);
+        } else {
+            resYear = year;
+            resDayOfYear = dayOfYear;
+        }
+
+        return {
+            year: resYear,
+            dayOfYear: resDayOfYear
+        };
+    }
+
+    function weekOfYear(mom, dow, doy) {
+        var weekOffset = firstWeekOffset(mom.year(), dow, doy),
+            week = Math.floor((mom.dayOfYear() - weekOffset - 1) / 7) + 1,
+            resWeek, resYear;
+
+        if (week < 1) {
+            resYear = mom.year() - 1;
+            resWeek = week + weeksInYear(resYear, dow, doy);
+        } else if (week > weeksInYear(mom.year(), dow, doy)) {
+            resWeek = week - weeksInYear(mom.year(), dow, doy);
+            resYear = mom.year() + 1;
+        } else {
+            resYear = mom.year();
+            resWeek = week;
+        }
+
+        return {
+            week: resWeek,
+            year: resYear
+        };
+    }
+
+    function weeksInYear(year, dow, doy) {
+        var weekOffset = firstWeekOffset(year, dow, doy),
+            weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
+        return (daysInYear(year) - weekOffset + weekOffsetNext) / 7;
+    }
 
     // Pick the first defined of two or three arguments.
     function defaults(a, b, c) {
@@ -22724,9 +22052,9 @@ return /******/ (function(modules) { // webpackBootstrap
         }
 
         // clear _12h flag if hour is <= 12
-        if (config._a[HOUR] <= 12 &&
-            getParsingFlags(config).bigHour === true &&
-            config._a[HOUR] > 0) {
+        if (getParsingFlags(config).bigHour === true &&
+                config._a[HOUR] <= 12 &&
+                config._a[HOUR] > 0) {
             getParsingFlags(config).bigHour = undefined;
         }
 
@@ -22852,11 +22180,11 @@ return /******/ (function(modules) { // webpackBootstrap
             return new Moment(checkOverflow(input));
         } else if (isArray(format)) {
             configFromStringAndArray(config);
-        } else if (isDate(input)) {
-            config._d = input;
         } else if (format) {
             configFromStringAndFormat(config);
-        }  else {
+        } else if (isDate(input)) {
+            config._d = input;
+        } else {
             configFromInput(config);
         }
 
@@ -22897,11 +22225,6 @@ return /******/ (function(modules) { // webpackBootstrap
             strict = locale;
             locale = undefined;
         }
-
-        if ((isObject(input) && isObjectEmpty(input)) ||
-                (isArray(input) && input.length === 0)) {
-            input = undefined;
-        }
         // object construction must be done this way.
         // https://github.com/moment/moment/issues/1423
         c._isAMomentObject = true;
@@ -22919,19 +22242,19 @@ return /******/ (function(modules) { // webpackBootstrap
     }
 
     var prototypeMin = deprecate(
-        'moment().min is deprecated, use moment.max instead. http://momentjs.com/guides/#/warnings/min-max/',
-        function () {
-            var other = local__createLocal.apply(null, arguments);
-            if (this.isValid() && other.isValid()) {
-                return other < this ? this : other;
-            } else {
-                return valid__createInvalid();
-            }
-        }
-    );
+         'moment().min is deprecated, use moment.max instead. https://github.com/moment/moment/issues/1548',
+         function () {
+             var other = local__createLocal.apply(null, arguments);
+             if (this.isValid() && other.isValid()) {
+                 return other < this ? this : other;
+             } else {
+                 return valid__createInvalid();
+             }
+         }
+     );
 
     var prototypeMax = deprecate(
-        'moment().max is deprecated, use moment.min instead. http://momentjs.com/guides/#/warnings/min-max/',
+        'moment().max is deprecated, use moment.min instead. https://github.com/moment/moment/issues/1548',
         function () {
             var other = local__createLocal.apply(null, arguments);
             if (this.isValid() && other.isValid()) {
@@ -23350,8 +22673,7 @@ return /******/ (function(modules) { // webpackBootstrap
             var dur, tmp;
             //invert the arguments, but complain about it
             if (period !== null && !isNaN(+period)) {
-                deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period). ' +
-                'See http://momentjs.com/guides/#/warnings/add-inverted-param/ for more info.');
+                deprecateSimple(name, 'moment().' + name  + '(period, number) is deprecated. Please use moment().' + name + '(number, period).');
                 tmp = val; val = period; period = tmp;
             }
 
@@ -23391,24 +22713,20 @@ return /******/ (function(modules) { // webpackBootstrap
     var add_subtract__add      = createAdder(1, 'add');
     var add_subtract__subtract = createAdder(-1, 'subtract');
 
-    function getCalendarFormat(myMoment, now) {
-        var diff = myMoment.diff(now, 'days', true);
-        return diff < -6 ? 'sameElse' :
-                diff < -1 ? 'lastWeek' :
-                diff < 0 ? 'lastDay' :
-                diff < 1 ? 'sameDay' :
-                diff < 2 ? 'nextDay' :
-                diff < 7 ? 'nextWeek' : 'sameElse';
-    }
-
     function moment_calendar__calendar (time, formats) {
         // We want to compare the start of today, vs this.
         // Getting start-of-today depends on whether we're local/utc/offset or not.
         var now = time || local__createLocal(),
             sod = cloneWithOffset(now, this).startOf('day'),
-            format = utils_hooks__hooks.calendarFormat(this, sod) || 'sameElse';
+            diff = this.diff(sod, 'days', true),
+            format = diff < -6 ? 'sameElse' :
+                diff < -1 ? 'lastWeek' :
+                diff < 0 ? 'lastDay' :
+                diff < 1 ? 'sameDay' :
+                diff < 2 ? 'nextDay' :
+                diff < 7 ? 'nextWeek' : 'sameElse';
 
-        var output = formats && (isFunction(formats[format]) ? formats[format].call(this, now) : formats[format]);
+        var output = formats && (isFunction(formats[format]) ? formats[format]() : formats[format]);
 
         return this.format(output || this.localeData().calendar(format, this, local__createLocal(now)));
     }
@@ -23625,27 +22943,27 @@ return /******/ (function(modules) { // webpackBootstrap
         // the following switch intentionally omits break keywords
         // to utilize falling through the cases.
         switch (units) {
-            case 'year':
-                this.month(0);
-                /* falls through */
-            case 'quarter':
-            case 'month':
-                this.date(1);
-                /* falls through */
-            case 'week':
-            case 'isoWeek':
-            case 'day':
-            case 'date':
-                this.hours(0);
-                /* falls through */
-            case 'hour':
-                this.minutes(0);
-                /* falls through */
-            case 'minute':
-                this.seconds(0);
-                /* falls through */
-            case 'second':
-                this.milliseconds(0);
+        case 'year':
+            this.month(0);
+            /* falls through */
+        case 'quarter':
+        case 'month':
+            this.date(1);
+            /* falls through */
+        case 'week':
+        case 'isoWeek':
+        case 'day':
+        case 'date':
+            this.hours(0);
+            /* falls through */
+        case 'hour':
+            this.minutes(0);
+            /* falls through */
+        case 'minute':
+            this.seconds(0);
+            /* falls through */
+        case 'second':
+            this.milliseconds(0);
         }
 
         // weeks are a special case
@@ -23687,7 +23005,7 @@ return /******/ (function(modules) { // webpackBootstrap
     }
 
     function toDate () {
-        return new Date(this.valueOf());
+        return this._offset ? new Date(this.valueOf()) : this._d;
     }
 
     function toArray () {
@@ -23758,12 +23076,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
     addUnitAlias('weekYear', 'gg');
     addUnitAlias('isoWeekYear', 'GG');
-
-    // PRIORITY
-
-    addUnitPriority('weekYear', 1);
-    addUnitPriority('isoWeekYear', 1);
-
 
     // PARSING
 
@@ -23840,10 +23152,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
     addUnitAlias('quarter', 'Q');
 
-    // PRIORITY
-
-    addUnitPriority('quarter', 7);
-
     // PARSING
 
     addRegexToken('Q', match1);
@@ -23859,14 +23167,65 @@ return /******/ (function(modules) { // webpackBootstrap
 
     // FORMATTING
 
+    addFormatToken('w', ['ww', 2], 'wo', 'week');
+    addFormatToken('W', ['WW', 2], 'Wo', 'isoWeek');
+
+    // ALIASES
+
+    addUnitAlias('week', 'w');
+    addUnitAlias('isoWeek', 'W');
+
+    // PARSING
+
+    addRegexToken('w',  match1to2);
+    addRegexToken('ww', match1to2, match2);
+    addRegexToken('W',  match1to2);
+    addRegexToken('WW', match1to2, match2);
+
+    addWeekParseToken(['w', 'ww', 'W', 'WW'], function (input, week, config, token) {
+        week[token.substr(0, 1)] = toInt(input);
+    });
+
+    // HELPERS
+
+    // LOCALES
+
+    function localeWeek (mom) {
+        return weekOfYear(mom, this._week.dow, this._week.doy).week;
+    }
+
+    var defaultLocaleWeek = {
+        dow : 0, // Sunday is the first day of the week.
+        doy : 6  // The week that contains Jan 1st is the first week of the year.
+    };
+
+    function localeFirstDayOfWeek () {
+        return this._week.dow;
+    }
+
+    function localeFirstDayOfYear () {
+        return this._week.doy;
+    }
+
+    // MOMENTS
+
+    function getSetWeek (input) {
+        var week = this.localeData().week(this);
+        return input == null ? week : this.add((input - week) * 7, 'd');
+    }
+
+    function getSetISOWeek (input) {
+        var week = weekOfYear(this, 1, 4).week;
+        return input == null ? week : this.add((input - week) * 7, 'd');
+    }
+
+    // FORMATTING
+
     addFormatToken('D', ['DD', 2], 'Do', 'date');
 
     // ALIASES
 
     addUnitAlias('date', 'D');
-
-    // PRIOROITY
-    addUnitPriority('date', 9);
 
     // PARSING
 
@@ -23887,14 +23246,332 @@ return /******/ (function(modules) { // webpackBootstrap
 
     // FORMATTING
 
+    addFormatToken('d', 0, 'do', 'day');
+
+    addFormatToken('dd', 0, 0, function (format) {
+        return this.localeData().weekdaysMin(this, format);
+    });
+
+    addFormatToken('ddd', 0, 0, function (format) {
+        return this.localeData().weekdaysShort(this, format);
+    });
+
+    addFormatToken('dddd', 0, 0, function (format) {
+        return this.localeData().weekdays(this, format);
+    });
+
+    addFormatToken('e', 0, 0, 'weekday');
+    addFormatToken('E', 0, 0, 'isoWeekday');
+
+    // ALIASES
+
+    addUnitAlias('day', 'd');
+    addUnitAlias('weekday', 'e');
+    addUnitAlias('isoWeekday', 'E');
+
+    // PARSING
+
+    addRegexToken('d',    match1to2);
+    addRegexToken('e',    match1to2);
+    addRegexToken('E',    match1to2);
+    addRegexToken('dd',   function (isStrict, locale) {
+        return locale.weekdaysMinRegex(isStrict);
+    });
+    addRegexToken('ddd',   function (isStrict, locale) {
+        return locale.weekdaysShortRegex(isStrict);
+    });
+    addRegexToken('dddd',   function (isStrict, locale) {
+        return locale.weekdaysRegex(isStrict);
+    });
+
+    addWeekParseToken(['dd', 'ddd', 'dddd'], function (input, week, config, token) {
+        var weekday = config._locale.weekdaysParse(input, token, config._strict);
+        // if we didn't get a weekday name, mark the date as invalid
+        if (weekday != null) {
+            week.d = weekday;
+        } else {
+            getParsingFlags(config).invalidWeekday = input;
+        }
+    });
+
+    addWeekParseToken(['d', 'e', 'E'], function (input, week, config, token) {
+        week[token] = toInt(input);
+    });
+
+    // HELPERS
+
+    function parseWeekday(input, locale) {
+        if (typeof input !== 'string') {
+            return input;
+        }
+
+        if (!isNaN(input)) {
+            return parseInt(input, 10);
+        }
+
+        input = locale.weekdaysParse(input);
+        if (typeof input === 'number') {
+            return input;
+        }
+
+        return null;
+    }
+
+    // LOCALES
+
+    var defaultLocaleWeekdays = 'Sunday_Monday_Tuesday_Wednesday_Thursday_Friday_Saturday'.split('_');
+    function localeWeekdays (m, format) {
+        return isArray(this._weekdays) ? this._weekdays[m.day()] :
+            this._weekdays[this._weekdays.isFormat.test(format) ? 'format' : 'standalone'][m.day()];
+    }
+
+    var defaultLocaleWeekdaysShort = 'Sun_Mon_Tue_Wed_Thu_Fri_Sat'.split('_');
+    function localeWeekdaysShort (m) {
+        return this._weekdaysShort[m.day()];
+    }
+
+    var defaultLocaleWeekdaysMin = 'Su_Mo_Tu_We_Th_Fr_Sa'.split('_');
+    function localeWeekdaysMin (m) {
+        return this._weekdaysMin[m.day()];
+    }
+
+    function day_of_week__handleStrictParse(weekdayName, format, strict) {
+        var i, ii, mom, llc = weekdayName.toLocaleLowerCase();
+        if (!this._weekdaysParse) {
+            this._weekdaysParse = [];
+            this._shortWeekdaysParse = [];
+            this._minWeekdaysParse = [];
+
+            for (i = 0; i < 7; ++i) {
+                mom = create_utc__createUTC([2000, 1]).day(i);
+                this._minWeekdaysParse[i] = this.weekdaysMin(mom, '').toLocaleLowerCase();
+                this._shortWeekdaysParse[i] = this.weekdaysShort(mom, '').toLocaleLowerCase();
+                this._weekdaysParse[i] = this.weekdays(mom, '').toLocaleLowerCase();
+            }
+        }
+
+        if (strict) {
+            if (format === 'dddd') {
+                ii = indexOf.call(this._weekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else if (format === 'ddd') {
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        } else {
+            if (format === 'dddd') {
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else if (format === 'ddd') {
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            } else {
+                ii = indexOf.call(this._minWeekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._weekdaysParse, llc);
+                if (ii !== -1) {
+                    return ii;
+                }
+                ii = indexOf.call(this._shortWeekdaysParse, llc);
+                return ii !== -1 ? ii : null;
+            }
+        }
+    }
+
+    function localeWeekdaysParse (weekdayName, format, strict) {
+        var i, mom, regex;
+
+        if (this._weekdaysParseExact) {
+            return day_of_week__handleStrictParse.call(this, weekdayName, format, strict);
+        }
+
+        if (!this._weekdaysParse) {
+            this._weekdaysParse = [];
+            this._minWeekdaysParse = [];
+            this._shortWeekdaysParse = [];
+            this._fullWeekdaysParse = [];
+        }
+
+        for (i = 0; i < 7; i++) {
+            // make the regex if we don't have it already
+
+            mom = create_utc__createUTC([2000, 1]).day(i);
+            if (strict && !this._fullWeekdaysParse[i]) {
+                this._fullWeekdaysParse[i] = new RegExp('^' + this.weekdays(mom, '').replace('.', '\.?') + '$', 'i');
+                this._shortWeekdaysParse[i] = new RegExp('^' + this.weekdaysShort(mom, '').replace('.', '\.?') + '$', 'i');
+                this._minWeekdaysParse[i] = new RegExp('^' + this.weekdaysMin(mom, '').replace('.', '\.?') + '$', 'i');
+            }
+            if (!this._weekdaysParse[i]) {
+                regex = '^' + this.weekdays(mom, '') + '|^' + this.weekdaysShort(mom, '') + '|^' + this.weekdaysMin(mom, '');
+                this._weekdaysParse[i] = new RegExp(regex.replace('.', ''), 'i');
+            }
+            // test the regex
+            if (strict && format === 'dddd' && this._fullWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (strict && format === 'ddd' && this._shortWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (strict && format === 'dd' && this._minWeekdaysParse[i].test(weekdayName)) {
+                return i;
+            } else if (!strict && this._weekdaysParse[i].test(weekdayName)) {
+                return i;
+            }
+        }
+    }
+
+    // MOMENTS
+
+    function getSetDayOfWeek (input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        var day = this._isUTC ? this._d.getUTCDay() : this._d.getDay();
+        if (input != null) {
+            input = parseWeekday(input, this.localeData());
+            return this.add(input - day, 'd');
+        } else {
+            return day;
+        }
+    }
+
+    function getSetLocaleDayOfWeek (input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        var weekday = (this.day() + 7 - this.localeData()._week.dow) % 7;
+        return input == null ? weekday : this.add(input - weekday, 'd');
+    }
+
+    function getSetISODayOfWeek (input) {
+        if (!this.isValid()) {
+            return input != null ? this : NaN;
+        }
+        // behaves the same as moment#day except
+        // as a getter, returns 7 instead of 0 (1-7 range instead of 0-6)
+        // as a setter, sunday should belong to the previous week.
+        return input == null ? this.day() || 7 : this.day(this.day() % 7 ? input : input - 7);
+    }
+
+    var defaultWeekdaysRegex = matchWord;
+    function weekdaysRegex (isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysStrictRegex;
+            } else {
+                return this._weekdaysRegex;
+            }
+        } else {
+            return this._weekdaysStrictRegex && isStrict ?
+                this._weekdaysStrictRegex : this._weekdaysRegex;
+        }
+    }
+
+    var defaultWeekdaysShortRegex = matchWord;
+    function weekdaysShortRegex (isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysShortStrictRegex;
+            } else {
+                return this._weekdaysShortRegex;
+            }
+        } else {
+            return this._weekdaysShortStrictRegex && isStrict ?
+                this._weekdaysShortStrictRegex : this._weekdaysShortRegex;
+        }
+    }
+
+    var defaultWeekdaysMinRegex = matchWord;
+    function weekdaysMinRegex (isStrict) {
+        if (this._weekdaysParseExact) {
+            if (!hasOwnProp(this, '_weekdaysRegex')) {
+                computeWeekdaysParse.call(this);
+            }
+            if (isStrict) {
+                return this._weekdaysMinStrictRegex;
+            } else {
+                return this._weekdaysMinRegex;
+            }
+        } else {
+            return this._weekdaysMinStrictRegex && isStrict ?
+                this._weekdaysMinStrictRegex : this._weekdaysMinRegex;
+        }
+    }
+
+
+    function computeWeekdaysParse () {
+        function cmpLenRev(a, b) {
+            return b.length - a.length;
+        }
+
+        var minPieces = [], shortPieces = [], longPieces = [], mixedPieces = [],
+            i, mom, minp, shortp, longp;
+        for (i = 0; i < 7; i++) {
+            // make the regex if we don't have it already
+            mom = create_utc__createUTC([2000, 1]).day(i);
+            minp = this.weekdaysMin(mom, '');
+            shortp = this.weekdaysShort(mom, '');
+            longp = this.weekdays(mom, '');
+            minPieces.push(minp);
+            shortPieces.push(shortp);
+            longPieces.push(longp);
+            mixedPieces.push(minp);
+            mixedPieces.push(shortp);
+            mixedPieces.push(longp);
+        }
+        // Sorting makes sure if one weekday (or abbr) is a prefix of another it
+        // will match the longer piece.
+        minPieces.sort(cmpLenRev);
+        shortPieces.sort(cmpLenRev);
+        longPieces.sort(cmpLenRev);
+        mixedPieces.sort(cmpLenRev);
+        for (i = 0; i < 7; i++) {
+            shortPieces[i] = regexEscape(shortPieces[i]);
+            longPieces[i] = regexEscape(longPieces[i]);
+            mixedPieces[i] = regexEscape(mixedPieces[i]);
+        }
+
+        this._weekdaysRegex = new RegExp('^(' + mixedPieces.join('|') + ')', 'i');
+        this._weekdaysShortRegex = this._weekdaysRegex;
+        this._weekdaysMinRegex = this._weekdaysRegex;
+
+        this._weekdaysStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
+        this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
+        this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
+    }
+
+    // FORMATTING
+
     addFormatToken('DDD', ['DDDD', 3], 'DDDo', 'dayOfYear');
 
     // ALIASES
 
     addUnitAlias('dayOfYear', 'DDD');
-
-    // PRIORITY
-    addUnitPriority('dayOfYear', 4);
 
     // PARSING
 
@@ -23915,15 +23592,136 @@ return /******/ (function(modules) { // webpackBootstrap
 
     // FORMATTING
 
+    function hFormat() {
+        return this.hours() % 12 || 12;
+    }
+
+    function kFormat() {
+        return this.hours() || 24;
+    }
+
+    addFormatToken('H', ['HH', 2], 0, 'hour');
+    addFormatToken('h', ['hh', 2], 0, hFormat);
+    addFormatToken('k', ['kk', 2], 0, kFormat);
+
+    addFormatToken('hmm', 0, 0, function () {
+        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2);
+    });
+
+    addFormatToken('hmmss', 0, 0, function () {
+        return '' + hFormat.apply(this) + zeroFill(this.minutes(), 2) +
+            zeroFill(this.seconds(), 2);
+    });
+
+    addFormatToken('Hmm', 0, 0, function () {
+        return '' + this.hours() + zeroFill(this.minutes(), 2);
+    });
+
+    addFormatToken('Hmmss', 0, 0, function () {
+        return '' + this.hours() + zeroFill(this.minutes(), 2) +
+            zeroFill(this.seconds(), 2);
+    });
+
+    function meridiem (token, lowercase) {
+        addFormatToken(token, 0, 0, function () {
+            return this.localeData().meridiem(this.hours(), this.minutes(), lowercase);
+        });
+    }
+
+    meridiem('a', true);
+    meridiem('A', false);
+
+    // ALIASES
+
+    addUnitAlias('hour', 'h');
+
+    // PARSING
+
+    function matchMeridiem (isStrict, locale) {
+        return locale._meridiemParse;
+    }
+
+    addRegexToken('a',  matchMeridiem);
+    addRegexToken('A',  matchMeridiem);
+    addRegexToken('H',  match1to2);
+    addRegexToken('h',  match1to2);
+    addRegexToken('HH', match1to2, match2);
+    addRegexToken('hh', match1to2, match2);
+
+    addRegexToken('hmm', match3to4);
+    addRegexToken('hmmss', match5to6);
+    addRegexToken('Hmm', match3to4);
+    addRegexToken('Hmmss', match5to6);
+
+    addParseToken(['H', 'HH'], HOUR);
+    addParseToken(['a', 'A'], function (input, array, config) {
+        config._isPm = config._locale.isPM(input);
+        config._meridiem = input;
+    });
+    addParseToken(['h', 'hh'], function (input, array, config) {
+        array[HOUR] = toInt(input);
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('hmm', function (input, array, config) {
+        var pos = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos));
+        array[MINUTE] = toInt(input.substr(pos));
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('hmmss', function (input, array, config) {
+        var pos1 = input.length - 4;
+        var pos2 = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos1));
+        array[MINUTE] = toInt(input.substr(pos1, 2));
+        array[SECOND] = toInt(input.substr(pos2));
+        getParsingFlags(config).bigHour = true;
+    });
+    addParseToken('Hmm', function (input, array, config) {
+        var pos = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos));
+        array[MINUTE] = toInt(input.substr(pos));
+    });
+    addParseToken('Hmmss', function (input, array, config) {
+        var pos1 = input.length - 4;
+        var pos2 = input.length - 2;
+        array[HOUR] = toInt(input.substr(0, pos1));
+        array[MINUTE] = toInt(input.substr(pos1, 2));
+        array[SECOND] = toInt(input.substr(pos2));
+    });
+
+    // LOCALES
+
+    function localeIsPM (input) {
+        // IE8 Quirks Mode & IE7 Standards Mode do not allow accessing strings like arrays
+        // Using charAt should be more compatible.
+        return ((input + '').toLowerCase().charAt(0) === 'p');
+    }
+
+    var defaultLocaleMeridiemParse = /[ap]\.?m?\.?/i;
+    function localeMeridiem (hours, minutes, isLower) {
+        if (hours > 11) {
+            return isLower ? 'pm' : 'PM';
+        } else {
+            return isLower ? 'am' : 'AM';
+        }
+    }
+
+
+    // MOMENTS
+
+    // Setting the hour should keep the time, because the user explicitly
+    // specified which hour he wants. So trying to maintain the same hour (in
+    // a new timezone) makes sense. Adding/subtracting hours does not follow
+    // this rule.
+    var getSetHour = makeGetSet('Hours', true);
+
+    // FORMATTING
+
     addFormatToken('m', ['mm', 2], 0, 'minute');
 
     // ALIASES
 
     addUnitAlias('minute', 'm');
-
-    // PRIORITY
-
-    addUnitPriority('minute', 14);
 
     // PARSING
 
@@ -23942,10 +23740,6 @@ return /******/ (function(modules) { // webpackBootstrap
     // ALIASES
 
     addUnitAlias('second', 's');
-
-    // PRIORITY
-
-    addUnitPriority('second', 15);
 
     // PARSING
 
@@ -23991,10 +23785,6 @@ return /******/ (function(modules) { // webpackBootstrap
     // ALIASES
 
     addUnitAlias('millisecond', 'ms');
-
-    // PRIORITY
-
-    addUnitPriority('millisecond', 16);
 
     // PARSING
 
@@ -24045,7 +23835,7 @@ return /******/ (function(modules) { // webpackBootstrap
     momentPrototype__proto.fromNow           = fromNow;
     momentPrototype__proto.to                = to;
     momentPrototype__proto.toNow             = toNow;
-    momentPrototype__proto.get               = stringGet;
+    momentPrototype__proto.get               = getSet;
     momentPrototype__proto.invalidAt         = invalidAt;
     momentPrototype__proto.isAfter           = isAfter;
     momentPrototype__proto.isBefore          = isBefore;
@@ -24060,7 +23850,7 @@ return /******/ (function(modules) { // webpackBootstrap
     momentPrototype__proto.max               = prototypeMax;
     momentPrototype__proto.min               = prototypeMin;
     momentPrototype__proto.parsingFlags      = parsingFlags;
-    momentPrototype__proto.set               = stringSet;
+    momentPrototype__proto.set               = getSet;
     momentPrototype__proto.startOf           = startOf;
     momentPrototype__proto.subtract          = add_subtract__subtract;
     momentPrototype__proto.toArray           = toArray;
@@ -24120,6 +23910,7 @@ return /******/ (function(modules) { // webpackBootstrap
     momentPrototype__proto.parseZone            = setOffsetToParsedOffset;
     momentPrototype__proto.hasAlignedHourOffset = hasAlignedHourOffset;
     momentPrototype__proto.isDST                = isDaylightSavingTime;
+    momentPrototype__proto.isDSTShifted         = isDaylightSavingTimeShifted;
     momentPrototype__proto.isLocal              = isLocal;
     momentPrototype__proto.isUtcOffset          = isUtcOffset;
     momentPrototype__proto.isUtc                = isUtc;
@@ -24133,8 +23924,7 @@ return /******/ (function(modules) { // webpackBootstrap
     momentPrototype__proto.dates  = deprecate('dates accessor is deprecated. Use date instead.', getSetDayOfMonth);
     momentPrototype__proto.months = deprecate('months accessor is deprecated. Use month instead', getSetMonth);
     momentPrototype__proto.years  = deprecate('years accessor is deprecated. Use year instead', getSetYear);
-    momentPrototype__proto.zone   = deprecate('moment().zone is deprecated, use moment().utcOffset instead. http://momentjs.com/guides/#/warnings/zone/', getSetZone);
-    momentPrototype__proto.isDSTShifted = deprecate('isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information', isDaylightSavingTimeShifted);
+    momentPrototype__proto.zone   = deprecate('moment().zone is deprecated, use moment().utcOffset instead. https://github.com/moment/moment/issues/1779', getSetZone);
 
     var momentPrototype = momentPrototype__proto;
 
@@ -24146,46 +23936,143 @@ return /******/ (function(modules) { // webpackBootstrap
         return local__createLocal.apply(null, arguments).parseZone();
     }
 
+    var defaultCalendar = {
+        sameDay : '[Today at] LT',
+        nextDay : '[Tomorrow at] LT',
+        nextWeek : 'dddd [at] LT',
+        lastDay : '[Yesterday at] LT',
+        lastWeek : '[Last] dddd [at] LT',
+        sameElse : 'L'
+    };
+
+    function locale_calendar__calendar (key, mom, now) {
+        var output = this._calendar[key];
+        return isFunction(output) ? output.call(mom, now) : output;
+    }
+
+    var defaultLongDateFormat = {
+        LTS  : 'h:mm:ss A',
+        LT   : 'h:mm A',
+        L    : 'MM/DD/YYYY',
+        LL   : 'MMMM D, YYYY',
+        LLL  : 'MMMM D, YYYY h:mm A',
+        LLLL : 'dddd, MMMM D, YYYY h:mm A'
+    };
+
+    function longDateFormat (key) {
+        var format = this._longDateFormat[key],
+            formatUpper = this._longDateFormat[key.toUpperCase()];
+
+        if (format || !formatUpper) {
+            return format;
+        }
+
+        this._longDateFormat[key] = formatUpper.replace(/MMMM|MM|DD|dddd/g, function (val) {
+            return val.slice(1);
+        });
+
+        return this._longDateFormat[key];
+    }
+
+    var defaultInvalidDate = 'Invalid date';
+
+    function invalidDate () {
+        return this._invalidDate;
+    }
+
+    var defaultOrdinal = '%d';
+    var defaultOrdinalParse = /\d{1,2}/;
+
+    function ordinal (number) {
+        return this._ordinal.replace('%d', number);
+    }
+
     function preParsePostFormat (string) {
         return string;
     }
 
+    var defaultRelativeTime = {
+        future : 'in %s',
+        past   : '%s ago',
+        s  : 'a few seconds',
+        m  : 'a minute',
+        mm : '%d minutes',
+        h  : 'an hour',
+        hh : '%d hours',
+        d  : 'a day',
+        dd : '%d days',
+        M  : 'a month',
+        MM : '%d months',
+        y  : 'a year',
+        yy : '%d years'
+    };
+
+    function relative__relativeTime (number, withoutSuffix, string, isFuture) {
+        var output = this._relativeTime[string];
+        return (isFunction(output)) ?
+            output(number, withoutSuffix, string, isFuture) :
+            output.replace(/%d/i, number);
+    }
+
+    function pastFuture (diff, output) {
+        var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
+        return isFunction(format) ? format(output) : format.replace(/%s/i, output);
+    }
+
     var prototype__proto = Locale.prototype;
 
+    prototype__proto._calendar       = defaultCalendar;
     prototype__proto.calendar        = locale_calendar__calendar;
+    prototype__proto._longDateFormat = defaultLongDateFormat;
     prototype__proto.longDateFormat  = longDateFormat;
+    prototype__proto._invalidDate    = defaultInvalidDate;
     prototype__proto.invalidDate     = invalidDate;
+    prototype__proto._ordinal        = defaultOrdinal;
     prototype__proto.ordinal         = ordinal;
+    prototype__proto._ordinalParse   = defaultOrdinalParse;
     prototype__proto.preparse        = preParsePostFormat;
     prototype__proto.postformat      = preParsePostFormat;
+    prototype__proto._relativeTime   = defaultRelativeTime;
     prototype__proto.relativeTime    = relative__relativeTime;
     prototype__proto.pastFuture      = pastFuture;
     prototype__proto.set             = locale_set__set;
 
     // Month
     prototype__proto.months            =        localeMonths;
+    prototype__proto._months           = defaultLocaleMonths;
     prototype__proto.monthsShort       =        localeMonthsShort;
+    prototype__proto._monthsShort      = defaultLocaleMonthsShort;
     prototype__proto.monthsParse       =        localeMonthsParse;
+    prototype__proto._monthsRegex      = defaultMonthsRegex;
     prototype__proto.monthsRegex       = monthsRegex;
+    prototype__proto._monthsShortRegex = defaultMonthsShortRegex;
     prototype__proto.monthsShortRegex  = monthsShortRegex;
 
     // Week
     prototype__proto.week = localeWeek;
+    prototype__proto._week = defaultLocaleWeek;
     prototype__proto.firstDayOfYear = localeFirstDayOfYear;
     prototype__proto.firstDayOfWeek = localeFirstDayOfWeek;
 
     // Day of Week
     prototype__proto.weekdays       =        localeWeekdays;
+    prototype__proto._weekdays      = defaultLocaleWeekdays;
     prototype__proto.weekdaysMin    =        localeWeekdaysMin;
+    prototype__proto._weekdaysMin   = defaultLocaleWeekdaysMin;
     prototype__proto.weekdaysShort  =        localeWeekdaysShort;
+    prototype__proto._weekdaysShort = defaultLocaleWeekdaysShort;
     prototype__proto.weekdaysParse  =        localeWeekdaysParse;
 
+    prototype__proto._weekdaysRegex      = defaultWeekdaysRegex;
     prototype__proto.weekdaysRegex       =        weekdaysRegex;
+    prototype__proto._weekdaysShortRegex = defaultWeekdaysShortRegex;
     prototype__proto.weekdaysShortRegex  =        weekdaysShortRegex;
+    prototype__proto._weekdaysMinRegex   = defaultWeekdaysMinRegex;
     prototype__proto.weekdaysMinRegex    =        weekdaysMinRegex;
 
     // Hours
     prototype__proto.isPM = localeIsPM;
+    prototype__proto._meridiemParse = defaultLocaleMeridiemParse;
     prototype__proto.meridiem = localeMeridiem;
 
     function lists__get (format, index, field, setter) {
@@ -24514,18 +24401,6 @@ return /******/ (function(modules) { // webpackBootstrap
         return substituteTimeAgo.apply(null, a);
     }
 
-    // This function allows you to set the rounding function for relative time strings
-    function duration_humanize__getSetRelativeTimeRounding (roundingFunction) {
-        if (roundingFunction === undefined) {
-            return round;
-        }
-        if (typeof(roundingFunction) === 'function') {
-            round = roundingFunction;
-            return true;
-        }
-        return false;
-    }
-
     // This function allows you to set a threshold for relative time strings
     function duration_humanize__getSetRelativeTimeThreshold (threshold, limit) {
         if (thresholds[threshold] === undefined) {
@@ -24658,7 +24533,7 @@ return /******/ (function(modules) { // webpackBootstrap
     // Side effect imports
 
 
-    utils_hooks__hooks.version = '2.14.1';
+    utils_hooks__hooks.version = '2.13.0';
 
     setHookCallback(local__createLocal);
 
@@ -24685,9 +24560,7 @@ return /******/ (function(modules) { // webpackBootstrap
     utils_hooks__hooks.locales               = locale_locales__listLocales;
     utils_hooks__hooks.weekdaysShort         = lists__listWeekdaysShort;
     utils_hooks__hooks.normalizeUnits        = normalizeUnits;
-    utils_hooks__hooks.relativeTimeRounding = duration_humanize__getSetRelativeTimeRounding;
     utils_hooks__hooks.relativeTimeThreshold = duration_humanize__getSetRelativeTimeThreshold;
-    utils_hooks__hooks.calendarFormat        = getCalendarFormat;
     utils_hooks__hooks.prototype             = momentPrototype;
 
     var _moment = utils_hooks__hooks;
@@ -24723,7 +24596,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 },"useData":true});
 // ==========================================================================
 // Plyr
-// plyr.js v1.8.12
+// plyr.js v1.8.2
 // https://github.com/selz/plyr
 // License: The MIT License (MIT)
 // ==========================================================================
@@ -24746,6 +24619,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     }
 }(typeof window !== 'undefined' ? window : this, function(window, document) {
     'use strict';
+    /*global YT,$f*/
 
     // Globals
     var fullscreen, 
@@ -24766,7 +24640,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         displayDuration:        true,
         loadSprite:             true,
         iconPrefix:             'plyr',
-        iconUrl:                'https://cdn.plyr.io/1.8.12/plyr.svg',
+        iconUrl:                'https://cdn.plyr.io/1.8.2/plyr.svg',
         clickToPlay:            true,
         hideControls:           true,
         showPosterOnEnd:        false,
@@ -24868,7 +24742,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         // URLs
         urls: {
             vimeo: {
-                api:            'https://player.vimeo.com/api/player.js',
+                api:            'https://cdn.plyr.io/froogaloop/1.0.1/plyr.froogaloop.js',
             },
             youtube: {
                 api:            'https://www.youtube.com/iframe_api'
@@ -24913,7 +24787,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         if ((navigator.appVersion.indexOf('Windows NT') !== -1) && (navigator.appVersion.indexOf('rv:11') !== -1)) {
             isIE = true;
             name = 'IE';
-            fullVersion = '11';
+            fullVersion = '11;';
         }
         // MSIE
         else if ((verOffset = ua.indexOf('MSIE')) !== -1) {
@@ -24975,8 +24849,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             isFirefox:  isFirefox,
             isChrome:   isChrome,
             isSafari:   isSafari,
-            isIos:      /(iPad|iPhone|iPod)/g.test(navigator.platform),
-            isTouch:    'ontouchstart' in document.documentElement
+            ios:        /(iPad|iPhone|iPod)/g.test(navigator.platform),
+            touch:      'ontouchstart' in document.documentElement
         };
     }
 
@@ -25098,7 +24972,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     // Set attributes
     function _setAttributes(element, attributes) {
         for (var key in attributes) {
-            element.setAttribute(key, (_is.boolean(attributes[key]) && attributes[key]) ? '' : attributes[key]);
+            element.setAttribute(key, (typeof attributes[key] === 'boolean' && attributes[key]) ? '' : attributes[key]);
         }
     }
 
@@ -25186,7 +25060,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
         // Whether the listener is a capturing listener or not
         // Default to false
-        if (!_is.boolean(useCapture)) {
+        if (typeof useCapture !== 'boolean') {
             useCapture = false;
         }
 
@@ -25214,7 +25088,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         }
 
         // Default bubbles to false
-        if (!_is.boolean(bubbles)) {
+        if (typeof bubbles !== 'boolean') {
             bubbles = false;
         }
 
@@ -25237,7 +25111,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         }
 
         // Get state
-        state = (_is.boolean(state) ? state : !target.getAttribute('aria-pressed'));
+        state = (typeof state === 'boolean' ? state : !target.getAttribute('aria-pressed'));
 
         // Set the attribute on target
         target.setAttribute('aria-pressed', state);
@@ -25292,34 +25166,6 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         return destination;
     }
 
-    // Check variable types
-    var _is = {
-        object: function(input) {
-            return input !== null && typeof(input) === 'object'; 
-        },
-        array: function(input) {
-            return input !== null && typeof(input) === 'object' && input.constructor === Array;
-        },
-        number: function(input) {
-            return typeof(input) === 'number' && !isNaN(input - 0) || (typeof input == 'object' && input.constructor === Number);
-        },
-        string: function(input) {
-            return typeof input === 'string' || (typeof input == 'object' && input.constructor === String);
-        },
-        boolean: function(input) {
-            return typeof input === 'boolean';
-        },
-        nodeList: function(input) {
-            return input instanceof NodeList;
-        },
-        htmlElement: function(input) {
-            return input instanceof HTMLElement;
-        },
-        undefined: function(input) {
-            return typeof input === 'undefined';
-        }
-    };
-
     // Fullscreen API
     function _fullscreen() {
         var fullscreen = {
@@ -25334,7 +25180,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             browserPrefixes = 'webkit moz o ms khtml'.split(' ');
 
         // Check for native support
-        if (!_is.undefined(document.cancelFullScreen)) {
+        if (typeof document.cancelFullScreen !== 'undefined') {
             fullscreen.supportsFullScreen = true;
         }
         else {
@@ -25342,12 +25188,12 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             for (var i = 0, il = browserPrefixes.length; i < il; i++ ) {
                 fullscreen.prefix = browserPrefixes[i];
 
-                if (!_is.undefined(document[fullscreen.prefix + 'CancelFullScreen'])) {
+                if (typeof document[fullscreen.prefix + 'CancelFullScreen'] !== 'undefined') {
                     fullscreen.supportsFullScreen = true;
                     break;
                 }
                 // Special case for MS (when isn't it?)
-                else if (!_is.undefined(document.msExitFullscreen) && document.msFullscreenEnabled) {
+                else if (typeof document.msExitFullscreen !== 'undefined' && document.msFullscreenEnabled) {
                     fullscreen.prefix = 'ms';
                     fullscreen.supportsFullScreen = true;
                     break;
@@ -25362,7 +25208,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             fullscreen.fullScreenEventName = (fullscreen.prefix == 'ms' ? 'MSFullscreenChange' : fullscreen.prefix + 'fullscreenchange');
 
             fullscreen.isFullScreen = function(element) {
-                if (_is.undefined(element)) {
+                if (typeof element === 'undefined') {
                     element = document.body;
                 }
                 switch (this.prefix) {
@@ -25375,7 +25221,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 }
             };
             fullscreen.requestFullScreen = function(element) {
-                if (_is.undefined(element)) {
+                if (typeof element === 'undefined') {
                     element = document.body;
                 }
                 return (this.prefix === '') ? element.requestFullScreen() : element[this.prefix + (this.prefix == 'ms' ? 'RequestFullscreen' : 'RequestFullScreen')]();
@@ -25434,14 +25280,9 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         _log(config);
 
         // Debugging
-        function _log() {
+        function _log(text, warn) {
             if (config.debug && window.console) {
-                console.log.apply(console, arguments);
-            }
-        }
-        function _warn() {
-            if (config.debug && window.console) {
-                console.warn.apply(console, arguments);
+                console[(warn ? 'warn' : 'log')](text);
             }
         }
 
@@ -25449,7 +25290,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         function _getIconUrl() {
             return {
                 url:        config.iconUrl,
-                absolute:   (config.iconUrl.indexOf("http") === 0) || plyr.browser.isIE
+                external:   (config.iconUrl.indexOf("http") === 0)
             };
         }
 
@@ -25458,7 +25299,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             // Create html array
             var html        = [],
                 iconUrl     = _getIconUrl(),
-                iconPath    = (!iconUrl.absolute ? iconUrl.url : '') + '#' + config.iconPrefix;
+                iconPath    = (!iconUrl.external ? iconUrl.url : '') + '#' + config.iconPrefix;
 
             // Larger overlaid play button
             if (_inArray(config.controls, 'play-large')) {
@@ -25628,9 +25469,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 }
 
                 // Toggle state
-                if (plyr.buttons && plyr.buttons.fullscreen) {
-                    _toggleState(plyr.buttons.fullscreen, false);
-                }
+                _toggleState(plyr.buttons.fullscreen, false);
 
                 // Setup focus trap
                 _focusTrap();
@@ -25639,7 +25478,6 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
         // Setup captions
         function _setupCaptions() {
-            // Bail if not HTML5 video
             if (plyr.type !== 'video') {
                 return;
             }
@@ -25771,7 +25609,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                                     _log('Successfully loaded the caption file via AJAX');
                                 }
                                 else {
-                                    _warn('There was a problem loading the caption file via AJAX');
+                                    _log('There was a problem loading the caption file via AJAX', true);
                                 }
                             }
                         };
@@ -25794,12 +25632,12 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             container.innerHTML = '';
 
             // Default to empty
-            if (_is.undefined(caption)) {
+            if (typeof caption === 'undefined') {
                 caption = '';
             }
 
             // Set the span content
-            if (_is.undefined(caption)) {
+            if (typeof caption === 'string') {
                 content.innerHTML = caption.trim();
             }
             else {
@@ -25859,7 +25697,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             // Check time is a number, if not use currentTime
             // IE has a bug where currentTime doesn't go to 0
             // https://twitter.com/Sam_Potts/status/573715746506731521
-            time = _is.number(time) ? time : plyr.media.currentTime;
+            time = typeof time === 'number' ? time : plyr.media.currentTime;
 
             // If there's no subs available, bail
             if (!plyr.captions[plyr.subcount]) {
@@ -25950,7 +25788,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
         // Add elements to HTML5 media (source, tracks, etc)
         function _insertChildElements(type, attributes) {
-            if (_is.string(attributes)) {
+            if (typeof attributes === 'string') {
                _insertElement(type, plyr.media, { src: attributes });
             }
             else if (attributes.constructor === Array) {
@@ -25964,11 +25802,12 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         function _injectControls() {
             // Sprite
             if (config.loadSprite) {
-                var iconUrl = _getIconUrl();
+                var iconUrl = _getIconUrl(),
+                    isExternal = iconUrl.external;
 
                 // Only load external sprite using AJAX
-                if (iconUrl.absolute) {
-                    _log('AJAX loading absolute SVG sprite' + (plyr.browser.isIE ? ' (due to IE)' : ''));
+                if (isExternal || plyr.browser.isIE) {
+                    _log('AJAX loading external SVG sprite' + (plyr.browser.isIE ? ' (due to IE)' : ''));
                     loadSprite(iconUrl.url, "sprite-plyr");
                 }
                 else {
@@ -26000,13 +25839,13 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             if (config.selectors.controls.container !== null) {
                 container = config.selectors.controls.container;
 
-                if (_is.string(container)) {
+                if (typeof selector === 'string') {
                     container = document.querySelector(container);
                 }
             }
 
             // Inject into the container by default
-            if (!_is.htmlElement(container)) {
+            if (!(container instanceof HTMLElement)) {
                 container = plyr.container
             }
 
@@ -26073,7 +25912,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 return true;
             }
             catch(e) {
-                _warn('It looks like there is a problem with your controls HTML');
+                _log('It looks like there is a problem with your controls html', true);
 
                 // Restore native video controls
                 _toggleNativeControls(true);
@@ -26089,7 +25928,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
         // Toggle native controls
         function _toggleNativeControls(toggle) {
-            if (toggle && _inArray(config.types.html5, plyr.type)) {
+            if (toggle) {
                 plyr.media.setAttribute('controls', '');
             }
             else {
@@ -26103,7 +25942,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             var label = config.i18n.play;
 
             // If there's a media title set, use that for the label
-            if (!_is.undefined(config.title) && config.title.length) {
+            if (typeof(config.title) !== 'undefined' && config.title.length) {
                 label += ', ' + config.title;
             }
 
@@ -26116,7 +25955,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
             // Set iframe title
             // https://github.com/Selz/plyr/issues/124
-            if (_is.htmlElement(iframe)) {
+            if (iframe instanceof HTMLElement) {
                 iframe.setAttribute('title', config.i18n.frameTitle.replace('{title}', config.title));
             }
         }
@@ -26125,8 +25964,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         function _setupMedia() {
             // If there's no media, bail
             if (!plyr.media) {
-                _warn('No media element found!');
-                return;
+                _log('No audio or video element found', true);
+                return false;
             }
 
             if (plyr.supported.full) {
@@ -26143,10 +25982,10 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 _toggleClass(plyr.container, config.classes.stopped, config.autoplay);
 
                 // Add iOS class
-                _toggleClass(plyr.container, config.classes.isIos, plyr.browser.isIos);
+                _toggleClass(plyr.container, config.classes.isIos, plyr.browser.ios);
 
                 // Add touch class
-                _toggleClass(plyr.container, config.classes.isTouch, plyr.browser.isTouch);
+                _toggleClass(plyr.container, config.classes.isTouch, plyr.browser.touch);
 
                 // Inject the player wrapper
                 if (plyr.type === 'video') {
@@ -26196,7 +26035,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 container.setAttribute('id', id);
 
                 // Setup API
-                if (_is.object(window.YT)) {
+                if (typeof YT === 'object') {
                     _youTubeReady(mediaId, container);
                 }
                 else {
@@ -26217,35 +26056,43 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             }
             // Vimeo
             else if (plyr.type === 'vimeo') {
-                // Vimeo needs an extra div to hide controls on desktop (which has full support)
+                // Inject the iframe
+                var vimeo = document.createElement('iframe');
+
+                // Watch for iframe load
+                vimeo.loaded = false;
+                _on(vimeo, 'load', function() { vimeo.loaded = true; });
+
+                _setAttributes(vimeo, {
+                    'src':                      'https://player.vimeo.com/video/' + mediaId + '?player_id=' + id + '&api=1&badge=0&byline=0&portrait=0&title=0',
+                    'id':                       id,
+                    'allowfullscreen':          '',
+                    'frameborder':              0
+                });
+
+                // If full support, we can use custom controls (hiding Vimeos), if not, use Vimeo
                 if (plyr.supported.full) {
+                    container.appendChild(vimeo);
                     plyr.media.appendChild(container);
                 }
                 else {
-                    container = plyr.media;
+                    plyr.media.appendChild(vimeo);
                 }
-
-                // Set ID
-                container.setAttribute('id', id);
 
                 // Load the API if not already
-                if (!_is.object(window.Vimeo)) {
+                if (!('$f' in window)) {
                     _injectScript(config.urls.vimeo.api);
+                }
 
-                    // Wait for fragaloop load
-                    var vimeoTimer = window.setInterval(function() {
-                        if (_is.object(window.Vimeo)) {
-                            window.clearInterval(vimeoTimer);
-                            _vimeoReady(mediaId, container);
-                        }
-                    }, 50);
-                }
-                else {
-                    _vimeoReady(mediaId, container);
-                }
+                // Wait for fragaloop load
+                var vimeoTimer = window.setInterval(function() {
+                    if ('$f' in window && vimeo.loaded) {
+                        window.clearInterval(vimeoTimer);
+                        _vimeoReady.call(vimeo);
+                    }
+                }, 50);
             }
             // Soundcloud
-            // TODO: Currently unsupported and undocumented
             else if (plyr.type === 'soundcloud') {
                 // Inject the iframe
                 var soundCloud = document.createElement('iframe');
@@ -26282,10 +26129,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             // Store reference to API
             plyr.container.plyr.embed = plyr.embed;
 
-            // Setup the UI if full support
-            if (plyr.supported.full) {
-                _setupInterface();
-            }
+            // Setup the UI
+            _setupInterface();
 
             // Set title
             _setTitle(_getElement('iframe'));
@@ -26301,7 +26146,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
             // Setup instance
             // https://developers.google.com/youtube/iframe_api_reference
-            plyr.embed = new window.YT.Player(container.id, {
+            plyr.embed = new YT.Player(container.id, {
                 videoId: videoId,
                 playerVars: {
                     autoplay:       (config.autoplay ? 1 : 0),
@@ -26429,93 +26274,85 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         }
 
         // Vimeo ready
-        function _vimeoReady(mediaId, container) {
-            // Setup player
-            plyr.embed = new window.Vimeo.Player(container.id, {
-                id:         mediaId,
-                loop:       config.loop,
-                autoplay:   config.autoplay,
-                byline:     false,
-                portrait:   false,
-                title:      false
-            });
+        function _vimeoReady() {
+            /* jshint validthis: true */
+            plyr.embed = $f(this);
 
-            // Create a faux HTML5 API using the Vimeo API
-            plyr.media.play = function() {
-                plyr.embed.play();
-                plyr.media.paused = false;
-            };
-            plyr.media.pause = function() {
-                plyr.embed.pause();
+            // Setup on ready
+            plyr.embed.addEvent('ready', function() {
+
+                // Create a faux HTML5 API using the Vimeo API
+                plyr.media.play = function() {
+                    plyr.embed.api('play');
+                    plyr.media.paused = false;
+                };
+                plyr.media.pause = function() {
+                    plyr.embed.api('pause');
+                    plyr.media.paused = true;
+                };
+                plyr.media.stop = function() {
+                    plyr.embed.api('stop');
+                    plyr.media.paused = true;
+                };
                 plyr.media.paused = true;
-            };
-            plyr.media.stop = function() {
-                plyr.embed.stop();
-                plyr.media.paused = true;
-            };
-            plyr.media.paused = true;
-            plyr.media.currentTime = 0;
+                plyr.media.currentTime = 0;
 
-            // Update UI
-            _embedReady();
+                // Update UI
+                _embedReady();
 
-            plyr.embed.getCurrentTime().then(function (value) {
-                plyr.media.currentTime = value;
+                plyr.embed.api('getCurrentTime', function (value) {
+                    plyr.media.currentTime = value;
 
-                // Trigger timeupdate
-                _triggerEvent(plyr.media, 'timeupdate');
-            });
+                    // Trigger timeupdate
+                    _triggerEvent(plyr.media, 'timeupdate');
+                });
 
-            plyr.embed.getDuration().then(function(value) {
-                plyr.media.duration = value;
+                plyr.embed.api('getDuration', function(value) {
+                    plyr.media.duration = value;
 
-                // Display duration if available
-                _displayDuration();
-            });
+                    // Display duration if available
+                    _displayDuration();
+                });
 
-            // TODO: Captions
-            /*if (config.captions.defaultActive) {
-                plyr.embed.enableTextTrack('en');
-            }*/
+                plyr.embed.addEvent('play', function() {
+                    plyr.media.paused = false;
+                    _triggerEvent(plyr.media, 'play');
+                    _triggerEvent(plyr.media, 'playing');
+                });
 
-            // Fix keyboard focus issues
-            // https://github.com/Selz/plyr/issues/317
-            plyr.embed.on('loaded', function() {
-                if(_is.htmlElement(plyr.embed.element)) {
-                    plyr.embed.element.setAttribute('tabindex', '-1');
+                plyr.embed.addEvent('pause', function() {
+                    plyr.media.paused = true;
+                    _triggerEvent(plyr.media, 'pause');
+                });
+
+                plyr.embed.addEvent('playProgress', function(data) {
+                    plyr.media.seeking = false;
+                    plyr.media.currentTime = data.seconds;
+                    _triggerEvent(plyr.media, 'timeupdate');
+                });
+
+                plyr.embed.addEvent('loadProgress', function(data) {
+                    plyr.media.buffered = data.percent;
+                    _triggerEvent(plyr.media, 'progress');
+
+                    if (parseInt(data.percent) === 1) {
+                        // Trigger event
+                        _triggerEvent(plyr.media, 'canplaythrough');
+                    }
+                });
+
+                plyr.embed.addEvent('finish', function() {
+                    plyr.media.paused = true;
+                    _triggerEvent(plyr.media, 'ended');
+                });
+
+                // Always seek to 0
+                // plyr.embed.api('seekTo', 0);
+
+                // Autoplay
+                if (config.autoplay) {
+                    plyr.embed.api('play');
                 }
-            });
-
-            plyr.embed.on('play', function() {
-                plyr.media.paused = false;
-                _triggerEvent(plyr.media, 'play');
-                _triggerEvent(plyr.media, 'playing');
-            });
-
-            plyr.embed.on('pause', function() {
-                plyr.media.paused = true;
-                _triggerEvent(plyr.media, 'pause');
-            });
-
-            plyr.embed.on('timeupdate', function(data) {
-                plyr.media.seeking = false;
-                plyr.media.currentTime = data.seconds;
-                _triggerEvent(plyr.media, 'timeupdate');
-            });
-
-            plyr.embed.on('progress', function(data) {
-                plyr.media.buffered = data.percent;
-                _triggerEvent(plyr.media, 'progress');
-
-                if (parseInt(data.percent) === 1) {
-                    // Trigger event
-                    _triggerEvent(plyr.media, 'canplaythrough');
-                }
-            });
-
-            plyr.embed.on('ended', function() {
-                plyr.media.paused = true;
-                _triggerEvent(plyr.media, 'ended');
             });
         }
 
@@ -26631,7 +26468,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         // Rewind
         function _rewind(seekTime) {
             // Use default if needed
-            if (!_is.number(seekTime)) {
+            if (typeof seekTime !== 'number') {
                 seekTime = config.seekTime;
             }
             _seek(plyr.media.currentTime - seekTime);
@@ -26640,7 +26477,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         // Fast forward
         function _forward(seekTime) {
             // Use default if needed
-            if (!_is.number(seekTime)) {
+            if (typeof seekTime !== 'number') {
                 seekTime = config.seekTime;
             }
             _seek(plyr.media.currentTime + seekTime);
@@ -26654,11 +26491,11 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 duration    = _getDuration();
 
             // Explicit position
-            if (_is.number(input)) {
+            if (typeof input === 'number') {
                 targetTime = input;
             }
             // Event
-            else if (_is.object(input) && _inArray(['input', 'change'], input.type)) {
+            else if (typeof input === 'object' && (input.type === 'input' || input.type === 'change')) {
                 // It's the seek slider
                 // Seek to the selected time
                 targetTime = ((input.target.value / input.target.max) * duration);
@@ -26692,7 +26529,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
                     case 'vimeo':
                         // Round to nearest second for vimeo
-                        plyr.embed.setCurrentTime(targetTime.toFixed(0));
+                        plyr.embed.api('seekTo', targetTime.toFixed(0));
                         break;
 
                     case 'soundcloud':
@@ -26813,9 +26650,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             _focusTrap(plyr.isFullscreen);
 
             // Set button state
-            if (plyr.buttons && plyr.buttons.fullscreen) {
-                _toggleState(plyr.buttons.fullscreen, plyr.isFullscreen);
-            }
+            _toggleState(plyr.buttons.fullscreen, plyr.isFullscreen);
 
             // Trigger an event
             _triggerEvent(plyr.container, plyr.isFullscreen ? 'enterfullscreen' : 'exitfullscreen', true);
@@ -26837,7 +26672,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         // Mute
         function _toggleMute(muted) {
             // If the method is called without parameter, toggle based on current value
-            if (!_is.boolean(muted)) {
+            if (typeof muted !== 'boolean') {
                 muted = !plyr.media.muted;
             }
 
@@ -26861,6 +26696,9 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                         break;
 
                     case 'vimeo':
+                        plyr.embed.api('setVolume', plyr.media.muted ? 0 : parseFloat(config.volume / config.volumeMax));
+                        break;
+
                     case 'soundcloud':
                         plyr.embed.setVolume(plyr.media.muted ? 0 : parseFloat(config.volume / config.volumeMax));
                         break;
@@ -26877,7 +26715,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 min = config.volumeMin;
 
             // Use default if no value specified
-            if (_is.undefined(volume)) {
+            if (typeof volume === 'undefined') {
                 volume = config.volume;
 
                 if (config.storage.enabled && _storage().supported) {
@@ -26913,12 +26751,16 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
             // Embeds
             if (_inArray(config.types.embed, plyr.type)) {
+                // YouTube
                 switch(plyr.type) {
                     case 'youtube':
                         plyr.embed.setVolume(plyr.media.volume * 100);
                         break;
 
                     case 'vimeo':
+                        plyr.embed.api('setVolume', plyr.media.volume);
+                        break;
+
                     case 'soundcloud':
                         plyr.embed.setVolume(plyr.media.volume);
                         break;
@@ -26985,7 +26827,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             }
 
             // If the method is called without parameter, toggle based on current value
-            if (!_is.boolean(show)) {
+            if (typeof show !== 'boolean') {
                 show = (plyr.container.className.indexOf(config.classes.captions.active) === -1);
             }
 
@@ -27030,10 +26872,6 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                     // Video playing
                     case 'timeupdate':
                     case 'seeking':
-                        if (plyr.controls.pressed) {
-                            return;
-                        }
-
                         value = _getPercentage(plyr.media.currentTime, duration);
 
                         // Set seek range value only if it's a 'natural' time event
@@ -27055,7 +26893,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                                 return _getPercentage(buffered.end(0), duration);
                             }
                             // YouTube returns between 0 and 1
-                            else if (_is.number(buffered)) {
+                            else if (typeof buffered === 'number') {
                                 return (buffered * 100);
                             }
 
@@ -27077,11 +26915,11 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             }
             
             // Default to 0
-            if (_is.undefined(value)) {
+            if (typeof value === 'undefined') {
                 value = 0;
             }
             // Default to buffer or bail
-            if (_is.undefined(progress)) {
+            if (typeof progress === 'undefined') {
                 if (plyr.progress && plyr.progress.buffer) {
                     progress = plyr.progress.buffer;
                 }
@@ -27091,7 +26929,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             }
 
             // One progress element passed
-            if (_is.htmlElement(progress)) {
+            if (progress instanceof HTMLElement) {
                 progress.value = value;
             }
             // Object of progress + text element
@@ -27172,7 +27010,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         // Update seek range and progress 
         function _updateSeekDisplay(time) {
             // Default to 0
-            if (!_is.number(time)) {
+            if (typeof time !== 'number') {
                 time = 0;
             }
 
@@ -27243,22 +27081,21 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             if (!config.hideControls || plyr.type === 'audio') {
                 return;
             }
-
             var delay = 0,
                 isEnterFullscreen = false,
                 show = toggle;
 
             // Default to false if no boolean
-            if (!_is.boolean(toggle)) {
+            if (typeof toggle !== "boolean") {
                 if (toggle && toggle.type) {
                     // Is the enter fullscreen event
                     isEnterFullscreen = (toggle.type === 'enterfullscreen');
 
                     // Whether to show controls
-                    show = _inArray(['mousemove', 'touchstart', 'mouseenter', 'focus'], toggle.type);
+                    show = _inArray(['mousemove', 'mouseenter', 'focus'], toggle.type);
 
-                    // Delay hiding on move events
-                    if (_inArray(['mousemove', 'touchmove'], toggle.type)) {
+                    // Delay hiding on mousemove events
+                    if (toggle.type === 'mousemove') {
                         delay = 2000;
                     }
 
@@ -27268,7 +27105,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                     }
                 }
                 else {
-                    show = _hasClass(plyr.container, config.classes.hideControls);
+                    show = !_hasClass(plyr.container, config.classes.hideControls);
                 }
             }
 
@@ -27285,7 +27122,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 }
 
                 // Delay for hiding on touch
-                if (plyr.browser.isTouch) {
+                if (plyr.browser.touch) {
                     delay = 3000;
                 }
             }
@@ -27295,7 +27132,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             if (!show || !plyr.media.paused) {
                 plyr.timers.hover = window.setTimeout(function() {
                     // If the mouse is over the controls (and not entering fullscreen), bail
-                    if ((plyr.controls.pressed || plyr.controls.hover) && !isEnterFullscreen) {
+                    if (plyr.controls.active && !isEnterFullscreen) {
                         return;
                     }
                     
@@ -27307,7 +27144,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         // Add common function to retrieve media source
         function _source(source) {
             // If not null or undefined, parse it
-            if (!_is.undefined(source)) {
+            if (typeof source !== 'undefined') {
                 _updateSource(source);
                 return;
             }
@@ -27320,7 +27157,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                     break;
 
                 case 'vimeo':
-                    plyr.embed.getVideoUrl.then(function (value) {
+                    plyr.embed.api('getVideoUrl', function (value) {
                         url = value;
                     });
                     break;
@@ -27342,8 +27179,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         // Update source
         // Sources are not checked for support so be careful
         function _updateSource(source) {
-            if (!_is.object(source) || !('sources' in source) || !source.sources.length) {
-                _warn('Invalid source format');
+            if (typeof source === 'undefined' || !('sources' in source) || !source.sources.length) {
+                _log('Invalid source format', true);
                 return;
             }
 
@@ -27419,7 +27256,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             _prependChild(plyr.container, plyr.media);
 
             // Autoplay the new source?
-            if (_is.boolean(source.autoplay)) {
+            if (typeof source.autoplay !== 'undefined') {
                 config.autoplay = source.autoplay;
             }
 
@@ -27470,10 +27307,6 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
                 // Display duration if available
                 _displayDuration();
-            }
-            // If embed but not fully supported, setupInterface now
-            else if (_inArray(config.types.embed, plyr.type) && !plyr.supported.full) {
-                _setupInterface();
             }
 
             // Set aria title and iframe title
@@ -27548,7 +27381,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                 for (var button in plyr.buttons) {
                     var element = plyr.buttons[button];
 
-                    if (_is.nodeList(element)) {
+                    if (element instanceof NodeList) {
                         for (var i = 0; i < element.length; i++) {
                             _toggleClass(element[i], config.classes.tabFocus, (element[i] === focused));
                         }
@@ -27620,16 +27453,11 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             // Toggle controls visibility based on mouse movement
             if (config.hideControls) {
                 // Toggle controls on mouse events and entering fullscreen
-                _on(plyr.container, 'mouseenter mouseleave mousemove touchstart touchend touchcancel touchmove enterfullscreen', _toggleControls);
+                _on(plyr.container, 'mouseenter mouseleave mousemove enterfullscreen', _toggleControls);
 
                 // Watch for cursor over controls so they don't hide when trying to interact
                 _on(plyr.controls, 'mouseenter mouseleave', function(event) { 
-                    plyr.controls.hover = event.type === 'mouseenter';
-                });
-
-                 // Watch for cursor over controls so they don't hide when trying to interact
-                _on(plyr.controls, 'mousedown mouseup touchstart touchend touchcancel', function(event) { 
-                    plyr.controls.pressed = _inArray(['mousedown', 'touchstart'], event.type);
+                    plyr.controls.active = (event.type === 'mouseenter');
                 });
 
                 // Focus in/out on controls
@@ -27727,8 +27555,8 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
                 // On click play, pause ore restart
                 _on(wrapper, 'click', function() {
-                    // Touch devices will just show controls (if we're hiding controls)
-                    if (config.hideControls && plyr.browser.isTouch && !plyr.media.paused) {
+                    if (plyr.browser.touch && !plyr.media.paused) {
+                        _toggleControls(true);
                         return;
                     }
 
@@ -27771,8 +27599,9 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
             // Set blank video src attribute
             // This is to prevent a MEDIA_ERR_SRC_NOT_SUPPORTED error
+            // Small mp4: https://github.com/mathiasbynens/small/blob/master/mp4.mp4
             // Info: http://stackoverflow.com/questions/32231579/how-to-properly-dispose-of-an-html5-video-and-close-socket-or-connection
-            plyr.media.setAttribute('src', 'https://cdn.selz.com/plyr/blank.mp4');
+            plyr.media.setAttribute('src', 'data:video/mp4;base64,AAAAHGZ0eXBpc29tAAACAGlzb21pc28ybXA0MQAAAAhmcmVlAAAAGm1kYXQAAAGzABAHAAABthBgUYI9t+8AAAMNbW9vdgAAAGxtdmhkAAAAAMXMvvrFzL76AAAD6AAAACoAAQAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAABhpb2RzAAAAABCAgIAHAE/////+/wAAAiF0cmFrAAAAXHRraGQAAAAPxcy++sXMvvoAAAABAAAAAAAAACoAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAABAAAAAAAgAAAAIAAAAAAG9bWRpYQAAACBtZGhkAAAAAMXMvvrFzL76AAAAGAAAAAEVxwAAAAAALWhkbHIAAAAAAAAAAHZpZGUAAAAAAAAAAAAAAABWaWRlb0hhbmRsZXIAAAABaG1pbmYAAAAUdm1oZAAAAAEAAAAAAAAAAAAAACRkaW5mAAAAHGRyZWYAAAAAAAAAAQAAAAx1cmwgAAAAAQAAAShzdGJsAAAAxHN0c2QAAAAAAAAAAQAAALRtcDR2AAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAgACABIAAAASAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGP//AAAAXmVzZHMAAAAAA4CAgE0AAQAEgICAPyARAAAAAAMNQAAAAAAFgICALQAAAbABAAABtYkTAAABAAAAASAAxI2IAMUARAEUQwAAAbJMYXZjNTMuMzUuMAaAgIABAgAAABhzdHRzAAAAAAAAAAEAAAABAAAAAQAAABxzdHNjAAAAAAAAAAEAAAABAAAAAQAAAAEAAAAUc3RzegAAAAAAAAASAAAAAQAAABRzdGNvAAAAAAAAAAEAAAAsAAAAYHVkdGEAAABYbWV0YQAAAAAAAAAhaGRscgAAAAAAAAAAbWRpcmFwcGwAAAAAAAAAAAAAAAAraWxzdAAAACOpdG9vAAAAG2RhdGEAAAABAAAAAExhdmY1My4yMS4x');
 
             // Load the new empty source
             // This will cancel existing requests
@@ -27911,10 +27740,6 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
                     _play();
                 }
             }
-            // If embed but not fully supported, setupInterface now (to avoid flash of controls)
-            else if (_inArray(config.types.embed, plyr.type) && !plyr.supported.full) {
-                _setupInterface();
-            }
 
             // Successful setup
             plyr.init = true;
@@ -27923,7 +27748,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         function _setupInterface() {
             // Don't setup interface if no support
             if (!plyr.supported.full) {
-                _warn('No full support for this media type (' + plyr.type + ')');
+                _log('No full support for this media type (' + plyr.type + ')', true);
 
                 // Remove controls
                 _remove(_getElement(config.selectors.controls.wrapper));
@@ -28011,8 +27836,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             isFullscreen:       function() { return plyr.isFullscreen || false; },
             support:            function(mimeType) { return _supportMime(plyr, mimeType); },
             destroy:            _destroy,
-            restore:            _init,
-            getCurrentTime:     function() { return plyr.media.currentTime; }
+            restore:            _init
         };
     }
 
@@ -28021,7 +27845,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         var x = new XMLHttpRequest();
 
         // If the id is set and sprite exists, bail
-        if (_is.string(id) && document.querySelector('#' + id) !== null) {
+        if (typeof id === 'string' && document.querySelector('#' + id) !== null) {
             return;
         }
 
@@ -28037,7 +27861,7 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
         x.onload = function() {
             var c = document.createElement('div');
             c.setAttribute('hidden', '');
-            if (_is.string(id)) {
+            if (typeof id === 'string') {
                 c.setAttribute('id', id);
             }
             c.innerHTML = x.responseText;
@@ -28049,35 +27873,34 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
     // Check for support
     function supported(type) {
-        var browser     = _browserSniff(),
-            isOldIE     = (browser.isIE && browser.version <= 9),
-            isIos       = browser.isIos,
-            isIphone    = /iPhone|iPod/i.test(navigator.userAgent),
-            audio       = !!document.createElement('audio').canPlayType,
-            video       = !!document.createElement('video').canPlayType,
+        var browser = _browserSniff(),
+            oldIE   = (browser.isIE && browser.version <= 9),
+            iPhone  = /iPhone|iPod/i.test(navigator.userAgent),
+            audio   = !!document.createElement('audio').canPlayType,
+            video   = !!document.createElement('video').canPlayType,
             basic, full;
 
         switch (type) {
             case 'video':
                 basic = video;
-                full  = (basic && (!isOldIE && !isIphone));
+                full  = (basic && (!oldIE && !iPhone));
                 break;
 
             case 'audio':
                 basic = audio;
-                full  = (basic && !isOldIE);
+                full  = (basic && !oldIE);
                 break;
 
             case 'vimeo':
             case 'youtube':
             case 'soundcloud':
                 basic = true;
-                full  = (!isOldIE && !isIos);
+                full  = (!oldIE && !iPhone);
                 break;
 
             default:
                 basic = (audio && video);
-                full  = (basic && !isOldIE);
+                full  = (basic && !oldIE);
         }
 
         return {
@@ -28095,17 +27918,17 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 
         // Select the elements
         // Assume elements is a NodeList by default
-        if (_is.string(targets)) {
+        if (typeof targets === 'string') {
             targets = document.querySelectorAll(targets);
         }
         // Single HTMLElement passed
-        else if (_is.htmlElement(targets)) {
+        else if (targets instanceof HTMLElement) {
             targets = [targets];
         }
         // No selector passed, possibly options as first argument
-        else if (!_is.nodeList(targets) && !_is.array(targets) && !_is.string(targets))  {
+        else if (!(targets instanceof NodeList) && typeof targets !== 'string')  {
             // If options are the first argument
-            if (_is.undefined(options) && _is.object(targets)) {
+            if (typeof options === 'undefined' && typeof targets === 'object') {
                 options = targets;
             }
 
@@ -28113,15 +27936,15 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
             targets = document.querySelectorAll(selector);
         }
 
-        // Convert NodeList to array
-        if (_is.nodeList(targets)) {
-            targets = Array.prototype.slice.call(targets);
-        }
-
         // Bail if disabled or no basic support
         // You may want to disable certain UAs etc
         if (!supported().basic || !targets.length) {
             return false;
+        }
+
+        // Convert NodeList to array
+        if (targets instanceof NodeList) {
+            targets = Array.prototype.slice.call(targets);
         }
 
         // Check if the targets have multiple media elements
@@ -28199,10 +28022,10 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
 // https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
 (function () {
     if (typeof window.CustomEvent === 'function') {
-        return;
+        return false;
     }
 
-    function CustomEvent(event, params) {
+    function CustomEvent (event, params) {
         params = params || { bubbles: false, cancelable: false, detail: undefined };
         var evt = document.createEvent('CustomEvent');
         evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
@@ -28214,27 +28037,27 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     window.CustomEvent = CustomEvent;
 })();
 
-'use strict';/**
+'use strict'; /**
  * Debug helper
  * Log only shown when KENT.debug is true.
- */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){/*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};window.KENT=window.KENT||{};/**
+ */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){ /*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};window.KENT=window.KENT||{}; /**
  * Kent Analytics Tracker
  * A simple helper for pushing pages & events to multiple trackers.
- */window.KENT.kat={/**
+ */window.KENT.kat={ /**
 	 *  Track page view
-	 */'page':function page(path){var trackers=this.trackers();for(var t in trackers){try{trackers[t].send('pageview',{'page':path});}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Pageview: '+path);return true;},/**
+	 */'page':function page(path){var trackers=this.trackers();for(var t in trackers){try{trackers[t].send('pageview',{'page':path});}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Pageview: '+path);return true;}, /**
 	 *  Track event (namespaced)
-	 */'event':function event(category,action,label,value){var ns_category='w3beta-'+category;return this.g_event(ns_category,action,label,value);},/**
+	 */'event':function event(category,action,label,value){var ns_category='w3beta-'+category;return this.g_event(ns_category,action,label,value);}, /**
 	 * Track social
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions
-	 */'social':function social(network,action,target){var trackers=this.trackers();// use current url if no target is provided
-if(typeof target==='undefined'){target=window.location.href;}for(var t in trackers){try{trackers[t].send('social',network,action,target);}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Social',network,action,target);return true;},/**
+	 */'social':function social(network,action,target){var trackers=this.trackers(); // use current url if no target is provided
+if(typeof target==='undefined'){target=window.location.href;}for(var t in trackers){try{trackers[t].send('social',network,action,target);}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Social',network,action,target);return true;}, /**
 	 * Track global event
-	 */'g_event':function g_event(category,action,label,value){// send to all GA trackers
-var trackers=this.trackers();// if value is set, check its a number, if not set to 1
-if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,10);}for(var t in trackers){try{trackers[t].send('event',category,action,label,value);}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Event',category,action,label,value);return true;},/**
+	 */'g_event':function g_event(category,action,label,value){ // send to all GA trackers
+var trackers=this.trackers(); // if value is set, check its a number, if not set to 1
+if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,10);}for(var t in trackers){try{trackers[t].send('event',category,action,label,value);}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Event',category,action,label,value);return true;}, /**
 	 * Get trackers
-	 */trackers:function trackers(){return typeof window.ga.getAll!=='undefined'?window.ga.getAll():[];}};/**
+	 */trackers:function trackers(){return typeof window.ga.getAll!=='undefined'?window.ga.getAll():[];}}; /**
  * Responsive helper
  *
  * Triggers events on resize and breakpoint changes
@@ -28244,195 +28067,195 @@ if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,
  * - viewport:change - fired only if resize triggers breakpoint change
  *
  * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
- */(function($,viewport){// Supported breakpoints
-var visibilityDivs={'xs':$('<div class="hidden-sm-up"></div>'),'sm':$('<div class="hidden-xs-down hidden-md-up"></div>'),'md':$('<div class="hidden-sm-down hidden-lg-up"></div>'),'lg':$('<div class="hidden-md-down hidden-xl-up"></div>'),'xl':$('<div class="hidden-lg-down hidden-xxl-up"></div>'),'xxl':$('<div class="hidden-xl-down hidden-xxxl-up"></div>'),'xxxl':$('<div class="hidden-xxl-down"></div>')};viewport.use('Custom',visibilityDivs);// Add our custom event
-var previousBreakpoint='';$(window).resize(viewport.changed(function(){var breakpoint=viewport.current();// resize has occured, fire event
-$(window).trigger('viewport:resize');if(previousBreakpoint!==breakpoint){// Debug
-window.KENT.log('Breakpoint change: '+previousBreakpoint+' -> '+breakpoint);// breakpoint has changed, fire evenet
-$(window).trigger('viewport:change');previousBreakpoint=breakpoint;}}));})(jQuery,ResponsiveBootstrapToolkit);window.KENT=window.KENT||{};window.KENT.modules=window.KENT.modules||{};/**
+ */(function($,viewport){ // Supported breakpoints
+var visibilityDivs={'xs':$('<div class="hidden-sm-up"></div>'),'sm':$('<div class="hidden-xs-down hidden-md-up"></div>'),'md':$('<div class="hidden-sm-down hidden-lg-up"></div>'),'lg':$('<div class="hidden-md-down hidden-xl-up"></div>'),'xl':$('<div class="hidden-lg-down hidden-xxl-up"></div>'),'xxl':$('<div class="hidden-xl-down hidden-xxxl-up"></div>'),'xxxl':$('<div class="hidden-xxl-down"></div>')};viewport.use('Custom',visibilityDivs); // Add our custom event
+var previousBreakpoint='';$(window).resize(viewport.changed(function(){var breakpoint=viewport.current(); // resize has occured, fire event
+$(window).trigger('viewport:resize');if(previousBreakpoint!==breakpoint){ // Debug
+window.KENT.log('Breakpoint change: '+previousBreakpoint+' -> '+breakpoint); // breakpoint has changed, fire evenet
+$(window).trigger('viewport:change');previousBreakpoint=breakpoint;}}));})(jQuery,ResponsiveBootstrapToolkit);window.KENT=window.KENT||{};window.KENT.modules=window.KENT.modules||{}; /**
  * Quickspot helper
  *
  * Centralises common configuration & initalisation options for QuickSpot search
  *
  * @uses https://github.com/thybag/quick-spot
- */(function(){// create obj
-window.KENT.quickspot={config:{}};var configs=window.KENT.quickspot.config;// Default config options
-configs.default={'disable_occurrence_weighting':true,'prevent_headers':true,'max_results':150,'no_results':function no_results(qs,val){return'<a class=\'quickspot-result selected\'>Press enter to search...</a>';},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/?q='+value;}};// Default config options for QS instances with a 'View all results for' top result
+ */(function(){ // create obj
+window.KENT.quickspot={config:{}};var configs=window.KENT.quickspot.config; // Default config options
+configs.default={'disable_occurrence_weighting':true,'prevent_headers':true,'max_results':150,'no_results':function no_results(qs,val){return '<a class=\'quickspot-result selected\'>Press enter to search...</a>';},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/?q='+value;}}; // Default config options for QS instances with a 'View all results for' top result
 //
 // Instances using this config, should use
 // _click_handler
 // _display_handler
 // rather than the default methods
-configs.searchWith=$.extend({},configs.default,{// Display Handler wrapper
-'display_handler':function display_handler(itm,qs){return itm.kent_search_with_option===true?this.kent_search_with(qs):this._display_handler(itm,qs);},'kent_search_with':function kent_search_with(qs){return'<i class=\'kf-search\'></i> View all results for <strong>'+qs.lastValue+'</strong>';},'click_handler':function click_handler(itm,qs){if(typeof itm.kent_search_with_option==='boolean'&&itm.kent_search_with_option===true){return this.no_results_click(qs.lastValue);}return this._click_handler(itm,qs);},'parse_results':function parse_results(results,options){results.unshift({'kent_search_with_option':true,'qs_screenreader_text':'View full search results'});return results;}});// Module search
-configs.modules=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/modules/collection/all','search_on':['title','sds_code'],'key_value':'title','auto_highlight':true,'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.sds_code+'</span>';},'click_handler':function click_handler(itm){document.location.href='/courses/modules/module/'+itm.sds_code;},'no_results_click':function no_results_click(value,qs){window.location.href='/courses/modules/?search='+value;},'data_pre_parse':function data_pre_parse(data,options){return data.modules;},'loaded':function loaded(qs){qs.datastore.filter(function(o){return o.running===true;});}});// Scholarships search
-configs.scholarships=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/scholarships/','key_value':'title','search_on':['title','code'],'auto_highlight':true,'click_handler':function click_handler(itm){document.location.href='/scholarships/search/'+itm.code;},'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.code+'</span>';},'no_results_click':function no_results_click(value,qs){window.location.href='/scholarships/search/?search='+value;}});// Default course configs, including callbacks
-configs.courses_default=$.extend({},configs.searchWith,{'search_on':['name','award','subject','main_school','ucas_code','search_keywords'],'auto_highlight':false,'_display_handler':function _display_handler(itm,qs){// Generate locations list
-var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0];// Highlight searched word
-return(itm.name+' - '+itm.award+' <br> <span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/undergraduate/'+itm.id+'/'+itm.slug;},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/courses?q='+value;}});// UG
-configs.ug_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/undergraduate/programmes'});// PG
-configs.pg_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/postgraduate/programmes','_click_handler':function _click_handler(itm){document.location='/courses/postgraduate/'+itm.id+'/'+itm.slug;}});// Combined
-configs.all_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/all/programmes/','_display_handler':function _display_handler(itm,qs){// Generate locations list
-var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0];// Highlight searched word
-return(itm.name+' - '+itm.award+' <span class=\'level\'> &nbsp; '+itm.level_name+'</span><br><span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/'+(itm.level==='UG'?'undergraduate':'postgraduate')+'/'+itm.id+'/'+itm.slug;},'data_pre_parse':function data_pre_parse(data,options){for(var i in data){data[i].qs_result_class=data[i].level.toLowerCase();if(data[i].level==='UG'){data[i].level_name='Undergraduate';}else{var type=data[i].programme_type;// taught /research
-if(type.indexOf('taught-research')!==-1){data[i].level_name='Postgraduate Taught-research';}else if(type.indexOf('taught')!==-1){data[i].level_name='Postgraduate Taught';}else{data[i].level_name='Postgraduate Research';}}}return data;},'results_footer':'<div class=\'course-links\'><a class=\'chevron-link\' href=\'/courses/undergraduate/search\'>All Undergraduate</a><a  class=\'chevron-link\' href=\'/courses/postgraduate/search\'>All Postgraduate </a><a class=\'chevron-link\' href=\'/courses/part-time/index.html\'>Short Courses</a></div>','ready':function ready(qs){// Override link action to pass search value
-$(qs.container).find('div.course-links a').click(function(e){e.preventDefault();document.location.href=$(this).attr('href')+'?search='+qs.lastValue;});}});})();/**
+configs.searchWith=$.extend({},configs.default,{ // Display Handler wrapper
+'display_handler':function display_handler(itm,qs){return itm.kent_search_with_option===true?this.kent_search_with(qs):this._display_handler(itm,qs);},'kent_search_with':function kent_search_with(qs){return '<i class=\'kf-search\'></i> View all results for <strong>'+qs.lastValue+'</strong>';},'click_handler':function click_handler(itm,qs){if(typeof itm.kent_search_with_option==='boolean'&&itm.kent_search_with_option===true){return this.no_results_click(qs.lastValue);}return this._click_handler(itm,qs);},'parse_results':function parse_results(results,options){results.unshift({'kent_search_with_option':true,'qs_screenreader_text':'View full search results'});return results;}}); // Module search
+configs.modules=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/modules/collection/all','search_on':['title','sds_code'],'key_value':'title','auto_highlight':true,'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.sds_code+'</span>';},'click_handler':function click_handler(itm){document.location.href='/courses/modules/module/'+itm.sds_code;},'no_results_click':function no_results_click(value,qs){window.location.href='/courses/modules/?search='+value;},'data_pre_parse':function data_pre_parse(data,options){return data.modules;},'loaded':function loaded(qs){qs.datastore.filter(function(o){return o.running===true;});}}); // Scholarships search
+configs.scholarships=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/scholarships/','key_value':'title','search_on':['title','code'],'auto_highlight':true,'click_handler':function click_handler(itm){document.location.href='/scholarships/search/'+itm.code;},'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.code+'</span>';},'no_results_click':function no_results_click(value,qs){window.location.href='/scholarships/search/?search='+value;}}); // Default course configs, including callbacks
+configs.courses_default=$.extend({},configs.searchWith,{'search_on':['name','award','subject','main_school','ucas_code','search_keywords'],'auto_highlight':false,'_display_handler':function _display_handler(itm,qs){ // Generate locations list
+var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0]; // Highlight searched word
+return (itm.name+' - '+itm.award+' <br> <span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/undergraduate/'+itm.id+'/'+itm.slug;},'no_results_click':function no_results_click(value,qs){window.location.href='https://www.kent.ac.uk/search/courses?q='+value;}}); // UG
+configs.ug_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/undergraduate/programmes'}); // PG
+configs.pg_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/postgraduate/programmes','_click_handler':function _click_handler(itm){document.location='/courses/postgraduate/'+itm.id+'/'+itm.slug;}}); // Combined
+configs.all_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/all/programmes/','_display_handler':function _display_handler(itm,qs){ // Generate locations list
+var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0]; // Highlight searched word
+return (itm.name+' - '+itm.award+' <span class=\'level\'> &nbsp; '+itm.level_name+'</span><br><span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/'+(itm.level==='UG'?'undergraduate':'postgraduate')+'/'+itm.id+'/'+itm.slug;},'data_pre_parse':function data_pre_parse(data,options){for(var i in data){data[i].qs_result_class=data[i].level.toLowerCase();if(data[i].level==='UG'){data[i].level_name='Undergraduate';}else {var type=data[i].programme_type; // taught /research
+if(type.indexOf('taught-research')!==-1){data[i].level_name='Postgraduate Taught-research';}else if(type.indexOf('taught')!==-1){data[i].level_name='Postgraduate Taught';}else {data[i].level_name='Postgraduate Research';}}}return data;},'results_footer':'<div class=\'course-links\'><a class=\'chevron-link\' href=\'/courses/undergraduate/search\'>All Undergraduate</a><a  class=\'chevron-link\' href=\'/courses/postgraduate/search\'>All Postgraduate </a><a class=\'chevron-link\' href=\'/courses/part-time/index.html\'>Short Courses</a></div>','ready':function ready(qs){ // Override link action to pass search value
+$(qs.container).find('div.course-links a').click(function(e){e.preventDefault();document.location.href=$(this).attr('href')+'?search='+qs.lastValue;});}});})(); /**
  * Scan for inputs with data-quickspot-config attribute and initalise them as quickspot instances
- */jQuery(document).ready(function($){$('input[data-quickspot-config]').each(function(){// Load config
-var config=window.KENT.quickspot.config[$(this).data('quickspot-config')]||window.KENT.quickspot.config.defaults;config=$.extend({},config);// Set additional options
-config.target=$(this).attr('id');// Override data source url
-if($(this).data('quickspot-source')){config.url=$(this).data('quickspot-source');}// Override results container location
-if($(this).data('quickspot-target')){config.results_container=$(this).data('quickspot-target');}// Boot quickspot
-var qs=window.KENT.modules.quickspot.attach(config);$(this).attr('autocomplete','off');$(this).data('qs',qs);// Debug
-window.KENT.log('[Quickspot] Instance created on #'+$(this).attr('id')+' with config '+$(this).data('quickspot-config'));});});/**
+ */jQuery(document).ready(function($){$('input[data-quickspot-config]').each(function(){ // Load config
+var config=window.KENT.quickspot.config[$(this).data('quickspot-config')]||window.KENT.quickspot.config.defaults;config=$.extend({},config); // Set additional options
+config.target=$(this).attr('id'); // Override data source url
+if($(this).data('quickspot-source')){config.url=$(this).data('quickspot-source');} // Override results container location
+if($(this).data('quickspot-target')){config.results_container=$(this).data('quickspot-target');} // Boot quickspot
+var qs=window.KENT.modules.quickspot.attach(config);$(this).attr('autocomplete','off');$(this).data('qs',qs); // Debug
+window.KENT.log('[Quickspot] Instance created on #'+$(this).attr('id')+' with config '+$(this).data('quickspot-config'));});}); /**
  * Responsive Collapse
  *
  * Mirrors the behaviour of http://v4-alpha.getbootstrap.com/components/collapse/ in a breakpoint aware way
  *
  * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
  * @uses responsive_util.js
- */jQuery(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;var $collabsables=$('[data-toggle="collapse_responsive"]');var viewportChange=function viewportChange(){window.KENT.log('Initiating: Collapse Responsive');window.KENT.log($collabsables);$collabsables.each(function(){var $target=$($(this).data('target')||null);if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){$(this).removeClass('collapsed').removeAttr('aria-expanded','true');$target.addClass('in');}else{$(this).addClass('collapsed').attr('aria-expanded','false');$target.removeClass('in');}});};$collabsables.click(function(e){e.preventDefault();var $this=$(this);var isCollapsed=$(this).hasClass('collapsed');var $parent=$($this).closest($this.data('parent'))||null;var $target=$($this.data('target'))||null;var $isTab=$parent.hasClass('tab-content');// If target isn't collapsed at this breakpoint, ignore.
-if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){return;}// else, toggle it open / shut
-if($parent.length>0){var $open=$parent.find('.in');$open.removeClass('in').removeClass('active').each(function(){$parent.find('[data-target=\'#'+$(this).attr('id')+'\']').addClass('collapsed');if($isTab){$parent.parent().find('.nav-link').removeClass('active');}});}if($target.length>0){$target.toggleClass('in',isCollapsed).toggleClass('active',isCollapsed);// Add expanded state (this only needs to be set when collapsing is possible)
-$this.toggleClass('collapsed',!isCollapsed).attr('aria-expanded',!isCollapsed?'false':'true');if($isTab){$parent.parent().find('.nav-link[href="'+$this.data('target')+'"]').addClass('active');}}});// When breakpoint changes
-$(window).on('viewport:change',viewportChange);//init
-viewportChange();});window.KENT=window.KENT||{};/**
+ */jQuery(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;var $collabsables=$('[data-toggle="collapse_responsive"]');var viewportChange=function viewportChange(){window.KENT.log('Initiating: Collapse Responsive');window.KENT.log($collabsables);$collabsables.each(function(){var $target=$($(this).data('target')||null);if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){$(this).removeClass('collapsed').removeAttr('aria-expanded','true');$target.addClass('in');}else {$(this).addClass('collapsed').attr('aria-expanded','false');$target.removeClass('in');}});};$collabsables.click(function(e){e.preventDefault();var $this=$(this);var isCollapsed=$(this).hasClass('collapsed');var $parent=$($this).closest($this.data('parent'))||null;var $target=$($this.data('target'))||null;var $isTab=$parent.hasClass('tab-content'); // If target isn't collapsed at this breakpoint, ignore.
+if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){return;} // else, toggle it open / shut
+if($parent.length>0){var $open=$parent.find('.in');$open.removeClass('in').removeClass('active').each(function(){$parent.find('[data-target=\'#'+$(this).attr('id')+'\']').addClass('collapsed');if($isTab){$parent.parent().find('.nav-link').removeClass('active');}});}if($target.length>0){$target.toggleClass('in',isCollapsed).toggleClass('active',isCollapsed); // Add expanded state (this only needs to be set when collapsing is possible)
+$this.toggleClass('collapsed',!isCollapsed).attr('aria-expanded',!isCollapsed?'false':'true');if($isTab){$parent.parent().find('.nav-link[href="'+$this.data('target')+'"]').addClass('active');}}}); // When breakpoint changes
+$(window).on('viewport:change',viewportChange); //init
+viewportChange();});window.KENT=window.KENT||{}; /**
  * Global navigation
  *
  * Switches between main menu & search menu on mobile.
  * Toggles search on/off on large screens
  *
- */(function(){// Menu references
+ */(function(){ // Menu references
 // Store control class as data on the elements (just for conveniance)
-var global_menu=$('#global-nav-menu').data('control-class','show-global-menu');var global_search=$('#global-nav-search').data('control-class','show-global-search');// List of Menu toggle classes
+var global_menu=$('#global-nav-menu').data('control-class','show-global-menu');var global_search=$('#global-nav-search').data('control-class','show-global-search'); // List of Menu toggle classes
 // This will have the aria-extanded attribute toggled on them, whenever the menu state changes.
-var global_menu_toggles=$('.menu-button');var global_search_toggles=$('.search-button, .search-button-full, .close-search');// Toggle a given menu's state
-var toggleMenu=function toggleMenu(button,menu){// If this menu is NOT open, open it. Else close it.
-if(!menu.hasClass('in')){return openMenu(button,menu);}else{return closeMenu(button,menu);}};// Close a given menu (toggling its buttons)
-var closeMenu=function closeMenu(button,menu){// Cannot close already closed menu
-if(!menu.hasClass('in')){return false;}// Remove menu & body class
-menu.removeClass('in');$('body').removeClass(menu.data('control-class'));// Update button so it knows it's expanded area is collapsed
+var global_menu_toggles=$('.menu-button');var global_search_toggles=$('.search-button, .search-button-full, .close-search'); // Toggle a given menu's state
+var toggleMenu=function toggleMenu(button,menu){ // If this menu is NOT open, open it. Else close it.
+if(!menu.hasClass('in')){return openMenu(button,menu);}else {return closeMenu(button,menu);}}; // Close a given menu (toggling its buttons)
+var closeMenu=function closeMenu(button,menu){ // Cannot close already closed menu
+if(!menu.hasClass('in')){return false;} // Remove menu & body class
+menu.removeClass('in');$('body').removeClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
 // aria-hidden is not needed on the element, since as the element is displayed none
 // the screen reader won't see it anyway.
-button.attr('aria-expanded','false');// Trigger event
-$(window).trigger('globalmenu:close',[menu]);return true;};// Open a given menu (toggling its buttons)
-var openMenu=function openMenu(button,menu){// Cannot open already closed menu
-if(menu.hasClass('in')){return false;}// Set menu & body classes
-menu.addClass('in');$('body').addClass(menu.data('control-class'));// Update button so it knows it's expanded area is collapsed
-button.attr('aria-expanded',true);// Fire events
-$(window).trigger('globalmenu:open',[menu]);return true;};// Setup quick access methods to Menu functions
-var global_nav={openSearchMenu:function openSearchMenu(){return openMenu(global_search_toggles,global_search);},closeSearchMenu:function closeSearchMenu(){return closeMenu(global_search_toggles,global_search);},toggleSearchMenu:function toggleSearchMenu(){return toggleMenu(global_search_toggles,global_search);},openMainMenu:function openMainMenu(){return openMenu(global_menu_toggles,global_menu);},closeMainMenu:function closeMainMenu(){return closeMenu(global_menu_toggles,global_menu);},toggleMainMenu:function toggleMainMenu(){return toggleMenu(global_menu_toggles,global_menu);}};// Toggle primary Menu (mobile Only)
-global_search_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleSearchMenu();return false;});// Toggle Search Menu
-global_menu_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleMainMenu();return false;});// Ensure opening one menu, closes the other.
-$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){window.KENT.global_nav.closeMainMenu();}else{window.KENT.global_nav.closeSearchMenu();}});global_menu.find('.audience-nav-links a').click(function(e){e.preventDefault();var menu_name=e.target.getAttribute('data-action');if(menu_name!==null){window.KENT.kentbar.toggleMenu(menu_name,e.target);window.KENT.global_nav.closeMainMenu();}return false;});// CLose all menu's if user hits escape
-$(document).keyup(function(e){if(e.which===27){window.KENT.global_nav.closeMainMenu();window.KENT.global_nav.closeSearchMenu();window.KENT.kentbar.closeMenus();}});// Homepage Logic
-if($('.home-nav').length>0){$(window).on('globalmenu:open kentbar_menu:open kentbar_mobilemenu:open',function(){$('.home-nav').hide();});$(window).on('globalmenu:close kentbar_menu:close kentbar_mobilemenu:close',function(e,menu){var $body=$('body');if(!($body.hasClass('show-global-menu')||$body.hasClass('show-global-search')||$body.hasClass('show-kentbar-menu'))){if(ResponsiveBootstrapToolkit.is('<=sm')){$('.home-nav').delay(300).fadeIn();}}});$(window).on('viewport:change',function(){if(ResponsiveBootstrapToolkit.is('<=sm')){// if menu isn't already open
-if(!$('body').hasClass('show-global-menu')&&!$('body').hasClass('show-global-search')){$('.home-nav').delay(300).fadeIn();}}else{$('.home-nav').hide();}});}// Add to KENT object
-window.KENT.global_nav=global_nav;})();window.KENT=window.KENT||{};/**
+button.attr('aria-expanded','false'); // Trigger event
+$(window).trigger('globalmenu:close',[menu]);return true;}; // Open a given menu (toggling its buttons)
+var openMenu=function openMenu(button,menu){ // Cannot open already closed menu
+if(menu.hasClass('in')){return false;} // Set menu & body classes
+menu.addClass('in');$('body').addClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
+button.attr('aria-expanded',true); // Fire events
+$(window).trigger('globalmenu:open',[menu]);return true;}; // Setup quick access methods to Menu functions
+var global_nav={openSearchMenu:function openSearchMenu(){return openMenu(global_search_toggles,global_search);},closeSearchMenu:function closeSearchMenu(){return closeMenu(global_search_toggles,global_search);},toggleSearchMenu:function toggleSearchMenu(){return toggleMenu(global_search_toggles,global_search);},openMainMenu:function openMainMenu(){return openMenu(global_menu_toggles,global_menu);},closeMainMenu:function closeMainMenu(){return closeMenu(global_menu_toggles,global_menu);},toggleMainMenu:function toggleMainMenu(){return toggleMenu(global_menu_toggles,global_menu);}}; // Toggle primary Menu (mobile Only)
+global_search_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleSearchMenu();return false;}); // Toggle Search Menu
+global_menu_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleMainMenu();return false;}); // Ensure opening one menu, closes the other.
+$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){window.KENT.global_nav.closeMainMenu();}else {window.KENT.global_nav.closeSearchMenu();}});global_menu.find('.audience-nav-links a').click(function(e){e.preventDefault();var menu_name=e.target.getAttribute('data-action');if(menu_name!==null){window.KENT.kentbar.toggleMenu(menu_name,e.target);window.KENT.global_nav.closeMainMenu();}return false;}); // CLose all menu's if user hits escape
+$(document).keyup(function(e){if(e.which===27){window.KENT.global_nav.closeMainMenu();window.KENT.global_nav.closeSearchMenu();window.KENT.kentbar.closeMenus();}}); // Homepage Logic
+if($('.home-nav').length>0){$(window).on('globalmenu:open kentbar_menu:open kentbar_mobilemenu:open',function(){$('.home-nav').hide();});$(window).on('globalmenu:close kentbar_menu:close kentbar_mobilemenu:close',function(e,menu){var $body=$('body');if(!($body.hasClass('show-global-menu')||$body.hasClass('show-global-search')||$body.hasClass('show-kentbar-menu'))){if(ResponsiveBootstrapToolkit.is('<=sm')){$('.home-nav').delay(300).fadeIn();}}});$(window).on('viewport:change',function(){if(ResponsiveBootstrapToolkit.is('<=sm')){ // if menu isn't already open
+if(!$('body').hasClass('show-global-menu')&&!$('body').hasClass('show-global-search')){$('.home-nav').delay(300).fadeIn();}}else {$('.home-nav').hide();}});} // Add to KENT object
+window.KENT.global_nav=global_nav;})();window.KENT=window.KENT||{}; /**
  * Global search
  *
  * Super search located at the top of the page
  *
  * @uses global_nav.js
- */(function(){// Get global search element.
-var global_search=$('#global-nav-search');// Hitting search on empty form closes search menu
-global_search.find('form').submit(function(e){if(global_search.find('input[type="search"]').val()===''){e.preventDefault();window.KENT.global_nav.closeSearchMenu();return false;}});// Focus in search input if global search is toggled
-$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){global_search.find('input[type="search"]').focus();}});// clicking menu
-$('body').click(function(e){if(!global_search.is(e.target)&&global_search.has(e.target).length===0){window.KENT.global_nav.closeSearchMenu();}});})();/**
+ */(function(){ // Get global search element.
+var global_search=$('#global-nav-search'); // Hitting search on empty form closes search menu
+global_search.find('form').submit(function(e){if(global_search.find('input[type="search"]').val()===''){e.preventDefault();window.KENT.global_nav.closeSearchMenu();return false;}}); // Focus in search input if global search is toggled
+$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){global_search.find('input[type="search"]').focus();}}); // clicking menu
+$('body').click(function(e){if(!global_search.is(e.target)&&global_search.has(e.target).length===0){window.KENT.global_nav.closeSearchMenu();}});})(); /**
  * Primary Navigation
  *
  * Handles open/closing of the submenus in the global nav menu.
  *
- */(function(){var zTimer=null;// Primary Nav
-$('.global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a').click(function(){clearTimeout(zTimer);// Get current menu item
-var item=$(this).parent();// Get menu container
-var container=item.parent();// Close submenus in provided menuItems
-var closeSubMenus=function closeSubMenus(menuItems){return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');};if(container.hasClass('in')){// If a menu was already open,
+ */(function(){var zTimer=null; // Primary Nav
+$('.global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a').click(function(){clearTimeout(zTimer); // Get current menu item
+var item=$(this).parent(); // Get menu container
+var container=item.parent(); // Close submenus in provided menuItems
+var closeSubMenus=function closeSubMenus(menuItems){return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');};if(container.hasClass('in')){ // If a menu was already open,
 // Close all menu items other than the one selected (setting expanded as we go)
-var menus=container.find('.in').not(item);menus.removeClass('in');closeSubMenus(menus);menus.children(':first').attr('aria-expanded','false');}else{// If menu wasn't open, preperate submenus for being shown.
-closeSubMenus(container);}if(item.hasClass('in')){// if the clicked menu item was open, close the menu
-item.removeClass('in').parent().removeClass('in');zTimer=setTimeout(function(){closeSubMenus(item);},600);}else{//  if not, tell item its expanded & toggle it all open
-var menu=$(this).attr('aria-expanded','true').parent().toggleClass('in');menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');menu.parent().addClass('in');}});})();jQuery(document).ready(function(){var sectional_nav=$('.departmental-nav .navbar-menu');var toggler=$('.departmental-nav .navbar-toggler');var viewport=ResponsiveBootstrapToolkit;// if no nav, don't bother booting menu
-if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else{sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var last=sectional_nav.find('a').last();return last.position().top>=last.height();}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else{openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();});/**
+var menus=container.find('.in').not(item);menus.removeClass('in');closeSubMenus(menus);menus.children(':first').attr('aria-expanded','false');}else { // If menu wasn't open, preperate submenus for being shown.
+closeSubMenus(container);}if(item.hasClass('in')){ // if the clicked menu item was open, close the menu
+item.removeClass('in').parent().removeClass('in');zTimer=setTimeout(function(){closeSubMenus(item);},600);}else { //  if not, tell item its expanded & toggle it all open
+var menu=$(this).attr('aria-expanded','true').parent().toggleClass('in');menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');menu.parent().addClass('in');}});})();jQuery(document).ready(function(){var sectional_nav=$('.departmental-nav .navbar-menu');var toggler=$('.departmental-nav .navbar-toggler');var viewport=ResponsiveBootstrapToolkit; // if no nav, don't bother booting menu
+if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else {sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var last=sectional_nav.find('a').last();return last.position().top>=last.height();}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else {openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();}); /**
  * Beta bar collapse
  *
  * Small bit of JS to facilitate the beta bar open/close logic.
  * This will be removed once the product moves out of beta
- */jQuery(document).ready(function(){var beta_bar=$('#beta-bar');var toggler=$('.beta-toggler');// Toggle beta bar
-function toggleNav(){if(beta_bar.hasClass('hidden')){beta_bar.removeClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','true');});}else{beta_bar.addClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','false');});window.Cookies.set('kentbeta_dismissed','1',{expires:365});}}// If beta bar exists on page
-if(beta_bar.length>0){var dismissed=typeof window.Cookies.get('kentbeta_dismissed')!=='undefined';// Apply show/hide state from cookie.
-if(!dismissed){beta_bar.removeClass('hidden');}else{beta_bar.addClass('hidden');}// hook up toggler
-toggler.click(function(){toggleNav();});}});/**
+ */jQuery(document).ready(function(){var beta_bar=$('#beta-bar');var toggler=$('.beta-toggler'); // Toggle beta bar
+function toggleNav(){if(beta_bar.hasClass('hidden')){beta_bar.removeClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','true');});}else {beta_bar.addClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','false');});window.Cookies.set('kentbeta_dismissed','1',{expires:365});}} // If beta bar exists on page
+if(beta_bar.length>0){var dismissed=typeof window.Cookies.get('kentbeta_dismissed')!=='undefined'; // Apply show/hide state from cookie.
+if(!dismissed){beta_bar.removeClass('hidden');}else {beta_bar.addClass('hidden');} // hook up toggler
+toggler.click(function(){toggleNav();});}}); /**
  * Toggles attribution text display on/off
- */jQuery(document).ready(function($){$('.attribution').click(function(){$(this).toggleClass('in');});// Debug
-window.KENT.log('Initiating: Attribution');window.KENT.log($('.attribution'));});/**
+ */jQuery(document).ready(function($){$('.attribution').click(function(){$(this).toggleClass('in');}); // Debug
+window.KENT.log('Initiating: Attribution');window.KENT.log($('.attribution'));}); /**
  * Click to interact logic
  *
  * Disable scrolling/zooming on iframes with .click-to-interact class
  * User click activates scrolling behavior and loss of focus deactivates it
  *
- */(function(){var _onEmbedClickHandler,_onEmbedMouseleaveHandler;// Disable pointer events
-_onEmbedMouseleaveHandler=function onEmbedMouseleaveHandler(event){// Re add the click to interact handler
-$(this).on('click',_onEmbedClickHandler);// remove the leaving handler
-$(this).off('mouseleave',_onEmbedMouseleaveHandler);// Disable pointer events
-$(this).find('iframe').css('pointer-events','none');};// Enable pointer events
-_onEmbedClickHandler=function onEmbedClickHandler(event){// Disable the click handler until the user leaves the area
-$(this).off('click',_onEmbedClickHandler);// Handle the mouse leave event
-$(this).on('mouseleave',_onEmbedMouseleaveHandler);// Enable the pointer events
-$(this).find('iframe').css('pointer-events','auto');};jQuery(document).ready(function(){// Disable pointer on class, and attach click action to re-enable them
-$('.click-to-interact').on('click',_onEmbedClickHandler).find('iframe').css('pointer-events','none');window.KENT.log('Initiating: Click to interact');window.KENT.log($('.click-to-interact'));});})();/**
+ */(function(){var _onEmbedClickHandler,_onEmbedMouseleaveHandler; // Disable pointer events
+_onEmbedMouseleaveHandler=function onEmbedMouseleaveHandler(event){ // Re add the click to interact handler
+$(this).on('click',_onEmbedClickHandler); // remove the leaving handler
+$(this).off('mouseleave',_onEmbedMouseleaveHandler); // Disable pointer events
+$(this).find('iframe').css('pointer-events','none');}; // Enable pointer events
+_onEmbedClickHandler=function onEmbedClickHandler(event){ // Disable the click handler until the user leaves the area
+$(this).off('click',_onEmbedClickHandler); // Handle the mouse leave event
+$(this).on('mouseleave',_onEmbedMouseleaveHandler); // Enable the pointer events
+$(this).find('iframe').css('pointer-events','auto');};jQuery(document).ready(function(){ // Disable pointer on class, and attach click action to re-enable them
+$('.click-to-interact').on('click',_onEmbedClickHandler).find('iframe').css('pointer-events','none');window.KENT.log('Initiating: Click to interact');window.KENT.log($('.click-to-interact'));});})(); /**
  * Slider
  *
  * Provides carousel functionality to kent-theme
  *
  * @uses https://github.com/kenwheeler/slick/
- */window.KENT=window.KENT||{};// Default options
-window.KENT.kentslider={default:{config:{dots:true,dotsClass:'kent-slider-dots',mobileFirst:true,useTransform:true,accessibility:true}},// react helper
-react:function react($el,breakpoint,config){var loaded=$el.hasClass('slick-initialized');if(ResponsiveBootstrapToolkit.is(breakpoint)){if(!loaded){// init slider
-$el.slick(config);}}else{if(loaded){// de-init slider
-$el.slick('unslick');}}}};// Settings for profile_feature
-window.KENT.kentslider.profile_feature={config:$.extend({},window.KENT.kentslider.default.config,{slidesToShow:2,slidesToScroll:2}),breakpoint:'<=md'};$(document).ready(function(){// If class is found, init slider
-$('.kent-slider').each(function(){// Load config
-var slider_config=$(this).data('slider-config');if(typeof slider_config==='undefined'){slider_config='default';}var config=window.KENT.kentslider[slider_config].config;// Does this carousel behave differently at different breakpoints
-var breakpoint=typeof window.KENT.kentslider[slider_config].breakpoint!=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;if(breakpoint){// react to inital size
-window.KENT.kentslider.react($(this),breakpoint,config);var $this=$(this);// Handle resize on view port change
-$(window).on('viewport:resize',function(){window.KENT.kentslider.react($this,breakpoint,config);});}else{// Init slider
-$(this).slick(config);}// Debug
-window.KENT.log('[Kent-slider] Instance created',$(this));});});$(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;// Plyr controls template - Use kf icons
-var plyr_controls='\n\t\t<button type="button" data-plyr="play" class="plyr__play-large">\n\t\t\t<span class="kf-play-circle"></span>\n\t\t\t<span class="plyr__sr-only">Play</span>\n\t\t</button>\n\n\t\t<div class=\'plyr__controls\'>\n\t\t\t<button type=\'button\' data-plyr=\'play\'>\n\t\t\t\t<span class="kf-play"></span>\n\t\t\t\t<span class="plyr__tooltip">Play</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'pause\'>\n\t\t\t\t<span class="kf-pause"></span>\n\t\t\t\t<span class="plyr__tooltip">Pause</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__progress\'>\n\t\t\t\t<label for=\'seek{id}\' class=\'plyr__sr-only\'>Seek</label>\n\t\t\t\t<input id=\'seek{id}\' class=\'plyr__progress--seek\' type=\'range\' min=\'0\' max=\'100\' step=\'0.1\' value=\'0\' data-plyr=\'seek\'>\n\t\t\t\t<progress class=\'plyr__progress--played\' max=\'100\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t\t<progress class=\'plyr__progress--buffer\' max=\'100\' value=\'0\'>\n\t\t\t\t\t<span>0</span>% buffered\n\t\t\t\t</progress>\n\t\t\t\t<span class=\'plyr__tooltip\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Current time</span>\n\t\t\t\t<span class=\'plyr__time--current\'>00:00</span>\n\t\t\t</span>\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Duration</span>\n\t\t\t\t<span class=\'plyr__time--duration\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'mute\'>\n\t\t\t\t<span class="kf-volume-mute icon--muted"></span>\n\t\t\t\t<span class="kf-volume-medium"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Mute</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__volume\'>\n\t\t\t\t<label for=\'volume{id}\' class=\'plyr__sr-only\'>Volume</label>\n\t\t\t\t<input id=\'volume{id}\' class=\'plyr__volume--input\' type=\'range\' min=\'0\' max=\'10\' value=\'5\' data-plyr=\'volume\'>\n\t\t\t\t<progress class=\'plyr__volume--display\' max=\'10\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'captions\'>\n\t\t\t\t<span class="kf-captions icon--captions-on"></span>\n\t\t\t\t<span class="kf-captions-off"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Captions</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' class="download-transcript">\n\t\t\t\t<span class="kf-file-text"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Access Transcript</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'fullscreen\'>\n\t\t\t\t<span class="kf-compress icon--exit-fullscreen"></span>\n\t\t\t\t<span class="kf-expand"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Fullscreen</span>\n\t\t\t</button>\n\t\t</div>\n\t';/**
+ */window.KENT=window.KENT||{}; // Default options
+window.KENT.kentslider={default:{config:{dots:true,dotsClass:'kent-slider-dots',mobileFirst:true,useTransform:true,accessibility:true}}, // react helper
+react:function react($el,breakpoint,config){var loaded=$el.hasClass('slick-initialized');if(ResponsiveBootstrapToolkit.is(breakpoint)){if(!loaded){ // init slider
+$el.slick(config);}}else {if(loaded){ // de-init slider
+$el.slick('unslick');}}}}; // Settings for profile_feature
+window.KENT.kentslider.profile_feature={config:$.extend({},window.KENT.kentslider.default.config,{slidesToShow:2,slidesToScroll:2}),breakpoint:'<=md'};$(document).ready(function(){ // If class is found, init slider
+$('.kent-slider').each(function(){ // Load config
+var slider_config=$(this).data('slider-config');if(typeof slider_config==='undefined'){slider_config='default';}var config=window.KENT.kentslider[slider_config].config; // Does this carousel behave differently at different breakpoints
+var breakpoint=typeof window.KENT.kentslider[slider_config].breakpoint!=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;if(breakpoint){ // react to inital size
+window.KENT.kentslider.react($(this),breakpoint,config);var $this=$(this); // Handle resize on view port change
+$(window).on('viewport:resize',function(){window.KENT.kentslider.react($this,breakpoint,config);});}else { // Init slider
+$(this).slick(config);} // Debug
+window.KENT.log('[Kent-slider] Instance created',$(this));});});$(document).ready(function(){var viewport=ResponsiveBootstrapToolkit; // Plyr controls template - Use kf icons
+var plyr_controls='\n\t\t<button type="button" data-plyr="play" class="plyr__play-large">\n\t\t\t<span class="kf-play-circle"></span>\n\t\t\t<span class="plyr__sr-only">Play</span>\n\t\t</button>\n\n\t\t<div class=\'plyr__controls\'>\n\t\t\t<button type=\'button\' data-plyr=\'play\'>\n\t\t\t\t<span class="kf-play"></span>\n\t\t\t\t<span class="plyr__tooltip">Play</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'pause\'>\n\t\t\t\t<span class="kf-pause"></span>\n\t\t\t\t<span class="plyr__tooltip">Pause</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__progress\'>\n\t\t\t\t<label for=\'seek{id}\' class=\'plyr__sr-only\'>Seek</label>\n\t\t\t\t<input id=\'seek{id}\' class=\'plyr__progress--seek\' type=\'range\' min=\'0\' max=\'100\' step=\'0.1\' value=\'0\' data-plyr=\'seek\'>\n\t\t\t\t<progress class=\'plyr__progress--played\' max=\'100\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t\t<progress class=\'plyr__progress--buffer\' max=\'100\' value=\'0\'>\n\t\t\t\t\t<span>0</span>% buffered\n\t\t\t\t</progress>\n\t\t\t\t<span class=\'plyr__tooltip\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Current time</span>\n\t\t\t\t<span class=\'plyr__time--current\'>00:00</span>\n\t\t\t</span>\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Duration</span>\n\t\t\t\t<span class=\'plyr__time--duration\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'mute\'>\n\t\t\t\t<span class="kf-volume-mute icon--muted"></span>\n\t\t\t\t<span class="kf-volume-medium"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Mute</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__volume\'>\n\t\t\t\t<label for=\'volume{id}\' class=\'plyr__sr-only\'>Volume</label>\n\t\t\t\t<input id=\'volume{id}\' class=\'plyr__volume--input\' type=\'range\' min=\'0\' max=\'10\' value=\'5\' data-plyr=\'volume\'>\n\t\t\t\t<progress class=\'plyr__volume--display\' max=\'10\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'captions\'>\n\t\t\t\t<span class="kf-captions icon--captions-on"></span>\n\t\t\t\t<span class="kf-captions-off"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Captions</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' class="download-transcript">\n\t\t\t\t<span class="kf-file-text"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Access Transcript</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'fullscreen\'>\n\t\t\t\t<span class="kf-compress icon--exit-fullscreen"></span>\n\t\t\t\t<span class="kf-expand"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Fullscreen</span>\n\t\t\t</button>\n\t\t</div>\n\t'; /**
 	 * Control class for "player" instances
-	 */var Player=function Player($container){// vars
-this.container=$container;this.video=$container.find('.video-player').first();this.placeholder=$container.find('img').first();this.plyr=null;// settings for instance
-this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',fullscreen_down:$container.data('fullscreen-down')||'xs',fullscreen_up:$container.data('fullscreen-up')||'xxl'};/**
+	 */var Player=function Player($container){ // vars
+this.container=$container;this.video=$container.find('.video-player').first();this.placeholder=$container.find('img').first();this.plyr=null; // settings for instance
+this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',fullscreen_down:$container.data('fullscreen-down')||'xs',fullscreen_up:$container.data('fullscreen-up')||'xxl'}; /**
 		 * Initalise "video" element
-		 */this.init=function(){var _this=this;this.container.click(function(){// if Player isn't booted, boot it
-if(!_this.plyr){window.KENT.log('[Video player] Init Plyr');_this.boot();}// Show player if not already playing
-if(!_this.container.hasClass('playing')){_this.show();}});};/**
+		 */this.init=function(){var _this=this;this.container.click(function(){ // if Player isn't booted, boot it
+if(!_this.plyr){window.KENT.log('[Video player] Init Plyr');_this.boot();} // Show player if not already playing
+if(!_this.container.hasClass('playing')){_this.show();}});}; /**
 		 * When user attempts to play video, initalise video player instance
-		 */this.boot=function(){var _this2=this;// Generate plyr instance
-this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0].plyr;// Hookup events
-this.video.on('ready',function(){_this2.setupTranscript();});this.video.on('pause',function(){// hide on pause if not full screen
-if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen',function(){_this2.hide();});this.video.on('ended',function(){_this2.hide();});};/**
+		 */this.boot=function(){var _this2=this; // Generate plyr instance
+this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0].plyr; // Hookup events
+this.video.on('ready',function(){_this2.setupTranscript();});this.video.on('pause',function(){ // hide on pause if not full screen
+if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen',function(){_this2.hide();});this.video.on('ended',function(){_this2.hide();});}; /**
 		 * Setup transcription link
-		 */this.setupTranscript=function(){var _this3=this;var button=this.video.find('.download-transcript');if(this.settings.transcript){button.click(function(){document.location.href=_this3.settings.transcript;});}else{button.hide();}};/**
+		 */this.setupTranscript=function(){var _this3=this;var button=this.video.find('.download-transcript');if(this.settings.transcript){button.click(function(){document.location.href=_this3.settings.transcript;});}else {button.hide();}}; /**
 		 * Show video
 		 * Display video and play it ( use attributes to determine whether to play inline or "fullscreen")
-		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();};/**
+		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();}; /**
 		 * Close video
 		 * Hide video and pause it
-		 */this.hide=function(){var _this4=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();}/**
+		 */this.hide=function(){var _this4=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();} /**
 			 * This is horrible but it fixes a bug were safari crashes if you try and set a fullscreen element
 			 * to display:none. This queues it so it doesn't try and set display:none until safari has actually
 			 * completed the fullscreen exit.
-			 */setTimeout(function(){_this4.pause();_this4.container.removeClass('playing');_this4.container.closest('.card-media-inline').removeClass('card-media-enabled');},0);};/**
+			 */setTimeout(function(){_this4.pause();_this4.container.removeClass('playing');_this4.container.closest('.card-media-inline').removeClass('card-media-enabled');},0);}; /**
 		 * Play video
-		 */this.play=function(){this.plyr.play();};/**
+		 */this.play=function(){this.plyr.play();}; /**
 		 * Pause video
-		 */this.pause=function(){this.plyr.pause();};/**
+		 */this.pause=function(){this.plyr.pause();}; /**
 		 * Pause & hide video
-		 */this.stop=function(){this.hide();};this.init();};$('.video-launcher').each(function(){// create player instance
-new Player($(this));// Debug
-window.KENT.log('[Video player] Instance created');});});/**
+		 */this.stop=function(){this.hide();};this.init();};$('.video-launcher').each(function(){ // create player instance
+new Player($(this)); // Debug
+window.KENT.log('[Video player] Instance created');});}); /**
  * Social sharing icons
  *
  * Converts anything in a div with the class `content-social-share` in to a social sharing icon.
@@ -28440,41 +28263,41 @@ window.KENT.log('[Video player] Instance created');});});/**
  * Will automatically pass share data to Google Analytics.
  *
  * @uses https://github.com/sapegin/social-likes
- */(function(){// Add additional social networks to the social-likes code.
-window.socialLikesButtons={// Add linkedin support
-linkedin:{counterUrl:'http://www.linkedin.com/countserv/count/share?url={url}',counter:function counter(jsonUrl,deferred){var options=window.socialLikesButtons.linkedin;if(!options._){options._={};if(!window.IN){window.IN={Tags:{}};}window.IN.Tags.Share={handleCount:function handleCount(params){var jsonUrl=options.counterUrl.replace(/{url}/g,encodeURIComponent(params.url));options._[jsonUrl].resolve(params.count);}};}options._[jsonUrl]=deferred;$.getScript(jsonUrl).fail(deferred.reject);},popupUrl:'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',popupWidth:650,popupHeight:500}};// When jQuery is ready, hook up our social sharing icons.
-$(function(){// for all social share containers
-var $likes=$('.content-social-share');if($likes.length>0){// Init social likes on container + grab options
-var options=$likes.socialLikes({'counters':false}).data().socialLikes.options;// Populate 'email link' (Additional option we have added)
-$likes.find('a.email').attr('href','mailto:?subject='+options.title+'&body=Link: '+options.url);// Hook up social events via KAT
-$likes.find('a').click(function(){window.KENT.kat.social($(this).attr('title'),'share');// current url is used, if no url is provided as the 3rd param.
-});}// Debug
-window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(function(){//get all tabs
-var $tabs=$('a[data-toggle="tab"]');// when tab is hidden adjust related accordion tab-title accordingly
-$tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);});// when tab is show adjust related accordion tab-title accordingly
-$tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);});//endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
-$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);var activeTab=$('[href="#'+hash+'"]');if(activeTab){activeTab.tab('show');}// Change hash for page-reload
-$('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})();/**
+ */(function(){ // Add additional social networks to the social-likes code.
+window.socialLikesButtons={ // Add linkedin support
+linkedin:{counterUrl:'http://www.linkedin.com/countserv/count/share?url={url}',counter:function counter(jsonUrl,deferred){var options=window.socialLikesButtons.linkedin;if(!options._){options._={};if(!window.IN){window.IN={Tags:{}};}window.IN.Tags.Share={handleCount:function handleCount(params){var jsonUrl=options.counterUrl.replace(/{url}/g,encodeURIComponent(params.url));options._[jsonUrl].resolve(params.count);}};}options._[jsonUrl]=deferred;$.getScript(jsonUrl).fail(deferred.reject);},popupUrl:'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',popupWidth:650,popupHeight:500}}; // When jQuery is ready, hook up our social sharing icons.
+$(function(){ // for all social share containers
+var $likes=$('.content-social-share');if($likes.length>0){ // Init social likes on container + grab options
+var options=$likes.socialLikes({'counters':false}).data().socialLikes.options; // Populate 'email link' (Additional option we have added)
+$likes.find('a.email').attr('href','mailto:?subject='+options.title+'&body=Link: '+options.url); // Hook up social events via KAT
+$likes.find('a').click(function(){window.KENT.kat.social($(this).attr('title'),'share'); // current url is used, if no url is provided as the 3rd param.
+});} // Debug
+window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(function(){ //get all tabs
+var $tabs=$('a[data-toggle="tab"]'); // when tab is hidden adjust related accordion tab-title accordingly
+$tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);}); // when tab is show adjust related accordion tab-title accordingly
+$tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);}); //endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
+$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);var activeTab=$('[href="#'+hash+'"]');if(activeTab){activeTab.tab('show');} // Change hash for page-reload
+$('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})(); /**
  * Parallax
  *
  * Provides parallax functionality
  *
  * @uses https://github.com/markdalgleish/stellar.js
- */(function(){var stellarSetup=false;var stellarActive=false;// Enable stellar.js
-var initStellar=function initStellar(){if(stellarSetup===true){$(window).data('plugin_stellar').init();}else{$.stellar({// Set scrolling to be in either one or both directions
-horizontalScrolling:false,verticalScrolling:true,// Set the global alignment offsets
-horizontalOffset:0,verticalOffset:0,// Refreshes parallax content on window load and resize
-responsive:false,// Select which property is used to calculate scroll.
+ */(function(){var stellarSetup=false;var stellarActive=false; // Enable stellar.js
+var initStellar=function initStellar(){if(stellarSetup===true){$(window).data('plugin_stellar').init();}else {$.stellar({ // Set scrolling to be in either one or both directions
+horizontalScrolling:false,verticalScrolling:true, // Set the global alignment offsets
+horizontalOffset:0,verticalOffset:0, // Refreshes parallax content on window load and resize
+responsive:false, // Select which property is used to calculate scroll.
 // Choose 'scroll', 'position', 'margin' or 'transform',
 // or write your own 'scrollProperty' plugin.
-scrollProperty:'scroll',// Select which property is used to position elements.
+scrollProperty:'scroll', // Select which property is used to position elements.
 // Choose between 'position' or 'transform',
 // or write your own 'positionProperty' plugin.
-positionProperty:'transform',// Enable or disable the two types of parallax
-parallaxBackgrounds:true,parallaxElements:true,// Hide parallax elements that move outside the viewport
-hideDistantElements:false,// Customise how elements are shown and hidden
-hideElement:function hideElement($elem){$elem.hide();},showElement:function showElement($elem){$elem.show();}});stellarSetup=true;}stellarActive=true;};// Disable stellar.js
-var disableStellar=function disableStellar(){$(window).data('plugin_stellar').destroy();stellarActive=false;};// Handle resize
-function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','').find('img').removeAttr('style');}else{if(!stellarActive){initStellar();}// Set ratio's
+positionProperty:'transform', // Enable or disable the two types of parallax
+parallaxBackgrounds:true,parallaxElements:true, // Hide parallax elements that move outside the viewport
+hideDistantElements:false, // Customise how elements are shown and hidden
+hideElement:function hideElement($elem){$elem.hide();},showElement:function showElement($elem){$elem.show();}});stellarSetup=true;}stellarActive=true;}; // Disable stellar.js
+var disableStellar=function disableStellar(){$(window).data('plugin_stellar').destroy();stellarActive=false;}; // Handle resize
+function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','').find('img').removeAttr('style');}else {if(!stellarActive){initStellar();} // Set ratio's
 var $ratio=ResponsiveBootstrapToolkit.is('<xl')?9/16:6/16;$('.media-wrap-parallax').each(function(){$(this).css('min-height',$(window).width()*$ratio+'px');});$(window).data('plugin_stellar').refresh();}}$(window).on('viewport:resize',function(){react_to_window();});$(document).ready(function(){react_to_window();});})();
 //# sourceMappingURL=main.compiled.js.map
