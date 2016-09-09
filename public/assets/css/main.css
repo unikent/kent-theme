@@ -7089,12 +7089,15 @@ figure figcaption,
     width: 20px;
     width: 1.25rem;
     text-align: left;
-    transition: all 300ms; }
+    transition: all 300ms;
+    color: #937227; }
   .chevron-link:hover:after, .inline-links a:hover:after, nav.breadcrumb a:hover:after, .card .card-img-overlay-link .card-subtitle:hover:after, .card-panel-profiles .card .back a:hover:after {
     padding-left: 11.2px;
     padding-left: 0.7rem; }
   .chevron-link.chevron-link-accent:after, .inline-links a.chevron-link-accent:after, nav.breadcrumb a.chevron-link-accent:after, .card .card-img-overlay-link .chevron-link-accent.card-subtitle:after, .card-panel-profiles .card .back a.chevron-link-accent:after {
-    color: #937227; }
+    color: #CE9716; }
+  .chevron-link.chevron-link-primary:after, .inline-links a.chevron-link-primary:after, nav.breadcrumb a.chevron-link-primary:after, .card .card-img-overlay-link .chevron-link-primary.card-subtitle:after, .card-panel-profiles .card .back a.chevron-link-primary:after {
+    color: #05345C; }
 
 .btn, .social-link i, .content-social a, .content-social .content-social-link, blockquote.social-quote button {
   padding: 7.6px 16px;
@@ -8777,6 +8780,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
       font-size: 1em;
       background-color: transparent;
       line-height: inherit;
+      border: none;
       /* Only show when overflown */
       display: none; }
       .departmental-nav .navbar-toggler:after {
@@ -9285,7 +9289,10 @@ button.beta-toggler {
     font-weight: normal;
     color: #05345C;
     font-size: 17.6px;
-    font-size: 1.1rem; }
+    font-size: 1.1rem;
+    margin-top: 16px;
+    margin-top: 1rem;
+    display: inline-block; }
     .card .card-title.card-title-figure {
       margin-top: 16px;
       margin-top: 1rem;
@@ -9308,6 +9315,9 @@ button.beta-toggler {
     font-size: 0.85rem;
     margin-bottom: 4.8px;
     margin-bottom: 0.3rem; }
+  .card .card-text {
+    font-size: 14.4px;
+    font-size: 0.9rem; }
   .card .card-subtitle {
     color: #05345C; }
   .card > .card-text:last-child,
@@ -9316,11 +9326,6 @@ button.beta-toggler {
   .card > .card-badge:last-child {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
-  .card .card-img:first-child,
-  .card .card-img-top:first-child,
-  .card .card-media-wrap:first-child {
-    margin-bottom: 12px;
-    margin-bottom: 0.75rem; }
   .card .card-media-wrap .card-img:first-child,
   .card .card-media-wrap .card-img-top:first-child,
   .card .media-wrap .card-img:first-child, .card .card-media-wrap .card-img:first-child, .card .card-embed-wrap .card-img:first-child,
@@ -9530,29 +9535,6 @@ button.beta-toggler {
       .card-panel.cards-backed .card.card-backed-dark a:focus, .card.card-backed-energy a:focus, .card-panel.cards-backed-energy .card a:focus,
       .card-panel.cards-backed .card.card-backed-energy a:focus, .card .card.card-img-overlay-bottom a:focus, .card .card.card-img-overlay-bottom-shaded a:focus, .card .card.card-img-overlay-centered a:focus, .card.editorial.editorial-primary a:focus, .card.editorial.editorial-primary-light a:focus, .card.editorial.editorial-accent a:focus, .card.editorial.editorial-dark a:focus, .card.editorial.editorial-energy a:focus, .card.card-inverse .card-title-wrap a:hover, .card.card-backed-primary .card-title-wrap a:hover, .card-panel.cards-backed-primary .card .card-title-wrap a:hover, .card.card-backed-primary-light .card-title-wrap a:hover, .card-panel.cards-backed-primary-light .card .card-title-wrap a:hover, .card.card-backed-accent .card-title-wrap a:hover, .card-panel.cards-backed-accent .card .card-title-wrap a:hover, .card.card-backed-dark .card-title-wrap a:hover, .card-panel.cards-backed-dark .card .card-title-wrap a:hover, .card.card-backed-energy .card-title-wrap a:hover, .card-panel.cards-backed-energy .card .card-title-wrap a:hover, .card .card.card-img-overlay-bottom .card-title-wrap a:hover, .card .card.card-img-overlay-bottom-shaded .card-title-wrap a:hover, .card .card.card-img-overlay-centered .card-title-wrap a:hover, .card.editorial.editorial-primary .card-title-wrap a:hover, .card.editorial.editorial-primary-light .card-title-wrap a:hover, .card.editorial.editorial-accent .card-title-wrap a:hover, .card.editorial.editorial-dark .card-title-wrap a:hover, .card.editorial.editorial-energy .card-title-wrap a:hover, .card.card-inverse .card-title-wrap a:active, .card.card-backed-primary .card-title-wrap a:active, .card-panel.cards-backed-primary .card .card-title-wrap a:active, .card.card-backed-primary-light .card-title-wrap a:active, .card-panel.cards-backed-primary-light .card .card-title-wrap a:active, .card.card-backed-accent .card-title-wrap a:active, .card-panel.cards-backed-accent .card .card-title-wrap a:active, .card.card-backed-dark .card-title-wrap a:active, .card-panel.cards-backed-dark .card .card-title-wrap a:active, .card.card-backed-energy .card-title-wrap a:active, .card-panel.cards-backed-energy .card .card-title-wrap a:active, .card .card.card-img-overlay-bottom .card-title-wrap a:active, .card .card.card-img-overlay-bottom-shaded .card-title-wrap a:active, .card .card.card-img-overlay-centered .card-title-wrap a:active, .card.editorial.editorial-primary .card-title-wrap a:active, .card.editorial.editorial-primary-light .card-title-wrap a:active, .card.editorial.editorial-accent .card-title-wrap a:active, .card.editorial.editorial-dark .card-title-wrap a:active, .card.editorial.editorial-energy .card-title-wrap a:active, .card.card-inverse .card-title-wrap a:focus, .card.card-backed-primary .card-title-wrap a:focus, .card-panel.cards-backed-primary .card .card-title-wrap a:focus, .card.card-backed-primary-light .card-title-wrap a:focus, .card-panel.cards-backed-primary-light .card .card-title-wrap a:focus, .card.card-backed-accent .card-title-wrap a:focus, .card-panel.cards-backed-accent .card .card-title-wrap a:focus, .card.card-backed-dark .card-title-wrap a:focus, .card-panel.cards-backed-dark .card .card-title-wrap a:focus, .card.card-backed-energy .card-title-wrap a:focus, .card-panel.cards-backed-energy .card .card-title-wrap a:focus, .card .card.card-img-overlay-bottom .card-title-wrap a:focus, .card .card.card-img-overlay-bottom-shaded .card-title-wrap a:focus, .card .card.card-img-overlay-centered .card-title-wrap a:focus, .card.editorial.editorial-primary .card-title-wrap a:focus, .card.editorial.editorial-primary-light .card-title-wrap a:focus, .card.editorial.editorial-accent .card-title-wrap a:focus, .card.editorial.editorial-dark .card-title-wrap a:focus, .card.editorial.editorial-energy .card-title-wrap a:focus, .card .card-inverse a:hover, .card .card.card-backed-primary a:hover, .card .card-panel.cards-backed-primary .card a:hover, .card-panel.cards-backed-primary .card .card a:hover, .card .card.card-backed-primary-light a:hover, .card .card-panel.cards-backed-primary-light .card a:hover, .card-panel.cards-backed-primary-light .card .card a:hover, .card .card.card-backed-accent a:hover, .card .card-panel.cards-backed-accent .card a:hover, .card-panel.cards-backed-accent .card .card a:hover, .card .card.card-backed-dark a:hover, .card .card-panel.cards-backed-dark .card a:hover, .card-panel.cards-backed-dark .card .card a:hover, .card .card.card-backed-energy a:hover, .card .card-panel.cards-backed-energy .card a:hover, .card-panel.cards-backed-energy .card .card a:hover, .card .card-img-overlay-bottom a:hover, .card .card-img-overlay-bottom-shaded a:hover, .card .card-img-overlay-centered a:hover, .card .card.editorial.editorial-primary a:hover, .card .card.editorial.editorial-primary-light a:hover, .card .card.editorial.editorial-accent a:hover, .card .card.editorial.editorial-dark a:hover, .card .card.editorial.editorial-energy a:hover, .card .card-inverse a:active, .card .card.card-backed-primary a:active, .card .card-panel.cards-backed-primary .card a:active, .card-panel.cards-backed-primary .card .card a:active, .card .card.card-backed-primary-light a:active, .card .card-panel.cards-backed-primary-light .card a:active, .card-panel.cards-backed-primary-light .card .card a:active, .card .card.card-backed-accent a:active, .card .card-panel.cards-backed-accent .card a:active, .card-panel.cards-backed-accent .card .card a:active, .card .card.card-backed-dark a:active, .card .card-panel.cards-backed-dark .card a:active, .card-panel.cards-backed-dark .card .card a:active, .card .card.card-backed-energy a:active, .card .card-panel.cards-backed-energy .card a:active, .card-panel.cards-backed-energy .card .card a:active, .card .card-img-overlay-bottom a:active, .card .card-img-overlay-bottom-shaded a:active, .card .card-img-overlay-centered a:active, .card .card.editorial.editorial-primary a:active, .card .card.editorial.editorial-primary-light a:active, .card .card.editorial.editorial-accent a:active, .card .card.editorial.editorial-dark a:active, .card .card.editorial.editorial-energy a:active, .card .card-inverse a:focus, .card .card.card-backed-primary a:focus, .card .card-panel.cards-backed-primary .card a:focus, .card-panel.cards-backed-primary .card .card a:focus, .card .card.card-backed-primary-light a:focus, .card .card-panel.cards-backed-primary-light .card a:focus, .card-panel.cards-backed-primary-light .card .card a:focus, .card .card.card-backed-accent a:focus, .card .card-panel.cards-backed-accent .card a:focus, .card-panel.cards-backed-accent .card .card a:focus, .card .card.card-backed-dark a:focus, .card .card-panel.cards-backed-dark .card a:focus, .card-panel.cards-backed-dark .card .card a:focus, .card .card.card-backed-energy a:focus, .card .card-panel.cards-backed-energy .card a:focus, .card-panel.cards-backed-energy .card .card a:focus, .card .card-img-overlay-bottom a:focus, .card .card-img-overlay-bottom-shaded a:focus, .card .card-img-overlay-centered a:focus, .card .card.editorial.editorial-primary a:focus, .card .card.editorial.editorial-primary-light a:focus, .card .card.editorial.editorial-accent a:focus, .card .card.editorial.editorial-dark a:focus, .card .card.editorial.editorial-energy a:focus, .card .card-inverse .card-title-wrap a:hover, .card .card.card-backed-primary .card-title-wrap a:hover, .card .card-panel.cards-backed-primary .card .card-title-wrap a:hover, .card-panel.cards-backed-primary .card .card .card-title-wrap a:hover, .card .card.card-backed-primary-light .card-title-wrap a:hover, .card .card-panel.cards-backed-primary-light .card .card-title-wrap a:hover, .card-panel.cards-backed-primary-light .card .card .card-title-wrap a:hover, .card .card.card-backed-accent .card-title-wrap a:hover, .card .card-panel.cards-backed-accent .card .card-title-wrap a:hover, .card-panel.cards-backed-accent .card .card .card-title-wrap a:hover, .card .card.card-backed-dark .card-title-wrap a:hover, .card .card-panel.cards-backed-dark .card .card-title-wrap a:hover, .card-panel.cards-backed-dark .card .card .card-title-wrap a:hover, .card .card.card-backed-energy .card-title-wrap a:hover, .card .card-panel.cards-backed-energy .card .card-title-wrap a:hover, .card-panel.cards-backed-energy .card .card .card-title-wrap a:hover, .card .card-img-overlay-bottom .card-title-wrap a:hover, .card .card-img-overlay-bottom-shaded .card-title-wrap a:hover, .card .card-img-overlay-centered .card-title-wrap a:hover, .card .card.editorial.editorial-primary .card-title-wrap a:hover, .card .card.editorial.editorial-primary-light .card-title-wrap a:hover, .card .card.editorial.editorial-accent .card-title-wrap a:hover, .card .card.editorial.editorial-dark .card-title-wrap a:hover, .card .card.editorial.editorial-energy .card-title-wrap a:hover, .card .card-inverse .card-title-wrap a:active, .card .card.card-backed-primary .card-title-wrap a:active, .card .card-panel.cards-backed-primary .card .card-title-wrap a:active, .card-panel.cards-backed-primary .card .card .card-title-wrap a:active, .card .card.card-backed-primary-light .card-title-wrap a:active, .card .card-panel.cards-backed-primary-light .card .card-title-wrap a:active, .card-panel.cards-backed-primary-light .card .card .card-title-wrap a:active, .card .card.card-backed-accent .card-title-wrap a:active, .card .card-panel.cards-backed-accent .card .card-title-wrap a:active, .card-panel.cards-backed-accent .card .card .card-title-wrap a:active, .card .card.card-backed-dark .card-title-wrap a:active, .card .card-panel.cards-backed-dark .card .card-title-wrap a:active, .card-panel.cards-backed-dark .card .card .card-title-wrap a:active, .card .card.card-backed-energy .card-title-wrap a:active, .card .card-panel.cards-backed-energy .card .card-title-wrap a:active, .card-panel.cards-backed-energy .card .card .card-title-wrap a:active, .card .card-img-overlay-bottom .card-title-wrap a:active, .card .card-img-overlay-bottom-shaded .card-title-wrap a:active, .card .card-img-overlay-centered .card-title-wrap a:active, .card .card.editorial.editorial-primary .card-title-wrap a:active, .card .card.editorial.editorial-primary-light .card-title-wrap a:active, .card .card.editorial.editorial-accent .card-title-wrap a:active, .card .card.editorial.editorial-dark .card-title-wrap a:active, .card .card.editorial.editorial-energy .card-title-wrap a:active, .card .card-inverse .card-title-wrap a:focus, .card .card.card-backed-primary .card-title-wrap a:focus, .card .card-panel.cards-backed-primary .card .card-title-wrap a:focus, .card-panel.cards-backed-primary .card .card .card-title-wrap a:focus, .card .card.card-backed-primary-light .card-title-wrap a:focus, .card .card-panel.cards-backed-primary-light .card .card-title-wrap a:focus, .card-panel.cards-backed-primary-light .card .card .card-title-wrap a:focus, .card .card.card-backed-accent .card-title-wrap a:focus, .card .card-panel.cards-backed-accent .card .card-title-wrap a:focus, .card-panel.cards-backed-accent .card .card .card-title-wrap a:focus, .card .card.card-backed-dark .card-title-wrap a:focus, .card .card-panel.cards-backed-dark .card .card-title-wrap a:focus, .card-panel.cards-backed-dark .card .card .card-title-wrap a:focus, .card .card.card-backed-energy .card-title-wrap a:focus, .card .card-panel.cards-backed-energy .card .card-title-wrap a:focus, .card-panel.cards-backed-energy .card .card .card-title-wrap a:focus, .card .card-img-overlay-bottom .card-title-wrap a:focus, .card .card-img-overlay-bottom-shaded .card-title-wrap a:focus, .card .card-img-overlay-centered .card-title-wrap a:focus, .card .card.editorial.editorial-primary .card-title-wrap a:focus, .card .card.editorial.editorial-primary-light .card-title-wrap a:focus, .card .card.editorial.editorial-accent .card-title-wrap a:focus, .card .card.editorial.editorial-dark .card-title-wrap a:focus, .card .card.editorial.editorial-energy .card-title-wrap a:focus {
         color: rgba(255, 255, 255, 0.75); }
-  .card ul {
-    list-style: none;
-    padding: 0; }
-    .card ul li {
-      padding-left: 12.8px;
-      padding-left: 0.8rem;
-      position: relative; }
-      .card ul li:before {
-        font-family: "kentfont", sans-serif;
-        content: "";
-        color: #05345C;
-        font-size: 5.6px;
-        font-size: 0.35rem;
-        left: 0;
-        position: absolute;
-        padding-top: 7.2px;
-        padding-top: 0.45rem; }
-      .card ul li ul {
-        list-style: none;
-        padding-left: 32px;
-        padding-left: 2rem; }
-        .card ul li ul li:before {
-          color: #818a91; }
   .card .card-badge {
     text-decoration: none;
     margin-bottom: 16px;
@@ -9601,6 +9583,8 @@ button.beta-toggler {
       width: 70%;
       margin-left: 15%;
       margin-right: 15%; }
+  .card .list-group-flush .list-group-item {
+    padding-left: 0; }
   a.card img, a img, .faux-link-block img, .card-panel.nav-links-panel nav .nav-link img, .nav-links-panel nav .nav-link img, .global-nav .global-nav-links .global-nav-link nav .nav-link img, .home-nav .global-nav-links .global-nav-link nav .nav-link img, .card.card-linked img, .card-panel.cards-linked .card img, .card .card-img-overlay-link img, .card.card-overlay .card-title-wrap.card-title-wrap-link img {
     transition: all 300ms; }
   a.card:hover, a.card:focus, a:hover, a:focus, .faux-link-block:hover, .nav-links-panel nav .nav-link:hover, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover, .card.card-linked:hover, .card-panel.cards-linked .card:hover, .card .card-img-overlay-link:hover, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover, .faux-link-block:focus, .nav-links-panel nav .nav-link:focus, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus, .card.card-linked:focus, .card-panel.cards-linked .card:focus, .card .card-img-overlay-link:focus, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus {
@@ -11090,6 +11074,9 @@ blockquote.pull-quote {
     border-color: #937227; }
     blockquote.pull-quote.pull-quote-accent > p {
       color: #937227; }
+
+.embed-responsive-2_5by1 {
+  padding-bottom: 40%; }
 
 .embed-responsive .embed-responsive-item-overlay {
   position: absolute;
