@@ -40,6 +40,19 @@
 
         }
     }
+
+    .relative{
+        position:relative;
+        max-width: 70rem;
+    }
+
+    .card-title-overlap {
+        position: relative;
+        margin: 0 15px;
+        padding: 2rem;
+
+    }
+
     @include media-breakpoint-up(md) {
 
         margin-top: -7rem;
@@ -60,10 +73,15 @@
             }
         }
 
+        .card-title-overlap {
+            position: absolute;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.85);
+            left: 0;
+            right: 0;
+        }
+
     }
-
-
-
 
     .card-footer {
         padding: 0 .5rem;
@@ -72,6 +90,7 @@
         .caption{
             text-align: right;
         }
+
         margin-bottom: -1.5rem;
     }
 
@@ -80,7 +99,7 @@
     }
 }
 
-//adjust offset when multi-line departmental menu is open.
+
 .show-departmental-menu {
     @include media-breakpoint-up(md) {
         .card.header-card-overlay {
@@ -88,8 +107,6 @@
         }
     }
 }
-
-/* Home page variant */
 
 .global-header-transparent .header-card-overlay {
 

@@ -10442,6 +10442,15 @@ button.beta-toggler {
     .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
       text-decoration: none;
       background-color: #404040; }
+  .card.header-card-overlay .relative {
+    position: relative;
+    max-width: 1120px;
+    max-width: 70rem; }
+  .card.header-card-overlay .card-title-overlap {
+    position: relative;
+    margin: 0 15px;
+    padding: 32px;
+    padding: 2rem; }
   @media (min-width: 768px) {
     .card.header-card-overlay {
       margin-top: -7rem; }
@@ -10456,7 +10465,13 @@ button.beta-toggler {
         .card.header-card-overlay .card-title-wrap.card-title-wrap-link {
           padding: 3rem 2rem 2rem; }
           .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
-            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); } }
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); }
+      .card.header-card-overlay .card-title-overlap {
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.85);
+        left: 0;
+        right: 0; } }
   .card.header-card-overlay .card-footer {
     padding: 0 8px;
     padding: 0 .5rem;
@@ -10472,7 +10487,6 @@ button.beta-toggler {
   .show-departmental-menu .card.header-card-overlay {
     margin-top: -8rem; } }
 
-/* Home page variant */
 .global-header-transparent .header-card-overlay .card-media-wrap::after, .global-header-transparent .header-card-overlay .media-wrap-paralax::after {
   position: absolute;
   top: 0;
