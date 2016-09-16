@@ -9937,23 +9937,28 @@ button.beta-toggler {
   .card-panel.card-panel-primary {
     background-color: #05345C; }
     .card-panel.card-panel-primary.cards-backed .card {
-      border-color: #05345C; }
+      border-color: #05345C;
+      color: #171717; }
   .card-panel.card-panel-primary-light {
     background-color: #95a9ce; }
     .card-panel.card-panel-primary-light.cards-backed .card {
-      border-color: #95a9ce; }
+      border-color: #95a9ce;
+      color: #171717; }
   .card-panel.card-panel-accent {
     background-color: #937227; }
     .card-panel.card-panel-accent.cards-backed .card {
-      border-color: #937227; }
+      border-color: #937227;
+      color: #171717; }
   .card-panel.card-panel-dark {
     background-color: #333333; }
     .card-panel.card-panel-dark.cards-backed .card {
-      border-color: #333333; }
+      border-color: #333333;
+      color: #171717; }
   .card-panel.card-panel-energy {
     background-color: #2abed9; }
     .card-panel.card-panel-energy.cards-backed .card {
-      border-color: #2abed9; }
+      border-color: #2abed9;
+      color: #171717; }
   .card-panel .card-panel-body {
     padding: 0; }
     @media (min-width: 544px) {
