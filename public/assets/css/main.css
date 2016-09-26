@@ -9334,6 +9334,14 @@ button.beta-toggler {
     margin-bottom: 0; }
   .card .card-media-wrap, .card .card-embed-wrap {
     transition: max-height 600ms; }
+    .card .card-media-wrap.force-3-2, .card .card-embed-wrap.force-3-2 {
+      overflow: hidden;
+      position: relative;
+      padding-top: 60%; }
+      .card .card-media-wrap.force-3-2 img, .card .card-embed-wrap.force-3-2 img {
+        position: absolute;
+        top: 0;
+        left: 0; }
   .card.card-inverse, .card.card-backed-primary, .card-panel.cards-backed-primary .card,
   .card-panel.cards-backed .card.card-backed-primary,
   .card-panel.cards-backed .card-panel.cards-backed-primary .card, .card-panel.cards-backed-primary

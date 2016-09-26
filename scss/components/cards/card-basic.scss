@@ -291,6 +291,16 @@
         @extend .media-wrap;
         transition: max-height 600ms;
 
+        &.force-3-2{
+            overflow: hidden;
+            position: relative;
+            padding-top: 60%;
+            img{
+                position: absolute;
+                top:0;
+                left:0;
+            }
+        }
     }
 
     &.card-inverse, .card-inverse {
