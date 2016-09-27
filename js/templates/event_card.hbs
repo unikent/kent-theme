@@ -1,0 +1,19 @@
+<div class="card card-linked">
+	<a href="{{url}}" class="card-title-link"><h3 class="card-title">{{title}}</h3></a>
+	<a href="{{url}}" class="faux-link-overlay" aria-hidden="true">{{title}}</a>
+	<time class="card-meta" datetime="{{start_ts}}">
+		{{#if all_day }}
+			{{#ifCond start_date '==' end_date}}
+				{{start_date}}
+			{{else}}
+				{{start_date}} - {{end_date}}
+			{{/ifCond}}
+		{{else}}
+			{{#ifCond start_date '==' end_date}}
+				{{start}} - {{end_time}}
+			{{else}}
+				{{start}} - {{end}}
+			{{/ifCond}}
+		{{/if}}</time>
+	<div class="card-text">{{{excerpt}}}</div>
+</div>

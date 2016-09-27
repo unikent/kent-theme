@@ -36,9 +36,11 @@ module.exports = {
 	main: {
 		src:[
 			'js/components/log.js',
+			'js/components/handlbars_helpers.js',
 			'js/components/kat.js',
 			'js/components/responsive_util.js',
 			'js/components/quickspot.js',
+			'js/components/loadmore.js',
 			'js/components/collapse_responsive.js',
 			'js/components/global_nav.js',
 			'js/components/global_search.js',

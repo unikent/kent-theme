@@ -8,7 +8,8 @@
 		"$": true,
 		"ResponsiveBootstrapToolkit": true,
 		"Handlebars": true,
-		"plyr": true
+		"plyr": true,
+        "moment":true
 	},
 	"rules": {
 		// ES6

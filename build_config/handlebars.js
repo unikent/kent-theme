@@ -1,33 +1,7 @@
 var path        = require('path');
 var Handlebars  = require('handlebars');
 
-Handlebars.registerHelper('ifCond', function (v1, operator, v2, options) {
-
-	switch (operator) {
-		case '!=':
-			return (v1 !== v2) ? options.fn(this) : options.inverse(this);
-		case '==':
-			return (v1 === v2) ? options.fn(this) : options.inverse(this);
-		case '<':
-			return (v1 < v2) ? options.fn(this) : options.inverse(this);
-		case '<=':
-			return (v1 <= v2) ? options.fn(this) : options.inverse(this);
-		case '>':
-			return (v1 > v2) ? options.fn(this) : options.inverse(this);
-		case '>=':
-			return (v1 >= v2) ? options.fn(this) : options.inverse(this);
-		case '&&':
-			return (v1 && v2) ? options.fn(this) : options.inverse(this);
-		case '||':
-			return (v1 || v2) ? options.fn(this) : options.inverse(this);
-		default:
-			return options.inverse(this);
-	}
-});
-
-Handlebars.registerHelper('log', function(something) {
-	console.log(something);
-});
+require('handlebars', '../js/components/handle_bars_helpers.js');
 
 // actual handle bar logic
 module.exports = {
