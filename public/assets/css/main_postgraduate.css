@@ -6450,11 +6450,14 @@ p + h6, p + .h6 {
 .lead {
   font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
   color: #671115;
-  margin-bottom: 36px;
-  margin-bottom: 2.25rem;
+  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
   font-weight: bold;
   font-size: 19.2px;
-  font-size: 1.2rem; }
+  font-size: 1.2rem;
+  padding-bottom: 12px;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #E6E6E6; }
 
 .strap-line {
   font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
@@ -8799,6 +8802,9 @@ body.show-global-search .global-nav-menu .global-nav-links {
     min-height: 10rem; }
     .show-departmental-menu .departmental-nav.slim {
       min-height: auto; } }
+
+.breadcrumb {
+  background-color: transparent; }
 
 main > nav.breadcrumb {
   margin: 0 32px 32px;
