@@ -4,11 +4,10 @@
         width: 100%;
     }
 
-    // For some reason the overlay ignores padding bottom,
-    // so am adding a rem here to compensate.
-    margin-top:     $card-overlay-amount + 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin:0;
 
-    padding-bottom: 1rem;
     .card-title-wrap {
         pointer-events: none;
         padding:          2rem;

@@ -47,35 +47,35 @@ $spacer-x: $spacer;
 $spacer-y: $spacer;
 
 $spacers: (
-              0: (
-                  x: 0,
-                  y: 0
-              ),
-              1: (
-                  x: $spacer-x,
-                  y: $spacer-y
-              ),
-              2: (
-                  x: ($spacer-x * 2),
-                  y: ($spacer-y * 2)
-              ),
-              3: (
-                  x: ($spacer-x * 3),
-                  y: ($spacer-y * 3)
-              ),
-              4: (
-                  x: ($spacer-x * 4),
-                  y: ($spacer-y * 4)
-              ),
-              5: (
-                  x: ($spacer-x * 5),
-                  y: ($spacer-y * 5)
-              ),
-              6: (
-                  x: ($spacer-x * 6),
-                  y: ($spacer-y * 6)
-              )
-          );
+                          0: (
+                              x: 0,
+                              y: 0
+                          ),
+                          1: (
+                              x: $spacer-x,
+                              y: $spacer-y
+                          ),
+                          2: (
+                              x: ($spacer-x * 2),
+                              y: ($spacer-y * 2)
+                          ),
+                          3: (
+                              x: ($spacer-x * 3),
+                              y: ($spacer-y * 3)
+                          ),
+                          4: (
+                              x: ($spacer-x * 4),
+                              y: ($spacer-y * 4)
+                          ),
+                          5: (
+                              x: ($spacer-x * 5),
+                              y: ($spacer-y * 5)
+                          ),
+                          6: (
+                              x: ($spacer-x * 6),
+                              y: ($spacer-y * 6)
+                          )
+                      );
 
 //COLOURS
 $kent-blue: #003882;
@@ -287,3 +287,7 @@ $alert-danger-border:         $brand-danger;
 //KENT BAR OVERRIDES
 $kentbar-height: 48px;
 $kentbar-height-desktop: 30px;
+
+
+$panel-padding: 3rem;
+$panel-padding-md: 5rem;

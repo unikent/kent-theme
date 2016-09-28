@@ -84,13 +84,17 @@ blockquote, .blockquote {
 main > blockquote {
     @extend .container;
 
-    padding: 2rem 2rem 0 2rem;
+    padding: $panel-padding 2rem;
+    margin-bottom: 0;
 
     @include media-breakpoint-up(sm) {
-        padding: 0 2rem;
+        padding: $panel-padding 2rem;
+    }
+    @include media-breakpoint-up(md) {
+        padding: $panel-padding-md 2rem;
     }
     @include media-breakpoint-up(lg) {
-        padding: 0 2rem;
+        padding: $panel-padding-md 5rem;
     }
 
     & > img {
@@ -110,10 +114,6 @@ main > blockquote {
         @include media-breakpoint-up(lg) {
             font-size: 1.9rem;
         }
-    }
-
-    @include media-breakpoint-up(lg) {
-        padding: 3rem 5rem 5rem;
     }
 }
 
@@ -181,18 +181,17 @@ blockquote.social-quote {
 
 main > blockquote.social-quote {
 
-    padding: 2rem 1rem;
+    padding: $panel-padding 1rem;
+    margin-bottom: 0;
 
     @include media-breakpoint-up(sm) {
-        padding: 2rem;
+        padding: $panel-padding 2rem;
     }
-
     @include media-breakpoint-up(md) {
-        padding: 2rem 4rem;
+        padding: $panel-padding-md 4rem;
     }
-
     @include media-breakpoint-up(lg) {
-        padding: 3rem 10rem;
+        padding: $panel-padding-md 10rem;
     }
 
 }
