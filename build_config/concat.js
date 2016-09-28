@@ -36,7 +36,7 @@ module.exports = {
 	main: {
 		src:[
 			'js/components/log.js',
-			'js/components/handlbars_helpers.js',
+			'js/components/handlebars_helpers.js',
 			'js/components/kat.js',
 			'js/components/responsive_util.js',
 			'js/components/quickspot.js',

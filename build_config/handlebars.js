@@ -1,7 +1,5 @@
 var path        = require('path');
-var Handlebars  = require('handlebars');
-
-require('handlebars', '../js/components/handle_bars_helpers.js');
+var Handlebars  = require('../js/components/handlebars_helpers.js');
 
 // actual handle bar logic
 module.exports = {

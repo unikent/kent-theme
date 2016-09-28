@@ -227,8 +227,13 @@ window.KENT = window.KENT || {};
 				return img;
 			},
 			prepExcerpt : function (excerpt, maxLength) {
+
+				excerpt = excerpt.replace(/<a[^>]*?>Read&nbsp;more<\/a>/ig, '').replace(/(<([^>]+)>)/ig, '').trim();
+				return window.KENT.loadmore.utils.truncateAtWord(excerpt, maxLength);
+
+			},
+			truncateAtWord : function(out, maxLength){
 				var ellipse = '&hellip;';
-				var out = excerpt.replace(/<a[^>]*?>Read&nbsp;more<\/a>/ig, '').replace(/(<([^>]+)>)/ig, '').trim();
 
 				if (out.substr(out.length - ellipse.length) === ellipse){
 					out = out.substr(0, out.length - ellipse.length).trim();
@@ -246,11 +251,7 @@ window.KENT = window.KENT || {};
 					index = Math.max(tmp.lastIndexOf(' '), tmp.lastIndexOf(','));
 				}
 
-				if (index > 0 ){
-					out = out.substr(0, index).trim();
-				} else {
-					out = out.substr(0, maxLength - ellipse.length).trim();
-				}
+				out = (index > 0 ) ? out.substr(0, index).trim() : out.substr(0, maxLength - ellipse.length).trim();
 
 				out += (out.substr(out.length - 1).match(/[\.!\?]+/gi) ? '' : ellipse);
 
