@@ -14,12 +14,7 @@
     overflow:         hidden;
 
     a.main-logo {
-        font-size:   3.5rem;
-        color:       $kent-blue;
-        padding:     1rem;
         display:     none;
-        line-height: 1rem;
-
         &:hover {
             text-decoration: none;
         }
@@ -140,8 +135,12 @@
         a.main-logo {
             display:      block;
             float:        left;
+            font-size: 2.5rem;
             padding-left: 0;
+            padding-right: 0;
+            padding-top: 1.2rem;
             color: #FFF;
+
         }
 
         .audience-nav-links a:hover {
@@ -166,7 +165,7 @@
         .search-button-full {
 
             display:      block;
-            margin-top:   1.25rem;
+            margin-top:   1rem;
             &:before {
                 width: 1.5rem;
             }
@@ -190,7 +189,7 @@
 
             .global-nav-link {
                 min-width:  1%;
-                font-size:  1.7rem;
+                font-size:  1.3rem;
                 display:    table-cell;
                 padding:    1.4rem 1rem 1rem;
                 text-align: center;
@@ -225,7 +224,7 @@
                     width:      100%;
                     position:   absolute;
                     left:       0;
-                    top:        $global-nav-height - 1.3;
+                    top:        $global-nav-height - .3;
                 }
 
                 nav {
@@ -394,7 +393,7 @@
 
             .global-nav-search.in {
                 opacity:    1;
-                min-height: 5.5rem;
+                min-height: 5.35rem;
                 overflow:   visible;
 
                 .close-search {
@@ -408,7 +407,7 @@
                 }
                 .form-group {
                     position: absolute;
-                    margin:   0.25rem 1rem 0 8rem;
+                    margin:   0 1rem 0 8rem;
 
                     width:    calc(100% - 11rem);
 
