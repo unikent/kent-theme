@@ -1,5 +1,10 @@
 window.KENT  = window.KENT || {};
 window.KENT.modules = window.KENT.modules || {};
+
+/**
+ * NOTE: window.KENT.modules.quickspot is inlcuded/set by the kent bar
+ */
+
 /**
  * Quickspot helper
  *

@@ -24738,28 +24738,91 @@ return /******/ (function(modules) { // webpackBootstrap
 this["Handlebars"] = this["Handlebars"] || {};
 this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
 
-this["Handlebars"]["templates"]["video_inline"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = (helpers.ifCond || (depth0 && depth0.ifCond) || helpers.helperMissing).call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.start_date : depth0),"==",(depth0 != null ? depth0.end_date : depth0),{"name":"ifCond","hash":{},"fn":container.program(2, data, 0),"inverse":container.program(4, data, 0),"data":data})) != null ? stack1 : "");
+},"2":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return "<div id=\"video"
-    + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" class=\"video-container\">\n	\n</div>";
+  return "				"
+    + container.escapeExpression(((helper = (helper = helpers.start_date || (depth0 != null ? depth0.start_date : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"start_date","hash":{},"data":data}) : helper)))
+    + "\n";
+},"4":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "				"
+    + alias4(((helper = (helper = helpers.start_date || (depth0 != null ? depth0.start_date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start_date","hash":{},"data":data}) : helper)))
+    + " - "
+    + alias4(((helper = (helper = helpers.end_date || (depth0 != null ? depth0.end_date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end_date","hash":{},"data":data}) : helper)))
+    + "\n";
+},"6":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = (helpers.ifCond || (depth0 && depth0.ifCond) || helpers.helperMissing).call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.start_date : depth0),"==",(depth0 != null ? depth0.end_date : depth0),{"name":"ifCond","hash":{},"fn":container.program(7, data, 0),"inverse":container.program(9, data, 0),"data":data})) != null ? stack1 : "")
+    + "		";
+},"7":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "				"
+    + alias4(((helper = (helper = helpers.start || (depth0 != null ? depth0.start : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start","hash":{},"data":data}) : helper)))
+    + " - "
+    + alias4(((helper = (helper = helpers.end_time || (depth0 != null ? depth0.end_time : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end_time","hash":{},"data":data}) : helper)))
+    + "\n";
+},"9":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "				"
+    + alias4(((helper = (helper = helpers.start || (depth0 != null ? depth0.start : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start","hash":{},"data":data}) : helper)))
+    + " - "
+    + alias4(((helper = (helper = helpers.end || (depth0 != null ? depth0.end : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end","hash":{},"data":data}) : helper)))
+    + "\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<div class=\"card card-linked\">\n	<a href=\""
+    + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
+    + "\" class=\"card-title-link\"><h3 class=\"card-title\">"
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</h3></a>\n	<a href=\""
+    + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
+    + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</a>\n	<time class=\"card-meta\" datetime=\""
+    + alias4(((helper = (helper = helpers.start_ts || (depth0 != null ? depth0.start_ts : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start_ts","hash":{},"data":data}) : helper)))
+    + "\">\n"
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.all_day : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(6, data, 0),"data":data})) != null ? stack1 : "")
+    + "</time>\n	<div class=\"card-text\">"
+    + ((stack1 = ((helper = (helper = helpers.excerpt || (depth0 != null ? depth0.excerpt : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"excerpt","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + "</div>\n</div>";
 },"useData":true});
 
-this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
-    var helper;
-
-  return "			<span class=\"video-transcript\"><small><a href=\""
-    + container.escapeExpression(((helper = (helper = helpers.transcript || (depth0 != null ? depth0.transcript : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"transcript","hash":{},"data":data}) : helper)))
-    + "\">Download transcript</a></small></span>\n";
+this["Handlebars"]["templates"]["wp_post_card"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
+    return " card-media-wrap-video";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : {};
+    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=container.lambda, alias3=container.escapeExpression, alias4=helpers.helperMissing, alias5="function";
 
-  return "<div class=\"modal fade modal-fullscreen\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"videoModalLabel"
-    + container.escapeExpression(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
-    + "\" aria-hidden=\"true\">\n	<div class=\"modal-dialog\" role=\"document\">\n		<div class=\"modal-content modal-content-transparent\">\n\n			<div class=\"modal-header\">\n				<button type=\"button\" class=\"close pull-right\" data-dismiss=\"modal\" aria-label=\"Close\">\n					<span aria-hidden=\"true\"><i class=\"kf-close\"></i></span>\n					<span class=\"sr-only\">Close</span>\n				</button>\n			</div>\n\n			<div class=\"video-container\">\n				\n			</div>\n"
-    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.transcript : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "			\n		</div>\n	</div>\n</div>";
+  return "<div class=\"card card-linked\">\n	<div class=\"card-media-wrap"
+    + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.video : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + " force-3-2\">\n		<img class=\"card-img\" src=\""
+    + alias3(alias2(((stack1 = (depth0 != null ? depth0.image : depth0)) != null ? stack1.src : stack1), depth0))
+    + "\" alt=\""
+    + alias3(alias2(((stack1 = (depth0 != null ? depth0.image : depth0)) != null ? stack1.alt : stack1), depth0))
+    + "\" />\n	</div>\n	<a href=\""
+    + alias3(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
+    + "\" class=\"card-title-link\"><h3 class=\"card-title\">"
+    + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</h3></a>\n	<time class=\"card-meta\" datetime=\""
+    + alias3(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date","hash":{},"data":data}) : helper)))
+    + "\">"
+    + alias3(((helper = (helper = helpers.date_string || (depth0 != null ? depth0.date_string : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date_string","hash":{},"data":data}) : helper)))
+    + "</time>\n	<div class=\"card-text\">"
+    + ((stack1 = ((helper = (helper = helpers.excerpt || (depth0 != null ? depth0.excerpt : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"excerpt","hash":{},"data":data}) : helper))) != null ? stack1 : "")
+    + "</div>\n	<a href=\""
+    + alias3(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
+    + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
+    + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</a>\n</div>";
 },"useData":true});
 // ==========================================================================
 // Plyr
@@ -28254,10 +28317,13 @@ this["Handlebars"]["templates"]["video_modal"] = Handlebars.template({"1":functi
     window.CustomEvent = CustomEvent;
 })();
 
-'use strict';/**
+'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;};/**
  * Debug helper
  * Log only shown when KENT.debug is true.
- */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){/*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};window.KENT=window.KENT||{};/**
+ */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){/*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};(function(factory){if(typeof define==='function'&&define.amd){// AMD
+define(['handlebars'],factory);}else if((typeof exports==='undefined'?'undefined':_typeof(exports))==='object'){// Node, CommonJS-like
+module.exports=factory(require('handlebars'));}else{// Browser globals (root is window)
+window.Handlebars=factory(window.Handlebars);}})(function(Handlebars){Handlebars.registerHelper('ifCond',function(v1,operator,v2,options){switch(operator){case'!=':return v1!==v2?options.fn(this):options.inverse(this);case'==':return v1===v2?options.fn(this):options.inverse(this);case'<':return v1<v2?options.fn(this):options.inverse(this);case'<=':return v1<=v2?options.fn(this):options.inverse(this);case'>':return v1>v2?options.fn(this):options.inverse(this);case'>=':return v1>=v2?options.fn(this):options.inverse(this);case'&&':return v1&&v2?options.fn(this):options.inverse(this);case'||':return v1||v2?options.fn(this):options.inverse(this);default:return options.inverse(this);}});Handlebars.registerHelper('log',function(something){window.KENT.log(something);});return Handlebars;});window.KENT=window.KENT||{};/**
  * Kent Analytics Tracker
  * A simple helper for pushing pages & events to multiple trackers.
  */window.KENT.kat={/**
@@ -28290,6 +28356,8 @@ var previousBreakpoint='';$(window).resize(viewport.changed(function(){var break
 $(window).trigger('viewport:resize');if(previousBreakpoint!==breakpoint){// Debug
 window.KENT.log('Breakpoint change: '+previousBreakpoint+' -> '+breakpoint);// breakpoint has changed, fire evenet
 $(window).trigger('viewport:change');previousBreakpoint=breakpoint;}}));})(jQuery,ResponsiveBootstrapToolkit);window.KENT=window.KENT||{};window.KENT.modules=window.KENT.modules||{};/**
+ * NOTE: window.KENT.modules.quickspot is inlcuded/set by the kent bar
+ *//**
  * Quickspot helper
  *
  * Centralises common configuration & initalisation options for QuickSpot search
@@ -28324,7 +28392,7 @@ config.target=$(this).attr('id');// Override data source url
 if($(this).data('quickspot-source')){config.url=$(this).data('quickspot-source');}// Override results container location
 if($(this).data('quickspot-target')){config.results_container=$(this).data('quickspot-target');}// Boot quickspot
 var qs=window.KENT.modules.quickspot.attach(config);$(this).attr('autocomplete','off');$(this).data('qs',qs);// Debug
-window.KENT.log('[Quickspot] Instance created on #'+$(this).attr('id')+' with config '+$(this).data('quickspot-config'));});});/**
+window.KENT.log('[Quickspot] Instance created on #'+$(this).attr('id')+' with config '+$(this).data('quickspot-config'));});});window.KENT=window.KENT||{};(function(){window.KENT.loadmore={config:{blogs:{source:function source($target,config){return window.KENT.settings.api_url+'/v1/blogs/'+$target.data('blog');}},news:{source:window.KENT.settings.api_url+'/v1/news'},events:{template:Handlebars.templates['event_card'],source:function source($target,config){var cal=$target.data('calendar')||'central';return window.KENT.settings.api_url+'/v1/calendar/'+cal+'/event/start/'+moment().format('YYYY-MM-DD');},getRequestUrl:function getRequestUrl(loadmore){return loadmore.source+'/offset/'+loadmore.page*loadmore.pageSize+'/limit/'+loadmore.pageSize;},parseResponse:function parseResponse($data,loadmore){var $items=[];if(typeof $data!=='undefined'&&$data.length>0){$.each($data,function(index,item){$items.push(loadmore.prepModel(item,loadmore));});}return $items;},prepModel:function prepModel(item,loadmore){var start=moment(item.start);var end=moment(item.end);return{title:item.title,subtitle:item.subtitle,series_title:item.series_title,start:start.format('Do MMM YYYY HH:mm'),start_ts:start.unix(),start_date:start.format('Do MMM YYYY'),start_time:start.format('HH:mm'),end:end.format('Do MMM YYYY HH:mm'),end_ts:end.unix(),end_date:end.format('Do MMM YYYY'),end_time:end.format('HH:mm'),all_day:item.all_day,excerpt:window.KENT.loadmore.utils.prepExcerpt(item.description,loadmore.excerptLength),url:item.url};}},default:{excerptLength:150,template:Handlebars.templates['wp_post_card'],btnSelector:'.loadmore-btn',containerSelector:'.loadmore-container',loaderSelector:'.loadmore-loader',loadMore:function loadMore(e){var $target=$(this).closest('.has-loadmore');if($target.length>0){var loadmore=$target[0].loadmore;loadmore.loader.prop('hidden',false);loadmore.btns.prop('disabled',true);$target.addClass('loadmore-loading');var url=loadmore.getRequestUrl(loadmore);$.ajax(url,{success:function success($data){if(loadmore.processResponse(loadmore,$data)){$target[0].loadmore.page++;}},complete:function complete(){loadmore.loader.prop('hidden',true);loadmore.btns.prop('disabled',false);$target.removeClass('loadmore-loading');}});}},getRequestUrl:function getRequestUrl(loadmore){return loadmore.source+'/page/'+(loadmore.page+1)+'/posts_per_page/'+loadmore.pageSize;},parseResponse:function parseResponse($data,loadmore){var $items=[];var $posts=$data['posts'];if($data['http_status']&&$data['http_status']!==200){return false;}if(typeof $posts!=='undefined'&&$posts.length>0){$.each($posts,function(index,item){$items.push(loadmore.prepModel(item,loadmore));});}return $items;},prepModel:function prepModel(item,loadmore){var image=false;var video=false;if(item.featured_video&&item.featured_video!==''){var re=/^https?:\/\/(?:youtu\.be|(?:www\.|m\.)?youtube\.com)\/?(?:watch|embed)?(?:.*?v=|v\/|\/)([\w-]+)/ig;var match=re.exec(item.featured_video);if(match.length>=2){video=match[1];}}if(item.featured_image===''||item.featured_image===false||typeof item.featured_image==='undefined'){if(item.default_image!==''&&item.default_image!==false&&typeof item.default_image!=='undefined'){image=window.KENT.loadmore.utils.prepWPImage(item.default_image);}}else{image=window.KENT.loadmore.utils.prepWPImage(item.featured_image);}return{title:item.title,excerpt:window.KENT.loadmore.utils.prepExcerpt(item.excerpt,loadmore.excerptLength),date_string:moment(item.date).format('Do MMMM YYYY'),date:item.date,url:item.permalink,image:image,video:video};},processResponse:function processResponse(loadmore,$data){var items=loadmore.parseResponse($data,loadmore);if(!items){return false;}var html='';for(var i=0;i<items.length;i++){html+=loadmore.template(items[i]);}loadmore.container.append(html);if(items.length===0||items.length<loadmore.pageSize){loadmore.btns.prop('hidden',true);}return true;}}},getConfig:function getConfig($target){var conf=window.KENT.loadmore.config[$target.data('loadmore')];if(conf){return $.extend({},window.KENT.loadmore.config.default,conf);}return false;},init:function init($target){var config=window.KENT.loadmore.getConfig($target);if(config){var loadmore=config;loadmore.btns=$target.find(config.btnSelector);loadmore.container=$target.find(config.containerSelector);loadmore.loader=$target.find(config.loaderSelector);if(loadmore.btns.length===0){window.KENT.log('loadmore button missing',$target);return false;}if(loadmore.container.length===0){window.KENT.log('loadmore container missing',$target);return false;}loadmore.source=$target.data('loadmore-source')||config.source;if(typeof loadmore.source==='function'){loadmore.source=loadmore.source($target,config);}if(typeof loadmore.source==='undefined'){window.KENT.log('Undefined loadmore source',$target);return false;}loadmore.preLoad=$target.data('loadmore-preload')||false;loadmore.page=parseInt($target.data('loadmore-page'),10)||(loadmore.preLoad?0:1);loadmore.pageSize=parseInt($target.data('loadmore-page-size'),10)||4;loadmore.btns.click(config.loadMore);$target.addClass('has-loadmore');$target[0].loadmore=loadmore;if(loadmore.preLoad){loadmore.btns.first().trigger('click');}}else{window.KENT.log('Undefined loadmore config "'+$(this).data('loadmore-config')+'"',$target);}},utils:{prepWPImage:function prepWPImage(src){var img={alt:src.title,attribution:src.attribution};if(typeof src.sizes==='undefined'){return false;}if(_typeof(src.sizes.medium)==='object'){img.src=src.sizes.medium.url;}else if(_typeof(src.sizes.large)==='object'){img.src=src.sizes.medium.url;}else if(_typeof(src.sizes.full)==='object'){img.src=src.sizes.medium.url;}else{return false;}return img;},prepExcerpt:function prepExcerpt(excerpt,maxLength){excerpt=excerpt.replace(/<a[^>]*?>Read&nbsp;more<\/a>/ig,'').replace(/(<([^>]+)>)/ig,'').trim();return window.KENT.loadmore.utils.truncateAtWord(excerpt,maxLength);},truncateAtWord:function truncateAtWord(out,maxLength){var ellipse='&hellip;';if(out.substr(out.length-ellipse.length)===ellipse){out=out.substr(0,out.length-ellipse.length).trim();}if(out.length<=maxLength){out+=out.substr(out.length-1).match(/[\.!\?]+/gi)?'':ellipse;return out;}var index=Math.max(out.lastIndexOf(' '),out.lastIndexOf(','));while(index+ellipse.length>maxLength){var tmp=out.substr(0,index).trim();index=Math.max(tmp.lastIndexOf(' '),tmp.lastIndexOf(','));}out=index>0?out.substr(0,index).trim():out.substr(0,maxLength-ellipse.length).trim();out+=out.substr(out.length-1).match(/[\.!\?]+/gi)?'':ellipse;return out;}}};$('div[data-loadmore]').each(function(){window.KENT.loadmore.init($(this));});})();/**
  * Responsive Collapse
  *
  * Mirrors the behaviour of http://v4-alpha.getbootstrap.com/components/collapse/ in a breakpoint aware way
