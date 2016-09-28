@@ -8478,7 +8478,7 @@ input[type=number]::-webkit-outer-spin-button {
         float: none; }
       .show-global-menu .global-header .global-nav-search.in, .show-global-search .global-header .global-nav-search.in {
         opacity: 1;
-        min-height: 5.35rem;
+        min-height: 5.4rem;
         overflow: visible; }
         .show-global-menu .global-header .global-nav-search.in .close-search, .show-global-search .global-header .global-nav-search.in .close-search {
           display: block;
