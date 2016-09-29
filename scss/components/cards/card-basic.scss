@@ -166,6 +166,10 @@
 
     .card-img-overlay-tinted{
         background-color: rgba(0,0,0,.3);
+
+        .btn-primary{
+            @include kent-button-variant(#FFF, #006bc5, #006bc5);
+        }
     }
 
     .card-img-overlay-bottom-shaded {
@@ -291,6 +295,16 @@
         @extend .media-wrap;
         transition: max-height 600ms;
 
+        &.force-3-2{
+            overflow: hidden;
+            position: relative;
+            padding-top: 60%;
+            img{
+                position: absolute;
+                top:0;
+                left:0;
+            }
+        }
     }
 
     &.card-inverse, .card-inverse {
@@ -390,6 +404,8 @@
 
     .list-group-flush .list-group-item{
         padding-left: 0;
+        background: none;
+        border-width: 1px 0 0 0;
     }
 
     // if card is an A

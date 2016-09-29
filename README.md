@@ -5,10 +5,18 @@
 ## Usage
 This theme is still in beta and has not been approved for production use, please refer to the current [brand guidelines](https://www.kent.ac.uk/brand) for use of the existing brand.
 
+## kent-theme and beta.kent
+
+To get the full beta.kent web experience working you will need both this kent-theme repository (which acts as the engine behind the theme) and the https://github.com/unikent/beta.kent repository (which contains the frontend php pages).
+
+Download or clone both repositories separately to your system. The beta.kent will act as your main web root, and must be configured to point to the kent-theme code. Instructions for this are in the beta.kent readme.
+
+However, first you will want to set up your kent-theme code...
+
 ## Setup
 
 1. Make a copy of `.env.sample` and rename to `.env` 
-  - change the WEBROOT and API_URL variables if you need to when developing locally.
+  - change the WEBROOT and API_URL variables if you need to when developing locally. The WEBROOT value should be a URL which points to the web root of kent-theme and not for your frontend files on your beta.kent codebase. WEBROOT will be used for things like the css paths which are a part of the overall kent-theme system, and not the frontent pages themselves.
 
 2. Run `npm install` to install all dependencies, run grunt and start a watch task.
 

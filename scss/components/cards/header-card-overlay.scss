@@ -1,7 +1,5 @@
 .card.header-card-overlay {
 
-    margin-top: 0;
-
     .card-title-wrap {
         background: #333333;
         padding:    2rem;
@@ -40,6 +38,22 @@
 
         }
     }
+
+    .relative{
+        position: relative;
+    }
+
+    .card-title-overlap {
+        position: relative;
+        margin: 0 15px;
+        padding: 2rem;
+
+    }
+
+    .form-group{
+        margin-bottom: 0;
+    }
+
     @include media-breakpoint-up(md) {
 
         margin-top: -7rem;
@@ -60,10 +74,30 @@
             }
         }
 
+        .card-title-overlap {
+            position: absolute;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.85);
+            left: 0;
+            right: 0;
+            padding: 1.5rem 2rem 1rem 2rem
+        }
+
+        .form-group{
+            margin-bottom: 1rem;
+        }
+
     }
 
-
-
+    .overlap-container{
+        @each $breakpoint, $container-max-width in $container-max-widths
+        {
+            @include media-breakpoint-up($breakpoint) {
+                max-width: calc(#{$container-max-width} + 1rem);
+            }
+        }
+        margin: auto;
+    }
 
     .card-footer {
         padding: 0 .5rem;
@@ -72,6 +106,7 @@
         .caption{
             text-align: right;
         }
+
         margin-bottom: -1.5rem;
     }
 
@@ -80,16 +115,22 @@
     }
 }
 
-//adjust offset when multi-line departmental menu is open.
-.show-departmental-menu {
-    @include media-breakpoint-up(md) {
-        .card.header-card-overlay {
-            margin-top: -8rem;
-        }
-    }
-}
 
-/* Home page variant */
+.show-departmental-menu {
+
+
+        @include media-breakpoint-up(md) {
+            .card.header-card-overlay {
+                margin-top: -8rem;
+            }
+            &.slim-header {
+                .card.header-card-overlay {
+                    margin-top: calc(-8rem + #{1px});
+                }
+            }
+        }
+
+}
 
 .global-header-transparent .header-card-overlay {
 

@@ -1,0 +1,9 @@
+<div class="card card-linked">
+	<div class="card-media-wrap{{#if video }} card-media-wrap-video{{/if}} force-3-2">
+		<img class="card-img" src="{{image.src}}" alt="{{image.alt}}" />
+	</div>
+	<a href="{{url}}" class="card-title-link"><h3 class="card-title">{{title}}</h3></a>
+	<time class="card-meta" datetime="{{date}}">{{date_string}}</time>
+	<div class="card-text">{{{excerpt}}}</div>
+	<a href="{{url}}" class="faux-link-overlay" aria-hidden="true">{{title}}</a>
+</div>
