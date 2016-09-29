@@ -57,6 +57,8 @@
     &.in{
         .audience-nav-links {
             height: 166px;
+            position: relative;
+            z-index: 1;
         }
     }
 
