@@ -129,8 +129,6 @@
 
     @include media-breakpoint-up(md) {
 
-        overflow: visible;
-
         background-color: $brand-primary;
         border-top:       1px solid lighten($brand-primary, 6%);
         padding:          0 2rem;
@@ -151,7 +149,6 @@
         }
 
         .global-nav-menu {
-            overflow: visible;
             display:       block;
             height:        auto;
             padding-right: 1rem;
@@ -527,7 +524,7 @@ body {
 
             .global-nav-links {
 
-                height: $global-nav-height - 2.9;
+                height: $global-nav-height - 1.6;
 
                 .global-nav-link {
                     background: transparent;
