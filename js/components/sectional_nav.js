@@ -12,7 +12,7 @@ jQuery(document).ready(function(){
 	function respond () {
 		if (viewport.is('>=md')) {
 
-			if (navHasOverflown()) {
+			if (navHasOverflown() && sectional_nav.find('a').length > 1) {
 				sectional_nav.addClass('overflown');
 				toggler.addClass('overflown');
 			} else {
@@ -24,8 +24,9 @@ jQuery(document).ready(function(){
 	}
 
 	function navHasOverflown () {
-		var last = sectional_nav.find('a').last();
-		return last.position().top >= last.height();
+		var links = sectional_nav.find('a');
+
+		return (links.last().position().top > links.first().position().top) || links.length <= 1;
 	}
 
 	function toggleNav () {

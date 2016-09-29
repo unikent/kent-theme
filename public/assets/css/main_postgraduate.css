@@ -8699,7 +8699,11 @@ body.show-global-search .global-nav-menu .global-nav-links {
 .departmental-nav .navbar-toggler {
   background-color: #f0e6e7;
   color: #671115;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 16px;
+  font-size: 1rem;
+  padding: 8px 16px;
+  padding: .5rem 1rem; }
   .departmental-nav .navbar-toggler:after {
     float: right;
     content: "";
@@ -8745,11 +8749,12 @@ body.show-global-search .global-nav-menu .global-nav-links {
       min-height: 4.8rem; }
       .departmental-nav.slim header {
         font-size: 1.2rem;
-        padding: .5rem 1.5rem; }
+        padding: .5rem 1rem; }
     .departmental-nav .navbar-menu {
       max-height: 2.5rem;
       height: auto;
       overflow: hidden;
+      padding-left: 0;
       padding-right: 1rem;
       border: none; }
       .departmental-nav .navbar-menu.overflown {
@@ -8778,7 +8783,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
       padding-right: 1rem;
       cursor: pointer;
       z-index: 1;
-      font-size: 1em;
+      font-size: 1rem;
       background-color: transparent;
       line-height: inherit;
       border: none;
@@ -10466,6 +10471,9 @@ button.beta-toggler {
   padding: 32px;
   padding: 2rem; }
 
+.card.header-card-overlay .form-group {
+  margin-bottom: 0; }
+
 @media (min-width: 768px) {
   .card.header-card-overlay {
     margin-top: -7rem; }
@@ -10487,7 +10495,9 @@ button.beta-toggler {
       background-color: rgba(255, 255, 255, 0.85);
       left: 0;
       right: 0;
-      padding: 1.5rem 2rem 1rem 2rem; } }
+      padding: 1.5rem 2rem 1rem 2rem; }
+    .card.header-card-overlay .form-group {
+      margin-bottom: 1rem; } }
 
 .card.header-card-overlay .overlap-container {
   margin: auto; }
@@ -10524,7 +10534,9 @@ button.beta-toggler {
 
 @media (min-width: 768px) {
   .show-departmental-menu .card.header-card-overlay {
-    margin-top: -8rem; } }
+    margin-top: -8rem; }
+  .show-departmental-menu.slim-header .card.header-card-overlay {
+    margin-top: calc(-8rem + 1px); } }
 
 .global-header-transparent .header-card-overlay .card-media-wrap::after, .global-header-transparent .header-card-overlay .media-wrap-paralax::after {
   position: absolute;
