@@ -135,6 +135,10 @@
     @include kent-button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
 
+.btn-link-accent {
+    @extend .btn-link;
+    color: $brand-accent;
+}
 .btn-gray-outline {
     @include button-outline-variant(#AAAAAA);
 }
