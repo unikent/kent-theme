@@ -10473,6 +10473,19 @@ button.beta-toggler {
     margin-right: -0.9375rem;
     margin-left: -0.9375rem; } }
 
+.card.header-card-overlay + .breadcrumb,
+.card.header-card-overlay + .container,
+.card.header-card-overlay + .container-padded,
+.card.header-card-overlay + .container-padded-h,
+.card.header-card-overlay + .card-panel.card-panel-contained, .card-panel
+.card.header-card-overlay + .card-panel-body, .card-panel
+.card.header-card-overlay + .card-panel-header, main >
+.card.header-card-overlay + blockquote,
+.card.header-card-overlay + .content-header,
+.card.header-card-overlay + .content-container {
+  margin-top: 16px;
+  margin-top: 1rem; }
+
 .card.header-card-overlay .card-title-wrap {
   background: #333333;
   padding: 32px;
@@ -10587,7 +10600,7 @@ button.beta-toggler {
 
 @media (min-width: 768px) {
   .slim-header .card.header-card-overlay {
-    margin-top: -5.3rem; } }
+    margin-top: -5.4rem; } }
 
 .card.editorial .card-title-wrap {
   background-color: #FFFFFF;

@@ -1,5 +1,12 @@
 .card.header-card-overlay {
 
+    & + .breadcrumb,
+    & + .container,
+    & + .content-header,
+    & + .content-container{
+        margin-top: 1rem;
+    }
+
     .card-title-wrap {
         background: #333333;
         padding:    2rem;
@@ -154,7 +161,7 @@
 .slim-header{
     .card.header-card-overlay {
         @include media-breakpoint-up(md) {
-            margin-top: -5.3rem;
+            margin-top: -5.4rem;
         }
     }
 }
