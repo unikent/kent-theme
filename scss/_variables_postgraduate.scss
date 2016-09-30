@@ -2,9 +2,9 @@
 $brand-primary: #671115; //$kent-pg-primary
 $brand-primary-tint: #E0D4D4; //$kent-pg-primary-tint
 
-$brand-primary-light: #ab777d;
+$brand-primary-light: #937227; //brand-accent
 
 $brand-energy: #de5433;
 
-$brand-nav-bg :#f0e6e7;
-$brand-nav-active: #e2cfd1;
+$brand-nav-bg : #f7f2e1;  //brand-tertiary
+$brand-nav-active: darken($brand-nav-bg,5%);

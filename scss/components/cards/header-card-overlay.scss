@@ -1,5 +1,12 @@
 .card.header-card-overlay {
 
+    & + .breadcrumb,
+    & + .container,
+    & + .content-header,
+    & + .content-container{
+        margin-top: 1rem;
+    }
+
     .card-title-wrap {
         background: #333333;
         padding:    2rem;
@@ -57,6 +64,10 @@
 
     }
 
+    .form-group{
+        margin-bottom: 0;
+    }
+
     @include media-breakpoint-up(md) {
 
         margin-top: -7rem;
@@ -84,6 +95,10 @@
             left: 0;
             right: 0;
             padding: 1rem 2rem 0.5rem 2rem
+        }
+
+        .form-group{
+            margin-bottom: 1rem;
         }
 
     }
@@ -122,11 +137,19 @@
 
 
 .show-departmental-menu {
-    @include media-breakpoint-up(md) {
-        .card.header-card-overlay {
-            margin-top: -8rem;
+
+
+        @include media-breakpoint-up(md) {
+            .card.header-card-overlay {
+                margin-top: -8rem;
+            }
+            &.slim-header {
+                .card.header-card-overlay {
+                    margin-top: calc(-8rem + #{1px});
+                }
+            }
         }
-    }
+
 }
 
 .global-header-transparent .header-card-overlay {
@@ -151,7 +174,7 @@
 .slim-header{
     .card.header-card-overlay {
         @include media-breakpoint-up(md) {
-            margin-top: -5.3rem;
+            margin-top: -5.4rem;
         }
     }
 }
