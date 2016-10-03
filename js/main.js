@@ -28492,19 +28492,11 @@ var item=$(this).parent(); // Get menu container
 var container=item.parent(); // Close submenus in provided menuItems
 var closeSubMenus=function closeSubMenus(menuItems){return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');};if(container.hasClass('in')){ // If a menu was already open,
 // Close all menu items other than the one selected (setting expanded as we go)
-<<<<<<< HEAD
 var menus=container.find('.in').not(item);menus.removeClass('in');closeSubMenus(menus);menus.children(':first').attr('aria-expanded','false');}else { // If menu wasn't open, preperate submenus for being shown.
 closeSubMenus(container);}if(item.hasClass('in')){ // if the clicked menu item was open, close the menu
 item.removeClass('in').parent().removeClass('in');zTimer=setTimeout(function(){closeSubMenus(item);},600);}else { //  if not, tell item its expanded & toggle it all open
 var menu=$(this).attr('aria-expanded','true').parent().toggleClass('in');menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');menu.parent().addClass('in');}});})();jQuery(document).ready(function(){var sectional_nav=$('.departmental-nav .navbar-menu');var toggler=$('.departmental-nav .navbar-toggler');var viewport=ResponsiveBootstrapToolkit; // if no nav, don't bother booting menu
-if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else {sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var last=sectional_nav.find('a').last();return last.position().top>=last.height();}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else {openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();}); /**
-=======
-var menus=container.find('.in').not(item);menus.removeClass('in');closeSubMenus(menus);menus.children(':first').attr('aria-expanded','false');}else{// If menu wasn't open, preperate submenus for being shown.
-closeSubMenus(container);}if(item.hasClass('in')){// if the clicked menu item was open, close the menu
-item.removeClass('in').parent().removeClass('in');zTimer=setTimeout(function(){closeSubMenus(item);},600);}else{//  if not, tell item its expanded & toggle it all open
-var menu=$(this).attr('aria-expanded','true').parent().toggleClass('in');menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');menu.parent().addClass('in');}});})();jQuery(document).ready(function(){var sectional_nav=$('.departmental-nav .navbar-menu');var toggler=$('.departmental-nav .navbar-toggler');var viewport=ResponsiveBootstrapToolkit;// if no nav, don't bother booting menu
-if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()&&sectional_nav.find('a').length>1){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else{sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var links=sectional_nav.find('a');return links.last().position().top>links.first().position().top||links.length<=1;}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else{openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();});/**
->>>>>>> 8f62dd9d25d6a6f83ea5ce08ccf630a1aadb73a2
+if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()&&sectional_nav.find('a').length>1){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else {sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var links=sectional_nav.find('a');return links.last().position().top>links.first().position().top||links.length<=1;}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else {openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();}); /**
  * Beta bar collapse
  *
  * Small bit of JS to facilitate the beta bar open/close logic.
@@ -28591,7 +28583,6 @@ window.KENT.log('[Video player] Instance created');});}); /**
  * Will automatically pass share data to Google Analytics.
  *
  * @uses https://github.com/sapegin/social-likes
-<<<<<<< HEAD
  */(function(){ // Add additional social networks to the social-likes code.
 window.socialLikesButtons={ // Add linkedin support
 linkedin:{counterUrl:'http://www.linkedin.com/countserv/count/share?url={url}',counter:function counter(jsonUrl,deferred){var options=window.socialLikesButtons.linkedin;if(!options._){options._={};if(!window.IN){window.IN={Tags:{}};}window.IN.Tags.Share={handleCount:function handleCount(params){var jsonUrl=options.counterUrl.replace(/{url}/g,encodeURIComponent(params.url));options._[jsonUrl].resolve(params.count);}};}options._[jsonUrl]=deferred;$.getScript(jsonUrl).fail(deferred.reject);},popupUrl:'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',popupWidth:650,popupHeight:500}}; // When jQuery is ready, hook up our social sharing icons.
@@ -28605,25 +28596,8 @@ window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(f
 var $tabs=$('a[data-toggle="tab"]'); // when tab is hidden adjust related accordion tab-title accordingly
 $tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);}); // when tab is show adjust related accordion tab-title accordingly
 $tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);}); //endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
-$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);var activeTab=$('[href="#'+hash+'"]');if(activeTab){activeTab.tab('show');} // Change hash for page-reload
+$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);if(hash.length>0){var activeTab=$('[data-toggle="tab"][href="#'+hash+'"]');if(activeTab){activeTab.tab('show');}} // Change hash for page-reload
 $('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})(); /**
-=======
- */(function(){// Add additional social networks to the social-likes code.
-window.socialLikesButtons={// Add linkedin support
-linkedin:{counterUrl:'http://www.linkedin.com/countserv/count/share?url={url}',counter:function counter(jsonUrl,deferred){var options=window.socialLikesButtons.linkedin;if(!options._){options._={};if(!window.IN){window.IN={Tags:{}};}window.IN.Tags.Share={handleCount:function handleCount(params){var jsonUrl=options.counterUrl.replace(/{url}/g,encodeURIComponent(params.url));options._[jsonUrl].resolve(params.count);}};}options._[jsonUrl]=deferred;$.getScript(jsonUrl).fail(deferred.reject);},popupUrl:'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',popupWidth:650,popupHeight:500}};// When jQuery is ready, hook up our social sharing icons.
-$(function(){// for all social share containers
-var $likes=$('.content-social-share');if($likes.length>0){// Init social likes on container + grab options
-var options=$likes.socialLikes({'counters':false}).data().socialLikes.options;// Populate 'email link' (Additional option we have added)
-$likes.find('a.email').attr('href','mailto:?subject='+options.title+'&body=Link: '+options.url);// Hook up social events via KAT
-$likes.find('a').click(function(){window.KENT.kat.social($(this).attr('title'),'share');// current url is used, if no url is provided as the 3rd param.
-});}// Debug
-window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(function(){//get all tabs
-var $tabs=$('a[data-toggle="tab"]');// when tab is hidden adjust related accordion tab-title accordingly
-$tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);});// when tab is show adjust related accordion tab-title accordingly
-$tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);});//endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
-$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);if(hash.length>0){var activeTab=$('[data-toggle="tab"][href="#'+hash+'"]');if(activeTab){activeTab.tab('show');}}// Change hash for page-reload
-$('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})();/**
->>>>>>> 8f62dd9d25d6a6f83ea5ce08ccf630a1aadb73a2
  * Parallax
  *
  * Provides parallax functionality
