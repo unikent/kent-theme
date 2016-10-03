@@ -174,7 +174,7 @@
 
     .card-img-overlay-bottom-shaded {
         @extend .card-img-overlay-bottom;
-        background:  linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        background:  linear-gradient(transparent, rgba(0, 0, 0, 0.2));
         padding-top: 3rem;
     }
 
