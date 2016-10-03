@@ -2348,21 +2348,21 @@ fieldset[disabled] a {
   .btn-danger-outline.disabled:hover, .btn-danger-outline:disabled:hover {
     border-color: #eba5a3; }
 
-.btn-link {
+.btn-link, .btn-link-accent {
   font-weight: normal;
   color: #005689;
   border-radius: 0; }
-  .btn-link, .btn-link:active, .btn-link.active, .btn-link:disabled {
+  .btn-link, .btn-link-accent, .btn-link:active, .btn-link-accent:active, .btn-link.active, .active.btn-link-accent, .btn-link:disabled, .btn-link-accent:disabled {
     background-color: transparent; }
-  .btn-link, .btn-link:focus, .btn-link:active {
+  .btn-link, .btn-link-accent, .btn-link:focus, .btn-link-accent:focus, .btn-link:active, .btn-link-accent:active {
     border-color: transparent; }
-  .btn-link:hover {
+  .btn-link:hover, .btn-link-accent:hover {
     border-color: transparent; }
-  .btn-link:focus, .btn-link:hover {
+  .btn-link:focus, .btn-link-accent:focus, .btn-link:hover, .btn-link-accent:hover {
     color: #00263d;
     text-decoration: underline;
     background-color: transparent; }
-  .btn-link:disabled:focus, .btn-link:disabled:hover {
+  .btn-link:disabled:focus, .btn-link-accent:disabled:focus, .btn-link:disabled:hover, .btn-link-accent:disabled:hover {
     color: #818a91;
     text-decoration: none; }
 
@@ -3419,7 +3419,7 @@ input[type="button"].btn-block {
   margin-bottom: 16px;
   margin-bottom: 1rem;
   list-style: none;
-  background-color: #eceeef; }
+  background-color: none; }
   .breadcrumb::after {
     content: "";
     display: table;
@@ -7358,6 +7358,9 @@ figure figcaption,
     background-color: #d9534f;
     border-color: #d9534f; }
 
+.btn-link-accent {
+  color: #937227; }
+
 .btn-gray-outline {
   color: #AAAAAA;
   background-image: none;
@@ -8106,6 +8109,42 @@ input[type=number]::-webkit-outer-spin-button {
   .nav.nav-tabs .nav-item .nav-link.active {
     font-weight: bold;
     border-bottom: 3px solid #05345C; }
+
+.nav.nav-tabs-vertical {
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+  .nav.nav-tabs-vertical .nav-item {
+    float: none;
+    border-bottom: 1px solid #DDDDDD; }
+    .nav.nav-tabs-vertical .nav-item .nav-link {
+      padding: 8px 0;
+      padding: 0.5rem 0; }
+      .nav.nav-tabs-vertical .nav-item .nav-link.active {
+        margin-left: -8px;
+        margin-left: -0.5rem;
+        padding-left: 8px;
+        padding-left: 0.5rem;
+        font-weight: bold;
+        color: #937227;
+        border-left: 3px solid #937227; }
+
+ul.sidebar {
+  list-style: none;
+  padding-left: 0;
+  color: #05345C;
+  font-weight: bold; }
+  ul.sidebar i {
+    margin-right: 4px;
+    margin-right: 0.25rem; }
+  ul.sidebar li {
+    margin-bottom: 16px;
+    margin-bottom: 1rem; }
+  ul.sidebar ul {
+    color: #003882;
+    list-style: none;
+    font-weight: normal;
+    padding-left: 24px;
+    padding-left: 1.5rem; }
 
 .tab-content > .tab-title {
   cursor: pointer;
@@ -10530,6 +10569,11 @@ button.beta-toggler {
   margin: 0 15px;
   padding: 32px;
   padding: 2rem; }
+  .card.header-card-overlay .card-title-overlap .card-subtitle {
+    color: #937227;
+    font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-top: 16px;
+    margin-top: 1rem; }
 
 .card.header-card-overlay .form-group {
   margin-bottom: 0; }
@@ -10555,7 +10599,7 @@ button.beta-toggler {
       background-color: rgba(255, 255, 255, 0.85);
       left: 0;
       right: 0;
-      padding: 1.5rem 2rem 1rem 2rem; }
+      padding: 1rem 2rem 0.5rem 2rem; }
     .card.header-card-overlay .form-group {
       margin-bottom: 1rem; } }
 
@@ -10589,8 +10633,12 @@ button.beta-toggler {
   .card.header-card-overlay .card-footer .caption {
     text-align: right; }
 
-.card.header-card-overlay .card-media-wrap {
-  max-height: 66vh; }
+@media (min-width: 768px) {
+  .card.header-card-overlay .card-media-wrap {
+    max-height: 66vh; }
+    .card.header-card-overlay .card-media-wrap .header-card-overlap-search {
+      top: 0;
+      margin-top: 6rem; } }
 
 @media (min-width: 768px) {
   .show-departmental-menu .card.header-card-overlay {
@@ -10614,6 +10662,74 @@ button.beta-toggler {
 @media (min-width: 768px) {
   .slim-header .card.header-card-overlay {
     margin-top: -5.4rem; } }
+
+.spaced-links-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 16px;
+  margin-top: 1rem;
+  margin-bottom: 16px;
+  margin-bottom: 1rem; }
+
+.spaced-links-inner-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-positive: 1;
+      flex-grow: 1; }
+  @media (max-width: 767px) {
+    .spaced-links-inner-container {
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; } }
+  @media (max-width: 991px) {
+    .spaced-links-inner-container {
+      width: 100%; } }
+  .spaced-links-inner-container .spaced-links-item {
+    padding: 7.6px 16px;
+    padding: 0.475rem 1rem; }
+    @media (max-width: 991px) {
+      .spaced-links-inner-container .spaced-links-item {
+        width: 100%;
+        display: block;
+        padding: 0.75rem 1rem;
+        background: #F5F5F5;
+        border-bottom: 1px solid #CCCCCC; }
+        .spaced-links-inner-container .spaced-links-item:after {
+          position: absolute;
+          right: 1rem; } }
+  .spaced-links-inner-container .spaced-links-item-btn {
+    width: 45%; }
+    @media (max-width: 991px) {
+      .spaced-links-inner-container .spaced-links-item-btn {
+        width: 100%; } }
+
+.spaced-links {
+  display: block;
+  padding: 12px 16px;
+  padding: 0.75rem 1rem;
+  background: #F5F5F5;
+  border-bottom: 1px solid #CCCCCC; }
+  .spaced-links:after {
+    position: absolute;
+    right: 16px;
+    right: 1rem; }
+  @media (min-width: 768px) {
+    .spaced-links {
+      text-align: center;
+      float: none;
+      width: 19%;
+      vertical-align: top;
+      padding: 0;
+      background: none;
+      border: none; }
+      .spaced-links:after {
+        position: relative;
+        right: auto; } }
 
 .card.editorial .card-title-wrap {
   background-color: #FFFFFF;
