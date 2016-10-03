@@ -184,6 +184,38 @@ window.KENT.modules = window.KENT.modules || {};
 		}
 	});
 
+	// Inline search page
+	configs.withInlineOutput = $.extend({}, configs.default, {
+		'hide_on_blur': false,
+		'show_all_on_blank_search': true,
+		'no_results_click': function () { return false;},
+		'click_handler': function() { return false; },
+		'ready': function(qs){ qs.showAll(); },
+		'no_results': function (qs, val) {
+			return '<div class=\'card quickspot-result selected\'><p>No matching results</p></div>';
+		}
+	});
+
+	// UG
+	configs.ug_courses_inline = $.extend({}, configs.withInlineOutput, {
+		'url':	window.KENT.settings.api_url + '/programmes/current/undergraduate/programmes',
+		'search_on': ['name', 'award', 'subject', 'main_school', 'ucas_code', 'search_keywords', 'mode_of_study', 'campus'],
+		display_handler: function(itm, qs){
+			itm.url = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
+			return window.Handlebars.templates.course_list_result(itm);
+		}
+	});
+
+	// PG
+	configs.pg_courses_inline = $.extend({}, configs.courses_default, {
+		'url':	window.KENT.settings.api_url + '/programmes/current/postgraduate/programmes',
+		'search_on': ['name', 'award', 'subject', 'main_school', 'ucas_code', 'search_keywords', 'mode_of_study', 'campus'],
+		display_handler: function(itm, qs){
+			itm.url = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
+			return window.Handlebars.templates.course_list_result(itm);
+		}
+	});
+
 })();
 
 /**

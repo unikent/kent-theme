@@ -1,0 +1,14 @@
+<div class="card card-linked">
+
+	{{#each subject_categories}}
+		<div class="tag tag-primary" style="float:right">{{this}}</div>
+	{{/each}}
+
+
+	<a href="{{url}}" class="card-title-link chevron-link">
+		<h3 style="display:inline;">{{name}} - {{award}}</h3>
+	</a>
+
+	<p class="card-meta">{{mode_of_study}} / {{campus}}</p>
+	<a href="{{url}}" class="faux-link-overlay" aria-hidden="true">{{name}} - {{award}}</a>
+</div>
