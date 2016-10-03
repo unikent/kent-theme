@@ -1,11 +1,13 @@
 // Fonts
 @font-face {
-    font-family: 'CenturySchoolbookStdRegular';
-    src:         url('//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.eot');
+    font-family: 'Century Schoolbook';
+    src:         url('#{$fonts_dir}CenturySchoolbook.eot');
     src:         local('Century Schoolbook'), local('CenturySchoolbook'),
-                 url('//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.woff') format('woff'),
-                 url('//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.ttf') format('truetype'),
-                 url('//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.svg#webfontTvZDraOm') format('svg');
+                 url('#{$fonts_dir}CenturySchoolbook.eot?#iefix') format('embedded-opentype'),
+                 url('#{$fonts_dir}CenturySchoolbook.woff2') format('woff2'),
+                 url('#{$fonts_dir}CenturySchoolbook.woff') format('woff'),
+                 url('#{$fonts_dir}CenturySchoolbook.ttf') format('truetype'),
+                 url('#{$fonts_dir}CenturySchoolbook.svg#CenturySchoolbook') format('svg');
     font-weight: normal;
     font-style:  normal;
 }

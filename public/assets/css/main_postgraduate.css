@@ -5224,9 +5224,9 @@ a.text-danger:focus, a.text-danger:hover {
     display: none !important; } }
 
 @font-face {
-  font-family: 'CenturySchoolbookStdRegular';
-  src: url("//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.eot");
-  src: local("Century Schoolbook"), local("CenturySchoolbook"), url("//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.woff") format("woff"), url("//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.ttf") format("truetype"), url("//static.kent.ac.uk/pantheon/static/webfonts/censcbk-webfont.svg#webfontTvZDraOm") format("svg");
+  font-family: 'Century Schoolbook';
+  src: url("../fonts/CenturySchoolbook.eot");
+  src: local("Century Schoolbook"), local("CenturySchoolbook"), url("../fonts/CenturySchoolbook.eot?#iefix") format("embedded-opentype"), url("../fonts/CenturySchoolbook.woff2") format("woff2"), url("../fonts/CenturySchoolbook.woff") format("woff"), url("../fonts/CenturySchoolbook.ttf") format("truetype"), url("../fonts/CenturySchoolbook.svg#CenturySchoolbook") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -9293,7 +9293,7 @@ button.beta-toggler {
         background-color: #006bc5;
         border-color: #006bc5; }
   .card .card-img-overlay-bottom-shaded {
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.2));
     padding-top: 48px;
     padding-top: 3rem; }
   .card .card-body {
@@ -10367,11 +10367,24 @@ button.beta-toggler {
     @media (min-width: 992px) {
       .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-centered .card-text {
         font-size: 1.5rem; } }
+    .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-centered .card-text, .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-centered .card-subtitle {
+      text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
+      color: #FFFFFF; }
     .card.card-overlay .card-img-overlay.card-img-overlay-block, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom-shaded, .card.card-overlay .card-img-overlay-block.card-img-overlay-centered {
       position: relative; }
-  .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-centered .card-text, .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-centered .card-subtitle {
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
-    color: #FFFFFF; }
+    .card.card-overlay .card-img-overlay.card-img-overlay-link .card-subtitle:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-bottom .card-subtitle:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-bottom-shaded .card-subtitle:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-centered .card-subtitle:after {
+      vertical-align: text-bottom;
+      padding-left: 16px;
+      padding-left: 1rem; }
+    .card.card-overlay .card-img-overlay.card-img-overlay-link .card-subtitle:hover:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-bottom .card-subtitle:hover:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-bottom-shaded .card-subtitle:hover:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-centered .card-subtitle:hover:after {
+      padding-left: 19.2px;
+      padding-left: 1.2rem; }
+    .card.card-overlay .card-img-overlay.card-img-overlay-link.text-xs-right .card-subtitle, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-centered .card-subtitle {
+      margin-right: 32px;
+      margin-right: 2rem; }
+    .card.card-overlay .card-img-overlay.card-img-overlay-link.text-xs-right .card-text, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-centered .card-text {
+      margin-right: 48px;
+      margin-right: 3rem; }
   .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
     margin-bottom: 0; }
     .card.card-overlay .card-media-wrap > .card-img,
