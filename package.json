@@ -1,14 +1,14 @@
 {
   "name": "kent-theme",
-  "version": "1.1.5",
+  "version": "1.2.0",
   "author": "IS Webdev <is-webdev@kent.ac.uk>",
-  "homepage": "https://github.com/unikent/kent-theme",
+  "homepage": "https://gitlab.kent.ac.uk/webteams/kent-theme/",
   "repository": {
     "type": "git",
-    "url": "git://github.com/unikent/kent-theme.git"
+    "url": "git://gitlab.kent.ac.uk/webteams/kent-theme/.git"
   },
   "bugs": {
-    "url": "https://github.com/unikent/kent-theme/issues"
+    "url": "https://gitlab.kent.ac.uk/webteams/kent-theme/issues"
   },
   "engines": {
     "node": ">= 0.10.0"
