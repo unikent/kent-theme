@@ -95,17 +95,40 @@
             }
         }
 
-        &.card-img-overlay-block {
-            position: relative;
-        }
-
-    }
-
-    .card-img-overlay {
         .card-text, .card-subtitle {
             text-shadow: 0 2px 2px rgba(0, 0, 0, .9);
             color:       #FFFFFF;
         }
+
+        &.card-img-overlay-block {
+            position: relative;
+        }
+
+        &.card-img-overlay-link{
+
+            .card-subtitle {
+
+                &:after {
+                    vertical-align: text-bottom;
+                    padding-left: 1rem;
+                }
+                &:hover {
+                    &:after {
+                        padding-left: 1.2rem;
+                    }
+                }
+            }
+            &.text-xs-right{
+                .card-subtitle {
+                    margin-right: 2rem;
+                }
+                .card-text{
+                    margin-right: 3rem;
+                }
+            }
+
+        }
+
     }
 
     .card-media-wrap, .card-embed-wrap {
