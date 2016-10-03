@@ -1,11 +1,11 @@
 {
   "name": "kent-theme",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "IS Webdev <is-webdev@kent.ac.uk>",
   "homepage": "https://gitlab.kent.ac.uk/webteams/kent-theme/",
   "repository": {
     "type": "git",
-    "url": "git://gitlab.kent.ac.uk/webteams/kent-theme/.git"
+    "url": "git://gitlab.kent.ac.uk/webteams/kent-theme.git"
   },
   "bugs": {
     "url": "https://gitlab.kent.ac.uk/webteams/kent-theme/issues"
