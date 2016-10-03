@@ -5,7 +5,7 @@
   "homepage": "https://gitlab.kent.ac.uk/webteams/kent-theme/",
   "repository": {
     "type": "git",
-    "url": "git://gitlab.kent.ac.uk/webteams/kent-theme/.git"
+    "url": "git://gitlab.kent.ac.uk/webteams/kent-theme.git"
   },
   "bugs": {
     "url": "https://gitlab.kent.ac.uk/webteams/kent-theme/issues"
