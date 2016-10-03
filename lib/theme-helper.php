@@ -86,9 +86,8 @@ Class KentThemeHelper {
 
 
 	protected static function generateMenu($menu){
-		$output = "";	
-
-		// pre proccessed menu?
+		$output = "";
+		// pre processed menu?
 		if(isset($menu[0]) && is_array($menu[0])){
 			foreach($menu as $link ){
 				if($link['active']){
@@ -100,11 +99,10 @@ Class KentThemeHelper {
 			return $output;
 		}
 
-		// None proccessed menu
+		// None processed menu
 		$current_url = $_SERVER["REQUEST_URI"];
 		foreach($menu as $name => $link){
-
-			if(parse_url($link,PHP_URL_PATH) == parse_url($current_url,PHP_URL_PATH)){
+			if((parse_url($link,PHP_URL_PATH) == parse_url($current_url,PHP_URL_PATH) ) && ($link !=="#")){
 				$output .= "<a role=\"menuitem\" class=\"active\" href=\"{$link}\">{$name}</a>".PHP_EOL;
 			}else{
 				$output .= "<a role=\"menuitem\" href=\"{$link}\">{$name}</a>".PHP_EOL;
