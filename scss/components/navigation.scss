@@ -172,6 +172,9 @@
 
     .nav-item {
         .nav-link {
+            &.active, &:hover {
+                border-color: transparent;
+            }
             &.active {
                 font-weight:   bold;
                 border-bottom: 3px solid $brand-primary;
