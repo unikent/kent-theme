@@ -28762,7 +28762,7 @@ if(!_this.plyr){window.KENT.log('[Video player] Init Plyr');_this.boot();} // Sh
 if(!_this.container.hasClass('playing')){_this.show();}});}; /**
 		 * When user attempts to play video, initalise video player instance
 		 */this.boot=function(){var _this2=this; // Generate plyr instance
-this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0].plyr; // Hookup events
+this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0]; // Hookup events
 this.video.on('ready',function(){_this2.setupTranscript();});this.video.on('pause',function(){ // hide on pause if not full screen
 if(!_this2.plyr.isFullscreen()){_this2.hide();}});this.video.on('exitfullscreen',function(){_this2.hide();});this.video.on('ended',function(){_this2.hide();});}; /**
 		 * Setup transcription link
