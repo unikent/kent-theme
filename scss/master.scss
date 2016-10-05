@@ -2,6 +2,7 @@
 @import "_variables";
 // Bootstrap
 @import "_bootstrap";
+@import "node_modules/bootstrap/scss/_mixins";
 // Fonts
 @import "_fonts";
 // Vendor
@@ -37,5 +38,7 @@
 @import "components/slider";
 @import "components/footer";
 @import "components/table";
+@import "components/tags";
 // Modules
 @import "components/modules/quickspot";
+

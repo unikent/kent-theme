@@ -114,7 +114,7 @@ $(document).ready(function(){
 				autoplay: true,
 				html: plyr_controls,
 				disableContextMenu: false
-			})[0].plyr;
+			})[0];
 
 			// Hookup events
 			this.video.on('ready', () => { this.setupTranscript(); });

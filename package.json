@@ -1,6 +1,6 @@
 {
   "name": "kent-theme",
-  "version": "1.2.1",
+  "version": "1.3.1",
   "author": "IS Webdev <is-webdev@kent.ac.uk>",
   "homepage": "https://gitlab.kent.ac.uk/webteams/kent-theme/",
   "repository": {
@@ -14,7 +14,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "install": "napa twbs/bootstrap#v4.0.0-alpha.2:bootstrap",
+    "install": "napa twbs/bootstrap#v4.0.0-alpha.4:bootstrap",
     "start": "grunt && grunt watch"
   },
   "devDependencies": {
@@ -43,7 +43,7 @@
     "jquery": "~2.2.2",
     "jquery.stellar": "git+ssh://git@github.com/unikent/stellarjs.git",
     "js-cookie": "2.1.0",
-    "kent-bar": "git+ssh://git@github.com/unikent/kent-bar.git#1.0.3",
+    "kent-bar": "git+ssh://git@github.com/unikent/kent-bar.git#1.0.4",
     "kent-font": "git+ssh://git@github.com/unikent/kent-font.git#1.0.3",
     "load-grunt-tasks": "~1.0.0",
     "metalsmith": "^2.1.0",
@@ -55,7 +55,7 @@
     "modernizr": "~3.3.1",
     "moment": "^2.13.0",
     "pixrem": "^3.0.0",
-    "plyr": "1.8.12",
+    "plyr": "2.0.7",
     "slick-carousel": "1.6",
     "social-likes": "^3.1.0",
     "tether": "~1.2.0",
