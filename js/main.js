@@ -24748,7 +24748,7 @@ this["Handlebars"] = this["Handlebars"] || {};
 this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
 
 this["Handlebars"]["templates"]["course_list_result"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
-    return "		<div class=\"tag tag-primary\" style=\"float:right\">"
+    return "		<div class=\"tag tag-gray\">"
     + container.escapeExpression(container.lambda(depth0, depth0))
     + "</div>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {

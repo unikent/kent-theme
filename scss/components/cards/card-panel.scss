@@ -58,6 +58,9 @@
         .card-panel-body {
             .card {
                 @extend .card-list-item;
+                margin-top: 0;
+
+                .tag { float: right; }
             }
         }
    }
