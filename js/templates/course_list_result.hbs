@@ -1,12 +1,10 @@
-<div class="card card-linked">
-	{{#each subject_categories}}
-		<div class="tag tag-gray">{{this}}</div>
-	{{/each}}
-
-	<a href="{{url}}" class="card-title-link chevron-link">
+<div class="card card-linked chevron-link">
+	<a href="{{url}}" class="card-title-link">
 		<h3 style="display:inline;">{{name}} - {{award}}</h3>
 	</a>
-
-	<p class="card-meta">{{mode_of_study}} / {{campus}}</p>
+	<div class="card-meta-accent">
+		<span class="kf-clock"> {{mode_of_study}} </span>
+		<span class="kf-pin"> {{campus}} </span> 
+	</div>
 	<a href="{{url}}" class="faux-link-overlay" aria-hidden="true">{{name}} - {{award}}</a>
 </div>

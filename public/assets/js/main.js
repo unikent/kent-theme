@@ -24747,26 +24747,20 @@ return /******/ (function(modules) { // webpackBootstrap
 this["Handlebars"] = this["Handlebars"] || {};
 this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
 
-this["Handlebars"]["templates"]["course_list_result"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
-    return "		<div class=\"tag tag-gray\">"
-    + container.escapeExpression(container.lambda(depth0, depth0))
-    + "</div>\r\n";
-},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+this["Handlebars"]["templates"]["course_list_result"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div class=\"card card-linked\">\r\n\r\n"
-    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.subject_categories : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "\r\n\r\n	<a href=\""
+  return "<div class=\"card card-linked chevron-link\">\r\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
-    + "\" class=\"card-title-link chevron-link\">\r\n		<h3 style=\"display:inline;\">"
+    + "\" class=\"card-title-link\">\r\n		<h3 style=\"display:inline;\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.award || (depth0 != null ? depth0.award : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"award","hash":{},"data":data}) : helper)))
-    + "</h3>\r\n	</a>\r\n\r\n	<p class=\"card-meta\">"
+    + "</h3>\r\n	</a>\r\n	<div class=\"card-meta-accent\">\r\n		<span class=\"kf-clock\"> "
     + alias4(((helper = (helper = helpers.mode_of_study || (depth0 != null ? depth0.mode_of_study : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"mode_of_study","hash":{},"data":data}) : helper)))
-    + " / "
+    + " </span>\r\n		<span class=\"kf-pin\"> "
     + alias4(((helper = (helper = helpers.campus || (depth0 != null ? depth0.campus : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"campus","hash":{},"data":data}) : helper)))
-    + "</p>\r\n	<a href=\""
+    + " </span> \r\n	</div>\r\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))

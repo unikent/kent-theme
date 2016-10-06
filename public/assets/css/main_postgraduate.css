@@ -9267,6 +9267,15 @@ button.beta-toggler {
         apply a background color to a card, also adds padding
          to sides so images have to be pulled back out
       */ }
+  .card.card-linked.chevron-link::after, .inline-links a.card.card-linked::after, .inline-links .card-panel.cards-linked a.card::after, .card-panel.cards-linked .inline-links a.card::after, nav.breadcrumb a.card.card-linked::after, nav.breadcrumb .card-panel.cards-linked a.card::after, .card-panel.cards-linked nav.breadcrumb a.card::after, .card .card-img-overlay-link .card.card-linked.card-subtitle::after, .card .card-img-overlay-link .card-panel.cards-linked .card.card-subtitle::after, .card-panel.cards-linked .card .card-img-overlay-link .card.card-subtitle::after, .card-panel.cards-linked .card.chevron-link::after, .card-panel.cards-linked .card-panel-profiles .card .back a.card::after, .card-panel-profiles .card .back .card-panel.cards-linked a.card::after, .card-panel-profiles .card .back a.card.card-linked::after {
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 32px;
+    line-height: 2rem;
+    position: absolute;
+    right: 20px;
+    top: 40%;
+    top: calc(50% - 1rem); }
   .card.card-backed, .card-panel.cards-backed .card {
     padding-left: 15px;
     padding-right: 15px;
@@ -9569,6 +9578,11 @@ button.beta-toggler {
     font-size: 0.85rem;
     margin-bottom: 4.8px;
     margin-bottom: 0.3rem; }
+  .card .card-meta-accent {
+    color: #937227; }
+    .card .card-meta-accent span {
+      margin-right: 16px;
+      margin-right: 1rem; }
   .card .card-text {
     font-size: 14.4px;
     font-size: 0.9rem; }
@@ -9867,8 +9881,8 @@ button.beta-toggler {
 .cards-list .card-panel.cards-backed .card, .card-panel.cards-backed
 .cards-list .card,
 .cards-list.cards-backed .card {
-  padding: 16px 16px 0;
-  padding: 1rem 1rem 0; }
+  padding: 16px 16px;
+  padding: 1rem 1rem; }
   .cards-backed .card-list-item .card-img-top, .cards-backed .card-panel.cards-list .card-panel-body .card .card-img-top, .card-panel.cards-list .card-panel-body .cards-backed .card .card-img-top, .cards-backed .card-panel .card-panel-body .card-panel-list .card .card-img-top, .card-panel .card-panel-body .card-panel-list .cards-backed .card .card-img-top,
   .cards-backed .card-list-item .card-img:first-child,
   .cards-backed .card-panel.cards-list .card-panel-body .card .card-img:first-child, .card-panel.cards-list .card-panel-body

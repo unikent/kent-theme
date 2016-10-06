@@ -6,6 +6,16 @@
 
     &.card-linked{
         @extend .faux-link-block;
+
+        &.chevron-link::after {
+            font-size:2rem;
+            line-height: 2rem;
+            position: absolute;
+            right: 20px;
+            top: 40%;
+            top: calc(50% - 1rem);
+            
+        }
     }
 
     /*
@@ -258,6 +268,13 @@
         font-size:     0.85rem;
         margin-bottom: 0.3rem;
     }
+    .card-meta-accent {
+        color: $brand-accent;
+
+        span {
+            margin-right:1rem;
+        }
+    }
 
     .card-text {
         font-size: 0.9rem;
@@ -432,7 +449,7 @@
 .cards-list .card-backed,
 .cards-list.cards-backed .card{
 
-    padding: 1rem 1rem 0;
+    padding: 1rem 1rem;
     .card-img-top,
     .card-img:first-child,
     img:first-child{
