@@ -9976,8 +9976,8 @@ button.beta-toggler {
 .cards-list .card-panel.cards-backed .card, .card-panel.cards-backed
 .cards-list .card,
 .cards-list.cards-backed .card {
-  padding: 16px 16px;
-  padding: 1rem 1rem; }
+  padding: 16px;
+  padding: 1rem; }
   .cards-backed .card-list-item .card-img-top, .cards-backed .card-panel.cards-list .card-panel-body .card .card-img-top, .card-panel.cards-list .card-panel-body .cards-backed .card .card-img-top, .cards-backed .card-panel .card-panel-body .card-panel-list .card .card-img-top, .card-panel .card-panel-body .card-panel-list .cards-backed .card .card-img-top,
   .cards-backed .card-list-item .card-img:first-child,
   .cards-backed .card-panel.cards-list .card-panel-body .card .card-img:first-child, .card-panel.cards-list .card-panel-body

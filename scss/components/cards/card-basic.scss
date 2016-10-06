@@ -440,9 +440,10 @@
 .cards-backed .card-list-item,
 .card-backed.card-list-item,
 .cards-list .card-backed,
-.cards-list.cards-backed .card{
+.cards-list.cards-backed .card {
 
-    padding: 1rem 1rem;
+    padding: 1rem;
+
     .card-img-top,
     .card-img:first-child,
     img:first-child{
