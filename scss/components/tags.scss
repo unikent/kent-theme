@@ -23,10 +23,3 @@
 		color: #171717;
 	}
 }
-.tag-gray {
-	@include tag-variant(#E8EBF2);
-	color:#171717;
-}
-.tag-accent-text {
-	color: $brand-accent;
-}

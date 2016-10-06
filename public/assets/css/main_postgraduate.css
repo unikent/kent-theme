@@ -12232,15 +12232,6 @@ blockquote.pull-quote {
 .tag-tertiary {
   color: #171717; }
 
-.tag-gray {
-  background-color: #E8EBF2;
-  color: #171717; }
-  .tag-gray[href]:focus, .tag-gray[href]:hover {
-    background-color: #c7cfe0; }
-
-.tag-accent-text {
-  color: #937227; }
-
 .quickspot-container {
   position: relative;
   /*Oddly IE7 is fine without this, IE8 on the other hand gets a bit confused*/
