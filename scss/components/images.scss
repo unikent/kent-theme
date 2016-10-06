@@ -194,7 +194,7 @@ figure figcaption,
             }
 
             @include media-breakpoint-up(xl){
-                left: calc( -12.5% - #{4.75rem} );
+                left: calc( -8% - #{4.75rem} );
             }
 
             @media (min-width: $article-max-breakpoint) {
@@ -203,7 +203,7 @@ figure figcaption,
         }
 
         figcaption{
-            padding: 0.25rem 0 0 0.5rem;
+            padding: 0.25rem 0 0 1rem;
         }
 
     }

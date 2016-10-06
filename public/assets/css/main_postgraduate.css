@@ -6491,6 +6491,14 @@ p + h6, p + .h6 {
   .content-container p a:hover, .content-container p a:focus {
     border-bottom: 1px solid #00263d; }
 
+main > .container:first-child, main > .container-padded:first-child, main > .container-padded-h:first-child, main > .card-panel.card-panel-contained:first-child, .card-panel main > .card-panel-body:first-child, .card-panel main > .card-panel-header:first-child, main > blockquote:first-child,
+main > .content-container:first-child,
+main > .panel:first-child,
+main > .content-header:first-child,
+main > article:first-child {
+  margin-top: 32px;
+  margin-top: 2rem; }
+
 .content-page .content-header {
   position: relative;
   width: 100%;
@@ -6506,7 +6514,7 @@ p + h6, p + .h6 {
   @media (min-width: 992px) {
     .content-page .content-header {
       padding-left: calc(5% + 15px);
-      padding-right: 5%; }
+      padding-right: calc(5% + 30px); }
       .content-page .content-header.content-header-with-social {
         padding-left: calc(12% + 15px); }
       .content-page .content-header.content-header-centered {
@@ -6515,8 +6523,9 @@ p + h6, p + .h6 {
         margin-left: auto;
         margin-right: auto; } }
   @media (min-width: 1200px) {
-    .content-page .content-header {
-      padding-left: calc(12% + 15px); } }
+    .content-page .content-header, .content-page .content-header.content-header-with-social {
+      padding-left: calc(9% + 15px);
+      padding-right: calc(9% + 30px); } }
   @media (min-width: 1328px) {
     .content-page .content-header {
       margin: 0 auto;
@@ -6548,9 +6557,10 @@ p + h6, p + .h6 {
     display: table;
     clear: both; }
   .content-page .content-container .content-main,
-  .content-page .content-container .content-aside {
+  .content-page .content-container .content-aside,
+  .content-page .content-container .content-full {
     width: 100%;
-    padding: 0 0 0 16px;
+    padding: 0 0 0 30px;
     margin-bottom: 32px;
     margin-bottom: 2rem; }
   .content-page .content-container .content-aside h3 {
@@ -6584,17 +6594,20 @@ p + h6, p + .h6 {
           margin-bottom: 0.2rem; }
   @media (min-width: 544px) {
     .content-page .content-container .content-main,
-    .content-page .content-container .content-aside {
+    .content-page .content-container .content-aside,
+    .content-page .content-container .content-full {
       padding-left: calc(5% + 15px);
       padding-right: 5%; } }
   @media (min-width: 768px) {
     .content-page .content-container .content-main,
-    .content-page .content-container .content-aside {
+    .content-page .content-container .content-aside,
+    .content-page .content-container .content-full {
       padding-left: calc(12% + 15px);
       padding-right: 12%; } }
   @media (min-width: 992px) {
     .content-page .content-container .content-main,
-    .content-page .content-container .content-aside {
+    .content-page .content-container .content-aside,
+    .content-page .content-container .content-full {
       float: left;
       margin-bottom: 0; }
     .content-page .content-container .content-main {
@@ -6608,24 +6621,29 @@ p + h6, p + .h6 {
         margin-right: auto; }
     .content-page .content-container .content-aside {
       width: 33%;
-      padding: 0 calc(5% + 30px) 0 15px; } }
+      padding: 0 calc(5% + 15px) 0 15px; }
+    .content-page .content-container .content-full {
+      padding: 0 calc(5% + 15px) 0 calc(5% + 30px); } }
   @media (min-width: 1200px) {
     .content-page .content-container .content-main,
     .content-page .content-container .content-aside {
       float: left; }
     .content-page .content-container .content-main {
-      padding: 0 15px 0 calc(12% + 30px); }
+      padding: 0 15px 0 calc(9% + 30px); }
       .content-page .content-container .content-main.content-main-centered {
         padding: 0; }
     .content-page .content-container .content-aside {
-      padding: 0 calc(12% + 30px) 0 15px; } }
+      padding: 0 calc(9% + 15px) 0 15px; }
+    .content-page .content-container .content-full {
+      padding: 0 calc(9% + 15px) 0 calc(9% + 30px); } }
   @media (min-width: 1328px) {
     .content-page .content-container {
       margin: 0 auto;
       max-width: 1140px;
       font-size: 19px; }
       .content-page .content-container .content-main,
-      .content-page .content-container .content-aside {
+      .content-page .content-container .content-aside,
+      .content-page .content-container .content-full {
         padding: 0 15px; }
       .content-page .content-container .content-main {
         padding-right: 19px; }
@@ -6656,9 +6674,12 @@ p + h6, p + .h6 {
     @media (min-width: 992px) {
       .content-page .content-social.content-social-head {
         left: 5rem; } }
+    @media (min-width: 1200px) {
+      .content-page .content-social.content-social-head {
+        left: 3.25rem; } }
     @media (min-width: 1328px) {
       .content-page .content-social.content-social-head {
-        left: -3rem; } }
+        left: -3.25rem; } }
 
 .container-padded {
   padding: 16px 0;
@@ -6876,14 +6897,14 @@ figure figcaption,
     @media (min-width: 1200px) {
       .content-container .content-main figure.full-width .media-wrap-letterbox, .content-container .content-main figure.full-width .media-wrap-parallax, .content-container .content-main figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-media-wrap, .content-container .content-main figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-embed-wrap,
       .content-container .content-main figure.full-width figcaption {
-        left: calc( -12.5% - 4.75rem); } }
+        left: calc( -8% - 4.75rem); } }
     @media (min-width: 1328px) {
       .content-container .content-main figure.full-width .media-wrap-letterbox, .content-container .content-main figure.full-width .media-wrap-parallax, .content-container .content-main figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-media-wrap, .content-container .content-main figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main figure.full-width .card-embed-wrap,
       .content-container .content-main figure.full-width figcaption {
         left: calc( -50vw + 552px); } }
   .content-container .content-main figure.full-width figcaption {
-    padding: 4px 0 0 8px;
-    padding: 0.25rem 0 0 0.5rem; }
+    padding: 4px 0 0 16px;
+    padding: 0.25rem 0 0 1rem; }
 
 @media (min-width: 992px) {
   .content-container .content-main.content-main-centered figure.full-width .media-wrap-letterbox, .content-container .content-main.content-main-centered figure.full-width .media-wrap-parallax, .content-container .content-main.content-main-centered figure.full-width .card.card-overlay .card-media-wrap, .card.card-overlay .content-container .content-main.content-main-centered figure.full-width .card-media-wrap, .content-container .content-main.content-main-centered figure.full-width .card.card-overlay .card-embed-wrap, .card.card-overlay .content-container .content-main.content-main-centered figure.full-width .card-embed-wrap,
