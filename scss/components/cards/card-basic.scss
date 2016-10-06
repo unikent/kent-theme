@@ -6,6 +6,16 @@
 
     &.card-linked{
         @extend .faux-link-block;
+
+        &.chevron-link::after {
+            font-size:2rem;
+            line-height: 2rem;
+            position: absolute;
+            right: 20px;
+            top: 40%;
+            top: calc(50% - 1rem);
+            
+        }
     }
 
     /*
@@ -78,13 +88,15 @@
     }
 
     &.card-list-item{
+         // @todo fix this
+         @include make-col-ready();
+        @include make-col(12);
 
-        @include make-col();
         @include media-breakpoint-up(sm) {
-            width:   100%;
+        //  width:   100%;
         }
         @include media-breakpoint-up(lg) {
-            width:   100%;
+        //  width:   100%;
         }
 
         .card-img-top,
@@ -428,9 +440,10 @@
 .cards-backed .card-list-item,
 .card-backed.card-list-item,
 .cards-list .card-backed,
-.cards-list.cards-backed .card{
+.cards-list.cards-backed .card {
 
-    padding: 1rem 1rem 0;
+    padding: 1rem;
+
     .card-img-top,
     .card-img:first-child,
     img:first-child{

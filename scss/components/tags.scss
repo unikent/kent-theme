@@ -1,0 +1,25 @@
+.tag {
+	font-size: .7rem;
+	line-height: .7rem;
+	padding: 0.3rem 0.4rem;
+	margin: 0 .4rem 0 0;
+	vertical-align:text-bottom;
+	font-weight: normal;
+	height:1.1rem;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+// Create brand tags
+@each $name, $color in $brand-colors {
+	.tag-#{$name} {
+	  @include tag-variant($color);
+	}
+}
+@each $name, $color in $brand-colors-light {
+	.tag-#{$name} {
+		color: #171717;
+	}
+}

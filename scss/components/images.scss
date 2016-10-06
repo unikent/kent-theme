@@ -3,16 +3,18 @@
     display:   block;
     max-width: 100%;
     height:    auto;
-    @include media-breakpoint-up(lg) {
-        margin-top: -3rem;
-        @include media-breakpoint-up(xl) {
-            margin-top: -6rem;
+    position: relative;
+
+    @include media-breakpoint-up(md) {
+        position: absolute;
+
+        top:-33.3333333%;
+        &.card-img-top{
+            top:0;
         }
-        @include media-breakpoint-up(xxl) {
-            margin-top: -14rem;
-        }
-        @include media-breakpoint-up(xxxl) {
-            margin-top: -20rem;
+        &.card-img-bottom{
+            bottom: 0;
+            top:auto;
         }
     }
 }
@@ -90,16 +92,22 @@
     clear:    both;
     overflow: hidden;
 
+    max-height: none;
+
     @include media-breakpoint-up(md) {
-        min-height: 22rem;
+        &:before{
+            padding-top: 40%;
+            /* 2.5:1 ratio */
+            display: block;
+            content: '';
+        }
     }
 
-    @include media-breakpoint-up(lg) {
-        max-height: 33rem;
-
-    }
-
-    & > img {
+    & > img,
+    & > .card-img,
+    & > .card-img-bottom,
+    & > .card-img-top
+    & > .video-player{
         @include media-letterboxed-img();
     }
 
@@ -186,7 +194,7 @@ figure figcaption,
             }
 
             @include media-breakpoint-up(xl){
-                left: calc( -12.5% - #{4.75rem} );
+                left: calc( -8% - #{4.75rem} );
             }
 
             @media (min-width: $article-max-breakpoint) {
@@ -195,7 +203,7 @@ figure figcaption,
         }
 
         figcaption{
-            padding: 0.25rem 0 0 0.5rem;
+            padding: 0.25rem 0 0 1rem;
         }
 
     }
