@@ -189,6 +189,12 @@
             font-size: 18px;
         }
 
+        @include media-breakpoint-up(lg){
+            &.relative{
+                position: relative;
+            }
+        }
+
     }
 
     .content-social {

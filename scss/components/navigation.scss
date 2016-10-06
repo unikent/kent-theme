@@ -204,27 +204,38 @@
     }
 }
 
-ul.sidebar {
-    list-style: none;
-    padding-left: 0;
-    color: $kent-primary;
-    font-weight:bold;
+.top-sidebar{
 
-    i{
-        margin-right:0.25rem;
+    @include media-breakpoint-up(lg){
+        position:absolute;
+        right:0;
     }
 
-    li{
-        margin-bottom: 1rem;
-    }
 
-    ul{
-        color: $kent-blue;
-        list-style:none;
-        font-weight: normal;
-        padding-left: 1.5rem;
+    ul.sidebar {
+        list-style: none;
+        padding-left: 0;
+        color: $kent-primary;
+        font-weight:bold;
+
+        i{
+            margin-right:0.25rem;
+            vertical-align: top;
+        }
+
+        > li{
+            margin-bottom: 1rem;
+        }
+
+        ul{
+            color: $kent-blue;
+            list-style:none;
+            font-weight: normal;
+            padding-left: 1.5rem;
+        }
     }
 }
+
 
 .tab-content {
 
