@@ -24756,11 +24756,11 @@ this["Handlebars"]["templates"]["course_list_result"] = Handlebars.template({"co
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.award || (depth0 != null ? depth0.award : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"award","hash":{},"data":data}) : helper)))
-    + "</h3>\r\n	</a>\r\n	<div class=\"card-meta-accent\">\r\n		<span class=\"kf-clock\"> "
+    + "</h3>\r\n	</a>\r\n	<span class=\"kf-clock tag text-accent\"> "
     + alias4(((helper = (helper = helpers.mode_of_study || (depth0 != null ? depth0.mode_of_study : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"mode_of_study","hash":{},"data":data}) : helper)))
-    + " </span>\r\n		<span class=\"kf-pin\"> "
+    + " </span>\r\n	<span class=\"kf-pin tag text-accent\"> "
     + alias4(((helper = (helper = helpers.campus || (depth0 != null ? depth0.campus : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"campus","hash":{},"data":data}) : helper)))
-    + " </span> \r\n	</div>\r\n	<a href=\""
+    + " </span> \r\n\r\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
