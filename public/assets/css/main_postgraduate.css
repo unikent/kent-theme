@@ -6491,6 +6491,54 @@ p + h6, p + .h6 {
   .content-container p a:hover, .content-container p a:focus {
     border-bottom: 1px solid #00263d; }
 
+.text-primary-tint {
+  color: #E0D4D4 !important; }
+
+a.text-primary-tint:focus, a.text-primary-tint:hover {
+  color: #cbb6b6 !important; }
+
+.text-secondary {
+  color: #F5F5F5 !important; }
+
+a.text-secondary:focus, a.text-secondary:hover {
+  color: gainsboro !important; }
+
+.text-tertiary {
+  color: #F7F2E1 !important; }
+
+a.text-tertiary:focus, a.text-tertiary:hover {
+  color: #ece1b9 !important; }
+
+.text-primary {
+  color: #671115 !important; }
+
+a.text-primary:focus, a.text-primary:hover {
+  color: #3b0a0c !important; }
+
+.text-accent {
+  color: #937227 !important; }
+
+a.text-accent:focus, a.text-accent:hover {
+  color: #6b531c !important; }
+
+.text-dark {
+  color: #333333 !important; }
+
+a.text-dark:focus, a.text-dark:hover {
+  color: #1a1a1a !important; }
+
+.text-primary-light {
+  color: #937227 !important; }
+
+a.text-primary-light:focus, a.text-primary-light:hover {
+  color: #6b531c !important; }
+
+.text-energy {
+  color: #de5433 !important; }
+
+a.text-energy:focus, a.text-energy:hover {
+  color: #bf3e1f !important; }
+
 main > .container:first-child, main > .container-padded:first-child, main > .container-padded-h:first-child, main > .card-panel.card-panel-contained:first-child, .card-panel main > .card-panel-body:first-child, .card-panel main > .card-panel-header:first-child, main > blockquote:first-child,
 main > .content-container:first-child,
 main > .panel:first-child,
@@ -9319,6 +9367,15 @@ button.beta-toggler {
         apply a background color to a card, also adds padding
          to sides so images have to be pulled back out
       */ }
+  .card.card-linked.chevron-link::after, .inline-links a.card.card-linked::after, .inline-links .card-panel.cards-linked a.card::after, .card-panel.cards-linked .inline-links a.card::after, nav.breadcrumb a.card.card-linked::after, nav.breadcrumb .card-panel.cards-linked a.card::after, .card-panel.cards-linked nav.breadcrumb a.card::after, .card .card-img-overlay-link .card.card-linked.card-subtitle::after, .card .card-img-overlay-link .card-panel.cards-linked .card.card-subtitle::after, .card-panel.cards-linked .card .card-img-overlay-link .card.card-subtitle::after, .card-panel.cards-linked .card.chevron-link::after, .card-panel.cards-linked .card-panel-profiles .card .back a.card::after, .card-panel-profiles .card .back .card-panel.cards-linked a.card::after, .card-panel-profiles .card .back a.card.card-linked::after {
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 32px;
+    line-height: 2rem;
+    position: absolute;
+    right: 20px;
+    top: 40%;
+    top: calc(50% - 1rem); }
   .card.card-backed, .card-panel.cards-backed .card {
     padding-left: 15px;
     padding-right: 15px;
@@ -9919,8 +9976,8 @@ button.beta-toggler {
 .cards-list .card-panel.cards-backed .card, .card-panel.cards-backed
 .cards-list .card,
 .cards-list.cards-backed .card {
-  padding: 16px 16px 0;
-  padding: 1rem 1rem 0; }
+  padding: 16px;
+  padding: 1rem; }
   .cards-backed .card-list-item .card-img-top, .cards-backed .card-panel.cards-list .card-panel-body .card .card-img-top, .card-panel.cards-list .card-panel-body .cards-backed .card .card-img-top, .cards-backed .card-panel .card-panel-body .card-panel-list .card .card-img-top, .card-panel .card-panel-body .card-panel-list .cards-backed .card .card-img-top,
   .cards-backed .card-list-item .card-img:first-child,
   .cards-backed .card-panel.cards-list .card-panel-body .card .card-img:first-child, .card-panel.cards-list .card-panel-body
@@ -10004,8 +10061,6 @@ button.beta-toggler {
       background-color: rgba(255, 255, 255, 0.1); }
   .card-panel.cards-list .card-panel-body .card {
     margin-top: 0; }
-    .card-panel.cards-list .card-panel-body .card .tag {
-      float: right; }
   @media (min-width: 544px) {
     .card-panel.cards-backed .card {
       border-width: 0 15px 0 15px;
@@ -12119,12 +12174,14 @@ blockquote.pull-quote {
   line-height: .7rem;
   padding: 4.8px 6.4px;
   padding: 0.3rem 0.4rem;
-  margin: 0 3.2px;
-  margin: 0 .2rem;
+  margin: 0 6.4px 0 0;
+  margin: 0 .4rem 0 0;
   vertical-align: text-bottom;
   font-weight: normal;
   height: 17.6px;
   height: 1.1rem; }
+  .tag:last-child {
+    margin-right: 0; }
 
 .tag-primary-tint {
   background-color: #E0D4D4; }
@@ -12174,12 +12231,6 @@ blockquote.pull-quote {
 
 .tag-tertiary {
   color: #171717; }
-
-.tag-gray {
-  background-color: #E8EBF2;
-  color: #171717; }
-  .tag-gray[href]:focus, .tag-gray[href]:hover {
-    background-color: #c7cfe0; }
 
 .quickspot-container {
   position: relative;
