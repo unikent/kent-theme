@@ -6543,6 +6543,8 @@ main > .container:first-child, main > .container-padded:first-child, main > .con
 main > .content-container:first-child,
 main > .panel:first-child,
 main > .content-header:first-child,
+main > .content-body:first-child,
+main > .content-page:first-child,
 main > article:first-child {
   margin-top: 32px;
   margin-top: 2rem; }
