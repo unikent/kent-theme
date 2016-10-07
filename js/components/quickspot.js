@@ -207,9 +207,9 @@ window.KENT.modules = window.KENT.modules || {};
 	});
 
 	// PG
-	configs.pg_courses_inline = $.extend({}, configs.courses_default, {
+	configs.pg_courses_inline = $.extend({}, configs.withInlineOutput, {
 		'url':	window.KENT.settings.api_url + '/programmes/current/postgraduate/programmes',
-		'search_on': ['name', 'award', 'subject', 'main_school', 'ucas_code', 'search_keywords', 'mode_of_study', 'campus'],
+		'search_on': ['name', 'award', 'subject', 'main_school',  'search_keywords', 'mode_of_study', 'campus', 'programme_type'],
 		display_handler: function(itm, qs){
 			itm.url = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
 			return window.Handlebars.templates.course_list_result(itm);

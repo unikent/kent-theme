@@ -47,7 +47,7 @@
 
     }
 
-    .relative{
+    .relative {
         position: relative;
     }
 
@@ -88,20 +88,21 @@
             }
         }
 
-        .card-title-overlap {
-            position: absolute;
-            bottom: 0;
-            background-color: rgba(255, 255, 255, 0.85);
-            left: 0;
-            right: 0;
-            padding: 1rem 2rem 0.5rem 2rem
-        }
-
         .form-group{
             margin-bottom: 1rem;
         }
-
     }
+
+  @include media-breakpoint-up(xl) {
+      .card-title-overlap {
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.85);
+        left: 0;
+        right: 0;
+        padding: 1rem 2rem 0.5rem 2rem
+      }
+  }
 
     .overlap-container{
         @each $breakpoint, $container-max-width in $container-max-widths
@@ -110,6 +111,8 @@
                 max-width: calc(#{$container-max-width} + 1rem);
             }
         }
+
+        z-index: 1;
         margin: auto;
     }
 
@@ -123,12 +126,17 @@
 
         margin-bottom: -1.5rem;
     }
+
+    .header-card-overlap-search {
+
+        .form-group {
+          position: relative;
+        }
+    }
     @include media-breakpoint-up(md) {
-        .card-media-wrap{
-            .header-card-overlap-search {
-                top: 0;
-                margin-top:6rem;
-            }
+        .header-card-overlap-search {
+          position: absolute;
+          top: 6rem;
         }
     }
 }

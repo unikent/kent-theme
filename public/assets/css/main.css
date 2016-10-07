@@ -6703,6 +6703,9 @@ main > article:first-child {
   @media (max-width: 991px) {
     .content-page .content-container {
       font-size: 18px; } }
+  @media (min-width: 992px) {
+    .content-page .content-container.relative {
+      position: relative; } }
 
 .content-page .content-social {
   margin-bottom: 16px;
@@ -8409,18 +8412,24 @@ input[type=number]::-webkit-outer-spin-button {
         color: #937227;
         border-left: 3px solid #937227; }
 
-ul.sidebar {
+@media (min-width: 992px) {
+  .top-sidebar {
+    position: absolute;
+    right: 0; } }
+
+.top-sidebar ul.sidebar {
   list-style: none;
   padding-left: 0;
   color: #05345C;
   font-weight: bold; }
-  ul.sidebar i {
+  .top-sidebar ul.sidebar i {
     margin-right: 4px;
-    margin-right: 0.25rem; }
-  ul.sidebar li {
+    margin-right: 0.25rem;
+    vertical-align: top; }
+  .top-sidebar ul.sidebar > li {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
-  ul.sidebar ul {
+  .top-sidebar ul.sidebar ul {
     color: #003882;
     list-style: none;
     font-weight: normal;
@@ -10848,17 +10857,20 @@ button.beta-toggler {
         padding: 3rem 2rem 2rem; }
         .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
           background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); }
-    .card.header-card-overlay .card-title-overlap {
-      position: absolute;
-      bottom: 0;
-      background-color: rgba(255, 255, 255, 0.85);
-      left: 0;
-      right: 0;
-      padding: 1rem 2rem 0.5rem 2rem; }
     .card.header-card-overlay .form-group {
       margin-bottom: 1rem; } }
 
+@media (min-width: 1200px) {
+  .card.header-card-overlay .card-title-overlap {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.85);
+    left: 0;
+    right: 0;
+    padding: 1rem 2rem 0.5rem 2rem; } }
+
 .card.header-card-overlay .overlap-container {
+  z-index: 1;
   margin: auto; }
   @media (min-width: 544px) {
     .card.header-card-overlay .overlap-container {
@@ -10888,10 +10900,13 @@ button.beta-toggler {
   .card.header-card-overlay .card-footer .caption {
     text-align: right; }
 
+.card.header-card-overlay .header-card-overlap-search .form-group {
+  position: relative; }
+
 @media (min-width: 768px) {
-  .card.header-card-overlay .card-media-wrap .header-card-overlap-search {
-    top: 0;
-    margin-top: 6rem; } }
+  .card.header-card-overlay .header-card-overlap-search {
+    position: absolute;
+    top: 6rem; } }
 
 @media (min-width: 768px) {
   .show-departmental-menu .card.header-card-overlay {
@@ -11076,6 +11091,21 @@ button.beta-toggler {
     .card.editorial.editorial-energy .card-title-wrap {
       background-color: rgba(42, 190, 217, 0.9); } }
 
+.modal {
+  position: absolute; }
+  .modal .modal-header {
+    background: #05345C;
+    color: #fff; }
+    .modal .modal-header h3 {
+      color: #fff; }
+    .modal .modal-header .close {
+      opacity: 1;
+      color: #fff; }
+      .modal .modal-header .close span {
+        vertical-align: sub; }
+  .modal .modal-dialog {
+    max-width: 80%; }
+
 .modal.modal-fullscreen .modal-dialog {
   width: 100%;
   height: 100%;
@@ -11114,8 +11144,15 @@ button.beta-toggler {
       .modal.modal-fullscreen .modal-dialog .modal-content .modal-footer a {
         color: #FFFFFF; }
 
+.modal.modal-course .modal-dialog {
+  width: 80%; }
+
 .popover {
   box-shadow: 1px 1px 3px #BFBFBF; }
+
+.modal-nojs {
+  display: inline;
+  position: fixed; }
 
 blockquote, .blockquote {
   border: none;
