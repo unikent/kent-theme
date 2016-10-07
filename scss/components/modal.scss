@@ -1,3 +1,33 @@
+.modal {
+    position: absolute;
+
+    .modal-header {
+        background: $kent-primary;
+        color: #fff;
+
+        h3{
+            color: #fff;
+        }
+
+        .close {
+            opacity: 1;
+            color: #fff;
+
+            span {
+                vertical-align: sub;
+            }
+        }
+    }
+
+    .modal-dialog {
+        max-width: 80%;
+    }
+
+    .modal-backdrop {
+
+    }
+
+}
 .modal.modal-fullscreen {
     .modal-dialog {
         width:   100%;
@@ -50,6 +80,19 @@
     }
 }
 
+
+
+.modal.modal-course{
+    .modal-dialog {
+        width: 80%;
+    }
+}
+
 .popover{
     box-shadow: $popover-box-shadow;
+}
+
+.modal-nojs{
+    display:inline;
+    position: fixed;
 }
