@@ -1,3 +1,15 @@
+main {
+    & > .container,
+    & > .content-container,
+    & > .panel,
+    & > .content-header,
+    & > article{
+        &:first-child {
+            margin-top: 2rem;
+        }
+    }
+}
+
 .content-page {
 
     .content-header {
@@ -17,7 +29,7 @@
 
         @include media-breakpoint-up(lg) {
             padding-left: calc(5% + #{$grid-gutter-width/2});
-            padding-right: 5%;
+            padding-right: calc(5% + #{$grid-gutter-width});
 
             &.content-header-with-social{
                 padding-left: calc(12% + #{$grid-gutter-width/2});
@@ -34,7 +46,11 @@
         }
 
         @include media-breakpoint-up(xl) {
-            padding-left: calc(12% + #{$grid-gutter-width/2});
+            &,
+            &.content-header-with-social {
+                padding-left:  calc(9% + #{$grid-gutter-width/2});
+                padding-right: calc(9% + #{$grid-gutter-width});
+            }
         }
 
         @media (min-width: $article-max-breakpoint) {
@@ -82,9 +98,10 @@
         @include make-row();
 
         .content-main,
-        .content-aside{
+        .content-aside,
+        .content-full{
             width: 100%;
-            padding: 0 0 0 (($grid-gutter-width+2) / 2);
+            padding: 0 0 0 $grid-gutter-width;
             margin-bottom: 2rem;
         }
 
@@ -105,7 +122,8 @@
         @include media-breakpoint-up(sm){
 
             .content-main,
-            .content-aside{
+            .content-aside,
+            .content-full{
                 padding-left: calc(5% + #{$grid-gutter-width/2});
                 padding-right: 5%;
             }
@@ -114,7 +132,8 @@
         @include media-breakpoint-up(md){
 
             .content-main,
-            .content-aside{
+            .content-aside,
+            .content-full{
                 padding-left: calc(12% + #{$grid-gutter-width/2});
                 padding-right: 12%;
             }
@@ -123,10 +142,12 @@
         @include media-breakpoint-up(lg){
 
             .content-main,
-            .content-aside{
+            .content-aside,
+            .content-full{
                 float: left;
                 margin-bottom: 0;
             }
+
             .content-main{
                 width: 67%;
                 padding: 0 ($grid-gutter-width / 2) 0 calc(5% + #{$grid-gutter-width});
@@ -141,7 +162,11 @@
             }
             .content-aside{
                 width: 33%;
-                padding: 0 calc(5% + #{$grid-gutter-width}) 0 ($grid-gutter-width / 2);
+                padding: 0 calc(5% + #{$grid-gutter-width/2}) 0 ($grid-gutter-width / 2);
+            }
+
+            .content-full{
+                padding: 0 calc(5% + #{$grid-gutter-width/2}) 0 calc(5% + #{$grid-gutter-width});
             }
         }
 
@@ -152,13 +177,17 @@
                 float: left;
             }
             .content-main{
-                padding: 0 ($grid-gutter-width / 2) 0 calc(12% + #{$grid-gutter-width});
+                padding: 0 ($grid-gutter-width / 2) 0 calc(9% + #{$grid-gutter-width});
                 &.content-main-centered{
                     padding: 0;
                 }
             }
             .content-aside{
-                padding: 0 calc(12% + #{$grid-gutter-width}) 0 ($grid-gutter-width / 2);
+                padding: 0 calc(9% + #{$grid-gutter-width/2}) 0 ($grid-gutter-width / 2);
+            }
+
+            .content-full{
+                padding: 0 calc(9% + #{$grid-gutter-width/2}) 0 calc(9% + #{$grid-gutter-width});
             }
         }
 
@@ -170,7 +199,8 @@
             font-size: 19px;
 
             .content-main,
-            .content-aside{
+            .content-aside,
+            .content-full{
                 padding: 0 ($grid-gutter-width / 2);
             }
             .content-main{
@@ -179,6 +209,8 @@
                     padding: 0;
                 }
             }
+
+
         }
 
         @include media-breakpoint-down(lg){
@@ -213,9 +245,12 @@
             @include media-breakpoint-up(lg){
                 left:      5rem;
             }
+            @include media-breakpoint-up(xl){
+                left:      3.25rem;
+            }
 
             @media (min-width: $article-max-breakpoint) {
-                left: -3rem;
+                left: -3.25rem;
             }
         }
     }

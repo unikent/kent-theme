@@ -1,10 +1,12 @@
 // Variable overrides and custom variables
 @import "_variables";
+
 // Bootstrap
 @import "_bootstrap";
-@import "node_modules/bootstrap/scss/_mixins";
+
 // Fonts
 @import "_fonts";
+
 // Vendor
 @import "../node_modules/kent-font/build/less/_kentfont";
 @import "../node_modules/slick-carousel/slick/slick.scss";

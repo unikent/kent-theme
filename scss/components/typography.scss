@@ -91,7 +91,7 @@ p + h6, p + .h6 {
     margin-bottom: 1.5rem;
     font-weight:   bold;
     font-size:     1.2rem;
-    padding-bottom: 0.75rem;
+    padding-bottom: 1.25rem;
     border-bottom: 1px solid $border-gray;
 }
 
@@ -149,3 +149,6 @@ p + h6, p + .h6 {
     }
 }
 
+@each $name, $color in $brand-colors {
+    @include text-emphasis-variant('.text-#{$name}', $color);
+}
