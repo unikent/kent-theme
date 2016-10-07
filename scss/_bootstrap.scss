@@ -1,5 +1,9 @@
 // Core variables and mixins
 @import "node_modules/bootstrap/scss/_variables";
+
+// Our Custom Variables after bootstrap to avoid assertion warnings
+@import "_variables_after";
+
 @import "node_modules/bootstrap/scss/_mixins";
 // // Reset and dependencies
 @import "node_modules/bootstrap/scss/_normalize";
