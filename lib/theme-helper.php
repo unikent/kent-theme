@@ -15,12 +15,17 @@ Class KentThemeHelper {
 			'head_markup' => '',
 			'slim'=> true,
 			'beta_bar'=>true,
-			'home_page' => false
+			'home_page' => false,
+			'section_nav' =>true
 		);
 
 		$config = array_merge($defaults, $config);
 
 		extract($config);
+
+
+		$minify = defined("DEBUG") && ("true" == DEBUG) ? "" : ".min";
+
 
 		$meta = array_merge(array('title'=>'Kent Theme Beta',
 								'thumb'=>'https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif'
@@ -38,9 +43,9 @@ Class KentThemeHelper {
 		}
 		// If theme is not default
 		if(!empty($theme)){
-			$theme_style = "main_{$theme}.css";
+			$theme_style = "main_{$theme}{$minify}.css";
 		}else{
-			$theme_style = "main.css";
+			$theme_style = "main{$minify}.css";
 		}
 
 		// is there a description? pull it out if so
@@ -64,7 +69,7 @@ Class KentThemeHelper {
 
 	public static function footer($foot_markup = '', $additional_js_config = array()){
 
-
+		$minify = defined("DEBUG") && ("true" == DEBUG) ? "" : ".min";
 		// Config to be output in JS
 		$js_config = array(
 			"home_url" => HOME_URL,

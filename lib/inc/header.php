@@ -147,6 +147,7 @@
 				</div>
 			</section>
 			<?php if(!$home_page){ ?>
+				<?php if($section_nav){ ?>
 				<section class="departmental-nav<?php echo ($slim)?' slim':''; ?>" id="section_menu">
 					<header><?php if(isset($title_link) && !empty($title_link)) { ?><a href="<?php echo $title_link; ?>"><?php } ?><?php echo $title; ?><?php if(isset($title_link) && !empty($title_link)) { ?></a><?php } ?></header>
 					<?php if(!empty($menu_links)): ?>
@@ -156,6 +157,7 @@
 						</nav>
 					<?php endif; ?>
 				</section>
+				<?php } ?>
 			<?php }else{
 			?>
 				<section class="home-nav" id="home_nav">

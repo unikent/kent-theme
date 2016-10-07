@@ -3,6 +3,8 @@ main {
     & > .content-container,
     & > .panel,
     & > .content-header,
+    & > .content-body,
+    & > .content-page,
     & > article{
         &:first-child {
             margin-top: 2rem;
