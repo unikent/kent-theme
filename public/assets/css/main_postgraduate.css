@@ -6394,7 +6394,7 @@ body.show-kentbar-menu {
         padding: 1rem; } }
 
 h1, .h1 {
-  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+  font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
   color: #05345C; }
 
 h2, .h2,
@@ -6423,7 +6423,7 @@ p + h6, p + .h6 {
   margin-top: 1.266em; }
 
 .lead {
-  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+  font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
   color: #671115;
   margin-bottom: 24px;
   margin-bottom: 1.5rem;
@@ -6435,7 +6435,7 @@ p + h6, p + .h6 {
   border-bottom: 1px solid #E6E6E6; }
 
 .strap-line {
-  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+  font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
   color: #671115;
   text-transform: uppercase;
   font-weight: normal;
@@ -8586,7 +8586,7 @@ input[type=number]::-webkit-outer-spin-button {
         color: #05345C;
         cursor: pointer;
         text-transform: uppercase;
-        font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif; }
+        font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif; }
         .global-nav .global-nav-links .global-nav-link a:hover, .global-nav .global-nav-links .global-nav-link a:active, .global-nav .global-nav-links .global-nav-link a:focus {
           text-decoration: none; }
         .global-nav .global-nav-links .global-nav-link a:after {
@@ -8952,7 +8952,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
           font-size: 1.5rem; } }
       .home-nav .global-nav-links .global-nav-link > a {
         text-transform: uppercase;
-        font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+        font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
         color: #FFFFFF;
         position: relative;
         text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
@@ -9027,7 +9027,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
       opacity: 1; }
 
 .departmental-nav header {
-  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+  font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
   background-color: #937227;
   color: #FFFFFF;
   padding: 8px 16px;
@@ -9672,7 +9672,7 @@ button.beta-toggler {
       margin-top: 1rem;
       font-size: 56px;
       font-size: 3.5rem;
-      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       text-transform: uppercase; }
       .card .card-title.card-title-figure sup, .card .card-title.card-title-figure sub {
         font-size: 50%; }
@@ -10540,7 +10540,7 @@ button.beta-toggler {
       max-width: none;
       width: 100%; }
     .card-panel-profiles .card .card-title {
-      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       font-size: 24px;
       font-size: 1.5rem; }
       @media (min-width: 544px) {
@@ -10585,13 +10585,13 @@ button.beta-toggler {
     width: 100%; }
     .card-panel-profiles.card-panel-flush .card-double .card-title,
     .card-panel-profiles .card-double .card-title {
-      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       text-transform: uppercase;
       font-size: 32px;
       font-size: 2rem; }
     .card-panel-profiles.card-panel-flush .card-double .card-subtitle,
     .card-panel-profiles .card-double .card-subtitle {
-      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       color: #171717;
       font-size: 19.2px;
       font-size: 1.2rem; }
@@ -10669,7 +10669,7 @@ button.beta-toggler {
         content: "";
         font-family: "kentfont", sans-serif; }
     .card.card-overlay .card-title-wrap .card-title {
-      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       font-weight: normal;
       text-transform: uppercase;
       color: #CE9716;
@@ -10681,10 +10681,10 @@ button.beta-toggler {
         .card.card-overlay .card-title-wrap .card-title {
           font-size: 2.2rem; } }
     .card.card-overlay .card-title-wrap .card-text {
-      font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+      font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       color: #FFFFFF; }
   .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
-    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif; }
+    font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif; }
   .card.card-overlay .card-img-overlay, .card.card-overlay .card-img-overlay-bottom, .card.card-overlay .card-img-overlay-bottom-shaded, .card.card-overlay .card-img-overlay-centered {
     text-decoration: none; }
     .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-centered .card-subtitle {
@@ -11175,7 +11175,7 @@ blockquote, .blockquote {
     padding: 16px 0;
     padding: 1rem 0;
     padding-bottom: 0;
-    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+    font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
     font-size: 20.8px;
     font-size: 1.3rem;
     font-style: italic;
@@ -11272,7 +11272,7 @@ blockquote.social-quote {
     padding: 16px 0;
     padding: 1rem 0;
     padding-bottom: 0;
-    font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+    font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
     font-style: italic;
     color: #671115;
     margin-bottom: 0; }
@@ -11769,7 +11769,7 @@ blockquote.pull-quote {
 .impact-statement {
   font-size: 28.8px;
   font-size: 1.8rem;
-  font-family: "CenturySchoolbookStdRegular", Georgia, "Times New Roman", Times, serif;
+  font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
   text-align: center;
   padding: 48px 0;
   padding: 3rem 0;
