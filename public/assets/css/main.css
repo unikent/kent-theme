@@ -8272,8 +8272,8 @@ input[type=number]::-webkit-outer-spin-button {
     background-color: rgba(255, 255, 255, 0.1); }
 
 .card-panel.nav-links-panel, .nav-links-panel {
-  padding: 48px 8px 48px;
-  padding: 3rem 0.5rem 3rem; }
+  padding: 0 8px 0;
+  padding: 0 .5rem 0; }
   @media (min-width: 768px) {
     .card-panel.nav-links-panel, .nav-links-panel {
       padding: 5rem 0.5rem 5rem; } }
