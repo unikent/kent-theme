@@ -8916,6 +8916,10 @@ body.show-global-search .global-nav-menu .global-nav-links {
       .global-header-transparent .global-nav .global-nav-link-submenu nav {
         padding: 10px 2rem; } }
 
+.global-header-transparent.show-global-search .global-nav-search.in {
+  min-height: 96px;
+  min-height: 6rem; }
+
 .home-nav {
   position: absolute;
   top: 48px;
