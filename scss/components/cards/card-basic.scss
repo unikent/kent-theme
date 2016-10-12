@@ -426,6 +426,7 @@
 
         img {
             transition: all 300ms;
+            filter: brightness(1);
         }
 
         &:hover, &:focus {
