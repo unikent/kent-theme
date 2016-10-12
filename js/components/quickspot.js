@@ -22,7 +22,7 @@ window.KENT.modules = window.KENT.modules || {};
 	configs.default = {
 		'disable_occurrence_weighting': true,
 		'prevent_headers': true,
-		'max_results': 150,
+		'max_results': 100,
 		'no_results': function (qs, val) {
 			return '<a class=\'quickspot-result selected\'>Press enter to search...</a>';
 		},
@@ -186,6 +186,7 @@ window.KENT.modules = window.KENT.modules || {};
 
 	// Inline search page
 	configs.withInlineOutput = $.extend({}, configs.default, {
+		'max_results': 50,
 		'hide_on_blur': false,
 		'show_all_on_blank_search': true,
 		'no_results_click': function () { return false;},
@@ -193,7 +194,8 @@ window.KENT.modules = window.KENT.modules || {};
 		'ready': function(qs){ qs.showAll(); },
 		'no_results': function (qs, val) {
 			return '<div class=\'card quickspot-result selected\'><p>No matching results</p></div>';
-		}
+		},
+		'results_footer': '<button type="button" class="btn btn-primary-outline btn-block btn-lg">Show more</button>'
 	});
 
 	// UG
