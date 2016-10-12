@@ -10355,12 +10355,17 @@ button.beta-toggler {
             flex-wrap: wrap; } }
     .card-panel .card-panel-body > .card {
       margin-top: 16px;
-      margin-top: 1rem; }
+      margin-top: 1rem;
+      margin-bottom: 32px;
+      margin-bottom: 2rem; }
       .card-panel .card-panel-body > .card:nth-child(1), .card-panel .card-panel-body > .card:nth-child(2) {
         margin-top: 0; }
       @media (min-width: 992px) {
         .card-panel .card-panel-body > .card:nth-child(3), .card-panel .card-panel-body > .card:nth-child(4) {
           margin-top: 0; } }
+      @media (min-width: 544px) {
+        .card-panel .card-panel-body > .card {
+          margin-bottom: 1rem; } }
     @media (min-width: 544px) {
       .card-panel .card-panel-body .card {
         position: relative;
@@ -10738,8 +10743,8 @@ button.beta-toggler {
     padding: 0; }
     .card.card-overlay .card-footer .chevron-link, .card.card-overlay .card-footer .inline-links a, .inline-links .card.card-overlay .card-footer a, .card.card-overlay .card-footer nav.breadcrumb a, nav.breadcrumb .card.card-overlay .card-footer a, .card.card-overlay .card-footer .card-img-overlay-link .card-subtitle, .card.card-overlay .card-img-overlay-link .card-footer .card-subtitle, .card-panel-profiles .card.card-overlay .card-footer .back a, .card-panel-profiles .card.card-overlay .back .card-footer a {
       display: block;
-      padding: 12px 16px;
-      padding: 0.75rem 1rem;
+      padding: 12px 24px;
+      padding: 0.75rem 1.5rem;
       background: #F5F5F5;
       border-bottom: 1px solid #CCCCCC; }
       .card.card-overlay .card-footer .chevron-link:after, .card.card-overlay .card-footer .inline-links a:after, .inline-links .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-footer a:after, .card.card-overlay .card-footer .card-img-overlay-link .card-subtitle:after, .card.card-overlay .card-img-overlay-link .card-footer .card-subtitle:after, .card-panel-profiles .card.card-overlay .card-footer .back a:after, .card-panel-profiles .card.card-overlay .back .card-footer a:after {

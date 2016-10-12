@@ -216,6 +216,10 @@
                     margin-top: 0;
                 }
             }
+            margin-bottom: 2rem;
+            @include media-breakpoint-up(sm) {
+                margin-bottom: 1rem;
+            }
         }
         .card {
 
