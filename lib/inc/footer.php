@@ -191,7 +191,7 @@
 				}
 			};
 		</script>
-		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/main.js"></script>
+		<script src="<?php KentThemeHelper::getThemeWebRoot();?>assets/js/main<?php echo $minify; ?>.js"></script>
 		<?php echo $foot_markup ;?>
 
 		<!-- begin google analytics code -->

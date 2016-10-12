@@ -6,7 +6,7 @@
     //  .box-shadow($shadow);
 
     $active-background: lighten($background, 10%);
-    $active-border: lighten($border, 12%);
+    $active-border: lighten($border, 10%);
 
     &:focus,
     &.focus,
