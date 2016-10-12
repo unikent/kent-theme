@@ -12279,17 +12279,17 @@ blockquote.pull-quote {
   /*Oddly IE7 is fine without this, IE8 on the other hand gets a bit confused*/
   position: absolute \9; }
 
-#quickspot-results-container {
+.quickspot-results-container {
   position: relative;
   z-index: 9999;
   border: solid 1px #CCCCCC;
   border-top: 0px;
   display: block;
   box-shadow: 3px 3px 5px 0px rgba(0, 0, 0, 0.3); }
-  #quickspot-results-container .course-links {
+  .quickspot-results-container .course-links {
     border-top: solid 1px #CCCCCC;
     background: #FFFFFF; }
-    #quickspot-results-container .course-links a {
+    .quickspot-results-container .course-links a {
       display: inline-block;
       font-size: 14.4px;
       font-size: 0.9rem;
@@ -12297,18 +12297,18 @@ blockquote.pull-quote {
       width: 100%;
       border-bottom: 1px solid #DDDDDD; }
       @media (min-width: 544px) {
-        #quickspot-results-container .course-links a {
+        .quickspot-results-container .course-links a {
           width: 33.3%;
           padding: 10px 0;
           border-bottom: none;
           text-align: center; } }
-  #quickspot-results-container .quickspot-results {
+  .quickspot-results-container .quickspot-results {
     width: 100%;
     background: #eee;
     max-height: 364.8px;
     max-height: 22.8rem;
     overflow: auto; }
-    #quickspot-results-container .quickspot-results .quickspot-result {
+    .quickspot-results-container .quickspot-results .quickspot-result {
       padding: 8px 10px;
       display: block;
       text-decoration: none;
@@ -12318,7 +12318,7 @@ blockquote.pull-quote {
       transition: background .25s;
       position: relative;
       margin-bottom: 1px; }
-      #quickspot-results-container .quickspot-results .quickspot-result:before {
+      .quickspot-results-container .quickspot-results .quickspot-result:before {
         color: #ccc;
         float: right;
         content: "";
@@ -12328,26 +12328,26 @@ blockquote.pull-quote {
         right: .5rem;
         top: 35%;
         top: calc(50% - 0.5rem); }
-      #quickspot-results-container .quickspot-results .quickspot-result.pg {
+      .quickspot-results-container .quickspot-results .quickspot-result.pg {
         border-left: solid 8px #671115;
         border-left: solid 0.5rem #671115; }
-      #quickspot-results-container .quickspot-results .quickspot-result.ug {
+      .quickspot-results-container .quickspot-results .quickspot-result.ug {
         border-left: solid 8px #05345C;
         border-left: solid 0.5rem #05345C; }
-      #quickspot-results-container .quickspot-results .quickspot-result strong {
+      .quickspot-results-container .quickspot-results .quickspot-result strong {
         color: #000; }
-      #quickspot-results-container .quickspot-results .quickspot-result span {
+      .quickspot-results-container .quickspot-results .quickspot-result span {
         font-style: italic;
         color: #937227; }
-        #quickspot-results-container .quickspot-results .quickspot-result span.level {
+        .quickspot-results-container .quickspot-results .quickspot-result span.level {
           color: #818a91; }
-      #quickspot-results-container .quickspot-results .quickspot-result.selected {
+      .quickspot-results-container .quickspot-results .quickspot-result.selected {
         background: #eee;
         transition: background .25s; }
-      #quickspot-results-container .quickspot-results .quickspot-result .kf-search {
+      .quickspot-results-container .quickspot-results .quickspot-result .kf-search {
         color: #ccc; }
   @media (min-width: 544px) {
-    #quickspot-results-container {
+    .quickspot-results-container {
       position: absolute;
       left: 0;
       width: 100%; } }
