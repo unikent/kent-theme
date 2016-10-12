@@ -71,18 +71,26 @@ h2, .h2 {
     margin-bottom: 1.125rem;
 }
 
-p + h2, p + .h2 {
-    margin-top: 2.566rem;
-}
-
-p + h3, p + .h3 {
-    margin-top: 1.802rem;
-}
-
-p + h4, p + .h4,
-p + h5, p + .h5,
-p + h6, p + .h6 {
-    margin-top: 1.266em;
+p,
+ul,
+ol,
+table,
+form{
+    & + h2,
+    & +.h2{
+        margin-top: 2.566rem;
+    }
+    & + h3, & + .h3 {
+        margin-top: 1.802rem;
+    }
+    & + h4,
+    & + .h4,
+    & + h5,
+    & + .h5,
+    & + h6,
+    & + .h6 {
+        margin-top: 1.266em;
+    }
 }
 
 .lead {
@@ -125,9 +133,16 @@ p + h6, p + .h6 {
     }
 }
 
-.content-header {
+.content-header,
+.content-container{
     h1 {
         margin-bottom: 2rem;
+    }
+    .content-main,
+    .content-full{
+        h2 {
+            margin-top: 1.5rem;
+        }
     }
 }
 

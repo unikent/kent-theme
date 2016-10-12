@@ -426,6 +426,8 @@
 
         img {
             transition: all 300ms;
+            transform: translate3d(0,0,0); //prevent wobble wierdness in safari
+            filter: brightness(1);         //prevent wobble wiernes in chrome
         }
 
         &:hover, &:focus {
