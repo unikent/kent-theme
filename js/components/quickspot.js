@@ -186,16 +186,38 @@ window.KENT.modules = window.KENT.modules || {};
 
 	// Inline search page
 	configs.withInlineOutput = $.extend({}, configs.default, {
-		'max_results': 50,
+		'css_class_prefix': 'quickspot-inline',
+		'max_results': 25,
 		'hide_on_blur': false,
 		'show_all_on_blank_search': true,
 		'no_results_click': function () { return false;},
 		'click_handler': function() { return false; },
-		'ready': function(qs){ qs.showAll(); },
+		'ready': function(qs){
+			qs.showAll();
+			// Hookup show more button
+			$(qs.container, '.btn-outline-primary').click(function(){
+				qs.options.max_results += 25;
+				qs.refresh();
+			});
+		},
 		'no_results': function (qs, val) {
 			return '<div class=\'card quickspot-result selected\'><p>No matching results</p></div>';
 		},
-		'results_footer': '<button type="button" class="btn btn-primary-outline btn-block btn-lg">Show more</button>'
+		'results_footer': '<div class="col-sm-6 offset-sm-3"><button type="button" class="btn btn-outline-primary btn-block btn-lg">Show more</button></div>',
+		'events': {
+			'quickspot:result': function(e){
+				// Show/hide show more button as needed
+				if (e.quickspot.options.max_results > e.quickspot.results.length) {
+					$(e.quickspot.container).find('.btn-outline-primary').hide();
+				} else {
+					$(e.quickspot.container).find('.btn-outline-primary').show();
+				}
+			},
+			'keyup': function(e){
+				// clear count on data change
+				e.target.quickspot.options.max_results = 25;
+			}
+		}
 	});
 
 	// UG
