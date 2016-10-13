@@ -8,7 +8,7 @@ Class KentThemeHelper {
 	public static function header($config = array()){
 
 		$defaults = array(
-			'title' => 'Kent Theme Beta',
+			'title' => 'University of Kent',
 			'menu' => '',
 			'meta' => array(),
 			'theme' => '',
@@ -27,7 +27,7 @@ Class KentThemeHelper {
 		$minify = defined("DEBUG") && ("true" == DEBUG) ? "" : ".min";
 
 
-		$meta = array_merge(array('title'=>'Kent Theme Beta',
+		$meta = array_merge(array('title'=>$title,
 								'thumb'=>'https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif'
 								  ), $meta);
 
@@ -150,4 +150,28 @@ Class KentThemeHelper {
 		return '//'.$url;
 	}
 
+
+	public static function _404($message = ''){
+		header("HTTP/1.0 404 Not Found");
+		include 'error_pages/404.php';
+		die();
+	}
+
+	public static function _401($message = ''){
+		header("HTTP/1.1 401 Unauthorized");
+		include 'error_pages/401.php';
+		die();
+	}
+
+	public static function _403($message = ''){
+		header('HTTP/1.1 403 Forbidden');
+		include 'error_pages/403.php';
+		die();
+	}
+
+	public static function _500($message = '', $debug=''){
+		header("HTTP/1.0 500 Internal Server Error");
+		include 'error_pages/500.php';
+		die();
+	}
 }

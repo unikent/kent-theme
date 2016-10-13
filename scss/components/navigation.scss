@@ -210,9 +210,11 @@
         position:absolute;
         right:0;
     }
+}
 
-
+.content-aside {
     ul.sidebar {
+
         list-style: none;
         padding-left: 0;
         color: $kent-primary;
@@ -233,9 +235,19 @@
             font-weight: normal;
             padding-left: 1.5rem;
         }
+
+        @include media-breakpoint-up(lg){
+            &.pg{
+                padding-top: 350px;
+            }
+
+            &.ug{
+                padding-top: 300px;
+            }
+
+        }
     }
 }
-
 
 .tab-content {
 

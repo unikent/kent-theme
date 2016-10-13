@@ -1,5 +1,4 @@
 .modal {
-    position: absolute;
 
     .modal-header {
         background: $kent-primary;
@@ -20,14 +19,19 @@
     }
 
     .modal-dialog {
-        max-width: 80%;
+        @include media-breakpoint-up(md) {
+            max-width: 80%;
+        }
+        margin-top: 3rem;
     }
 
-    .modal-backdrop {
-
-    }
 
 }
+
+.modal-backdrop.in {
+    opacity: .7;
+}
+
 .modal.modal-fullscreen {
     .modal-dialog {
         width:   100%;
@@ -77,14 +81,6 @@
                 }
             }
         }
-    }
-}
-
-
-
-.modal.modal-course{
-    .modal-dialog {
-        width: 80%;
     }
 }
 
