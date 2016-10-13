@@ -28548,7 +28548,7 @@ this["Handlebars"]["templates"]["wp_post_card"] = Handlebars.template({"1":funct
     window.CustomEvent = CustomEvent;
 })();
 
-'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;};/**
+'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};/**
  * Debug helper
  * Log only shown when KENT.debug is true.
  */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){/*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};(function(factory){if(typeof define==='function'&&define.amd){// AMD
