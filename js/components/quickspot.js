@@ -27,7 +27,7 @@ window.KENT.modules = window.KENT.modules || {};
 			return '<a class=\'quickspot-result selected\'>Press enter to search...</a>';
 		},
 		'no_results_click': function (value, qs) {
-			window.location.href = 'https://www.kent.ac.uk/search/?q=' + value;
+			window.location.href = 'https://beta.kent.ac.uk/search/?q=' + value;
 		}
 	};
 
@@ -118,7 +118,7 @@ window.KENT.modules = window.KENT.modules || {};
 			document.location = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
 		},
 		'no_results_click': function (value, qs) {
-			window.location.href = 'https://www.kent.ac.uk/search/courses?q=' + value;
+			window.location.href = 'https://beta.kent.ac.uk/search/courses?q=' + value;
 		}
 	});
 
