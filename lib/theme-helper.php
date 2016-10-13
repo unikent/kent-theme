@@ -1,6 +1,8 @@
 <?php
 namespace unikent\kent_theme;
 
+use unikent\Footprints\Ticket;
+
 Class KentThemeHelper {
 
 	private static $theme_web_root = false;
@@ -174,4 +176,38 @@ Class KentThemeHelper {
 		include 'error_pages/500.php';
 		die();
 	}
+}
+
+if(defined('RECAPTCHA') && isset($_POST['page-feedback-submit']) && $_POST['page-feedback-submit'] == 'page-feedback'){
+
+	$recaptcha = new \ReCaptcha\ReCaptcha(RECAPTCHA);
+	$resp = $recaptcha->verify($_POST['g-recaptcha-response'], (isset($_SERVER['HTTP_X_KENT_REAL_IP'])?$_SERVER['HTTP_X_KENT_REAL_IP']:$_SERVER['REMOTE_ADDR']));
+	if ($resp->isSuccess()) {
+
+		try {
+			$ticket = new Ticket("Website Feedback - " . $_POST['page-feedback-category']);
+			$ticket->set_emails(false, false, false);
+			$ticket->set_priority("Normal");
+			$ticket->set_category("Web");
+			$ticket->add_assignee('Web Development');
+			$ticket->add_entry($_POST['page-feedback-comment']);
+			$ticket->create();
+		}catch(\Exception $e){
+			$_POST['page_feedback_errors'] = (defined('DEBUG') && DEBUG) ? "Footprints ticket submission failed: <pre>" . $e->getMessage() . "</pre>" :"Submission Failed";
+		}
+
+	} else {
+
+		if(defined('DEBUG') && DEBUG ){
+			$_POST['page_feedback_errors'] = "<ul>";
+			foreach ($resp->getErrorCodes() as $code) {
+				$_POST['page_feedback_errors'] .= '<li>' . $code . '</li>';
+			}
+			$_POST['page_feedback_errors'] .="</ul>";
+		}else{
+			$_POST['page_feedback_errors'] = "Submission Failed";
+		}
+
+	}
+
 }
