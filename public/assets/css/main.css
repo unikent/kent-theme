@@ -8471,24 +8471,29 @@ input[type=number]::-webkit-outer-spin-button {
     position: absolute;
     right: 0; } }
 
-.top-sidebar ul.sidebar {
+.content-aside ul.sidebar {
   list-style: none;
   padding-left: 0;
   color: #05345C;
   font-weight: bold; }
-  .top-sidebar ul.sidebar i {
+  .content-aside ul.sidebar i {
     margin-right: 4px;
     margin-right: 0.25rem;
     vertical-align: top; }
-  .top-sidebar ul.sidebar > li {
+  .content-aside ul.sidebar > li {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
-  .top-sidebar ul.sidebar ul {
+  .content-aside ul.sidebar ul {
     color: #003882;
     list-style: none;
     font-weight: normal;
     padding-left: 24px;
     padding-left: 1.5rem; }
+  @media (min-width: 992px) {
+    .content-aside ul.sidebar.pg {
+      padding-top: 350px; }
+    .content-aside ul.sidebar.ug {
+      padding-top: 300px; } }
 
 .tab-content > .tab-title {
   cursor: pointer;
@@ -11152,20 +11157,26 @@ button.beta-toggler {
     .card.editorial.editorial-energy .card-title-wrap {
       background-color: rgba(42, 190, 217, 0.9); } }
 
-.modal {
-  position: absolute; }
-  .modal .modal-header {
-    background: #05345C;
+.modal .modal-header {
+  background: #05345C;
+  color: #fff; }
+  .modal .modal-header h3 {
     color: #fff; }
-    .modal .modal-header h3 {
-      color: #fff; }
-    .modal .modal-header .close {
-      opacity: 1;
-      color: #fff; }
-      .modal .modal-header .close span {
-        vertical-align: sub; }
-  .modal .modal-dialog {
-    max-width: 80%; }
+  .modal .modal-header .close {
+    opacity: 1;
+    color: #fff; }
+    .modal .modal-header .close span {
+      vertical-align: sub; }
+
+.modal .modal-dialog {
+  margin-top: 48px;
+  margin-top: 3rem; }
+  @media (min-width: 768px) {
+    .modal .modal-dialog {
+      max-width: 80%; } }
+
+.modal-backdrop.in {
+  opacity: .7; }
 
 .modal.modal-fullscreen .modal-dialog {
   width: 100%;
@@ -11204,9 +11215,6 @@ button.beta-toggler {
       color: #FFFFFF; }
       .modal.modal-fullscreen .modal-dialog .modal-content .modal-footer a {
         color: #FFFFFF; }
-
-.modal.modal-course .modal-dialog {
-  width: 80%; }
 
 .popover {
   box-shadow: 1px 1px 3px #BFBFBF; }
