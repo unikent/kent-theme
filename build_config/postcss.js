@@ -9,6 +9,9 @@ module.exports = {
 		]
 	},
 	dist: {
-		src: 'public/assets/css/*.css'
+		src: [
+			'public/assets/css/*.css',
+			'!public/assets/css/kentfont.css'
+		]
 	}
 };
