@@ -6395,14 +6395,14 @@ body.show-kentbar-menu {
 
 h1, .h1 {
   font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
-  color: #05345C; }
+  color: #671115; }
 
 h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  color: #05345C;
+  color: #671115;
   font-weight: bold; }
 
 h2, .h2 {
@@ -8474,7 +8474,7 @@ input[type=number]::-webkit-outer-spin-button {
 .content-aside ul.sidebar {
   list-style: none;
   padding-left: 0;
-  color: #05345C;
+  color: #671115;
   font-weight: bold; }
   .content-aside ul.sidebar i {
     margin-right: 4px;
@@ -8484,7 +8484,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
   .content-aside ul.sidebar ul {
-    color: #003882;
+    color: #171717;
     list-style: none;
     font-weight: normal;
     padding-left: 24px;
@@ -8528,6 +8528,9 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 1rem; }
   .tab-content > .tab-pane.in, .tab-content > .tab-pane.active {
     border-bottom: 1px solid #DDDDDD; }
+
+.tab-content h2:first-of-type {
+  margin-top: 0; }
 
 #kentBar.kent-bar,
 #kentBar.audience-bar {

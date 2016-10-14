@@ -8484,7 +8484,7 @@ input[type=number]::-webkit-outer-spin-button {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
   .content-aside ul.sidebar ul {
-    color: #003882;
+    color: #171717;
     list-style: none;
     font-weight: normal;
     padding-left: 24px;
@@ -8528,6 +8528,9 @@ input[type=number]::-webkit-outer-spin-button {
   padding: 1rem; }
   .tab-content > .tab-pane.in, .tab-content > .tab-pane.active {
     border-bottom: 1px solid #DDDDDD; }
+
+.tab-content h2:first-of-type {
+  margin-top: 0; }
 
 #kentBar.kent-bar,
 #kentBar.audience-bar {
