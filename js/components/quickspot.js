@@ -227,6 +227,15 @@ window.KENT.modules = window.KENT.modules || {};
 		display_handler: function(itm, qs){
 			itm.url = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
 			return window.Handlebars.templates.course_list_result(itm);
+		},
+		data_pre_parse: function(courses){
+			for (var c in courses) {
+				courses[c].__subjects = '';
+				for (var s in courses[c].subject_categories) {
+					courses[c].__subjects += ' ' + courses[c].subject_categories[s];
+				}
+			}
+			return courses;
 		}
 	});
 
@@ -237,6 +246,33 @@ window.KENT.modules = window.KENT.modules || {};
 		display_handler: function(itm, qs){
 			itm.url = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
 			return window.Handlebars.templates.course_list_result(itm);
+		},
+		data_pre_parse: function(courses){
+			for (var c in courses) {
+				courses[c].__subjects = '';
+				for (var s in courses[c].subject_categories) {
+					courses[c].__subjects += ' ' + courses[c].subject_categories[s];
+				}
+			}
+			return courses;
+		}
+	});
+
+
+	// Modules
+	configs.modules_inline = $.extend({}, configs.withInlineOutput, {
+		'url': window.KENT.settings.api_url + '/v1/modules/collection/all',
+		'search_on': ['title', 'sds_code'],
+		'key_value': 'sds_code',
+		'data_pre_parse': function(data, options){
+			return data.modules;
+		},
+		'loaded': function(qs){
+			qs.filter(function(o){ return o.running === true; });
+		},
+		display_handler: function(itm, qs){
+			itm.url = '/courses/modules/module/' + itm.sds_code;
+			return window.Handlebars.templates.module_list_result(itm);
 		}
 	});
 
@@ -247,6 +283,45 @@ window.KENT.modules = window.KENT.modules || {};
  */
 jQuery(document).ready(function($){
 
+	// Setup auto filtering for QS instance
+	function qsAutoFilter(qs, filter_container_id){
+		var filter_container = $(`#${filter_container_id} select`);
+
+		var apply_filters = function(){
+			// reset result count
+			qs.options.max_results = 25;
+			// clear existing filters
+			qs.clearFilters();
+			// Apply filters from filter box
+			filter_container.each(function(select){
+				if ($(this).val() !== '') {
+					// Attempt to get targetted col from "option", fall back to "selects" value if not found.
+					var col = $(this).children('option:selected').data('filter-col');
+					if (!col) { col = $(this).data('filter-col'); }
+
+					// Apply filter
+					qs.filter($(this).val(), col);
+				}
+			});
+
+			// Add additional events
+			var evt = document.createEvent('HTMLEvents');
+			evt.initEvent('quickspot:filtered', true, true);
+			qs.target.dispatchEvent(evt);
+		};
+
+		// On change, filter & refresh dataset
+		filter_container.change(function(){
+			apply_filters();
+			// Refresh dataset.
+			qs.refresh();
+		});
+
+		// Apply filters on load
+		qs.on('quickspot:loaded', function() { apply_filters(); });
+	}
+
+	// Hookup quickspot instances
 	$('input[data-quickspot-config]').each(function(){
 
 		// Load config
@@ -270,6 +345,19 @@ jQuery(document).ready(function($){
 		var qs = window.KENT.modules.quickspot.attach(config);
 		$(this).attr('autocomplete', 'off');
 		$(this).data('qs', qs);
+
+		// Init filters
+		if ($(this).data('quickspot-filters')) {
+			qsAutoFilter(qs, $(this).data('quickspot-filters'));
+		}
+
+		// Call callback if needed
+		if ($(this).data('quickspot-callback')) {
+			// Call registered calllback
+			if (typeof window[$(this).data('quickspot-callback')] === 'function') {
+				window[$(this).data('quickspot-callback')](qs);
+			}
+		}
 
 		// Debug
 		window.KENT.log('[Quickspot] Instance created on #' + $(this).attr('id') + ' with config ' + $(this).data('quickspot-config'));
