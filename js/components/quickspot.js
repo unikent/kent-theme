@@ -22,12 +22,12 @@ window.KENT.modules = window.KENT.modules || {};
 	configs.default = {
 		'disable_occurrence_weighting': true,
 		'prevent_headers': true,
-		'max_results': 150,
+		'max_results': 100,
 		'no_results': function (qs, val) {
 			return '<a class=\'quickspot-result selected\'>Press enter to search...</a>';
 		},
 		'no_results_click': function (value, qs) {
-			window.location.href = 'https://www.kent.ac.uk/search/?q=' + value;
+			window.location.href = 'https://beta.kent.ac.uk/search/?q=' + value;
 		}
 	};
 
@@ -118,7 +118,7 @@ window.KENT.modules = window.KENT.modules || {};
 			document.location = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
 		},
 		'no_results_click': function (value, qs) {
-			window.location.href = 'https://www.kent.ac.uk/search/courses?q=' + value;
+			window.location.href = 'https://beta.kent.ac.uk/search/courses?q=' + value;
 		}
 	});
 
@@ -186,13 +186,37 @@ window.KENT.modules = window.KENT.modules || {};
 
 	// Inline search page
 	configs.withInlineOutput = $.extend({}, configs.default, {
+		'css_class_prefix': 'quickspot-inline',
+		'max_results': 25,
 		'hide_on_blur': false,
 		'show_all_on_blank_search': true,
 		'no_results_click': function () { return false;},
 		'click_handler': function() { return false; },
-		'ready': function(qs){ qs.showAll(); },
+		'ready': function(qs){
+			qs.showAll();
+			// Hookup show more button
+			$(qs.container, '.btn-outline-primary').click(function(){
+				qs.options.max_results += 25;
+				qs.refresh();
+			});
+		},
 		'no_results': function (qs, val) {
 			return '<div class=\'card quickspot-result selected\'><p>No matching results</p></div>';
+		},
+		'results_footer': '<div class="col-sm-6 offset-sm-3"><button type="button" class="btn btn-outline-primary btn-block btn-lg">Show more</button></div>',
+		'events': {
+			'quickspot:result': function(e){
+				// Show/hide show more button as needed
+				if (e.quickspot.options.max_results > e.quickspot.results.length) {
+					$(e.quickspot.container).find('.btn-outline-primary').hide();
+				} else {
+					$(e.quickspot.container).find('.btn-outline-primary').show();
+				}
+			},
+			'keyup': function(e){
+				// clear count on data change
+				e.target.quickspot.options.max_results = 25;
+			}
 		}
 	});
 
@@ -203,6 +227,15 @@ window.KENT.modules = window.KENT.modules || {};
 		display_handler: function(itm, qs){
 			itm.url = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
 			return window.Handlebars.templates.course_list_result(itm);
+		},
+		data_pre_parse: function(courses){
+			for (var c in courses) {
+				courses[c].__subjects = '';
+				for (var s in courses[c].subject_categories) {
+					courses[c].__subjects += ' ' + courses[c].subject_categories[s];
+				}
+			}
+			return courses;
 		}
 	});
 
@@ -213,6 +246,33 @@ window.KENT.modules = window.KENT.modules || {};
 		display_handler: function(itm, qs){
 			itm.url = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
 			return window.Handlebars.templates.course_list_result(itm);
+		},
+		data_pre_parse: function(courses){
+			for (var c in courses) {
+				courses[c].__subjects = '';
+				for (var s in courses[c].subject_categories) {
+					courses[c].__subjects += ' ' + courses[c].subject_categories[s];
+				}
+			}
+			return courses;
+		}
+	});
+
+
+	// Modules
+	configs.modules_inline = $.extend({}, configs.withInlineOutput, {
+		'url': window.KENT.settings.api_url + '/v1/modules/collection/all',
+		'search_on': ['title', 'sds_code'],
+		'key_value': 'sds_code',
+		'data_pre_parse': function(data, options){
+			return data.modules;
+		},
+		'loaded': function(qs){
+			qs.filter(function(o){ return o.running === true; });
+		},
+		display_handler: function(itm, qs){
+			itm.url = '/courses/modules/module/' + itm.sds_code;
+			return window.Handlebars.templates.module_list_result(itm);
 		}
 	});
 
@@ -223,6 +283,52 @@ window.KENT.modules = window.KENT.modules || {};
  */
 jQuery(document).ready(function($){
 
+
+	function triggerEvent(qs, event){
+		var evt = document.createEvent('HTMLEvents');
+		evt.initEvent(event, true, true);
+		qs.target.dispatchEvent(evt);
+	}
+
+	// Setup auto filtering for QS instance
+	function qsAutoFilter(qs, filter_container_id){
+		var filter_container = $(`#${filter_container_id} select`);
+
+		var apply_filters = function(){
+			// reset result count
+			qs.options.max_results = 25;
+			qs.__filters_text = [];
+			// clear existing filters
+			qs.clearFilters();
+			// Apply filters from filter box
+			filter_container.each(function(select){
+				if ($(this).val() !== '') {
+					// Attempt to get targetted col from "option", fall back to "selects" value if not found.
+					var col = $(this).children('option:selected').data('filter-col');
+					if (!col) { col = $(this).data('filter-col'); }
+
+					// Apply filter
+					qs.filter($(this).val(), col);
+					qs.__filters_text.push($(this).val());
+				}
+			});
+
+			// Add additional events
+			triggerEvent(qs, 'quickspot:filtered');
+		};
+
+		// On change, filter & refresh dataset
+		filter_container.change(function(){
+			apply_filters();
+			// Refresh dataset.
+			qs.refresh();
+		});
+
+		// Apply filters on load
+		qs.on('quickspot:loaded', function() { apply_filters(); });
+	}
+
+	// Hookup quickspot instances
 	$('input[data-quickspot-config]').each(function(){
 
 		// Load config
@@ -233,13 +339,14 @@ jQuery(document).ready(function($){
 		config.target = $(this).attr('id');
 
 		// Override data source url
-		if ($(this).data('quickspot-source')){
+		if ($(this).data('quickspot-source')) {
 			config.url = $(this).data('quickspot-source');
 		}
 
 		// Override results container location
 		if ($(this).data('quickspot-target')){
 			config.results_container = $(this).data('quickspot-target');
+			document.getElementById($(this).data('quickspot-target')).innerHTML = '';
 		}
 
 		// Boot quickspot
@@ -247,8 +354,71 @@ jQuery(document).ready(function($){
 		$(this).attr('autocomplete', 'off');
 		$(this).data('qs', qs);
 
+		// Init filters
+		if ($(this).data('quickspot-filters')) {
+			qsAutoFilter(qs, $(this).data('quickspot-filters'));
+		}
+
+		// Displays list of applied filters in specified container
+		if ($(this).data('quickspot-filter-text-target')) {
+			const $filter_text_container = $('#' + $(this).data('quickspot-filter-text-target'));
+			window.KENT.log($filter_text_container );
+			$filter_text_container.attr('data-original-text', $filter_text_container.text());
+
+			qs.on('quickspot:filtered', function(){
+				$filter_text_container.text( (qs.__filters_text.length === 0) ? $filter_text_container.data('original-text') : qs.__filters_text.join(', '));
+			});
+		}
+
+		// Call callback if needed
+		if ($(this).data('quickspot-callback')) {
+			// Call registered calllback
+			if (typeof window[$(this).data('quickspot-callback')] === 'function') {
+				window[$(this).data('quickspot-callback')](qs);
+			}
+		}
+
 		// Debug
 		window.KENT.log('[Quickspot] Instance created on #' + $(this).attr('id') + ' with config ' + $(this).data('quickspot-config'));
+	});
+
+	// Hookup any quickspot data store switchers
+	$('a[data-quickspot-reconfigure]').click(function(){
+
+		const $trigger = $(this);
+		const target = document.getElementById($trigger.data('quickspot-reconfigure'));
+
+		// If its a tab, help out
+		if ($trigger.hasClass('nav-link')) {
+			$trigger.parent().parent().find('.nav-link.active').removeClass('active');
+			$trigger.addClass('active');
+		}
+
+		if (target && target.quickspot) {
+			// Have we already generated this data store?
+			if ($trigger.data('qs_datastore')) {
+				target.quickspot.setDatastore($trigger.data('qs_datastore'));
+			} else {
+				// If config provided, use it - else use existing one from QS instance
+				let config =  $trigger.data('quickspot-config') ?  $trigger.data('quickspot-config') : $(target).data('quickspot-config');
+				// grab config data
+				config = window.KENT.quickspot.config[config] || window.KENT.quickspot.config.defaults;
+				config = $.extend({}, config);
+
+				// Update config if needed
+				if ($trigger.data('quickspot-url')) {
+					config.url =  $trigger.data('quickspot-url');
+				}
+
+				config.loaded = function(ds){
+					target.quickspot.setDatastore(ds);
+					$trigger.data('qs_datastore', ds);
+				};
+
+				// Valid target! lets do stuff!
+				window.KENT.modules.quickspot.datastore(config);
+			}
+		}
 	});
 
 });
