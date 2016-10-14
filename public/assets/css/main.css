@@ -10382,14 +10382,20 @@ button.beta-toggler {
     background-color: #E8EBF2; }
     .card-panel.card-panel-primary-tint.cards-backed .card {
       border-color: #E8EBF2; }
+    .card-panel.card-panel-primary-tint .card-panel-body.kent-slider .slick-prev:after, .card-panel.card-panel-primary-tint .card-panel-body.kent-slider .slick-next:after {
+      color: #05345C; }
   .card-panel.card-panel-secondary {
     background-color: #F5F5F5; }
     .card-panel.card-panel-secondary.cards-backed .card {
       border-color: #F5F5F5; }
+    .card-panel.card-panel-secondary .card-panel-body.kent-slider .slick-prev:after, .card-panel.card-panel-secondary .card-panel-body.kent-slider .slick-next:after {
+      color: #05345C; }
   .card-panel.card-panel-tertiary {
     background-color: #F7F2E1; }
     .card-panel.card-panel-tertiary.cards-backed .card {
       border-color: #F7F2E1; }
+    .card-panel.card-panel-tertiary .card-panel-body.kent-slider .slick-prev:after, .card-panel.card-panel-tertiary .card-panel-body.kent-slider .slick-next:after {
+      color: #05345C; }
   .card-panel.card-panel-primary {
     background-color: #05345C; }
     .card-panel.card-panel-primary.cards-backed .card {
@@ -10454,6 +10460,8 @@ button.beta-toggler {
           clear: none; }
         .card-panel .card-panel-body .card:nth-child(4n+1) {
           clear: left; } }
+    .card-panel .card-panel-body .card.kent-slide {
+      clear: none; }
     .card-panel .card-panel-body .card-panel-full,
     .card-panel .card-panel-body .card-panel-grid,
     .card-panel .card-panel-body .card-panel-single,
@@ -12105,6 +12113,22 @@ blockquote.pull-quote {
       top: 50%;
       top: calc(50% - 1.5rem);
       bottom: auto; } }
+
+@media (min-width: 992px) {
+  .card-panel-body.kent-slider .slick-prev, .card-panel-body.kent-slider .slick-next {
+    width: auto; }
+    .card-panel-body.kent-slider .slick-prev:after, .card-panel-body.kent-slider .slick-next:after {
+      color: #fff; }
+  .card-panel-body.kent-slider .slick-prev {
+    left: -3rem; } }
+
+.card-panel-body.kent-slider .slick-track {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .card-panel-body.kent-slider .slick-track .kent-slide {
+    height: auto; }
 
 .global-footer {
   background: #434749;

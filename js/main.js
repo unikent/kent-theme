@@ -28548,7 +28548,7 @@ this["Handlebars"]["templates"]["wp_post_card"] = Handlebars.template({"1":funct
     window.CustomEvent = CustomEvent;
 })();
 
-'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;};/**
+'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol&&obj!==Symbol.prototype?"symbol":typeof obj;};/**
  * Debug helper
  * Log only shown when KENT.debug is true.
  */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){/*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};(function(factory){if(typeof define==='function'&&define.amd){// AMD
@@ -28733,7 +28733,7 @@ window.KENT.kentslider={default:{config:{dots:true,dotsClass:'kent-slider-dots',
 react:function react($el,breakpoint,config){var loaded=$el.hasClass('slick-initialized');if(ResponsiveBootstrapToolkit.is(breakpoint)){if(!loaded){// init slider
 $el.slick(config);}}else{if(loaded){// de-init slider
 $el.slick('unslick');}}}};// Settings for profile_feature
-window.KENT.kentslider.profile_feature={config:$.extend({},window.KENT.kentslider.default.config,{slidesToShow:2,slidesToScroll:2}),breakpoint:'<=md'};$(document).ready(function(){// If class is found, init slider
+window.KENT.kentslider.profile_feature={config:$.extend({},window.KENT.kentslider.default.config,{slidesToShow:2,slidesToScroll:2}),breakpoint:'<=md'};window.KENT.kentslider.related_courses={config:$.extend({},window.KENT.kentslider.default.config,{dots:false,infine:true,slidesToShow:1,slidesToScroll:1,responsive:[{breakpoint:window.KENT.settings.breakpoints.xl,settings:{slidesToShow:4,slidesToScroll:4}},{breakpoint:window.KENT.settings.breakpoints.lg,settings:{slidesToShow:3,slidesToScroll:3}},{breakpoint:window.KENT.settings.breakpoints.sm,settings:{slidesToShow:2,slidesToScroll:2}}]})};$(document).ready(function(){// If class is found, init slider
 $('.kent-slider').each(function(){// Load config
 var slider_config=$(this).data('slider-config');if(typeof slider_config==='undefined'){slider_config='default';}var config=window.KENT.kentslider[slider_config].config;// Does this carousel behave differently at different breakpoints
 var breakpoint=typeof window.KENT.kentslider[slider_config].breakpoint!=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;if(breakpoint){// react to inital size
