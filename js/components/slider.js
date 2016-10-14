@@ -56,7 +56,7 @@ window.KENT.kentslider.related_courses = {
 				breakpoint: window.KENT.settings.breakpoints.xl,
 				settings: {
 					slidesToShow: 4,
-					slidesToScroll: 4,
+					slidesToScroll: 4
 				}
 			},
 			{
@@ -72,8 +72,7 @@ window.KENT.kentslider.related_courses = {
 					slidesToShow: 2,
 					slidesToScroll: 2
 				}
-			},
-
+			}
 		]
 	})
 };
