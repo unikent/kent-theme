@@ -283,6 +283,13 @@ window.KENT.modules = window.KENT.modules || {};
  */
 jQuery(document).ready(function($){
 
+
+	function triggerEvent(qs, event){
+		var evt = document.createEvent('HTMLEvents');
+		evt.initEvent(event, true, true);
+		qs.target.dispatchEvent(evt);
+	}
+
 	// Setup auto filtering for QS instance
 	function qsAutoFilter(qs, filter_container_id){
 		var filter_container = $(`#${filter_container_id} select`);
@@ -290,6 +297,7 @@ jQuery(document).ready(function($){
 		var apply_filters = function(){
 			// reset result count
 			qs.options.max_results = 25;
+			qs.__filters_text = [];
 			// clear existing filters
 			qs.clearFilters();
 			// Apply filters from filter box
@@ -301,13 +309,12 @@ jQuery(document).ready(function($){
 
 					// Apply filter
 					qs.filter($(this).val(), col);
+					qs.__filters_text.push($(this).val());
 				}
 			});
 
 			// Add additional events
-			var evt = document.createEvent('HTMLEvents');
-			evt.initEvent('quickspot:filtered', true, true);
-			qs.target.dispatchEvent(evt);
+			triggerEvent(qs, 'quickspot:filtered');
 		};
 
 		// On change, filter & refresh dataset
@@ -332,13 +339,14 @@ jQuery(document).ready(function($){
 		config.target = $(this).attr('id');
 
 		// Override data source url
-		if ($(this).data('quickspot-source')){
+		if ($(this).data('quickspot-source')) {
 			config.url = $(this).data('quickspot-source');
 		}
 
 		// Override results container location
 		if ($(this).data('quickspot-target')){
 			config.results_container = $(this).data('quickspot-target');
+			document.getElementById($(this).data('quickspot-target')).innerHTML = '';
 		}
 
 		// Boot quickspot
@@ -351,6 +359,17 @@ jQuery(document).ready(function($){
 			qsAutoFilter(qs, $(this).data('quickspot-filters'));
 		}
 
+		// Displays list of applied filters in specified container
+		if ($(this).data('quickspot-filter-text-target')) {
+			const $filter_text_container = $('#' + $(this).data('quickspot-filter-text-target'));
+			window.KENT.log($filter_text_container );
+			$filter_text_container.attr('data-original-text', $filter_text_container.text());
+
+			qs.on('quickspot:filtered', function(){
+				$filter_text_container.text( (qs.__filters_text.length === 0) ? $filter_text_container.data('original-text') : qs.__filters_text.join(', '));
+			});
+		}
+
 		// Call callback if needed
 		if ($(this).data('quickspot-callback')) {
 			// Call registered calllback
@@ -361,6 +380,45 @@ jQuery(document).ready(function($){
 
 		// Debug
 		window.KENT.log('[Quickspot] Instance created on #' + $(this).attr('id') + ' with config ' + $(this).data('quickspot-config'));
+	});
+
+	// Hookup any quickspot data store switchers
+	$('a[data-quickspot-reconfigure]').click(function(){
+
+		const $trigger = $(this);
+		const target = document.getElementById($trigger.data('quickspot-reconfigure'));
+
+		// If its a tab, help out
+		if ($trigger.hasClass('nav-link')) {
+			$trigger.parent().parent().find('.nav-link.active').removeClass('active');
+			$trigger.addClass('active');
+		}
+
+		if (target && target.quickspot) {
+			// Have we already generated this data store?
+			if ($trigger.data('qs_datastore')) {
+				target.quickspot.setDatastore($trigger.data('qs_datastore'));
+			} else {
+				// If config provided, use it - else use existing one from QS instance
+				let config =  $trigger.data('quickspot-config') ?  $trigger.data('quickspot-config') : $(target).data('quickspot-config');
+				// grab config data
+				config = window.KENT.quickspot.config[config] || window.KENT.quickspot.config.defaults;
+				config = $.extend({}, config);
+
+				// Update config if needed
+				if ($trigger.data('quickspot-url')) {
+					config.url =  $trigger.data('quickspot-url');
+				}
+
+				config.loaded = function(ds){
+					target.quickspot.setDatastore(ds);
+					$trigger.data('qs_datastore', ds);
+				};
+
+				// Valid target! lets do stuff!
+				window.KENT.modules.quickspot.datastore(config);
+			}
+		}
 	});
 
 });
