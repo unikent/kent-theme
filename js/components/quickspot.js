@@ -309,7 +309,7 @@ jQuery(document).ready(function($){
 
 					// Apply filter
 					qs.filter($(this).val(), col);
-					qs.__filters_text.push($(this).val());
+					qs.__filters_text.push($(this).find('option:selected').text()); // use full text, not val
 				}
 			});
 
@@ -362,7 +362,6 @@ jQuery(document).ready(function($){
 		// Displays list of applied filters in specified container
 		if ($(this).data('quickspot-filter-text-target')) {
 			const $filter_text_container = $('#' + $(this).data('quickspot-filter-text-target'));
-			window.KENT.log($filter_text_container );
 			$filter_text_container.attr('data-original-text', $filter_text_container.text());
 
 			qs.on('quickspot:filtered', function(){
