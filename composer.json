@@ -9,7 +9,7 @@
     ],
     "require": {
       "google/recaptcha": "~1.1",
-      "unikent/lib-php-footprints": "dev-master"
+      "unikent/lib-php-footprints": "2.3"
     },
     "autoload": {
     	"files": [
