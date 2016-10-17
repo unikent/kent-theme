@@ -6580,10 +6580,10 @@ a.text-dark:focus, a.text-dark:hover {
   color: #1a1a1a !important; }
 
 .text-primary-light {
-  color: #95a9ce !important; }
+  color: #6b87bb !important; }
 
 a.text-primary-light:focus, a.text-primary-light:hover {
-  color: #728dbe !important; }
+  color: #4d6ca7 !important; }
 
 .text-energy {
   color: #2abed9 !important; }
@@ -9124,7 +9124,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
 
 .departmental-nav header {
   font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
-  background-color: #95a9ce;
+  background-color: #6b87bb;
   color: #FFFFFF;
   padding: 8px 16px;
   padding: .5rem 1rem;
@@ -9421,7 +9421,7 @@ button.beta-toggler {
     color: #FFF; }
 
 .panel-primary-light {
-  background: #95a9ce;
+  background: #6b87bb;
   color: #FFFFFF; }
   .panel-primary-light h1, .panel-primary-light .h1,
   .panel-primary-light h2, .panel-primary-light .h2,
@@ -9549,13 +9549,13 @@ button.beta-toggler {
   .card-panel.cards-backed .card.card-backed-primary-light,
   .card-panel.cards-backed .card-panel.cards-backed-primary-light .card, .card-panel.cards-backed-primary-light
   .card-panel.cards-backed .card {
-    background: #95a9ce; }
+    background: #6b87bb; }
   .card-panel.card-panel-primary-light .card.card-backed.card-header-split .card-header, .card-panel.card-panel-primary-light .card-panel.cards-backed .card.card-header-split .card-header, .card-panel.cards-backed .card-panel.card-panel-primary-light .card.card-header-split .card-header, .card-panel.card-panel-primary-light .card-panel.cards-backed .card-panel.cards-header-split .card .card-header, .card-panel.cards-backed .card-panel.cards-header-split .card-panel.card-panel-primary-light .card .card-header, .card-panel.card-panel-primary-light .card-panel.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-header-split .card-panel.cards-backed .card-panel.card-panel-primary-light .card .card-header, .card-panel.card-panel-primary-light .card-panel.cards-header-split .card.card-backed .card-header, .card-panel.cards-header-split .card-panel.card-panel-primary-light .card.card-backed .card-header,
   .card-panel.card-panel-primary-light.cards-header-split .card.card-backed .card-header,
   .card-panel.card-panel-primary-light.cards-header-split .card-panel.cards-backed .card .card-header, .card-panel.cards-backed
   .card-panel.card-panel-primary-light.cards-header-split .card .card-header,
   .card-panel.card-panel-primary-light.cards-backed.cards-header-split .card .card-header {
-    background: linear-gradient(#95a9ce 50%, transparent 50%); }
+    background: linear-gradient(#6b87bb 50%, transparent 50%); }
   .card.card-backed-accent, .card-panel.cards-backed-accent .card,
   .card-panel.cards-backed .card.card-backed-accent,
   .card-panel.cards-backed .card-panel.cards-backed-accent .card, .card-panel.cards-backed-accent
@@ -10450,9 +10450,9 @@ button.beta-toggler {
       border-color: #05345C;
       color: #171717; }
   .card-panel.card-panel-primary-light {
-    background-color: #95a9ce; }
+    background-color: #6b87bb; }
     .card-panel.card-panel-primary-light.cards-backed .card {
-      border-color: #95a9ce;
+      border-color: #6b87bb;
       color: #171717; }
   .card-panel.card-panel-accent {
     background-color: #937227; }
@@ -11199,10 +11199,10 @@ button.beta-toggler {
       background-color: rgba(5, 52, 92, 0.9); } }
 
 .card.editorial.editorial-primary-light .card-title-wrap {
-  background-color: #95a9ce; }
+  background-color: #6b87bb; }
   @media (min-width: 768px) {
     .card.editorial.editorial-primary-light .card-title-wrap {
-      background-color: rgba(149, 169, 206, 0.9); } }
+      background-color: rgba(107, 135, 187, 0.9); } }
 
 .card.editorial.editorial-accent .card-title-wrap {
   background-color: #937227; }
@@ -12117,7 +12117,7 @@ blockquote.pull-quote {
     background: transparent; }
 
 .kent-slider.kent-slider-primary-light {
-  background: #95a9ce;
+  background: #6b87bb;
   color: #FFFFFF; }
   .kent-slider.kent-slider-primary-light .card-img-overlay, .kent-slider.kent-slider-primary-light .card .card-img-overlay-bottom, .card .kent-slider.kent-slider-primary-light .card-img-overlay-bottom, .kent-slider.kent-slider-primary-light .card .card-img-overlay-bottom-shaded, .card .kent-slider.kent-slider-primary-light .card-img-overlay-bottom-shaded, .kent-slider.kent-slider-primary-light .card .card-img-overlay-centered, .card .kent-slider.kent-slider-primary-light .card-img-overlay-centered {
     background: transparent; }
@@ -12367,9 +12367,9 @@ blockquote.pull-quote {
     background-color: #02192c; }
 
 .tag-primary-light {
-  background-color: #95a9ce; }
+  background-color: #6b87bb; }
   .tag-primary-light[href]:focus, .tag-primary-light[href]:hover {
-    background-color: #728dbe; }
+    background-color: #4d6ca7; }
 
 .tag-accent {
   background-color: #937227; }
