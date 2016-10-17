@@ -24750,23 +24750,23 @@ this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
 this["Handlebars"]["templates"]["course_list_result"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div class=\"card card-linked chevron-link\">\n	<a href=\""
+  return "<div class=\"card card-linked chevron-link\">\r\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
-    + "\" class=\"card-title-link\">\n		<h3 style=\"display:inline;\">"
+    + "\" class=\"card-title-link\">\r\n		<h3 style=\"display:inline;\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.award || (depth0 != null ? depth0.award : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"award","hash":{},"data":data}) : helper)))
-    + "</h3>\n	</a>\n	<a href=\""
+    + "</h3>\r\n	</a>\r\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.award || (depth0 != null ? depth0.award : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"award","hash":{},"data":data}) : helper)))
-    + "</a>\n	<span class=\"kf-clock tag text-accent\"> "
+    + "</a>\r\n	<span class=\"kf-clock tag text-accent\"> "
     + alias4(((helper = (helper = helpers.mode_of_study || (depth0 != null ? depth0.mode_of_study : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"mode_of_study","hash":{},"data":data}) : helper)))
-    + " </span>\n	<span class=\"kf-pin tag text-accent\"> "
+    + " </span>\r\n	<span class=\"kf-pin tag text-accent\"> "
     + alias4(((helper = (helper = helpers.campus || (depth0 != null ? depth0.campus : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"campus","hash":{},"data":data}) : helper)))
-    + " </span>\n</div>";
+    + " </span>\r\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -24778,7 +24778,7 @@ this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":functio
 
   return "				"
     + container.escapeExpression(((helper = (helper = helpers.start_date || (depth0 != null ? depth0.start_date : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"start_date","hash":{},"data":data}) : helper)))
-    + "\n";
+    + "\r\n";
 },"4":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -24786,7 +24786,7 @@ this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":functio
     + alias4(((helper = (helper = helpers.start_date || (depth0 != null ? depth0.start_date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start_date","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.end_date || (depth0 != null ? depth0.end_date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end_date","hash":{},"data":data}) : helper)))
-    + "\n";
+    + "\r\n";
 },"6":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -24799,7 +24799,7 @@ this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":functio
     + alias4(((helper = (helper = helpers.start || (depth0 != null ? depth0.start : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.end_time || (depth0 != null ? depth0.end_time : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end_time","hash":{},"data":data}) : helper)))
-    + "\n";
+    + "\r\n";
 },"9":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -24807,25 +24807,47 @@ this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":functio
     + alias4(((helper = (helper = helpers.start || (depth0 != null ? depth0.start : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.end || (depth0 != null ? depth0.end : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end","hash":{},"data":data}) : helper)))
-    + "\n";
+    + "\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div class=\"card card-linked\">\n	<a href=\""
+  return "<div class=\"card card-linked\">\r\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"card-title-link\"><h3 class=\"card-title\">"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</h3></a>\n	<a href=\""
+    + "</h3></a>\r\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</a>\n	<time class=\"card-meta\" datetime=\""
+    + "</a>\r\n	<time class=\"card-meta\" datetime=\""
     + alias4(((helper = (helper = helpers.start_ts || (depth0 != null ? depth0.start_ts : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start_ts","hash":{},"data":data}) : helper)))
-    + "\">\n"
+    + "\">\r\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.all_day : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(6, data, 0),"data":data})) != null ? stack1 : "")
-    + "</time>\n	<div class=\"card-text\">"
+    + "</time>\r\n	<div class=\"card-text\">"
     + ((stack1 = ((helper = (helper = helpers.excerpt || (depth0 != null ? depth0.excerpt : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"excerpt","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + "</div>\n</div>";
+    + "</div>\r\n</div>";
+},"useData":true});
+
+this["Handlebars"]["templates"]["module_list_result"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+
+  return "<div class=\"card card-linked chevron-link\">\r\n	<a href=\""
+    + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
+    + "\" class=\"card-title-link\">\r\n		<h3>"
+    + alias4(((helper = (helper = helpers.sds_code || (depth0 != null ? depth0.sds_code : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sds_code","hash":{},"data":data}) : helper)))
+    + ": "
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</h3>\r\n	</a>\r\n	<a href=\""
+    + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
+    + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
+    + alias4(((helper = (helper = helpers.sds_code || (depth0 != null ? depth0.sds_code : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sds_code","hash":{},"data":data}) : helper)))
+    + ": "
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "</a>\r\n</div>";
+},"useData":true});
+
+this["Handlebars"]["templates"]["video_html5"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    return "<div class=\"plyr\">\r\n	<video poster=\"/path/to/poster.jpg\" controls>\r\n		<!-- Video files -->\r\n		<source src=\"/path/to/video.mp4\" type=\"video/mp4\">\r\n		<source src=\"/path/to/video.webm\" type=\"video/webm\">\r\n\r\n		<!-- Text track file -->\r\n		<track kind=\"captions\" label=\"English captions\" src=\"/path/to/captions.vtt\" srclang=\"en\" default>\r\n\r\n		<!-- Fallback for browsers that don't support the <video> element -->\r\n		<a href=\"/path/to/movie.mp4\">Download</a>\r\n	</video>\r\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["wp_post_card"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -24839,27 +24861,27 @@ this["Handlebars"]["templates"]["wp_post_card"] = Handlebars.template({"1":funct
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=container.lambda, alias3=container.escapeExpression, alias4=helpers.helperMissing, alias5="function";
 
-  return "<div class=\"card card-linked\">\n	<div class=\"card-media-wrap"
+  return "<div class=\"card card-linked\">\r\n	<div class=\"card-media-wrap"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.video : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + " force-3-2\">\n		<img class=\"card-img\" src=\""
+    + " force-3-2\">\r\n		<img class=\"card-img\" src=\""
     + alias3(alias2(((stack1 = (depth0 != null ? depth0.image : depth0)) != null ? stack1.src : stack1), depth0))
     + "\" alt=\""
     + alias3(alias2(((stack1 = (depth0 != null ? depth0.image : depth0)) != null ? stack1.alt : stack1), depth0))
-    + "\" />\n	</div>\n	<a href=\""
+    + "\" />\r\n	</div>\r\n	<a href=\""
     + alias3(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"card-title-link\"><h3 class=\"card-title\">"
     + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</h3></a>\n	<a href=\""
+    + "</h3></a>\r\n	<a href=\""
     + alias3(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
     + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</a>\n	<time class=\"card-meta\" datetime=\""
+    + "</a>\r\n	<time class=\"card-meta\" datetime=\""
     + alias3(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date","hash":{},"data":data}) : helper)))
     + "\">"
     + alias3(((helper = (helper = helpers.date_string || (depth0 != null ? depth0.date_string : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date_string","hash":{},"data":data}) : helper)))
-    + "</time>\n	"
+    + "</time>\r\n	"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.excerpt : depth0),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "\n</div>";
+    + "\r\n</div>";
 },"useData":true});
 // ==========================================================================
 // Plyr
@@ -28554,30 +28576,30 @@ this["Handlebars"]["templates"]["wp_post_card"] = Handlebars.template({"1":funct
     window.CustomEvent = CustomEvent;
 })();
 
-'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;};/**
+'use strict';var _typeof=typeof Symbol==="function"&&typeof Symbol.iterator==="symbol"?function(obj){return typeof obj;}:function(obj){return obj&&typeof Symbol==="function"&&obj.constructor===Symbol?"symbol":typeof obj;}; /**
  * Debug helper
  * Log only shown when KENT.debug is true.
- */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){/*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};(function(factory){if(typeof define==='function'&&define.amd){// AMD
-define(['handlebars'],factory);}else if((typeof exports==='undefined'?'undefined':_typeof(exports))==='object'){// Node, CommonJS-like
-module.exports=factory(require('handlebars'));}else{// Browser globals (root is window)
-window.Handlebars=factory(window.Handlebars);}})(function(Handlebars){Handlebars.registerHelper('ifCond',function(v1,operator,v2,options){switch(operator){case'!=':return v1!==v2?options.fn(this):options.inverse(this);case'==':return v1===v2?options.fn(this):options.inverse(this);case'<':return v1<v2?options.fn(this):options.inverse(this);case'<=':return v1<=v2?options.fn(this):options.inverse(this);case'>':return v1>v2?options.fn(this):options.inverse(this);case'>=':return v1>=v2?options.fn(this):options.inverse(this);case'&&':return v1&&v2?options.fn(this):options.inverse(this);case'||':return v1||v2?options.fn(this):options.inverse(this);default:return options.inverse(this);}});Handlebars.registerHelper('log',function(something){window.KENT.log(something);});return Handlebars;});window.KENT=window.KENT||{};/**
+ */window.KENT=window.KENT||{};window.KENT.log=function(){if(window.KENT.settings&&window.KENT.settings.debug){ /*eslint no-console: 0*/console.log(arguments.length===1?arguments[0]:arguments);}};(function(factory){if(typeof define==='function'&&define.amd){ // AMD
+define(['handlebars'],factory);}else if((typeof exports==='undefined'?'undefined':_typeof(exports))==='object'){ // Node, CommonJS-like
+module.exports=factory(require('handlebars'));}else { // Browser globals (root is window)
+window.Handlebars=factory(window.Handlebars);}})(function(Handlebars){Handlebars.registerHelper('ifCond',function(v1,operator,v2,options){switch(operator){case '!=':return v1!==v2?options.fn(this):options.inverse(this);case '==':return v1===v2?options.fn(this):options.inverse(this);case '<':return v1<v2?options.fn(this):options.inverse(this);case '<=':return v1<=v2?options.fn(this):options.inverse(this);case '>':return v1>v2?options.fn(this):options.inverse(this);case '>=':return v1>=v2?options.fn(this):options.inverse(this);case '&&':return v1&&v2?options.fn(this):options.inverse(this);case '||':return v1||v2?options.fn(this):options.inverse(this);default:return options.inverse(this);}});Handlebars.registerHelper('log',function(something){window.KENT.log(something);});return Handlebars;});window.KENT=window.KENT||{}; /**
  * Kent Analytics Tracker
  * A simple helper for pushing pages & events to multiple trackers.
- */window.KENT.kat={/**
+ */window.KENT.kat={ /**
 	 *  Track page view
-	 */'page':function page(path){var trackers=this.trackers();for(var t in trackers){try{trackers[t].send('pageview',{'page':path});}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Pageview: '+path);return true;},/**
+	 */'page':function page(path){var trackers=this.trackers();for(var t in trackers){try{trackers[t].send('pageview',{'page':path});}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Pageview: '+path);return true;}, /**
 	 *  Track event (namespaced)
-	 */'event':function event(category,action,label,value){var ns_category='w3beta-'+category;return this.g_event(ns_category,action,label,value);},/**
+	 */'event':function event(category,action,label,value){var ns_category='w3beta-'+category;return this.g_event(ns_category,action,label,value);}, /**
 	 * Track social
 	 * @see https://developers.google.com/analytics/devguides/collection/analyticsjs/social-interactions
-	 */'social':function social(network,action,target){var trackers=this.trackers();// use current url if no target is provided
-if(typeof target==='undefined'){target=window.location.href;}for(var t in trackers){try{trackers[t].send('social',network,action,target);}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Social',network,action,target);return true;},/**
+	 */'social':function social(network,action,target){var trackers=this.trackers(); // use current url if no target is provided
+if(typeof target==='undefined'){target=window.location.href;}for(var t in trackers){try{trackers[t].send('social',network,action,target);}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Social',network,action,target);return true;}, /**
 	 * Track global event
-	 */'g_event':function g_event(category,action,label,value){// send to all GA trackers
-var trackers=this.trackers();// if value is set, check its a number, if not set to 1
-if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,10);}for(var t in trackers){try{trackers[t].send('event',category,action,label,value);}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Event',category,action,label,value);return true;},/**
+	 */'g_event':function g_event(category,action,label,value){ // send to all GA trackers
+var trackers=this.trackers(); // if value is set, check its a number, if not set to 1
+if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,10);}for(var t in trackers){try{trackers[t].send('event',category,action,label,value);}catch(err){ /* Fail silently */}}window.KENT.log('[Analytics] Event',category,action,label,value);return true;}, /**
 	 * Get trackers
-	 */trackers:function trackers(){return typeof window.ga.getAll!=='undefined'?window.ga.getAll():[];}};/**
+	 */trackers:function trackers(){return typeof window.ga.getAll!=='undefined'?window.ga.getAll():[];}}; /**
  * Responsive helper
  *
  * Triggers events on resize and breakpoint changes
@@ -28587,230 +28609,230 @@ if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,
  * - viewport:change - fired only if resize triggers breakpoint change
  *
  * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
- */(function($,viewport){// Supported breakpoints
-var visibilityDivs={'xs':$('<div class="hidden-sm-up"></div>'),'sm':$('<div class="hidden-xs-down hidden-md-up"></div>'),'md':$('<div class="hidden-sm-down hidden-lg-up"></div>'),'lg':$('<div class="hidden-md-down hidden-xl-up"></div>'),'xl':$('<div class="hidden-lg-down hidden-xxl-up"></div>'),'xxl':$('<div class="hidden-xl-down hidden-xxxl-up"></div>'),'xxxl':$('<div class="hidden-xxl-down"></div>')};viewport.use('Custom',visibilityDivs);// Add our custom event
-var previousBreakpoint='';$(window).resize(viewport.changed(function(){var breakpoint=viewport.current();// resize has occured, fire event
-$(window).trigger('viewport:resize');if(previousBreakpoint!==breakpoint){// Debug
-window.KENT.log('Breakpoint change: '+previousBreakpoint+' -> '+breakpoint);// breakpoint has changed, fire evenet
-$(window).trigger('viewport:change');previousBreakpoint=breakpoint;}}));})(jQuery,ResponsiveBootstrapToolkit);window.KENT=window.KENT||{};window.KENT.modules=window.KENT.modules||{};/**
+ */(function($,viewport){ // Supported breakpoints
+var visibilityDivs={'xs':$('<div class="hidden-sm-up"></div>'),'sm':$('<div class="hidden-xs-down hidden-md-up"></div>'),'md':$('<div class="hidden-sm-down hidden-lg-up"></div>'),'lg':$('<div class="hidden-md-down hidden-xl-up"></div>'),'xl':$('<div class="hidden-lg-down hidden-xxl-up"></div>'),'xxl':$('<div class="hidden-xl-down hidden-xxxl-up"></div>'),'xxxl':$('<div class="hidden-xxl-down"></div>')};viewport.use('Custom',visibilityDivs); // Add our custom event
+var previousBreakpoint='';$(window).resize(viewport.changed(function(){var breakpoint=viewport.current(); // resize has occured, fire event
+$(window).trigger('viewport:resize');if(previousBreakpoint!==breakpoint){ // Debug
+window.KENT.log('Breakpoint change: '+previousBreakpoint+' -> '+breakpoint); // breakpoint has changed, fire evenet
+$(window).trigger('viewport:change');previousBreakpoint=breakpoint;}}));})(jQuery,ResponsiveBootstrapToolkit);window.KENT=window.KENT||{};window.KENT.modules=window.KENT.modules||{}; /**
  * NOTE: window.KENT.modules.quickspot is inlcuded/set by the kent bar
- *//**
+ */ /**
  * Quickspot helper
  *
  * Centralises common configuration & initalisation options for QuickSpot search
  *
  * @uses https://github.com/thybag/quick-spot
- */(function(){// create obj
-window.KENT.quickspot={config:{}};var configs=window.KENT.quickspot.config;// Default config options
-configs.default={'disable_occurrence_weighting':true,'prevent_headers':true,'max_results':100,'no_results':function no_results(qs,val){return'<a class=\'quickspot-result selected\'>Press enter to search...</a>';},'no_results_click':function no_results_click(value,qs){window.location.href='https://beta.kent.ac.uk/search/?q='+value;}};// Default config options for QS instances with a 'View all results for' top result
+ */(function(){ // create obj
+window.KENT.quickspot={config:{}};var configs=window.KENT.quickspot.config; // Default config options
+configs.default={'disable_occurrence_weighting':true,'prevent_headers':true,'max_results':100,'no_results':function no_results(qs,val){return '<a class=\'quickspot-result selected\'>Press enter to search...</a>';},'no_results_click':function no_results_click(value,qs){window.location.href='https://beta.kent.ac.uk/search/?q='+value;}}; // Default config options for QS instances with a 'View all results for' top result
 //
 // Instances using this config, should use
 // _click_handler
 // _display_handler
 // rather than the default methods
-configs.searchWith=$.extend({},configs.default,{// Display Handler wrapper
-'display_handler':function display_handler(itm,qs){return itm.kent_search_with_option===true?this.kent_search_with(qs):this._display_handler(itm,qs);},'kent_search_with':function kent_search_with(qs){return'<i class=\'kf-search\'></i> View all results for <strong>'+qs.lastValue+'</strong>';},'click_handler':function click_handler(itm,qs){if(typeof itm.kent_search_with_option==='boolean'&&itm.kent_search_with_option===true){return this.no_results_click(qs.lastValue);}return this._click_handler(itm,qs);},'parse_results':function parse_results(results,options){results.unshift({'kent_search_with_option':true,'qs_screenreader_text':'View full search results'});return results;}});// Module search
-configs.modules=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/modules/collection/all','search_on':['title','sds_code'],'key_value':'title','auto_highlight':true,'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.sds_code+'</span>';},'click_handler':function click_handler(itm){document.location.href='/courses/modules/module/'+itm.sds_code;},'no_results_click':function no_results_click(value,qs){window.location.href='/courses/modules/?search='+value;},'data_pre_parse':function data_pre_parse(data,options){return data.modules;},'loaded':function loaded(qs){qs.datastore.filter(function(o){return o.running===true;});}});// Scholarships search
-configs.scholarships=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/scholarships/','key_value':'title','search_on':['title','code'],'auto_highlight':true,'click_handler':function click_handler(itm){document.location.href='/scholarships/search/'+itm.code;},'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.code+'</span>';},'no_results_click':function no_results_click(value,qs){window.location.href='/scholarships/search/?search='+value;}});// Default course configs, including callbacks
-configs.courses_default=$.extend({},configs.searchWith,{'search_on':['name','award','subject','main_school','ucas_code','search_keywords'],'auto_highlight':false,'_display_handler':function _display_handler(itm,qs){// Generate locations list
-var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0];// Highlight searched word
-return(itm.name+' - '+itm.award+' <br> <span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/undergraduate/'+itm.id+'/'+itm.slug;},'no_results_click':function no_results_click(value,qs){window.location.href='https://beta.kent.ac.uk/search/courses?q='+value;}});// UG
-configs.ug_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/undergraduate/programmes'});// PG
-configs.pg_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/postgraduate/programmes','_click_handler':function _click_handler(itm){document.location='/courses/postgraduate/'+itm.id+'/'+itm.slug;}});// Combined
-configs.all_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/all/programmes/','_display_handler':function _display_handler(itm,qs){// Generate locations list
-var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0];// Highlight searched word
-return(itm.name+' - '+itm.award+' <span class=\'level\'> &nbsp; '+itm.level_name+'</span><br><span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/'+(itm.level==='UG'?'undergraduate':'postgraduate')+'/'+itm.id+'/'+itm.slug;},'data_pre_parse':function data_pre_parse(data,options){for(var i in data){data[i].qs_result_class=data[i].level.toLowerCase();if(data[i].level==='UG'){data[i].level_name='Undergraduate';}else{var type=data[i].programme_type;// taught /research
-if(type.indexOf('taught-research')!==-1){data[i].level_name='Postgraduate Taught-research';}else if(type.indexOf('taught')!==-1){data[i].level_name='Postgraduate Taught';}else{data[i].level_name='Postgraduate Research';}}}return data;},'results_footer':'<div class=\'course-links\'><a class=\'chevron-link\' href=\'/courses/undergraduate/search\'>All Undergraduate</a><a  class=\'chevron-link\' href=\'/courses/postgraduate/search\'>All Postgraduate </a><a class=\'chevron-link\' href=\'/courses/part-time/index.html\'>Short Courses</a></div>','ready':function ready(qs){// Override link action to pass search value
-$(qs.container).find('div.course-links a').click(function(e){e.preventDefault();document.location.href=$(this).attr('href')+'?search='+qs.lastValue;});}});// Inline search page
-configs.withInlineOutput=$.extend({},configs.default,{'css_class_prefix':'quickspot-inline','max_results':25,'hide_on_blur':false,'show_all_on_blank_search':true,'no_results_click':function no_results_click(){return false;},'click_handler':function click_handler(){return false;},'ready':function ready(qs){qs.showAll();// Hookup show more button
-$(qs.container,'.btn-outline-primary').click(function(){qs.options.max_results+=25;qs.refresh();});},'no_results':function no_results(qs,val){return'<div class=\'card quickspot-result selected\'><p>No matching results</p></div>';},'results_footer':'<div class="col-sm-6 offset-sm-3"><button type="button" class="btn btn-outline-primary btn-block btn-lg">Show more</button></div>','events':{'quickspot:result':function quickspotResult(e){// Show/hide show more button as needed
-if(e.quickspot.options.max_results>e.quickspot.results.length){$(e.quickspot.container).find('.btn-outline-primary').hide();}else{$(e.quickspot.container).find('.btn-outline-primary').show();}},'keyup':function keyup(e){// clear count on data change
-e.target.quickspot.options.max_results=25;}}});// UG
-configs.ug_courses_inline=$.extend({},configs.withInlineOutput,{'url':window.KENT.settings.api_url+'/programmes/current/undergraduate/programmes','search_on':['name','award','subject','main_school','ucas_code','search_keywords','mode_of_study','campus'],display_handler:function display_handler(itm,qs){itm.url='/courses/undergraduate/'+itm.id+'/'+itm.slug;return window.Handlebars.templates.course_list_result(itm);},data_pre_parse:function data_pre_parse(courses){for(var c in courses){courses[c].__subjects='';for(var s in courses[c].subject_categories){courses[c].__subjects+=' '+courses[c].subject_categories[s];}}return courses;}});// PG
-configs.pg_courses_inline=$.extend({},configs.withInlineOutput,{'url':window.KENT.settings.api_url+'/programmes/current/postgraduate/programmes','search_on':['name','award','subject','main_school','search_keywords','mode_of_study','campus','programme_type'],display_handler:function display_handler(itm,qs){itm.url='/courses/postgraduate/'+itm.id+'/'+itm.slug;return window.Handlebars.templates.course_list_result(itm);},data_pre_parse:function data_pre_parse(courses){for(var c in courses){courses[c].__subjects='';for(var s in courses[c].subject_categories){courses[c].__subjects+=' '+courses[c].subject_categories[s];}}return courses;}});// Modules
-configs.modules_inline=$.extend({},configs.withInlineOutput,{'url':window.KENT.settings.api_url+'/v1/modules/collection/all','search_on':['title','sds_code'],'key_value':'sds_code','data_pre_parse':function data_pre_parse(data,options){return data.modules;},'loaded':function loaded(qs){qs.filter(function(o){return o.running===true;});},display_handler:function display_handler(itm,qs){itm.url='/courses/modules/module/'+itm.sds_code;return window.Handlebars.templates.module_list_result(itm);}});})();/**
+configs.searchWith=$.extend({},configs.default,{ // Display Handler wrapper
+'display_handler':function display_handler(itm,qs){return itm.kent_search_with_option===true?this.kent_search_with(qs):this._display_handler(itm,qs);},'kent_search_with':function kent_search_with(qs){return '<i class=\'kf-search\'></i> View all results for <strong>'+qs.lastValue+'</strong>';},'click_handler':function click_handler(itm,qs){if(typeof itm.kent_search_with_option==='boolean'&&itm.kent_search_with_option===true){return this.no_results_click(qs.lastValue);}return this._click_handler(itm,qs);},'parse_results':function parse_results(results,options){results.unshift({'kent_search_with_option':true,'qs_screenreader_text':'View full search results'});return results;}}); // Module search
+configs.modules=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/modules/collection/all','search_on':['title','sds_code'],'key_value':'title','auto_highlight':true,'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.sds_code+'</span>';},'click_handler':function click_handler(itm){document.location.href='/courses/modules/module/'+itm.sds_code;},'no_results_click':function no_results_click(value,qs){window.location.href='/courses/modules/?search='+value;},'data_pre_parse':function data_pre_parse(data,options){return data.modules;},'loaded':function loaded(qs){qs.datastore.filter(function(o){return o.running===true;});}}); // Scholarships search
+configs.scholarships=$.extend({},configs.default,{'url':window.KENT.settings.api_url+'/v1/scholarships/','key_value':'title','search_on':['title','code'],'auto_highlight':true,'click_handler':function click_handler(itm){document.location.href='/scholarships/search/'+itm.code;},'display_handler':function display_handler(itm,qs){return itm.title+'<br/><span>'+itm.code+'</span>';},'no_results_click':function no_results_click(value,qs){window.location.href='/scholarships/search/?search='+value;}}); // Default course configs, including callbacks
+configs.courses_default=$.extend({},configs.searchWith,{'search_on':['name','award','subject','main_school','ucas_code','search_keywords'],'auto_highlight':false,'_display_handler':function _display_handler(itm,qs){ // Generate locations list
+var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0]; // Highlight searched word
+return (itm.name+' - '+itm.award+' <br> <span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/undergraduate/'+itm.id+'/'+itm.slug;},'no_results_click':function no_results_click(value,qs){window.location.href='https://beta.kent.ac.uk/search/courses?q='+value;}}); // UG
+configs.ug_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/undergraduate/programmes'}); // PG
+configs.pg_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/postgraduate/programmes','_click_handler':function _click_handler(itm){document.location='/courses/postgraduate/'+itm.id+'/'+itm.slug;}}); // Combined
+configs.all_courses=$.extend({},configs.courses_default,{'url':window.KENT.settings.api_url+'/programmes/current/all/programmes/','_display_handler':function _display_handler(itm,qs){ // Generate locations list
+var locations=[itm.campus];if(itm.additional_locations!==''){locations=locations.concat(itm.additional_locations.split(', '));}locations=locations.length>1?[locations.slice(0,-1).join(', '),locations.slice(-1)[0]].join(' and '):locations[0]; // Highlight searched word
+return (itm.name+' - '+itm.award+' <span class=\'level\'> &nbsp; '+itm.level_name+'</span><br><span>'+locations+'</span>').replace(new RegExp('('+qs.lastValue+')','i'),'<strong>$1</strong>');},'_click_handler':function _click_handler(itm){document.location='/courses/'+(itm.level==='UG'?'undergraduate':'postgraduate')+'/'+itm.id+'/'+itm.slug;},'data_pre_parse':function data_pre_parse(data,options){for(var i in data){data[i].qs_result_class=data[i].level.toLowerCase();if(data[i].level==='UG'){data[i].level_name='Undergraduate';}else {var type=data[i].programme_type; // taught /research
+if(type.indexOf('taught-research')!==-1){data[i].level_name='Postgraduate Taught-research';}else if(type.indexOf('taught')!==-1){data[i].level_name='Postgraduate Taught';}else {data[i].level_name='Postgraduate Research';}}}return data;},'results_footer':'<div class=\'course-links\'><a class=\'chevron-link\' href=\'/courses/undergraduate/search\'>All Undergraduate</a><a  class=\'chevron-link\' href=\'/courses/postgraduate/search\'>All Postgraduate </a><a class=\'chevron-link\' href=\'/courses/part-time/index.html\'>Short Courses</a></div>','ready':function ready(qs){ // Override link action to pass search value
+$(qs.container).find('div.course-links a').click(function(e){e.preventDefault();document.location.href=$(this).attr('href')+'?search='+qs.lastValue;});}}); // Inline search page
+configs.withInlineOutput=$.extend({},configs.default,{'css_class_prefix':'quickspot-inline','max_results':25,'hide_on_blur':false,'show_all_on_blank_search':true,'no_results_click':function no_results_click(){return false;},'click_handler':function click_handler(){return false;},'ready':function ready(qs){qs.showAll(); // Hookup show more button
+$(qs.container,'.btn-outline-primary').click(function(){qs.options.max_results+=25;qs.refresh();});},'no_results':function no_results(qs,val){return '<div class=\'card quickspot-result selected\'><p>No matching results</p></div>';},'results_footer':'<div class="col-sm-6 offset-sm-3"><button type="button" class="btn btn-outline-primary btn-block btn-lg">Show more</button></div>','events':{'quickspot:result':function quickspotResult(e){ // Show/hide show more button as needed
+if(e.quickspot.options.max_results>e.quickspot.results.length){$(e.quickspot.container).find('.btn-outline-primary').hide();}else {$(e.quickspot.container).find('.btn-outline-primary').show();}},'keyup':function keyup(e){ // clear count on data change
+e.target.quickspot.options.max_results=25;}}}); // UG
+configs.ug_courses_inline=$.extend({},configs.withInlineOutput,{'url':window.KENT.settings.api_url+'/programmes/current/undergraduate/programmes','search_on':['name','award','subject','main_school','ucas_code','search_keywords','mode_of_study','campus'],display_handler:function display_handler(itm,qs){itm.url='/courses/undergraduate/'+itm.id+'/'+itm.slug;return window.Handlebars.templates.course_list_result(itm);},data_pre_parse:function data_pre_parse(courses){for(var c in courses){courses[c].__subjects='';for(var s in courses[c].subject_categories){courses[c].__subjects+=' '+courses[c].subject_categories[s];}}return courses;}}); // PG
+configs.pg_courses_inline=$.extend({},configs.withInlineOutput,{'url':window.KENT.settings.api_url+'/programmes/current/postgraduate/programmes','search_on':['name','award','subject','main_school','search_keywords','mode_of_study','campus','programme_type'],display_handler:function display_handler(itm,qs){itm.url='/courses/postgraduate/'+itm.id+'/'+itm.slug;return window.Handlebars.templates.course_list_result(itm);},data_pre_parse:function data_pre_parse(courses){for(var c in courses){courses[c].__subjects='';for(var s in courses[c].subject_categories){courses[c].__subjects+=' '+courses[c].subject_categories[s];}}return courses;}}); // Modules
+configs.modules_inline=$.extend({},configs.withInlineOutput,{'url':window.KENT.settings.api_url+'/v1/modules/collection/all','search_on':['title','sds_code'],'key_value':'sds_code','data_pre_parse':function data_pre_parse(data,options){return data.modules;},'loaded':function loaded(qs){qs.filter(function(o){return o.running===true;});},display_handler:function display_handler(itm,qs){itm.url='/courses/modules/module/'+itm.sds_code;return window.Handlebars.templates.module_list_result(itm);}});})(); /**
  * Scan for inputs with data-quickspot-config attribute and initalise them as quickspot instances
- */jQuery(document).ready(function($){function triggerEvent(qs,event){var evt=document.createEvent('HTMLEvents');evt.initEvent(event,true,true);qs.target.dispatchEvent(evt);}// Setup auto filtering for QS instance
-function qsAutoFilter(qs,filter_container_id){var filter_container=$('#'+filter_container_id+' select');var apply_filters=function apply_filters(){// reset result count
-qs.options.max_results=25;qs.__filters_text=[];// clear existing filters
-qs.clearFilters();// Apply filters from filter box
-filter_container.each(function(select){if($(this).val()!==''){// Attempt to get targetted col from "option", fall back to "selects" value if not found.
-var col=$(this).children('option:selected').data('filter-col');if(!col){col=$(this).data('filter-col');}// Apply filter
-qs.filter($(this).val(),col);qs.__filters_text.push($(this).find('option:selected').text());// use full text, not val
-}});// Add additional events
-triggerEvent(qs,'quickspot:filtered');};// On change, filter & refresh dataset
-filter_container.change(function(){apply_filters();// Refresh dataset.
-qs.refresh();});// Apply filters on load
-qs.on('quickspot:loaded',function(){apply_filters();});}// Hookup quickspot instances
-$('input[data-quickspot-config]').each(function(){var _this=this;// Load config
-var config=window.KENT.quickspot.config[$(this).data('quickspot-config')]||window.KENT.quickspot.config.defaults;config=$.extend({},config);// Set additional options
-config.target=$(this).attr('id');// Override data source url
-if($(this).data('quickspot-source')){config.url=$(this).data('quickspot-source');}// Override results container location
-if($(this).data('quickspot-target')){config.results_container=$(this).data('quickspot-target');document.getElementById($(this).data('quickspot-target')).innerHTML='';}// Boot quickspot
-var qs=window.KENT.modules.quickspot.attach(config);$(this).attr('autocomplete','off');$(this).data('qs',qs);// Init filters
-if($(this).data('quickspot-filters')){qsAutoFilter(qs,$(this).data('quickspot-filters'));}// Displays list of applied filters in specified container
-if($(this).data('quickspot-filter-text-target')){(function(){var $filter_text_container=$('#'+$(_this).data('quickspot-filter-text-target'));$filter_text_container.attr('data-original-text',$filter_text_container.text());qs.on('quickspot:filtered',function(){$filter_text_container.text(qs.__filters_text.length===0?$filter_text_container.data('original-text'):qs.__filters_text.join(', '));});})();}// Call callback if needed
-if($(this).data('quickspot-callback')){// Call registered calllback
-if(typeof window[$(this).data('quickspot-callback')]==='function'){window[$(this).data('quickspot-callback')](qs);}}// Debug
-window.KENT.log('[Quickspot] Instance created on #'+$(this).attr('id')+' with config '+$(this).data('quickspot-config'));});// Hookup any quickspot data store switchers
-$('a[data-quickspot-reconfigure]').click(function(){var $trigger=$(this);var target=document.getElementById($trigger.data('quickspot-reconfigure'));// If its a tab, help out
-if($trigger.hasClass('nav-link')){$trigger.parent().parent().find('.nav-link.active').removeClass('active');$trigger.addClass('active');}if(target&&target.quickspot){// Have we already generated this data store?
-if($trigger.data('qs_datastore')){target.quickspot.setDatastore($trigger.data('qs_datastore'));}else{// If config provided, use it - else use existing one from QS instance
-var config=$trigger.data('quickspot-config')?$trigger.data('quickspot-config'):$(target).data('quickspot-config');// grab config data
-config=window.KENT.quickspot.config[config]||window.KENT.quickspot.config.defaults;config=$.extend({},config);// Update config if needed
-if($trigger.data('quickspot-url')){config.url=$trigger.data('quickspot-url');}config.loaded=function(ds){target.quickspot.setDatastore(ds);$trigger.data('qs_datastore',ds);};// Valid target! lets do stuff!
-window.KENT.modules.quickspot.datastore(config);}}});});window.KENT=window.KENT||{};(function(){window.KENT.loadmore={config:{blogs:{source:function source($target,config){return window.KENT.settings.api_url+'/v1/blogs/'+$target.data('blog');}},news:{source:window.KENT.settings.api_url+'/v1/news',prepModel:function prepModel(item,loadmore){var model=window.KENT.loadmore.config.default.prepModel(item,loadmore);model.excerpt=null;return model;}},events:{template:Handlebars.templates['event_card'],source:function source($target,config){var cal=$target.data('calendar')||'central';return window.KENT.settings.api_url+'/v1/calendar/'+cal+'/event/start/'+moment().format('YYYY-MM-DD');},getRequestUrl:function getRequestUrl(loadmore){return loadmore.source+'/offset/'+loadmore.page*loadmore.pageSize+'/limit/'+loadmore.pageSize;},parseResponse:function parseResponse($data,loadmore){var $items=[];if(typeof $data!=='undefined'&&$data.length>0){$.each($data,function(index,item){$items.push(loadmore.prepModel(item,loadmore));});}return $items;},prepModel:function prepModel(item,loadmore){var start=moment(item.start);var end=moment(item.end);return{title:item.title,subtitle:item.subtitle,series_title:item.series_title,start:start.format('Do MMM YYYY HH:mm'),start_ts:start.unix(),start_date:start.format('Do MMM YYYY'),start_time:start.format('HH:mm'),end:end.format('Do MMM YYYY HH:mm'),end_ts:end.unix(),end_date:end.format('Do MMM YYYY'),end_time:end.format('HH:mm'),all_day:item.all_day,excerpt:window.KENT.loadmore.utils.prepExcerpt(item.description,loadmore.excerptLength),url:item.url};}},default:{excerptLength:150,template:Handlebars.templates['wp_post_card'],btnSelector:'.loadmore-btn',containerSelector:'.loadmore-container',loaderSelector:'.loadmore-loader',loadMore:function loadMore(e){var $target=$(this).closest('.has-loadmore');if($target.length>0){var loadmore=$target[0].loadmore;loadmore.loader.prop('hidden',false);loadmore.btns.prop('disabled',true);$target.addClass('loadmore-loading');var url=loadmore.getRequestUrl(loadmore);$.ajax(url,{success:function success($data){if(loadmore.processResponse(loadmore,$data)){$target[0].loadmore.page++;}},complete:function complete(){loadmore.loader.prop('hidden',true);loadmore.btns.prop('disabled',false);$target.removeClass('loadmore-loading');if(typeof loadmore.updateUrl==='function'){loadmore.updateUrl(loadmore);}else if(loadmore.updateUrl){window.KENT.loadmore.utils.updateUrl(loadmore);}}});}},getInitialFilters:function getInitialFilters(loadmore){loadmore.filters={};var exclude=loadmore.target.data('exclude');if(typeof exclude!=='undefined'&&exclude.length>0){loadmore.filters.exclude=exclude;}var cat=loadmore.target.data('category');if(typeof cat!=='undefined'&&cat.length>0){loadmore.filters.category_name=cat;}var tag=loadmore.target.data('tag');if(typeof tag!=='undefined'&&tag.length>0){loadmore.filters.tags=tag;}},getRequestUrl:function getRequestUrl(loadmore){var filters=[];for(var filter in loadmore.filters){if(loadmore.filters.hasOwnProperty(filter)){filters.push(filter+'/'+loadmore.filters[filter]);}}filters=filters.join('/');filters=filters.length>0?'/'+filters:filters;return loadmore.source+'/page/'+(loadmore.page+1)+'/posts_per_page/'+loadmore.pageSize+filters;},parseResponse:function parseResponse($data,loadmore){var $items=[];var $posts=$data['posts'];if($data['http_status']&&$data['http_status']!==200){return false;}if(typeof $posts!=='undefined'&&$posts.length>0){$.each($posts,function(index,item){$items.push(loadmore.prepModel(item,loadmore));});}return $items;},prepModel:function prepModel(item,loadmore){var image=false;var video=false;if(item.featured_video&&item.featured_video!==''){var re=/^https?:\/\/(?:youtu\.be|(?:www\.|m\.)?youtube\.com)\/?(?:watch|embed)?(?:.*?v=|v\/|\/)([\w-]+)/ig;var match=re.exec(item.featured_video);if(match.length>=2){video=match[1];}}if(item.featured_image===''||item.featured_image===false||typeof item.featured_image==='undefined'){if(item.default_image!==''&&item.default_image!==false&&typeof item.default_image!=='undefined'){image=window.KENT.loadmore.utils.prepWPImage(item.default_image);}}else{image=window.KENT.loadmore.utils.prepWPImage(item.featured_image);}return{title:item.title,excerpt:window.KENT.loadmore.utils.prepExcerpt(item.excerpt,loadmore.excerptLength),date_string:moment(item.date).format('Do MMMM YYYY'),date:item.date,url:item.permalink,image:image,video:video};},processResponse:function processResponse(loadmore,$data){var items=loadmore.parseResponse($data,loadmore);if(!items){return false;}var html='';for(var i=0;i<items.length;i++){html+=loadmore.template(items[i]);}loadmore.container.append(html);if(items.length===0||items.length<loadmore.pageSize){loadmore.btns.prop('hidden',true);}return true;}}},getConfig:function getConfig($target){var conf=window.KENT.loadmore.config[$target.data('loadmore')];if(conf){return $.extend({},window.KENT.loadmore.config.default,conf);}return false;},init:function init($target){var config=window.KENT.loadmore.getConfig($target);if(config){var loadmore=config;loadmore.target=$target;loadmore.btns=$target.find(config.btnSelector);loadmore.container=$target.find(config.containerSelector);loadmore.loader=$target.find(config.loaderSelector);if(loadmore.btns.length===0){window.KENT.log('loadmore button missing',$target);return false;}if(loadmore.container.length===0){window.KENT.log('loadmore container missing',$target);return false;}loadmore.source=$target.data('loadmore-source')||config.source;if(typeof loadmore.source==='function'){loadmore.source=loadmore.source($target,config);}if(typeof loadmore.source==='undefined'){window.KENT.log('Undefined loadmore source',$target);return false;}loadmore.preLoad=$target.data('loadmore-preload')||false;loadmore.page=parseInt($target.data('loadmore-page'),10)||(loadmore.preLoad?0:1);loadmore.pageSize=parseInt($target.data('loadmore-page-size'),10)||4;loadmore.btns.click(config.loadMore);loadmore.getInitialFilters(loadmore);$target.addClass('has-loadmore');$target[0].loadmore=loadmore;if(loadmore.preLoad){loadmore.btns.first().trigger('click');}}else{window.KENT.log('Undefined loadmore config "'+$(this).data('loadmore')+'"',$target);}},utils:{updateUrl:function updateUrl(loadmore){// Update url page identifier (without causing history event)
+ */jQuery(document).ready(function($){function triggerEvent(qs,event){var evt=document.createEvent('HTMLEvents');evt.initEvent(event,true,true);qs.target.dispatchEvent(evt);} // Setup auto filtering for QS instance
+function qsAutoFilter(qs,filter_container_id){var filter_container=$('#'+filter_container_id+' select');var apply_filters=function apply_filters(){ // reset result count
+qs.options.max_results=25;qs.__filters_text=[]; // clear existing filters
+qs.clearFilters(); // Apply filters from filter box
+filter_container.each(function(select){if($(this).val()!==''){ // Attempt to get targetted col from "option", fall back to "selects" value if not found.
+var col=$(this).children('option:selected').data('filter-col');if(!col){col=$(this).data('filter-col');} // Apply filter
+qs.filter($(this).val(),col);qs.__filters_text.push($(this).find('option:selected').text()); // use full text, not val
+}}); // Add additional events
+triggerEvent(qs,'quickspot:filtered');}; // On change, filter & refresh dataset
+filter_container.change(function(){apply_filters(); // Refresh dataset.
+qs.refresh();}); // Apply filters on load
+qs.on('quickspot:loaded',function(){apply_filters();});} // Hookup quickspot instances
+$('input[data-quickspot-config]').each(function(){var _this=this; // Load config
+var config=window.KENT.quickspot.config[$(this).data('quickspot-config')]||window.KENT.quickspot.config.defaults;config=$.extend({},config); // Set additional options
+config.target=$(this).attr('id'); // Override data source url
+if($(this).data('quickspot-source')){config.url=$(this).data('quickspot-source');} // Override results container location
+if($(this).data('quickspot-target')){config.results_container=$(this).data('quickspot-target');document.getElementById($(this).data('quickspot-target')).innerHTML='';} // Boot quickspot
+var qs=window.KENT.modules.quickspot.attach(config);$(this).attr('autocomplete','off');$(this).data('qs',qs); // Init filters
+if($(this).data('quickspot-filters')){qsAutoFilter(qs,$(this).data('quickspot-filters'));} // Displays list of applied filters in specified container
+if($(this).data('quickspot-filter-text-target')){(function(){var $filter_text_container=$('#'+$(_this).data('quickspot-filter-text-target'));$filter_text_container.attr('data-original-text',$filter_text_container.text());qs.on('quickspot:filtered',function(){$filter_text_container.text(qs.__filters_text.length===0?$filter_text_container.data('original-text'):qs.__filters_text.join(', '));});})();} // Call callback if needed
+if($(this).data('quickspot-callback')){ // Call registered calllback
+if(typeof window[$(this).data('quickspot-callback')]==='function'){window[$(this).data('quickspot-callback')](qs);}} // Debug
+window.KENT.log('[Quickspot] Instance created on #'+$(this).attr('id')+' with config '+$(this).data('quickspot-config'));}); // Hookup any quickspot data store switchers
+$('a[data-quickspot-reconfigure]').click(function(){var $trigger=$(this);var target=document.getElementById($trigger.data('quickspot-reconfigure')); // If its a tab, help out
+if($trigger.hasClass('nav-link')){$trigger.parent().parent().find('.nav-link.active').removeClass('active');$trigger.addClass('active');}if(target&&target.quickspot){ // Have we already generated this data store?
+if($trigger.data('qs_datastore')){target.quickspot.setDatastore($trigger.data('qs_datastore'));}else { // If config provided, use it - else use existing one from QS instance
+var config=$trigger.data('quickspot-config')?$trigger.data('quickspot-config'):$(target).data('quickspot-config'); // grab config data
+config=window.KENT.quickspot.config[config]||window.KENT.quickspot.config.defaults;config=$.extend({},config); // Update config if needed
+if($trigger.data('quickspot-url')){config.url=$trigger.data('quickspot-url');}config.loaded=function(ds){target.quickspot.setDatastore(ds);$trigger.data('qs_datastore',ds);}; // Valid target! lets do stuff!
+window.KENT.modules.quickspot.datastore(config);}}});});window.KENT=window.KENT||{};(function(){window.KENT.loadmore={config:{blogs:{source:function source($target,config){return window.KENT.settings.api_url+'/v1/blogs/'+$target.data('blog');}},news:{source:window.KENT.settings.api_url+'/v1/news',prepModel:function prepModel(item,loadmore){var model=window.KENT.loadmore.config.default.prepModel(item,loadmore);model.excerpt=null;return model;}},events:{template:Handlebars.templates['event_card'],source:function source($target,config){var cal=$target.data('calendar')||'central';return window.KENT.settings.api_url+'/v1/calendar/'+cal+'/event/start/'+moment().format('YYYY-MM-DD');},getRequestUrl:function getRequestUrl(loadmore){return loadmore.source+'/offset/'+loadmore.page*loadmore.pageSize+'/limit/'+loadmore.pageSize;},parseResponse:function parseResponse($data,loadmore){var $items=[];if(typeof $data!=='undefined'&&$data.length>0){$.each($data,function(index,item){$items.push(loadmore.prepModel(item,loadmore));});}return $items;},prepModel:function prepModel(item,loadmore){var start=moment(item.start);var end=moment(item.end);return {title:item.title,subtitle:item.subtitle,series_title:item.series_title,start:start.format('Do MMM YYYY HH:mm'),start_ts:start.unix(),start_date:start.format('Do MMM YYYY'),start_time:start.format('HH:mm'),end:end.format('Do MMM YYYY HH:mm'),end_ts:end.unix(),end_date:end.format('Do MMM YYYY'),end_time:end.format('HH:mm'),all_day:item.all_day,excerpt:window.KENT.loadmore.utils.prepExcerpt(item.description,loadmore.excerptLength),url:item.url};}},default:{excerptLength:150,template:Handlebars.templates['wp_post_card'],btnSelector:'.loadmore-btn',containerSelector:'.loadmore-container',loaderSelector:'.loadmore-loader',loadMore:function loadMore(e){var $target=$(this).closest('.has-loadmore');if($target.length>0){var loadmore=$target[0].loadmore;loadmore.loader.prop('hidden',false);loadmore.btns.prop('disabled',true);$target.addClass('loadmore-loading');var url=loadmore.getRequestUrl(loadmore);$.ajax(url,{success:function success($data){if(loadmore.processResponse(loadmore,$data)){$target[0].loadmore.page++;}},complete:function complete(){loadmore.loader.prop('hidden',true);loadmore.btns.prop('disabled',false);$target.removeClass('loadmore-loading');if(typeof loadmore.updateUrl==='function'){loadmore.updateUrl(loadmore);}else if(loadmore.updateUrl){window.KENT.loadmore.utils.updateUrl(loadmore);}}});}},getInitialFilters:function getInitialFilters(loadmore){loadmore.filters={};var exclude=loadmore.target.data('exclude');if(typeof exclude!=='undefined'&&exclude.length>0){loadmore.filters.exclude=exclude;}var cat=loadmore.target.data('category');if(typeof cat!=='undefined'&&cat.length>0){loadmore.filters.category_name=cat;}var tag=loadmore.target.data('tag');if(typeof tag!=='undefined'&&tag.length>0){loadmore.filters.tags=tag;}},getRequestUrl:function getRequestUrl(loadmore){var filters=[];for(var filter in loadmore.filters){if(loadmore.filters.hasOwnProperty(filter)){filters.push(filter+'/'+loadmore.filters[filter]);}}filters=filters.join('/');filters=filters.length>0?'/'+filters:filters;return loadmore.source+'/page/'+(loadmore.page+1)+'/posts_per_page/'+loadmore.pageSize+filters;},parseResponse:function parseResponse($data,loadmore){var $items=[];var $posts=$data['posts'];if($data['http_status']&&$data['http_status']!==200){return false;}if(typeof $posts!=='undefined'&&$posts.length>0){$.each($posts,function(index,item){$items.push(loadmore.prepModel(item,loadmore));});}return $items;},prepModel:function prepModel(item,loadmore){var image=false;var video=false;if(item.featured_video&&item.featured_video!==''){var re=/^https?:\/\/(?:youtu\.be|(?:www\.|m\.)?youtube\.com)\/?(?:watch|embed)?(?:.*?v=|v\/|\/)([\w-]+)/ig;var match=re.exec(item.featured_video);if(match.length>=2){video=match[1];}}if(item.featured_image===''||item.featured_image===false||typeof item.featured_image==='undefined'){if(item.default_image!==''&&item.default_image!==false&&typeof item.default_image!=='undefined'){image=window.KENT.loadmore.utils.prepWPImage(item.default_image);}}else {image=window.KENT.loadmore.utils.prepWPImage(item.featured_image);}return {title:item.title,excerpt:window.KENT.loadmore.utils.prepExcerpt(item.excerpt,loadmore.excerptLength),date_string:moment(item.date).format('Do MMMM YYYY'),date:item.date,url:item.permalink,image:image,video:video};},processResponse:function processResponse(loadmore,$data){var items=loadmore.parseResponse($data,loadmore);if(!items){return false;}var html='';for(var i=0;i<items.length;i++){html+=loadmore.template(items[i]);}loadmore.container.append(html);if(items.length===0||items.length<loadmore.pageSize){loadmore.btns.prop('hidden',true);}return true;}}},getConfig:function getConfig($target){var conf=window.KENT.loadmore.config[$target.data('loadmore')];if(conf){return $.extend({},window.KENT.loadmore.config.default,conf);}return false;},init:function init($target){var config=window.KENT.loadmore.getConfig($target);if(config){var loadmore=config;loadmore.target=$target;loadmore.btns=$target.find(config.btnSelector);loadmore.container=$target.find(config.containerSelector);loadmore.loader=$target.find(config.loaderSelector);if(loadmore.btns.length===0){window.KENT.log('loadmore button missing',$target);return false;}if(loadmore.container.length===0){window.KENT.log('loadmore container missing',$target);return false;}loadmore.source=$target.data('loadmore-source')||config.source;if(typeof loadmore.source==='function'){loadmore.source=loadmore.source($target,config);}if(typeof loadmore.source==='undefined'){window.KENT.log('Undefined loadmore source',$target);return false;}loadmore.preLoad=$target.data('loadmore-preload')||false;loadmore.page=parseInt($target.data('loadmore-page'),10)||(loadmore.preLoad?0:1);loadmore.pageSize=parseInt($target.data('loadmore-page-size'),10)||4;loadmore.btns.click(config.loadMore);loadmore.getInitialFilters(loadmore);$target.addClass('has-loadmore');$target[0].loadmore=loadmore;if(loadmore.preLoad){loadmore.btns.first().trigger('click');}}else {window.KENT.log('Undefined loadmore config "'+$(this).data('loadmore')+'"',$target);}},utils:{updateUrl:function updateUrl(loadmore){ // Update url page identifier (without causing history event)
 // This means back button will take user to page before, rather
 // than to previously loaded chunk of articles.
-var page_no=loadmore.page;if(window.history.replaceState){var path=location.pathname;if(path.match(/(.*\/page\/)(\d+)(.*)/gi)){path=path.replace(/(.*\/page\/)(\d+)(.*)/gi,'$1'+page_no+'/');}else{if(path.substr(-1)==='/'){path=path.substr(0,path.length-1);}path=path+'/page/'+page_no+'/';}window.history.replaceState(undefined,undefined,path);}},prepWPImage:function prepWPImage(src){var img={alt:src.title,attribution:src.attribution};if(typeof src.sizes==='undefined'){return false;}if(_typeof(src.sizes.medium)==='object'){img.src=src.sizes.medium.url;}else if(_typeof(src.sizes.large)==='object'){img.src=src.sizes.medium.url;}else if(_typeof(src.sizes.full)==='object'){img.src=src.sizes.medium.url;}else{return false;}return img;},prepExcerpt:function prepExcerpt(excerpt,maxLength){excerpt=excerpt.replace(/<a[^>]*?>Read&nbsp;more<\/a>/ig,'').replace(/(<([^>]+)>)/ig,'').trim();return window.KENT.loadmore.utils.truncateAtWord(excerpt,maxLength);},truncateAtWord:function truncateAtWord(out,maxLength){var ellipse='&hellip;';if(out.substr(out.length-ellipse.length)===ellipse){out=out.substr(0,out.length-ellipse.length).trim();}if(out.length<=maxLength){out+=out.substr(out.length-1).match(/[\.!\?]+/gi)?'':ellipse;return out;}var index=Math.max(out.lastIndexOf(' '),out.lastIndexOf(','));while(index+ellipse.length>maxLength){var tmp=out.substr(0,index).trim();index=Math.max(tmp.lastIndexOf(' '),tmp.lastIndexOf(','));}out=index>0?out.substr(0,index).trim():out.substr(0,maxLength-ellipse.length).trim();out+=out.substr(out.length-1).match(/[\.!\?]+/gi)?'':ellipse;return out;}}};})();$(document).ready(function(){$('div[data-loadmore]').each(function(){window.KENT.loadmore.init($(this));});});/**
+var page_no=loadmore.page;if(window.history.replaceState){var path=location.pathname;if(path.match(/(.*\/page\/)(\d+)(.*)/gi)){path=path.replace(/(.*\/page\/)(\d+)(.*)/gi,'$1'+page_no+'/');}else {if(path.substr(-1)==='/'){path=path.substr(0,path.length-1);}path=path+'/page/'+page_no+'/';}window.history.replaceState(undefined,undefined,path);}},prepWPImage:function prepWPImage(src){var img={alt:src.title,attribution:src.attribution};if(typeof src.sizes==='undefined'){return false;}if(_typeof(src.sizes.medium)==='object'){img.src=src.sizes.medium.url;}else if(_typeof(src.sizes.large)==='object'){img.src=src.sizes.medium.url;}else if(_typeof(src.sizes.full)==='object'){img.src=src.sizes.medium.url;}else {return false;}return img;},prepExcerpt:function prepExcerpt(excerpt,maxLength){excerpt=excerpt.replace(/<a[^>]*?>Read&nbsp;more<\/a>/ig,'').replace(/(<([^>]+)>)/ig,'').trim();return window.KENT.loadmore.utils.truncateAtWord(excerpt,maxLength);},truncateAtWord:function truncateAtWord(out,maxLength){var ellipse='&hellip;';if(out.substr(out.length-ellipse.length)===ellipse){out=out.substr(0,out.length-ellipse.length).trim();}if(out.length<=maxLength){out+=out.substr(out.length-1).match(/[\.!\?]+/gi)?'':ellipse;return out;}var index=Math.max(out.lastIndexOf(' '),out.lastIndexOf(','));while(index+ellipse.length>maxLength){var tmp=out.substr(0,index).trim();index=Math.max(tmp.lastIndexOf(' '),tmp.lastIndexOf(','));}out=index>0?out.substr(0,index).trim():out.substr(0,maxLength-ellipse.length).trim();out+=out.substr(out.length-1).match(/[\.!\?]+/gi)?'':ellipse;return out;}}};})();$(document).ready(function(){$('div[data-loadmore]').each(function(){window.KENT.loadmore.init($(this));});}); /**
  * Responsive Collapse
  *
  * Mirrors the behaviour of http://v4-alpha.getbootstrap.com/components/collapse/ in a breakpoint aware way
  *
  * @uses https://github.com/maciej-gurban/responsive-bootstrap-toolkit
  * @uses responsive_util.js
- */jQuery(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;var $collabsables=$('[data-toggle="collapse_responsive"]');var viewportChange=function viewportChange(){window.KENT.log('Initiating: Collapse Responsive');window.KENT.log($collabsables);$collabsables.each(function(){var $target=$($(this).data('target')||null);if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){$(this).removeClass('collapsed').removeAttr('aria-expanded','true');$target.addClass('in');}else{$(this).addClass('collapsed').attr('aria-expanded','false');$target.removeClass('in');}});};$collabsables.click(function(e){e.preventDefault();var $this=$(this);var isCollapsed=$(this).hasClass('collapsed');var $parent=$($this).closest($this.data('parent'))||null;var $target=$($this.data('target'))||null;var $isTab=$parent.hasClass('tab-content');// If target isn't collapsed at this breakpoint, ignore.
-if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){return;}// else, toggle it open / shut
-if($parent.length>0){var $open=$parent.find('.in');$open.removeClass('in').removeClass('active').each(function(){$parent.find('[data-target=\'#'+$(this).attr('id')+'\']').addClass('collapsed');if($isTab){$parent.parent().find('.nav-link').removeClass('active');}});}if($target.length>0){$target.toggleClass('in',isCollapsed).toggleClass('active',isCollapsed);// Add expanded state (this only needs to be set when collapsing is possible)
-$this.toggleClass('collapsed',!isCollapsed).attr('aria-expanded',!isCollapsed?'false':'true');if($isTab){$parent.parent().find('.nav-link[href="'+$this.data('target')+'"]').addClass('active');}}});// When breakpoint changes
-$(window).on('viewport:change',viewportChange);//init
-viewportChange();});window.KENT=window.KENT||{};/**
+ */jQuery(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;var $collabsables=$('[data-toggle="collapse_responsive"]');var viewportChange=function viewportChange(){window.KENT.log('Initiating: Collapse Responsive');window.KENT.log($collabsables);$collabsables.each(function(){var $target=$($(this).data('target')||null);if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){$(this).removeClass('collapsed').removeAttr('aria-expanded','true');$target.addClass('in');}else {$(this).addClass('collapsed').attr('aria-expanded','false');$target.removeClass('in');}});};$collabsables.click(function(e){e.preventDefault();var $this=$(this);var isCollapsed=$(this).hasClass('collapsed');var $parent=$($this).closest($this.data('parent'))||null;var $target=$($this.data('target'))||null;var $isTab=$parent.hasClass('tab-content'); // If target isn't collapsed at this breakpoint, ignore.
+if(!($target.hasClass('collapse-xl-down')&&viewport.is('<=xl')||$target.hasClass('collapse-lg-down')&&viewport.is('<=lg')||$target.hasClass('collapse-md-down')&&viewport.is('<=md')||$target.hasClass('collapse-sm-down')&&viewport.is('<=sm')||$target.hasClass('collapse-xs-down')&&viewport.is('<=xs'))){return;} // else, toggle it open / shut
+if($parent.length>0){var $open=$parent.find('.in');$open.removeClass('in').removeClass('active').each(function(){$parent.find('[data-target=\'#'+$(this).attr('id')+'\']').addClass('collapsed');if($isTab){$parent.parent().find('.nav-link').removeClass('active');}});}if($target.length>0){$target.toggleClass('in',isCollapsed).toggleClass('active',isCollapsed); // Add expanded state (this only needs to be set when collapsing is possible)
+$this.toggleClass('collapsed',!isCollapsed).attr('aria-expanded',!isCollapsed?'false':'true');if($isTab){$parent.parent().find('.nav-link[href="'+$this.data('target')+'"]').addClass('active');}}}); // When breakpoint changes
+$(window).on('viewport:change',viewportChange); //init
+viewportChange();});window.KENT=window.KENT||{}; /**
  * Global navigation
  *
  * Switches between main menu & search menu on mobile.
  * Toggles search on/off on large screens
  *
- */(function(){// Menu references
+ */(function(){ // Menu references
 // Store control class as data on the elements (just for conveniance)
-var global_menu=$('#global-nav-menu').data('control-class','show-global-menu');var global_search=$('#global-nav-search').data('control-class','show-global-search');// List of Menu toggle classes
+var global_menu=$('#global-nav-menu').data('control-class','show-global-menu');var global_search=$('#global-nav-search').data('control-class','show-global-search'); // List of Menu toggle classes
 // This will have the aria-extanded attribute toggled on them, whenever the menu state changes.
-var global_menu_toggles=$('.menu-button');var global_search_toggles=$('.search-button, .search-button-full, .close-search');// Toggle a given menu's state
-var toggleMenu=function toggleMenu(button,menu){// If this menu is NOT open, open it. Else close it.
-if(!menu.hasClass('in')){return openMenu(button,menu);}else{return closeMenu(button,menu);}};// Close a given menu (toggling its buttons)
-var closeMenu=function closeMenu(button,menu){// Cannot close already closed menu
-if(!menu.hasClass('in')){return false;}// Remove menu & body class
-menu.removeClass('in');$('body').removeClass(menu.data('control-class'));// Update button so it knows it's expanded area is collapsed
+var global_menu_toggles=$('.menu-button');var global_search_toggles=$('.search-button, .search-button-full, .close-search'); // Toggle a given menu's state
+var toggleMenu=function toggleMenu(button,menu){ // If this menu is NOT open, open it. Else close it.
+if(!menu.hasClass('in')){return openMenu(button,menu);}else {return closeMenu(button,menu);}}; // Close a given menu (toggling its buttons)
+var closeMenu=function closeMenu(button,menu){ // Cannot close already closed menu
+if(!menu.hasClass('in')){return false;} // Remove menu & body class
+menu.removeClass('in');$('body').removeClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
 // aria-hidden is not needed on the element, since as the element is displayed none
 // the screen reader won't see it anyway.
-button.attr('aria-expanded','false');// Trigger event
-$(window).trigger('globalmenu:close',[menu]);return true;};// Open a given menu (toggling its buttons)
-var openMenu=function openMenu(button,menu){// Cannot open already closed menu
-if(menu.hasClass('in')){return false;}// Set menu & body classes
-menu.addClass('in');$('body').addClass(menu.data('control-class'));// Update button so it knows it's expanded area is collapsed
-button.attr('aria-expanded',true);// Fire events
-$(window).trigger('globalmenu:open',[menu]);return true;};// Setup quick access methods to Menu functions
-var global_nav={openSearchMenu:function openSearchMenu(){return openMenu(global_search_toggles,global_search);},closeSearchMenu:function closeSearchMenu(){return closeMenu(global_search_toggles,global_search);},toggleSearchMenu:function toggleSearchMenu(){return toggleMenu(global_search_toggles,global_search);},openMainMenu:function openMainMenu(){return openMenu(global_menu_toggles,global_menu);},closeMainMenu:function closeMainMenu(){return closeMenu(global_menu_toggles,global_menu);},toggleMainMenu:function toggleMainMenu(){return toggleMenu(global_menu_toggles,global_menu);}};// Toggle primary Menu (mobile Only)
-global_search_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleSearchMenu();return false;});// Toggle Search Menu
-global_menu_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleMainMenu();return false;});// Ensure opening one menu, closes the other.
-$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){window.KENT.global_nav.closeMainMenu();}else{window.KENT.global_nav.closeSearchMenu();}});global_menu.find('.audience-nav-links a').click(function(e){e.preventDefault();var menu_name=e.target.getAttribute('data-action');if(menu_name!==null){window.KENT.kentbar.toggleMenu(menu_name,e.target);window.KENT.global_nav.closeMainMenu();}return false;});// CLose all menu's if user hits escape
-$(document).keyup(function(e){if(e.which===27){window.KENT.global_nav.closeMainMenu();window.KENT.global_nav.closeSearchMenu();window.KENT.kentbar.closeMenus();}});// Homepage Logic
-if($('.home-nav').length>0){$(window).on('globalmenu:open kentbar_menu:open kentbar_mobilemenu:open',function(){$('.home-nav').hide();});$(window).on('globalmenu:close kentbar_menu:close kentbar_mobilemenu:close',function(e,menu){var $body=$('body');if(!($body.hasClass('show-global-menu')||$body.hasClass('show-global-search')||$body.hasClass('show-kentbar-menu'))){if(ResponsiveBootstrapToolkit.is('<=sm')){$('.home-nav').delay(300).fadeIn();}}});$(window).on('viewport:change',function(){if(ResponsiveBootstrapToolkit.is('<=sm')){// if menu isn't already open
-if(!$('body').hasClass('show-global-menu')&&!$('body').hasClass('show-global-search')){$('.home-nav').delay(300).fadeIn();}}else{$('.home-nav').hide();}});}// Add to KENT object
-window.KENT.global_nav=global_nav;})();window.KENT=window.KENT||{};/**
+button.attr('aria-expanded','false'); // Trigger event
+$(window).trigger('globalmenu:close',[menu]);return true;}; // Open a given menu (toggling its buttons)
+var openMenu=function openMenu(button,menu){ // Cannot open already closed menu
+if(menu.hasClass('in')){return false;} // Set menu & body classes
+menu.addClass('in');$('body').addClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
+button.attr('aria-expanded',true); // Fire events
+$(window).trigger('globalmenu:open',[menu]);return true;}; // Setup quick access methods to Menu functions
+var global_nav={openSearchMenu:function openSearchMenu(){return openMenu(global_search_toggles,global_search);},closeSearchMenu:function closeSearchMenu(){return closeMenu(global_search_toggles,global_search);},toggleSearchMenu:function toggleSearchMenu(){return toggleMenu(global_search_toggles,global_search);},openMainMenu:function openMainMenu(){return openMenu(global_menu_toggles,global_menu);},closeMainMenu:function closeMainMenu(){return closeMenu(global_menu_toggles,global_menu);},toggleMainMenu:function toggleMainMenu(){return toggleMenu(global_menu_toggles,global_menu);}}; // Toggle primary Menu (mobile Only)
+global_search_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleSearchMenu();return false;}); // Toggle Search Menu
+global_menu_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleMainMenu();return false;}); // Ensure opening one menu, closes the other.
+$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){window.KENT.global_nav.closeMainMenu();}else {window.KENT.global_nav.closeSearchMenu();}});global_menu.find('.audience-nav-links a').click(function(e){e.preventDefault();var menu_name=e.target.getAttribute('data-action');if(menu_name!==null){window.KENT.kentbar.toggleMenu(menu_name,e.target);window.KENT.global_nav.closeMainMenu();}return false;}); // CLose all menu's if user hits escape
+$(document).keyup(function(e){if(e.which===27){window.KENT.global_nav.closeMainMenu();window.KENT.global_nav.closeSearchMenu();window.KENT.kentbar.closeMenus();}}); // Homepage Logic
+if($('.home-nav').length>0){$(window).on('globalmenu:open kentbar_menu:open kentbar_mobilemenu:open',function(){$('.home-nav').hide();});$(window).on('globalmenu:close kentbar_menu:close kentbar_mobilemenu:close',function(e,menu){var $body=$('body');if(!($body.hasClass('show-global-menu')||$body.hasClass('show-global-search')||$body.hasClass('show-kentbar-menu'))){if(ResponsiveBootstrapToolkit.is('<=sm')){$('.home-nav').delay(300).fadeIn();}}});$(window).on('viewport:change',function(){if(ResponsiveBootstrapToolkit.is('<=sm')){ // if menu isn't already open
+if(!$('body').hasClass('show-global-menu')&&!$('body').hasClass('show-global-search')){$('.home-nav').delay(300).fadeIn();}}else {$('.home-nav').hide();}});} // Add to KENT object
+window.KENT.global_nav=global_nav;})();window.KENT=window.KENT||{}; /**
  * Global search
  *
  * Super search located at the top of the page
  *
  * @uses global_nav.js
- */(function(){// Get global search element.
-var global_search=$('#global-nav-search');// Hitting search on empty form closes search menu
-global_search.find('form').submit(function(e){if(global_search.find('input[type="search"]').val()===''){e.preventDefault();window.KENT.global_nav.closeSearchMenu();return false;}});// Focus in search input if global search is toggled
-$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){global_search.find('input[type="search"]').focus();}});// clicking menu
-$('body').click(function(e){if(!global_search.is(e.target)&&global_search.has(e.target).length===0){window.KENT.global_nav.closeSearchMenu();}});})();/**
+ */(function(){ // Get global search element.
+var global_search=$('#global-nav-search'); // Hitting search on empty form closes search menu
+global_search.find('form').submit(function(e){if(global_search.find('input[type="search"]').val()===''){e.preventDefault();window.KENT.global_nav.closeSearchMenu();return false;}}); // Focus in search input if global search is toggled
+$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){global_search.find('input[type="search"]').focus();}}); // clicking menu
+$('body').click(function(e){if(!global_search.is(e.target)&&global_search.has(e.target).length===0){window.KENT.global_nav.closeSearchMenu();}});})(); /**
  * Primary Navigation
  *
  * Handles open/closing of the submenus in the global nav menu.
  *
- */(function(){var zTimer=null;// Primary Nav
-$('.global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a').click(function(){clearTimeout(zTimer);// Get current menu item
-var item=$(this).parent();// Get menu container
-var container=item.parent();// Close submenus in provided menuItems
-var closeSubMenus=function closeSubMenus(menuItems){return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');};if(container.hasClass('in')){// If a menu was already open,
+ */(function(){var zTimer=null; // Primary Nav
+$('.global-nav-menu .global-nav-link > a, .home-nav .global-nav-link > a').click(function(){clearTimeout(zTimer); // Get current menu item
+var item=$(this).parent(); // Get menu container
+var container=item.parent(); // Close submenus in provided menuItems
+var closeSubMenus=function closeSubMenus(menuItems){return menuItems.find('.global-nav-link-submenu').css('zIndex',0).css('height','0px');};if(container.hasClass('in')){ // If a menu was already open,
 // Close all menu items other than the one selected (setting expanded as we go)
-var menus=container.find('.in').not(item);menus.removeClass('in');closeSubMenus(menus);menus.children(':first').attr('aria-expanded','false');}else{// If menu wasn't open, preperate submenus for being shown.
-closeSubMenus(container);}if(item.hasClass('in')){// if the clicked menu item was open, close the menu
-item.removeClass('in').parent().removeClass('in');zTimer=setTimeout(function(){closeSubMenus(item);},600);}else{//  if not, tell item its expanded & toggle it all open
-var menu=$(this).attr('aria-expanded','true').parent().toggleClass('in');menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');menu.parent().addClass('in');}});})();jQuery(document).ready(function(){var sectional_nav=$('.departmental-nav .navbar-menu');var toggler=$('.departmental-nav .navbar-toggler');var viewport=ResponsiveBootstrapToolkit;// if no nav, don't bother booting menu
-if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()&&sectional_nav.find('a').length>1){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else{sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var links=sectional_nav.find('a');return links.last().position().top>links.first().position().top||links.length<=1;}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else{openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();});/**
+var menus=container.find('.in').not(item);menus.removeClass('in');closeSubMenus(menus);menus.children(':first').attr('aria-expanded','false');}else { // If menu wasn't open, preperate submenus for being shown.
+closeSubMenus(container);}if(item.hasClass('in')){ // if the clicked menu item was open, close the menu
+item.removeClass('in').parent().removeClass('in');zTimer=setTimeout(function(){closeSubMenus(item);},600);}else { //  if not, tell item its expanded & toggle it all open
+var menu=$(this).attr('aria-expanded','true').parent().toggleClass('in');menu.find('.global-nav-link-submenu').css('zIndex',1).css('height','auto');menu.parent().addClass('in');}});})();jQuery(document).ready(function(){var sectional_nav=$('.departmental-nav .navbar-menu');var toggler=$('.departmental-nav .navbar-toggler');var viewport=ResponsiveBootstrapToolkit; // if no nav, don't bother booting menu
+if(sectional_nav.length===0){return;}function respond(){if(viewport.is('>=md')){if(navHasOverflown()&&sectional_nav.find('a').length>1){sectional_nav.addClass('overflown');toggler.addClass('overflown');}else {sectional_nav.removeClass('overflown');toggler.removeClass('overflown');closeNav();}}}function navHasOverflown(){var links=sectional_nav.find('a');return links.last().position().top>links.first().position().top||links.length<=1;}function toggleNav(){if(sectional_nav.hasClass('in')){closeNav();}else {openNav();}}function openNav(){$('body').addClass('show-departmental-menu');toggler.addClass('in').attr('aria-expanded','true');sectional_nav.addClass('in');}function closeNav(){$('body').removeClass('show-departmental-menu');toggler.removeClass('in').attr('aria-expanded','false');sectional_nav.removeClass('in');}toggler.click(function(){if(navHasOverflown()){toggleNav();}});$(window).on('viewport:resize',function(){respond();});respond();}); /**
  * Beta bar collapse
  *
  * Small bit of JS to facilitate the beta bar open/close logic.
  * This will be removed once the product moves out of beta
- */jQuery(document).ready(function(){var beta_bar=$('#beta-bar');var toggler=$('.beta-toggler');// Toggle beta bar
-function toggleNav(){if(beta_bar.hasClass('hidden')){beta_bar.removeClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','true');});}else{beta_bar.addClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','false');});window.Cookies.set('kentbeta_dismissed','1',{expires:365});}}// If beta bar exists on page
-if(beta_bar.length>0){var dismissed=typeof window.Cookies.get('kentbeta_dismissed')!=='undefined';// Apply show/hide state from cookie.
-if(!dismissed){beta_bar.removeClass('hidden');}else{beta_bar.addClass('hidden');}// hook up toggler
-toggler.click(function(){toggleNav();});}});/**
+ */jQuery(document).ready(function(){var beta_bar=$('#beta-bar');var toggler=$('.beta-toggler'); // Toggle beta bar
+function toggleNav(){if(beta_bar.hasClass('hidden')){beta_bar.removeClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','true');});}else {beta_bar.addClass('hidden');toggler.each(function(){$(this).attr('aria-expanded','false');});window.Cookies.set('kentbeta_dismissed','1',{expires:365});}} // If beta bar exists on page
+if(beta_bar.length>0){var dismissed=typeof window.Cookies.get('kentbeta_dismissed')!=='undefined'; // Apply show/hide state from cookie.
+if(!dismissed){beta_bar.removeClass('hidden');}else {beta_bar.addClass('hidden');} // hook up toggler
+toggler.click(function(){toggleNav();});}}); /**
  * Toggles attribution text display on/off
- */jQuery(document).ready(function($){$('.attribution').click(function(){$(this).toggleClass('in');});// Debug
-window.KENT.log('Initiating: Attribution');window.KENT.log($('.attribution'));});/**
+ */jQuery(document).ready(function($){$('.attribution').click(function(){$(this).toggleClass('in');}); // Debug
+window.KENT.log('Initiating: Attribution');window.KENT.log($('.attribution'));}); /**
  * Click to interact logic
  *
  * Disable scrolling/zooming on iframes with .click-to-interact class
  * User click activates scrolling behavior and loss of focus deactivates it
  *
- */(function(){var _onEmbedClickHandler,_onEmbedMouseleaveHandler;// Disable pointer events
-_onEmbedMouseleaveHandler=function onEmbedMouseleaveHandler(event){// Re add the click to interact handler
-$(this).on('click',_onEmbedClickHandler);// remove the leaving handler
-$(this).off('mouseleave',_onEmbedMouseleaveHandler);// Disable pointer events
-$(this).find('iframe').css('pointer-events','none');};// Enable pointer events
-_onEmbedClickHandler=function onEmbedClickHandler(event){// Disable the click handler until the user leaves the area
-$(this).off('click',_onEmbedClickHandler);// Handle the mouse leave event
-$(this).on('mouseleave',_onEmbedMouseleaveHandler);// Enable the pointer events
-$(this).find('iframe').css('pointer-events','auto');};jQuery(document).ready(function(){// Disable pointer on class, and attach click action to re-enable them
-$('.click-to-interact').on('click',_onEmbedClickHandler).find('iframe').css('pointer-events','none');window.KENT.log('Initiating: Click to interact');window.KENT.log($('.click-to-interact'));});})();/**
+ */(function(){var _onEmbedClickHandler,_onEmbedMouseleaveHandler; // Disable pointer events
+_onEmbedMouseleaveHandler=function onEmbedMouseleaveHandler(event){ // Re add the click to interact handler
+$(this).on('click',_onEmbedClickHandler); // remove the leaving handler
+$(this).off('mouseleave',_onEmbedMouseleaveHandler); // Disable pointer events
+$(this).find('iframe').css('pointer-events','none');}; // Enable pointer events
+_onEmbedClickHandler=function onEmbedClickHandler(event){ // Disable the click handler until the user leaves the area
+$(this).off('click',_onEmbedClickHandler); // Handle the mouse leave event
+$(this).on('mouseleave',_onEmbedMouseleaveHandler); // Enable the pointer events
+$(this).find('iframe').css('pointer-events','auto');};jQuery(document).ready(function(){ // Disable pointer on class, and attach click action to re-enable them
+$('.click-to-interact').on('click',_onEmbedClickHandler).find('iframe').css('pointer-events','none');window.KENT.log('Initiating: Click to interact');window.KENT.log($('.click-to-interact'));});})(); /**
  * Slider
  *
  * Provides carousel functionality to kent-theme
  *
  * @uses https://github.com/kenwheeler/slick/
- */window.KENT=window.KENT||{};// Default options
-window.KENT.kentslider={default:{config:{dots:true,dotsClass:'kent-slider-dots',mobileFirst:true,useTransform:true,accessibility:true}},// react helper
-react:function react($el,breakpoint,config){var loaded=$el.hasClass('slick-initialized');if(ResponsiveBootstrapToolkit.is(breakpoint)){if(!loaded){// init slider
-$el.slick(config);}}else{if(loaded){// de-init slider
-$el.slick('unslick');}}}};// Settings for profile_feature
-window.KENT.kentslider.profile_feature={config:$.extend({},window.KENT.kentslider.default.config,{slidesToShow:2,slidesToScroll:2}),breakpoint:'<=md'};window.KENT.kentslider.related_courses={config:$.extend({},window.KENT.kentslider.default.config,{dots:false,infine:true,slidesToShow:1,slidesToScroll:1,responsive:[{breakpoint:window.KENT.settings.breakpoints.xl,settings:{slidesToShow:4,slidesToScroll:4}},{breakpoint:window.KENT.settings.breakpoints.lg,settings:{slidesToShow:3,slidesToScroll:3}},{breakpoint:window.KENT.settings.breakpoints.sm,settings:{slidesToShow:2,slidesToScroll:2}}]})};$(document).ready(function(){// If class is found, init slider
-$('.kent-slider').each(function(){// Load config
-var slider_config=$(this).data('slider-config');if(typeof slider_config==='undefined'){slider_config='default';}var config=window.KENT.kentslider[slider_config].config;// Does this carousel behave differently at different breakpoints
-var breakpoint=typeof window.KENT.kentslider[slider_config].breakpoint!=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;if(breakpoint){// react to inital size
-window.KENT.kentslider.react($(this),breakpoint,config);var $this=$(this);// Handle resize on view port change
-$(window).on('viewport:resize',function(){window.KENT.kentslider.react($this,breakpoint,config);});}else{// Init slider
-$(this).slick(config);}// Debug
-window.KENT.log('[Kent-slider] Instance created',$(this));});});$(document).ready(function(){var viewport=ResponsiveBootstrapToolkit;// Plyr controls template - Use kf icons
-var plyr_controls='\n\t\t<button type="button" data-plyr="play" class="plyr__play-large">\n\t\t\t<span class="kf-play-circle"></span>\n\t\t\t<span class="plyr__sr-only">Play</span>\n\t\t</button>\n\n\t\t<div class=\'plyr__controls\'>\n\t\t\t<button type=\'button\' data-plyr=\'play\'>\n\t\t\t\t<span class="kf-play"></span>\n\t\t\t\t<span class="plyr__tooltip">Play</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'pause\'>\n\t\t\t\t<span class="kf-pause"></span>\n\t\t\t\t<span class="plyr__tooltip">Pause</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__progress\'>\n\t\t\t\t<label for=\'seek{id}\' class=\'plyr__sr-only\'>Seek</label>\n\t\t\t\t<input id=\'seek{id}\' class=\'plyr__progress--seek\' type=\'range\' min=\'0\' max=\'100\' step=\'0.1\' value=\'0\' data-plyr=\'seek\'>\n\t\t\t\t<progress class=\'plyr__progress--played\' max=\'100\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t\t<progress class=\'plyr__progress--buffer\' max=\'100\' value=\'0\'>\n\t\t\t\t\t<span>0</span>% buffered\n\t\t\t\t</progress>\n\t\t\t\t<span class=\'plyr__tooltip\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Current time</span>\n\t\t\t\t<span class=\'plyr__time--current\'>00:00</span>\n\t\t\t</span>\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Duration</span>\n\t\t\t\t<span class=\'plyr__time--duration\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'mute\'>\n\t\t\t\t<span class="kf-volume-mute icon--muted"></span>\n\t\t\t\t<span class="kf-volume-medium"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Mute</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__volume\'>\n\t\t\t\t<label for=\'volume{id}\' class=\'plyr__sr-only\'>Volume</label>\n\t\t\t\t<input id=\'volume{id}\' class=\'plyr__volume--input\' type=\'range\' min=\'0\' max=\'10\' value=\'5\' data-plyr=\'volume\'>\n\t\t\t\t<progress class=\'plyr__volume--display\' max=\'10\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'captions\'>\n\t\t\t\t<span class="kf-captions icon--captions-on"></span>\n\t\t\t\t<span class="kf-captions-off"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Captions</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' class="download-transcript">\n\t\t\t\t<span class="kf-file-text"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Access Transcript</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'fullscreen\'>\n\t\t\t\t<span class="kf-compress icon--exit-fullscreen"></span>\n\t\t\t\t<span class="kf-expand"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Fullscreen</span>\n\t\t\t</button>\n\t\t</div>\n\t';/**
+ */window.KENT=window.KENT||{}; // Default options
+window.KENT.kentslider={default:{config:{dots:true,dotsClass:'kent-slider-dots',mobileFirst:true,useTransform:true,accessibility:true}}, // react helper
+react:function react($el,breakpoint,config){var loaded=$el.hasClass('slick-initialized');if(ResponsiveBootstrapToolkit.is(breakpoint)){if(!loaded){ // init slider
+$el.slick(config);}}else {if(loaded){ // de-init slider
+$el.slick('unslick');}}}}; // Settings for profile_feature
+window.KENT.kentslider.profile_feature={config:$.extend({},window.KENT.kentslider.default.config,{slidesToShow:2,slidesToScroll:2}),breakpoint:'<=md'};window.KENT.kentslider.related_courses={config:$.extend({},window.KENT.kentslider.default.config,{dots:false,infine:true,slidesToShow:1,slidesToScroll:1,responsive:[{breakpoint:window.KENT.settings.breakpoints.xl,settings:{slidesToShow:4,slidesToScroll:4}},{breakpoint:window.KENT.settings.breakpoints.lg,settings:{slidesToShow:3,slidesToScroll:3}},{breakpoint:window.KENT.settings.breakpoints.sm,settings:{slidesToShow:2,slidesToScroll:2}}]})};$(document).ready(function(){ // If class is found, init slider
+$('.kent-slider').each(function(){ // Load config
+var slider_config=$(this).data('slider-config');if(typeof slider_config==='undefined'){slider_config='default';}var config=window.KENT.kentslider[slider_config].config; // Does this carousel behave differently at different breakpoints
+var breakpoint=typeof window.KENT.kentslider[slider_config].breakpoint!=='undefined'?window.KENT.kentslider[slider_config].breakpoint:false;if(breakpoint){ // react to inital size
+window.KENT.kentslider.react($(this),breakpoint,config);var $this=$(this); // Handle resize on view port change
+$(window).on('viewport:resize',function(){window.KENT.kentslider.react($this,breakpoint,config);});}else { // Init slider
+$(this).slick(config);} // Debug
+window.KENT.log('[Kent-slider] Instance created',$(this));});});$(document).ready(function(){var viewport=ResponsiveBootstrapToolkit; // Plyr controls template - Use kf icons
+var plyr_controls='\n\t\t<button type="button" data-plyr="play" class="plyr__play-large">\n\t\t\t<span class="kf-play-circle"></span>\n\t\t\t<span class="plyr__sr-only">Play</span>\n\t\t</button>\n\n\t\t<div class=\'plyr__controls\'>\n\t\t\t<button type=\'button\' data-plyr=\'play\'>\n\t\t\t\t<span class="kf-play"></span>\n\t\t\t\t<span class="plyr__tooltip">Play</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'pause\'>\n\t\t\t\t<span class="kf-pause"></span>\n\t\t\t\t<span class="plyr__tooltip">Pause</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__progress\'>\n\t\t\t\t<label for=\'seek{id}\' class=\'plyr__sr-only\'>Seek</label>\n\t\t\t\t<input id=\'seek{id}\' class=\'plyr__progress--seek\' type=\'range\' min=\'0\' max=\'100\' step=\'0.1\' value=\'0\' data-plyr=\'seek\'>\n\t\t\t\t<progress class=\'plyr__progress--played\' max=\'100\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t\t<progress class=\'plyr__progress--buffer\' max=\'100\' value=\'0\'>\n\t\t\t\t\t<span>0</span>% buffered\n\t\t\t\t</progress>\n\t\t\t\t<span class=\'plyr__tooltip\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Current time</span>\n\t\t\t\t<span class=\'plyr__time--current\'>00:00</span>\n\t\t\t</span>\n\t\t\t<span class=\'plyr__time\'>\n\t\t\t\t<span class=\'plyr__sr-only\'>Duration</span>\n\t\t\t\t<span class=\'plyr__time--duration\'>00:00</span>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'mute\'>\n\t\t\t\t<span class="kf-volume-mute icon--muted"></span>\n\t\t\t\t<span class="kf-volume-medium"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Mute</span>\n\t\t\t</button>\n\n\t\t\t<span class=\'plyr__volume\'>\n\t\t\t\t<label for=\'volume{id}\' class=\'plyr__sr-only\'>Volume</label>\n\t\t\t\t<input id=\'volume{id}\' class=\'plyr__volume--input\' type=\'range\' min=\'0\' max=\'10\' value=\'5\' data-plyr=\'volume\'>\n\t\t\t\t<progress class=\'plyr__volume--display\' max=\'10\' value=\'0\' role=\'presentation\'></progress>\n\t\t\t</span>\n\n\t\t\t<button type=\'button\' data-plyr=\'captions\'>\n\t\t\t\t<span class="kf-captions icon--captions-on"></span>\n\t\t\t\t<span class="kf-captions-off"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Captions</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' class="download-transcript">\n\t\t\t\t<span class="kf-file-text"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Access Transcript</span>\n\t\t\t</button>\n\n\t\t\t<button type=\'button\' data-plyr=\'fullscreen\'>\n\t\t\t\t<span class="kf-compress icon--exit-fullscreen"></span>\n\t\t\t\t<span class="kf-expand"></span>\n\t\t\t\t<span class=\'plyr__tooltip\'>Toggle Fullscreen</span>\n\t\t\t</button>\n\t\t</div>\n\t'; /**
 	 * Control class for "player" instances
-	 */var Player=function Player($container){// vars
-this.container=$container;this.video=$container.find('.video-player').first();this.placeholder=$container.find('img').first();this.plyr=null;// settings for instance
-this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',fullscreen_down:$container.data('fullscreen-down')||'xs',fullscreen_up:$container.data('fullscreen-up')||'xxl'};/**
+	 */var Player=function Player($container){ // vars
+this.container=$container;this.video=$container.find('.video-player').first();this.placeholder=$container.find('img').first();this.plyr=null; // settings for instance
+this.settings={transcript:$container.data('transcript')||false,mode:$container.data('mode')||'inline',fullscreen_down:$container.data('fullscreen-down')||'xs',fullscreen_up:$container.data('fullscreen-up')||'xxl'}; /**
 		 * Initalise "video" element
-		 */this.init=function(){var _this2=this;this.container.click(function(){// if Player isn't booted, boot it
-if(!_this2.plyr){window.KENT.log('[Video player] Init Plyr');_this2.boot();}// Show player if not already playing
-if(!_this2.container.hasClass('playing')){_this2.show();}});};/**
+		 */this.init=function(){var _this2=this;this.container.click(function(){ // if Player isn't booted, boot it
+if(!_this2.plyr){window.KENT.log('[Video player] Init Plyr');_this2.boot();} // Show player if not already playing
+if(!_this2.container.hasClass('playing')){_this2.show();}});}; /**
 		 * When user attempts to play video, initalise video player instance
-		 */this.boot=function(){var _this3=this;// Generate plyr instance
-this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0];// Hookup events
-this.video.on('ready',function(){_this3.setupTranscript();});this.video.on('pause',function(){// hide on pause if not full screen
-if(!_this3.plyr.isFullscreen()){_this3.hide();}});this.video.on('exitfullscreen',function(){_this3.hide();});this.video.on('ended',function(){_this3.hide();});};/**
+		 */this.boot=function(){var _this3=this; // Generate plyr instance
+this.plyr=plyr.setup(this.video[0],{autoplay:true,html:plyr_controls,disableContextMenu:false})[0]; // Hookup events
+this.video.on('ready',function(){_this3.setupTranscript();});this.video.on('pause',function(){ // hide on pause if not full screen
+if(!_this3.plyr.isFullscreen()){_this3.hide();}});this.video.on('exitfullscreen',function(){_this3.hide();});this.video.on('ended',function(){_this3.hide();});}; /**
 		 * Setup transcription link
-		 */this.setupTranscript=function(){var _this4=this;var button=this.video.find('.download-transcript');if(this.settings.transcript){button.click(function(){document.location.href=_this4.settings.transcript;});}else{button.hide();}};/**
+		 */this.setupTranscript=function(){var _this4=this;var button=this.video.find('.download-transcript');if(this.settings.transcript){button.click(function(){document.location.href=_this4.settings.transcript;});}else {button.hide();}}; /**
 		 * Show video
 		 * Display video and play it ( use attributes to determine whether to play inline or "fullscreen")
-		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();};/**
+		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();}; /**
 		 * Close video
 		 * Hide video and pause it
-		 */this.hide=function(){var _this5=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();}/**
+		 */this.hide=function(){var _this5=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();} /**
 			 * This is horrible but it fixes a bug were safari crashes if you try and set a fullscreen element
 			 * to display:none. This queues it so it doesn't try and set display:none until safari has actually
 			 * completed the fullscreen exit.
-			 */setTimeout(function(){_this5.pause();_this5.container.removeClass('playing');_this5.container.closest('.card-media-inline').removeClass('card-media-enabled');},0);};/**
+			 */setTimeout(function(){_this5.pause();_this5.container.removeClass('playing');_this5.container.closest('.card-media-inline').removeClass('card-media-enabled');},0);}; /**
 		 * Play video
-		 */this.play=function(){this.plyr.play();};/**
+		 */this.play=function(){this.plyr.play();}; /**
 		 * Pause video
-		 */this.pause=function(){this.plyr.pause();};/**
+		 */this.pause=function(){this.plyr.pause();}; /**
 		 * Pause & hide video
-		 */this.stop=function(){this.hide();};this.init();};$('.video-launcher').each(function(){// create player instance
-new Player($(this));// Debug
-window.KENT.log('[Video player] Instance created');});});/**
+		 */this.stop=function(){this.hide();};this.init();};$('.video-launcher').each(function(){ // create player instance
+new Player($(this)); // Debug
+window.KENT.log('[Video player] Instance created');});}); /**
  * Social sharing icons
  *
  * Converts anything in a div with the class `content-social-share` in to a social sharing icon.
@@ -28818,41 +28840,41 @@ window.KENT.log('[Video player] Instance created');});});/**
  * Will automatically pass share data to Google Analytics.
  *
  * @uses https://github.com/sapegin/social-likes
- */(function(){// Add additional social networks to the social-likes code.
-window.socialLikesButtons={// Add linkedin support
-linkedin:{counterUrl:'http://www.linkedin.com/countserv/count/share?url={url}',counter:function counter(jsonUrl,deferred){var options=window.socialLikesButtons.linkedin;if(!options._){options._={};if(!window.IN){window.IN={Tags:{}};}window.IN.Tags.Share={handleCount:function handleCount(params){var jsonUrl=options.counterUrl.replace(/{url}/g,encodeURIComponent(params.url));options._[jsonUrl].resolve(params.count);}};}options._[jsonUrl]=deferred;$.getScript(jsonUrl).fail(deferred.reject);},popupUrl:'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',popupWidth:650,popupHeight:500}};// When jQuery is ready, hook up our social sharing icons.
-$(function(){// for all social share containers
-var $likes=$('.content-social-share');if($likes.length>0){// Init social likes on container + grab options
-var options=$likes.socialLikes({'counters':false}).data().socialLikes.options;// Populate 'email link' (Additional option we have added)
-$likes.find('a.email').attr('href','mailto:?subject='+options.title+'&body=Link: '+options.url);// Hook up social events via KAT
-$likes.find('a').click(function(){window.KENT.kat.social($(this).attr('title'),'share');// current url is used, if no url is provided as the 3rd param.
-});}// Debug
-window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(function(){//get all tabs
-var $tabs=$('a[data-toggle="tab"]');// when tab is hidden adjust related accordion tab-title accordingly
-$tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);});// when tab is show adjust related accordion tab-title accordingly
-$tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);});//endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
-$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);if(hash.length>0){var activeTab=$('[data-toggle="tab"][href="#'+hash+'"]');if(activeTab){activeTab.tab('show');}}// Change hash for page-reload
-$('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})();/**
+ */(function(){ // Add additional social networks to the social-likes code.
+window.socialLikesButtons={ // Add linkedin support
+linkedin:{counterUrl:'http://www.linkedin.com/countserv/count/share?url={url}',counter:function counter(jsonUrl,deferred){var options=window.socialLikesButtons.linkedin;if(!options._){options._={};if(!window.IN){window.IN={Tags:{}};}window.IN.Tags.Share={handleCount:function handleCount(params){var jsonUrl=options.counterUrl.replace(/{url}/g,encodeURIComponent(params.url));options._[jsonUrl].resolve(params.count);}};}options._[jsonUrl]=deferred;$.getScript(jsonUrl).fail(deferred.reject);},popupUrl:'http://www.linkedin.com/shareArticle?mini=false&url={url}&title={title}',popupWidth:650,popupHeight:500}}; // When jQuery is ready, hook up our social sharing icons.
+$(function(){ // for all social share containers
+var $likes=$('.content-social-share');if($likes.length>0){ // Init social likes on container + grab options
+var options=$likes.socialLikes({'counters':false}).data().socialLikes.options; // Populate 'email link' (Additional option we have added)
+$likes.find('a.email').attr('href','mailto:?subject='+options.title+'&body=Link: '+options.url); // Hook up social events via KAT
+$likes.find('a').click(function(){window.KENT.kat.social($(this).attr('title'),'share'); // current url is used, if no url is provided as the 3rd param.
+});} // Debug
+window.KENT.log('Initiating: Social Sharing');window.KENT.log($likes);});})();(function(){ //get all tabs
+var $tabs=$('a[data-toggle="tab"]'); // when tab is hidden adjust related accordion tab-title accordingly
+$tabs.on('hidden.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').addClass('collapsed').attr('aria-expanded',false);}); // when tab is show adjust related accordion tab-title accordingly
+$tabs.on('shown.bs.tab',function(e){$('.tab-title[data-target="'+$(e.target).attr('href')+'"]').removeClass('collapsed').attr('aria-expanded',true);}); //endure active tab is always visible (may have been collapsed in accordion mode) if tabs are visible.
+$(window).on('viewport:resize',function(){$('.nav-tabs:visible').each(function(){$($(this).find('.nav-link.active').attr('href')).addClass('active').addClass('in').attr('aria-expanded',true);});});var hash=location.hash;hash=hash.indexOf('#!')===0?hash.substring(2):hash.substring(1);if(hash.length>0){var activeTab=$('[data-toggle="tab"][href="#'+hash+'"]');if(activeTab){activeTab.tab('show');}} // Change hash for page-reload
+$('a[data-toggle="tab"]').on('show.bs.tab',function(e){window.location.hash=e.target.hash;});})(); /**
  * Parallax
  *
  * Provides parallax functionality
  *
  * @uses https://github.com/markdalgleish/stellar.js
- */(function(){var stellarSetup=false;var stellarActive=false;// Enable stellar.js
-var initStellar=function initStellar(){if(stellarSetup===true){$(window).data('plugin_stellar').init();}else{$.stellar({// Set scrolling to be in either one or both directions
-horizontalScrolling:false,verticalScrolling:true,// Set the global alignment offsets
-horizontalOffset:0,verticalOffset:0,// Refreshes parallax content on window load and resize
-responsive:false,// Select which property is used to calculate scroll.
+ */(function(){var stellarSetup=false;var stellarActive=false; // Enable stellar.js
+var initStellar=function initStellar(){if(stellarSetup===true){$(window).data('plugin_stellar').init();}else {$.stellar({ // Set scrolling to be in either one or both directions
+horizontalScrolling:false,verticalScrolling:true, // Set the global alignment offsets
+horizontalOffset:0,verticalOffset:0, // Refreshes parallax content on window load and resize
+responsive:false, // Select which property is used to calculate scroll.
 // Choose 'scroll', 'position', 'margin' or 'transform',
 // or write your own 'scrollProperty' plugin.
-scrollProperty:'scroll',// Select which property is used to position elements.
+scrollProperty:'scroll', // Select which property is used to position elements.
 // Choose between 'position' or 'transform',
 // or write your own 'positionProperty' plugin.
-positionProperty:'transform',// Enable or disable the two types of parallax
-parallaxBackgrounds:true,parallaxElements:true,// Hide parallax elements that move outside the viewport
-hideDistantElements:false,// Customise how elements are shown and hidden
-hideElement:function hideElement($elem){$elem.hide();},showElement:function showElement($elem){$elem.show();}});stellarSetup=true;}stellarActive=true;};// Disable stellar.js
-var disableStellar=function disableStellar(){$(window).data('plugin_stellar').destroy();stellarActive=false;};// Handle resize
-function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','').find('img').removeAttr('style');}else{if(!stellarActive){initStellar();}// Set ratio's
+positionProperty:'transform', // Enable or disable the two types of parallax
+parallaxBackgrounds:true,parallaxElements:true, // Hide parallax elements that move outside the viewport
+hideDistantElements:false, // Customise how elements are shown and hidden
+hideElement:function hideElement($elem){$elem.hide();},showElement:function showElement($elem){$elem.show();}});stellarSetup=true;}stellarActive=true;}; // Disable stellar.js
+var disableStellar=function disableStellar(){$(window).data('plugin_stellar').destroy();stellarActive=false;}; // Handle resize
+function react_to_window(){if(ResponsiveBootstrapToolkit.is('xs')){if(stellarActive){disableStellar();}$('.media-wrap-parallax').css('min-height','').find('img').removeAttr('style');}else {if(!stellarActive){initStellar();} // Set ratio's
 var $ratio=ResponsiveBootstrapToolkit.is('<md')?9/16:1/2.5;$('.media-wrap-parallax').each(function(){$(this).css('min-height',$(window).width()*$ratio+'px');});$(window).data('plugin_stellar').refresh();}}$(window).on('viewport:resize',function(){react_to_window();});$(document).ready(function(){react_to_window();});})();(function(){var $alerts=$('.alert.alert-danger');if($alerts.length>0){$('html, body').animate({scrollTop:$alerts.first().offset().top},2000);}})();
 //# sourceMappingURL=main.compiled.js.map
