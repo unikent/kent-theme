@@ -1,5 +1,5 @@
 .byline {
-    margin:   2rem 0;
+    margin:   0 0 2rem;
     overflow: hidden;
     position: relative;
     color:    #737373;
@@ -38,13 +38,4 @@
     clear:         both;
     margin-top:    .5rem;
     margin-bottom: 1.25rem;
-
-    .content-tag {
-        float:   left;
-        display: inline-block;
-        margin:  0 0.5rem 0.5rem 0;
-        &:last-child {
-            margin-right: 0;
-        }
-    }
 }

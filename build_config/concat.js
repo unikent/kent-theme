@@ -53,7 +53,8 @@ module.exports = {
 			'js/components/video.js',
 			'js/components/social-likes.js',
 			'js/components/navigation.js',
-			'js/components/paralax.js' // must run later than slider
+			'js/components/paralax.js', // must run later than slider
+			'js/components/scrollto.js'
 		],
 		dest: 'tmp/main.js'
 	},

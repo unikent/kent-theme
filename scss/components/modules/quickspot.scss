@@ -23,7 +23,10 @@
             padding:       10px;
             width:         100%;
             border-bottom: 1px solid #DDDDDD;
-
+            color:         $link-color;
+            @include hover-focus-active(){
+                color:           $link-hover-color;
+            }
             @include media-breakpoint-up(sm) {
                 width:         33.3%;
                 padding:       10px 0;
@@ -50,6 +53,10 @@
             transition:      background .25s;
             position:        relative;
             margin-bottom:   1px;
+
+            @include hover-focus-active(){
+                color:           $body-color;
+            }
 
             &:before {
                 color:       #ccc;

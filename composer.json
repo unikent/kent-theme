@@ -7,7 +7,10 @@
             "email": "is-webdev@kent.ac.uk"
         }
     ],
-    "require": {},
+    "require": {
+      "google/recaptcha": "~1.1",
+      "unikent/lib-php-footprints": "dev-master"
+    },
     "autoload": {
     	"files": [
         	"lib/theme-helper.php"

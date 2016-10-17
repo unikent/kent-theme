@@ -1,6 +1,8 @@
 <?php
 namespace unikent\kent_theme;
 
+use unikent\Footprints\Ticket;
+
 Class KentThemeHelper {
 
 	private static $theme_web_root = false;
@@ -74,7 +76,15 @@ Class KentThemeHelper {
 		$js_config = array(
 			"home_url" => HOME_URL,
 			"api_url" => API_URL,
-			"debug" => defined("DEBUG") ? ("true" == DEBUG) : false
+			"debug" => defined("DEBUG") ? ("true" == DEBUG) : false,
+            "breakpoints" => array(
+                'sm' => '576',
+                'md'=> '720',
+                'lg' => '940',
+                'xl' => '1140',
+                'xxl' => '1140',
+                'xxxl' => '1140'
+            )
 		);
 		$js_config = array_merge($js_config, $additional_js_config);
 
@@ -174,4 +184,38 @@ Class KentThemeHelper {
 		include 'error_pages/500.php';
 		die();
 	}
+}
+
+if(defined('RECAPTCHA') && isset($_POST['page-feedback-submit']) && $_POST['page-feedback-submit'] == 'page-feedback'){
+
+	$recaptcha = new \ReCaptcha\ReCaptcha(RECAPTCHA);
+	$resp = $recaptcha->verify($_POST['g-recaptcha-response'], (isset($_SERVER['HTTP_X_KENT_REAL_IP'])?$_SERVER['HTTP_X_KENT_REAL_IP']:$_SERVER['REMOTE_ADDR']));
+	if ($resp->isSuccess()) {
+
+		try {
+			$ticket = new Ticket("Website Feedback - " . $_POST['page-feedback-category']);
+			$ticket->set_emails(false, false, false);
+			$ticket->set_priority("Normal");
+			$ticket->set_category("Web");
+			$ticket->add_assignee('Web Development');
+			$ticket->add_entry($_POST['page-feedback-comment']);
+			$ticket->create();
+		}catch(\Exception $e){
+			$_POST['page_feedback_errors'] = (defined('DEBUG') && DEBUG) ? "Footprints ticket submission failed: <" . $e->getMessage() :"Submission Failed";
+		}
+
+	} else {
+
+		if(defined('DEBUG') && DEBUG ){
+			$_POST['page_feedback_errors'] = "<ul>";
+			foreach ($resp->getErrorCodes() as $code) {
+				$_POST['page_feedback_errors'] .= '<li>' . $code . '</li>';
+			}
+			$_POST['page_feedback_errors'] .="</ul>";
+		}else{
+			$_POST['page_feedback_errors'] = "Submission Failed";
+		}
+
+	}
+
 }

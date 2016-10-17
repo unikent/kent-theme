@@ -175,9 +175,17 @@
             &.cards-backed .card {
                 border-color: $color;
             }
-        }
 
+            .card-panel-body.kent-slider{
+                .slick-prev, .slick-next {
+                    &:after {
+                        color: $brand-primary;
+                    }
+                }
+            }
+        }
     }
+
     @each $name, $color in $brand-colors-dark {
         &.cards-backed-#{$name} {
             .card {
@@ -239,6 +247,10 @@
                 &:nth-child(4n+1) {
                     clear: left;
                 }
+            }
+
+            &.kent-slide {
+                clear:none;
             }
         }
 
@@ -387,7 +399,7 @@
             }
             select {
                 @extend .form-control;
-                @extend .c-select;
+                @extend .custom-select;
             }
             input {
                 @extend .form-control;

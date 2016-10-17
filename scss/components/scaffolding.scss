@@ -255,7 +255,7 @@ main {
             display: block;
         }
         @include media-breakpoint-up(lg){
-            left:      5rem;
+            left:      calc(5% + #{$grid-gutter-width/2});
         }
         @include media-breakpoint-up(xl){
             left:      3.25rem;
