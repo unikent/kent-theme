@@ -45,13 +45,44 @@ window.KENT.kentslider.profile_feature = {
 	breakpoint:'<=md'
 };
 
+window.KENT.kentslider.related_courses = {
+	config: $.extend({}, window.KENT.kentslider.default.config, {
+		dots: false,
+		infine: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: window.KENT.settings.breakpoints.xl,
+				settings: {
+					slidesToShow: 4,
+					slidesToScroll: 4
+				}
+			},
+			{
+				breakpoint: window.KENT.settings.breakpoints.lg,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 3
+				}
+			},
+			{
+				breakpoint: window.KENT.settings.breakpoints.sm,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2
+				}
+			}
+		]
+	})
+};
+
 $(document).ready(function(){
 	// If class is found, init slider
 	$('.kent-slider').each(function(){
 
 		// Load config
 		var slider_config = $(this).data('slider-config');
-
 		if (typeof slider_config === 'undefined') {
 			slider_config = 'default';
 		}
