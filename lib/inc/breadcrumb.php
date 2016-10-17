@@ -1,5 +1,5 @@
 <nav class="breadcrumb <?php echo isset($config['class']) ? $config['class']:'' ; ?>">
-	<a href="<?php echo (empty($_SERVER['HTTPS'])?'http://':'https://') . $_SERVER['HTTP_HOST'] ;?>" rel="index">University of Kent</a>
+	<a href="<?php echo HOME_URL; ?>" rel="index">University of Kent</a>
 
 	<?php $i=0;foreach($breadcrumb as $name => $link): ?>
 		<?php if(empty($link)): ?>
