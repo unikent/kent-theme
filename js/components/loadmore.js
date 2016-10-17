@@ -10,7 +10,12 @@ window.KENT = window.KENT || {};
 				}
 			},
 			news : {
-				source: window.KENT.settings.api_url +  '/v1/news'
+				source: window.KENT.settings.api_url +  '/v1/news',
+				prepModel : function(item, loadmore){
+					var model =  window.KENT.loadmore.config.default.prepModel(item, loadmore);
+					model.excerpt = null;
+					return model;
+				}
 			},
 			events : {
 				template: Handlebars.templates['event_card'],
@@ -80,12 +85,41 @@ window.KENT = window.KENT || {};
 								loadmore.loader.prop('hidden', true);
 								loadmore.btns.prop('disabled', false);
 								$target.removeClass('loadmore-loading');
+								if ( typeof loadmore.updateUrl === 'function'){
+									loadmore.updateUrl(loadmore);
+								} else if (loadmore.updateUrl){
+									window.KENT.loadmore.utils.updateUrl(loadmore);
+								}
 							}
 						});
 					}
 				},
+				getInitialFilters : function(loadmore){
+					loadmore.filters = {};
+
+					var exclude = loadmore.target.data('exclude');
+					if (typeof exclude !== 'undefined' && exclude.length > 0){
+						loadmore.filters.exclude = exclude;
+					}
+					var cat = loadmore.target.data('category');
+					if (typeof cat !== 'undefined' && cat.length > 0){
+						loadmore.filters.category_name = cat;
+					}
+					var tag = loadmore.target.data('tag');
+					if (typeof tag !== 'undefined' && tag.length > 0){
+						loadmore.filters.tags = tag;
+					}
+				},
 				getRequestUrl : function(loadmore){
-					return loadmore.source + '/page/' + (loadmore.page + 1) + '/posts_per_page/' + loadmore.pageSize;
+					var filters = [];
+					for (var filter in loadmore.filters) {
+						if (loadmore.filters.hasOwnProperty(filter)) {
+							filters.push( filter + '/' + loadmore.filters[filter] );
+						}
+					}
+					filters = filters.join('/');
+					filters = filters.length > 0 ? '/' + filters : filters;
+					return loadmore.source + '/page/' + (loadmore.page + 1) + '/posts_per_page/' + loadmore.pageSize + filters;
 				},
 				parseResponse : function($data, loadmore){
 
@@ -170,6 +204,7 @@ window.KENT = window.KENT || {};
 			var config = window.KENT.loadmore.getConfig($target);
 			if (config){
 				var loadmore = config;
+				loadmore.target = $target;
 				loadmore.btns = $target.find(config.btnSelector);
 				loadmore.container = $target.find(config.containerSelector);
 				loadmore.loader = $target.find(config.loaderSelector);
@@ -195,6 +230,8 @@ window.KENT = window.KENT || {};
 
 				loadmore.btns.click(config.loadMore);
 
+				loadmore.getInitialFilters(loadmore);
+
 				$target.addClass('has-loadmore');
 				$target[0].loadmore = loadmore;
 
@@ -203,10 +240,32 @@ window.KENT = window.KENT || {};
 				}
 
 			} else {
-				window.KENT.log('Undefined loadmore config "' + $(this).data('loadmore-config') + '"', $target);
+				window.KENT.log('Undefined loadmore config "' + $(this).data('loadmore') + '"', $target);
 			}
 		},
 		utils:{
+			updateUrl:function(loadmore){
+				// Update url page identifier (without causing history event)
+				// This means back button will take user to page before, rather
+				// than to previously loaded chunk of articles.
+
+				var page_no = loadmore.page;
+				if (window.history.replaceState) {
+					var path = location.pathname;
+
+					if (path.match(/(.*\/page\/)(\d+)(.*)/gi)) {
+						path = path.replace(/(.*\/page\/)(\d+)(.*)/gi, '$1' + page_no + '/');
+
+					} else {
+						if (path.substr(-1) === '/') {
+							path =  path.substr(0, path.length - 1);
+						}
+						path = path + '/page/' + page_no + '/';
+					}
+
+					window.history.replaceState(undefined, undefined, path);
+				}
+			},
 			prepWPImage: function(src){
 				var img = {
 					alt: src.title,
@@ -260,8 +319,10 @@ window.KENT = window.KENT || {};
 		}
 	};
 
-	$('div[data-loadmore]').each(function(){
+})();
+
+$(document).ready(function() {
+	$('div[data-loadmore]').each(function () {
 		window.KENT.loadmore.init($(this));
 	});
-
-})();
+});

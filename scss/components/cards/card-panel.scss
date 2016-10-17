@@ -399,7 +399,7 @@
             }
             select {
                 @extend .form-control;
-                @extend .c-select;
+                @extend .custom-select;
             }
             input {
                 @extend .form-control;
