@@ -12,13 +12,20 @@
 }
 
 // Create brand tags
-@each $name, $color in $brand-colors {
+@each $name, $color in $brand-colors-dark {
 	.tag-#{$name} {
 	  @include tag-variant($color);
 	}
 }
 @each $name, $color in $brand-colors-light {
 	.tag-#{$name} {
-		color: $body-color;
+        @include tag-variant($color);
+        color: $body-color;
 	}
+    a.tag-#{$name}{
+        @include hover-focus(){
+            color: $body-color;
+        }
+    }
+
 }

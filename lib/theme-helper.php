@@ -193,7 +193,7 @@ if(defined('RECAPTCHA') && isset($_POST['page-feedback-submit']) && $_POST['page
 			$ticket->add_entry($_POST['page-feedback-comment']);
 			$ticket->create();
 		}catch(\Exception $e){
-			$_POST['page_feedback_errors'] = (defined('DEBUG') && DEBUG) ? "Footprints ticket submission failed: <pre>" . $e->getMessage() . "</pre>" :"Submission Failed";
+			$_POST['page_feedback_errors'] = (defined('DEBUG') && DEBUG) ? "Footprints ticket submission failed: <" . $e->getMessage() :"Submission Failed";
 		}
 
 	} else {
