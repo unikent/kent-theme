@@ -7119,15 +7119,21 @@ figure figcaption,
       max-height: 3000px;
       max-width: 3000px; }
 
+.plyr {
+  width: 100%; }
+
 .video-launcher {
   position: relative; }
   .video-launcher > .video-player {
-    display: none; }
+    transition: max-height 300ms;
+    max-height: 0; }
   .video-launcher > img {
     display: block;
     max-width: 100%; }
+  .video-launcher.playing.playing.playing:before {
+    padding-top: 0; }
   .video-launcher.playing.playing.playing > .video-player {
-    display: block; }
+    max-height: 100vh; }
   .video-launcher.playing.playing.playing > img {
     display: none; }
   .video-launcher.playing.playing.playing::after {

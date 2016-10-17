@@ -1,9 +1,14 @@
+.plyr{
+    width: 100%;
+}
+
 .video-launcher {
 
 	position: relative;
 
 	& > .video-player {
-		display:none;
+        transition: max-height 300ms;
+		max-height:0;
 	}
 
 	& > img {
@@ -13,8 +18,12 @@
 
 	// ensure playing selector is pretty strong
 	&.playing.playing.playing {
+
+        &:before{
+            padding-top: 0;
+        }
 		& > .video-player {
-			display:block;
+			max-height:100vh;
 		}
 		& > img {display:none;}
 		&::after {display:none;}
