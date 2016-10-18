@@ -8541,7 +8541,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #671115;
   color: #FFFFFF;
   padding: 0;
-  font-size: 14.4px; }
+  font-size: 14.4px;
+  height: 48px; }
   #kentBar.kent-bar a.navbar-brand,
   #kentBar.audience-bar a.navbar-brand {
     position: absolute;
@@ -8556,8 +8557,6 @@ input[type=number]::-webkit-outer-spin-button {
     display: block; }
   #kentBar.kent-bar .tag-line,
   #kentBar.audience-bar .tag-line {
-    padding: 4.8px 0 4.8px 32px;
-    padding: 0.3rem 0 0.3rem 2rem;
     display: none; }
   #kentBar.kent-bar button,
   #kentBar.audience-bar button {
@@ -8594,16 +8593,27 @@ input[type=number]::-webkit-outer-spin-button {
     position: relative;
     z-index: 1; }
   @media (min-width: 768px) {
-    #kentBar.kent-bar a.navbar-brand, #kentBar.kent-bar button,
-    #kentBar.audience-bar a.navbar-brand,
-    #kentBar.audience-bar button {
-      display: none; }
-    #kentBar.kent-bar .tag-line,
-    #kentBar.audience-bar .tag-line {
-      display: inline-block; }
-    #kentBar.kent-bar.in .audience-nav-links,
-    #kentBar.audience-bar.in .audience-nav-links {
-      height: auto; } }
+    #kentBar.kent-bar,
+    #kentBar.audience-bar {
+      height: 30px; }
+      #kentBar.kent-bar a.navbar-brand, #kentBar.kent-bar button,
+      #kentBar.audience-bar a.navbar-brand,
+      #kentBar.audience-bar button {
+        display: none; }
+      #kentBar.kent-bar .tag-line,
+      #kentBar.audience-bar .tag-line {
+        display: block;
+        position: absolute;
+        top: .3rem;
+        left: 2rem;
+        padding: 0; }
+      #kentBar.kent-bar.in .audience-nav-links,
+      #kentBar.audience-bar.in .audience-nav-links {
+        height: auto; } }
+
+.show-kentbar-menu {
+  overflow-y: hidden;
+  height: 100%; }
 
 .global-header {
   position: relative;
