@@ -12350,6 +12350,12 @@ blockquote.pull-quote {
   border-top: 0;
   color: #671115; }
 
+.table.table-vertical tr:first-child td, .table.table-vertical tr:first-child th {
+  border-top: 2px solid #671115; }
+
+.table.table-vertical tr:last-child td, .table.table-vertical tr:last-child th {
+  border-bottom: 2px solid #671115; }
+
 .tag {
   font-size: 16px;
   font-size: 1rem;

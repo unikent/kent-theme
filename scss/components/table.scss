@@ -3,4 +3,17 @@
         border-top: 0;
         color:      $brand-primary;
     }
+
+    &.table-vertical{
+        tr:first-child{
+            td,th{
+                border-top:2px solid $brand-primary;
+            }
+        }
+        tr:last-child{
+            td,th{
+                border-bottom:2px solid $brand-primary;
+            }
+        }
+    }
 }
