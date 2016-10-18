@@ -23,6 +23,7 @@ window.KENT  = window.KENT || {};
 	// Focus in search input if global search is toggled
 	$(window).on('globalmenu:open', function(e, menu){
 		if (menu[0] === global_search[0]){
+			global_search.find('[type="submit"]').addClass('active').mouseleave(function(){$(this).removeClass('active');});
 			global_search.find('input[type="search"]').focus();
 		}
 	});
