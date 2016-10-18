@@ -10906,6 +10906,10 @@ button.beta-toggler {
     .card.card-overlay .card-img-overlay .form-group, .card.card-overlay .card-img-overlay-bottom .form-group, .card.card-overlay .card-img-overlay-bottom-shaded .form-group, .card.card-overlay .card-img-overlay-centered .form-group {
       margin-left: 15%;
       margin-right: 15%; } }
+  @media (min-width: 1712px) {
+    .card.card-overlay .card-img-overlay .form-group, .card.card-overlay .card-img-overlay-bottom .form-group, .card.card-overlay .card-img-overlay-bottom-shaded .form-group, .card.card-overlay .card-img-overlay-centered .form-group {
+      margin-left: 30%;
+      margin-right: 30%; } }
 
 @media (max-width: 543px) {
   .container > .card.card-overlay, .container-padded > .card.card-overlay, .container-padded-h > .card.card-overlay, .card-panel.card-panel-contained > .card.card-overlay, .card-panel .card-panel-body > .card.card-overlay, .card-panel .card-panel-header > .card.card-overlay, .card.header-card-overlay .card-title-overlap > .card.card-overlay, main > blockquote > .card.card-overlay {

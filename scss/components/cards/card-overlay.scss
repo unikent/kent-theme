@@ -246,6 +246,15 @@
         }
     }
 
+    @include media-breakpoint-up(xxl) {
+        .card-img-overlay {
+            .form-group {
+                margin-left:  30%;
+                margin-right: 30%;
+            }
+        }
+    }
+
 }
 
 @include media-breakpoint-down(xs) {
