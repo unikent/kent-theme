@@ -4,7 +4,9 @@
         background-color: #FFFFFF;
         pointer-events: auto;
 
+        p,ul,
         .card-text {
+            font-size: .9rem;
             color:       $body-color;
             font-family: $font-family-sans-serif;
 

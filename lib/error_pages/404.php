@@ -15,7 +15,7 @@ use unikent\kent_theme\KentThemeHelper;
 <div class="card card-overlay header-card-overlay">
 	<div class="card-body">
 		<div class="card-media-wrap">
-			<img class="card-img" src="/media/images/kent-labrynth-3x2.jpg">
+			<img class="card-img" src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/kent-labrynth-3x2.jpg">
 		</div>
 		<div class="card-img-overlay-centered card-img-overlay-tinted">
 			<div class="text-xs-center">

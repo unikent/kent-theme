@@ -630,32 +630,32 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .overlap-container, main > blockquote {
+.container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container::after, .container-padded::after, .container-padded-h::after, .card-panel.card-panel-contained::after, .card-panel .card-panel-body::after, .card-panel .card-panel-header::after, .card.header-card-overlay .overlap-container::after, main > blockquote::after {
+  .container::after, .container-padded::after, .container-padded-h::after, .card-panel.card-panel-contained::after, .card-panel .card-panel-body::after, .card-panel .card-panel-header::after, .card.header-card-overlay .card-title-overlap::after, main > blockquote::after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 544px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .overlap-container, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
       max-width: 576px; } }
   @media (min-width: 768px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .overlap-container, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
       max-width: 720px; } }
   @media (min-width: 992px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .overlap-container, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
       max-width: 940px; } }
   @media (min-width: 1200px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .overlap-container, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
       max-width: 1140px; } }
   @media (min-width: 1712px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .overlap-container, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
       max-width: 1140px; } }
   @media (min-width: 2400px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .overlap-container, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
       max-width: 1140px; } }
 
 .container-fluid {
@@ -2402,21 +2402,21 @@ fieldset[disabled] a {
   .btn-outline-danger.disabled:hover, .btn-outline-danger:disabled:hover {
     border-color: #eba5a3; }
 
-.btn-link, .btn-link-accent {
+.btn-link {
   font-weight: normal;
   color: #005689;
   border-radius: 0; }
-  .btn-link, .btn-link-accent, .btn-link:active, .btn-link-accent:active, .btn-link.active, .active.btn-link-accent, .btn-link:disabled, .btn-link-accent:disabled {
+  .btn-link, .btn-link:active, .btn-link.active, .btn-link:disabled {
     background-color: transparent; }
-  .btn-link, .btn-link-accent, .btn-link:focus, .btn-link-accent:focus, .btn-link:active, .btn-link-accent:active {
+  .btn-link, .btn-link:focus, .btn-link:active {
     border-color: transparent; }
-  .btn-link:hover, .btn-link-accent:hover {
+  .btn-link:hover {
     border-color: transparent; }
-  .btn-link:focus, .btn-link-accent:focus, .btn-link:hover, .btn-link-accent:hover {
+  .btn-link:focus, .btn-link:hover {
     color: #00263d;
     text-decoration: underline;
     background-color: transparent; }
-  .btn-link:disabled:focus, .btn-link-accent:disabled:focus, .btn-link:disabled:hover, .btn-link-accent:disabled:hover {
+  .btn-link:disabled:focus, .btn-link:disabled:hover {
     color: #818a91;
     text-decoration: none; }
 
@@ -6591,7 +6591,7 @@ a.text-primary-light:focus, a.text-primary-light:hover {
 a.text-energy:focus, a.text-energy:hover {
   color: #bf3e1f !important; }
 
-main > .container:first-child, main > .container-padded:first-child, main > .container-padded-h:first-child, main > .card-panel.card-panel-contained:first-child, .card-panel main > .card-panel-body:first-child, .card-panel main > .card-panel-header:first-child, .card.header-card-overlay main > .overlap-container:first-child, main > blockquote:first-child,
+main > .container:first-child, main > .container-padded:first-child, main > .container-padded-h:first-child, main > .card-panel.card-panel-contained:first-child, .card-panel main > .card-panel-body:first-child, .card-panel main > .card-panel-header:first-child, .card.header-card-overlay main > .card-title-overlap:first-child, main > blockquote:first-child,
 main > .content-container:first-child,
 main > .content-header:first-child,
 main > .content-body:first-child,
@@ -6599,7 +6599,7 @@ main > article:first-child {
   margin-top: 32px;
   margin-top: 2rem; }
 
-main > .container:last-child, main > .container-padded:last-child, main > .container-padded-h:last-child, main > .card-panel.card-panel-contained:last-child, .card-panel main > .card-panel-body:last-child, .card-panel main > .card-panel-header:last-child, .card.header-card-overlay main > .overlap-container:last-child, main > blockquote:last-child,
+main > .container:last-child, main > .container-padded:last-child, main > .container-padded-h:last-child, main > .card-panel.card-panel-contained:last-child, .card-panel main > .card-panel-body:last-child, .card-panel main > .card-panel-header:last-child, .card.header-card-overlay main > .card-title-overlap:last-child, main > blockquote:last-child,
 main > .content-container:last-child,
 main > .content-header:last-child,
 main > .content-body:last-child,
@@ -7001,15 +7001,15 @@ figure figcaption,
   padding: 0.25rem 0 0 0.5rem;
   margin: 0; }
 
-.container figure, .container-padded figure, .container-padded-h figure, .card-panel.card-panel-contained figure, .card-panel .card-panel-body figure, .card-panel .card-panel-header figure, .card.header-card-overlay .overlap-container figure, main > blockquote figure, .content-container figure {
+.container figure, .container-padded figure, .container-padded-h figure, .card-panel.card-panel-contained figure, .card-panel .card-panel-body figure, .card-panel .card-panel-header figure, .card.header-card-overlay .card-title-overlap figure, main > blockquote figure, .content-container figure {
   clear: none;
   overflow: visible;
   margin-top: 0; }
-  .container figure figcaption, .container-padded figure figcaption, .container-padded-h figure figcaption, .card-panel.card-panel-contained figure figcaption, .card-panel .card-panel-body figure figcaption, .card-panel .card-panel-header figure figcaption, .card.header-card-overlay .overlap-container figure figcaption, main > blockquote figure figcaption, .content-container figure figcaption {
+  .container figure figcaption, .container-padded figure figcaption, .container-padded-h figure figcaption, .card-panel.card-panel-contained figure figcaption, .card-panel .card-panel-body figure figcaption, .card-panel .card-panel-header figure figcaption, .card.header-card-overlay .card-title-overlap figure figcaption, main > blockquote figure figcaption, .content-container figure figcaption {
     padding-left: 0; }
-  .container figure.figure-left, .container-padded figure.figure-left, .container-padded-h figure.figure-left, .card-panel.card-panel-contained figure.figure-left, .card-panel .card-panel-body figure.figure-left, .card-panel .card-panel-header figure.figure-left, .card.header-card-overlay .overlap-container figure.figure-left, main > blockquote figure.figure-left, .container figure.figure-pull-left, .container-padded figure.figure-pull-left, .container-padded-h figure.figure-pull-left, .card-panel.card-panel-contained figure.figure-pull-left, .card-panel .card-panel-body figure.figure-pull-left, .card-panel .card-panel-header figure.figure-pull-left, .card.header-card-overlay .overlap-container figure.figure-pull-left, main > blockquote figure.figure-pull-left, .content-container figure.figure-left, .content-container figure.figure-pull-left {
+  .container figure.figure-left, .container-padded figure.figure-left, .container-padded-h figure.figure-left, .card-panel.card-panel-contained figure.figure-left, .card-panel .card-panel-body figure.figure-left, .card-panel .card-panel-header figure.figure-left, .card.header-card-overlay .card-title-overlap figure.figure-left, main > blockquote figure.figure-left, .container figure.figure-pull-left, .container-padded figure.figure-pull-left, .container-padded-h figure.figure-pull-left, .card-panel.card-panel-contained figure.figure-pull-left, .card-panel .card-panel-body figure.figure-pull-left, .card-panel .card-panel-header figure.figure-pull-left, .card.header-card-overlay .card-title-overlap figure.figure-pull-left, main > blockquote figure.figure-pull-left, .content-container figure.figure-left, .content-container figure.figure-pull-left {
     clear: left; }
-  .container figure.figure-right, .container-padded figure.figure-right, .container-padded-h figure.figure-right, .card-panel.card-panel-contained figure.figure-right, .card-panel .card-panel-body figure.figure-right, .card-panel .card-panel-header figure.figure-right, .card.header-card-overlay .overlap-container figure.figure-right, main > blockquote figure.figure-right, .container figure.figure-pull-right, .container-padded figure.figure-pull-right, .container-padded-h figure.figure-pull-right, .card-panel.card-panel-contained figure.figure-pull-right, .card-panel .card-panel-body figure.figure-pull-right, .card-panel .card-panel-header figure.figure-pull-right, .card.header-card-overlay .overlap-container figure.figure-pull-right, main > blockquote figure.figure-pull-right, .content-container figure.figure-right, .content-container figure.figure-pull-right {
+  .container figure.figure-right, .container-padded figure.figure-right, .container-padded-h figure.figure-right, .card-panel.card-panel-contained figure.figure-right, .card-panel .card-panel-body figure.figure-right, .card-panel .card-panel-header figure.figure-right, .card.header-card-overlay .card-title-overlap figure.figure-right, main > blockquote figure.figure-right, .container figure.figure-pull-right, .container-padded figure.figure-pull-right, .container-padded-h figure.figure-pull-right, .card-panel.card-panel-contained figure.figure-pull-right, .card-panel .card-panel-body figure.figure-pull-right, .card-panel .card-panel-header figure.figure-pull-right, .card.header-card-overlay .card-title-overlap figure.figure-pull-right, main > blockquote figure.figure-pull-right, .content-container figure.figure-right, .content-container figure.figure-pull-right {
     clear: right; }
 
 .content-container .content-main figure.full-width {
@@ -7119,15 +7119,21 @@ figure figcaption,
       max-height: 3000px;
       max-width: 3000px; }
 
+.plyr {
+  width: 100%; }
+
 .video-launcher {
   position: relative; }
   .video-launcher > .video-player {
-    display: none; }
+    transition: max-height 300ms;
+    max-height: 0; }
   .video-launcher > img {
     display: block;
     max-width: 100%; }
+  .video-launcher.playing.playing.playing:before {
+    padding-top: 0; }
   .video-launcher.playing.playing.playing > .video-player {
-    display: block; }
+    max-height: 100vh; }
   .video-launcher.playing.playing.playing > img {
     display: none; }
   .video-launcher.playing.playing.playing::after {
@@ -7373,36 +7379,6 @@ figure figcaption,
     background-color: #937227;
     border-color: #937227; }
 
-.btn-label {
-  color: #737373;
-  background-color: #EFEFEF;
-  border-color: #EFEFEF;
-  border-radius: 4px;
-  padding: 5.6px 8.8px;
-  padding: 0.35rem 0.55rem; }
-  .btn-label:focus, .btn-label.focus, .btn-label:active, .btn-label.active,
-  .open > .btn-label.dropdown-toggle {
-    color: #737373;
-    background-color: white;
-    border-color: white; }
-  .btn-label:hover {
-    color: #737373;
-    background-color: white;
-    border-color: white;
-    text-decoration: underline; }
-  .btn-label:active, .btn-label.active,
-  .open > .btn-label.dropdown-toggle {
-    background-image: none; }
-  .btn-label.disabled:focus, .btn-label.disabled.focus, .btn-label:disabled:focus, .btn-label:disabled.focus,
-  fieldset[disabled] .btn-label:focus,
-  fieldset[disabled] .btn-label.focus {
-    background-color: #EFEFEF;
-    border-color: #EFEFEF; }
-  .btn-label.disabled:hover, .btn-label:disabled:hover,
-  fieldset[disabled] .btn-label:hover {
-    background-color: #EFEFEF;
-    border-color: #EFEFEF; }
-
 .btn-info {
   color: #fff;
   background-color: #05345C;
@@ -7510,9 +7486,6 @@ figure figcaption,
   fieldset[disabled] .btn-danger:hover {
     background-color: #d9534f;
     border-color: #d9534f; }
-
-.btn-link-accent {
-  color: #937227; }
 
 .btn-gray-outline {
   color: #AAAAAA;
@@ -8558,8 +8531,6 @@ input[type=number]::-webkit-outer-spin-button {
 .tab-content > .tab-pane {
   padding: 16px;
   padding: 1rem; }
-  .tab-content > .tab-pane.in, .tab-content > .tab-pane.active {
-    border-bottom: 1px solid #DDDDDD; }
 
 .tab-content h2:first-of-type {
   margin-top: 0; }
@@ -8570,7 +8541,8 @@ input[type=number]::-webkit-outer-spin-button {
   background-color: #671115;
   color: #FFFFFF;
   padding: 0;
-  font-size: 14.4px; }
+  font-size: 14.4px;
+  height: 48px; }
   #kentBar.kent-bar a.navbar-brand,
   #kentBar.audience-bar a.navbar-brand {
     position: absolute;
@@ -8585,8 +8557,6 @@ input[type=number]::-webkit-outer-spin-button {
     display: block; }
   #kentBar.kent-bar .tag-line,
   #kentBar.audience-bar .tag-line {
-    padding: 4.8px 0 4.8px 32px;
-    padding: 0.3rem 0 0.3rem 2rem;
     display: none; }
   #kentBar.kent-bar button,
   #kentBar.audience-bar button {
@@ -8623,16 +8593,27 @@ input[type=number]::-webkit-outer-spin-button {
     position: relative;
     z-index: 1; }
   @media (min-width: 768px) {
-    #kentBar.kent-bar a.navbar-brand, #kentBar.kent-bar button,
-    #kentBar.audience-bar a.navbar-brand,
-    #kentBar.audience-bar button {
-      display: none; }
-    #kentBar.kent-bar .tag-line,
-    #kentBar.audience-bar .tag-line {
-      display: inline-block; }
-    #kentBar.kent-bar.in .audience-nav-links,
-    #kentBar.audience-bar.in .audience-nav-links {
-      height: auto; } }
+    #kentBar.kent-bar,
+    #kentBar.audience-bar {
+      height: 30px; }
+      #kentBar.kent-bar a.navbar-brand, #kentBar.kent-bar button,
+      #kentBar.audience-bar a.navbar-brand,
+      #kentBar.audience-bar button {
+        display: none; }
+      #kentBar.kent-bar .tag-line,
+      #kentBar.audience-bar .tag-line {
+        display: block;
+        position: absolute;
+        top: .3rem;
+        left: 2rem;
+        padding: 0; }
+      #kentBar.kent-bar.in .audience-nav-links,
+      #kentBar.audience-bar.in .audience-nav-links {
+        height: auto; } }
+
+.show-kentbar-menu {
+  overflow-y: hidden;
+  height: 100%; }
 
 .global-header {
   position: relative;
@@ -10831,12 +10812,18 @@ button.beta-toggler {
       @media (min-width: 1200px) {
         .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-centered .card-subtitle {
           font-size: 2.8rem; } }
+      @media (min-width: 1712px) {
+        .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-centered .card-subtitle {
+          font-size: 4rem; } }
     @media (min-width: 768px) {
       .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-centered .card-text {
         font-size: 1.3rem; } }
     @media (min-width: 992px) {
       .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-centered .card-text {
         font-size: 1.5rem; } }
+    @media (min-width: 1712px) {
+      .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-centered .card-text {
+        font-size: 2.1rem; } }
     .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-centered .card-text, .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-centered .card-subtitle {
       text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
       color: #FFFFFF; }
@@ -10921,7 +10908,7 @@ button.beta-toggler {
       margin-right: 15%; } }
 
 @media (max-width: 543px) {
-  .container > .card.card-overlay, .container-padded > .card.card-overlay, .container-padded-h > .card.card-overlay, .card-panel.card-panel-contained > .card.card-overlay, .card-panel .card-panel-body > .card.card-overlay, .card-panel .card-panel-header > .card.card-overlay, .card.header-card-overlay .overlap-container > .card.card-overlay, main > blockquote > .card.card-overlay {
+  .container > .card.card-overlay, .container-padded > .card.card-overlay, .container-padded-h > .card.card-overlay, .card-panel.card-panel-contained > .card.card-overlay, .card-panel .card-panel-body > .card.card-overlay, .card-panel .card-panel-header > .card.card-overlay, .card.header-card-overlay .card-title-overlap > .card.card-overlay, main > blockquote > .card.card-overlay {
     margin-right: -15px;
     margin-left: -15px; } }
 
@@ -10932,7 +10919,7 @@ button.beta-toggler {
 .card.header-card-overlay + .card-panel.card-panel-contained, .card-panel
 .card.header-card-overlay + .card-panel-body, .card-panel
 .card.header-card-overlay + .card-panel-header, .card.header-card-overlay
-.card.header-card-overlay + .overlap-container, main >
+.card.header-card-overlay + .card-title-overlap, main >
 .card.header-card-overlay + blockquote,
 .card.header-card-overlay + .content-header,
 .card.header-card-overlay + .content-container {
@@ -10967,9 +10954,9 @@ button.beta-toggler {
 
 .card.header-card-overlay .card-title-overlap {
   position: relative;
-  margin: 0 15px;
   padding: 16px 15px;
-  padding: 1rem 15px; }
+  padding: 1rem 15px;
+  z-index: 1; }
   .card.header-card-overlay .card-title-overlap .card-subtitle {
     color: #937227;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -10980,7 +10967,17 @@ button.beta-toggler {
       padding: 2rem 15px; } }
   @media (min-width: 992px) {
     .card.header-card-overlay .card-title-overlap {
-      padding: 2rem; } }
+      padding: 2rem;
+      max-width: calc(940px + 2rem); } }
+  @media (min-width: 1200px) {
+    .card.header-card-overlay .card-title-overlap {
+      position: absolute;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.85);
+      left: 0;
+      right: 0;
+      padding: 1rem 2rem 0.5rem 2rem;
+      max-width: calc(1140px + 2rem); } }
 
 .card.header-card-overlay .form-group {
   margin-bottom: 0; }
@@ -11003,24 +11000,34 @@ button.beta-toggler {
     .card.header-card-overlay .form-group {
       margin-bottom: 1rem; } }
 
+@media (min-width: 544px) {
+  .card.header-card-overlay .overlap-content-container {
+    max-width: none;
+    padding-left: 5%;
+    padding-right: 5%; } }
+
+@media (min-width: 768px) {
+  .card.header-card-overlay .overlap-content-container {
+    max-width: none;
+    padding-left: 12%;
+    padding-right: 12%; } }
+
+@media (min-width: 992px) {
+  .card.header-card-overlay .overlap-content-container {
+    max-width: none;
+    padding-left: calc(5% + 15px);
+    padding-right: calc(5% + 30px); } }
+
 @media (min-width: 1200px) {
-  .card.header-card-overlay .card-title-overlap {
-    position: absolute;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.85);
-    left: 0;
-    right: 0;
+  .card.header-card-overlay .overlap-content-container {
+    margin-left: calc(9% - 1rem);
+    margin-right: calc(9% + 15px - 1rem);
     padding: 1rem 2rem 0.5rem 2rem; } }
 
-.card.header-card-overlay .overlap-container {
-  z-index: 1;
-  margin: auto; }
-  @media (min-width: 992px) {
-    .card.header-card-overlay .overlap-container {
-      max-width: calc(940px + 1rem); } }
-  @media (min-width: 1200px) {
-    .card.header-card-overlay .overlap-container {
-      max-width: calc(1140px + 1rem); } }
+@media (min-width: 1328px) {
+  .card.header-card-overlay .overlap-content-container {
+    margin: 0 auto;
+    max-width: calc(1140px + 2rem); } }
 
 .card.header-card-overlay .card-footer {
   padding: 0 8px;
@@ -11069,71 +11076,67 @@ button.beta-toggler {
       justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-top: 16px;
-  margin-top: 1rem;
-  margin-bottom: 16px;
-  margin-bottom: 1rem; }
+  margin: 16px -15px;
+  margin: 1rem -15px; }
+  @media (min-width: 544px) {
+    .spaced-links-container {
+      margin: 1rem 0; } }
 
 .spaced-links-inner-container {
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  width: 100%;
   -ms-flex-positive: 1;
       flex-grow: 1; }
-  @media (max-width: 767px) {
+  @media (min-width: 544px) {
     .spaced-links-inner-container {
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap; } }
-  @media (max-width: 991px) {
-    .spaced-links-inner-container {
-      width: 100%; } }
-  .spaced-links-inner-container .spaced-links-item {
-    padding: 7.6px 16px;
-    padding: 0.475rem 1rem; }
-    @media (max-width: 991px) {
-      .spaced-links-inner-container .spaced-links-item {
-        width: 100%;
-        display: block;
-        padding: 0.75rem 1rem;
-        background: #F5F5F5;
-        border-bottom: 1px solid #CCCCCC; }
-        .spaced-links-inner-container .spaced-links-item:after {
-          position: absolute;
-          right: 1rem; } }
-  .spaced-links-inner-container .spaced-links-item-btn {
-    width: 45%; }
-    @media (max-width: 991px) {
-      .spaced-links-inner-container .spaced-links-item-btn {
-        width: 100%; } }
-
-.spaced-links {
-  display: block;
-  padding: 12px 16px;
-  padding: 0.75rem 1rem;
-  background: #F5F5F5;
-  border-bottom: 1px solid #CCCCCC; }
-  .spaced-links:after {
-    position: absolute;
-    right: 16px;
-    right: 1rem; }
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap; } }
   @media (min-width: 768px) {
-    .spaced-links {
-      text-align: center;
-      float: none;
-      width: 19%;
-      vertical-align: top;
-      padding: 0;
-      background: none;
-      border: none; }
-      .spaced-links:after {
-        position: relative;
-        right: auto; } }
+    .spaced-links-inner-container {
+      width: auto; } }
+  .spaced-links-inner-container .spaced-links-item {
+    width: 100%;
+    display: block;
+    padding: 12px 16px;
+    padding: 0.75rem 1rem;
+    background: #F5F5F5;
+    border-bottom: 1px solid #CCCCCC; }
+    .spaced-links-inner-container .spaced-links-item i {
+      vertical-align: top; }
+    .spaced-links-inner-container .spaced-links-item:after {
+      font-family: "kentfont", sans-serif;
+      content: "";
+      position: absolute;
+      right: 16px;
+      right: 1rem; }
+    @media (min-width: 544px) {
+      .spaced-links-inner-container .spaced-links-item {
+        text-align: center;
+        padding: 0.475rem 1rem;
+        background: none;
+        border: none; }
+        .spaced-links-inner-container .spaced-links-item:after {
+          display: none; } }
+  .spaced-links-inner-container .spaced-links-item-btn {
+    width: 100%; }
+    @media (min-width: 992px) {
+      .spaced-links-inner-container .spaced-links-item-btn {
+        margin-right: 1rem; }
+        .spaced-links-inner-container .spaced-links-item-btn:last-child {
+          margin-right: 0; } }
 
 .card.editorial .card-title-wrap {
   background-color: #FFFFFF;
   pointer-events: auto; }
+  .card.editorial .card-title-wrap p, .card.editorial .card-title-wrap ul,
   .card.editorial .card-title-wrap .card-text {
+    font-size: 14.4px;
+    font-size: .9rem;
     color: #171717;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   .card.editorial .card-title-wrap .card-title {
@@ -12299,7 +12302,7 @@ blockquote.pull-quote {
   @media (min-width: 768px) {
     .global-footer .global-footer-middle {
       padding: 3rem 0; }
-      .global-footer .global-footer-middle .container, .global-footer .global-footer-middle .container-padded, .global-footer .global-footer-middle .container-padded-h, .global-footer .global-footer-middle .card-panel.card-panel-contained, .global-footer .global-footer-middle .card-panel .card-panel-body, .card-panel .global-footer .global-footer-middle .card-panel-body, .global-footer .global-footer-middle .card-panel .card-panel-header, .card-panel .global-footer .global-footer-middle .card-panel-header, .global-footer .global-footer-middle .card.header-card-overlay .overlap-container, .card.header-card-overlay .global-footer .global-footer-middle .overlap-container, .global-footer .global-footer-middle main > blockquote {
+      .global-footer .global-footer-middle .container, .global-footer .global-footer-middle .container-padded, .global-footer .global-footer-middle .container-padded-h, .global-footer .global-footer-middle .card-panel.card-panel-contained, .global-footer .global-footer-middle .card-panel .card-panel-body, .card-panel .global-footer .global-footer-middle .card-panel-body, .global-footer .global-footer-middle .card-panel .card-panel-header, .card-panel .global-footer .global-footer-middle .card-panel-header, .global-footer .global-footer-middle .card.header-card-overlay .card-title-overlap, .card.header-card-overlay .global-footer .global-footer-middle .card-title-overlap, .global-footer .global-footer-middle main > blockquote {
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         padding-bottom: 3rem; }
       .global-footer .global-footer-middle .col-md-3 .footer-section-title {
@@ -12321,7 +12324,7 @@ blockquote.pull-quote {
     padding: 0.5rem 0 0;
     background: #FFFFFF;
     color: #171717; }
-    .global-footer .global-footer-base .container, .global-footer .global-footer-base .container-padded, .global-footer .global-footer-base .container-padded-h, .global-footer .global-footer-base .card-panel.card-panel-contained, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header, .global-footer .global-footer-base .card.header-card-overlay .overlap-container, .card.header-card-overlay .global-footer .global-footer-base .overlap-container, .global-footer .global-footer-base main > blockquote {
+    .global-footer .global-footer-base .container, .global-footer .global-footer-base .container-padded, .global-footer .global-footer-base .container-padded-h, .global-footer .global-footer-base .card-panel.card-panel-contained, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header, .global-footer .global-footer-base .card.header-card-overlay .card-title-overlap, .card.header-card-overlay .global-footer .global-footer-base .card-title-overlap, .global-footer .global-footer-base main > blockquote {
       padding: 0; }
     .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
       color: #171717;
@@ -12334,7 +12337,7 @@ blockquote.pull-quote {
       .global-footer .global-footer-base {
         padding: 0.25rem 0;
         text-align: right; }
-        .global-footer .global-footer-base .container, .global-footer .global-footer-base .container-padded, .global-footer .global-footer-base .container-padded-h, .global-footer .global-footer-base .card-panel.card-panel-contained, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header, .global-footer .global-footer-base .card.header-card-overlay .overlap-container, .card.header-card-overlay .global-footer .global-footer-base .overlap-container, .global-footer .global-footer-base main > blockquote {
+        .global-footer .global-footer-base .container, .global-footer .global-footer-base .container-padded, .global-footer .global-footer-base .container-padded-h, .global-footer .global-footer-base .card-panel.card-panel-contained, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header, .global-footer .global-footer-base .card.header-card-overlay .card-title-overlap, .card.header-card-overlay .global-footer .global-footer-base .card-title-overlap, .global-footer .global-footer-base main > blockquote {
           padding: 0 15px; }
         .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
           padding: 0;

@@ -113,12 +113,6 @@
     @include kent-button-variant(#FFFFFF, $brand-accent, $brand-accent);
 }
 
-.btn-label {
-    @include kent-button-variant(#737373, #EFEFEF, #EFEFEF);
-    border-radius: 4px;
-    padding:       0.35rem 0.55rem;
-}
-
 .btn-info {
     @include kent-button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
 }
@@ -135,10 +129,6 @@
     @include kent-button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
 
-.btn-link-accent {
-    @extend .btn-link;
-    color: $brand-accent;
-}
 .btn-gray-outline {
     @include button-outline-variant(#AAAAAA);
 }

@@ -84,6 +84,9 @@
             @include media-breakpoint-up(xl) {
                 font-size: 2.8rem;
             }
+            @include media-breakpoint-up(xxl) {
+                font-size: 4rem;
+            }
         }
         .card-text {
 
@@ -92,6 +95,9 @@
             }
             @include media-breakpoint-up(lg) {
                 font-size: 1.5rem;
+            }
+            @include media-breakpoint-up(xxl) {
+                font-size: 2.1rem;
             }
         }
 

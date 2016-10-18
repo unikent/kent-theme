@@ -6,6 +6,8 @@
     padding:          0;
     // set px size as this shouldn't change when base font is bumped
     font-size:        14.4px;
+    height: $kentbar-height;
+
 
     a.navbar-brand {
         position: absolute;
@@ -18,7 +20,6 @@
         display:   block;
     }
     .tag-line {
-        padding: 0.3rem 0 0.3rem 2rem;
         display: none;
     }
 
@@ -63,12 +64,18 @@
     }
 
     @include media-breakpoint-up(md) {
+        height: $kentbar-height-desktop;
+
         a.navbar-brand, button {
             display: none;
         }
 
         .tag-line {
-            display: inline-block;
+            display: block;
+            position: absolute;
+            top: .3rem;
+            left: 2rem;
+            padding: 0;
         }
 
         &.in{
@@ -77,4 +84,9 @@
             }
         }
     }
+}
+
+.show-kentbar-menu{
+    overflow-y: hidden;
+    height: 100%;
 }
