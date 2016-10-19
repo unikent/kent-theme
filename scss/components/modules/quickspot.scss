@@ -112,3 +112,19 @@
         margin-bottom: 0px;
     }
 }
+
+// Highlight quickspot selected results
+.cards-list .quickspot-inline-result.selected .card, 
+.quickspot-inline-result.selected .card.card-list-item {
+    background: #fdfdfd;
+
+    &::before {
+        position:absolute;
+        top:0;
+        left:0;
+        background: $brand-primary;
+        content: "";
+        width: 4px;
+        height:100%;
+    }
+}
