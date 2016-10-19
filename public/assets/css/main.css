@@ -10152,17 +10152,6 @@ button.beta-toggler {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
 
-.cards-list .quickspot-inline-result.selected .card {
-  background: #fdfdfd; }
-  .cards-list .quickspot-inline-result.selected .card::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #05345C;
-    content: "";
-    width: 4px;
-    height: 100%; }
-
 .card-panel {
   padding: 48px 8px 32px;
   padding: 3rem 0.5rem 2rem;
@@ -12524,5 +12513,26 @@ a.tag-tertiary:focus, a.tag-tertiary:hover {
 /* style helper */
 .quickspot-container .form-group {
   margin-bottom: 0px; }
+
+.cards-list .quickspot-inline-result.selected .card,
+.quickspot-inline-result.selected .card.card-list-item,
+.quickspot-inline-result.selected .card-panel.cards-list .card-panel-body .card, .card-panel.cards-list .card-panel-body
+.quickspot-inline-result.selected .card,
+.quickspot-inline-result.selected .card-panel .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list
+.quickspot-inline-result.selected .card {
+  background: #fdfdfd; }
+  .cards-list .quickspot-inline-result.selected .card::before,
+  .quickspot-inline-result.selected .card.card-list-item::before,
+  .quickspot-inline-result.selected .card-panel.cards-list .card-panel-body .card::before, .card-panel.cards-list .card-panel-body
+  .quickspot-inline-result.selected .card::before,
+  .quickspot-inline-result.selected .card-panel .card-panel-body .card-panel-list .card::before, .card-panel .card-panel-body .card-panel-list
+  .quickspot-inline-result.selected .card::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #05345C;
+    content: "";
+    width: 4px;
+    height: 100%; }
 
 /*# sourceMappingURL=main.css.map */
