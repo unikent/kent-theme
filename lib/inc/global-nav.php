@@ -31,12 +31,12 @@ $global_nav_links = array(
 		array(
 			'title' 		=>	'Undergraduate',
 			'description' 	=> 	'Our degrees gain the 5th highest score in the NSS',
-			'url' 			=>	'//www.kent.ac.uk/courses/undergraduate'
+			'url' 			=>	HOME_URL . "/courses/undergraduate"
 		),
 		array(
 			'title' 		=>	'Postgraduate',
 			'description' 	=> 	'Stimulating teaching and a dynamic community',
-			'url' 			=>	'//www.kent.ac.uk/courses/postgraduate'
+			'url' 			=>	HOME_URL . "/courses/postgraduate"
 		),
 		array(
 			'title' 		=>	'International',
