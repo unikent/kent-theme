@@ -8461,7 +8461,8 @@ input[type=number]::-webkit-outer-spin-button {
     border-bottom: 1px solid #DDDDDD; }
     .nav.nav-tabs-vertical .nav-item .nav-link {
       padding: 8px 0;
-      padding: 0.5rem 0; }
+      padding: 0.5rem 0;
+      width: 100%; }
       .nav.nav-tabs-vertical .nav-item .nav-link.active {
         margin-left: -8px;
         margin-left: -0.5rem;
@@ -10150,6 +10151,17 @@ button.beta-toggler {
     margin-left: 1rem;
     margin-bottom: 16px;
     margin-bottom: 1rem; }
+
+.cards-list .quickspot-inline-result.selected .card {
+  background: #fdfdfd; }
+  .cards-list .quickspot-inline-result.selected .card::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #671115;
+    content: "";
+    width: 4px;
+    height: 100%; }
 
 .card-panel {
   padding: 48px 8px 32px;
