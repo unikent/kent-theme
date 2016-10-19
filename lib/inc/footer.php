@@ -73,7 +73,7 @@ extract($footer_config);
 						?>
 						<div class="col-md-3">
 							<?php foreach ($column as $section){
-								$slug = strtolower(preg_replace('/[^a-zA-Z]*/','',str_replace(' ','-',$section['title'])));
+								$slug = strtolower(preg_replace('/[^a-zA-Z-]*/','',str_replace(' ','-',$section['title'])));
 							?>
 							<h5 id="footer-<?php echo $slug; ?>-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-<?php echo $slug; ?>" aria-controls="footer-<?php echo $slug; ?>" aria-expanded="false" data-parent=".global-footer"><?php echo $section['title']; ?></h5>
 							<nav id="footer-<?php echo $slug; ?>" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-<?php echo $slug; ?>-heading">
