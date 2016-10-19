@@ -1,4 +1,7 @@
-<?php use unikent\kent_theme\KentThemeHelper; ?>
+<?php use unikent\kent_theme\KentThemeHelper;
+require 'footer-nav.php';
+extract($footer_config);
+?>
 		</main>
 		<footer id="footer" class="global-footer" role="region" aria-labelledby="footer_sr">
 			<h2 id="footer_sr" class="sr-only">Page Footer</h2>
@@ -65,88 +68,42 @@
 			<section class="global-footer-middle">
 				<div class="container">
 					<div class="row">
+						<?php
+						foreach($middle['sections'] as $index => $column){
+						?>
 						<div class="col-md-3">
-							<h5 id="footer-explore-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-explore" aria-controls="footer-explore" aria-expanded="false" data-parent=".global-footer">Explore</h5>
-							<nav id="footer-explore" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-explore-heading">
-								<a href="//www.kent.ac.uk/european/">The UK's European University</a>
-								<a href="//www.kent.ac.uk/about/impact/">Making a difference</a>
-								<a href="//www.kent.ac.uk/locations/">Superb locations</a>
-								<a href="//www.kent.ac.uk/accommodation/">Accommodation and facilities</a>
-								<a href="//www.kent.ac.uk/maps/">Maps and directions</a>
-								<a href="//www.kent.ac.uk/departments/academic/">Departments and schools</a>
-								<a href="/news/">News Centre</a>
-								<a href="//www.kent.ac.uk/jobs/">Jobs and vacancies</a>
+							<?php foreach ($column as $section){
+								$slug = strtolower(preg_replace('/[^a-zA-Z]*/','',str_replace(' ','-',$section['title'])));
+							?>
+							<h5 id="footer-<?php echo $slug; ?>-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-<?php echo $slug; ?>" aria-controls="footer-<?php echo $slug; ?>" aria-expanded="false" data-parent=".global-footer"><?php echo $section['title']; ?></h5>
+							<nav id="footer-<?php echo $slug; ?>" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-<?php echo $slug; ?>-heading">
+								<?php foreach ($section['links'] as $link){
+								?>
+								<a role="menuitem" href="<?php echo $link['url']; ?>"><?php echo $link['title']; ?></a>
+								<?php
+								}
+								?>
 							</nav>
-							<h5 id="footer-research-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-research" aria-controls="footer-research" aria-expanded="false" data-parent=".global-footer">Research</h5>
-							<nav id="footer-research" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-research-heading">
-								<a href="//www.kent.ac.uk/research/" role="menuitem">Academic excellence</a>
-								<a href="//www.kent.ac.uk/research/impact/" role="menuitem">Research impact</a>
-								<a href="//www.kent.ac.uk/research/expertise/" role="menuitem">Find an expert</a>
-								<a href="//www.kent.ac.uk/enterprise/" role="menuitem">Innovation and enterprise</a>
-								<a href="//www.kent.ac.uk/enterprise/practical-partnering/" role="menuitem">Business partnerships</a>
-								<a href="//www.kent.ac.uk/courses/postgraduate/search/programme_type/research" role="menuitem">Research degrees</a>
-							</nav>
-						</div>
-						<div class="col-md-3">
-							<h5 id="footer-study-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-study" aria-controls="footer-study" aria-expanded="false" data-parent=".global-footer">Study</h5>
-							<nav id="footer-study" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-study-heading">
-								<a href="//www.kent.ac.uk/courses/" role="menuitem">Inspiring teaching</a>
-								<a href="//www.kent.ac.uk/courses/undergraduate/" role="menuitem">Undergraduates</a>
-								<a href="//www.kent.ac.uk/courses/postgraduate/" role="menuitem">Postgraduates</a>
-								<a href="//www.kent.ac.uk/internationalstudent/" role="menuitem">International students</a>
-								<a href="//www.kent.ac.uk/courses/part-time/" role="menuitem">Part-time and short courses</a>
-								<a href="//www.kent.ac.uk/goabroad/" role="menuitem">Study abroad</a>
-								<a href="//www.kent.ac.uk/courses/funding/" role="menuitem">Fees and funding</a>
-								<a href="//www.kent.ac.uk/scholarships/" role="menuitem">Scholarships</a>
-							</nav>
-							<h5 id="footer-governance-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-governance" aria-controls="footer-governance" aria-expanded="false" data-parent=".global-footer">Governance and planning</h5>
-							<nav id="footer-governance" class="footer-section footer-section-links collapse-sm-down" role="menu">
-								<a href="//www.kent.ac.uk/about/plan/" role="menuitem">Planning and strategy</a>
-								<a href="//www.kent.ac.uk/governance/" role="menuitem">Governance</a>
-								<a href="//www.kent.ac.uk/ovc/" role="menuitem">Office of the Vice-Chancellor</a>
-							</nav>
-						</div>
-						<div class="col-md-3">
-							<h5 id="footer-whats-on-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-whats-on" aria-expanded="false" aria-controls="footer-whats-on" data-parent=".global-footer">What's on?</h5>
-							<nav id="footer-whats-on" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-whats-on-heading">
-								<a href="//www.kent.ac.uk/calendar/" role="menuitem">Events calendar</a>
-								<a href="//www.thegulbenkian.co.uk" role="menuitem">Gulbenkian - theatre and cinema</a>
-								<a href="//www.kent.ac.uk/music/whatson.html" role="menuitem">Coyler-Fergusson - music at Kent</a>
-								<a href="//www.kent.ac.uk/sports/" role="menuitem">Sports Centre</a>
-							</nav>
-							<h5 id="footer-information-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-information" aria-expanded="false" aria-controls="footer-information" data-parent=".global-footer">Information for</h5>
-							<nav id="footer-information" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-information-heading">
-								<a href="//www.kent.ac.uk/applicants/" role="menuitem">Applicants</a>
-								<a href="//www.kent.ac.uk/gettingstarted/" role="menuitem">Arriving students</a>
-								<a href="//www.kent.ac.uk/student/" role="menuitem">Current students</a>
-								<a href="//www.kent.ac.uk/internationalstudent/" role="menuitem">International students</a>
-								<a href="//www.kent.ac.uk/parents/" role="menuitem">Parents and family</a>
-								<a href="//www.kent.ac.uk/alumni/" role="menuitem">Alumni (former students)</a>
-								<a href="//www.kent.ac.uk/campusonline/" role="menuitem">Staff</a>
-							</nav>
-						</div>
-						<div class="col-md-3">
-							<h5 id="footer-giving-heading" class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-giving" aria-controls="footer-giving" aria-expanded="false" data-parent=".global-footer">Giving to Kent</h5>
-							<nav id="footer-giving" class="footer-section footer-section-links collapse-sm-down" role="menu" aria-labelledby="footer-giving-heading">
-								<a href="//www.kent.ac.uk/giving/" role="menuitem">Support us</a>
-								<a href="//www.kent.ac.uk/giving/give/" role="menuitem">How to give</a>
-								<a href="//www.kent.ac.uk/giving/lawcampaign/" role="menuitem">Kent Law Campaign</a>
-								<a href="//www.kent.ac.uk/giving/opportunityfund/" role="menuitem">Kent Opportunity Fund</a>
-								<a href="//www.kent.ac.uk/giving/hkcp/" role="menuitem">Hong Kong and China portal</a>
-							</nav>
+							<?php
+							}
+							?>
+							<?php if($index == (count($middle['sections']) -1)){
+							?>
 							<nav id="footer-social" class="footer-section footer-section-social content-social" role="menu" aria-labelledby="footer-social-heading">
-								<a title="facebook" href="//www.facebook.com/UniversityofKent" class="kf-facebook" role="menuitem"><span class="sr-only">Connect with us on Facebook</span></a>
-								<a title="twitter" href="//twitter.com/unikent" class="kf-twitter" role="menuitem"><span class="sr-only">Follow us on Twitter</span></a>
-								<a title="linkedin" href="//www.linkedin.com/company/university-of-kent" class="kf-linkedin" role="menuitem"><span class="sr-only">Connect with us on LinkedIn</span></a>
-								<a title="youtube" href="//www.youtube.com/user/UniversityofKent" class="kf-youtube" role="menuitem"><span class="sr-only">Subscribe to us on Youtube</span></a>
-								<a title="flickr" href="//www.flickr.com/photos/universityofkent/" class="kf-flickr" role="menuitem"><span class="sr-only">Follow us on Flickr</span></a>
-								<a title="rss" href="//www.kent.ac.uk/communications/rss/" class="kf-rss" role="menuitem"><span class="sr-only">Subscribe via RSS</span></a>
-								<a title="tumblr" href="//universitykent.tumblr.com" class="kf-tumblr" role="menuitem"><span class="sr-only">Follow us on Tumblr</span></a>
-								<a title="instagram" href="//instagram.com/unikentlive" class="kf-instagram" role="menuitem"><span class="sr-only">Follow us on Instagram</span></a>
-								<a title="pinterest" href="//www.pinterest.com/KentUni/" class="kf-pinterest" role="menuitem"><span class="sr-only">Follow us on Pinterest</span></a>
+							<?php foreach ($middle['social'] as $network => $link){
+								?>
+								<a title="<?php echo $network; ?>" role="menuitem" href="<?php echo $link; ?>" class="kf-<?php echo $network; ?>"><span class="sr-only"><?php echo $link['title']; ?></span></a>
+								<?php
+							}
+							?>
 							</nav>
+							<?php
+							}
+							?>
 						</div>
-					</div>
+						<?php
+						}
+						?>
 				</div>
 			</section>
 			<section class="global-footer-bottom">
@@ -166,7 +123,13 @@
 			</section>
 			<section class="global-footer-base">
 				<div class="container" role="menu">
-					<a href="<?php echo HOME_URL; ?>" role="menuitem">&copy; University of Kent</a> <a href="#" role="menuitem">Accessibility</a> <a href="//www.kent.ac.uk/contact" role="menuitem">Contact us</a> <a href="#" role="menuitem">Feedback</a> <a href="//www.kent.ac.uk/legal" role="menuitem">Legal</a> <a href="//www.kent.ac.uk/legal/cookies.html" role="menuitem">Cookie Policy</a>
+					<?php
+					foreach($bottom as $link){
+					?>
+						<a href="<?php echo $link['url']; ?>" role="menuitem"><?php echo $link['title']; ?></a>
+					<?php
+					}
+					?>
 				</div>
 			</section>
 		</footer>
