@@ -136,7 +136,7 @@
 						<div class="form-group">
 							<label for="search" class="sr-only">Search</label>
 							<div class="input-group input-group-lg">
-								<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department. keyword... " autocomplete="off" value="<?php if(isset($_GET['q'])) echo htmlentities($_GET['q']); ?>">
+								<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department, keyword... " autocomplete="off" value="<?php if(isset($_GET['q'])) echo htmlentities($_GET['q']); ?>">
 								<span class="input-group-btn">
 									<button type="submit" class="btn btn-accent btn-icon kf-search" aria-label="Search"><span class="sr-only">Search</span></button>
 								</span>
