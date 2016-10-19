@@ -6251,7 +6251,7 @@ body.show-kentbar-menu {
     .tab-content > .collapse-xs-up.tab-pane.fade, .collapse-xs-up.tab-pane.fade {
       opacity: 1; }
   .tab-content > .collapse-xs-up.tab-pane.in, .collapse-xs-up.in {
-    max-height: 2000px; }
+    max-height: 150vh; }
     .tab-content > .collapse-xs-up.tab-pane.in.tab-pane, .collapse-xs-up.in.tab-pane {
       padding: 16px;
       padding: 1rem; }
@@ -6260,7 +6260,7 @@ body.show-kentbar-menu {
 .collapse-md-up,
 .collapse-lg-up,
 .collapse-xl-ip {
-  max-height: 2000px; }
+  max-height: 150vh; }
 
 @media (min-width: 544px) {
   .collapse-sm-up {
@@ -6274,7 +6274,7 @@ body.show-kentbar-menu {
       .tab-content > .collapse-sm-up.tab-pane.fade, .collapse-sm-up.tab-pane.fade {
         opacity: 1; }
     .tab-content > .collapse-sm-up.tab-pane.in, .collapse-sm-up.in {
-      max-height: 2000px; }
+      max-height: 150vh; }
       .tab-content > .collapse-sm-up.tab-pane.in.tab-pane, .collapse-sm-up.in.tab-pane {
         padding: 1rem; } }
 
@@ -6290,7 +6290,7 @@ body.show-kentbar-menu {
       .tab-content > .collapse-md-up.tab-pane.fade, .collapse-md-up.tab-pane.fade {
         opacity: 1; }
     .tab-content > .collapse-md-up.tab-pane.in, .collapse-md-up.in {
-      max-height: 2000px; }
+      max-height: 150vh; }
       .tab-content > .collapse-md-up.tab-pane.in.tab-pane, .collapse-md-up.in.tab-pane {
         padding: 1rem; } }
 
@@ -6306,7 +6306,7 @@ body.show-kentbar-menu {
       .tab-content > .collapse-lg-up.tab-pane.fade, .collapse-lg-up.tab-pane.fade {
         opacity: 1; }
     .tab-content > .collapse-lg-up.tab-pane.in, .collapse-lg-up.in {
-      max-height: 2000px; }
+      max-height: 150vh; }
       .tab-content > .collapse-lg-up.tab-pane.in.tab-pane, .collapse-lg-up.in.tab-pane {
         padding: 1rem; } }
 
@@ -6322,7 +6322,7 @@ body.show-kentbar-menu {
       .tab-content > .collapse-xl-up.tab-pane.fade, .collapse-xl-up.tab-pane.fade {
         opacity: 1; }
     .tab-content > .collapse-xl-up.tab-pane.in, .collapse-xl-up.in {
-      max-height: 2000px; }
+      max-height: 150vh; }
       .tab-content > .collapse-xl-up.tab-pane.in.tab-pane, .collapse-xl-up.in.tab-pane {
         padding: 1rem; } }
 
@@ -6338,7 +6338,7 @@ body.show-kentbar-menu {
     .tab-content > .collapse-xl-down.tab-pane.fade, .collapse-xl-down.tab-pane.fade {
       opacity: 1; }
   .tab-content > .collapse-xl-down.tab-pane.in, .collapse-xl-down.in {
-    max-height: 2000px; }
+    max-height: 150vh; }
     .tab-content > .collapse-xl-down.tab-pane.in.tab-pane, .collapse-xl-down.in.tab-pane {
       padding: 16px;
       padding: 1rem; }
@@ -6347,7 +6347,7 @@ body.show-kentbar-menu {
 .collapse-sm-down,
 .collapse-md-down,
 .collapse-lg-down {
-  max-height: 2000px; }
+  max-height: 150vh; }
 
 @media (max-width: 1199px) {
   .collapse-lg-down {
@@ -6361,7 +6361,7 @@ body.show-kentbar-menu {
       .tab-content > .collapse-lg-down.tab-pane.fade, .collapse-lg-down.tab-pane.fade {
         opacity: 1; }
     .tab-content > .collapse-lg-down.tab-pane.in, .collapse-lg-down.in {
-      max-height: 2000px; }
+      max-height: 150vh; }
       .tab-content > .collapse-lg-down.tab-pane.in.tab-pane, .collapse-lg-down.in.tab-pane {
         padding: 1rem; } }
 
@@ -6377,7 +6377,7 @@ body.show-kentbar-menu {
       .tab-content > .collapse-md-down.tab-pane.fade, .collapse-md-down.tab-pane.fade {
         opacity: 1; }
     .tab-content > .collapse-md-down.tab-pane.in, .collapse-md-down.in {
-      max-height: 2000px; }
+      max-height: 150vh; }
       .tab-content > .collapse-md-down.tab-pane.in.tab-pane, .collapse-md-down.in.tab-pane {
         padding: 1rem; } }
 
@@ -6393,7 +6393,7 @@ body.show-kentbar-menu {
       .tab-content > .collapse-sm-down.tab-pane.fade, .collapse-sm-down.tab-pane.fade {
         opacity: 1; }
     .tab-content > .collapse-sm-down.tab-pane.in, .collapse-sm-down.in {
-      max-height: 2000px; }
+      max-height: 150vh; }
       .tab-content > .collapse-sm-down.tab-pane.in.tab-pane, .collapse-sm-down.in.tab-pane {
         padding: 1rem; } }
 
@@ -6409,7 +6409,7 @@ body.show-kentbar-menu {
       .tab-content > .collapse-xs-down.tab-pane.fade, .collapse-xs-down.tab-pane.fade {
         opacity: 1; }
     .tab-content > .collapse-xs-down.tab-pane.in, .collapse-xs-down.in {
-      max-height: 2000px; }
+      max-height: 150vh; }
       .tab-content > .collapse-xs-down.tab-pane.in.tab-pane, .collapse-xs-down.in.tab-pane {
         padding: 1rem; } }
 
