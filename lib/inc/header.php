@@ -169,6 +169,3 @@
 		</header>
 
 		<main id="main_content" class="<?php echo !empty($main_class) ? $main_class :'' ; ?>" role="main">
-		<?php if($home_page){ ?>
-		<h1 class="sr-only">The University of Kent</h1>
-		<?php } ?>
