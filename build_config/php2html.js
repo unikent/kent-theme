@@ -3,7 +3,7 @@ module.exports = {
 		options: {
 			htmlhint:false,
 			getData: {
-				webroot: '//beta.kent.ac.uk/',
+				webroot: 'https://beta.kent.ac.uk/pantheon/kent-theme-assets/',
 				api_url: 'https://api.kent.ac.uk/api/',
 				home_url: 'https://beta.kent.ac.uk/',
 				debug: false

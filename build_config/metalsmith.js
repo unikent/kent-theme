@@ -2,7 +2,7 @@ module.exports = {
 	production: {
 		options: {
 			metadata: {
-				docsroot: '//beta.kent.ac.uk/patterns/',
+				docsroot: 'https://beta.kent.ac.uk/patterns/',
 				title: 'Pattern Library',
 				description: 'A Pattern Library for the Kent Theme',
 				section_names: {
