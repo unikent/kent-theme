@@ -35,7 +35,7 @@
         background: $brand-tertiary;
 
         @include make-row();
-        padding:    2rem $grid-gutter-width/2;
+        padding:    2rem $grid-gutter-width-base/2;
 
         .page-feedback-form {
             @include media-breakpoint-up(md) {

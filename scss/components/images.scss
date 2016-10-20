@@ -233,17 +233,17 @@ figure figcaption,
         figcaption{
             position: relative;
             width:    100vw;
-            left:-($grid-gutter-width/2);
+            left:-($grid-gutter-width-base/2);
 
             @include media-breakpoint-up(sm){
                 left: -5.6%;
             }
 
             @include media-breakpoint-up(md){
-                left: calc( -11.5% - #{$grid-gutter-width});
+                left: calc( -11.5% - #{$grid-gutter-width-base});
             }
             @include media-breakpoint-up(lg){
-                left: calc( -6% - #{$grid-gutter-width});
+                left: calc( -6% - #{$grid-gutter-width-base});
             }
 
             @include media-breakpoint-up(xl){
@@ -267,7 +267,7 @@ figure figcaption,
             figcaption{
 
                 @include media-breakpoint-up(lg){
-                    left: calc( -27.5% - #{$grid-gutter-width});
+                    left: calc( -27.5% - #{$grid-gutter-width-base});
                 }
 
                 @include media-breakpoint-up(xl){

@@ -14,7 +14,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "install": "napa twbs/bootstrap#v4.0.0-alpha.4:bootstrap",
+    "install": "napa twbs/bootstrap#v4.0.0-alpha.5:bootstrap",
     "start": "grunt && grunt watch"
   },
   "devDependencies": {

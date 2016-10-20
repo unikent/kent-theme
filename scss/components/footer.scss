@@ -30,8 +30,8 @@
     .footer-section-title {
 
         cursor:        pointer;
-        margin-right:  -($grid-gutter-width/2);
-        margin-left:   -($grid-gutter-width/2);
+        margin-right:  -($grid-gutter-width-base/2);
+        margin-left:   -($grid-gutter-width-base/2);
         margin-bottom: 0;
         padding:       0.75rem 1rem;
         font-size:     1rem;
@@ -70,8 +70,8 @@
 
     .footer-section {
         padding:       0 1rem;
-        margin-right:  -($grid-gutter-width/2);
-        margin-left:   -($grid-gutter-width/2);
+        margin-right:  -($grid-gutter-width-base/2);
+        margin-left:   -($grid-gutter-width-base/2);
 
         &.in {
             padding-bottom: 0.5rem;
@@ -127,7 +127,7 @@
 
         @include media-breakpoint-up(md) {
             text-align: left;
-            padding: 2rem ($grid-gutter-width/2);
+            padding: 2rem ($grid-gutter-width-base/2);
         }
     }
 
@@ -252,7 +252,7 @@
             text-align: right;
 
             .container {
-                padding: 0 ($grid-gutter-width/2);
+                padding: 0 ($grid-gutter-width-base/2);
             }
 
             a {

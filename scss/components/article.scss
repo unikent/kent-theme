@@ -10,7 +10,7 @@
     }
     img {
         @extend .img-fluid;
-        @extend .img-circle;
+        @extend .rounded-circle;
         height:       3rem;
         float:        left;
         margin-right: .5rem;

@@ -67,7 +67,7 @@
         .card {
 
             @include media-breakpoint-up(sm) {
-                border-width: 0 ($grid-gutter-width/2) 0 ($grid-gutter-width/2);
+                border-width: 0 ($grid-gutter-width-base/2) 0 ($grid-gutter-width-base/2);
                 border-style: solid;
                 border-color: #FFFFFF;
             }
@@ -105,7 +105,7 @@
             .card-panel-full {
 
                 & > div.expanded {
-                    width: calc(100% + #{$grid-gutter-width});
+                    width: calc(100% + #{$grid-gutter-width-base});
                 }
                 &:first-child {
                     & > div {
@@ -302,17 +302,17 @@
                 @include make-col(6);
                 margin-bottom: 0;
                 & > div {
-                    width: calc(100% + #{$grid-gutter-width/2});
+                    width: calc(100% + #{$grid-gutter-width-base/2});
                 }
 
                 &:first-child {
                     & > div {
-                        margin-right: ($grid-gutter-width/2);
+                        margin-right: ($grid-gutter-width-base/2);
                     }
                 }
                 &:last-child {
                     & > div {
-                        margin-left: ($grid-gutter-width/2);
+                        margin-left: ($grid-gutter-width-base/2);
                     }
                 }
 
