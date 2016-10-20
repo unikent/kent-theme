@@ -124,6 +124,17 @@ $(document).ready(function(){
 					this.hide();
 				}
 			});
+			this.video.on('enterfullscreen', () => {
+
+				window.TESTP = this.plyr;
+				var wrap  = this.video.find('.plyr__video-wrapper');
+				if (wrap.length > 0 && wrap.find('.fs-toggle').length === 0 ){
+					wrap.prepend('<span class="kf-close fs-toggle"></span>');
+					wrap.find('.fs-toggle').click(() => {this.hide();});
+				}
+
+				window.KENT.log(this.plyr);
+			});
 			this.video.on('exitfullscreen', () => {
 				this.hide();
 			});

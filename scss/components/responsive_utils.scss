@@ -15,7 +15,7 @@
 
     .tab-content > &.tab-pane.in,
     &.in {
-        max-height: 2000px;
+        max-height: 150vh;
         &.tab-pane {
             padding: 1rem;
         }
@@ -31,7 +31,7 @@
 .collapse-md-up,
 .collapse-lg-up,
 .collapse-xl-ip {
-    max-height: 2000px;
+    max-height: 150vh;
 }
 
 @include media-breakpoint-up(sm) {
@@ -66,7 +66,7 @@
 .collapse-sm-down,
 .collapse-md-down,
 .collapse-lg-down {
-    max-height: 2000px;
+    max-height: 150vh;
 }
 
 @include media-breakpoint-down(lg) {
