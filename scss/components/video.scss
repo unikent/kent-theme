@@ -9,6 +9,7 @@
 	& > .video-player {
         transition: max-height 300ms;
 		max-height:0;
+        overflow: hidden;
 	}
 
 	& > img {
@@ -56,4 +57,20 @@
 			}
 		}
 	}
+}
+
+.fs-toggle{
+    position: absolute;
+    padding:.5rem;
+    right:0;
+    top: 0;
+    color: #FFF;
+    font-size: 2rem;
+    z-index: 999999;
+    display: block;
+}
+.plyr--fullscreen-enabled{
+    .fs-toggle {
+        display: none;
+    }
 }

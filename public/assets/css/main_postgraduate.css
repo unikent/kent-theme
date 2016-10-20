@@ -7146,7 +7146,8 @@ figure figcaption,
   position: relative; }
   .video-launcher > .video-player {
     transition: max-height 300ms;
-    max-height: 0; }
+    max-height: 0;
+    overflow: hidden; }
   .video-launcher > img {
     display: block;
     max-width: 100%; }
@@ -7176,6 +7177,21 @@ figure figcaption,
     .video-launcher.playing.playing.playing .plyr__play-large:hover .kf-play-circle {
       opacity: 1;
       transform: scale(1.1, 1.1); }
+
+.fs-toggle {
+  position: absolute;
+  padding: 8px;
+  padding: .5rem;
+  right: 0;
+  top: 0;
+  color: #FFF;
+  font-size: 32px;
+  font-size: 2rem;
+  z-index: 999999;
+  display: block; }
+
+.plyr--fullscreen-enabled .fs-toggle {
+  display: none; }
 
 .alert {
   background-color: #fff; }
