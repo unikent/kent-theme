@@ -196,7 +196,8 @@
         justify-content: center;
     }
 
-    .card-img-overlay-tinted{
+    .card-img-overlay-tinted,
+    .kent-slider.kent-slider .card-img-overlay-tinted.card-img-overlay-tinted  { // stronger selector for when in slider
         background-color: rgba(0,0,0,.3);
 
         .btn-primary{
