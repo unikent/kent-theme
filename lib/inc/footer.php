@@ -136,6 +136,14 @@ extract($footer_config);
 		<script>
 			window.KENT  = window.KENT || {};
 			window.KENT.settings = <?php echo json_encode($js_config); ?>;
+			window.KENT.settings.breakpoints = {
+				'sm':   576,
+				'md':   720,
+				'lg':   940,
+				'xl':   1140,
+				'xxl':  1140,
+				'xxxl': 1140
+			};
 			window.KENT.kentbar = {
 				config:{
 					target:'#kentBar',
