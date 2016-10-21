@@ -10,6 +10,7 @@ module.exports = function(grunt) {
 	// Load tasks
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-eslint');
 	grunt.loadNpmTasks('grunt-sass-lint');
@@ -31,7 +32,8 @@ module.exports = function(grunt) {
 	grunt.registerTask('development', [ 'eslint', 'build_js', 'copy:kentfont', 'copy:fonts', 'sass', 'postcss', 'patterns_local']);
 	grunt.registerTask('production', [ 'eslint', 'build_js', 'uglify:main', 'copy:kentfont', 'copy:fonts', 'sass', 'postcss', 'cssnano', 'modernizr', 'patterns']);
 	grunt.registerTask('patterns', [ 'php2html:production', 'metalsmith:production' ]);
-	grunt.registerTask('patterns_local', [ 'php2html:development', 'metalsmith:development' ]);
+	grunt.registerTask('patterns_sandbox', [ 'php2html:sandbox', 'metalsmith:sandbox' ]);
+	grunt.registerTask('server', [ 'patterns_sandbox', 'connect', 'watch']);
 
 	grunt.registerTask('default', [ 'development' ]);
 };

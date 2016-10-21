@@ -199,36 +199,31 @@
 									</header>
 
 		<main id="main_content" class="content-page" role="main">
-	<nav class="breadcrumb">
-		<a href="/">University of Kent</a>
-		<a href="https://beta.kent.ac.uk/patterns//index.html">Pattern library</a>
-		<a href="https://beta.kent.ac.uk/patterns//index.html">Page Types</a>
-		<span>Content Page</span>
-	</nav>	<div class="content-header">
-		<h1 class="">Content Page</h1>
+
+	<div class="content-header">
+		<nav class="breadcrumb">
+			<a href="/">University of Kent</a>
+			<a href="https://beta.kent.ac.uk/patterns//index.html">Pattern library</a>
+			
+			<span>Technical Documentation</span>
+		</nav>		<h1 class="">Technical Documentation</h1>
 	</div>
 	<div class="content-container">
 		<div class="content-main">
-		<p class="lead"></p>
-		<nav class="jump-links">
-			<p class="h5">On this page</p>
-		</nav>		</div>
+		<p class="lead">Technical documentation for the theme can be found in the public Wiki.</p>
+		</div>
 		<aside class="content-aside">
-			<nav>
-			<h3>Page Types</h3>
+			<nav style="position: absolute">
+			<h3></h3>
 			<ul class="list-unstyled">
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/page_types/landing_page.html">Landing Page</a></li>
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/page_types/content_page.html"><strong style="color:#000;">Content Page</strong></a></li>
 			</ul>
 			</nav>
 		</aside>	</div>
 
-		
+	<div class="container">
+<a class="btn btn-primary" href="https://github.com/unikent/kent-theme/wiki">Visit the Technical Documentation</a>
+</div>
 
-
-
-		<br>
-		<br>
 		</main>
 		<footer id="footer" class="global-footer" role="region" aria-labelledby="footer_sr">
 			<h2 id="footer_sr" class="sr-only">Page Footer</h2>
@@ -406,7 +401,15 @@
 		</footer>
 		<script>
 			window.KENT  = window.KENT || {};
-			window.KENT.settings = {"home_url":"https:\/\/beta.kent.ac.uk\/","api_url":"https:\/\/api.kent.ac.uk\/api\/","debug":false,"breakpoints":{"sm":"576","md":"720","lg":"940","xl":"1140","xxl":"1140","xxxl":"1140"}};
+			window.KENT.settings = {"home_url":"https:\/\/beta.kent.ac.uk\/","api_url":"https:\/\/api.kent.ac.uk\/api\/","debug":false};
+			window.KENT.settings.breakpoints = {
+				'sm':   576,
+				'md':   720,
+				'lg':   940,
+				'xl':   1140,
+				'xxl':  1140,
+				'xxxl': 1140
+			};
 			window.KENT.kentbar = {
 				config:{
 					target:'#kentBar',

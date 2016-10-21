@@ -199,13 +199,14 @@
 									</header>
 
 		<main id="main_content" class="content-page" role="main">
-	<nav class="breadcrumb">
-		<a href="/">University of Kent</a>
-		<a href="https://beta.kent.ac.uk/patterns//index.html">Pattern library</a>
-		<a href="https://beta.kent.ac.uk/patterns//index.html">Core Elements</a>
-		<span>Forms and buttons</span>
-	</nav>	<div class="content-header">
-		<h1 class="">Forms and buttons</h1>
+
+	<div class="content-header">
+		<nav class="breadcrumb">
+			<a href="/">University of Kent</a>
+			<a href="https://beta.kent.ac.uk/patterns//index.html">Pattern library</a>
+			<a href="https://beta.kent.ac.uk/patterns//index.html">Core Elements</a>
+			<span>Forms and buttons</span>
+		</nav>		<h1 class="">Forms and buttons</h1>
 	</div>
 	<div class="content-container">
 		<div class="content-main">
@@ -226,9 +227,10 @@
 			<a href="#autocomplete-results">Autocomplete results</a>
 			<a href="#search-filter">Search filter</a>
 			<a href="#buttons">Buttons</a>
-		</nav>		</div>
+		</nav>
+		</div>
 		<aside class="content-aside">
-			<nav>
+			<nav style="position: absolute">
 			<h3>Core Elements</h3>
 			<ul class="list-unstyled">
 				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/grid_and_page_structure.html">Grid and page structure</a></li>
@@ -241,7 +243,7 @@
 			</nav>
 		</aside>	</div>
 
-		
+	
 
 
 
@@ -295,8 +297,6 @@
 </div>
 </div>
 
-		<br>
-		<br>
 		</main>
 		<footer id="footer" class="global-footer" role="region" aria-labelledby="footer_sr">
 			<h2 id="footer_sr" class="sr-only">Page Footer</h2>
@@ -474,7 +474,15 @@
 		</footer>
 		<script>
 			window.KENT  = window.KENT || {};
-			window.KENT.settings = {"home_url":"https:\/\/beta.kent.ac.uk\/","api_url":"https:\/\/api.kent.ac.uk\/api\/","debug":false,"breakpoints":{"sm":"576","md":"720","lg":"940","xl":"1140","xxl":"1140","xxxl":"1140"}};
+			window.KENT.settings = {"home_url":"https:\/\/beta.kent.ac.uk\/","api_url":"https:\/\/api.kent.ac.uk\/api\/","debug":false};
+			window.KENT.settings.breakpoints = {
+				'sm':   576,
+				'md':   720,
+				'lg':   940,
+				'xl':   1140,
+				'xxl':  1140,
+				'xxxl': 1140
+			};
 			window.KENT.kentbar = {
 				config:{
 					target:'#kentBar',

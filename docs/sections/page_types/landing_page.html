@@ -62,7 +62,7 @@
 
 		
 			</head>
-	<body class="">
+	<body class=" slim-header">
 				<a href="#section_menu" class="sr-only">Jump to section menu</a>
 				<a href="#main_content" class="sr-only">Jump to content</a>
 				<header class="global-header" role="navigation">
@@ -187,8 +187,8 @@
 					</form>
 				</div>
 			</section>
-											<section class="departmental-nav" id="section_menu">
-					<header>Pattern Library</header>
+											<section class="departmental-nav slim" id="section_menu">
+					<header><a href="https://beta.kent.ac.uk//patterns">Pattern Library</a></header>
 											<div class="navbar-toggler" aria-controls="navbar-menu" aria-expanded="false" role="button"><span>Menu</span></div>
 						<nav class="navbar-menu" id="navbar-menu" role="menu">
 							<a href="https://beta.kent.ac.uk/patterns/index.html">Home</a>
@@ -199,39 +199,31 @@
 									</header>
 
 		<main id="main_content" class="content-page" role="main">
-	<br>
-	<br>
-	<div class="container">
-	<div class="row">
-		<div class="col-sm-4">
-			<h2>Core Elements</h2>
-			<ul class="list-unstyled">
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/grid_and_page_structure.html">Grid and page structure</a></li>
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/colours.html">Colours</a></li>
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/typographic_elements.html">Typographic elements</a></li>
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/forms_buttons.html">Forms and buttons</a></li>
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/navigation.html">Navigation</a></li>
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/images_video.html">Images and video</a></li>
-			</ul>
+
+	<div class="content-header">
+		<nav class="breadcrumb">
+			<a href="/">University of Kent</a>
+			<a href="https://beta.kent.ac.uk/patterns//index.html">Pattern library</a>
+			<a href="https://beta.kent.ac.uk/patterns//index.html">Page Types</a>
+			<span>Landing Page</span>
+		</nav>		<h1 class="">Landing Page</h1>
+	</div>
+	<div class="content-container">
+		<div class="content-main">
+		
 		</div>
-		<div class="col-sm-4">
-			<h2>Featured Content</h2>
+		<aside class="content-aside">
+			<nav style="position: absolute">
+			<h3>Page Types</h3>
 			<ul class="list-unstyled">
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/featured_content/feature_panels.html">Feature panels</a></li>
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/featured_content/feature_layouts.html">Feature layouts</a></li>
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/featured_content/summary_listings.html">Summary listings</a></li>
-			</ul>
-		</div>
-		<div class="col-sm-4">
-			<h2>Page Types</h2>
-			<ul class="list-unstyled">
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/page_types/landing_page.html">Landing Page</a></li>
+				<li><a href="https://beta.kent.ac.uk/patterns/sections/page_types/landing_page.html"><strong style="color:#000;">Landing Page</strong></a></li>
 				<li><a href="https://beta.kent.ac.uk/patterns/sections/page_types/content_page.html">Content Page</a></li>
 			</ul>
-		</div>
-	</div>	<div>
-<br>
-<br>
+			</nav>
+		</aside>	</div>
+
+	
+
 		</main>
 		<footer id="footer" class="global-footer" role="region" aria-labelledby="footer_sr">
 			<h2 id="footer_sr" class="sr-only">Page Footer</h2>
@@ -409,7 +401,15 @@
 		</footer>
 		<script>
 			window.KENT  = window.KENT || {};
-			window.KENT.settings = {"home_url":"https:\/\/beta.kent.ac.uk\/","api_url":"https:\/\/api.kent.ac.uk\/api\/","debug":false,"breakpoints":{"sm":"576","md":"720","lg":"940","xl":"1140","xxl":"1140","xxxl":"1140"}};
+			window.KENT.settings = {"home_url":"https:\/\/beta.kent.ac.uk\/","api_url":"https:\/\/api.kent.ac.uk\/api\/","debug":false};
+			window.KENT.settings.breakpoints = {
+				'sm':   576,
+				'md':   720,
+				'lg':   940,
+				'xl':   1140,
+				'xxl':  1140,
+				'xxxl': 1140
+			};
 			window.KENT.kentbar = {
 				config:{
 					target:'#kentBar',

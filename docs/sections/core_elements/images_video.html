@@ -199,50 +199,46 @@
 									</header>
 
 		<main id="main_content" class="content-page" role="main">
-	<nav class="breadcrumb">
-		<a href="/">University of Kent</a>
-		<a href="https://beta.kent.ac.uk/patterns//index.html">Pattern library</a>
-		<a href="https://beta.kent.ac.uk/patterns//index.html">Featured Content</a>
-		<span>Summary listings</span>
-	</nav>	<div class="content-header">
-		<h1 class="">Summary listings</h1>
+
+	<div class="content-header">
+		<nav class="breadcrumb">
+			<a href="/">University of Kent</a>
+			<a href="https://beta.kent.ac.uk/patterns//index.html">Pattern library</a>
+			<a href="https://beta.kent.ac.uk/patterns//index.html">Core Elements</a>
+			<span>Images and video</span>
+		</nav>		<h1 class="">Images and video</h1>
 	</div>
 	<div class="content-container">
 		<div class="content-main">
-		<p class="lead"></p>
+		
 		<nav class="jump-links">
 			<p class="h5">On this page</p>
-			<a href="#news-listing">News listing</a>
-			<a href="#events-listing">Events listing</a>
-			<a href="#profile-listing">Profile listing</a>
-			<a href="#course-listing">Course listing</a>
-			<a href="#project-listing">Project listing</a>
-		</nav>		</div>
+			<a href="#images">Images</a>
+			<a href="#video">Video</a>
+		</nav>
+		</div>
 		<aside class="content-aside">
-			<nav>
-			<h3>Featured Content</h3>
+			<nav style="position: absolute">
+			<h3>Core Elements</h3>
 			<ul class="list-unstyled">
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/featured_content/feature_panels.html">Feature panels</a></li>
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/featured_content/feature_layouts.html">Feature layouts</a></li>
-				<li><a href="https://beta.kent.ac.uk/patterns/sections/featured_content/summary_listings.html"><strong style="color:#000;">Summary listings</strong></a></li>
+				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/grid_and_page_structure.html">Grid and page structure</a></li>
+				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/colours.html">Colours</a></li>
+				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/typographic_elements.html">Typographic elements</a></li>
+				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/forms_buttons.html">Forms and buttons</a></li>
+				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/navigation.html">Navigation</a></li>
+				<li><a href="https://beta.kent.ac.uk/patterns/sections/core_elements/images_video.html"><strong style="color:#000;">Images and video</strong></a></li>
 			</ul>
 			</nav>
 		</aside>	</div>
 
-		
-
+	
 <div class="content-container">
 	<div class="content-main">
-		<h2 class="pattern" id="news-listing"><!-- news-listing -->News listing</h2>
-		<h2 class="pattern" id="events-listing"><!-- events-listing -->Events listing</h2>
-		<h2 class="pattern" id="profile-listing"><!-- profile-listing -->Profile listing</h2>
-		<h2 class="pattern" id="course-listing"><!-- course-listing -->Course listing</h2>
-		<h2 class="pattern" id="project-listing"><!-- project-listing -->Project listing</h2>
+		<h2 class="pattern" id="images"><!-- images -->Images</h2>
+		<h2 class="pattern" id="video"><!-- video -->Video</h2>
 	</div>
 </div>
 
-		<br>
-		<br>
 		</main>
 		<footer id="footer" class="global-footer" role="region" aria-labelledby="footer_sr">
 			<h2 id="footer_sr" class="sr-only">Page Footer</h2>
@@ -420,7 +416,15 @@
 		</footer>
 		<script>
 			window.KENT  = window.KENT || {};
-			window.KENT.settings = {"home_url":"https:\/\/beta.kent.ac.uk\/","api_url":"https:\/\/api.kent.ac.uk\/api\/","debug":false,"breakpoints":{"sm":"576","md":"720","lg":"940","xl":"1140","xxl":"1140","xxxl":"1140"}};
+			window.KENT.settings = {"home_url":"https:\/\/beta.kent.ac.uk\/","api_url":"https:\/\/api.kent.ac.uk\/api\/","debug":false};
+			window.KENT.settings.breakpoints = {
+				'sm':   576,
+				'md':   720,
+				'lg':   940,
+				'xl':   1140,
+				'xxl':  1140,
+				'xxxl': 1140
+			};
 			window.KENT.kentbar = {
 				config:{
 					target:'#kentBar',

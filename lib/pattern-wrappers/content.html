@@ -197,22 +197,21 @@
 									</header>
 
 		<main id="main_content" class="content-page" role="main">
-	{{>breadcrumb}}
+
 	<div class="content-header">
+		{{>breadcrumb}}
 		<h1 class="">{{sub_title}}</h1>
 	</div>
 	<div class="content-container">
 		<div class="content-main">
-		<p class="lead">{{lead}}</p>
+		{{#if lead }}<p class="lead">{{lead}}</p>{{/if}}
 		{{>page_nav}}
 		</div>
 		{{>subnav}}
 	</div>
 
-		{{{contents}}}
+	{{{contents}}}
 
-		<br>
-		<br>
 		</main>
 		<footer id="footer" class="global-footer" role="region" aria-labelledby="footer_sr">
 			<h2 id="footer_sr" class="sr-only">Page Footer</h2>
@@ -390,7 +389,15 @@
 		</footer>
 		<script>
 			window.KENT  = window.KENT || {};
-			window.KENT.settings = {"home_url":"https:\/\/beta.kent.ac.uk\/","api_url":"https:\/\/api.kent.ac.uk\/api\/","debug":false,"breakpoints":{"sm":"576","md":"720","lg":"940","xl":"1140","xxl":"1140","xxxl":"1140"}};
+			window.KENT.settings = {"home_url":"https:\/\/beta.kent.ac.uk\/","api_url":"https:\/\/api.kent.ac.uk\/api\/","debug":false};
+			window.KENT.settings.breakpoints = {
+				'sm':   576,
+				'md':   720,
+				'lg':   940,
+				'xl':   1140,
+				'xxl':  1140,
+				'xxxl': 1140
+			};
 			window.KENT.kentbar = {
 				config:{
 					target:'#kentBar',

@@ -19,7 +19,7 @@ module.exports = {
 		]
 
 	},
-	development:{
+	sandbox:{
 		options:   {
 			htmlhint:false
 		},

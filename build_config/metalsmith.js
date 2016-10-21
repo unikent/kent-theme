@@ -60,12 +60,13 @@ module.exports = {
 			}
 		},
 		src: 'patterns',
-		dest: 'public/docs'
+		dest: 'docs'
 	},
-	development: {
+	sandbox: {
 		options: {
+			clean:false,
 			metadata: {
-				docsroot: process.env.WEBROOT + 'devdocs/',
+				docsroot: 'http://localhost:8080/',
 				title: 'Pattern Library',
 				description: 'A Pattern Library for the Kent Theme',
 				section_names: {
@@ -118,6 +119,6 @@ module.exports = {
 			}
 		},
 		src: 'patterns',
-		dest: 'public/devdocs'
+		dest: 'sandbox'
 	}
 };
