@@ -8,7 +8,8 @@
     padding-bottom: 0;
     margin:0;
 
-    .card-title-wrap {
+    .card-title-wrap,
+    .force-block.force-block.card-title-wrap {
         pointer-events: none;
         padding:          2rem;
         background-color: $brand-primary;
@@ -206,7 +207,8 @@
                 pointer-events: none;
             }
             @include media-breakpoint-up(md) {
-                .card-title-wrap {
+                .card-title-wrap,
+                .force-block.force-block.card-title-wrap {
                     opacity: 0;
                     pointer-events: none;
                 }
@@ -218,12 +220,19 @@
     }
 
     @include media-breakpoint-up(md) {
-        .card-title-wrap {
+        .card-title-wrap,
+        .force-block.force-block.card-title-wrap {
             position: absolute;
             width:    40%;
             left:     5%;
             top:      -($card-overlay-amount);
+            bottom: auto;
             z-index:  1;
+
+            &.pull-bottom {
+                top: auto;
+                bottom:      -($card-overlay-amount);
+            }
 
             &.card-title-wrap-link {
                 position: absolute;

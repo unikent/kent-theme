@@ -6805,12 +6805,14 @@ main > article:last-child {
     .container-padded-h {
       padding: 0 8%; } }
 
-.faux-link-block, .card-panel.nav-links-panel nav .nav-link, .nav-links-panel nav .nav-link, .global-nav .global-nav-links .global-nav-link nav .nav-link, .home-nav .global-nav-links .global-nav-link nav .nav-link, .card.card-linked, .card-panel.cards-linked .card, .card .card-img-overlay-link, .card.card-overlay .card-title-wrap.card-title-wrap-link {
+.faux-link-block, .card-panel.nav-links-panel nav .nav-link, .nav-links-panel nav .nav-link, .global-nav .global-nav-links .global-nav-link nav .nav-link, .home-nav .global-nav-links .global-nav-link nav .nav-link, .card.card-linked, .card-panel.cards-linked .card, .card .card-img-overlay-link, .card.card-overlay .card-title-wrap.card-title-wrap-link,
+.card.card-overlay .force-block.card-title-wrap.card-title-wrap-link {
   position: relative;
   /*
     this is not a mistake, self-selecting bumps the specificity of this rule for where something extends .faux-link-block
     */ }
-  .faux-link-block a, .card-panel.nav-links-panel nav .nav-link a, .nav-links-panel nav .nav-link a, .global-nav .global-nav-links .global-nav-link nav .nav-link a, .home-nav .global-nav-links .global-nav-link nav .nav-link a, .card.card-linked a, .card-panel.cards-linked .card a, .card .card-img-overlay-link a, .card.card-overlay .card-title-wrap.card-title-wrap-link a {
+  .faux-link-block a, .card-panel.nav-links-panel nav .nav-link a, .nav-links-panel nav .nav-link a, .global-nav .global-nav-links .global-nav-link nav .nav-link a, .home-nav .global-nav-links .global-nav-link nav .nav-link a, .card.card-linked a, .card-panel.cards-linked .card a, .card .card-img-overlay-link a, .card.card-overlay .card-title-wrap.card-title-wrap-link a,
+  .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link a {
     z-index: 1;
     position: relative; }
   .faux-link-block .faux-link-overlay.faux-link-overlay, .nav-links-panel nav .nav-link .faux-link-overlay.faux-link-overlay, .global-nav .global-nav-links .global-nav-link nav .nav-link .faux-link-overlay.faux-link-overlay, .home-nav .global-nav-links .global-nav-link nav .nav-link .faux-link-overlay.faux-link-overlay, .card.card-linked .faux-link-overlay.faux-link-overlay, .card-panel.cards-linked .card .faux-link-overlay.faux-link-overlay, .card .card-img-overlay-link .faux-link-overlay.faux-link-overlay, .card.card-overlay .card-title-wrap.card-title-wrap-link .faux-link-overlay.faux-link-overlay {
@@ -10109,14 +10111,19 @@ button.beta-toggler {
     padding-left: 0;
     background: none;
     border-width: 1px 0 0 0; }
-  a.card img, a img, .faux-link-block img, .card-panel.nav-links-panel nav .nav-link img, .nav-links-panel nav .nav-link img, .global-nav .global-nav-links .global-nav-link nav .nav-link img, .home-nav .global-nav-links .global-nav-link nav .nav-link img, .card.card-linked img, .card-panel.cards-linked .card img, .card .card-img-overlay-link img, .card.card-overlay .card-title-wrap.card-title-wrap-link img {
+  a.card img, a img, .faux-link-block img, .card-panel.nav-links-panel nav .nav-link img, .nav-links-panel nav .nav-link img, .global-nav .global-nav-links .global-nav-link nav .nav-link img, .home-nav .global-nav-links .global-nav-link nav .nav-link img, .card.card-linked img, .card-panel.cards-linked .card img, .card .card-img-overlay-link img, .card.card-overlay .card-title-wrap.card-title-wrap-link img,
+  .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link img {
     transition: all 300ms;
     transform: translate3d(0, 0, 0);
     -webkit-filter: brightness(1);
             filter: brightness(1); }
-  a.card:hover, a.card:focus, a:hover, a:focus, .faux-link-block:hover, .nav-links-panel nav .nav-link:hover, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover, .card.card-linked:hover, .card-panel.cards-linked .card:hover, .card .card-img-overlay-link:hover, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover, .faux-link-block:focus, .nav-links-panel nav .nav-link:focus, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus, .card.card-linked:focus, .card-panel.cards-linked .card:focus, .card .card-img-overlay-link:focus, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus {
+  a.card:hover, a.card:focus, a:hover, a:focus, .faux-link-block:hover, .nav-links-panel nav .nav-link:hover, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover, .card.card-linked:hover, .card-panel.cards-linked .card:hover, .card .card-img-overlay-link:hover, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover,
+  .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover, .faux-link-block:focus, .nav-links-panel nav .nav-link:focus, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus, .card.card-linked:focus, .card-panel.cards-linked .card:focus, .card .card-img-overlay-link:focus, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus,
+  .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus {
     text-decoration: none; }
-    a.card:hover img, a.card:focus img, a:hover img, a:focus img, .faux-link-block:hover img, .nav-links-panel nav .nav-link:hover img, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .card.card-linked:hover img, .card-panel.cards-linked .card:hover img, .card .card-img-overlay-link:hover img, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover img, .faux-link-block:focus img, .nav-links-panel nav .nav-link:focus img, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .card.card-linked:focus img, .card-panel.cards-linked .card:focus img, .card .card-img-overlay-link:focus img, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus img {
+    a.card:hover img, a.card:focus img, a:hover img, a:focus img, .faux-link-block:hover img, .nav-links-panel nav .nav-link:hover img, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .card.card-linked:hover img, .card-panel.cards-linked .card:hover img, .card .card-img-overlay-link:hover img, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover img,
+    .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover img, .faux-link-block:focus img, .nav-links-panel nav .nav-link:focus img, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .card.card-linked:focus img, .card-panel.cards-linked .card:focus img, .card .card-img-overlay-link:focus img, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus img,
+    .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus img {
       -webkit-filter: brightness(85%);
               filter: brightness(85%); }
 
@@ -10794,26 +10801,31 @@ button.beta-toggler {
   margin: 0; }
   .card.card-overlay .card-img-bottom {
     width: 100%; }
-  .card.card-overlay .card-title-wrap {
+  .card.card-overlay .card-title-wrap,
+  .card.card-overlay .force-block.force-block.card-title-wrap {
     pointer-events: none;
     padding: 32px;
     padding: 2rem;
     background-color: #671115;
     color: #FFFFFF;
     transition: background-color 300ms, opacity 600ms; }
-    .card.card-overlay .card-title-wrap.pull-right {
+    .card.card-overlay .card-title-wrap.pull-right,
+    .card.card-overlay .force-block.force-block.card-title-wrap.pull-right {
       float: none; }
-    .card.card-overlay .card-title-wrap.card-title-wrap-link {
+    .card.card-overlay .card-title-wrap.card-title-wrap-link,
+    .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link {
       pointer-events: auto;
       display: block;
       color: #FFFFFF;
       padding-right: 48px;
       padding-right: 3rem;
       cursor: pointer; }
-      .card.card-overlay .card-title-wrap.card-title-wrap-link:hover {
+      .card.card-overlay .card-title-wrap.card-title-wrap-link:hover,
+      .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link:hover {
         text-decoration: none;
         background-color: #7d1519; }
-      .card.card-overlay .card-title-wrap.card-title-wrap-link:after {
+      .card.card-overlay .card-title-wrap.card-title-wrap-link:after,
+      .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link:after {
         position: absolute;
         top: 50%;
         top: calc(50% - 1rem);
@@ -10826,7 +10838,8 @@ button.beta-toggler {
         line-height: calc(2rem);
         content: "";
         font-family: "kentfont", sans-serif; }
-    .card.card-overlay .card-title-wrap .card-title {
+    .card.card-overlay .card-title-wrap .card-title,
+    .card.card-overlay .force-block.force-block.card-title-wrap .card-title {
       font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       font-weight: normal;
       text-transform: uppercase;
@@ -10836,9 +10849,11 @@ button.beta-toggler {
       line-height: 36.8px;
       line-height: 2.3rem; }
       @media (min-width: 768px) {
-        .card.card-overlay .card-title-wrap .card-title {
+        .card.card-overlay .card-title-wrap .card-title,
+        .card.card-overlay .force-block.force-block.card-title-wrap .card-title {
           font-size: 2.2rem; } }
-    .card.card-overlay .card-title-wrap .card-text {
+    .card.card-overlay .card-title-wrap .card-text,
+    .card.card-overlay .force-block.force-block.card-title-wrap .card-text {
       font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       color: #FFFFFF; }
   .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
@@ -10927,21 +10942,30 @@ button.beta-toggler {
     opacity: 0;
     pointer-events: none; }
   @media (min-width: 768px) {
-    .card.card-overlay.card-media-inline.card-media-enabled .card-title-wrap {
+    .card.card-overlay.card-media-inline.card-media-enabled .card-title-wrap,
+    .card.card-overlay.card-media-inline.card-media-enabled .force-block.force-block.card-title-wrap {
       opacity: 0;
       pointer-events: none; } }
   .card.card-overlay.card-media-inline.card-media-enabled .card-media-wrap, .card.card-overlay.card-media-inline.card-media-enabled .card-embed-wrap {
     max-height: 150vh; }
   @media (min-width: 768px) {
-    .card.card-overlay .card-title-wrap {
+    .card.card-overlay .card-title-wrap,
+    .card.card-overlay .force-block.force-block.card-title-wrap {
       position: absolute;
       width: 40%;
       left: 5%;
       top: -1.6rem;
+      bottom: auto;
       z-index: 1; }
-      .card.card-overlay .card-title-wrap.card-title-wrap-link {
+      .card.card-overlay .card-title-wrap.pull-bottom,
+      .card.card-overlay .force-block.force-block.card-title-wrap.pull-bottom {
+        top: auto;
+        bottom: -1.6rem; }
+      .card.card-overlay .card-title-wrap.card-title-wrap-link,
+      .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link {
         position: absolute; }
-      .card.card-overlay .card-title-wrap.pull-right {
+      .card.card-overlay .card-title-wrap.pull-right,
+      .card.card-overlay .force-block.force-block.card-title-wrap.pull-right {
         left: inherit;
         right: 5%; }
     .card.card-overlay .card-img-overlay.card-img-overlay-block, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom-shaded, .card.card-overlay .card-img-overlay-block.card-img-overlay-centered {
