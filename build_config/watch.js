@@ -9,6 +9,6 @@ module.exports = {
 	},
 	patterns: {
 		files: ['patterns/**/*.html'],
-		tasks: ['patterns_local']
+		tasks: ['patterns_build_local']
 	}
 };

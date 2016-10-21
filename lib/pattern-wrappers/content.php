@@ -16,20 +16,19 @@ KentThemeHelper::header(array(
 		)
 	); 
 ?>
-	{{>breadcrumb}}
+
 	<div class="content-header">
+		{{>breadcrumb}}
 		<h1 class="">{{sub_title}}</h1>
 	</div>
 	<div class="content-container">
 		<div class="content-main">
-		<p class="lead">{{lead}}</p>
+		{{#if lead }}<p class="lead">{{lead}}</p>{{/if}}
 		{{>page_nav}}
 		</div>
 		{{>subnav}}
 	</div>
 
-		{{{contents}}}
+	{{{contents}}}
 
-		<br>
-		<br>
 <?php KentThemeHelper::footer(); ?>

@@ -1,6 +1,8 @@
+{{#if headings}}
 <nav class="jump-links">
 	<p class="h5">On this page</p>
 	{{#each headings }}
 	<a href="#{{id}}">{{text}}</a>
 	{{/each}}
 </nav>
+{{/if}}

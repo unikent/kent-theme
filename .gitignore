@@ -5,7 +5,7 @@ lib/config.php
 /node_modules
 vendor/
 www_docroot
-/public/devdocs/
+sandbox/
 /lib/pattern-wrappers/dev/
 .env
 /public/media/

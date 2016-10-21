@@ -76,15 +76,7 @@ Class KentThemeHelper {
 		$js_config = array(
 			"home_url" => HOME_URL,
 			"api_url" => API_URL,
-			"debug" => defined("DEBUG") ? ("true" == DEBUG) : false,
-            "breakpoints" => array(
-                'sm' => '576',
-                'md'=> '720',
-                'lg' => '940',
-                'xl' => '1140',
-                'xxl' => '1140',
-                'xxxl' => '1140'
-            )
+			"debug" => defined("DEBUG") ? ("true" == DEBUG) : false
 		);
 		$js_config = array_merge($js_config, $additional_js_config);
 
