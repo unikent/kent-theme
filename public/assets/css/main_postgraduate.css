@@ -11176,9 +11176,10 @@ button.beta-toggler {
     pointer-events: none;
     padding: 32px;
     padding: 2rem;
-    background-color: #671115;
+    background: #671115;
     color: #FFFFFF;
-    transition: background-color 300ms, opacity 600ms; }
+    transition: background-color 300ms, opacity 600ms;
+    text-shadow: none; }
     .card.card-overlay .card-title-wrap.pull-right,
     .card.card-overlay .force-block.force-block.card-title-wrap.pull-right {
       float: none; }
@@ -11193,7 +11194,7 @@ button.beta-toggler {
       .card.card-overlay .card-title-wrap.card-title-wrap-link:hover,
       .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link:hover {
         text-decoration: none;
-        background-color: #7d1519; }
+        background: #7d1519; }
       .card.card-overlay .card-title-wrap.card-title-wrap-link:after,
       .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link:after {
         position: absolute;
@@ -11330,14 +11331,51 @@ button.beta-toggler {
       .card.card-overlay .card-title-wrap.pull-bottom,
       .card.card-overlay .force-block.force-block.card-title-wrap.pull-bottom {
         top: auto;
-        bottom: -1.6rem; }
+        bottom: 0; }
       .card.card-overlay .card-title-wrap.card-title-wrap-link,
       .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link {
         position: absolute; }
       .card.card-overlay .card-title-wrap.pull-right,
       .card.card-overlay .force-block.force-block.card-title-wrap.pull-right {
         left: inherit;
-        right: 5%; }
+        right: 5%; } }
+  @media (min-width: 768px) and (min-width: 768px) {
+    .card.card-overlay .card-title-wrap.content-contained,
+    .card.card-overlay .force-block.force-block.card-title-wrap.content-contained {
+      left: calc(12% - 15px); } }
+  @media (min-width: 768px) and (min-width: 992px) {
+    .card.card-overlay .card-title-wrap.content-contained,
+    .card.card-overlay .force-block.force-block.card-title-wrap.content-contained {
+      left: 5%; } }
+  @media (min-width: 768px) and (min-width: 1200px) {
+    .card.card-overlay .card-title-wrap.content-contained,
+    .card.card-overlay .force-block.force-block.card-title-wrap.content-contained {
+      left: 9%; } }
+  @media (min-width: 768px) and (min-width: 1328px) {
+    .card.card-overlay .card-title-wrap.content-contained,
+    .card.card-overlay .force-block.force-block.card-title-wrap.content-contained {
+      left: calc( ((100% - 1140px) / 2) + 15px); } }
+  @media (min-width: 768px) {
+      .card.card-overlay .card-title-wrap.content-contained.pull-right,
+      .card.card-overlay .force-block.force-block.card-title-wrap.content-contained.pull-right {
+        left: auto; } }
+    @media (min-width: 768px) and (min-width: 768px) {
+      .card.card-overlay .card-title-wrap.content-contained.pull-right,
+      .card.card-overlay .force-block.force-block.card-title-wrap.content-contained.pull-right {
+        right: calc(12% + 15px); } }
+    @media (min-width: 768px) and (min-width: 992px) {
+      .card.card-overlay .card-title-wrap.content-contained.pull-right,
+      .card.card-overlay .force-block.force-block.card-title-wrap.content-contained.pull-right {
+        right: calc(5% + 45px); } }
+    @media (min-width: 768px) and (min-width: 1200px) {
+      .card.card-overlay .card-title-wrap.content-contained.pull-right,
+      .card.card-overlay .force-block.force-block.card-title-wrap.content-contained.pull-right {
+        right: 9%; } }
+    @media (min-width: 768px) and (min-width: 1328px) {
+      .card.card-overlay .card-title-wrap.content-contained.pull-right,
+      .card.card-overlay .force-block.force-block.card-title-wrap.content-contained.pull-right {
+        right: calc( ((100% - 1140px) / 2) + 15px); } }
+  @media (min-width: 768px) {
     .card.card-overlay .card-img-overlay.card-img-overlay-block, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom-shaded, .card.card-overlay .card-img-overlay-block.card-img-overlay-centered {
       position: absolute; }
     .card.card-overlay .card-img-overlay .form-group, .card.card-overlay .card-img-overlay-bottom .form-group, .card.card-overlay .card-img-overlay-bottom-shaded .form-group, .card.card-overlay .card-img-overlay-centered .form-group {
@@ -11440,6 +11478,9 @@ button.beta-toggler {
         padding: 3rem 2rem 2rem; }
         .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
           background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); }
+      .card.header-card-overlay .card-title-wrap.content-contained.force-block.force-block .card-title {
+        font-size: 1.6rem;
+        margin-top: 0; }
     .card.header-card-overlay .form-group {
       margin-bottom: 1rem; } }
 

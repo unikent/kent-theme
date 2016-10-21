@@ -1,7 +1,9 @@
 const exec = require('child_process').exec;
-String.prototype.endsWith = function(suffix) {
-	return this.indexOf(suffix, this.length - suffix.length) !== -1;
-};
+
+function endsWith(target, suffix) {
+	return target.indexOf(suffix, target.length - suffix.length) !== -1;
+}
+
 module.exports = {
 	theme: {
 		options: {
@@ -32,10 +34,10 @@ module.exports = {
 
 				// Magic happens here
 				middlewares.unshift(function(req, res, next) {
-					if(req.url.endsWith('.php')) {
+					if (endsWith(req.url, '.php')) {
 						exec('php ' + directory + req.url,
 							function (error, stdout, stderr){
-								if(error) {
+								if (error) {
 									console.error(stderr);
 								}
 								res.write(stdout);

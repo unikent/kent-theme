@@ -12,9 +12,10 @@
     .force-block.force-block.card-title-wrap {
         pointer-events: none;
         padding:          2rem;
-        background-color: $brand-primary;
+        background: $brand-primary;
         color:            #FFFFFF;
         transition:       background-color 300ms, opacity 600ms;
+        text-shadow: none;
 
         &.pull-right {
             float: none;
@@ -31,7 +32,7 @@
 
             &:hover {
                 text-decoration:  none;
-                background-color: lighten($brand-primary, 5%);
+                background: lighten($brand-primary, 5%);
             }
 
             &:after {
@@ -231,7 +232,7 @@
 
             &.pull-bottom {
                 top: auto;
-                bottom:      -($card-overlay-amount);
+                bottom: 0;
             }
 
             &.card-title-wrap-link {
@@ -241,6 +242,39 @@
             &.pull-right {
                 left:  inherit;
                 right: 5%;
+            }
+
+            &.content-contained {
+
+                @include media-breakpoint-up(md){ 
+                    left: calc(12% - 15px); 
+                }
+                @include media-breakpoint-up(lg){
+                   left: 5%;
+                }
+                @include media-breakpoint-up(xl){
+                    left: 9%;
+                }
+                @media (min-width: $article-max-breakpoint) {
+                    left: calc( ((100% - #{$content-container-max-width}) / 2) + 15px );
+                }
+
+                &.pull-right {
+                    left:auto;
+
+                    @include media-breakpoint-up(md){ 
+                        right: calc(12% + 15px); 
+                    }
+                    @include media-breakpoint-up(lg){
+                        right: calc(5% + 45px); // 15px right + 15px padd
+                    }
+                    @include media-breakpoint-up(xl){
+                        right: 9%;
+                    }
+                    @media (min-width: $article-max-breakpoint) {
+                        right: calc( ((100% - #{$content-container-max-width}) / 2) + 15px );
+                    }
+                }
             }
         }
 

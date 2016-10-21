@@ -101,20 +101,31 @@
             top:        auto;
             left:       0;
             padding:    3rem 2rem 2rem;
+
             background: rgba(0, 0, 0, 0.75);
             background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+
             &.card-title-wrap-link {
                 padding: 3rem 2rem 2rem;
                 &:hover {
                     background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
                 }
             }
+
+
+           &.content-contained.force-block.force-block {
+                .card-title {
+                    font-size:1.6rem;
+                    margin-top:0;
+                }
+           }
         }
 
         .form-group{
             margin-bottom: 1rem;
         }
     }
+
 
     .overlap-content-container {
 
@@ -141,8 +152,8 @@
         @media (min-width: $article-max-breakpoint) {
 
             margin:    0 auto;
-            width: calc(1140px + 2rem);
-            max-width: calc(1140px + 2rem);
+            width: calc(#{$content-container-max-width} + 2rem);
+            max-width: calc(#{$content-container-max-width} + 2rem);
         }
     }
 
