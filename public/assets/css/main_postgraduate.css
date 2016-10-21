@@ -9429,6 +9429,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
     color: #fff; }
 
 .departmental-nav .navbar-toggler {
+  width: auto;
   background-color: #f7f2e1;
   color: #671115;
   cursor: pointer;
