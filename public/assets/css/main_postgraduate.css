@@ -11479,11 +11479,24 @@ button.beta-toggler {
         padding: 3rem 2rem 2rem; }
         .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
           background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); }
-      .card.header-card-overlay .card-title-wrap.content-contained.force-block.force-block .card-title {
-        font-size: 1.6rem;
-        margin-top: 0; }
+      .card.header-card-overlay .card-title-wrap.force-block.force-block {
+        width: 45%; }
+        .card.header-card-overlay .card-title-wrap.force-block.force-block .card-title {
+          font-size: 1.6rem;
+          line-height: 2rem;
+          margin-top: 0; }
+        .card.header-card-overlay .card-title-wrap.force-block.force-block .card-text {
+          font-size: 1.2rem;
+          margin-bottom: 0px; }
     .card.header-card-overlay .form-group {
       margin-bottom: 1rem; } }
+
+@media (min-width: 992px) {
+  .card.header-card-overlay .card-title-wrap.force-block.force-block {
+    width: 40%; }
+    .card.header-card-overlay .card-title-wrap.force-block.force-block .card-title {
+      font-size: 2.3rem;
+      line-height: 2.3rem; } }
 
 @media (min-width: 544px) {
   .card.header-card-overlay .overlap-content-container {
