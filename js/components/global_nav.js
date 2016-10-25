@@ -38,7 +38,7 @@ window.KENT  = window.KENT || {};
 
 		// Remove menu & body class
 		menu.removeClass('in');
-		$('body').removeClass(menu.data('control-class'));
+		$('html, body').removeClass(menu.data('control-class'));
 
 		// Update button so it knows it's expanded area is collapsed
 		// aria-hidden is not needed on the element, since as the element is displayed none
@@ -61,7 +61,7 @@ window.KENT  = window.KENT || {};
 
 		// Set menu & body classes
 		menu.addClass('in');
-		$('body').addClass(menu.data('control-class'));
+		$('html, body').addClass(menu.data('control-class'));
 
 		// Update button so it knows it's expanded area is collapsed
 		button.attr('aria-expanded', true);
@@ -121,8 +121,9 @@ window.KENT  = window.KENT || {};
 	global_menu.find('.audience-nav-links a').click(function(e){
 		e.preventDefault();
 		var menu_name = e.target.getAttribute('data-action');
+		var menu_title = e.target.innerText;
 		if (menu_name !== null) {
-			window.KENT.kentbar.toggleMenu(menu_name, e.target);
+			window.KENT.kentbar.toggleMenu(menu_name, menu_title, e.target);
 			window.KENT.global_nav.closeMainMenu();
 		}
 		return false;

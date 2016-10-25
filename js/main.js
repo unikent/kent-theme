@@ -28576,20 +28576,20 @@ var toggleMenu=function toggleMenu(button,menu){ // If this menu is NOT open, op
 if(!menu.hasClass('in')){return openMenu(button,menu);}else {return closeMenu(button,menu);}}; // Close a given menu (toggling its buttons)
 var closeMenu=function closeMenu(button,menu){ // Cannot close already closed menu
 if(!menu.hasClass('in')){return false;} // Remove menu & body class
-menu.removeClass('in');$('body').removeClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
+menu.removeClass('in');$('html, body').removeClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
 // aria-hidden is not needed on the element, since as the element is displayed none
 // the screen reader won't see it anyway.
 button.attr('aria-expanded','false'); // Trigger event
 $(window).trigger('globalmenu:close',[menu]);return true;}; // Open a given menu (toggling its buttons)
 var openMenu=function openMenu(button,menu){ // Cannot open already closed menu
 if(menu.hasClass('in')){return false;} // Set menu & body classes
-menu.addClass('in');$('body').addClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
+menu.addClass('in');$('html, body').addClass(menu.data('control-class')); // Update button so it knows it's expanded area is collapsed
 button.attr('aria-expanded',true); // Fire events
 $(window).trigger('globalmenu:open',[menu]);return true;}; // Setup quick access methods to Menu functions
 var global_nav={openSearchMenu:function openSearchMenu(){return openMenu(global_search_toggles,global_search);},closeSearchMenu:function closeSearchMenu(){return closeMenu(global_search_toggles,global_search);},toggleSearchMenu:function toggleSearchMenu(){return toggleMenu(global_search_toggles,global_search);},openMainMenu:function openMainMenu(){return openMenu(global_menu_toggles,global_menu);},closeMainMenu:function closeMainMenu(){return closeMenu(global_menu_toggles,global_menu);},toggleMainMenu:function toggleMainMenu(){return toggleMenu(global_menu_toggles,global_menu);}}; // Toggle primary Menu (mobile Only)
 global_search_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleSearchMenu();return false;}); // Toggle Search Menu
 global_menu_toggles.click(function(e){e.preventDefault();window.KENT.global_nav.toggleMainMenu();return false;}); // Ensure opening one menu, closes the other.
-$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){window.KENT.global_nav.closeMainMenu();}else {window.KENT.global_nav.closeSearchMenu();}});global_menu.find('.audience-nav-links a').click(function(e){e.preventDefault();var menu_name=e.target.getAttribute('data-action');if(menu_name!==null){window.KENT.kentbar.toggleMenu(menu_name,e.target);window.KENT.global_nav.closeMainMenu();}return false;}); // CLose all menu's if user hits escape
+$(window).on('globalmenu:open',function(e,menu){if(menu[0]===global_search[0]){window.KENT.global_nav.closeMainMenu();}else {window.KENT.global_nav.closeSearchMenu();}});global_menu.find('.audience-nav-links a').click(function(e){e.preventDefault();var menu_name=e.target.getAttribute('data-action');var menu_title=e.target.innerText;if(menu_name!==null){window.KENT.kentbar.toggleMenu(menu_name,menu_title,e.target);window.KENT.global_nav.closeMainMenu();}return false;}); // CLose all menu's if user hits escape
 $(document).keyup(function(e){if(e.which===27){window.KENT.global_nav.closeMainMenu();window.KENT.global_nav.closeSearchMenu();window.KENT.kentbar.closeMenus();}}); // Homepage Logic
 if($('.home-nav').length>0){$(window).on('globalmenu:open kentbar_menu:open kentbar_mobilemenu:open',function(){$('.home-nav').hide();});$(window).on('globalmenu:close kentbar_menu:close kentbar_mobilemenu:close',function(e,menu){var $body=$('body');if(!($body.hasClass('show-global-menu')||$body.hasClass('show-global-search')||$body.hasClass('show-kentbar-menu'))){if(ResponsiveBootstrapToolkit.is('<=sm')){$('.home-nav').delay(300).fadeIn();}}});$(window).on('viewport:change',function(){if(ResponsiveBootstrapToolkit.is('<=sm')){ // if menu isn't already open
 if(!$('body').hasClass('show-global-menu')&&!$('body').hasClass('show-global-search')){$('.home-nav').delay(300).fadeIn();}}else {$('.home-nav').hide();}});} // Add to KENT object
