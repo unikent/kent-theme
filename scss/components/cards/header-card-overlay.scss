@@ -195,21 +195,17 @@
 	}
 }
 
-
 .show-departmental-menu {
-
-
-		@include media-breakpoint-up(md) {
+	@include media-breakpoint-up(md) {
+		.card.header-card-overlay {
+			margin-top: -8rem;
+		}
+		&.slim-header {
 			.card.header-card-overlay {
-				margin-top: -8rem;
-			}
-			&.slim-header {
-				.card.header-card-overlay {
-					margin-top: calc(-8rem + #{1px});
-				}
+				margin-top: calc(-8rem + #{1px});
 			}
 		}
-
+	}
 }
 
 .global-header-transparent .header-card-overlay {

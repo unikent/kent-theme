@@ -12373,6 +12373,20 @@ blockquote.pull-quote {
     blockquote.pull-quote.pull-quote-accent > p {
       color: #937227; }
 
+.content-container .content-aside blockquote,
+.content-container .content-aside .blockquote {
+  padding: 0 16px 32px 16px;
+  padding: 0 1rem 2rem 1rem; }
+  .content-container .content-aside blockquote > img,
+  .content-container .content-aside .blockquote > img {
+    margin: auto;
+    float: none; }
+  .content-container .content-aside blockquote p,
+  .content-container .content-aside .blockquote p {
+    padding: 0;
+    padding-top: 16px;
+    padding-top: 1rem; }
+
 .embed-responsive-2_5by1 {
   padding-bottom: 56.25%; }
   @media (min-width: 768px) {
