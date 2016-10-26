@@ -169,6 +169,9 @@ $social-networks: (
                       academia-edu: $academia-edu
                   );
 
+
+$scrim-gradient: linear-gradient(transparent, rgba(0, 0, 0, 0.4)); // panel was .2, header was .8 - useing .4 as middle
+
 // SCAFFOLDING
 
 $content-container-max-width: 1140px;
