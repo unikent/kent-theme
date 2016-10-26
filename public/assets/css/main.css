@@ -10078,7 +10078,7 @@ button.beta-toggler {
         background-color: #006bc5;
         border-color: #006bc5; }
   .card .card-img-overlay-bottom-shaded {
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.4));
     padding-top: 48px;
     padding-top: 3rem; }
   .card .card-body {
@@ -11474,11 +11474,11 @@ button.beta-toggler {
       left: 0;
       padding: 3rem 2rem 2rem;
       background: rgba(0, 0, 0, 0.75);
-      background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); }
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)); }
       .card.header-card-overlay .card-title-wrap.card-title-wrap-link {
         padding: 3rem 2rem 2rem; }
         .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
-          background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); }
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)); }
       .card.header-card-overlay .card-title-wrap.force-block.force-block {
         width: 45%; }
         .card.header-card-overlay .card-title-wrap.force-block.force-block .card-title {

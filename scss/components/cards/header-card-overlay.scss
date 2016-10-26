@@ -103,12 +103,12 @@
 			padding:    3rem 2rem 2rem;
 
 			background: rgba(0, 0, 0, 0.75);
-			background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+			background: $scrim-gradient; // was 0.8
 
 			&.card-title-wrap-link {
 				padding: 3rem 2rem 2rem;
 				&:hover {
-					background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+					background: $scrim-gradient;
 				}
 			}
 
