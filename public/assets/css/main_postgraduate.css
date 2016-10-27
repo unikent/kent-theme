@@ -8928,6 +8928,15 @@ input[type=number]::-webkit-outer-spin-button {
   overflow-y: hidden;
   height: 100%; }
 
+#kentBar.kent-bar button.audience-menu {
+  display: none; }
+
+#kentBar.kent-bar.in button.audience-menu {
+  display: block; }
+  @media (min-width: 768px) {
+    #kentBar.kent-bar.in button.audience-menu {
+      display: none; } }
+
 .global-header {
   position: relative;
   background-color: transparent; }
