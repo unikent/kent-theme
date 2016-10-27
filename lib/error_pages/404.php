@@ -19,7 +19,7 @@ use unikent\kent_theme\KentThemeHelper;
 		</div>
 		<div class="card-img-overlay-centered card-img-overlay-tinted">
 			<div class="text-xs-center">
-				<h2 class="card-subtitle">Sorry, weee can’t find the page you’re looking for.</h2>
+				<h2 class="card-subtitle">Sorry, we can’t find the page you’re looking for.</h2>
 				<?php if(!empty($message)){ ?><p class="card-text"><?php echo $message; ?></p><?php } ?>
 			</div>
 		</div>
