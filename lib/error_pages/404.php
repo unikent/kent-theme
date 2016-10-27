@@ -19,7 +19,7 @@ use unikent\kent_theme\KentThemeHelper;
 		</div>
 		<div class="card-img-overlay-centered card-img-overlay-tinted">
 			<div class="text-xs-center">
-				<h2 class="card-subtitle">Sorry, we can’t find the page you’re looking for.</h2>
+				<h2 class="card-subtitle">Sorry, weee can’t find the page you’re looking for.</h2>
 				<?php if(!empty($message)){ ?><p class="card-text"><?php echo $message; ?></p><?php } ?>
 			</div>
 		</div>
@@ -28,7 +28,7 @@ use unikent\kent_theme\KentThemeHelper;
 				<div class="form-group">
 					<label for="search" class="sr-only">Search</label>
 					<div class="input-group input-group-lg">
-						<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department, keyword... " autocomplete="off" value="<?php if(isset($_GET['q'])) echo htmlentities($_GET['q']); ?>">
+						<input type="search" class="form-control" id="search" name="q" placeholder="Search by course, department, keyword... " autocomplete="off" value="">
 				<span class="input-group-btn">
 					<button type="submit" class="btn btn-accent btn-icon kf-search" aria-label="Search"><span class="sr-only">Search</span></button>
 				</span>
