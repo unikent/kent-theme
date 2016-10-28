@@ -105,7 +105,7 @@ main {
     width: 100%;
 }
 
-.content-container{
+.content-container {
     width:100%;
     @include make-row();
 
@@ -115,6 +115,12 @@ main {
         width: 100%;
         padding: 0 0 0 $grid-gutter-width-base;
         margin-bottom: 2rem;
+
+        // First direct child should never have top margin/padding/
+        // so everything lines up in the content-container
+        & > *:first-child {
+            margin-top:0;
+        }
     }
 
     .content-aside{
