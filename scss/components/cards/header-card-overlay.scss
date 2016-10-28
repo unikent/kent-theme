@@ -72,14 +72,19 @@
 			padding: 2rem;
 			width: calc(#{map_get($container-max-widths,lg)} + 2rem);
 			max-width: calc(#{map_get($container-max-widths,lg)} + 2rem);
-		}
 
-		@include media-breakpoint-up(xl) {
+
 			position: absolute;
 			bottom: 0;
 			background-color: rgba(255, 255, 255, 0.85);
 			left: 0;
 			right: 0;
+
+		}
+
+		@include media-breakpoint-up(xl) {
+			
+			
 			padding: 1rem 2rem 0.5rem 2rem;
 			width: calc(#{map_get($container-max-widths,xl)} + 2rem);
 			max-width: calc(#{map_get($container-max-widths,xl)} + 2rem);
@@ -141,6 +146,9 @@
 		}
 	}
 	.overlap-content-container {
+		margin-left:0;
+		margin-right:0;
+		padding-bottom:0;
 
 		@include media-breakpoint-up(sm) {
 			max-width:     none;
@@ -154,13 +162,15 @@
 		}
 		@include media-breakpoint-up(lg) {
 			max-width:     none;
-			padding-left:  calc(5% + #{$grid-gutter-width-base/2});
-			padding-right: calc(5% + #{$grid-gutter-width-base});
+			margin-left:  calc(5% - #{$grid-gutter-width-base/2});
+			width: calc(90% + #{$grid-gutter-width-base/2});
+
+			padding:      1rem 2rem 0.5rem 2rem;
 		}
 		@include media-breakpoint-up(xl) {
 			margin-left:  calc(9% - 1rem);
-			margin-right: calc(9% + #{$grid-gutter-width-base/2} - 1rem);
-			padding:      1rem 2rem 0.5rem 2rem;
+			width: calc(91% - 9% + #{$grid-gutter-width-base/2});
+
 		}
 		@media (min-width: $article-max-breakpoint) {
 

@@ -11458,14 +11458,14 @@ button.beta-toggler {
     .card.header-card-overlay .card-title-overlap {
       padding: 2rem;
       width: calc(940px + 2rem);
-      max-width: calc(940px + 2rem); } }
-  @media (min-width: 1200px) {
-    .card.header-card-overlay .card-title-overlap {
+      max-width: calc(940px + 2rem);
       position: absolute;
       bottom: 0;
       background-color: rgba(255, 255, 255, 0.85);
       left: 0;
-      right: 0;
+      right: 0; } }
+  @media (min-width: 1200px) {
+    .card.header-card-overlay .card-title-overlap {
       padding: 1rem 2rem 0.5rem 2rem;
       width: calc(1140px + 2rem);
       max-width: calc(1140px + 2rem); } }
@@ -11507,35 +11507,35 @@ button.beta-toggler {
       font-size: 2.3rem;
       line-height: 2.3rem; } }
 
-@media (min-width: 544px) {
-  .card.header-card-overlay .overlap-content-container {
-    max-width: none;
-    padding-left: 5%;
-    padding-right: 5%; } }
-
-@media (min-width: 768px) {
-  .card.header-card-overlay .overlap-content-container {
-    max-width: none;
-    padding-left: 12%;
-    padding-right: 12%; } }
-
-@media (min-width: 992px) {
-  .card.header-card-overlay .overlap-content-container {
-    max-width: none;
-    padding-left: calc(5% + 15px);
-    padding-right: calc(5% + 30px); } }
-
-@media (min-width: 1200px) {
-  .card.header-card-overlay .overlap-content-container {
-    margin-left: calc(9% - 1rem);
-    margin-right: calc(9% + 15px - 1rem);
-    padding: 1rem 2rem 0.5rem 2rem; } }
-
-@media (min-width: 1328px) {
-  .card.header-card-overlay .overlap-content-container {
-    margin: 0 auto;
-    width: calc(1140px + 2rem);
-    max-width: calc(1140px + 2rem); } }
+.card.header-card-overlay .overlap-content-container {
+  margin-left: 0;
+  margin-right: 0;
+  padding-bottom: 0; }
+  @media (min-width: 544px) {
+    .card.header-card-overlay .overlap-content-container {
+      max-width: none;
+      padding-left: 5%;
+      padding-right: 5%; } }
+  @media (min-width: 768px) {
+    .card.header-card-overlay .overlap-content-container {
+      max-width: none;
+      padding-left: 12%;
+      padding-right: 12%; } }
+  @media (min-width: 992px) {
+    .card.header-card-overlay .overlap-content-container {
+      max-width: none;
+      margin-left: calc(5% - 15px);
+      width: calc(90% + 15px);
+      padding: 1rem 2rem 0.5rem 2rem; } }
+  @media (min-width: 1200px) {
+    .card.header-card-overlay .overlap-content-container {
+      margin-left: calc(9% - 1rem);
+      width: calc(91% - 9% + 15px); } }
+  @media (min-width: 1328px) {
+    .card.header-card-overlay .overlap-content-container {
+      margin: 0 auto;
+      width: calc(1140px + 2rem);
+      max-width: calc(1140px + 2rem); } }
 
 .card.header-card-overlay .card-footer {
   padding: 0 8px;
