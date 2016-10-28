@@ -30,17 +30,26 @@
     list-style: none;
     padding:    0;
     li {
-        padding:       0.5rem 0;
+        
         border-bottom: 1px solid $border-gray;
         a {
+            padding:       0.5rem 0;
             display:        inline-block;
             vertical-align: middle;
             overflow:       hidden;
             text-overflow:  ellipsis;
             white-space:    nowrap;
             width:          100%;
+
             &:hover {
                 text-decoration: underline;
+            }
+            &.active {
+                font-weight: bold;
+                color: $brand-accent;
+                border-left: 3px solid $brand-accent;
+                margin-left: -8px;
+                padding-left:5px;
             }
         }
         span {
