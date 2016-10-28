@@ -219,17 +219,23 @@ blockquote.pull-quote {
     }
 }
 
+/** Modified behavior for when in an aside (only apply when not inline) */
 .content-container .content-aside blockquote,
 .content-container .content-aside .blockquote {
-    padding: 0 1rem 2rem 1rem;
+     @include media-breakpoint-up(lg) {
 
-    & > img {
-        margin: auto;
-        float: none;
-    }
-    p {
-        padding:0;
-        padding-top: 1rem;
+        padding: 0 0 2rem 0;
+
+        & > img {
+            margin: auto;
+            float: none;
+            height: 13rem;
+            margin-bottom:1.5rem;
+        }
+        p {
+            padding: 0;
+            font-size: 1.5rem;
+        }
     }
 
 }
