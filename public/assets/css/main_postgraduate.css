@@ -7426,18 +7426,19 @@ figure figcaption,
 
 .video-launcher {
   position: relative; }
-  .video-launcher > .video-player {
-    transition: max-height 300ms;
+  .video-launcher[data-mode='inline'] .video-player {
+    transition: max-height 300ms; }
+  .video-launcher .video-player {
     max-height: 0;
     overflow: hidden; }
-  .video-launcher > img {
+  .video-launcher img {
     display: block;
     max-width: 100%; }
-  .video-launcher.playing.playing.playing:before {
+  .video-launcher.playing.playing.playing::before, .video-launcher.playing.playing.playing .card-media-wrap::before {
     padding-top: 0; }
-  .video-launcher.playing.playing.playing > .video-player {
+  .video-launcher.playing.playing.playing .video-player {
     max-height: 100vh; }
-  .video-launcher.playing.playing.playing > img {
+  .video-launcher.playing.playing.playing img {
     display: none; }
   .video-launcher.playing.playing.playing::after {
     display: none; }

@@ -6,13 +6,16 @@
 
 	position: relative;
 
-	& > .video-player {
-        transition: max-height 300ms;
+	&[data-mode='inline'] .video-player{
+		transition: max-height 300ms; //only transition inline
+	}
+
+	.video-player {
 		max-height:0;
         overflow: hidden;
 	}
 
-	& > img {
+	img {
 		display:block;
 		max-width:100%;
 	}
@@ -20,13 +23,13 @@
 	// ensure playing selector is pretty strong
 	&.playing.playing.playing {
 
-        &:before{
+        &::before, .card-media-wrap::before{
             padding-top: 0;
         }
-		& > .video-player {
+		.video-player {
 			max-height:100vh;
 		}
-		& > img {display:none;}
+		img {display:none;}
 		&::after {display:none;}
 
 		// plyr - hide icon toggles
