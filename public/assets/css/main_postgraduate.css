@@ -12402,7 +12402,7 @@ blockquote.pull-quote {
 @media (min-width: 992px) {
   .content-container .content-aside blockquote,
   .content-container .content-aside .blockquote {
-    padding: 0 0 2rem 0; }
+    padding: 0 0 3rem 0; }
     .content-container .content-aside blockquote > img,
     .content-container .content-aside .blockquote > img {
       margin: auto;
@@ -12412,7 +12412,8 @@ blockquote.pull-quote {
     .content-container .content-aside blockquote p,
     .content-container .content-aside .blockquote p {
       padding: 0;
-      font-size: 1.5rem; } }
+      font-size: 1.5rem;
+      margin-bottom: .5rem; } }
 
 .embed-responsive-2_5by1 {
   padding-bottom: 56.25%; }
