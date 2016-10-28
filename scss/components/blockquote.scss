@@ -224,7 +224,7 @@ blockquote.pull-quote {
 .content-container .content-aside .blockquote {
      @include media-breakpoint-up(lg) {
 
-        padding: 0 0 2rem 0;
+        padding: 0 0 3rem 0;
 
         & > img {
             margin: auto;
@@ -235,6 +235,7 @@ blockquote.pull-quote {
         p {
             padding: 0;
             font-size: 1.5rem;
+            margin-bottom:.5rem;
         }
     }
 
