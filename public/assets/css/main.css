@@ -7434,11 +7434,14 @@ figure figcaption,
   .video-launcher img {
     display: block;
     max-width: 100%; }
-  .video-launcher.playing.playing.playing::before, .video-launcher.playing.playing.playing .card-media-wrap::before {
+  .video-launcher.playing.playing.playing::before, .video-launcher.playing.playing.playing .card-media-wrap::before, .video-launcher.playing.playing.playing .card-embed-wrap::before {
     padding-top: 0; }
+  .video-launcher.playing.playing.playing .card-embed-wrap {
+    padding-bottom: 0;
+    height: auto; }
   .video-launcher.playing.playing.playing .video-player {
     max-height: 100vh; }
-  .video-launcher.playing.playing.playing img {
+  .video-launcher.playing.playing.playing img, .video-launcher.playing.playing.playing video {
     display: none; }
   .video-launcher.playing.playing.playing::after {
     display: none; }

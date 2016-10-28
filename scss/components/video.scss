@@ -23,13 +23,17 @@
 	// ensure playing selector is pretty strong
 	&.playing.playing.playing {
 
-        &::before, .card-media-wrap::before{
+        &::before, .card-media-wrap::before, .card-embed-wrap::before{
             padding-top: 0;
+        }
+        .card-embed-wrap {
+        	padding-bottom:0;
+        	height:auto;
         }
 		.video-player {
 			max-height:100vh;
 		}
-		img {display:none;}
+		img, video {display:none;}
 		&::after {display:none;}
 
 		// plyr - hide icon toggles
