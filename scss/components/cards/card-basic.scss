@@ -135,6 +135,7 @@
     }
 
     .card-img-overlay {
+        font-size: 1rem;
         pointer-events: none;
         padding: 1rem;
         display: block;
@@ -327,6 +328,7 @@
     .card-media-wrap, .card-embed-wrap {
 
         @extend .media-wrap;
+        font-size: 0;
         transition: max-height 600ms;
 
         &.force-3-2{

@@ -107,7 +107,6 @@
 			left:       0;
 			padding:    3rem 2rem 2rem;
 
-			background: rgba(0, 0, 0, 0.75);
 			background: $scrim-gradient; // was 0.8
 
 			&.card-title-wrap-link {
@@ -220,17 +219,17 @@
 
 .global-header-transparent .header-card-overlay {
 
-	.card-media-wrap, .media-wrap-paralax {
-		&::after {
-			position:   absolute;
-			top:        0;
-			left:       0;
-			right:      0;
-			bottom:     0;
-			content:    "";
-			background: linear-gradient(rgba(0, 0, 0, 0.7) 1rem, transparent 7.5rem);
-		}
-	}
+
+    &::after {
+        position:   absolute;
+        top:        0;
+        left:       0;
+        right:      0;
+        bottom:     0;
+        content:    "";
+        background: linear-gradient(rgba(0, 0, 0, 0.7) 1rem, transparent 7.5rem);
+        pointer-events: none;
+    }
 
 	@include media-breakpoint-up(md) {
 		margin-top: -7rem;
