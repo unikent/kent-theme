@@ -10572,9 +10572,6 @@ button.beta-toggler {
     color: #FFFFFF;
     transition: background-color 300ms, opacity 600ms;
     text-shadow: none; }
-    .card.card-overlay .card-title-wrap h2,
-    .card.card-overlay .force-block.force-block.card-title-wrap h2 {
-      margin-top: 0; }
     .card.card-overlay .card-title-wrap.pull-right,
     .card.card-overlay .force-block.force-block.card-title-wrap.pull-right {
       float: none; }
@@ -10607,7 +10604,8 @@ button.beta-toggler {
       text-transform: uppercase;
       color: #CE9716;
       font-size: 2rem;
-      line-height: 2.3rem; }
+      line-height: 2.3rem;
+      margin-top: 0; }
       @media (min-width: 768px) {
         .card.card-overlay .card-title-wrap .card-title,
         .card.card-overlay .force-block.force-block.card-title-wrap .card-title {
