@@ -106,7 +106,7 @@
 }
 
 .btn-tertiary {
-    @include kent-button-variant($body-color, $brand-tertiary, darken($brand-tertiary, 20%));
+    @include kent-button-variant($link-color, $brand-tertiary, darken($brand-tertiary, 20%));
 }
 
 .btn-accent {

@@ -7253,16 +7253,16 @@ figure figcaption,
     border-color: #ADADAD; }
 
 .btn-tertiary {
-  color: #171717;
+  color: #005689;
   background-color: #F7F2E1;
   border-color: #e2cf90; }
   .btn-tertiary:focus, .btn-tertiary.focus, .btn-tertiary:active, .btn-tertiary.active,
   .open > .btn-tertiary.dropdown-toggle {
-    color: #171717;
+    color: #005689;
     background-color: white;
     border-color: #ece1b9; }
   .btn-tertiary:hover {
-    color: #171717;
+    color: #005689;
     background-color: white;
     border-color: #ece1b9;
     text-decoration: underline; }
@@ -10969,7 +10969,7 @@ button.beta-toggler {
   .spaced-links-inner-container .spaced-links-item {
     width: 100%;
     display: block;
-    padding: 0.75rem 1rem;
+    padding: 0;
     background: #F5F5F5;
     border-bottom: 1px solid #CCCCCC; }
     .spaced-links-inner-container .spaced-links-item i {
@@ -10981,9 +10981,9 @@ button.beta-toggler {
       right: 1rem; }
     @media (min-width: 544px) {
       .spaced-links-inner-container .spaced-links-item {
-        text-align: center;
-        padding: 0.475rem 1rem;
+        text-align: left;
         background: none;
+        padding-top: .5rem;
         border: none; }
         .spaced-links-inner-container .spaced-links-item:after {
           display: none; } }
