@@ -298,3 +298,10 @@
         margin-top: 0;
     }
 }
+
+.tab-content.vertical-nav {
+    
+    & > .tab-pane {
+        padding: 1rem 0;
+    }
+}
