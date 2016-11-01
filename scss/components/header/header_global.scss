@@ -123,9 +123,6 @@
         }
     }
 
-    .audience-nav-links {
-        @extend .mobile-nav-links;
-    }
 
     @include media-breakpoint-up(md) {
 
@@ -144,10 +141,6 @@
 
         }
 
-        .audience-nav-links a:hover {
-            background: transparent;
-        }
-
         .global-nav-menu {
             display:       block;
             height:        auto;
@@ -157,10 +150,6 @@
         .global-nav-search {
             opacity:    0;
             transition: opacity 600ms;
-        }
-
-        .audience-nav-links {
-            display: none;
         }
 
         .search-button-full {

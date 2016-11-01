@@ -118,23 +118,19 @@ window.KENT  = window.KENT || {};
 		}
 	});
 
-	global_menu.find('.audience-nav-links a').click(function(e){
-		e.preventDefault();
-		var menu_name = e.target.getAttribute('data-action');
-		var menu_title = e.target.innerText;
-		if (menu_name !== null) {
-			window.KENT.kentbar.toggleMenu(menu_name, menu_title, e.target);
-			window.KENT.global_nav.closeMainMenu();
-		}
-		return false;
-	});
-
 	// CLose all menu's if user hits escape
 	$(document).keyup(function(e){
 		if (e.which === 27){
 			window.KENT.global_nav.closeMainMenu();
 			window.KENT.global_nav.closeSearchMenu();
 			window.KENT.kentbar.closeMenus();
+		}
+	});
+
+	$(window).on('viewport:change', function() {
+
+		if (ResponsiveBootstrapToolkit.is('>sm')) {
+			$('html, body').removeClass('show-global-menu');
 		}
 	});
 

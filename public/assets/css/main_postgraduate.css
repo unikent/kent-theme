@@ -5685,7 +5685,8 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
       #kent-bar.in nav.audience-nav-links, .kent-bar.in nav.audience-nav-links {
         height: auto;
         box-shadow: none;
-        border-bottom: none; }
+        border-bottom: none;
+        position: relative; }
       #kent-bar nav.audience-nav-links, .kent-bar nav.audience-nav-links {
         width: auto;
         box-shadow: none;
@@ -5695,6 +5696,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
         float: right;
         margin-right: 20px;
         overflow: visible;
+        z-index: 100;
         position: absolute;
         top: 0;
         right: 0; }
@@ -5724,7 +5726,6 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
             bottom: -18px;
             right: calc(50% - 7px);
             transform: rotate(45deg);
-            z-index: 100;
             border-top: 1px solid #ccc;
             border-left: 1px solid #ccc; } }
 
@@ -8637,7 +8638,7 @@ input[type=number]::-webkit-outer-spin-button {
   appearance: none;
   margin: 0; }
 
-.mobile-nav-links a, .global-nav .audience-nav-links a, .departmental-nav .navbar-menu a {
+.mobile-nav-links a, .departmental-nav .navbar-menu a {
   display: block;
   color: #EEEEEE;
   padding: 12px 16px;
@@ -8646,16 +8647,16 @@ input[type=number]::-webkit-outer-spin-button {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   font-size: 16px;
   font-size: 1rem; }
-  .mobile-nav-links a:after, .global-nav .audience-nav-links a:after, .departmental-nav .navbar-menu a:after {
+  .mobile-nav-links a:after, .departmental-nav .navbar-menu a:after {
     position: absolute;
     display: inline-block;
     content: "";
     right: 16px;
     right: 1rem;
     font-family: "kentfont", sans-serif; }
-  .mobile-nav-links a:hover, .global-nav .audience-nav-links a:hover, .departmental-nav .navbar-menu a:hover {
+  .mobile-nav-links a:hover, .departmental-nav .navbar-menu a:hover {
     background-color: rgba(255, 255, 255, 0.1); }
-  .mobile-nav-links a.active, .global-nav .audience-nav-links a.active, .departmental-nav .navbar-menu a.active {
+  .mobile-nav-links a.active, .departmental-nav .navbar-menu a.active {
     background-color: rgba(255, 255, 255, 0.1); }
 
 .card-panel.nav-links-panel, .nav-links-panel {
@@ -8923,7 +8924,7 @@ input[type=number]::-webkit-outer-spin-button {
   #kentBar.audience-bar.in .audience-nav-links {
     height: 166px;
     position: relative;
-    z-index: 1; }
+    z-index: 100; }
   @media (min-width: 768px) {
     #kentBar.kent-bar,
     #kentBar.audience-bar {
@@ -8946,15 +8947,6 @@ input[type=number]::-webkit-outer-spin-button {
 .show-kentbar-menu {
   overflow-y: hidden;
   height: 100%; }
-
-#kentBar.kent-bar button.audience-menu {
-  display: none; }
-
-#kentBar.kent-bar.in button.audience-menu {
-  display: block; }
-  @media (min-width: 768px) {
-    #kentBar.kent-bar.in button.audience-menu {
-      display: none; } }
 
 .global-header {
   position: relative;
@@ -9060,8 +9052,6 @@ input[type=number]::-webkit-outer-spin-button {
         padding-right: 0;
         padding-top: 1.2rem;
         color: #FFF; }
-      .global-nav .audience-nav-links a:hover {
-        background: transparent; }
       .global-nav .global-nav-menu {
         display: block;
         height: auto;
@@ -9069,8 +9059,6 @@ input[type=number]::-webkit-outer-spin-button {
       .global-nav .global-nav-search {
         opacity: 0;
         transition: opacity 600ms; }
-      .global-nav .audience-nav-links {
-        display: none; }
       .global-nav .search-button-full {
         display: block;
         margin-top: 1rem;
@@ -10456,8 +10444,7 @@ button.beta-toggler {
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link img {
     transition: all 300ms;
     transform: translate3d(0, 0, 0);
-    -webkit-filter: brightness(1);
-            filter: brightness(1); }
+    filter: brightness(1); }
   a.card:hover, a.card:focus, a:hover, a:focus, .faux-link-block:hover, .nav-links-panel nav .nav-link:hover, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover, .card.card-linked:hover, .card-panel.cards-linked .card:hover, .card .card-img-overlay-link:hover, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover, .faux-link-block:focus, .nav-links-panel nav .nav-link:focus, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus, .card.card-linked:focus, .card-panel.cards-linked .card:focus, .card .card-img-overlay-link:focus, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus {
@@ -10465,8 +10452,7 @@ button.beta-toggler {
     a.card:hover img, a.card:focus img, a:hover img, a:focus img, .faux-link-block:hover img, .nav-links-panel nav .nav-link:hover img, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .card.card-linked:hover img, .card-panel.cards-linked .card:hover img, .card .card-img-overlay-link:hover img, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover img, .faux-link-block:focus img, .nav-links-panel nav .nav-link:focus img, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .card.card-linked:focus img, .card-panel.cards-linked .card:focus img, .card .card-img-overlay-link:focus img, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus img {
-      -webkit-filter: brightness(85%);
-              filter: brightness(85%); }
+      filter: brightness(85%); }
 
 .cards-backed .card-list-item, .cards-backed .card-panel.cards-list .card-panel-body .card, .card-panel.cards-list .card-panel-body .cards-backed .card, .cards-backed .card-panel .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list .cards-backed .card,
 .card-backed.card-list-item,
