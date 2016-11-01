@@ -10784,7 +10784,8 @@ button.beta-toggler {
 .card.header-card-overlay + .card-title-overlap, main >
 .card.header-card-overlay + blockquote,
 .card.header-card-overlay + .content-header,
-.card.header-card-overlay + .content-container {
+.card.header-card-overlay + .content-container,
+.card.header-card-overlay + .content-body {
   margin-top: 1rem; }
 
 .card.header-card-overlay .card-title-wrap {
