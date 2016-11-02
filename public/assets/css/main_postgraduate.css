@@ -11506,6 +11506,9 @@ button.beta-toggler {
   padding: 16px 15px;
   padding: 1rem 15px;
   z-index: 1; }
+  .card.card-overlay.header-card-overlay .card-title-overlap h1:last-child {
+    margin-bottom: 24px;
+    margin-bottom: 1.5rem; }
   .card.card-overlay.header-card-overlay .card-title-overlap .card-subtitle {
     color: #937227;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;

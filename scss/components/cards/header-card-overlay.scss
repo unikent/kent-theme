@@ -110,6 +110,10 @@
 		padding: 1rem ($grid-gutter-width-base/2);
 		z-index: 1;
 
+        h1:last-child{
+            margin-bottom: 1.5rem;
+        }
+
 		.card-subtitle {
 			color: $brand-accent;
 			font-family: $font-family-base;
