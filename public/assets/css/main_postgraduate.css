@@ -629,37 +629,37 @@ pre {
   max-height: 340px;
   overflow-y: scroll; }
 
-.container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
+.container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.card-overlay.header-card-overlay .card-title-overlap, main > blockquote {
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px; }
-  .container::after, .container-padded::after, .container-padded-h::after, .card-panel.card-panel-contained::after, .card-panel .card-panel-body::after, .card-panel .card-panel-header::after, .card.header-card-overlay .card-title-overlap::after, main > blockquote::after {
+  .container::after, .container-padded::after, .container-padded-h::after, .card-panel.card-panel-contained::after, .card-panel .card-panel-body::after, .card-panel .card-panel-header::after, .card.card-overlay.header-card-overlay .card-title-overlap::after, main > blockquote::after {
     content: "";
     display: table;
     clear: both; }
   @media (min-width: 544px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.card-overlay.header-card-overlay .card-title-overlap, main > blockquote {
       width: 576px;
       max-width: 100%; } }
   @media (min-width: 768px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.card-overlay.header-card-overlay .card-title-overlap, main > blockquote {
       width: 720px;
       max-width: 100%; } }
   @media (min-width: 992px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.card-overlay.header-card-overlay .card-title-overlap, main > blockquote {
       width: 940px;
       max-width: 100%; } }
   @media (min-width: 1200px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.card-overlay.header-card-overlay .card-title-overlap, main > blockquote {
       width: 1140px;
       max-width: 100%; } }
   @media (min-width: 1712px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.card-overlay.header-card-overlay .card-title-overlap, main > blockquote {
       width: 1140px;
       max-width: 100%; } }
   @media (min-width: 2400px) {
-    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.header-card-overlay .card-title-overlap, main > blockquote {
+    .container, .container-padded, .container-padded-h, .card-panel.card-panel-contained, .card-panel .card-panel-body, .card-panel .card-panel-header, .card.card-overlay.header-card-overlay .card-title-overlap, main > blockquote {
       width: 1140px;
       max-width: 100%; } }
 
@@ -6871,7 +6871,7 @@ a.text-primary-light:focus, a.text-primary-light:hover {
 a.text-energy:focus, a.text-energy:hover {
   color: #bf3e1f !important; }
 
-main > .container:first-child, main > .container-padded:first-child, main > .container-padded-h:first-child, main > .card-panel.card-panel-contained:first-child, .card-panel main > .card-panel-body:first-child, .card-panel main > .card-panel-header:first-child, .card.header-card-overlay main > .card-title-overlap:first-child, main > blockquote:first-child,
+main > .container:first-child, main > .container-padded:first-child, main > .container-padded-h:first-child, main > .card-panel.card-panel-contained:first-child, .card-panel main > .card-panel-body:first-child, .card-panel main > .card-panel-header:first-child, .card.card-overlay.header-card-overlay main > .card-title-overlap:first-child, main > blockquote:first-child,
 main > .content-container:first-child,
 main > .content-header:first-child,
 main > .content-body:first-child,
@@ -6879,7 +6879,7 @@ main > article:first-child {
   margin-top: 32px;
   margin-top: 2rem; }
 
-main > .container:last-child, main > .container-padded:last-child, main > .container-padded-h:last-child, main > .card-panel.card-panel-contained:last-child, .card-panel main > .card-panel-body:last-child, .card-panel main > .card-panel-header:last-child, .card.header-card-overlay main > .card-title-overlap:last-child, main > blockquote:last-child,
+main > .container:last-child, main > .container-padded:last-child, main > .container-padded-h:last-child, main > .card-panel.card-panel-contained:last-child, .card-panel main > .card-panel-body:last-child, .card-panel main > .card-panel-header:last-child, .card.card-overlay.header-card-overlay main > .card-title-overlap:last-child, main > blockquote:last-child,
 main > .content-container:last-child,
 main > .content-header:last-child,
 main > .content-body:last-child,
@@ -7309,15 +7309,15 @@ figure figcaption,
   padding: 0.25rem 0 0 0.5rem;
   margin: 0; }
 
-.container figure, .container-padded figure, .container-padded-h figure, .card-panel.card-panel-contained figure, .card-panel .card-panel-body figure, .card-panel .card-panel-header figure, .card.header-card-overlay .card-title-overlap figure, main > blockquote figure, .content-container figure {
+.container figure, .container-padded figure, .container-padded-h figure, .card-panel.card-panel-contained figure, .card-panel .card-panel-body figure, .card-panel .card-panel-header figure, .card.card-overlay.header-card-overlay .card-title-overlap figure, main > blockquote figure, .content-container figure {
   clear: none;
   overflow: visible;
   margin-top: 0; }
-  .container figure figcaption, .container-padded figure figcaption, .container-padded-h figure figcaption, .card-panel.card-panel-contained figure figcaption, .card-panel .card-panel-body figure figcaption, .card-panel .card-panel-header figure figcaption, .card.header-card-overlay .card-title-overlap figure figcaption, main > blockquote figure figcaption, .content-container figure figcaption {
+  .container figure figcaption, .container-padded figure figcaption, .container-padded-h figure figcaption, .card-panel.card-panel-contained figure figcaption, .card-panel .card-panel-body figure figcaption, .card-panel .card-panel-header figure figcaption, .card.card-overlay.header-card-overlay .card-title-overlap figure figcaption, main > blockquote figure figcaption, .content-container figure figcaption {
     padding-left: 0; }
-  .container figure.figure-left, .container-padded figure.figure-left, .container-padded-h figure.figure-left, .card-panel.card-panel-contained figure.figure-left, .card-panel .card-panel-body figure.figure-left, .card-panel .card-panel-header figure.figure-left, .card.header-card-overlay .card-title-overlap figure.figure-left, main > blockquote figure.figure-left, .container figure.figure-pull-left, .container-padded figure.figure-pull-left, .container-padded-h figure.figure-pull-left, .card-panel.card-panel-contained figure.figure-pull-left, .card-panel .card-panel-body figure.figure-pull-left, .card-panel .card-panel-header figure.figure-pull-left, .card.header-card-overlay .card-title-overlap figure.figure-pull-left, main > blockquote figure.figure-pull-left, .content-container figure.figure-left, .content-container figure.figure-pull-left {
+  .container figure.figure-left, .container-padded figure.figure-left, .container-padded-h figure.figure-left, .card-panel.card-panel-contained figure.figure-left, .card-panel .card-panel-body figure.figure-left, .card-panel .card-panel-header figure.figure-left, .card.card-overlay.header-card-overlay .card-title-overlap figure.figure-left, main > blockquote figure.figure-left, .container figure.figure-pull-left, .container-padded figure.figure-pull-left, .container-padded-h figure.figure-pull-left, .card-panel.card-panel-contained figure.figure-pull-left, .card-panel .card-panel-body figure.figure-pull-left, .card-panel .card-panel-header figure.figure-pull-left, .card.card-overlay.header-card-overlay .card-title-overlap figure.figure-pull-left, main > blockquote figure.figure-pull-left, .content-container figure.figure-left, .content-container figure.figure-pull-left {
     clear: left; }
-  .container figure.figure-right, .container-padded figure.figure-right, .container-padded-h figure.figure-right, .card-panel.card-panel-contained figure.figure-right, .card-panel .card-panel-body figure.figure-right, .card-panel .card-panel-header figure.figure-right, .card.header-card-overlay .card-title-overlap figure.figure-right, main > blockquote figure.figure-right, .container figure.figure-pull-right, .container-padded figure.figure-pull-right, .container-padded-h figure.figure-pull-right, .card-panel.card-panel-contained figure.figure-pull-right, .card-panel .card-panel-body figure.figure-pull-right, .card-panel .card-panel-header figure.figure-pull-right, .card.header-card-overlay .card-title-overlap figure.figure-pull-right, main > blockquote figure.figure-pull-right, .content-container figure.figure-right, .content-container figure.figure-pull-right {
+  .container figure.figure-right, .container-padded figure.figure-right, .container-padded-h figure.figure-right, .card-panel.card-panel-contained figure.figure-right, .card-panel .card-panel-body figure.figure-right, .card-panel .card-panel-header figure.figure-right, .card.card-overlay.header-card-overlay .card-title-overlap figure.figure-right, main > blockquote figure.figure-right, .container figure.figure-pull-right, .container-padded figure.figure-pull-right, .container-padded-h figure.figure-pull-right, .card-panel.card-panel-contained figure.figure-pull-right, .card-panel .card-panel-body figure.figure-pull-right, .card-panel .card-panel-header figure.figure-pull-right, .card.card-overlay.header-card-overlay .card-title-overlap figure.figure-pull-right, main > blockquote figure.figure-pull-right, .content-container figure.figure-right, .content-container figure.figure-pull-right {
     clear: right; }
 
 .content-container .content-main figure.full-width {
@@ -11406,65 +11406,112 @@ button.beta-toggler {
       margin-right: 30%; } }
 
 @media (max-width: 543px) {
-  .container > .card.card-overlay, .container-padded > .card.card-overlay, .container-padded-h > .card.card-overlay, .card-panel.card-panel-contained > .card.card-overlay, .card-panel .card-panel-body > .card.card-overlay, .card-panel .card-panel-header > .card.card-overlay, .card.header-card-overlay .card-title-overlap > .card.card-overlay, main > blockquote > .card.card-overlay {
+  .container > .card.card-overlay, .container-padded > .card.card-overlay, .container-padded-h > .card.card-overlay, .card-panel.card-panel-contained > .card.card-overlay, .card-panel .card-panel-body > .card.card-overlay, .card-panel .card-panel-header > .card.card-overlay, .card.card-overlay.header-card-overlay .card-title-overlap > .card.card-overlay, main > blockquote > .card.card-overlay {
     margin-right: -15px;
     margin-left: -15px; } }
 
-.card.header-card-overlay + .breadcrumb,
-.card.header-card-overlay + .container,
-.card.header-card-overlay + .container-padded,
-.card.header-card-overlay + .container-padded-h,
-.card.header-card-overlay + .card-panel.card-panel-contained, .card-panel
-.card.header-card-overlay + .card-panel-body, .card-panel
-.card.header-card-overlay + .card-panel-header, .card.header-card-overlay
-.card.header-card-overlay + .card-title-overlap, main >
-.card.header-card-overlay + blockquote,
-.card.header-card-overlay + .content-header,
-.card.header-card-overlay + .content-container {
+.card.card-overlay.header-card-overlay + .breadcrumb,
+.card.card-overlay.header-card-overlay + .container,
+.card.card-overlay.header-card-overlay + .container-padded,
+.card.card-overlay.header-card-overlay + .container-padded-h,
+.card.card-overlay.header-card-overlay + .card-panel.card-panel-contained, .card-panel
+.card.card-overlay.header-card-overlay + .card-panel-body, .card-panel
+.card.card-overlay.header-card-overlay + .card-panel-header, .card.card-overlay.header-card-overlay
+.card.card-overlay.header-card-overlay + .card-title-overlap, main >
+.card.card-overlay.header-card-overlay + blockquote,
+.card.card-overlay.header-card-overlay + .content-header,
+.card.card-overlay.header-card-overlay + .content-container {
   margin-top: 16px;
   margin-top: 1rem; }
 
-.card.header-card-overlay .card-title-wrap {
+.card.card-overlay.header-card-overlay .card-title-wrap {
   background: #333333;
   padding: 32px;
   padding: 2rem; }
-  .card.header-card-overlay .card-title-wrap.card-title-wrap {
+  .card.card-overlay.header-card-overlay .card-title-wrap .chevron-link:after, .card.card-overlay.header-card-overlay .card-title-wrap .inline-links a:after, .inline-links .card.card-overlay.header-card-overlay .card-title-wrap a:after, .card.card-overlay.header-card-overlay .card-title-wrap nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay.header-card-overlay .card-title-wrap a:after, .card.card-overlay.header-card-overlay .card-title-wrap .card-img-overlay-link .card-subtitle:after, .card.card-overlay.header-card-overlay .card-img-overlay-link .card-title-wrap .card-subtitle:after, .card-panel-profiles .card.card-overlay.header-card-overlay .card-title-wrap .back a:after, .card-panel-profiles .card.card-overlay.header-card-overlay .back .card-title-wrap a:after {
+    color: #FFF; }
+  .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap {
     text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
-    .card.header-card-overlay .card-title-wrap.card-title-wrap .card-title {
+    .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .card-title {
       text-transform: none;
       color: #FFFFFF; }
-    .card.header-card-overlay .card-title-wrap.card-title-wrap .card-text {
+    .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .card-text {
       font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
       color: #FFFFFF; }
     @media (min-width: 1712px) {
-      .card.header-card-overlay .card-title-wrap.card-title-wrap .card-title {
+      .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .card-title {
         font-size: 3rem; }
-      .card.header-card-overlay .card-title-wrap.card-title-wrap .card-text {
+      .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .card-text {
         font-size: 1.5rem; } }
-  .card.header-card-overlay .card-title-wrap.card-title-wrap-link:after {
+  .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap-link:after {
     content: none; }
-  .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
+  .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
     text-decoration: none;
     background-color: #404040; }
 
-.card.header-card-overlay .relative {
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom .chevron-link:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .chevron-link:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom .inline-links a:after, .inline-links .card.card-overlay.header-card-overlay .card-img-overlay-bottom a:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .inline-links a:after, .inline-links .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded a:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay.header-card-overlay .card-img-overlay-bottom a:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded a:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-img-overlay-link .card-subtitle:after, .card.card-overlay.header-card-overlay .card-img-overlay-link .card-img-overlay-bottom .card-subtitle:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-link .card-subtitle:after, .card.card-overlay.header-card-overlay .card-img-overlay-link .card-img-overlay-bottom-shaded .card-subtitle:after, .card-panel-profiles .card.card-overlay.header-card-overlay .card-img-overlay-bottom .back a:after, .card-panel-profiles .card.card-overlay.header-card-overlay .back .card-img-overlay-bottom a:after, .card-panel-profiles .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .back a:after, .card-panel-profiles .card.card-overlay.header-card-overlay .back .card-img-overlay-bottom-shaded a:after,
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .chevron-link:after,
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .inline-links a:after, .inline-links
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded a:after,
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded nav.breadcrumb a:after, nav.breadcrumb
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded a:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-link .card-subtitle:after, .card.card-overlay.header-card-overlay .card-img-overlay-link .card-img-overlay-bottom-shaded .card-subtitle:after, .card-panel-profiles .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .back a:after, .card-panel-profiles .card.card-overlay.header-card-overlay .back .card-img-overlay-bottom-shaded a:after {
+  color: #FFF; }
+
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle,
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle {
+  padding: 32px 32px 0;
+  padding: 2rem 2rem 0;
+  font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
+  font-weight: normal;
+  text-transform: none;
+  color: #FFF;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 35.2px;
+  line-height: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+  margin-bottom: .75rem; }
+  @media (min-width: 768px) {
+    .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle,
+    .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle {
+      font-size: 2.2rem; } }
+
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text,
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text {
+  font-size: 14.4px;
+  font-size: .9rem;
+  font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFFFFF;
+  padding: 0 32px 32px;
+  padding: 0 2rem 2rem; }
+
+@media (min-width: 1712px) {
+  .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle,
+  .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle {
+    font-size: 3rem; }
+  .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text,
+  .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text {
+    font-size: 1.5rem; } }
+
+.card.card-overlay.header-card-overlay .relative {
   position: relative; }
 
-.card.header-card-overlay .card-title-overlap {
+.card.card-overlay.header-card-overlay .card-title-overlap {
   position: relative;
   padding: 16px 15px;
   padding: 1rem 15px;
   z-index: 1; }
-  .card.header-card-overlay .card-title-overlap .card-subtitle {
+  .card.card-overlay.header-card-overlay .card-title-overlap .card-subtitle {
     color: #937227;
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
     margin-top: 16px;
     margin-top: 1rem; }
   @media (min-width: 768px) {
-    .card.header-card-overlay .card-title-overlap {
+    .card.card-overlay.header-card-overlay .card-title-overlap {
       padding: 2rem 15px; } }
   @media (min-width: 992px) {
-    .card.header-card-overlay .card-title-overlap {
+    .card.card-overlay.header-card-overlay .card-title-overlap {
       padding: 2rem;
       width: calc(940px + 2rem);
       max-width: calc(940px + 2rem);
@@ -11474,91 +11521,91 @@ button.beta-toggler {
       left: 0;
       right: 0; } }
   @media (min-width: 1200px) {
-    .card.header-card-overlay .card-title-overlap {
+    .card.card-overlay.header-card-overlay .card-title-overlap {
       padding: 1rem 2rem 0.5rem 2rem;
       width: calc(1140px + 2rem);
       max-width: calc(1140px + 2rem); } }
 
-.card.header-card-overlay .form-group {
+.card.card-overlay.header-card-overlay .form-group {
   margin-bottom: 0; }
 
 @media (min-width: 768px) {
-  .card.header-card-overlay {
+  .card.card-overlay.header-card-overlay {
     margin-top: -7rem; }
-    .card.header-card-overlay .card-title-wrap {
+    .card.card-overlay.header-card-overlay .card-title-wrap {
       width: 100%;
       bottom: 0;
       top: auto;
       left: 0;
       padding: 3rem 2rem 2rem;
       background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)); }
-      .card.header-card-overlay .card-title-wrap.card-title-wrap-link {
+      .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap-link {
         padding: 3rem 2rem 2rem; }
-        .card.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
+        .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
           background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)); }
-      .card.header-card-overlay .card-title-wrap.force-block.force-block {
+      .card.card-overlay.header-card-overlay .card-title-wrap.force-block.force-block {
         width: 45%; }
-        .card.header-card-overlay .card-title-wrap.force-block.force-block .card-title {
+        .card.card-overlay.header-card-overlay .card-title-wrap.force-block.force-block .card-title {
           font-size: 1.6rem;
           line-height: 2rem;
           margin-top: 0; }
-        .card.header-card-overlay .card-title-wrap.force-block.force-block .card-text {
+        .card.card-overlay.header-card-overlay .card-title-wrap.force-block.force-block .card-text {
           font-size: 1.2rem;
           margin-bottom: 0px; }
-    .card.header-card-overlay .form-group {
+    .card.card-overlay.header-card-overlay .form-group {
       margin-bottom: 1rem; } }
 
 @media (min-width: 992px) {
-  .card.header-card-overlay .card-title-wrap.force-block.force-block {
+  .card.card-overlay.header-card-overlay .card-title-wrap.force-block.force-block {
     width: 40%; }
-    .card.header-card-overlay .card-title-wrap.force-block.force-block .card-title {
+    .card.card-overlay.header-card-overlay .card-title-wrap.force-block.force-block .card-title {
       font-size: 2.3rem;
       line-height: 2.3rem; } }
 
-.card.header-card-overlay .overlap-content-container {
+.card.card-overlay.header-card-overlay .overlap-content-container {
   margin-left: 0;
   margin-right: 0;
   padding-bottom: 0; }
   @media (min-width: 544px) {
-    .card.header-card-overlay .overlap-content-container {
+    .card.card-overlay.header-card-overlay .overlap-content-container {
       max-width: none;
       padding-left: 5%;
       padding-right: 5%; } }
   @media (min-width: 768px) {
-    .card.header-card-overlay .overlap-content-container {
+    .card.card-overlay.header-card-overlay .overlap-content-container {
       max-width: none;
       padding-left: 12%;
       padding-right: 12%; } }
   @media (min-width: 992px) {
-    .card.header-card-overlay .overlap-content-container {
+    .card.card-overlay.header-card-overlay .overlap-content-container {
       max-width: none;
       margin-left: calc(5% - 15px);
       width: calc(90% + 15px);
       padding: 1rem 2rem 0.5rem 2rem; } }
   @media (min-width: 1200px) {
-    .card.header-card-overlay .overlap-content-container {
+    .card.card-overlay.header-card-overlay .overlap-content-container {
       margin-left: calc(9% - 1rem);
       width: calc(91% - 9% + 15px); } }
   @media (min-width: 1328px) {
-    .card.header-card-overlay .overlap-content-container {
+    .card.card-overlay.header-card-overlay .overlap-content-container {
       margin: 0 auto;
       width: calc(1140px + 2rem);
       max-width: calc(1140px + 2rem); } }
 
-.card.header-card-overlay .card-footer {
+.card.card-overlay.header-card-overlay .card-footer {
   padding: 0 8px;
   padding: 0 .5rem;
   display: block;
   margin-bottom: -24px;
   margin-bottom: -1.5rem; }
-  .card.header-card-overlay .card-footer .caption {
+  .card.card-overlay.header-card-overlay .card-footer .caption {
     text-align: right; }
 
-.card.header-card-overlay .header-card-overlap-search .form-group {
+.card.card-overlay.header-card-overlay .header-card-overlap-search .form-group {
   position: relative; }
 
 @media (min-width: 768px) {
-  .card.header-card-overlay .header-card-overlap-search {
+  .card.card-overlay.header-card-overlay .header-card-overlap-search {
     position: absolute;
     top: 6rem; } }
 
@@ -12637,7 +12684,9 @@ blockquote.pull-quote {
   list-style: none;
   width: 100%;
   margin: 0;
-  padding: 0;
+  font-size: 0;
+  padding: 4px 0;
+  padding: .25rem 0;
   z-index: 2; }
   .kent-slider .kent-slider-dots li {
     display: inline-block;
@@ -12868,7 +12917,7 @@ blockquote.pull-quote {
   @media (min-width: 768px) {
     .global-footer .global-footer-middle {
       padding: 3rem 0; }
-      .global-footer .global-footer-middle .container, .global-footer .global-footer-middle .container-padded, .global-footer .global-footer-middle .container-padded-h, .global-footer .global-footer-middle .card-panel.card-panel-contained, .global-footer .global-footer-middle .card-panel .card-panel-body, .card-panel .global-footer .global-footer-middle .card-panel-body, .global-footer .global-footer-middle .card-panel .card-panel-header, .card-panel .global-footer .global-footer-middle .card-panel-header, .global-footer .global-footer-middle .card.header-card-overlay .card-title-overlap, .card.header-card-overlay .global-footer .global-footer-middle .card-title-overlap, .global-footer .global-footer-middle main > blockquote {
+      .global-footer .global-footer-middle .container, .global-footer .global-footer-middle .container-padded, .global-footer .global-footer-middle .container-padded-h, .global-footer .global-footer-middle .card-panel.card-panel-contained, .global-footer .global-footer-middle .card-panel .card-panel-body, .card-panel .global-footer .global-footer-middle .card-panel-body, .global-footer .global-footer-middle .card-panel .card-panel-header, .card-panel .global-footer .global-footer-middle .card-panel-header, .global-footer .global-footer-middle .card.card-overlay.header-card-overlay .card-title-overlap, .card.card-overlay.header-card-overlay .global-footer .global-footer-middle .card-title-overlap, .global-footer .global-footer-middle main > blockquote {
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         padding-bottom: 3rem; }
       .global-footer .global-footer-middle .col-md-3 .footer-section-title {
@@ -12890,7 +12939,7 @@ blockquote.pull-quote {
     padding: 0.5rem 0 0;
     background: #FFFFFF;
     color: #171717; }
-    .global-footer .global-footer-base .container, .global-footer .global-footer-base .container-padded, .global-footer .global-footer-base .container-padded-h, .global-footer .global-footer-base .card-panel.card-panel-contained, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header, .global-footer .global-footer-base .card.header-card-overlay .card-title-overlap, .card.header-card-overlay .global-footer .global-footer-base .card-title-overlap, .global-footer .global-footer-base main > blockquote {
+    .global-footer .global-footer-base .container, .global-footer .global-footer-base .container-padded, .global-footer .global-footer-base .container-padded-h, .global-footer .global-footer-base .card-panel.card-panel-contained, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header, .global-footer .global-footer-base .card.card-overlay.header-card-overlay .card-title-overlap, .card.card-overlay.header-card-overlay .global-footer .global-footer-base .card-title-overlap, .global-footer .global-footer-base main > blockquote {
       padding: 0; }
     .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
       color: #171717;
@@ -12903,7 +12952,7 @@ blockquote.pull-quote {
       .global-footer .global-footer-base {
         padding: 0.25rem 0;
         text-align: right; }
-        .global-footer .global-footer-base .container, .global-footer .global-footer-base .container-padded, .global-footer .global-footer-base .container-padded-h, .global-footer .global-footer-base .card-panel.card-panel-contained, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header, .global-footer .global-footer-base .card.header-card-overlay .card-title-overlap, .card.header-card-overlay .global-footer .global-footer-base .card-title-overlap, .global-footer .global-footer-base main > blockquote {
+        .global-footer .global-footer-base .container, .global-footer .global-footer-base .container-padded, .global-footer .global-footer-base .container-padded-h, .global-footer .global-footer-base .card-panel.card-panel-contained, .global-footer .global-footer-base .card-panel .card-panel-body, .card-panel .global-footer .global-footer-base .card-panel-body, .global-footer .global-footer-base .card-panel .card-panel-header, .card-panel .global-footer .global-footer-base .card-panel-header, .global-footer .global-footer-base .card.card-overlay.header-card-overlay .card-title-overlap, .card.card-overlay.header-card-overlay .global-footer .global-footer-base .card-title-overlap, .global-footer .global-footer-base main > blockquote {
           padding: 0 15px; }
         .global-footer .global-footer-base a, .global-footer .global-footer-base a:hover, .global-footer .global-footer-base a:active, .global-footer .global-footer-base a:focus {
           padding: 0;
