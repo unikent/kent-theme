@@ -6912,8 +6912,8 @@ main > article:last-child {
         margin-right: auto; } }
   @media (min-width: 1200px) {
     .content-header, .content-header.content-header-with-social {
-      padding-left: calc(9% + 15px);
-      padding-right: calc(9% + 30px); } }
+      padding-left: calc(7% + 15px);
+      padding-right: calc(7% + 30px); } }
   @media (min-width: 1328px) {
     .content-header {
       margin: 0 auto;
@@ -7035,7 +7035,7 @@ main > article:last-child {
         margin-right: auto; }
     .content-container .content-aside {
       width: 33%;
-      padding: 0 calc(5% + 15px) 0 15px; }
+      padding: 0 calc(5% + 15px) 0 3rem; }
     .content-container .content-full {
       padding: 0 calc(5% + 15px) 0 calc(5% + 30px); } }
   @media (min-width: 1200px) {
@@ -7043,22 +7043,23 @@ main > article:last-child {
     .content-container .content-aside {
       float: left; }
     .content-container .content-main {
-      padding: 0 15px 0 calc(9% + 30px); }
+      padding: 0 15px 0 calc(7% + 30px); }
       .content-container .content-main.content-main-centered {
         padding: 0; }
     .content-container .content-aside {
-      padding: 0 calc(9% + 15px) 0 15px; }
+      padding: 0 calc(7% + 15px) 0 4rem; }
     .content-container .content-full {
-      padding: 0 calc(9% + 15px) 0 calc(9% + 30px); } }
+      padding: 0 calc(7% + 15px) 0 calc(7% + 30px); } }
   @media (min-width: 1328px) {
     .content-container {
       margin: 0 auto;
       max-width: 1140px;
       font-size: 19px; }
       .content-container .content-main,
-      .content-container .content-aside,
       .content-container .content-full {
         padding: 0 15px; }
+      .content-container .content-aside {
+        padding: 0 15px 0 4rem; }
       .content-container .content-main {
         padding-right: 19px; }
         .content-container .content-main.content-main-centered {
@@ -11587,8 +11588,8 @@ button.beta-toggler {
       padding: 1rem 2rem 0.5rem 2rem; } }
   @media (min-width: 1200px) {
     .card.card-overlay.header-card-overlay .overlap-content-container {
-      margin-left: calc(9% - 1rem);
-      width: calc(91% - 9% + 15px); } }
+      margin-left: calc(7% - 1rem);
+      width: calc(93% - 7% + 15px); } }
   @media (min-width: 1328px) {
     .card.card-overlay.header-card-overlay .overlap-content-container {
       margin: 0 auto;

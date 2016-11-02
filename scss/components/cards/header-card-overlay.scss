@@ -219,8 +219,8 @@
 			padding:      1rem 2rem 0.5rem 2rem;
 		}
 		@include media-breakpoint-up(xl) {
-			margin-left:  calc(9% - 1rem);
-			width: calc(91% - 9% + #{$grid-gutter-width-base/2});
+			margin-left:  calc(7% - 1rem);
+			width: calc(93% - 7% + #{$grid-gutter-width-base/2});
 
 		}
 		@media (min-width: $article-max-breakpoint) {
