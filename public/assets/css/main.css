@@ -11460,8 +11460,6 @@ button.beta-toggler {
 
 .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle,
 .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle {
-  padding: 32px 32px 0;
-  padding: 2rem 2rem 0;
   font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
   font-weight: normal;
   text-transform: none;
@@ -11476,6 +11474,7 @@ button.beta-toggler {
   @media (min-width: 768px) {
     .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle,
     .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle {
+      padding: 2rem 2rem 0;
       font-size: 2.2rem; } }
 
 .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text,
@@ -11483,9 +11482,11 @@ button.beta-toggler {
   font-size: 14.4px;
   font-size: .9rem;
   font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #FFFFFF;
-  padding: 0 32px 32px;
-  padding: 0 2rem 2rem; }
+  color: #FFFFFF; }
+  @media (min-width: 768px) {
+    .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text,
+    .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text {
+      padding: 0 2rem 2rem; } }
 
 @media (min-width: 1712px) {
   .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle,
