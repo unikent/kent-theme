@@ -122,13 +122,18 @@
 				<button class="search-button-full btn btn-accent btn-icon kf-search btn-lg pull-right" aria-controls="global-nav-search" aria-expanded="false"><span class="sr-only">Open search</span></button>
 
 				<div class="global-nav-menu" id="global-nav-menu" role="menubar">
-					<?php include 'global-nav.php'; ?>
+					<?php include 'global-nav.php';
+					/*
+
 					<nav class="audience-nav-links" role="menu">
 						<a href="#" data-action="student" role="menuitem">Student</a>
 						<a href="#" data-action="staff" role="menuitem">Staff</a>
 						<a href="//www.kent.ac.uk/alumni/" role="menuitem">Alumni</a>
 						<a href="#" data-action="departments" role="menuitem">Departments</a>
 					</nav>
+
+					*/
+					?>
 				</div>
 				<div class="global-nav-search" id="global-nav-search">
 

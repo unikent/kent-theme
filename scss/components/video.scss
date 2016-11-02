@@ -6,16 +6,17 @@
 
 	position: relative;
 
-	&[data-mode='inline'] .video-player{
+	&[data-mode='inline'] > .video-player{
 		transition: max-height 300ms; //only transition inline
 	}
 
-	.video-player {
+	& > .video-player {
+        font-size: 1rem;
 		max-height:0;
         overflow: hidden;
 	}
 
-	img {
+	& > img {
 		display:block;
 		max-width:100%;
 	}
@@ -23,18 +24,26 @@
 	// ensure playing selector is pretty strong
 	&.playing.playing.playing {
 
-        &::before, .card-media-wrap::before, .card-embed-wrap::before{
+        &::before{
             padding-top: 0;
         }
         .card-embed-wrap {
         	padding-bottom:0;
         	height:auto;
         }
-		.video-player {
+
+		& > .video-player {
 			max-height:100vh;
 		}
-		img, video {display:none;}
-		&::after {display:none;}
+
+		& > img,
+        & > video {
+            display:none;
+        }
+
+		&::after {
+            display:none;
+        }
 
 		// plyr - hide icon toggles
 		.plyr--muted .kf-volume-medium,

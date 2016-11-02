@@ -59,7 +59,7 @@
         .audience-nav-links {
             height: 166px;
             position: relative;
-            z-index: 1;
+            z-index: 100;
         }
     }
 
@@ -89,21 +89,4 @@
 .show-kentbar-menu{
     overflow-y: hidden;
     height: 100%;
-}
-
-
-// Hide audience-menu on mobile
-// Since personalization is currently blocked, it was requested to remove the button
-// as it duplicated the main menu ones. I've left everything in for now as we may well
-// want this back if we do the logged in as stuff, so have just hidden it with CSS
-#kentBar.kent-bar button.audience-menu {
-    display:none;
-}
-#kentBar.kent-bar.in button.audience-menu {
-    display:block;
-
-    @include media-breakpoint-up(md) {
-        display:none;
-    }
-    
 }

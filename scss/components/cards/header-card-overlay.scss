@@ -1,4 +1,4 @@
-.card.header-card-overlay {
+.card.card-overlay.header-card-overlay {
 
 	& + .breadcrumb,
 	& + .container,
@@ -11,6 +11,12 @@
 	.card-title-wrap {
 		background: #333333;
 		padding:    2rem;
+
+        .chevron-link{
+            &:after{
+                color: #FFF;
+            }
+        }
 
 		&.card-title-wrap{
 			text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
@@ -27,6 +33,7 @@
 
 				.card-title {
 					font-size: 3rem;
+                    line-height: 3rem;
 				}
 
 				.card-text {
@@ -48,6 +55,51 @@
 
 	}
 
+    .card-img-overlay-bottom,
+    .card-img-overlay-bottom-shaded{
+        .chevron-link{
+            &:after{
+              color: #FFF;
+            }
+        }
+        .card-subtitle {
+            font-family:    $font-family-serif;
+            font-weight:    normal;
+            text-transform: none;
+            color:          #FFF;
+            font-size:      2rem;
+            line-height:    2.2rem;
+            margin-top: 0;
+            margin-bottom: .75rem;
+
+            @include media-breakpoint-up(md) {
+                padding: 2rem 2rem 0;
+                font-size: 2.2rem;
+            }
+        }
+        .card-text {
+            font-size: .9rem;
+            font-family: $font-family-sans-serif;
+            color:       #FFFFFF;
+            @include media-breakpoint-up(md) {
+                padding: 0 2rem 2rem;
+            }
+        }
+
+        @include media-breakpoint-up(xxl){
+            .card-subtitle {
+                font-size: 3rem;
+                line-height: 3rem;
+            }
+
+            .card-text {
+                font-size: 1.5rem;
+            }
+        }
+
+    }
+
+
 	.relative {
 		position: relative;
 	}
@@ -58,6 +110,10 @@
 		position: relative;
 		padding: 1rem ($grid-gutter-width-base/2);
 		z-index: 1;
+
+        h1:last-child{
+            margin-bottom: 1.5rem;
+        }
 
 		.card-subtitle {
 			color: $brand-accent;
@@ -108,7 +164,6 @@
 			left:       0;
 			padding:    3rem 2rem 2rem;
 
-			background: rgba(0, 0, 0, 0.75);
 			background: $scrim-gradient; // was 0.8
 
 			&.card-title-wrap-link {
@@ -169,8 +224,8 @@
 			padding:      1rem 2rem 0.5rem 2rem;
 		}
 		@include media-breakpoint-up(xl) {
-			margin-left:  calc(9% - 1rem);
-			width: calc(91% - 9% + #{$grid-gutter-width-base/2});
+			margin-left:  calc(7% - 1rem);
+			width: calc(93% - 7% + #{$grid-gutter-width-base/2});
 
 		}
 		@media (min-width: $article-max-breakpoint) {
@@ -221,17 +276,17 @@
 
 .global-header-transparent .header-card-overlay {
 
-	.card-media-wrap, .media-wrap-paralax {
-		&::after {
-			position:   absolute;
-			top:        0;
-			left:       0;
-			right:      0;
-			bottom:     0;
-			content:    "";
-			background: linear-gradient(rgba(0, 0, 0, 0.7) 1rem, transparent 7.5rem);
-		}
-	}
+
+    &::after {
+        position:   absolute;
+        top:        0;
+        left:       0;
+        right:      0;
+        bottom:     0;
+        content:    "";
+        background: linear-gradient(rgba(0, 0, 0, 0.7) 1rem, transparent 7.5rem);
+        pointer-events: none;
+    }
 
 	@include media-breakpoint-up(md) {
 		margin-top: -7rem;

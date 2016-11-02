@@ -56,10 +56,11 @@
             color:          $brand-accent-light;
             font-size:      2rem;
             line-height:    2.3rem;
+            margin-top: 0;
+
             @include media-breakpoint-up(md) {
                 font-size: 2.2rem;
             }
-
         }
 
         .card-text {
@@ -141,7 +142,7 @@
             }
             &.text-xs-right {
                 .card-text {
-                    margin-right: 1rem;
+                    margin-right: 1.3rem;
                 }
                 @include media-breakpoint-up(md) {
 
@@ -149,7 +150,7 @@
                         margin-right: 2rem;
                     }
                     .card-text {
-                        margin-right: 3rem;
+                        margin-right: 3.2rem;
                     }
                 }
             }
