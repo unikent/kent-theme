@@ -271,6 +271,15 @@
 
 }
 
+
+.slim-header{
+    .card.header-card-overlay {
+        @include media-breakpoint-up(md) {
+            margin-top: -5.3rem;
+        }
+    }
+}
+
 .show-departmental-menu {
 	@include media-breakpoint-up(md) {
 		.card.header-card-overlay {
@@ -278,7 +287,7 @@
 		}
 		&.slim-header {
 			.card.header-card-overlay {
-				margin-top: calc(-8rem + #{1px});
+				margin-top: calc( -8rem - #{1px});
 			}
 		}
 	}
@@ -303,13 +312,7 @@
 	}
 }
 
-.slim-header{
-	.card.header-card-overlay {
-		@include media-breakpoint-up(md) {
-			margin-top: -5.4rem;
-		}
-	}
-}
+
 
 
 .spaced-links-container {

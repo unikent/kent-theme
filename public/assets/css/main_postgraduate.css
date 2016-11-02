@@ -9465,17 +9465,15 @@ body.show-global-search .global-nav-menu .global-nav-links {
     content: ""; }
 
 .departmental-nav .navbar-menu {
-  max-height: 0px;
+  max-height: 0;
   overflow: hidden;
   background-color: #f7f2e1;
   color: #671115;
   transition: max-height 300ms;
-  transition-timing-function: ease-in-out;
   position: relative;
   font-size: 0; }
   .departmental-nav .navbar-menu.in {
-    height: auto;
-    max-height: 1000px; }
+    max-height: 200vh; }
   .departmental-nav .navbar-menu > a:last-child {
     border-bottom: none; }
   .departmental-nav .navbar-menu > a:first-child {
@@ -9490,7 +9488,6 @@ body.show-global-search .global-nav-menu .global-nav-links {
 
 @media (min-width: 768px) {
   .departmental-nav {
-    min-height: 7rem;
     z-index: 1;
     position: relative; }
     .departmental-nav header {
@@ -9509,7 +9506,8 @@ body.show-global-search .global-nav-menu .global-nav-links {
       overflow: hidden;
       padding-left: 0;
       padding-right: 1rem;
-      border: none; }
+      border: none;
+      transition: none; }
       .departmental-nav .navbar-menu.overflown {
         padding-right: 5rem; }
       .departmental-nav .navbar-menu.in {
@@ -9532,8 +9530,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
     .departmental-nav .navbar-toggler {
       position: absolute;
       right: 3rem;
-      padding: 0.5rem;
-      padding-right: 1rem;
+      padding: 0.5rem 1rem 0.5rem 0.5rem;
       cursor: pointer;
       z-index: 1;
       font-size: 1rem;
@@ -9559,7 +9556,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
   .show-departmental-menu .departmental-nav {
     min-height: 10rem; }
     .show-departmental-menu .departmental-nav.slim {
-      min-height: auto; } }
+      min-height: 8rem; } }
 
 .breadcrumb {
   background-color: transparent; }
@@ -11632,10 +11629,14 @@ button.beta-toggler {
     top: 6rem; } }
 
 @media (min-width: 768px) {
+  .slim-header .card.header-card-overlay {
+    margin-top: -5.3rem; } }
+
+@media (min-width: 768px) {
   .show-departmental-menu .card.header-card-overlay {
     margin-top: -8rem; }
   .show-departmental-menu.slim-header .card.header-card-overlay {
-    margin-top: calc(-8rem + 1px); } }
+    margin-top: calc( -8rem - 1px); } }
 
 .global-header-transparent .header-card-overlay::after {
   position: absolute;
@@ -11650,10 +11651,6 @@ button.beta-toggler {
 @media (min-width: 768px) {
   .global-header-transparent .header-card-overlay {
     margin-top: -7rem; } }
-
-@media (min-width: 768px) {
-  .slim-header .card.header-card-overlay {
-    margin-top: -5.4rem; } }
 
 .spaced-links-container {
   display: -ms-flexbox;
