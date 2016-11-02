@@ -3,7 +3,8 @@
 	& + .breadcrumb,
 	& + .container,
 	& + .content-header,
-	& + .content-container{
+	& + .content-container,
+	& + .content-body {
 		margin-top: 1rem;
 	}
 
@@ -334,7 +335,7 @@
 
 		width: 100%;
 		display:       block;
-		padding:       0.75rem 1rem;
+		padding: 0;
 		background:    $brand-secondary;
 		border-bottom: 1px solid #CCCCCC;
 
@@ -351,9 +352,9 @@
 
 		@include media-breakpoint-up(sm)
 		{
-			text-align: center;
-			padding: 0.475rem 1rem;
+			text-align: left;
 			background: none;
+			padding-top: .5rem;
 			border: none;
 			&:after{
 				display: none;

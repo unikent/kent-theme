@@ -239,11 +239,11 @@
 
         @include media-breakpoint-up(lg){
             &.pg{
-                padding-top: 350px;
+                padding-top: 400px;
             }
 
             &.ug{
-                padding-top: 300px;
+                padding-top: 350px;
             }
 
         }
@@ -296,5 +296,12 @@
 
     h2:first-of-type {
         margin-top: 0;
+    }
+}
+
+.tab-content.vertical-nav {
+
+    & > .tab-pane {
+        padding: 0 0 2rem 0;
     }
 }
