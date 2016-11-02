@@ -121,10 +121,6 @@
         &.kent-slider-#{$name} {
             background: $color;
             color:      #FFFFFF;
-
-            .card-img-overlay {
-                background: transparent;
-            }
         }
     }
 }
