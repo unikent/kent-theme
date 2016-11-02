@@ -11440,7 +11440,8 @@ button.beta-toggler {
       color: #FFFFFF; }
     @media (min-width: 1712px) {
       .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .card-title {
-        font-size: 3rem; }
+        font-size: 3rem;
+        line-height: 3rem; }
       .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .card-text {
         font-size: 1.5rem; } }
   .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap-link:after {
@@ -11489,7 +11490,8 @@ button.beta-toggler {
 @media (min-width: 1712px) {
   .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle,
   .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle {
-    font-size: 3rem; }
+    font-size: 3rem;
+    line-height: 3rem; }
   .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text,
   .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text {
     font-size: 1.5rem; } }
