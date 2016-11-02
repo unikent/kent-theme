@@ -1,19 +1,13 @@
 .table {
     th {
-        border-top: 0;
         color:      $brand-primary;
     }
 
-    &.table-vertical{
-        tr:first-child{
-            td,th{
-                border-top:2px solid $brand-primary;
-            }
-        }
-        tr:last-child{
-            td,th{
-                border-bottom:2px solid $brand-primary;
-            }
-        }
+    thead tr:first-child th {
+        border-top: 0;
+    }
+
+    & > tr:first-child, & > tbody > tr:first-child {
+        border-top: 3px solid #05345C;
     }
 }
