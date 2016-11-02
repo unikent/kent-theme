@@ -11291,13 +11291,13 @@ button.beta-toggler {
       .card.card-overlay .card-img-overlay.card-img-overlay-link .card-subtitle:hover:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-bottom .card-subtitle:hover:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-bottom-shaded .card-subtitle:hover:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-centered .card-subtitle:hover:after {
         padding-left: 1.2rem; } }
     .card.card-overlay .card-img-overlay.card-img-overlay-link.text-xs-right .card-text, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-centered .card-text {
-      margin-right: 16px;
-      margin-right: 1rem; }
+      margin-right: 20.8px;
+      margin-right: 1.3rem; }
     @media (min-width: 768px) {
       .card.card-overlay .card-img-overlay.card-img-overlay-link.text-xs-right .card-subtitle, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-centered .card-subtitle {
         margin-right: 2rem; }
       .card.card-overlay .card-img-overlay.card-img-overlay-link.text-xs-right .card-text, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-link.text-xs-right.card-img-overlay-centered .card-text {
-        margin-right: 3rem; } }
+        margin-right: 3.2rem; } }
   .card.card-overlay .card-media-wrap, .card.card-overlay .card-embed-wrap {
     margin-bottom: 0; }
   .card.card-overlay .card-footer {
