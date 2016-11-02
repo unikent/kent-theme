@@ -60,8 +60,8 @@ main {
     @include media-breakpoint-up(xl) {
         &,
         &.content-header-with-social {
-            padding-left:  calc(9% + #{$grid-gutter-width-base/2});
-            padding-right: calc(9% + #{$grid-gutter-width-base});
+            padding-left:  calc(7% + #{$grid-gutter-width-base/2});
+            padding-right: calc(7% + #{$grid-gutter-width-base});
         }
     }
 
@@ -180,7 +180,7 @@ main {
         }
         .content-aside{
             width: 33%;
-            padding: 0 calc(5% + #{$grid-gutter-width-base/2}) 0 ($grid-gutter-width-base / 2);
+            padding: 0 calc(5% + #{$grid-gutter-width-base/2}) 0 3rem;
         }
 
         .content-full{
@@ -195,18 +195,19 @@ main {
             float: left;
         }
         .content-main{
-            padding: 0 ($grid-gutter-width-base / 2) 0 calc(9% + #{$grid-gutter-width-base});
+            padding: 0 ($grid-gutter-width-base / 2) 0 calc(7% + #{$grid-gutter-width-base});
             &.content-main-centered{
                 padding: 0;
             }
         }
         .content-aside{
-            padding: 0 calc(9% + #{$grid-gutter-width-base/2}) 0 ($grid-gutter-width-base / 2);
+            padding: 0 calc(7% + #{$grid-gutter-width-base/2}) 0 4rem;
         }
 
         .content-full{
-            padding: 0 calc(9% + #{$grid-gutter-width-base/2}) 0 calc(9% + #{$grid-gutter-width-base});
+            padding: 0 calc(7% + #{$grid-gutter-width-base/2}) 0 calc(7% + #{$grid-gutter-width-base});
         }
+
     }
 
     @media (min-width: $article-max-breakpoint) {
@@ -217,10 +218,14 @@ main {
         font-size: 19px;
 
         .content-main,
-        .content-aside,
         .content-full{
             padding: 0 ($grid-gutter-width-base / 2);
         }
+
+        .content-aside{
+            padding: 0 ($grid-gutter-width-base / 2) 0 4rem;
+        }
+
         .content-main{
             padding-right: 4 + ($grid-gutter-width-base/2);
             &.content-main-centered{
