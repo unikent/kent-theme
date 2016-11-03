@@ -150,14 +150,23 @@ form{
 
 .content-header,
 .content-container{
+
     h1 {
         margin-bottom: 2rem;
     }
+
     .content-main,
     .content-full{
         h2 {
             margin-top: 1.5rem;
         }
+      }
+
+    .content-full {
+      .lead {
+        padding-top: 1.5rem;
+        padding-bottom: 3rem;
+      }
     }
 }
 

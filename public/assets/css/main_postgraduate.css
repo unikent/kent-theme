@@ -4474,7 +4474,7 @@ button.close {
       margin-left: -5px;
       content: "";
       border-width: 5px 5px 0;
-      border-top-color: #000; }
+      border-top-color: #671115; }
   .tooltip.tooltip-right, .tooltip.bs-tether-element-attached-left {
     padding: 0 5px;
     margin-left: 3px; }
@@ -4484,7 +4484,7 @@ button.close {
       margin-top: -5px;
       content: "";
       border-width: 5px 5px 5px 0;
-      border-right-color: #000; }
+      border-right-color: #671115; }
   .tooltip.tooltip-bottom, .tooltip.bs-tether-element-attached-top {
     padding: 5px 0;
     margin-top: 3px; }
@@ -4494,7 +4494,7 @@ button.close {
       margin-left: -5px;
       content: "";
       border-width: 0 5px 5px;
-      border-bottom-color: #000; }
+      border-bottom-color: #671115; }
   .tooltip.tooltip-left, .tooltip.bs-tether-element-attached-right {
     padding: 0 5px;
     margin-left: -3px; }
@@ -4504,14 +4504,14 @@ button.close {
       margin-top: -5px;
       content: "";
       border-width: 5px 0 5px 5px;
-      border-left-color: #000; }
+      border-left-color: #671115; }
 
 .tooltip-inner {
   max-width: 200px;
   padding: 3px 8px;
-  color: #fff;
+  color: #FFF;
   text-align: center;
-  background-color: #000; }
+  background-color: #671115; }
   .tooltip-inner::before {
     position: absolute;
     width: 0;
@@ -4544,7 +4544,7 @@ button.close {
   font-size: 14px;
   font-size: 0.875rem;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: #671115;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2); }
   .popover.popover-top, .popover.bs-tether-element-attached-bottom {
@@ -4559,7 +4559,7 @@ button.close {
     .popover.popover-top::after, .popover.bs-tether-element-attached-bottom::after {
       bottom: -10px;
       margin-left: -10px;
-      border-top-color: #fff; }
+      border-top-color: #671115; }
   .popover.popover-right, .popover.bs-tether-element-attached-left {
     margin-left: 10px; }
     .popover.popover-right::before, .popover.popover-right::after, .popover.bs-tether-element-attached-left::before, .popover.bs-tether-element-attached-left::after {
@@ -4572,7 +4572,7 @@ button.close {
     .popover.popover-right::after, .popover.bs-tether-element-attached-left::after {
       left: -10px;
       margin-top: -10px;
-      border-right-color: #fff; }
+      border-right-color: #671115; }
   .popover.popover-bottom, .popover.bs-tether-element-attached-top {
     margin-top: 10px; }
     .popover.popover-bottom::before, .popover.popover-bottom::after, .popover.bs-tether-element-attached-top::before, .popover.bs-tether-element-attached-top::after {
@@ -4585,7 +4585,7 @@ button.close {
     .popover.popover-bottom::after, .popover.bs-tether-element-attached-top::after {
       top: -10px;
       margin-left: -10px;
-      border-bottom-color: #f7f7f7; }
+      border-bottom-color: #5a0f12; }
     .popover.popover-bottom .popover-title::before, .popover.bs-tether-element-attached-top .popover-title::before {
       position: absolute;
       top: 0;
@@ -4594,7 +4594,7 @@ button.close {
       width: 20px;
       margin-left: -10px;
       content: "";
-      border-bottom: 1px solid #f7f7f7; }
+      border-bottom: 1px solid #5a0f12; }
   .popover.popover-left, .popover.bs-tether-element-attached-right {
     margin-left: -10px; }
     .popover.popover-left::before, .popover.popover-left::after, .popover.bs-tether-element-attached-right::before, .popover.bs-tether-element-attached-right::after {
@@ -4607,15 +4607,15 @@ button.close {
     .popover.popover-left::after, .popover.bs-tether-element-attached-right::after {
       right: -10px;
       margin-top: -10px;
-      border-left-color: #fff; }
+      border-left-color: #671115; }
 
 .popover-title {
   padding: 8px 14px;
   margin: 0;
   font-size: 16px;
   font-size: 1rem;
-  background-color: #f7f7f7;
-  border-bottom: 1px solid #ebebeb; }
+  background-color: #5a0f12;
+  border-bottom: 1px solid #440b0e; }
   .popover-title:empty {
     display: none; }
 
@@ -6791,6 +6791,13 @@ form + .h6 {
   margin-top: 24px;
   margin-top: 1.5rem; }
 
+.content-header .content-full .lead,
+.content-container .content-full .lead {
+  padding-top: 24px;
+  padding-top: 1.5rem;
+  padding-bottom: 48px;
+  padding-bottom: 3rem; }
+
 .content-container > ul {
   list-style: none;
   padding: 0;
@@ -7588,6 +7595,9 @@ figure .video-launcher[data-mode='inline'] > .video-player {
       content: ""; }
   .alert-danger .alert-link {
     color: black; }
+
+.popover {
+  color: #FFF; }
 
 .chevron-link, .inline-links a, nav.breadcrumb a, .card .card-img-overlay-link .card-subtitle, .card-panel-profiles .card .back a {
   font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }

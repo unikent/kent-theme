@@ -77,3 +77,7 @@
 .alert-danger {
     @include kent-alert-variant($alert-danger-border, $alert-danger-text, $kf-exclamation-circle);
 }
+
+.popover{
+    color:#FFF;
+}
