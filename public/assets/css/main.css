@@ -7455,7 +7455,7 @@ figure figcaption,
     padding-bottom: 0;
     height: auto; }
   .video-launcher.playing.playing.playing > .video-player {
-    max-height: 100vh; }
+    max-height: none; }
   .video-launcher.playing.playing.playing > img,
   .video-launcher.playing.playing.playing > video {
     display: none; }
