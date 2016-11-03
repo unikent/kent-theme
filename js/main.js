@@ -28629,7 +28629,7 @@ if(beta_bar.length>0){var dismissed=typeof window.Cookies.get('kentbeta_dismisse
 if(!dismissed){beta_bar.removeClass('hidden');}else {beta_bar.addClass('hidden');} // hook up toggler
 toggler.click(function(){toggleNav();});}}); /**
  * Toggles attribution text display on/off
- */jQuery(document).ready(function($){$('.attribution').click(function(){$(this).toggleClass('in');}); // Debug
+ */jQuery(document).ready(function($){$('.attribution').click(function(e){$(this).toggleClass('in');e.preventDefault();e.stopPropagation();}); // Debug
 window.KENT.log('Initiating: Attribution');window.KENT.log($('.attribution'));}); /**
  * Click to interact logic
  *

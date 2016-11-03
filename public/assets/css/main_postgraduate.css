@@ -7461,6 +7461,8 @@ figure figcaption,
     display: none; }
   .video-launcher.playing.playing.playing::after {
     display: none; }
+  .video-launcher.playing.playing.playing .attribution {
+    display: none; }
   .video-launcher.playing.playing.playing .plyr--muted .kf-volume-medium,
   .video-launcher.playing.playing.playing .plyr--fullscreen-active .kf-expand,
   .video-launcher.playing.playing.playing .plyr--captions-active .kf-captions-off {
@@ -7494,6 +7496,9 @@ figure figcaption,
 
 .plyr--fullscreen-enabled .fs-toggle {
   display: none; }
+
+figure .video-launcher[data-mode='inline'] > .video-player {
+  transition: none; }
 
 .alert {
   background-color: #fff; }

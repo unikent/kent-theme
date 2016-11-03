@@ -45,6 +45,10 @@
             display:none;
         }
 
+        .attribution {
+        	display:none;
+        }
+
 		// plyr - hide icon toggles
 		.plyr--muted .kf-volume-medium,
 		.plyr--fullscreen-active .kf-expand,
@@ -89,4 +93,8 @@
     .fs-toggle {
         display: none;
     }
+}
+
+figure .video-launcher[data-mode='inline'] > .video-player {
+	transition: none; 
 }
