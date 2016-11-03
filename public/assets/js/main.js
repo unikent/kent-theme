@@ -28682,7 +28682,7 @@ if(!_this3.plyr.isFullscreen()){_this3.hide();}});this.video.on('enterfullscreen
 		 */this.setupTranscript=function(){var _this4=this;var button=this.video.find('.download-transcript');if(this.settings.transcript){button.click(function(){document.location.href=_this4.settings.transcript;});}else {button.hide();}}; /**
 		 * Show video
 		 * Display video and play it ( use attributes to determine whether to play inline or "fullscreen")
-		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();}; /**
+		 */this.show=function(){this.container.addClass('playing');this.container.closest('.card-media-inline').addClass('card-media-enabled');if(this.settings.mode==='fullscreen'||Object.keys(window.KENT.settings.breakpoints).indexOf(this.settings.fullscreen_down)!==-1&&viewport.is('<='+this.settings.fullscreen_down)||this.settings.fullscreen_up&&Object.keys(window.KENT.settings.breakpoints).indexOf(this.settings.fullscreen_up)!==-1&&viewport.is('>='+this.settings.fullscreen_up)){this.plyr.toggleFullscreen();}this.play();}; /**
 		 * Close video
 		 * Hide video and pause it
 		 */this.hide=function(){var _this5=this;if(this.plyr.isFullscreen()){return this.plyr.toggleFullscreen();} /**

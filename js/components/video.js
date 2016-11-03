@@ -163,9 +163,14 @@ $(document).ready(function(){
 			this.container.addClass('playing');
 			this.container.closest('.card-media-inline').addClass('card-media-enabled');
 
-			if (this.settings.mode === 'fullscreen' || viewport.is('<=' + this.settings.fullscreen_down) || (this.settings.fullscreen_up && viewport.is('>=' + this.settings.fullscreen_up))) {
+			if (
+				this.settings.mode === 'fullscreen' ||
+				(Object.keys(window.KENT.settings.breakpoints).indexOf(this.settings.fullscreen_down) !== -1 && viewport.is('<=' + this.settings.fullscreen_down)) ||
+				(this.settings.fullscreen_up && Object.keys(window.KENT.settings.breakpoints).indexOf(this.settings.fullscreen_up) !== -1 && viewport.is('>=' + this.settings.fullscreen_up))
+			){
 				this.plyr.toggleFullscreen();
 			}
+
 
 			this.play();
 		};
