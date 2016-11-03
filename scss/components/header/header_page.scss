@@ -34,19 +34,18 @@
         }
     }
     .navbar-menu {
-        max-height:                 0px;
+        max-height:                 0;
         overflow:                   hidden;
         background-color: $brand-nav-bg;
         color: $brand-primary;
         transition:                 max-height 300ms;
-        transition-timing-function: ease-in-out;
 
         position:                   relative;
         font-size:                  0;
 
+
         &.in {
-            height:     auto;
-            max-height: 1000px;
+            max-height: 200vh;
         }
 
         @extend .mobile-nav-links;
@@ -74,7 +73,6 @@
     }
 
     @include media-breakpoint-up(md) {
-        min-height: 7rem;
         z-index:    1;
         position:   relative;
 
@@ -104,6 +102,7 @@
             padding-left: 0;
             padding-right: 1rem;
             border:        none;
+            transition: none;
 
             &.overflown {
                 padding-right: 5rem;
@@ -139,14 +138,13 @@
 
             position:         absolute;
             right:            3rem;
-            padding:          0.5rem;
-            padding-right:    1rem;
+            padding:          0.5rem 1rem 0.5rem 0.5rem;
             cursor:           pointer;
             z-index:          1;
             font-size:        1rem;
             background-color: transparent;
             line-height:      inherit;
-            border:none;
+            border:           none;
 
             &:after {
                 float:     none;
@@ -178,7 +176,7 @@
             min-height: 10rem;
 
             &.slim {
-                min-height: auto;
+                min-height: 8rem;
             }
         }
     }

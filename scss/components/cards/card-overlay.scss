@@ -142,7 +142,7 @@
             }
             &.text-xs-right {
                 .card-text {
-                    margin-right: 1rem;
+                    margin-right: 1.3rem;
                 }
                 @include media-breakpoint-up(md) {
 
@@ -150,7 +150,7 @@
                         margin-right: 2rem;
                     }
                     .card-text {
-                        margin-right: 3rem;
+                        margin-right: 3.2rem;
                     }
                 }
             }

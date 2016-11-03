@@ -1,15 +1,22 @@
-.card.header-card-overlay {
+.card.card-overlay.header-card-overlay {
 
 	& + .breadcrumb,
 	& + .container,
 	& + .content-header,
-	& + .content-container{
+	& + .content-container,
+	& + .content-body {
 		margin-top: 1rem;
 	}
 
 	.card-title-wrap {
 		background: #333333;
 		padding:    2rem;
+
+        .chevron-link{
+            &:after{
+                color: #FFF;
+            }
+        }
 
 		&.card-title-wrap{
 			text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
@@ -26,6 +33,7 @@
 
 				.card-title {
 					font-size: 3rem;
+                    line-height: 3rem;
 				}
 
 				.card-text {
@@ -47,6 +55,51 @@
 
 	}
 
+    .card-img-overlay-bottom,
+    .card-img-overlay-bottom-shaded{
+        .chevron-link{
+            &:after{
+              color: #FFF;
+            }
+        }
+        .card-subtitle {
+            font-family:    $font-family-serif;
+            font-weight:    normal;
+            text-transform: none;
+            color:          #FFF;
+            font-size:      2rem;
+            line-height:    2.2rem;
+            margin-top: 0;
+            margin-bottom: .75rem;
+
+            @include media-breakpoint-up(md) {
+                padding: 2rem 2rem 0;
+                font-size: 2.2rem;
+            }
+        }
+        .card-text {
+            font-size: .9rem;
+            font-family: $font-family-sans-serif;
+            color:       #FFFFFF;
+            @include media-breakpoint-up(md) {
+                padding: 0 2rem 2rem;
+            }
+        }
+
+        @include media-breakpoint-up(xxl){
+            .card-subtitle {
+                font-size: 3rem;
+                line-height: 3rem;
+            }
+
+            .card-text {
+                font-size: 1.5rem;
+            }
+        }
+
+    }
+
+
 	.relative {
 		position: relative;
 	}
@@ -57,6 +110,10 @@
 		position: relative;
 		padding: 1rem ($grid-gutter-width-base/2);
 		z-index: 1;
+
+        h1:last-child{
+            margin-bottom: 1.5rem;
+        }
 
 		.card-subtitle {
 			color: $brand-accent;
@@ -167,8 +224,8 @@
 			padding:      1rem 2rem 0.5rem 2rem;
 		}
 		@include media-breakpoint-up(xl) {
-			margin-left:  calc(9% - 1rem);
-			width: calc(91% - 9% + #{$grid-gutter-width-base/2});
+			margin-left:  calc(7% - 1rem);
+			width: calc(93% - 7% + #{$grid-gutter-width-base/2});
 
 		}
 		@media (min-width: $article-max-breakpoint) {
@@ -196,12 +253,31 @@
 		  position: relative;
 		}
 	}
+
+    .header-card-overlap-search {
+      position: absolute;
+      top: 2rem;
+      bottom:inherit;
+      left: 2rem;
+      right: 2rem;
+
+    }
+
 	@include media-breakpoint-up(md) {
 		.header-card-overlap-search {
-		  position: absolute;
 		  top: 6rem;
 		}
 	}
+
+}
+
+
+.slim-header{
+    .card.header-card-overlay {
+        @include media-breakpoint-up(md) {
+            margin-top: -5.3rem;
+        }
+    }
 }
 
 .show-departmental-menu {
@@ -211,7 +287,7 @@
 		}
 		&.slim-header {
 			.card.header-card-overlay {
-				margin-top: calc(-8rem + #{1px});
+				margin-top: calc( -8rem - #{1px});
 			}
 		}
 	}
@@ -236,16 +312,10 @@
 	}
 }
 
-.slim-header{
-	.card.header-card-overlay {
-		@include media-breakpoint-up(md) {
-			margin-top: -5.4rem;
-		}
-	}
-}
 
 
-.spaced-links-container{
+
+.spaced-links-container {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
@@ -264,40 +334,46 @@
 	width: 100%;
 	flex-grow: 1;
 
-	@include media-breakpoint-up(sm)
-	{
+    &.buttons {
+      order: -1;
+    }
+
+
+
+	@include media-breakpoint-up(sm) {
 		flex-wrap: nowrap;
 	}
 
-	@include media-breakpoint-up(md)
-	{
+	@include media-breakpoint-up(md) {
 		width: auto;
+
+        &.buttons {
+          order: 0;
+        }
+
+        &.links {
+          justify-content: space-between;
+          margin-right: 2rem;
+        }
+
 	}
 
+
+
 	.spaced-links-item {
-
-		width: 100%;
 		display:       block;
-		padding:       0.75rem 1rem;
-		background:    $brand-secondary;
-		border-bottom: 1px solid #CCCCCC;
+		padding: 1rem 0 0 0;
+        white-space: nowrap;
 
-		i{
+		i {
 		   vertical-align: top;
 		}
 
-		&:after {
-			font-family: $font-family-kentfont;
-			content: $kf-angle-right;
-			position: absolute;
-			right:    1rem;
-		}
-
-		@include media-breakpoint-up(sm)
-		{
-			text-align: center;
-			padding: 0.475rem 1rem;
+		@include media-breakpoint-up(sm) {
+            white-space: normal;
+			text-align: left;
 			background: none;
+			padding-top: .5rem;
 			border: none;
 			&:after{
 				display: none;
@@ -306,8 +382,9 @@
 	}
 
 	.spaced-links-item-btn {
-		width: 100%;
+        width:45%;
 		@include media-breakpoint-up(lg) {
+            width: 100%;
 			margin-right:1rem;
 			&:last-child{
 				margin-right: 0;
