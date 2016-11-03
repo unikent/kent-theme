@@ -9,7 +9,7 @@
     margin:0;
 
     .card-title-wrap,
-    .force-block.force-block.card-title-wrap {
+    .force-block.force-block.force-block.card-title-wrap {
         pointer-events: none;
         padding:          2rem;
         background: $brand-primary;
@@ -210,7 +210,7 @@
             }
             @include media-breakpoint-up(md) {
                 .card-title-wrap,
-                .force-block.force-block.card-title-wrap {
+                .force-block.force-block.force-block.card-title-wrap {
                     opacity: 0;
                     pointer-events: none;
                 }
@@ -223,7 +223,7 @@
 
     @include media-breakpoint-up(md) {
         .card-title-wrap,
-        .force-block.force-block.card-title-wrap {
+        .force-block.force-block.force-block.card-title-wrap {
             position: absolute;
             width:    40%;
             left:     5%;
