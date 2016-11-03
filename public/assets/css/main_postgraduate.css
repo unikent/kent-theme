@@ -6791,8 +6791,8 @@ form + .h6 {
   margin-top: 24px;
   margin-top: 1.5rem; }
 
-.content-header .content-full .lead,
-.content-container .content-full .lead {
+.content-full .lead,
+.content-header .lead {
   padding-top: 24px;
   padding-top: 1.5rem;
   padding-bottom: 48px;
