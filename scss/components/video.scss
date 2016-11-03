@@ -33,7 +33,7 @@
         }
 
 		& > .video-player {
-			max-height:100vh;
+			max-height:none;
 		}
 
 		& > img,
@@ -43,6 +43,10 @@
 
 		&::after {
             display:none;
+        }
+
+        .attribution {
+        	display:none;
         }
 
 		// plyr - hide icon toggles
@@ -89,4 +93,8 @@
     .fs-toggle {
         display: none;
     }
+}
+
+figure .video-launcher[data-mode='inline'] > .video-player {
+	transition: none; 
 }
