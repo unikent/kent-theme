@@ -169,7 +169,8 @@
             height: auto;
         }
 
-        &:before {
+        &:before,
+        &:after {
             content: none;
         }
     }
