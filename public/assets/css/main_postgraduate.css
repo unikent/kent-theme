@@ -5731,7 +5731,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
 
 #kent-bar #kent-bar-menu, .kent-bar #kent-bar-menu {
   position: fixed;
-  z-index: 99;
+  z-index: 100;
   width: 100vw;
   height: calc(100vh - 48px);
   background: #fff;
@@ -5745,7 +5745,8 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
     padding: 12px 16px 0;
     padding: 0.75rem 1rem 0;
     font-weight: bold;
-    position: relative; }
+    position: relative;
+    cursor: pointer; }
     #kent-bar #kent-bar-menu .back:before, .kent-bar #kent-bar-menu .back:before {
       position: absolute;
       left: 16px;
@@ -5873,6 +5874,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
     margin-top: 4px; }
   @media (min-width: 768px) {
     #kent-bar #kent-bar-menu, .kent-bar #kent-bar-menu {
+      z-index: 99;
       height: auto;
       position: absolute;
       top: 40px;
