@@ -86,7 +86,6 @@
         }
 
         &.slim {
-            min-height: 4.8rem;
 
             header {
                 font-size: 1.2rem;
@@ -103,6 +102,8 @@
             padding-right: 1rem;
             border:        none;
             transition: none;
+            position: absolute;
+            width: calc(100% - 4rem);
 
             &.overflown {
                 padding-right: 5rem;
@@ -165,18 +166,6 @@
                 span {
                     display: none;
                 }
-            }
-        }
-    }
-}
-
-.show-departmental-menu {
-    @include media-breakpoint-up(md) {
-        .departmental-nav {
-            min-height: 10rem;
-
-            &.slim {
-                min-height: 8rem;
             }
         }
     }

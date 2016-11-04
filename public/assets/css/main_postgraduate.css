@@ -9519,11 +9519,9 @@ body.show-global-search .global-nav-menu .global-nav-links {
     .departmental-nav header, .departmental-nav nav {
       margin: 0 2rem;
       padding-left: 1rem; }
-    .departmental-nav.slim {
-      min-height: 4.8rem; }
-      .departmental-nav.slim header {
-        font-size: 1.2rem;
-        padding: .5rem 1rem; }
+    .departmental-nav.slim header {
+      font-size: 1.2rem;
+      padding: .5rem 1rem; }
     .departmental-nav .navbar-menu {
       max-height: 2.5rem;
       height: auto;
@@ -9531,7 +9529,9 @@ body.show-global-search .global-nav-menu .global-nav-links {
       padding-left: 0;
       padding-right: 1rem;
       border: none;
-      transition: none; }
+      transition: none;
+      position: absolute;
+      width: calc(100% - 4rem); }
       .departmental-nav .navbar-menu.overflown {
         padding-right: 5rem; }
       .departmental-nav .navbar-menu.in {
@@ -9575,12 +9575,6 @@ body.show-global-search .global-nav-menu .global-nav-links {
           content: "More"; }
         .departmental-nav .navbar-toggler.overflown span {
           display: none; } }
-
-@media (min-width: 768px) {
-  .show-departmental-menu .departmental-nav {
-    min-height: 10rem; }
-    .show-departmental-menu .departmental-nav.slim {
-      min-height: 8rem; } }
 
 .breadcrumb {
   background-color: transparent; }
@@ -11563,7 +11557,7 @@ button.beta-toggler {
 
 @media (min-width: 768px) {
   .card.card-overlay.header-card-overlay {
-    margin-top: -7rem; }
+    margin-top: -2.8rem; }
     .card.card-overlay.header-card-overlay .card-title-wrap {
       width: 100%;
       bottom: 0;
@@ -11650,17 +11644,7 @@ button.beta-toggler {
   .card.card-overlay.header-card-overlay .header-card-overlap-search {
     top: 6rem; } }
 
-@media (min-width: 768px) {
-  .slim-header .card.header-card-overlay {
-    margin-top: -5.3rem; } }
-
-@media (min-width: 768px) {
-  .show-departmental-menu .card.header-card-overlay {
-    margin-top: -8rem; }
-  .show-departmental-menu.slim-header .card.header-card-overlay {
-    margin-top: calc( -8rem - 1px); } }
-
-.global-header-transparent .header-card-overlay::after {
+.global-header-transparent .card-overlay.header-card-overlay::after {
   position: absolute;
   top: 0;
   left: 0;
@@ -11671,7 +11655,7 @@ button.beta-toggler {
   pointer-events: none; }
 
 @media (min-width: 768px) {
-  .global-header-transparent .header-card-overlay {
+  .global-header-transparent .card-overlay.header-card-overlay {
     margin-top: -7rem; } }
 
 .spaced-links-container {

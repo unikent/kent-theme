@@ -155,7 +155,7 @@
 
 	@include media-breakpoint-up(md) {
 
-		margin-top: -7rem;
+		margin-top: -2.8rem;
 
 		.card-title-wrap {
 			width:      100%;
@@ -271,29 +271,7 @@
 
 }
 
-
-.slim-header{
-    .card.header-card-overlay {
-        @include media-breakpoint-up(md) {
-            margin-top: -5.3rem;
-        }
-    }
-}
-
-.show-departmental-menu {
-	@include media-breakpoint-up(md) {
-		.card.header-card-overlay {
-			margin-top: -8rem;
-		}
-		&.slim-header {
-			.card.header-card-overlay {
-				margin-top: calc( -8rem - #{1px});
-			}
-		}
-	}
-}
-
-.global-header-transparent .header-card-overlay {
+.global-header-transparent .card-overlay.header-card-overlay {
 
 
     &::after {
