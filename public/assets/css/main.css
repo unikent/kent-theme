@@ -5685,8 +5685,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
       #kent-bar.in nav.audience-nav-links, .kent-bar.in nav.audience-nav-links {
         height: auto;
         box-shadow: none;
-        border-bottom: none;
-        position: relative; }
+        border-bottom: none; }
       #kent-bar nav.audience-nav-links, .kent-bar nav.audience-nav-links {
         width: auto;
         box-shadow: none;
@@ -5696,7 +5695,6 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
         float: right;
         margin-right: 20px;
         overflow: visible;
-        z-index: 100;
         position: absolute;
         top: 0;
         right: 0; }
@@ -5726,6 +5724,7 @@ body .kf.pull-right, body #kentBar.kent-bar button.pull-right, #kentBar.kent-bar
             bottom: -18px;
             right: calc(50% - 7px);
             transform: rotate(45deg);
+            z-index: 100;
             border-top: 1px solid #ccc;
             border-left: 1px solid #ccc; } }
 
@@ -6794,6 +6793,13 @@ form + .h6 {
   margin-top: 24px;
   margin-top: 1.5rem; }
 
+.content-full .lead,
+.content-header .lead {
+  padding-top: 24px;
+  padding-top: 1.5rem;
+  padding-bottom: 48px;
+  padding-bottom: 3rem; }
+
 .content-container > ul {
   list-style: none;
   padding: 0;
@@ -7124,7 +7130,8 @@ main > article:last-child {
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link a {
     z-index: 1;
     position: relative; }
-  .faux-link-block .faux-link-overlay.faux-link-overlay, .nav-links-panel nav .nav-link .faux-link-overlay.faux-link-overlay, .global-nav .global-nav-links .global-nav-link nav .nav-link .faux-link-overlay.faux-link-overlay, .home-nav .global-nav-links .global-nav-link nav .nav-link .faux-link-overlay.faux-link-overlay, .card.card-linked .faux-link-overlay.faux-link-overlay, .card-panel.cards-linked .card .faux-link-overlay.faux-link-overlay, .card .card-img-overlay-link .faux-link-overlay.faux-link-overlay, .card.card-overlay .card-title-wrap.card-title-wrap-link .faux-link-overlay.faux-link-overlay {
+  .faux-link-block .faux-link-overlay.faux-link-overlay, .nav-links-panel nav .nav-link .faux-link-overlay.faux-link-overlay, .global-nav .global-nav-links .global-nav-link nav .nav-link .faux-link-overlay.faux-link-overlay, .home-nav .global-nav-links .global-nav-link nav .nav-link .faux-link-overlay.faux-link-overlay, .card.card-linked .faux-link-overlay.faux-link-overlay, .card-panel.cards-linked .card .faux-link-overlay.faux-link-overlay, .card .card-img-overlay-link .faux-link-overlay.faux-link-overlay, .card.card-overlay .card-title-wrap.card-title-wrap-link .faux-link-overlay.faux-link-overlay,
+  .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link .faux-link-overlay.faux-link-overlay {
     opacity: 0;
     position: absolute;
     z-index: 0;
@@ -7137,7 +7144,12 @@ main > article:last-child {
     text-indent: 200%;
     visibility: visible;
     white-space: nowrap; }
-  .faux-link-block:hover .chevron-link:after, .nav-links-panel nav .nav-link:hover .chevron-link:after, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover .chevron-link:after, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover .chevron-link:after, .card.card-linked:hover .chevron-link:after, .card-panel.cards-linked .card:hover .chevron-link:after, .card .card-img-overlay-link:hover .chevron-link:after, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover .chevron-link:after, .faux-link-block:hover .inline-links a:after, .inline-links .faux-link-block:hover a:after, .nav-links-panel nav .nav-link:hover .inline-links a:after, .inline-links .nav-links-panel nav .nav-link:hover a:after, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover .inline-links a:after, .inline-links .global-nav .global-nav-links .global-nav-link nav .nav-link:hover a:after, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover .inline-links a:after, .inline-links .home-nav .global-nav-links .global-nav-link nav .nav-link:hover a:after, .card.card-linked:hover .inline-links a:after, .inline-links .card.card-linked:hover a:after, .card-panel.cards-linked .card:hover .inline-links a:after, .inline-links .card-panel.cards-linked .card:hover a:after, .card .card-img-overlay-link:hover .inline-links a:after, .inline-links .card .card-img-overlay-link:hover a:after, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover .inline-links a:after, .inline-links .card.card-overlay .card-title-wrap.card-title-wrap-link:hover a:after, .faux-link-block:hover nav.breadcrumb a:after, nav.breadcrumb .faux-link-block:hover a:after, .nav-links-panel nav.breadcrumb .nav-link:hover a:after, .global-nav .global-nav-links .global-nav-link nav.breadcrumb .nav-link:hover a:after, .home-nav .global-nav-links .global-nav-link nav.breadcrumb .nav-link:hover a:after, .card.card-linked:hover nav.breadcrumb a:after, nav.breadcrumb .card.card-linked:hover a:after, .card-panel.cards-linked .card:hover nav.breadcrumb a:after, nav.breadcrumb .card-panel.cards-linked .card:hover a:after, .card .card-img-overlay-link:hover nav.breadcrumb a:after, nav.breadcrumb .card .card-img-overlay-link:hover a:after, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-title-wrap.card-title-wrap-link:hover a:after, .faux-link-block:hover .card .card-img-overlay-link .card-subtitle:after, .card .card-img-overlay-link .faux-link-block:hover .card-subtitle:after, .nav-links-panel nav .nav-link:hover .card .card-img-overlay-link .card-subtitle:after, .card .card-img-overlay-link .nav-links-panel nav .nav-link:hover .card-subtitle:after, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover .card .card-img-overlay-link .card-subtitle:after, .card .card-img-overlay-link .global-nav .global-nav-links .global-nav-link nav .nav-link:hover .card-subtitle:after, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover .card .card-img-overlay-link .card-subtitle:after, .card .card-img-overlay-link .home-nav .global-nav-links .global-nav-link nav .nav-link:hover .card-subtitle:after, .card.card-linked:hover .card-img-overlay-link .card-subtitle:after, .card-panel.cards-linked .card:hover .card-img-overlay-link .card-subtitle:after, .card .card-img-overlay-link:hover .card-subtitle:after, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover .card-img-overlay-link .card-subtitle:after, .card.card-overlay .card-img-overlay-link .card-title-wrap.card-title-wrap-link:hover .card-subtitle:after, .faux-link-block:hover .card-panel-profiles .card .back a:after, .card-panel-profiles .card .back .faux-link-block:hover a:after, .nav-links-panel nav .nav-link:hover .card-panel-profiles .card .back a:after, .card-panel-profiles .card .back .nav-links-panel nav .nav-link:hover a:after, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover .card-panel-profiles .card .back a:after, .card-panel-profiles .card .back .global-nav .global-nav-links .global-nav-link nav .nav-link:hover a:after, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover .card-panel-profiles .card .back a:after, .card-panel-profiles .card .back .home-nav .global-nav-links .global-nav-link nav .nav-link:hover a:after, .card-panel-profiles .card.card-linked:hover .back a:after, .card-panel.cards-linked .card-panel-profiles .card:hover .back a:after, .card-panel-profiles .card-panel.cards-linked .card:hover .back a:after, .card-panel-profiles .card .card-img-overlay-link:hover .back a:after, .card-panel-profiles .card .back .card-img-overlay-link:hover a:after, .card-panel-profiles .card.card-overlay .card-title-wrap.card-title-wrap-link:hover .back a:after, .card-panel-profiles .card.card-overlay .back .card-title-wrap.card-title-wrap-link:hover a:after {
+  .faux-link-block:hover .chevron-link:after, .nav-links-panel nav .nav-link:hover .chevron-link:after, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover .chevron-link:after, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover .chevron-link:after, .card.card-linked:hover .chevron-link:after, .card-panel.cards-linked .card:hover .chevron-link:after, .card .card-img-overlay-link:hover .chevron-link:after, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover .chevron-link:after,
+  .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover .chevron-link:after, .faux-link-block:hover .inline-links a:after, .inline-links .faux-link-block:hover a:after, .nav-links-panel nav .nav-link:hover .inline-links a:after, .inline-links .nav-links-panel nav .nav-link:hover a:after, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover .inline-links a:after, .inline-links .global-nav .global-nav-links .global-nav-link nav .nav-link:hover a:after, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover .inline-links a:after, .inline-links .home-nav .global-nav-links .global-nav-link nav .nav-link:hover a:after, .card.card-linked:hover .inline-links a:after, .inline-links .card.card-linked:hover a:after, .card-panel.cards-linked .card:hover .inline-links a:after, .inline-links .card-panel.cards-linked .card:hover a:after, .card .card-img-overlay-link:hover .inline-links a:after, .inline-links .card .card-img-overlay-link:hover a:after, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover .inline-links a:after, .inline-links .card.card-overlay .card-title-wrap.card-title-wrap-link:hover a:after,
+  .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover .inline-links a:after, .inline-links
+  .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover a:after, .faux-link-block:hover nav.breadcrumb a:after, nav.breadcrumb .faux-link-block:hover a:after, .nav-links-panel nav.breadcrumb .nav-link:hover a:after, .global-nav .global-nav-links .global-nav-link nav.breadcrumb .nav-link:hover a:after, .home-nav .global-nav-links .global-nav-link nav.breadcrumb .nav-link:hover a:after, .card.card-linked:hover nav.breadcrumb a:after, nav.breadcrumb .card.card-linked:hover a:after, .card-panel.cards-linked .card:hover nav.breadcrumb a:after, nav.breadcrumb .card-panel.cards-linked .card:hover a:after, .card .card-img-overlay-link:hover nav.breadcrumb a:after, nav.breadcrumb .card .card-img-overlay-link:hover a:after, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-title-wrap.card-title-wrap-link:hover a:after,
+  .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover nav.breadcrumb a:after, nav.breadcrumb
+  .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover a:after, .faux-link-block:hover .card .card-img-overlay-link .card-subtitle:after, .card .card-img-overlay-link .faux-link-block:hover .card-subtitle:after, .nav-links-panel nav .nav-link:hover .card .card-img-overlay-link .card-subtitle:after, .card .card-img-overlay-link .nav-links-panel nav .nav-link:hover .card-subtitle:after, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover .card .card-img-overlay-link .card-subtitle:after, .card .card-img-overlay-link .global-nav .global-nav-links .global-nav-link nav .nav-link:hover .card-subtitle:after, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover .card .card-img-overlay-link .card-subtitle:after, .card .card-img-overlay-link .home-nav .global-nav-links .global-nav-link nav .nav-link:hover .card-subtitle:after, .card.card-linked:hover .card-img-overlay-link .card-subtitle:after, .card-panel.cards-linked .card:hover .card-img-overlay-link .card-subtitle:after, .card .card-img-overlay-link:hover .card-subtitle:after, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover .card-img-overlay-link .card-subtitle:after, .card.card-overlay .card-img-overlay-link .card-title-wrap.card-title-wrap-link:hover .card-subtitle:after, .faux-link-block:hover .card-panel-profiles .card .back a:after, .card-panel-profiles .card .back .faux-link-block:hover a:after, .nav-links-panel nav .nav-link:hover .card-panel-profiles .card .back a:after, .card-panel-profiles .card .back .nav-links-panel nav .nav-link:hover a:after, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover .card-panel-profiles .card .back a:after, .card-panel-profiles .card .back .global-nav .global-nav-links .global-nav-link nav .nav-link:hover a:after, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover .card-panel-profiles .card .back a:after, .card-panel-profiles .card .back .home-nav .global-nav-links .global-nav-link nav .nav-link:hover a:after, .card-panel-profiles .card.card-linked:hover .back a:after, .card-panel.cards-linked .card-panel-profiles .card:hover .back a:after, .card-panel-profiles .card-panel.cards-linked .card:hover .back a:after, .card-panel-profiles .card .card-img-overlay-link:hover .back a:after, .card-panel-profiles .card .back .card-img-overlay-link:hover a:after, .card-panel-profiles .card.card-overlay .card-title-wrap.card-title-wrap-link:hover .back a:after, .card-panel-profiles .card.card-overlay .back .card-title-wrap.card-title-wrap-link:hover a:after {
     padding-left: 11.2px;
     padding-left: 0.7rem; }
 
@@ -7452,11 +7464,13 @@ figure figcaption,
     padding-bottom: 0;
     height: auto; }
   .video-launcher.playing.playing.playing > .video-player {
-    max-height: 100vh; }
+    max-height: none; }
   .video-launcher.playing.playing.playing > img,
   .video-launcher.playing.playing.playing > video {
     display: none; }
   .video-launcher.playing.playing.playing::after {
+    display: none; }
+  .video-launcher.playing.playing.playing .attribution {
     display: none; }
   .video-launcher.playing.playing.playing .plyr--muted .kf-volume-medium,
   .video-launcher.playing.playing.playing .plyr--fullscreen-active .kf-expand,
@@ -7491,6 +7505,9 @@ figure figcaption,
 
 .plyr--fullscreen-enabled .fs-toggle {
   display: none; }
+
+figure .video-launcher[data-mode='inline'] > .video-player {
+  transition: none; }
 
 .alert {
   background-color: #fff; }
@@ -10451,7 +10468,8 @@ button.beta-toggler {
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link img {
     transition: all 300ms;
     transform: translate3d(0, 0, 0);
-    filter: brightness(1); }
+    -webkit-filter: brightness(1);
+            filter: brightness(1); }
   a.card:hover, a.card:focus, a:hover, a:focus, .faux-link-block:hover, .nav-links-panel nav .nav-link:hover, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover, .card.card-linked:hover, .card-panel.cards-linked .card:hover, .card .card-img-overlay-link:hover, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover, .faux-link-block:focus, .nav-links-panel nav .nav-link:focus, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus, .card.card-linked:focus, .card-panel.cards-linked .card:focus, .card .card-img-overlay-link:focus, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus {
@@ -10459,7 +10477,8 @@ button.beta-toggler {
     a.card:hover img, a.card:focus img, a:hover img, a:focus img, .faux-link-block:hover img, .nav-links-panel nav .nav-link:hover img, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .card.card-linked:hover img, .card-panel.cards-linked .card:hover img, .card .card-img-overlay-link:hover img, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover img, .faux-link-block:focus img, .nav-links-panel nav .nav-link:focus img, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .card.card-linked:focus img, .card-panel.cards-linked .card:focus img, .card .card-img-overlay-link:focus img, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus img {
-      filter: brightness(85%); }
+      -webkit-filter: brightness(85%);
+              filter: brightness(85%); }
 
 .cards-backed .card-list-item, .cards-backed .card-panel.cards-list .card-panel-body .card, .card-panel.cards-list .card-panel-body .cards-backed .card, .cards-backed .card-panel .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list .cards-backed .card,
 .card-backed.card-list-item,
@@ -11197,7 +11216,7 @@ button.beta-toggler {
   .card.card-overlay .card-img-bottom {
     width: 100%; }
   .card.card-overlay .card-title-wrap,
-  .card.card-overlay .force-block.force-block.card-title-wrap {
+  .card.card-overlay .force-block.force-block.force-block.card-title-wrap {
     pointer-events: none;
     padding: 32px;
     padding: 2rem;
@@ -11206,10 +11225,10 @@ button.beta-toggler {
     transition: background-color 300ms, opacity 600ms;
     text-shadow: none; }
     .card.card-overlay .card-title-wrap.pull-right,
-    .card.card-overlay .force-block.force-block.card-title-wrap.pull-right {
+    .card.card-overlay .force-block.force-block.force-block.card-title-wrap.pull-right {
       float: none; }
     .card.card-overlay .card-title-wrap.card-title-wrap-link,
-    .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link {
+    .card.card-overlay .force-block.force-block.force-block.card-title-wrap.card-title-wrap-link {
       pointer-events: auto;
       display: block;
       color: #FFFFFF;
@@ -11217,11 +11236,11 @@ button.beta-toggler {
       padding-right: 3rem;
       cursor: pointer; }
       .card.card-overlay .card-title-wrap.card-title-wrap-link:hover,
-      .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link:hover {
+      .card.card-overlay .force-block.force-block.force-block.card-title-wrap.card-title-wrap-link:hover {
         text-decoration: none;
         background: #064274; }
       .card.card-overlay .card-title-wrap.card-title-wrap-link:after,
-      .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link:after {
+      .card.card-overlay .force-block.force-block.force-block.card-title-wrap.card-title-wrap-link:after {
         position: absolute;
         top: 50%;
         top: calc(50% - 1rem);
@@ -11235,7 +11254,7 @@ button.beta-toggler {
         content: "";
         font-family: "kentfont", sans-serif; }
     .card.card-overlay .card-title-wrap .card-title,
-    .card.card-overlay .force-block.force-block.card-title-wrap .card-title {
+    .card.card-overlay .force-block.force-block.force-block.card-title-wrap .card-title {
       font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       font-weight: normal;
       text-transform: uppercase;
@@ -11247,10 +11266,10 @@ button.beta-toggler {
       margin-top: 0; }
       @media (min-width: 768px) {
         .card.card-overlay .card-title-wrap .card-title,
-        .card.card-overlay .force-block.force-block.card-title-wrap .card-title {
+        .card.card-overlay .force-block.force-block.force-block.card-title-wrap .card-title {
           font-size: 2.2rem; } }
     .card.card-overlay .card-title-wrap .card-text,
-    .card.card-overlay .force-block.force-block.card-title-wrap .card-text {
+    .card.card-overlay .force-block.force-block.force-block.card-title-wrap .card-text {
       font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       color: #FFFFFF; }
   .card.card-overlay .card-title, .card.card-overlay .card-subtitle {
@@ -11340,14 +11359,14 @@ button.beta-toggler {
     pointer-events: none; }
   @media (min-width: 768px) {
     .card.card-overlay.card-media-inline.card-media-enabled .card-title-wrap,
-    .card.card-overlay.card-media-inline.card-media-enabled .force-block.force-block.card-title-wrap {
+    .card.card-overlay.card-media-inline.card-media-enabled .force-block.force-block.force-block.card-title-wrap {
       opacity: 0;
       pointer-events: none; } }
   .card.card-overlay.card-media-inline.card-media-enabled .card-media-wrap, .card.card-overlay.card-media-inline.card-media-enabled .card-embed-wrap {
     max-height: 150vh; }
   @media (min-width: 768px) {
     .card.card-overlay .card-title-wrap,
-    .card.card-overlay .force-block.force-block.card-title-wrap {
+    .card.card-overlay .force-block.force-block.force-block.card-title-wrap {
       position: absolute;
       width: 40%;
       left: 5%;
@@ -11355,51 +11374,51 @@ button.beta-toggler {
       bottom: auto;
       z-index: 1; }
       .card.card-overlay .card-title-wrap.pull-bottom,
-      .card.card-overlay .force-block.force-block.card-title-wrap.pull-bottom {
+      .card.card-overlay .force-block.force-block.force-block.card-title-wrap.pull-bottom {
         top: auto;
         bottom: 0; }
       .card.card-overlay .card-title-wrap.card-title-wrap-link,
-      .card.card-overlay .force-block.force-block.card-title-wrap.card-title-wrap-link {
+      .card.card-overlay .force-block.force-block.force-block.card-title-wrap.card-title-wrap-link {
         position: absolute; }
       .card.card-overlay .card-title-wrap.pull-right,
-      .card.card-overlay .force-block.force-block.card-title-wrap.pull-right {
+      .card.card-overlay .force-block.force-block.force-block.card-title-wrap.pull-right {
         left: inherit;
         right: 5%; } }
   @media (min-width: 768px) and (min-width: 768px) {
     .card.card-overlay .card-title-wrap.content-contained,
-    .card.card-overlay .force-block.force-block.card-title-wrap.content-contained {
+    .card.card-overlay .force-block.force-block.force-block.card-title-wrap.content-contained {
       left: calc(12% - 15px); } }
   @media (min-width: 768px) and (min-width: 992px) {
     .card.card-overlay .card-title-wrap.content-contained,
-    .card.card-overlay .force-block.force-block.card-title-wrap.content-contained {
+    .card.card-overlay .force-block.force-block.force-block.card-title-wrap.content-contained {
       left: 5%; } }
   @media (min-width: 768px) and (min-width: 1200px) {
     .card.card-overlay .card-title-wrap.content-contained,
-    .card.card-overlay .force-block.force-block.card-title-wrap.content-contained {
+    .card.card-overlay .force-block.force-block.force-block.card-title-wrap.content-contained {
       left: 9%; } }
   @media (min-width: 768px) and (min-width: 1328px) {
     .card.card-overlay .card-title-wrap.content-contained,
-    .card.card-overlay .force-block.force-block.card-title-wrap.content-contained {
+    .card.card-overlay .force-block.force-block.force-block.card-title-wrap.content-contained {
       left: calc( ((100% - 1140px) / 2) + 15px); } }
   @media (min-width: 768px) {
       .card.card-overlay .card-title-wrap.content-contained.pull-right,
-      .card.card-overlay .force-block.force-block.card-title-wrap.content-contained.pull-right {
+      .card.card-overlay .force-block.force-block.force-block.card-title-wrap.content-contained.pull-right {
         left: auto; } }
     @media (min-width: 768px) and (min-width: 768px) {
       .card.card-overlay .card-title-wrap.content-contained.pull-right,
-      .card.card-overlay .force-block.force-block.card-title-wrap.content-contained.pull-right {
+      .card.card-overlay .force-block.force-block.force-block.card-title-wrap.content-contained.pull-right {
         right: calc(12% + 15px); } }
     @media (min-width: 768px) and (min-width: 992px) {
       .card.card-overlay .card-title-wrap.content-contained.pull-right,
-      .card.card-overlay .force-block.force-block.card-title-wrap.content-contained.pull-right {
+      .card.card-overlay .force-block.force-block.force-block.card-title-wrap.content-contained.pull-right {
         right: calc(5% + 45px); } }
     @media (min-width: 768px) and (min-width: 1200px) {
       .card.card-overlay .card-title-wrap.content-contained.pull-right,
-      .card.card-overlay .force-block.force-block.card-title-wrap.content-contained.pull-right {
+      .card.card-overlay .force-block.force-block.force-block.card-title-wrap.content-contained.pull-right {
         right: 9%; } }
     @media (min-width: 768px) and (min-width: 1328px) {
       .card.card-overlay .card-title-wrap.content-contained.pull-right,
-      .card.card-overlay .force-block.force-block.card-title-wrap.content-contained.pull-right {
+      .card.card-overlay .force-block.force-block.force-block.card-title-wrap.content-contained.pull-right {
         right: calc( ((100% - 1140px) / 2) + 15px); } }
   @media (min-width: 768px) {
     .card.card-overlay .card-img-overlay.card-img-overlay-block, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom-shaded, .card.card-overlay .card-img-overlay-block.card-img-overlay-centered {

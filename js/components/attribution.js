@@ -3,8 +3,10 @@
  */
 
 jQuery(document).ready(function($){
-	$('.attribution').click(function(){
+	$('.attribution').click(function(e){
 		$(this).toggleClass('in');
+		e.preventDefault();
+		e.stopPropagation();
 	});
 	// Debug
 	window.KENT.log('Initiating: Attribution');
