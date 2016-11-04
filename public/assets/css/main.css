@@ -12822,6 +12822,8 @@ blockquote.pull-quote {
       flex-wrap: wrap; }
   .card-panel-body.kent-slider .slick-track .kent-slide {
     height: auto; }
+  .card-panel-body.kent-slider .slick-track:before {
+    content: none; }
 
 .global-footer {
   background: #434749;
