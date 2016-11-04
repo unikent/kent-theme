@@ -168,6 +168,10 @@
         .kent-slide {
             height: auto;
         }
-    }
 
+        &:before,
+        &:after {
+            content: none;
+        }
+    }
 }
