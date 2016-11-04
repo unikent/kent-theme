@@ -5,5 +5,5 @@
 foreach($_GET as $key => $value){
 	define(strtoupper($key), $value);
 }
-
+include '../vendor/autoload.php';
 include "../bootstrap.php";
