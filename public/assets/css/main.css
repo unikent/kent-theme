@@ -12823,6 +12823,8 @@ blockquote.pull-quote {
       flex-wrap: wrap; }
   .card-panel-body.kent-slider .slick-track .kent-slide {
     height: auto; }
+  .card-panel-body.kent-slider .slick-track:before, .card-panel-body.kent-slider .slick-track:after {
+    content: none; }
 
 .global-footer {
   background: #434749;
