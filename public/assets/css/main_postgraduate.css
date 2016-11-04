@@ -6885,8 +6885,8 @@ main > .content-container:first-child,
 main > .content-header:first-child,
 main > .content-body:first-child,
 main > article:first-child {
-  margin-top: 32px;
-  margin-top: 2rem; }
+  margin-top: 48px;
+  margin-top: 3rem; }
 
 main > .container:last-child, main > .container-padded:last-child, main > .container-padded-h:last-child, main > .card-panel.card-panel-contained:last-child, .card-panel main > .card-panel-body:last-child, .card-panel main > .card-panel-header:last-child, .card.card-overlay.header-card-overlay main > .card-title-overlap:last-child, main > blockquote:last-child,
 main > .content-container:last-child,
