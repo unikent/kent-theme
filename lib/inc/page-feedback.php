@@ -2,14 +2,14 @@
 	<div class="container">
 		<div class="row">
 			<div class="page-feedback-toggle">
-				<a class="<?php echo !empty($_POST['page_feedback_errors'])?'':'collapsed'; ?>" data-toggle="collapse" data-target="#page-feedback-content">Did you find this content helpful?</a>
+				<a class="<?php echo !(empty($_POST['page_feedback_errors']) && empty($_POST['page_feedback_success']))?'':'collapsed'; ?>" data-toggle="collapse" data-target="#page-feedback-content">Did you find this content helpful?</a>
 			</div>
 			<div class="page-feedback-meta">
 				<?php echo $meta; ?>
 			</div>
 		</div>
 	</div>
-	<div id="page-feedback-content" class="collapse page-feedback-content<?php echo !empty($_POST['page_feedback_errors'])?' in':''; ?>">
+	<div id="page-feedback-content" class="collapse page-feedback-content<?php echo !(empty($_POST['page_feedback_errors']) && empty($_POST['page_feedback_success']))?' in':''; ?>">
 		<div class="container">
 			<h3>Did you find this content helpful? <i class="kf-close" data-toggle="collapse" data-target="#page-feedback-content"></i></h3>
 			<p>We appreciate your feedback in helping us to improve our website.</p>
@@ -37,6 +37,8 @@
 				</div>
 				<?php if(!empty($_POST['page_feedback_errors'])){ ?>
 				<div id="page_feedback_errors" class="alert alert-danger"><strong>Error</strong><br><?php echo $_POST['page_feedback_errors']; ?></div>
+				<?php }else if(!empty($_POST['page_feedback_success']) && $_POST['page_feedback_success']){ ?>
+					<div id="page_feedback_success" class="alert alert-success"><strong>Thank you</strong><br>Your feedback has been received, thank you for helping us to improve our website.</div>
 				<?php } ?>
 			</form>
 		</div>
