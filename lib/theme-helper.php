@@ -2,6 +2,7 @@
 namespace unikent\kent_theme;
 
 use unikent\Footprints\Ticket;
+use Unikent\ReCaptcha\CurlPost;
 
 Class KentThemeHelper {
 
@@ -178,9 +179,13 @@ Class KentThemeHelper {
 	}
 }
 
+if(isset($_ENV['RECAPTCHA']) && !defined('RECAPTCHA')){
+	define('RECAPTCHA', $_ENV['RECAPTCHA']);
+}
+
 if(defined('RECAPTCHA') && isset($_POST['page-feedback-submit']) && $_POST['page-feedback-submit'] == 'page-feedback'){
 
-	$recaptcha = new \ReCaptcha\ReCaptcha(RECAPTCHA);
+	$recaptcha = new \ReCaptcha\ReCaptcha(RECAPTCHA, new CurlPost());
 	$resp = $recaptcha->verify($_POST['g-recaptcha-response'], (isset($_SERVER['HTTP_X_KENT_REAL_IP'])?$_SERVER['HTTP_X_KENT_REAL_IP']:$_SERVER['REMOTE_ADDR']));
 	if ($resp->isSuccess()) {
 
@@ -191,7 +196,8 @@ if(defined('RECAPTCHA') && isset($_POST['page-feedback-submit']) && $_POST['page
 			$ticket->set_category("Web");
 			$ticket->add_assignee('Web Development');
 			$ticket->add_entry($_POST['page-feedback-comment']);
-			$ticket->create();
+			$ticket = $ticket->create();
+			$_POST['page_feedback_success'] = true;
 		}catch(\Exception $e){
 			$_POST['page_feedback_errors'] = (defined('DEBUG') && DEBUG) ? "Footprints ticket submission failed: <" . $e->getMessage() :"Submission Failed";
 		}
