@@ -195,10 +195,22 @@ window.KENT.modules = window.KENT.modules || {};
 		'ready': function(qs){
 			qs.showAll();
 			// Hookup show more button
-			$(qs.container, '.btn-outline-primary').click(function(){
+			$(qs.container).on('click', '.btn-outline-primary', function(){
 				qs.options.max_results += 25;
 				qs.refresh();
 			});
+
+			// Scroll fix (store last scroll position in input if available, then reuse if someone hits back)
+			const scroll = $('input[name=qucikspot_return_to_scroll_position]');
+			if (scroll.length !== 0) {
+				if (scroll.val() !== ''){
+					$(window).scrollTop(scroll.val());
+				}
+
+				$(window).unload(function() {
+					scroll.val($(window).scrollTop());
+				});
+			}
 		},
 		'no_results': function (qs, val) {
 			return '<div class=\'card quickspot-result selected\'><p>No matching results</p></div>';
@@ -258,7 +270,6 @@ window.KENT.modules = window.KENT.modules || {};
 		}
 	});
 
-
 	// Modules
 	configs.modules_inline = $.extend({}, configs.withInlineOutput, {
 		'url': window.KENT.settings.api_url + '/v1/modules/collection/all',
@@ -294,9 +305,9 @@ jQuery(document).ready(function($){
 	function qsAutoFilter(qs, filter_container_id){
 		var filter_container = $(`#${filter_container_id} select`);
 
-		var apply_filters = function(){
+		var apply_filters = function(results_to_show){
 			// reset result count
-			qs.options.max_results = 25;
+			qs.options.max_results = parseInt(results_to_show, 10);
 			qs.__filters_text = [];
 			// clear existing filters
 			qs.clearFilters();
@@ -319,13 +330,23 @@ jQuery(document).ready(function($){
 
 		// On change, filter & refresh dataset
 		filter_container.change(function(){
-			apply_filters();
+			apply_filters(25);
 			// Refresh dataset.
 			qs.refresh();
 		});
 
 		// Apply filters on load
-		qs.on('quickspot:loaded', function() { apply_filters(); });
+		qs.on('quickspot:loaded', function() {
+			// Attempt to use remebered count (if avaiable) on load
+			let count = $(`#${filter_container_id} input[name=quickspot_result_count]`).val();
+			if (typeof count === 'undefined' || count === '') {
+				count = 25;
+			}
+			apply_filters(count);
+		});
+		qs.on('quickspot:result', function(e){
+			$(`#${filter_container_id} input[name=quickspot_result_count]`).val(e.quickspot.options.max_results);
+		});
 	}
 
 	// Hookup quickspot instances
