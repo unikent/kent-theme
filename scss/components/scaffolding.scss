@@ -134,6 +134,15 @@ main {
             ul {
                 @include link-list();
             }
+
+            &.nowrap,
+            ul.nowrap{
+                li a,
+                ul li a {
+                    text-overflow: ellipsis;
+                    white-space:   nowrap;
+                }
+            }
         }
     }
 
