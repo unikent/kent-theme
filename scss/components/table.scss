@@ -8,6 +8,6 @@
     }
 
     & > tr:first-child, & > tbody > tr:first-child {
-        border-top: 3px solid #05345C;
+        border-top: 3px solid $brand-primary;
     }
 }
