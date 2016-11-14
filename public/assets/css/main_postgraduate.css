@@ -9613,8 +9613,6 @@ nav.breadcrumb {
   font-size: 12.8px;
   font-size: 0.8rem; }
   nav.breadcrumb a, nav.breadcrumb span {
-    max-width: 288px;
-    max-width: 18rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -10463,8 +10461,7 @@ button.beta-toggler {
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link img {
     transition: all 300ms;
     transform: translate3d(0, 0, 0);
-    -webkit-filter: brightness(1);
-            filter: brightness(1); }
+    filter: brightness(1); }
   a.card:hover, a.card:focus, a:hover, a:focus, .faux-link-block:hover, .nav-links-panel nav .nav-link:hover, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover, .card.card-linked:hover, .card-panel.cards-linked .card:hover, .card .card-img-overlay-link:hover, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover, .faux-link-block:focus, .nav-links-panel nav .nav-link:focus, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus, .card.card-linked:focus, .card-panel.cards-linked .card:focus, .card .card-img-overlay-link:focus, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus {
@@ -10472,8 +10469,7 @@ button.beta-toggler {
     a.card:hover img, a.card:focus img, a:hover img, a:focus img, .faux-link-block:hover img, .nav-links-panel nav .nav-link:hover img, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .card.card-linked:hover img, .card-panel.cards-linked .card:hover img, .card .card-img-overlay-link:hover img, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover img, .faux-link-block:focus img, .nav-links-panel nav .nav-link:focus img, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .card.card-linked:focus img, .card-panel.cards-linked .card:focus img, .card .card-img-overlay-link:focus img, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus img {
-      -webkit-filter: brightness(85%);
-              filter: brightness(85%); }
+      filter: brightness(85%); }
 
 .cards-backed .card-list-item, .cards-backed .card-panel.cards-list .card-panel-body .card, .card-panel.cards-list .card-panel-body .cards-backed .card, .cards-backed .card-panel .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list .cards-backed .card,
 .card-backed.card-list-item,
