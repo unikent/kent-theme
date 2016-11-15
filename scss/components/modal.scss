@@ -1,11 +1,14 @@
 .modal {
-
     .modal-header {
-        background: $kent-primary;
+        background: $brand-primary;
         color: #fff;
+        padding: 1.5rem;
 
-        h3{
+        h2 {
             color: #fff;
+            display: inline-block;
+            margin-right: 1rem;
+            vertical-align: bottom;
         }
 
         .close {
@@ -16,6 +19,12 @@
                 vertical-align: sub;
             }
         }
+
+        .form-group {
+            display:inline-block;
+            margin-bottom: 0;
+        }
+
     }
 
     .modal-dialog {
@@ -23,6 +32,29 @@
             max-width: 80%;
         }
         margin-top: 3rem;
+    }
+
+    .content-aside{
+
+        .btn {
+            width: 100%
+        }
+
+        .ucas-code{
+            text-align: center;
+            color: $brand-accent;
+            padding-top: 1rem;
+        }
+
+        p{
+            padding: 1rem;
+            text-align: center;
+            color: $text-muted;
+        }
+    }
+
+    .btn {
+        padding: 1rem;
     }
 
 
