@@ -108,7 +108,7 @@ form{
     font-size:     1.2rem;
     padding-bottom:2rem;
     border-bottom: 1px solid $border-gray;
-
+    margin-bottom: 1rem;
     // Sometimes 2 paragraphs of lead text are wanted - in this case, p can be put inside of a div.lead
     // to acheave this. In this case, don't add bottom padding to last p, so sizing looks normal
     p:last-child {
