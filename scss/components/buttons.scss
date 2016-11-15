@@ -5,6 +5,13 @@
     //  $shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 1px 1px rgba(0,0,0,.075);
     //  .box-shadow($shadow);
 
+    &.chevron-link {
+        &:after {
+            color: #fff;
+            content:      $kf-chevron-right;
+        }
+    }
+
     $active-background: lighten($background, 10%);
     $active-border: lighten($border, 10%);
 
@@ -43,6 +50,7 @@
             border-color:     $border;
         }
     }
+
 }
 
 @mixin icon-circle {
