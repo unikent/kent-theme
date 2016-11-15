@@ -344,7 +344,7 @@
         white-space: nowrap;
 
 		i {
-		   vertical-align: top;
+		   line-height: 1.5em;
 		}
 
 		@include media-breakpoint-up(sm) {

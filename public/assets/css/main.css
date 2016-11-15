@@ -11710,7 +11710,7 @@ button.beta-toggler {
     padding: 1rem 0 0 0;
     white-space: nowrap; }
     .spaced-links-inner-container .spaced-links-item i {
-      vertical-align: top; }
+      line-height: 1.5em; }
     @media (min-width: 544px) {
       .spaced-links-inner-container .spaced-links-item {
         white-space: normal;
