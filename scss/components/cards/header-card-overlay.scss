@@ -345,6 +345,7 @@
 
 		i {
 		   line-height: 1.5em;
+           vertical-align: text-bottom;
 		}
 
 		@include media-breakpoint-up(sm) {
