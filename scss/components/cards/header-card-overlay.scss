@@ -8,6 +8,7 @@
 		margin-top: 1rem;
 	}
 
+
 	.card-title-wrap {
 		background: #333333;
 		padding:    2rem;
@@ -156,6 +157,11 @@
 	@include media-breakpoint-up(md) {
 
 		margin-top: -2.8rem;
+
+		.breadcrumb {
+			padding: 0;
+			padding-bottom:1rem;
+		}
 
 		.card-title-wrap {
 			width:      100%;
