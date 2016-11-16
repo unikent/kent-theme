@@ -11641,14 +11641,17 @@ button.beta-toggler {
 .card.card-overlay.header-card-overlay .overlap-content-container {
   margin-left: 0;
   margin-right: 0;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  width: 100%; }
   @media (min-width: 544px) {
     .card.card-overlay.header-card-overlay .overlap-content-container {
+      width: 100%;
       max-width: none;
       padding-left: 5%;
       padding-right: 5%; } }
   @media (min-width: 768px) {
     .card.card-overlay.header-card-overlay .overlap-content-container {
+      width: 100%;
       max-width: none;
       padding-left: 12%;
       padding-right: 12%; } }

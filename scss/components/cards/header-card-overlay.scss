@@ -211,13 +211,15 @@
 		margin-left:0;
 		margin-right:0;
 		padding-bottom:0;
-
+        width: 100%;
 		@include media-breakpoint-up(sm) {
+            width: 100%;
 			max-width:     none;
 			padding-left:  5%;
 			padding-right: 5%;
 		}
 		@include media-breakpoint-up(md) {
+            width: 100%;
 			max-width:     none;
 			padding-left:  12%;
 			padding-right: 12%;
