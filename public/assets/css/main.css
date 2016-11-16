@@ -10848,19 +10848,19 @@ button.beta-toggler {
     .card-panel.card-panel-primary-tint.cards-backed .card {
       border-color: #E8EBF2; }
     .card-panel.card-panel-primary-tint .card-panel-body.kent-slider .slick-prev:after, .card-panel.card-panel-primary-tint .card-panel-body.kent-slider .slick-next:after {
-      color: #05345C; }
+      color: rgba(5, 52, 92, 0.7); }
   .card-panel.card-panel-secondary {
     background-color: #F5F5F5; }
     .card-panel.card-panel-secondary.cards-backed .card {
       border-color: #F5F5F5; }
     .card-panel.card-panel-secondary .card-panel-body.kent-slider .slick-prev:after, .card-panel.card-panel-secondary .card-panel-body.kent-slider .slick-next:after {
-      color: #05345C; }
+      color: rgba(5, 52, 92, 0.7); }
   .card-panel.card-panel-tertiary {
     background-color: #F7F2E1; }
     .card-panel.card-panel-tertiary.cards-backed .card {
       border-color: #F7F2E1; }
     .card-panel.card-panel-tertiary .card-panel-body.kent-slider .slick-prev:after, .card-panel.card-panel-tertiary .card-panel-body.kent-slider .slick-next:after {
-      color: #05345C; }
+      color: rgba(5, 52, 92, 0.7); }
   .card-panel.card-panel-primary {
     background-color: #05345C; }
     .card-panel.card-panel-primary.cards-backed .card {
@@ -12861,13 +12861,39 @@ blockquote.pull-quote {
       top: calc(50% - 1.5rem);
       bottom: auto; } }
 
+.card-panel-body.kent-slider .slick-prev {
+  left: -24px;
+  left: -1.5rem; }
+
+.card-panel-body.kent-slider .slick-next {
+  right: -20px;
+  right: -1.25rem; }
+
+@media (min-width: 768px) {
+  .card-panel-body.kent-slider .slick-prev, .card-panel-body.kent-slider .slick-next {
+    width: auto; }
+    .card-panel-body.kent-slider .slick-prev:after, .card-panel-body.kent-slider .slick-next:after {
+      color: #fff; }
+  .card-panel-body.kent-slider .slick-prev {
+    left: -3rem; }
+  .card-panel-body.kent-slider .slick-next {
+    right: 0; } }
+
+@media (min-width: 856px) {
+  .card-panel-body.kent-slider .slick-prev {
+    left: -4rem; }
+  .card-panel-body.kent-slider .slick-next {
+    right: -1.25rem; } }
+
 @media (min-width: 992px) {
   .card-panel-body.kent-slider .slick-prev, .card-panel-body.kent-slider .slick-next {
     width: auto; }
     .card-panel-body.kent-slider .slick-prev:after, .card-panel-body.kent-slider .slick-next:after {
       color: #fff; }
   .card-panel-body.kent-slider .slick-prev {
-    left: -3rem; } }
+    left: -3rem; }
+  .card-panel-body.kent-slider .slick-next {
+    right: 0; } }
 
 .card-panel-body.kent-slider .slick-track {
   display: -ms-flexbox;
