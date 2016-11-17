@@ -30,7 +30,7 @@ main > nav.breadcrumb {
 }
 
 nav.breadcrumb {
-    margin:      0 0 1rem;
+    margin: 0;
     height:      0;
     overflow:    hidden;
     padding:     0;
@@ -73,5 +73,6 @@ nav.breadcrumb {
 
     @include media-breakpoint-up(md) {
         height: auto;
+        padding: 1.5rem 0;
     }
 }

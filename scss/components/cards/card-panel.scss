@@ -179,7 +179,7 @@
             .card-panel-body.kent-slider{
                 .slick-prev, .slick-next {
                     &:after {
-                        color: $brand-primary;
+                        color: transparentize($brand-primary,.3);
                     }
                 }
             }
