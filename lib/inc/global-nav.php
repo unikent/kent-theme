@@ -4,66 +4,66 @@ $global_nav_links = array(
 		array(
 			'title' 		=>	'Making a difference',
 			'description' 	=> 	'Research impact in local and global communities.',
-			'url' 			=>	'//beta-test.kent.ac.uk/research'
+			'url' 			=>	'/research'
 		),
 		array(
 			'title' 		=>	'Research environment',
 			'description' 	=> 	'What it\'s like to research at Kent.',
-			'url' 			=>	'//beta-test.kent.ac.uk/research/environment'
+			'url' 			=>	'/research/environment'
 		),
 		array(
 			'title' 		=>	'People',
 			'description' 	=> 	'World-class experts producing innovative research.',
-			'url' 			=>	'//beta-test.kent.ac.uk/research/people'
+			'url' 			=>	'/research/people'
 		),
 		array(
 			'title' 		=>	'Innovation',
 			'description' 	=> 	'New research projects.',
-			'url' 			=>	'//beta-test.kent.ac.uk/research/innovation'
+			'url' 			=>	'/research/innovation'
 		)
 	),
 	'Study'=> array(
 		array(
 			'title' 		=>	'Top-ranking university',
 			'description' 	=> 	'Kent’s achievements and global reputation.',
-			'url' 			=>	'//beta-test.kent.ac.uk/courses/top-ranking'
+			'url' 			=>	'/courses/top-ranking'
 		),
 		array(
 			'title' 		=>	'Undergraduate',
 			'description' 	=> 	'Our degrees gain the 5th highest score in the NSS.',
-			'url' 			=>	"//beta-test.kent.ac.uk/courses/undergraduate"
+			'url' 			=>	"/courses/undergraduate"
 		),
 		array(
 			'title' 		=>	'Postgraduate',
 			'description' 	=> 	'Stimulating teaching and a dynamic community.',
-			'url' 			=>	"//beta-test.kent.ac.uk/courses/postgraduate"
+			'url' 			=>	"/courses/postgraduate"
 		),
 		array(
 			'title' 		=>	'International',
 			'description' 	=> 	'Help and advice for international students.',
-			'url' 			=>	'//beta-test.kent.ac.uk/courses/international'
+			'url' 			=>	'/courses/international'
 		)
 	),
 	'Engage'=> array(
 		array(
 			'title' 		=>	'What’s on',
 			'description' 	=> 	'Theatre, cinema, music, art, lectures and more.',
-			'url' 			=>	'//beta-test.kent.ac.uk/engage/whats-on'
+			'url' 			=>	'/engage/whats-on'
 		),
 		array(
 			'title' 		=>	'Visit us',
 			'description' 	=> 	'Study in the UK or one of our European centres.',
-			'url' 			=>	'//beta-test.kent.ac.uk/engage/visit-us'
+			'url' 			=>	'/engage/visit-us'
 		),
 		array(
 			'title' 		=>	'Community',
 			'description' 	=> 	'Find out about our engagement with our communities and the wider world.',
-			'url' 			=>	'//beta-test.kent.ac.uk/engage/community'
+			'url' 			=>	'/engage/community'
 		),
 		array(
 			'title' 		=>	'Business services',
 			'description' 	=> 	'Creative partnerships with business and industry.',
-			'url' 			=>	'//beta-test.kent.ac.uk/engage/business-services'
+			'url' 			=>	'/engage/business-services'
 		)
 	)
 );
