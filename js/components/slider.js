@@ -45,10 +45,9 @@ window.KENT.kentslider.profile_feature = {
 	breakpoint:'<=md'
 };
 
-window.KENT.kentslider.related_courses = {
+window.KENT.kentslider.card_panel = {
 	config: $.extend({}, window.KENT.kentslider.default.config, {
 		dots: false,
-		infine: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
 		responsive: [
