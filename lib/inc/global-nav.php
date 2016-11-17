@@ -3,67 +3,67 @@ $global_nav_links = array(
 	'Research' => array(
 		array(
 			'title' 		=>	'Making a difference',
-			'description' 	=> 	'Research impact in local and global communities',
-			'url' 			=>	'//www.kent.ac.uk/research/impact'
+			'description' 	=> 	'Research impact in local and global communities.',
+			'url' 			=>	'/research'
 		),
 		array(
-			'title' 		=>	'Enterprise projects',
-			'description' 	=> 	'Creative partnerships with business and industry',
-			'url' 			=>	'//www.kent.ac.uk/enterprise'
+			'title' 		=>	'Research environment',
+			'description' 	=> 	'What it\'s like to research at Kent.',
+			'url' 			=>	'/research/environment'
 		),
 		array(
-			'title' 		=>	'Kent research staff',
-			'description' 	=> 	'World-class experts producing innovative research',
-			'url' 			=>	'//www.kent.ac.uk/research/expertise'
+			'title' 		=>	'People',
+			'description' 	=> 	'World-class experts producing innovative research.',
+			'url' 			=>	'/research/people'
 		),
 		array(
-			'title' 		=>	'Research funding',
-			'description' 	=> 	'Funding opportunities for staff and students',
-			'url' 			=>	'//www.kent.ac.uk/scholarships/postgraduate'
+			'title' 		=>	'Innovation',
+			'description' 	=> 	'New research projects.',
+			'url' 			=>	'/research/innovation'
 		)
 	),
 	'Study'=> array(
 		array(
-			'title' 		=>	'Top 20 university',
-			'description' 	=> 	'Kent’s achievements and global reputation',
-			'url' 			=>	'//www.kent.ac.uk/courses/why'
+			'title' 		=>	'Top-ranking university',
+			'description' 	=> 	'Kent’s achievements and global reputation.',
+			'url' 			=>	'/courses/top-ranking'
 		),
 		array(
 			'title' 		=>	'Undergraduate',
-			'description' 	=> 	'Our degrees gain the 5th highest score in the NSS',
-			'url' 			=>	HOME_URL . "/courses/undergraduate"
+			'description' 	=> 	'Our degrees gain the 5th highest score in the NSS.',
+			'url' 			=>	"/courses/undergraduate"
 		),
 		array(
 			'title' 		=>	'Postgraduate',
-			'description' 	=> 	'Stimulating teaching and a dynamic community',
-			'url' 			=>	HOME_URL . "/courses/postgraduate"
+			'description' 	=> 	'Stimulating teaching and a dynamic community.',
+			'url' 			=>	"/courses/postgraduate"
 		),
 		array(
 			'title' 		=>	'International',
-			'description' 	=> 	'Help and advice for international students',
-			'url' 			=>	'//www.kent.ac.uk/internationalstudent'
+			'description' 	=> 	'Help and advice for international students.',
+			'url' 			=>	'/courses/international'
 		)
 	),
 	'Engage'=> array(
 		array(
 			'title' 		=>	'What’s on',
-			'description' 	=> 	'Theatre, cinema, music, art, lectures and more',
-			'url' 			=>	'//www.kent.ac.uk/events'
+			'description' 	=> 	'Theatre, cinema, music, art, lectures and more.',
+			'url' 			=>	'/engage/whats-on'
 		),
 		array(
-			'title' 		=>	'Superb locations',
-			'description' 	=> 	'Study in the UK or one of our European centres',
-			'url' 			=>	'//www.kent.ac.uk/locations'
+			'title' 		=>	'Visit us',
+			'description' 	=> 	'Study in the UK or one of our European centres.',
+			'url' 			=>	'/engage/visit-us'
 		),
 		array(
-			'title' 		=>	'Visiting Kent',
-			'description' 	=> 	'Come to our Open Day or book an informal visit',
-			'url' 			=>	'//www.kent.ac.uk/visit'
+			'title' 		=>	'Community',
+			'description' 	=> 	'Find out about our engagement with our communities and the wider world.',
+			'url' 			=>	'/engage/community'
 		),
 		array(
-			'title' 		=>	'Accommodation',
-			'description' 	=> 	'Living at Kent – options to suit every budget',
-			'url' 			=>	'//www.kent.ac.uk/accommodation'
+			'title' 		=>	'Business services',
+			'description' 	=> 	'Creative partnerships with business and industry.',
+			'url' 			=>	'/engage/business-services'
 		)
 	)
 );
