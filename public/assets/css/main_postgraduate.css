@@ -10510,7 +10510,8 @@ button.beta-toggler {
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link img {
     transition: all 300ms;
     transform: translate3d(0, 0, 0);
-    filter: brightness(1); }
+    -webkit-filter: brightness(1);
+            filter: brightness(1); }
   a.card:hover, a.card:focus, a:hover, a:focus, .faux-link-block:hover, .nav-links-panel nav .nav-link:hover, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover, .card.card-linked:hover, .card-panel.cards-linked .card:hover, .card .card-img-overlay-link:hover, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover, .faux-link-block:focus, .nav-links-panel nav .nav-link:focus, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus, .card.card-linked:focus, .card-panel.cards-linked .card:focus, .card .card-img-overlay-link:focus, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus {
@@ -10518,7 +10519,8 @@ button.beta-toggler {
     a.card:hover img, a.card:focus img, a:hover img, a:focus img, .faux-link-block:hover img, .nav-links-panel nav .nav-link:hover img, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .card.card-linked:hover img, .card-panel.cards-linked .card:hover img, .card .card-img-overlay-link:hover img, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover img, .faux-link-block:focus img, .nav-links-panel nav .nav-link:focus img, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .card.card-linked:focus img, .card-panel.cards-linked .card:focus img, .card .card-img-overlay-link:focus img, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus img {
-      filter: brightness(85%); }
+      -webkit-filter: brightness(85%);
+              filter: brightness(85%); }
 
 .cards-backed .card-list-item, .cards-backed .card-panel.cards-list .card-panel-body .card, .card-panel.cards-list .card-panel-body .cards-backed .card, .cards-backed .card-panel .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list .cards-backed .card,
 .card-backed.card-list-item,
@@ -11741,7 +11743,7 @@ button.beta-toggler {
     .spaced-links-inner-container {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap; } }
-  @media (min-width: 768px) {
+  @media (min-width: 992px) {
     .spaced-links-inner-container {
       width: auto; }
       .spaced-links-inner-container.buttons {
@@ -11875,9 +11877,9 @@ button.beta-toggler {
 .modal .modal-header {
   background: #671115;
   color: #fff;
-  padding: 24px;
-  padding: 1.5rem; }
-  .modal .modal-header h2 {
+  padding: 24px 0;
+  padding: 1.5rem 0; }
+  .modal .modal-header .modal-title {
     color: #fff;
     display: inline-block;
     margin-right: 16px;
@@ -11891,6 +11893,9 @@ button.beta-toggler {
   .modal .modal-header .form-group {
     display: inline-block;
     margin-bottom: 0; }
+  .modal .modal-header button {
+    padding: 0 16px;
+    padding: 0 1rem; }
 
 .modal .modal-dialog {
   margin-top: 48px;
@@ -11899,16 +11904,16 @@ button.beta-toggler {
     .modal .modal-dialog {
       max-width: 80%; } }
 
-.modal .content-aside .btn, .modal .content-aside .social-link i, .social-link .modal .content-aside i, .modal .content-aside .content-social a, .content-social .modal .content-aside a, .modal .content-aside .content-social .content-social-link, .content-social .modal .content-aside .content-social-link, .modal .content-aside blockquote.social-quote button, blockquote.social-quote .modal .content-aside button {
+.modal .col-lg-4 .btn, .modal .col-lg-4 .social-link i, .social-link .modal .col-lg-4 i, .modal .col-lg-4 .content-social a, .content-social .modal .col-lg-4 a, .modal .col-lg-4 .content-social .content-social-link, .content-social .modal .col-lg-4 .content-social-link, .modal .col-lg-4 blockquote.social-quote button, blockquote.social-quote .modal .col-lg-4 button {
   width: 100%; }
 
-.modal .content-aside .ucas-code {
+.modal .col-lg-4 .ucas-code {
   text-align: center;
   color: #937227;
   padding-top: 16px;
   padding-top: 1rem; }
 
-.modal .content-aside p {
+.modal .col-lg-4 p {
   padding: 16px;
   padding: 1rem;
   text-align: center;
