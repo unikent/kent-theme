@@ -8882,7 +8882,9 @@ input[type=number]::-webkit-outer-spin-button {
   .content-aside ul.sidebar i {
     margin-right: 4px;
     margin-right: 0.25rem;
-    vertical-align: top; }
+    vertical-align: text-bottom;
+    line-height: 24px;
+    line-height: 1.5rem; }
   .content-aside ul.sidebar > li {
     margin-bottom: 16px;
     margin-bottom: 1rem; }
