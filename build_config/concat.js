@@ -35,6 +35,7 @@ module.exports = {
 	},
 	main: {
 		src:[
+			'js/components/settings.js',
 			'js/components/log.js',
 			'js/components/handlebars_helpers.js',
 			'js/components/kat.js',
