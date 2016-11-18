@@ -156,7 +156,11 @@
 
 	@include media-breakpoint-up(md) {
 
-		margin-top: -2.8rem;
+		margin-top: -4.3rem;
+
+        .slim-header & {
+            margin-top: -2.9rem;
+        }
 
 		.breadcrumb {
 			padding: 0;
