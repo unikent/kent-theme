@@ -9,7 +9,7 @@ $global_nav_links = array(
 		array(
 			'title' 		=>	'Research environment',
 			'description' 	=> 	Explore the facilities, funding and communities that support our research.',
-			'url' 			=>	'/research/environment'
+			'url' 			=>	'/research/research-environment'
 		),
 		array(
 			'title' 		=>	'People',
