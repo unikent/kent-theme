@@ -12003,7 +12003,9 @@ blockquote, .blockquote {
   @media (min-width: 992px) {
     blockquote, .blockquote {
       padding: 0 2rem; } }
-  blockquote > p, .blockquote > p {
+  blockquote.simple,
+  blockquote > p, .blockquote.simple,
+  .blockquote > p {
     padding: 16px 0;
     padding: 1rem 0;
     padding-bottom: 0;
@@ -12013,18 +12015,26 @@ blockquote, .blockquote {
     font-style: italic;
     color: #05345C; }
     @media (min-width: 768px) {
-      blockquote > p, .blockquote > p {
+      blockquote.simple,
+      blockquote > p, .blockquote.simple,
+      .blockquote > p {
         padding: 1rem; } }
     @media (min-width: 992px) {
-      blockquote > p, .blockquote > p {
+      blockquote.simple,
+      blockquote > p, .blockquote.simple,
+      .blockquote > p {
         font-size: 1.3rem; } }
-  blockquote > p:first-of-type:before, .blockquote > p:first-of-type:before {
+  blockquote.simple:before,
+  blockquote > p:first-of-type:before, .blockquote.simple:before,
+  .blockquote > p:first-of-type:before {
     font-size: 1.3em;
     content: '\201C';
     line-height: 16px;
     line-height: 1rem;
     line-height: calc(1rem); }
-  blockquote > p:last-of-type:after, .blockquote > p:last-of-type:after {
+  blockquote.simple:after,
+  blockquote > p:last-of-type:after, .blockquote.simple:after,
+  .blockquote > p:last-of-type:after {
     font-size: 1.3em;
     content: '\201D';
     line-height: 16px;

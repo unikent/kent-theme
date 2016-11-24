@@ -4,7 +4,7 @@ blockquote, .blockquote {
     overflow:      hidden;
     padding:       1rem 0;
     margin-bottom: 1rem;
-    font-size:     $font-size-base * 1.25;
+    font-size:     1.25rem;
 
     @include media-breakpoint-up(sm) {
         padding: 1rem 2rem;
@@ -12,6 +12,8 @@ blockquote, .blockquote {
     @include media-breakpoint-up(lg) {
         padding: 0 2rem;
     }
+
+    &.simple,
     & > p {
         padding:        1rem 0;
         padding-bottom: 0;
@@ -27,6 +29,8 @@ blockquote, .blockquote {
             font-size: 1.3rem;
         }
     }
+
+    &.simple,
     & > p:first-of-type {
         &:before {
             font-size:   1.3em;
@@ -35,6 +39,8 @@ blockquote, .blockquote {
             line-height: calc(1rem); // IE11 workaround
         }
     }
+
+    &.simple,
     & > p:last-of-type {
         &:after {
             font-size:   1.3em;
