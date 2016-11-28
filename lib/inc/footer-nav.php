@@ -41,7 +41,7 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Research",
-							'url'	=> "/research/"
+							'url'	=> HOME_URL . "/research/"
 						),
 						array(
 							'title' => "Governance and planning",
