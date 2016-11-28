@@ -94,7 +94,7 @@ extract($footer_config);
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
-							<h6 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" aria-expanded="false" data-parent=".global-footer">Affiliations</h6>
+							<h6 class="footer-section-title collapsed visible-md-up" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" aria-expanded="false" data-parent=".global-footer">Affiliations</h6>
 							<div id="footer-affiliations" class="footer-section collapse-sm-down" role="list">
 								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//sgroup.be/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/logo-sgroup-white.png" class="img-fluid" alt="SGroup European Universities Network"></a>
 								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//www.kent.ac.uk/about/partnerships/eastern-arc.html"><img src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/logo-arc-white.png" class="img-fluid" alt="Eastern Academic Research Consortium"></a>
