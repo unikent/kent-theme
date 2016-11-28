@@ -36,7 +36,7 @@ $footer_config =  array(
 					'title' => 'About us',
 					'links' => array(
 						array(
-							'title' => "The UK's European University",
+							'title' => "The UK's European university",
 							'url'	=> "https://www.kent.ac.uk/about"
 						),
 						array(
@@ -60,7 +60,7 @@ $footer_config =  array(
 							'url'	=> "https://www.kent.ac.uk/events"
 						),
 						array(
-							'title' => "News Centre",
+							'title' => "News",
 							'url'	=> HOME_URL . "/news"
 						),
 						array(
