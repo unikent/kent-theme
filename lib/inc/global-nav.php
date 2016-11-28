@@ -3,66 +3,66 @@ $global_nav_links = array(
 	'Research' => array(
 		array(
 			'title' 		=>	'Making a difference',
-			'description' 	=> 	'Discover how our research is helping communities around the world.',
+			'description' 	=> 	'How our research contributes to positive change and innovation.',
 			'url' 			=>	'/research'
 		),
 		array(
-			'title' 		=>	'Research environment',
-			'description' 	=> 	'Explore the facilities, funding and communities that support our research.',
+			'title' 		=>	'Environment',
+			'description' 	=> 	'Supporting research: our facilities, funding and partnerships.',
 			'url' 			=>	'/research/research-environment'
 		),
 		array(
 			'title' 		=>	'People',
-			'description' 	=> 	'Meet some of the experts who are producing world-class research at Kent.',
+			'description' 	=> 	'Meet some of the experts who are producing world-class research.',
 			'url' 			=>	'/research/people'
 		),
 		array(
 			'title' 		=>	'Innovation',
-			'description' 	=> 	'Find out more about our business collaborations and commercial spin-outs.',
+			'description' 	=> 	'Capitalising on research: our commitment to enterprise.',
 			'url' 			=>	'/research/innovation'
 		)
 	),
 	'Study'=> array(
 		array(
 			'title' 		=>	'Top-ranking university',
-			'description' 	=> 	'Kent’s achievements and global reputation.',
+			'description' 	=> 	'Independent surveys confirm our position as a top UK university.',
 			'url' 			=>	'/courses/top-ranking'
 		),
 		array(
 			'title' 		=>	'Undergraduate',
-			'description' 	=> 	'Our degrees gain the 5th highest score in the NSS.',
+			'description' 	=> 	'Degrees that offer inspirational teaching and great prospects.',
 			'url' 			=>	"/courses/undergraduate"
 		),
 		array(
 			'title' 		=>	'Postgraduate',
-			'description' 	=> 	'Stimulating teaching and a dynamic community.',
+			'description' 	=> 	'Masters and PhDs within in a world-leading research environment.',
 			'url' 			=>	"/courses/postgraduate"
 		),
 		array(
 			'title' 		=>	'International',
-			'description' 	=> 	'Help and advice for international students.',
+			'description' 	=> 	'Discover our welcoming community for international students.',
 			'url' 			=>	'/courses/international'
 		)
 	),
 	'Engage'=> array(
 		array(
 			'title' 		=>	'What’s on',
-			'description' 	=> 	'Browse our public events: films, theatre, dance, art, lectures and festivals.',
+			'description' 	=> 	'Public events: films, theatre, dance, art, lectures, sport and festivals.',
 			'url' 			=>	'/engage/whats-on'
 		),
 		array(
 			'title' 		=>	'Our locations',
-			'description' 	=> 	'Visit our locations in Canterbury, Medway and our four European centres.',
+			'description' 	=> 	'A guide to Canterbury, Medway and our four European centres.',
 			'url' 			=>	'/engage/visit-us'
 		),
 		array(
 			'title' 		=>	'Community',
-			'description' 	=> 	'Discover how we work to connect with our local and regional communities.',
+			'description' 	=> 	'Our work to connect with local and regional communities.',
 			'url' 			=>	'/engage/community'
 		),
 		array(
 			'title' 		=>	'Business services',
-			'description' 	=> 	'Our commercial services: everything from IT support to business collaborations.',
+			'description' 	=> 	'How our expertise and facilities can support your business.',
 			'url' 			=>	'/engage/business-services'
 		)
 	)
