@@ -31,20 +31,22 @@ extract($footer_config);
 						
 							</div>
 						</div>
-						<div class="col-md-6">
+						<div class="col-sm-6 col-md-3">
 							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-open-days" aria-controls="footer-open-days" aria-expanded="false"  data-parent=".global-footer">Visit us</h4>
 							<div id="footer-open-days" class="footer-section collapse-xs-down" role="complementary">
-								<div class="row">
-									<div class="col-sm-6">
-									<a class="chevron-link" href="//www.kent.ac.uk/courses/visit/">All open days and visits</a><br>
-									<a class="chevron-link" href="//www.kent.ac.uk/maps/">Maps and directions</a>
-									</div>
-									<div class="col-sm-6">
-									
-									</div>
-								</div>
-							
+								<a class="chevron-link" href="//www.kent.ac.uk/courses/visit/">All open days and visits</a><br>
+								<a class="chevron-link" href="//www.kent.ac.uk/maps/">Maps and directions</a>
 							</div>
+						</div>
+						<div class="col-sm-6 col-md-3">
+							<nav id="footer-social" class="footer-section footer-section-social content-social" role="menu" aria-labelledby="footer-social-heading">
+								<?php foreach ($middle['social'] as $network => $link){
+									?>
+									<a title="<?php echo $network; ?>" role="menuitem" href="<?php echo $link['url']; ?>" class="kf-<?php echo $network; ?>"><span class="sr-only"><?php echo $link['title']; ?></span></a>
+									<?php
+								}
+								?>
+							</nav>
 						</div>
 					</div>
 				</div>
@@ -75,23 +77,13 @@ extract($footer_config);
 						<?php
 						}
 						?>
-						<div class="col-md-3">
-							<nav id="footer-social" class="footer-section footer-section-social content-social" role="menu" aria-labelledby="footer-social-heading">
-								<?php foreach ($middle['social'] as $network => $link){
-									?>
-									<a title="<?php echo $network; ?>" role="menuitem" href="<?php echo $link['url']; ?>" class="kf-<?php echo $network; ?>"><span class="sr-only"><?php echo $link['title']; ?></span></a>
-									<?php
-								}
-								?>
-							</nav>
-						</div>
 				</div>
 			</section>
 			<section class="global-footer-bottom">
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
-							<h6 class="footer-section-title collapsed visible-md-up" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" aria-expanded="false" data-parent=".global-footer">Affiliations</h6>
+							<h6 class="footer-section-title collapsed hidden-md-up" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" aria-expanded="false" data-parent=".global-footer">Affiliations</h6>
 							<div id="footer-affiliations" class="footer-section collapse-sm-down" role="list">
 								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//sgroup.be/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/logo-sgroup-white.png" class="img-fluid" alt="SGroup European Universities Network"></a>
 								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//www.kent.ac.uk/about/partnerships/eastern-arc.html"><img src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/logo-arc-white.png" class="img-fluid" alt="Eastern Academic Research Consortium"></a>

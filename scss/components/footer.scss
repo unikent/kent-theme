@@ -127,7 +127,7 @@
 
         @include media-breakpoint-up(md) {
             text-align: left;
-            padding: 2rem ($grid-gutter-width-base/2);
+            padding: ($grid-gutter-width-base/2);
         }
     }
 

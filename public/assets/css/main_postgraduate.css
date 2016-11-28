@@ -13040,7 +13040,7 @@ blockquote.pull-quote {
     @media (min-width: 768px) {
       .global-footer .footer-section-social {
         text-align: left;
-        padding: 2rem 15px; } }
+        padding: 15px; } }
   .global-footer .global-footer-top {
     padding: 0;
     background: #373a3c; }
