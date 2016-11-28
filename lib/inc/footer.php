@@ -9,57 +9,41 @@ extract($footer_config);
 				<div class="container">
 					<div class="row">
 						<div itemscope itemtype="http://schema.org/CollegeOrUniversity" class="col-md-6">
-							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-contact-us" aria-controls="footer-contact-us" aria-expanded="false" data-parent=".global-footer">Contact Us</h4>
+							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-contact-us" aria-controls="footer-contact-us" aria-expanded="false" data-parent=".global-footer">Contact us</h4>
 							<div id="footer-contact-us" class="footer-section collapse-xs-down" role="complementary">
 								<div class="row">
 									<div itemscope="" class="col-sm-6">
 										Recruitment and admissions:<br>
 										<span class="sr-only">Email: </span><a itemprop="email" href="mailto:information@kent.ac.uk">information@kent.ac.uk</a><br>
-										<span class="sr-only">Telephone: </span><a href="tel:+441227827272"><span itemprop="telephone">+44 1227 827272</span></a>
+										<span class="sr-only">Telephone: </span><a href="tel:+441227827272"><span itemprop="telephone">+44 1227 827272</span></a><br>
+										<a class="chevron-link" href="//www.kent.ac.uk/contact/">All contacts</a>
 									</div>
 									<div class="col-sm-6">
 										<span class="sr-only">Address: </span>
 										<span itemprop="name">University of Kent</span>,<br>
 										<address itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-											<span itemprop="addressLocality">Canterbury</span>,<br>
-											<span itemprop="addressRegion">Kent</span>,<br>
-											<span itemprop="addressCountry">England</span>,<br>
+											<span itemprop="addressLocality">Canterbury</span><br>
+											<span itemprop="addressRegion">Kent</span><br>
 											<span itemprop="postalCode">CT2 7NZ</span>
 										</address>
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-xs-12">
-										<a class="chevron-link" href="//www.kent.ac.uk/contact/">All contacts</a>
-									</div>
-								</div>
+						
 							</div>
 						</div>
 						<div class="col-md-6">
-							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-open-days" aria-controls="footer-open-days" aria-expanded="false"  data-parent=".global-footer">Open days</h4>
+							<h4 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-open-days" aria-controls="footer-open-days" aria-expanded="false"  data-parent=".global-footer">Visit us</h4>
 							<div id="footer-open-days" class="footer-section collapse-xs-down" role="complementary">
 								<div class="row">
 									<div class="col-sm-6">
-										<strong>Canterbury</strong>
-										<p>
-										Sat 2 July 2016<br>
-										Sat 8 October 2016<br>
-										Sat 22 October 2016
-										</p>
+									<a class="chevron-link" href="//www.kent.ac.uk/courses/visit/">All open days and visits</a><br>
+									<a class="chevron-link" href="//www.kent.ac.uk/maps/">Maps and directions</a>
 									</div>
 									<div class="col-sm-6">
-										<strong>Medway</strong>
-										<p>
-										Sat 18 June 2016<br>
-										Tues 15 October 2016
-										</p>
+									
 									</div>
 								</div>
-								<div class="row">
-									<div class="col-xs-12">
-										<a class="chevron-link" href="//www.kent.ac.uk/courses/visit/">All open days and visits</a>
-									</div>
-								</div>
+							
 							</div>
 						</div>
 					</div>
@@ -107,7 +91,7 @@ extract($footer_config);
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12">
-							<h6 class="footer-section-title collapsed" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" aria-expanded="false" data-parent=".global-footer">Affiliations</h6>
+							<h6 class="footer-section-title collapsed visible-md-up" data-toggle="collapse_responsive" data-target="#footer-affiliations" aria-controls="footer-affiliations" aria-expanded="false" data-parent=".global-footer">Affiliations</h6>
 							<div id="footer-affiliations" class="footer-section collapse-sm-down" role="list">
 								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//sgroup.be/"><img src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/logo-sgroup-white.png" class="img-fluid" alt="SGroup European Universities Network"></a>
 								<a class="col-xs-6 col-sm-4 col-md-3 col-lg-2" role="listitem" href="//www.kent.ac.uk/about/partnerships/eastern-arc.html"><img src="<?php KentThemeHelper::getThemeWebRoot();?>assets/images/logo-arc-white.png" class="img-fluid" alt="Eastern Academic Research Consortium"></a>
