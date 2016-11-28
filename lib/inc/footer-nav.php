@@ -24,26 +24,6 @@ $footer_config =  array(
 				'title'=>'Subscribe to us on Youtube',
 				'url' => "//www.youtube.com/user/UniversityofKent"
 			),
-			'flickr' =>	array(
-				'title'=>'Follow us on Flickr',
-				'url' => "//www.flickr.com/photos/universityofkent/"
-			),
-			'tumblr' =>	array(
-				'title'=>'Follow us on Tumblr',
-				'url' => "//universitykent.tumblr.com"
-			),
-			'instagram' => array(
-				'title'=>'Follow us on Instagram',
-				'url' => "//instagram.com/unikentlive"
-			),
-			'pinterest' => array(
-				'title'=>'Follow us on Pinterest',
-				'url' => "//www.pinterest.com/KentUni/"
-			),
-			'rss' => array(
-				'title'=>'Subscribe via RSS',
-				'url' => "//www.kent.ac.uk/communications/rss"
-			),
 		),
 		'sections' => array(
 			/*
@@ -53,71 +33,46 @@ $footer_config =  array(
 			 */
 			array(
 				array(
-					'title' => 'Explore',
+					'title' => 'About us',
 					'links' => array(
 						array(
 							'title' => "The UK's European University",
-							'url'	=> "https://www.kent.ac.uk/european"
+							'url'	=> "https://www.kent.ac.uk/about"
 						),
 						array(
-							'title' => "Making a difference",
-							'url'	=> "https://www.kent.ac.uk/about/impact"
+							'title' => "Research",
+							'url'	=> "/research/"
 						),
 						array(
-							'title' => "Superb locations",
+							'title' => "Governance and planning",
+							'url'	=> "https://www.kent.ac.uk/governance/"
+						),
+						array(
+							'title' => "Locations",
 							'url'	=> "https://www.kent.ac.uk/locations"
 						),
 						array(
-							'title' => "Accommodation and facilities",
-							'url'	=> "https://www.kent.ac.uk/accommodation"
+							'title' => "Support us",
+							'url'	=> "https://www.kent.ac.uk/giving/"
 						),
 						array(
-							'title' => "Maps and directions",
-							'url'	=> "https://www.kent.ac.uk/maps"
-						),
-						array(
-							'title' => "Departments and schools",
-							'url'	=> "https://www.kent.ac.uk/departments/academic"
+							'title' => "What's on",
+							'url'	=> "https://www.kent.ac.uk/events"
 						),
 						array(
 							'title' => "News Centre",
 							'url'	=> HOME_URL . "/news"
 						),
 						array(
-							'title' => "Jobs and vacancies",
+							'title' => "Business services",
+							'url'	=> "https://www.kent.ac.uk/business/"
+						),
+						array(
+							'title' => "Jobs",
 							'url'	=> "https://www.kent.ac.uk/jobs"
 						),
 					)
 				),
-				array(
-					'title' => 'Research',
-					'links' => array(
-						array(
-							'title' => "Academic excellence",
-							'url'	=> "https://www.kent.ac.uk/research"
-						),
-						array(
-							'title' => "Research impact",
-							'url'	=> "https://www.kent.ac.uk/research/impact"
-						),
-						array(
-							'title' => "Find an expert",
-							'url'	=> "https://www.kent.ac.uk/research/expertise"
-						),
-						array(
-							'title' => "Innovation and enterprise",
-							'url'	=> "https://www.kent.ac.uk/enterprise"
-						),
-						array(
-							'title' => "Business partnerships",
-							'url'	=> "https://www.kent.ac.uk/enterprise/practical-partnering"
-						),
-						array(
-							'title' => "Research degrees",
-							'url'	=> HOME_URL . "/courses/postgraduate/search/programme_type/research"
-						)
-					)
-				)
 			),
 
 			/*
@@ -130,7 +85,7 @@ $footer_config =  array(
 					'title' => 'Study',
 					'links' => array(
 						array(
-							'title' => "Inspiring teaching",
+							'title' => "Courses",
 							'url'	=> HOME_URL . "/courses"
 						),
 						array(
@@ -142,44 +97,35 @@ $footer_config =  array(
 							'url'	=> HOME_URL . "/courses/postgraduate"
 						),
 						array(
-							'title' => "International students",
-							'url'	=> "https://www.kent.ac.uk/internationalstudent"
+							'title' => "International",
+							'url'	=> HOME_URL . "/courses/international/"
 						),
 						array(
 							'title' => "Part-time and short courses",
 							'url'	=> "https://www.kent.ac.uk/courses/part-time"
 						),
 						array(
-							'title' => "Study abroad",
-							'url'	=> "https://www.kent.ac.uk/goabroad"
+							'title' => "Student experience",
+							'url'	=> HOME_URL . "/courses/undergraduate/student-experience/"
+						),
+						array(
+							'title' => "Accommodation",
+							'url'	=> "https://www.kent.ac.uk/accommodation"
 						),
 						array(
 							'title' => "Fees and funding",
-							'url'	=> "https://www.kent.ac.uk/courses/funding"
+							'url'	=> HOME_URL . "/courses/undergraduate/fees-and-funding/"
 						),
 						array(
 							'title' => "Scholarships",
-							'url'	=> "https://www.kent.ac.uk/scholarships"
+							'url'	=> "https://www.kent.ac.uk/scholarships/search/postgraduate/"
+						),
+						array(
+							'title' => "Term dates",
+							'url'	=> "https://www.kent.ac.uk/academic/University-term-dates/Menutermdates.html"
 						)
 					)
 				),
-				array(
-					'title' => 'Governance and planning',
-					'links' => array(
-						array(
-							'title' => "Planning and strategy",
-							'url'	=> "https://www.kent.ac.uk/about/plan"
-						),
-						array(
-							'title' => "Governance",
-							'url'	=> "https://www.kent.ac.uk/governance"
-						),
-						array(
-							'title' => "Office of the Vice-Chancellor",
-							'url'	=> "https://www.kent.ac.uk/ovc"
-						),
-					)
-				)
 			),
 			/*
 			 * **************************************************************************************************************
@@ -188,59 +134,30 @@ $footer_config =  array(
 			 */
 			array(
 				array(
-					'title' => "What's on?",
-					'links' => array(
-						array(
-							'title' => "Events calendar",
-							'url'	=> "https://www.kent.ac.uk/calendar"
-						),
-						array(
-							'title' => "Gulbenkian - theatre and cinema",
-							'url'	=> "http://www.thegulbenkian.co.uk"
-						),
-						array(
-							'title' => "Coyler-Fergusson - music at Kent",
-							'url'	=> "https://www.kent.ac.uk/music/whatson"
-						),
-						array(
-							'title' => "Sports Centre",
-							'url'	=> "https://www.kent.ac.uk/sports"
-						)
-					)
-				),
-				array(
 					'title' => "Information for",
 					'links' => array(
 						array(
 							'title' => "Applicants",
-							'url'	=> "https://www.kent.ac.uk/applicants"
-						),
-						array(
-							'title' => "Arriving students",
-							'url'	=> "https://www.kent.ac.uk/gettingstarted"
-						),
-						array(
-							'title' => "Current students",
-							'url'	=> "https://www.kent.ac.uk/student"
-						),
-						array(
-							'title' => "International students",
-							'url'	=> "https://www.kent.ac.uk/internationalstudent"
+							'url'	=> "https://www.kent.ac.uk/applicants/"
 						),
 						array(
 							'title' => "Parents and family",
-							'url'	=> "https://www.kent.ac.uk/parents"
+							'url'	=> "https://www.kent.ac.uk/parents/"
 						),
 						array(
-							'title' => "Alumni (former students)",
-							'url'	=> "https://www.kent.ac.uk/alumni"
+							'title' => "Students",
+							'url'	=> "https://www.kent.ac.uk/student"
 						),
 						array(
 							'title' => "Staff",
 							'url'	=> "https://www.kent.ac.uk/campusonline"
 						),
+						array(
+							'title' => "Alumni",
+							'url'	=> "https://www.kent.ac.uk/alumni"
+						)
 					)
-				)
+				),
 			),
 			/*
 			 * **************************************************************************************************************
@@ -249,29 +166,9 @@ $footer_config =  array(
 			 */
 			array(
 				array(
-					'title' => "Giving to Kent",
+					'title' => "",
 					'links' => array(
-						array(
-							'title' => "Support us",
-							'url'	=> "https://www.kent.ac.uk/giving"
-						),
-						array(
-							'title' => "How to give",
-							'url'	=> "https://www.kent.ac.uk/giving/give"
-						),
-						array(
-							'title' => "Kent Law Campaign",
-							'url'	=> "https://www.kent.ac.uk/giving/lawcampaign"
-						),
-						array(
-							'title' => "Kent Opportunity Fund",
-							'url'	=> "https://www.kent.ac.uk/giving/opportunityfund"
-						),
-						array(
-							'title' => "Hong Kong and China portal",
-							'url'	=> "https://www.kent.ac.uk/giving/hkcp"
-						)
-					)
+					),
 				),
 			)
 		)
@@ -288,7 +185,7 @@ $footer_config =  array(
 		),
 		array(
 			'title' => "Accessibility",
-			'url'	=> "https://www.kent.ac.uk/studentsupport/accessibility"
+			'url'	=> "https://www.kent.ac.uk/accessibility"
 		),
 		array(
 			'title' => "Contact us",
@@ -303,8 +200,8 @@ $footer_config =  array(
 			'url'	=> "https://www.kent.ac.uk/legal"
 		),
 		array(
-			'title' => "Cookie Policy",
-			'url'	=> "https://www.kent.ac.uk/legal/cookies"
+			'title' => "Cookies",
+			'url'	=> "https://www.kent.ac.uk/legal/cookies.html"
 		)
 	)
 );
