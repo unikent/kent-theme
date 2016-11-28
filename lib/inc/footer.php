@@ -87,23 +87,20 @@ extract($footer_config);
 							<?php
 							}
 							?>
-							<?php if($index == (count($middle['sections']) -1)){
-							?>
-							<nav id="footer-social" class="footer-section footer-section-social content-social" role="menu" aria-labelledby="footer-social-heading">
-							<?php foreach ($middle['social'] as $network => $link){
-								?>
-								<a title="<?php echo $network; ?>" role="menuitem" href="<?php echo $link['url']; ?>" class="kf-<?php echo $network; ?>"><span class="sr-only"><?php echo $link['title']; ?></span></a>
-								<?php
-							}
-							?>
-							</nav>
-							<?php
-							}
-							?>
 						</div>
 						<?php
 						}
 						?>
+						<div class="col-md-3">
+							<nav id="footer-social" class="footer-section footer-section-social content-social" role="menu" aria-labelledby="footer-social-heading">
+								<?php foreach ($middle['social'] as $network => $link){
+									?>
+									<a title="<?php echo $network; ?>" role="menuitem" href="<?php echo $link['url']; ?>" class="kf-<?php echo $network; ?>"><span class="sr-only"><?php echo $link['title']; ?></span></a>
+									<?php
+								}
+								?>
+							</nav>
+						</div>
 				</div>
 			</section>
 			<section class="global-footer-bottom">
