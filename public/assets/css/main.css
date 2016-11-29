@@ -10527,7 +10527,8 @@ button.beta-toggler {
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link img {
     transition: all 300ms;
     transform: translate3d(0, 0, 0);
-    filter: brightness(1); }
+    -webkit-filter: brightness(1);
+            filter: brightness(1); }
   a.card:hover, a.card:focus, a:hover, a:focus, .faux-link-block:hover, .nav-links-panel nav .nav-link:hover, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover, .card.card-linked:hover, .card-panel.cards-linked .card:hover, .card .card-img-overlay-link:hover, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover, .faux-link-block:focus, .nav-links-panel nav .nav-link:focus, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus, .card.card-linked:focus, .card-panel.cards-linked .card:focus, .card .card-img-overlay-link:focus, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus {
@@ -10535,7 +10536,8 @@ button.beta-toggler {
     a.card:hover img, a.card:focus img, a:hover img, a:focus img, .faux-link-block:hover img, .nav-links-panel nav .nav-link:hover img, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .card.card-linked:hover img, .card-panel.cards-linked .card:hover img, .card .card-img-overlay-link:hover img, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover img, .faux-link-block:focus img, .nav-links-panel nav .nav-link:focus img, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .card.card-linked:focus img, .card-panel.cards-linked .card:focus img, .card .card-img-overlay-link:focus img, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus img {
-      filter: brightness(85%); }
+      -webkit-filter: brightness(85%);
+              filter: brightness(85%); }
 
 .cards-backed .card-list-item, .cards-backed .card-panel.cards-list .card-panel-body .card, .card-panel.cards-list .card-panel-body .cards-backed .card, .cards-backed .card-panel .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list .cards-backed .card,
 .card-backed.card-list-item,
@@ -11358,6 +11360,8 @@ button.beta-toggler {
     .card.card-overlay .card-img-overlay .card-text, .card.card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay .card-img-overlay-bottom-shaded .card-text, .card.card-overlay .card-img-overlay-centered .card-text, .card.card-overlay .card-img-overlay .card-subtitle, .card.card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay .card-img-overlay-bottom-shaded .card-subtitle, .card.card-overlay .card-img-overlay-centered .card-subtitle {
       text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9);
       color: #FFFFFF; }
+      .card.card-overlay .card-img-overlay .card-text.no-shadow, .card.card-overlay .card-img-overlay-bottom .card-text.no-shadow, .card.card-overlay .card-img-overlay-bottom-shaded .card-text.no-shadow, .card.card-overlay .card-img-overlay-centered .card-text.no-shadow, .card.card-overlay .card-img-overlay .card-subtitle.no-shadow, .card.card-overlay .card-img-overlay-bottom .card-subtitle.no-shadow, .card.card-overlay .card-img-overlay-bottom-shaded .card-subtitle.no-shadow, .card.card-overlay .card-img-overlay-centered .card-subtitle.no-shadow {
+        text-shadow: none; }
     .card.card-overlay .card-img-overlay.card-img-overlay-block, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom, .card.card-overlay .card-img-overlay-block.card-img-overlay-bottom-shaded, .card.card-overlay .card-img-overlay-block.card-img-overlay-centered {
       position: relative; }
     .card.card-overlay .card-img-overlay.card-img-overlay-link .card-subtitle:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-bottom .card-subtitle:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-bottom-shaded .card-subtitle:after, .card.card-overlay .card-img-overlay-link.card-img-overlay-centered .card-subtitle:after {
@@ -11492,6 +11496,13 @@ button.beta-toggler {
   .container > .card.card-overlay, .container-padded > .card.card-overlay, .container-padded-h > .card.card-overlay, .card-panel.card-panel-contained > .card.card-overlay, .card-panel .card-panel-body > .card.card-overlay, .card-panel .card-panel-header > .card.card-overlay, .card.card-overlay.header-card-overlay .card-title-overlap > .card.card-overlay, main > blockquote > .card.card-overlay {
     margin-right: -15px;
     margin-left: -15px; } }
+
+.quote {
+  margin-left: 5%; }
+  .quote:before {
+    content: open-quote; }
+  .quote:after {
+    content: close-quote; }
 
 .card.card-overlay.header-card-overlay + .breadcrumb,
 .card.card-overlay.header-card-overlay + .container,
