@@ -30,6 +30,10 @@ blockquote, .blockquote {
         }
     }
 
+    &.text-accent > p{
+        color: $brand-accent;
+    }
+
     &.simple,
     & > p:first-of-type {
         &:before {
@@ -206,6 +210,8 @@ blockquote.pull-quote {
     border:       1px solid $brand-primary;
     border-width: 1px 0;
     padding:      0 2rem;
+
+    &.simple,
     > p {
         color: $brand-primary;
 
@@ -215,9 +221,18 @@ blockquote.pull-quote {
             }
         }
     }
+    &.simple{
+        &,
+        &:last-of-type {
+            padding: 1rem 2rem;
+            margin:  0 0 1rem;
+        }
+    }
 
     &.pull-quote-accent {
         border-color: $brand-accent;
+
+        &.simple,
         > p {
             color: $brand-accent;
         }

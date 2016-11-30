@@ -7428,7 +7428,8 @@ figure figcaption,
     height: 16px;
     height: 1rem;
     transition: width 500ms; }
-  .attribution i {
+  .attribution i,
+  .attribution em {
     font-size: 16px;
     font-size: 1rem;
     line-height: 16px;
@@ -7437,7 +7438,8 @@ figure figcaption,
     top: 6.4px;
     top: 0.4rem;
     right: 12px;
-    right: 0.75rem; }
+    right: 0.75rem;
+    font-style: normal; }
   .attribution span {
     transition: max-height 150ms, max-width 150ms 150ms;
     display: block;
@@ -12024,6 +12026,8 @@ blockquote, .blockquote {
       blockquote > p, .blockquote.simple,
       .blockquote > p {
         font-size: 1.3rem; } }
+  blockquote.text-accent > p, .blockquote.text-accent > p {
+    color: #937227; }
   blockquote.simple:before,
   blockquote > p:first-of-type:before, .blockquote.simple:before,
   .blockquote > p:first-of-type:before {
@@ -12571,13 +12575,21 @@ blockquote.pull-quote {
   border-width: 1px 0;
   padding: 0 32px;
   padding: 0 2rem; }
+  blockquote.pull-quote.simple,
   blockquote.pull-quote > p {
     color: #05345C; }
     @media (min-width: 768px) {
+      blockquote.pull-quote.simple:last-of-type,
       blockquote.pull-quote > p:last-of-type {
         margin-bottom: 0; } }
+  blockquote.pull-quote.simple, blockquote.pull-quote.simple:last-of-type {
+    padding: 16px 32px;
+    padding: 1rem 2rem;
+    margin: 0 0 16px;
+    margin: 0 0 1rem; }
   blockquote.pull-quote.pull-quote-accent {
     border-color: #937227; }
+    blockquote.pull-quote.pull-quote-accent.simple,
     blockquote.pull-quote.pull-quote-accent > p {
       color: #937227; }
 

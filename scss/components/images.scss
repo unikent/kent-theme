@@ -308,12 +308,14 @@ figure figcaption,
         transition: width 500ms;
     }
 
-    i {
+    i,
+    em{
         font-size:   1rem;
         line-height: 1rem;
         position:    absolute;
         top:         0.4rem;
         right:        0.75rem;
+        font-style: normal;
     }
 
     span {
