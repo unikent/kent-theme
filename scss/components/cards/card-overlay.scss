@@ -90,6 +90,35 @@
             @include media-breakpoint-up(xxl) {
                 font-size: 4rem;
             }
+
+            &.quote{
+
+                margin: 0 5% 1rem;
+
+                &:before {
+                    font-size:   1.3em;
+                    content:     '\201C';
+                    line-height: 1rem;
+                    line-height: calc(1rem); // IE11 workaround
+                }
+                &:after {
+                    font-size:   1.3em;
+                    content:     '\201D';
+                    line-height: 1rem;
+                    line-height: calc(1rem); // IE11 workaround
+                }
+
+                @include media-breakpoint-up(lg) {
+                    font-size: 1.7rem;
+                }
+                @include media-breakpoint-up(xl) {
+                    font-size: 2.4rem;
+                    margin-bottom: 2rem;
+                }
+                @include media-breakpoint-up(xxl) {
+                    font-size: 3.5rem;
+                }
+            }
         }
         .card-text {
 
@@ -314,17 +343,5 @@
             margin-right: -($grid-gutter-width-base/2);
             margin-left:  -($grid-gutter-width-base/2);
         }
-    }
-}
-
-.quote{
-    margin-left: 5%;
-
-    &:before{
-        content: open-quote;
-    }
-
-    &:after{
-        content: close-quote;
     }
 }
