@@ -287,6 +287,28 @@ window.KENT.modules = window.KENT.modules || {};
 		}
 	});
 
+	// profiles
+	configs.ug_profiles_inline = $.extend({}, configs.withInlineOutput, {
+		'url': window.KENT.settings.api_url + '/programmes/undergraduate/profiles/',
+		'search_on': ['name', 'course'],
+		display_handler: function(itm, qs){
+			itm.url = '/profiles/postgraduate/' + itm.slug;
+			return window.Handlebars.templates.profile_list_result(itm);
+		},
+		data_pre_parse: function(profiles){
+			for (var p in profiles) {
+				profiles[p].__subjects = profiles[p].subject_categories.join(', ');
+			}
+			return profiles;
+		}
+	});
+	configs.pg_profiles_inline = $.extend({}, configs.ug_profiles_inline, {
+		'url':	window.KENT.settings.api_url + '/programmes/postgraduate/profiles/',
+		display_handler: function(itm, qs){
+			itm.url = '/profiles/undergraduate/' + itm.slug;
+			return window.Handlebars.templates.profile_list_result(itm);
+		}
+	});
 })();
 
 /**
