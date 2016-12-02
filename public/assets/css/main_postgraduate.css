@@ -12643,23 +12643,24 @@ blockquote.pull-quote {
     .embed-responsive-2_5by1 {
       padding-bottom: 40%; } }
 
-.embed-responsive .embed-responsive-item-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 16px;
-  padding: 1rem; }
-  .embed-responsive .embed-responsive-item-overlay a {
-    color: #FFFFFF; }
-  .embed-responsive .embed-responsive-item-overlay .video-transcript {
-    float: right; }
-    @media (max-width: 1199px) {
-      .embed-responsive .embed-responsive-item-overlay .video-transcript {
-        padding-bottom: 1.5rem; } }
-
-.embed-responsive video {
-  object-fit: cover; }
+.embed-responsive {
+  clear: both; }
+  .embed-responsive .embed-responsive-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px;
+    padding: 1rem; }
+    .embed-responsive .embed-responsive-item-overlay a {
+      color: #FFFFFF; }
+    .embed-responsive .embed-responsive-item-overlay .video-transcript {
+      float: right; }
+      @media (max-width: 1199px) {
+        .embed-responsive .embed-responsive-item-overlay .video-transcript {
+          padding-bottom: 1.5rem; } }
+  .embed-responsive video {
+    object-fit: cover; }
 
 .click-to-interact iframe {
   pointer-events: none; }

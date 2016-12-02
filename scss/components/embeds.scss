@@ -3,11 +3,12 @@
 
     @include media-breakpoint-up(md) {
         padding-bottom: percentage(1 / 2.5);
-
     }
 }
 
 .embed-responsive {
+    clear: both;
+
     .embed-responsive-item-overlay {
         position: absolute;
         bottom:   0;
