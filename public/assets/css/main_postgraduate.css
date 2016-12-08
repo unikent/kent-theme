@@ -9413,7 +9413,7 @@ body.show-global-search .global-nav-menu .global-nav-links {
   position: absolute;
   top: 48px;
   top: 3rem;
-  z-index: 1;
+  z-index: 5;
   width: 100%; }
   @media (min-width: 768px) {
     .home-nav {
