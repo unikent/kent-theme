@@ -74,10 +74,12 @@
         font-size: 0;
         padding:    .25rem 0;
         z-index: 2; //above possible card-img-overlays
+        pointer-events: none;
         li {
             display: inline-block;
             padding: 0;
             position: relative;
+            pointer-events: all;
             &:before {
                 display: none;
             }
