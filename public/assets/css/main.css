@@ -12870,11 +12870,13 @@ blockquote.pull-quote {
   font-size: 0;
   padding: 4px 0;
   padding: .25rem 0;
-  z-index: 2; }
+  z-index: 2;
+  pointer-events: none; }
   .kent-slider .kent-slider-dots li {
     display: inline-block;
     padding: 0;
-    position: relative; }
+    position: relative;
+    pointer-events: all; }
     .kent-slider .kent-slider-dots li:before {
       display: none; }
     .kent-slider .kent-slider-dots li button {
