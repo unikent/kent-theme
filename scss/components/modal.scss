@@ -21,8 +21,11 @@
         }
 
         .form-group {
-            display:inline-block;
+            margin-top: 1rem;
             margin-bottom: 0;
+            @include media-breakpoint-up(md) {
+                display: inline-block;
+            }
         }
 
         button {
