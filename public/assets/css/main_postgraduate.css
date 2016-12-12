@@ -6833,9 +6833,15 @@ form + .h6 {
       .content-container > ul li ul li:before {
         color: #818a91; }
 
-.content-container p a {
+.content-container p a,
+.content-container td a,
+.content-container li a {
   border-bottom: 1px solid #CCCCCC; }
-  .content-container p a:hover, .content-container p a:focus {
+  .content-container p a:hover, .content-container p a:focus,
+  .content-container td a:hover,
+  .content-container td a:focus,
+  .content-container li a:hover,
+  .content-container li a:focus {
     border-bottom: 1px solid #00263d; }
 
 .lead.split .wrapper {
@@ -6850,8 +6856,7 @@ form + .h6 {
     display: inline-block;
     vertical-align: top; }
   .lead.split svg {
-    margin-left: 1.5rem;
-    cake-length: 100px; }
+    margin-left: 1.5rem; }
     .lead.split svg rect {
       transform: rotate(25deg); } }
 
@@ -11785,22 +11790,27 @@ button.beta-toggler {
   .card.card-overlay.header-card-overlay .card-footer .caption {
     text-align: right; }
 
-.card.card-overlay.header-card-overlay .header-card-overlap-search .form-group {
-  position: relative; }
-
 .card.card-overlay.header-card-overlay .header-card-overlap-search {
   position: absolute;
-  top: 32px;
-  top: 2rem;
+  top: 16px;
+  top: 1rem;
   bottom: inherit;
-  left: 32px;
-  left: 2rem;
-  right: 32px;
-  right: 2rem; }
-
-@media (min-width: 768px) {
-  .card.card-overlay.header-card-overlay .header-card-overlap-search {
-    top: 6rem; } }
+  left: 16px;
+  left: 1rem;
+  right: 16px;
+  right: 1rem; }
+  @media (min-width: 768px) {
+    .card.card-overlay.header-card-overlay .header-card-overlap-search {
+      top: 6rem;
+      bottom: inherit;
+      left: 2rem;
+      right: 2rem; } }
+  .card.card-overlay.header-card-overlay .header-card-overlap-search .form-group {
+    position: relative; }
+    @media (min-width: 768px) {
+      .card.card-overlay.header-card-overlay .header-card-overlap-search .form-group {
+        margin-left: 15%;
+        margin-right: 15%; } }
 
 .global-header-transparent .card-overlay.header-card-overlay::after {
   position: absolute;
