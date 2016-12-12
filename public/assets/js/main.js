@@ -19705,7 +19705,7 @@ return /******/ (function(modules) { // webpackBootstrap
  * @license MIT
  */
 
-/*global define:false, socialLikesButtons:false */
+/* global define:false, socialLikesButtons:false */
 
 (function(factory) {  // Try to register as an anonymous AMD module
 	if (typeof define === 'function' && define.amd) {
@@ -19715,15 +19715,12 @@ return /******/ (function(modules) { // webpackBootstrap
 		factory(jQuery);
 	}
 }(function($, undefined) {
-
 	'use strict';
 
 	var prefix = 'social-likes';
 	var classPrefix = prefix + '__';
 	var openClass = prefix + '_opened';
 	var protocol = location.protocol === 'https:' ? 'https:' : 'http:';
-	var isHttps = protocol === 'https:';
-
 
 	/**
 	 * Buttons
@@ -19736,7 +19733,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			},
 			popupUrl: 'https://www.facebook.com/sharer/sharer.php?u={url}',
 			popupWidth: 600,
-			popupHeight: 359
+			popupHeight: 359,
 		},
 		twitter: {
 			counters: false,
@@ -19745,9 +19742,11 @@ return /******/ (function(modules) { // webpackBootstrap
 			popupHeight: 250,
 			click: function() {
 				// Add colon to improve readability
-				if (!/[\.\?:\-–—]\s*$/.test(this.options.title)) this.options.title += ':';
+				if (!/[.?:\-–—]\s*$/.test(this.options.title)) {
+					this.options.title += ':';
+				}
 				return true;
-			}
+			},
 		},
 		mailru: {
 			counterUrl: protocol + '//connect.mail.ru/share_count?url_list={url}&callback=1&func=?',
@@ -19760,7 +19759,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			},
 			popupUrl: 'https://connect.mail.ru/share?share_url={url}&title={title}',
 			popupWidth: 492,
-			popupHeight: 500
+			popupHeight: 500,
 		},
 		vkontakte: {
 			counterUrl: 'https://vk.com/share.php?act=count&url={url}&index={index}',
@@ -19768,22 +19767,24 @@ return /******/ (function(modules) { // webpackBootstrap
 				var options = services.vkontakte;
 				if (!options._) {
 					options._ = [];
-					if (!window.VK) window.VK = {};
+					if (!window.VK) {
+						window.VK = {};
+					}
 					window.VK.Share = {
 						count: function(idx, number) {
 							options._[idx].resolve(number);
-						}
+						},
 					};
 				}
 
 				var index = options._.length;
 				options._.push(deferred);
-				$.getScript(makeUrl(jsonUrl, {index: index}))
+				$.getScript(makeUrl(jsonUrl, { index: index }))
 					.fail(deferred.reject);
 			},
 			popupUrl: 'https://vk.com/share.php?url={url}&title={title}',
 			popupWidth: 655,
-			popupHeight: 450
+			popupHeight: 450,
 		},
 		odnoklassniki: {
 			counterUrl: protocol + '//connect.ok.ru/dk?st.cmd=extLike&ref={url}&uid={index}',
@@ -19791,7 +19792,9 @@ return /******/ (function(modules) { // webpackBootstrap
 				var options = services.odnoklassniki;
 				if (!options._) {
 					options._ = [];
-					if (!window.ODKL) window.ODKL = {};
+					if (!window.ODKL) {
+						window.ODKL = {};
+					}
 					window.ODKL.updateCount = function(idx, number) {
 						options._[idx].resolve(number);
 					};
@@ -19799,12 +19802,12 @@ return /******/ (function(modules) { // webpackBootstrap
 
 				var index = options._.length;
 				options._.push(deferred);
-				$.getScript(makeUrl(jsonUrl, {index: index}))
+				$.getScript(makeUrl(jsonUrl, { index: index }))
 					.fail(deferred.reject);
 			},
 			popupUrl: 'https://connect.ok.ru/dk?st.cmd=WidgetSharePreview&service=odnoklassniki&st.shareUrl={url}',
 			popupWidth: 580,
-			popupHeight: 336
+			popupHeight: 336,
 		},
 		plusone: {
 			counterUrl: protocol + '//share.yandex.ru/gpp.xml?url={url}&callback=?',
@@ -19813,7 +19816,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			},
 			popupUrl: 'https://plus.google.com/share?url={url}',
 			popupWidth: 500,
-			popupHeight: 550
+			popupHeight: 550,
 		},
 		pinterest: {
 			counterUrl: protocol + '//api.pinterest.com/v1/urls/count.json?url={url}&callback=?',
@@ -19822,8 +19825,8 @@ return /******/ (function(modules) { // webpackBootstrap
 			},
 			popupUrl: 'https://pinterest.com/pin/create/button/?url={url}&description={title}',
 			popupWidth: 740,
-			popupHeight: 550
-		}
+			popupHeight: 550,
+		},
 	};
 
 
@@ -19833,50 +19836,49 @@ return /******/ (function(modules) { // webpackBootstrap
 	var counters = {
 		promises: {},
 		fetch: function(service, url, extraOptions) {
-			if (!counters.promises[service]) counters.promises[service] = {};
+			if (!counters.promises[service]) {
+				counters.promises[service] = {};
+			}
 			var servicePromises = counters.promises[service];
 
 			if (!extraOptions.forceUpdate && servicePromises[url]) {
 				return servicePromises[url];
 			}
-			else {
-				var options = $.extend({}, services[service], extraOptions);
-				var deferred = $.Deferred();
-				var jsonUrl = options.counterUrl && makeUrl(options.counterUrl, {url: url});
 
-				if (jsonUrl && $.isFunction(options.counter)) {
-					options.counter(jsonUrl, deferred);
-				}
-				else if (options.counterUrl) {
-					$.getJSON(jsonUrl)
-						.done(function(data) {
-							try {
-								var number = data;
-								if ($.isFunction(options.convertNumber)) {
-									number = options.convertNumber(data);
-								}
-								deferred.resolve(number);
-							}
-							catch (e) {
-								deferred.reject();
-							}
-						})
-						.fail(deferred.reject);
-				}
-				else {
-					deferred.reject();
-				}
+			var options = $.extend({}, services[service], extraOptions);
+			var deferred = $.Deferred();
+			var jsonUrl = options.counterUrl && makeUrl(options.counterUrl, { url: url });
 
-				servicePromises[url] = deferred.promise();
-				return servicePromises[url];
+			if (jsonUrl && $.isFunction(options.counter)) {
+				options.counter(jsonUrl, deferred);
 			}
-		}
+			else if (options.counterUrl) {
+				$.getJSON(jsonUrl)
+					.done(function(data) {
+						try {
+							var number = data;
+							if ($.isFunction(options.convertNumber)) {
+								number = options.convertNumber(data);
+							}
+							deferred.resolve(number);
+						}
+						catch (e) {
+							deferred.reject();
+						}
+					})
+					.fail(deferred.reject);
+			}
+			else {
+				deferred.reject();
+			}
+
+			servicePromises[url] = deferred.promise();
+			return servicePromises[url];
+		},
 	};
 
 
-	/**
-	 * jQuery plugin
-	 */
+	// jQuery plugin
 	$.fn.socialLikes = function(options) {
 		return this.each(function() {
 			var elem = $(this);
@@ -19901,7 +19903,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		wait: 500,  // Show buttons only after counters are ready or after this amount of time
 		timeout: 10000,  // Show counters after this amount of time even if they aren’t ready
 		popupCheckInterval: 500,
-		singleTitle: 'Share'
+		singleTitle: 'Share',
 	};
 
 	function SocialLikes(container, options) {
@@ -19931,7 +19933,9 @@ return /******/ (function(modules) { // webpackBootstrap
 			buttons.each($.proxy(function(idx, elem) {
 				var button = new Button($(elem), this.options);
 				this.buttons.push(button);
-				if (button.options.counterUrl) this.countersLeft++;
+				if (button.options.counterUrl) {
+					this.countersLeft++;
+				}
 			}, this));
 
 			if (this.options.counters) {
@@ -19949,17 +19953,19 @@ return /******/ (function(modules) { // webpackBootstrap
 			this.userButtonInited = true;
 		},
 		makeSingleButton: function() {
-			if (!this.single) return;
+			if (!this.single) {
+				return;
+			}
 
 			var container = this.container;
 			container.addClass(prefix + '_vertical');
-			container.wrap($('<div>', {'class': prefix + '_single-w'}));
-			container.wrapInner($('<div>', {'class': prefix + '__single-container'}));
+			container.wrap($('<div>', { class: prefix + '_single-w' }));
+			container.wrapInner($('<div>', { class: prefix + '__single-container' }));
 			var wrapper = container.parent();
 
 			// Widget
 			var widget = $('<div>', {
-				'class': getElementClassNames('widget', 'single')
+				class: getElementClassNames('widget', 'single'),
 			});
 			var button = $(template(
 				'<div class="{buttonCls}">' +
@@ -19969,7 +19975,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				{
 					buttonCls: getElementClassNames('button', 'single'),
 					iconCls: getElementClassNames('icon', 'single'),
-					title: this.options.singleTitle
+					title: this.options.singleTitle,
 				}
 			));
 			widget.append(button);
@@ -19979,7 +19985,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				var activeClass = prefix + '__widget_active';
 				widget.toggleClass(activeClass);
 				if (widget.hasClass(activeClass)) {
-					container.css({left: -(container.width()-widget.width())/2,  top: -container.height()});
+					container.css({ left: -(container.width() - widget.width()) / 2, top: -container.height() });
 					showInViewport(container);
 					closeOnClick(container, function() {
 						widget.removeClass(activeClass);
@@ -19994,12 +20000,16 @@ return /******/ (function(modules) { // webpackBootstrap
 			this.widget = widget;
 		},
 		update: function(options) {
-			if (!options.forceUpdate && options.url === this.options.url) return;
+			if (!options.forceUpdate && options.url === this.options.url) {
+				return;
+			}
 
 			// Reset counters
 			this.number = 0;
 			this.countersLeft = this.buttons.length;
-			if (this.widget) this.widget.find('.' + prefix + '__counter').remove();
+			if (this.widget) {
+				this.widget.find('.' + prefix + '__counter').remove();
+			}
 
 			// Update options
 			$.extend(this.options, options);
@@ -20040,12 +20050,12 @@ return /******/ (function(modules) { // webpackBootstrap
 			var counterElem = this.widget.find('.' + classPrefix + 'counter_single');
 			if (!counterElem.length) {
 				counterElem = $('<span>', {
-					'class': getElementClassNames('counter', 'single')
+					class: getElementClassNames('counter', 'single'),
 				});
 				this.widget.append(counterElem);
 			}
 			return counterElem;
-		}
+		},
 	};
 
 
@@ -20066,7 +20076,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		},
 
 		update: function(options) {
-			$.extend(this.options, {forceUpdate: false}, options);
+			$.extend(this.options, { forceUpdate: false }, options);
 			this.widget.find('.' + prefix + '__counter').remove();  // Remove old counter
 			this.initCounter();
 		},
@@ -20084,7 +20094,9 @@ return /******/ (function(modules) { // webpackBootstrap
 						break;
 					}
 				}
-				if (!service) return;
+				if (!service) {
+					return;
+				}
 			}
 			this.service = service;
 			$.extend(this.options, services[service]);
@@ -20127,16 +20139,16 @@ return /******/ (function(modules) { // webpackBootstrap
 
 			// Button
 			var button = $('<span>', {
-				'class': this.getElementClassNames('button'),
-				'html': widget.html()
+				class: this.getElementClassNames('button'),
+				html: widget.html(),
 			});
 			if (options.clickUrl) {
 				var url = makeUrl(options.clickUrl, {
 					url: options.url,
-					title: options.title
+					title: options.title,
 				});
 				var link = $('<a>', {
-					href: url
+					href: url,
 				});
 				this.cloneDataAttrs(widget, link);
 				widget.replaceWith(link);
@@ -20150,7 +20162,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			widget.addClass(this.getElementClassNames('widget'));
 
 			// Icon
-			button.prepend($('<span>', {'class': this.getElementClassNames('icon')}));
+			button.prepend($('<span>', { class: this.getElementClassNames('icon') }));
 
 			widget.empty().append(button);
 			this.button = button;
@@ -20164,7 +20176,7 @@ return /******/ (function(modules) { // webpackBootstrap
 				else {
 					var extraOptions = {
 						counterUrl: this.options.counterUrl,
-						forceUpdate: this.options.forceUpdate
+						forceUpdate: this.options.forceUpdate,
 					};
 					counters.fetch(this.service, this.options.url, extraOptions)
 						.always($.proxy(this.updateCounter, this));
@@ -20189,11 +20201,11 @@ return /******/ (function(modules) { // webpackBootstrap
 			number = parseInt(number, 10) || 0;
 
 			var params = {
-				'class': this.getElementClassNames('counter'),
-				'text': number
+				class: this.getElementClassNames('counter'),
+				text: number,
 			};
 			if (!number && !this.options.zeroes) {
-				params['class'] += ' ' + prefix + '__counter_empty';
+				params.class += ' ' + prefix + '__counter_empty';
 				params.text = '';
 			}
 			var counterElem = $('<span>', params);
@@ -20211,12 +20223,12 @@ return /******/ (function(modules) { // webpackBootstrap
 			if (process) {
 				var url = makeUrl(options.popupUrl, {
 					url: options.url,
-					title: options.title
+					title: options.title,
 				});
 				url = this.addAdditionalParamsToUrl(url);
 				this.openPopup(url, {
 					width: options.popupWidth,
-					height: options.popupHeight
+					height: options.popupHeight,
 				});
 			}
 			return false;
@@ -20224,25 +20236,44 @@ return /******/ (function(modules) { // webpackBootstrap
 
 		addAdditionalParamsToUrl: function(url) {
 			var params = $.param($.extend(this.widget.data(), this.options.data));
-			if ($.isEmptyObject(params)) return url;
+			if ($.isEmptyObject(params)) {
+				return url;
+			}
 			var glue = url.indexOf('?') === -1 ? '?' : '&';
 			return url + glue + params;
 		},
 
 		openPopup: function(url, params) {
-			var left = Math.round(screen.width/2 - params.width/2);
+			var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
+			var dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top;
+			var width = window.innerWidth
+				? window.innerWidth
+				: document.documentElement.clientWidth
+					? document.documentElement.clientWidth
+					: screen.width
+			;
+			var height = window.innerHeight
+				? window.innerHeight
+				: document.documentElement.clientHeight
+					? document.documentElement.clientHeight
+					: screen.height
+			;
+
+			var left = Math.round(width / 2 - params.width / 2) + dualScreenLeft;
 			var top = 0;
-			if (screen.height > params.height) {
-				top = Math.round(screen.height/3 - params.height/2);
+			if (height > params.height) {
+				top = Math.round(height / 3 - params.height / 2) + dualScreenTop;
 			}
 
 			var win = window.open(url, 'sl_' + this.service, 'left=' + left + ',top=' + top + ',' +
-			   'width=' + params.width + ',height=' + params.height + ',personalbar=0,toolbar=0,scrollbars=1,resizable=1');
+				'width=' + params.width + ',height=' + params.height + ',personalbar=0,toolbar=0,scrollbars=1,resizable=1');
 			if (win) {
 				win.focus();
 				this.widget.trigger('popup_opened.' + prefix, [this.service, win]);
 				var timer = setInterval($.proxy(function() {
-					if (!win.closed) return;
+					if (!win.closed) {
+						return;
+					}
 					clearInterval(timer);
 					this.widget.trigger('popup_closed.' + prefix, this.service);
 				}, this), this.options.popupCheckInterval);
@@ -20250,7 +20281,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			else {
 				location.href = url;
 			}
-		}
+		},
 	};
 
 
@@ -20258,7 +20289,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * Helpers
 	 */
 
-	 // Camelize data-attributes
+	// Camelize data-attributes
 	function dataToOptions(elem) {
 		function upper(m, l) {
 			return l.toUpper();
@@ -20267,8 +20298,12 @@ return /******/ (function(modules) { // webpackBootstrap
 		var data = elem.data();
 		for (var key in data) {
 			var value = data[key];
-			if (value === 'yes') value = true;
-			else if (value === 'no') value = false;
+			if (value === 'yes') {
+				value = true;
+			}
+			else if (value === 'no') {
+				value = false;
+			}
 			options[key.replace(/-(\w)/g, upper)] = value;
 		}
 		return options;
@@ -20279,7 +20314,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 	function template(tmpl, context, filter) {
-		return tmpl.replace(/\{([^\}]+)\}/g, function(m, key) {
+		return tmpl.replace(/\{([^}]+)\}/g, function(m, key) {
 			// If key doesn't exists in the context we should keep template tag as is
 			return key in context ? (filter ? filter(context[key]) : context[key]) : m;
 		});
@@ -20292,10 +20327,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function closeOnClick(elem, callback) {
 		function handler(e) {
-			if ((e.type === 'keydown' && e.which !== 27) || $(e.target).closest(elem).length) return;
+			if ((e.type === 'keydown' && e.which !== 27) || $(e.target).closest(elem).length) {
+				return;
+			}
 			elem.removeClass(openClass);
 			doc.off(events, handler);
-			if ($.isFunction(callback)) callback();
+			if ($.isFunction(callback)) {
+				callback();
+			}
 		}
 		var doc = $(document);
 		var events = 'click touchstart keydown';
@@ -20309,15 +20348,19 @@ return /******/ (function(modules) { // webpackBootstrap
 			var top = parseInt(elem.css('top'), 10);
 
 			var rect = elem[0].getBoundingClientRect();
-			if (rect.left < offset)
+			if (rect.left < offset) {
 				elem.css('left', offset - rect.left + left);
-			else if (rect.right > window.innerWidth - offset)
+			}
+			else if (rect.right > window.innerWidth - offset) {
 				elem.css('left', window.innerWidth - rect.right - offset + left);
+			}
 
-			if (rect.top < offset)
+			if (rect.top < offset) {
 				elem.css('top', offset - rect.top + top);
-			else if (rect.bottom > window.innerHeight - offset)
+			}
+			else if (rect.bottom > window.innerHeight - offset) {
 				elem.css('top', window.innerHeight - rect.bottom - offset + top);
+			}
 		}
 		elem.addClass(openClass);
 	}
@@ -20329,7 +20372,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	$(function() {
 		$('.' + prefix).socialLikes();
 	});
-
 }));
 
 /*!
@@ -20479,7 +20521,7 @@ return /******/ (function(modules) { // webpackBootstrap
 }));
 
 //! moment.js
-//! version : 2.17.0
+//! version : 2.17.1
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
 //! license : MIT
 //! momentjs.com
@@ -24744,7 +24786,7 @@ addParseToken('x', function (input, array, config) {
 // Side effect imports
 
 
-hooks.version = '2.17.0';
+hooks.version = '2.17.1';
 
 setHookCallback(createLocal);
 
@@ -24786,23 +24828,23 @@ this["Handlebars"]["templates"] = this["Handlebars"]["templates"] || {};
 this["Handlebars"]["templates"]["course_list_result"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div class=\"card card-linked chevron-link\">\r\n	<a href=\""
+  return "<div class=\"card card-linked chevron-link\">\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
-    + "\" class=\"card-title-link\">\r\n		<h3 style=\"display:inline;\">"
+    + "\" class=\"card-title-link\">\n		<h3 style=\"display:inline;\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.award || (depth0 != null ? depth0.award : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"award","hash":{},"data":data}) : helper)))
-    + "</h3>\r\n	</a>\r\n	<a href=\""
+    + "</h3>\n	</a>\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.award || (depth0 != null ? depth0.award : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"award","hash":{},"data":data}) : helper)))
-    + "</a>\r\n	<span class=\"kf-clock tag text-accent\"> "
+    + "</a>\n	<span class=\"kf-clock tag text-accent\"> "
     + alias4(((helper = (helper = helpers.mode_of_study || (depth0 != null ? depth0.mode_of_study : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"mode_of_study","hash":{},"data":data}) : helper)))
-    + " </span>\r\n	<span class=\"kf-pin tag text-accent\"> "
+    + " </span>\n	<span class=\"kf-pin tag text-accent\"> "
     + alias4(((helper = (helper = helpers.campus || (depth0 != null ? depth0.campus : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"campus","hash":{},"data":data}) : helper)))
-    + " </span>\r\n</div>";
+    + " </span>\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -24814,7 +24856,7 @@ this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":functio
 
   return "				"
     + container.escapeExpression(((helper = (helper = helpers.start_date || (depth0 != null ? depth0.start_date : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"start_date","hash":{},"data":data}) : helper)))
-    + "\r\n";
+    + "\n";
 },"4":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -24822,7 +24864,7 @@ this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":functio
     + alias4(((helper = (helper = helpers.start_date || (depth0 != null ? depth0.start_date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start_date","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.end_date || (depth0 != null ? depth0.end_date : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end_date","hash":{},"data":data}) : helper)))
-    + "\r\n";
+    + "\n";
 },"6":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -24835,7 +24877,7 @@ this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":functio
     + alias4(((helper = (helper = helpers.start || (depth0 != null ? depth0.start : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.end_time || (depth0 != null ? depth0.end_time : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end_time","hash":{},"data":data}) : helper)))
-    + "\r\n";
+    + "\n";
 },"9":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
@@ -24843,67 +24885,63 @@ this["Handlebars"]["templates"]["event_card"] = Handlebars.template({"1":functio
     + alias4(((helper = (helper = helpers.start || (depth0 != null ? depth0.start : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.end || (depth0 != null ? depth0.end : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"end","hash":{},"data":data}) : helper)))
-    + "\r\n";
+    + "\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div class=\"card card-linked\">\r\n	<a href=\""
+  return "<div class=\"card card-linked\">\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"card-title-link\"><h3 class=\"card-title\">"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</h3></a>\r\n	<a href=\""
+    + "</h3></a>\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</a>\r\n	<time class=\"card-meta\" datetime=\""
+    + "</a>\n	<time class=\"card-meta\" datetime=\""
     + alias4(((helper = (helper = helpers.start_ts || (depth0 != null ? depth0.start_ts : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"start_ts","hash":{},"data":data}) : helper)))
-    + "\">\r\n"
+    + "\">\n"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.all_day : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.program(6, data, 0),"data":data})) != null ? stack1 : "")
-    + "</time>\r\n	<div class=\"card-text\">"
+    + "</time>\n	<div class=\"card-text\">"
     + ((stack1 = ((helper = (helper = helpers.excerpt || (depth0 != null ? depth0.excerpt : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"excerpt","hash":{},"data":data}) : helper))) != null ? stack1 : "")
-    + "</div>\r\n</div>";
+    + "</div>\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["module_list_result"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div class=\"card card-linked chevron-link\">\r\n	<a href=\""
+  return "<div class=\"card card-linked chevron-link\">\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
-    + "\" class=\"card-title-link\">\r\n		<h3>"
+    + "\" class=\"card-title-link\">\n		<h3>"
     + alias4(((helper = (helper = helpers.sds_code || (depth0 != null ? depth0.sds_code : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sds_code","hash":{},"data":data}) : helper)))
     + ": "
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</h3>\r\n	</a>\r\n	<a href=\""
+    + "</h3>\n	</a>\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
     + alias4(((helper = (helper = helpers.sds_code || (depth0 != null ? depth0.sds_code : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"sds_code","hash":{},"data":data}) : helper)))
     + ": "
     + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</a>\r\n</div>";
+    + "</a>\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["profile_list_result"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<div class=\"card card-linked chevron-link\">\r\n	<a href=\""
+  return "<div class=\"card card-linked chevron-link\">\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
-    + "\" class=\"card-title-link\">\r\n		<h3 style=\"display:inline;\">"
+    + "\" class=\"card-title-link\">\n		<h3 style=\"display:inline;\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.course || (depth0 != null ? depth0.course : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"course","hash":{},"data":data}) : helper)))
-    + "</h3>\r\n	</a>\r\n	<a href=\""
+    + "</h3>\n	</a>\n	<a href=\""
     + alias4(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
     + alias4(((helper = (helper = helpers.name || (depth0 != null ? depth0.name : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data}) : helper)))
     + " - "
     + alias4(((helper = (helper = helpers.course || (depth0 != null ? depth0.course : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"course","hash":{},"data":data}) : helper)))
-    + "</a>\r\n	<span class=\"kf-book tag text-accent\"> "
+    + "</a>\n	<span class=\"kf-book tag text-accent\"> "
     + alias4(((helper = (helper = helpers.__subjects || (depth0 != null ? depth0.__subjects : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"__subjects","hash":{},"data":data}) : helper)))
-    + " </span>\r\n</div>";
-},"useData":true});
-
-this["Handlebars"]["templates"]["video_html5"] = Handlebars.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div class=\"plyr\">\r\n	<video poster=\"/path/to/poster.jpg\" controls>\r\n		<!-- Video files -->\r\n		<source src=\"/path/to/video.mp4\" type=\"video/mp4\">\r\n		<source src=\"/path/to/video.webm\" type=\"video/webm\">\r\n\r\n		<!-- Text track file -->\r\n		<track kind=\"captions\" label=\"English captions\" src=\"/path/to/captions.vtt\" srclang=\"en\" default>\r\n\r\n		<!-- Fallback for browsers that don't support the <video> element -->\r\n		<a href=\"/path/to/movie.mp4\">Download</a>\r\n	</video>\r\n</div>";
+    + " </span>\n</div>";
 },"useData":true});
 
 this["Handlebars"]["templates"]["wp_post_card"] = Handlebars.template({"1":function(container,depth0,helpers,partials,data) {
@@ -24917,27 +24955,27 @@ this["Handlebars"]["templates"]["wp_post_card"] = Handlebars.template({"1":funct
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=container.lambda, alias3=container.escapeExpression, alias4=helpers.helperMissing, alias5="function";
 
-  return "<div class=\"card card-linked\">\r\n	<div class=\"card-media-wrap"
+  return "<div class=\"card card-linked\">\n	<div class=\"card-media-wrap"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.video : depth0),{"name":"if","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + " force-3-2\">\r\n		<img class=\"card-img\" src=\""
+    + " force-3-2\">\n		<img class=\"card-img\" src=\""
     + alias3(alias2(((stack1 = (depth0 != null ? depth0.image : depth0)) != null ? stack1.src : stack1), depth0))
     + "\" alt=\""
     + alias3(alias2(((stack1 = (depth0 != null ? depth0.image : depth0)) != null ? stack1.alt : stack1), depth0))
-    + "\" />\r\n	</div>\r\n	<a href=\""
+    + "\" />\n	</div>\n	<a href=\""
     + alias3(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"card-title-link\"><h3 class=\"card-title\">"
     + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</h3></a>\r\n	<a href=\""
+    + "</h3></a>\n	<a href=\""
     + alias3(((helper = (helper = helpers.url || (depth0 != null ? depth0.url : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"url","hash":{},"data":data}) : helper)))
     + "\" class=\"faux-link-overlay\" aria-hidden=\"true\">"
     + alias3(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "</a>\r\n	<time class=\"card-meta\" datetime=\""
+    + "</a>\n	<time class=\"card-meta\" datetime=\""
     + alias3(((helper = (helper = helpers.date || (depth0 != null ? depth0.date : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date","hash":{},"data":data}) : helper)))
     + "\">"
     + alias3(((helper = (helper = helpers.date_string || (depth0 != null ? depth0.date_string : depth0)) != null ? helper : alias4),(typeof helper === alias5 ? helper.call(alias1,{"name":"date_string","hash":{},"data":data}) : helper)))
-    + "</time>\r\n	"
+    + "</time>\n	"
     + ((stack1 = helpers["if"].call(alias1,(depth0 != null ? depth0.excerpt : depth0),{"name":"if","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "\r\n</div>";
+    + "\n</div>";
 },"useData":true});
 // ==========================================================================
 // Plyr

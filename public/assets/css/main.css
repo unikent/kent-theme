@@ -6838,6 +6838,39 @@ form + .h6 {
   .content-container p a:hover, .content-container p a:focus {
     border-bottom: 1px solid #00263d; }
 
+.lead.split .wrapper {
+  display: inline; }
+  @media (max-width: 991px) {
+    .lead.split .wrapper {
+      display: none; } }
+
+@media (min-width: 768px) {
+  .lead.split p {
+    width: 80%;
+    display: inline-block;
+    vertical-align: top; }
+  .lead.split svg {
+    margin-left: 1.5rem;
+    cake-length: 100px; }
+    .lead.split svg rect {
+      transform: rotate(25deg); } }
+
+.current-year {
+  display: inline-block;
+  vertical-align: top;
+  font-weight: normal;
+  text-align: center; }
+  .current-year .entry-year {
+    display: inline;
+    color: #937227;
+    font-size: 40px;
+    font-size: 2.5rem;
+    vertical-align: top; }
+  .current-year .current {
+    font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-size: 1rem; }
+
 .text-primary-tint {
   color: #E8EBF2 !important; }
 
@@ -10529,7 +10562,8 @@ button.beta-toggler {
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link img {
     transition: all 300ms;
     transform: translate3d(0, 0, 0);
-    filter: brightness(1); }
+    -webkit-filter: brightness(1);
+            filter: brightness(1); }
   a.card:hover, a.card:focus, a:hover, a:focus, .faux-link-block:hover, .nav-links-panel nav .nav-link:hover, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover, .card.card-linked:hover, .card-panel.cards-linked .card:hover, .card .card-img-overlay-link:hover, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover, .faux-link-block:focus, .nav-links-panel nav .nav-link:focus, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus, .card.card-linked:focus, .card-panel.cards-linked .card:focus, .card .card-img-overlay-link:focus, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus,
   .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus {
@@ -10537,7 +10571,8 @@ button.beta-toggler {
     a.card:hover img, a.card:focus img, a:hover img, a:focus img, .faux-link-block:hover img, .nav-links-panel nav .nav-link:hover img, .global-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .home-nav .global-nav-links .global-nav-link nav .nav-link:hover img, .card.card-linked:hover img, .card-panel.cards-linked .card:hover img, .card .card-img-overlay-link:hover img, .card.card-overlay .card-title-wrap.card-title-wrap-link:hover img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:hover img, .faux-link-block:focus img, .nav-links-panel nav .nav-link:focus img, .global-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .home-nav .global-nav-links .global-nav-link nav .nav-link:focus img, .card.card-linked:focus img, .card-panel.cards-linked .card:focus img, .card .card-img-overlay-link:focus img, .card.card-overlay .card-title-wrap.card-title-wrap-link:focus img,
     .card.card-overlay .force-block.card-title-wrap.card-title-wrap-link:focus img {
-      filter: brightness(85%); }
+      -webkit-filter: brightness(85%);
+              filter: brightness(85%); }
 
 .cards-backed .card-list-item, .cards-backed .card-panel.cards-list .card-panel-body .card, .card-panel.cards-list .card-panel-body .cards-backed .card, .cards-backed .card-panel .card-panel-body .card-panel-list .card, .card-panel .card-panel-body .card-panel-list .cards-backed .card,
 .card-backed.card-list-item,
@@ -11816,6 +11851,10 @@ button.beta-toggler {
         border: none; }
         .spaced-links-inner-container .spaced-links-item:after {
           display: none; } }
+    .spaced-links-inner-container .spaced-links-item .year-of-entry {
+      font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
+      font-size: 19.2px;
+      font-size: 1.2rem; }
   .spaced-links-inner-container .spaced-links-item-btn {
     width: 45%; }
     @media (min-width: 992px) {
@@ -11937,8 +11976,12 @@ button.beta-toggler {
     .modal .modal-header .close span {
       vertical-align: sub; }
   .modal .modal-header .form-group {
-    display: inline-block;
+    margin-top: 16px;
+    margin-top: 1rem;
     margin-bottom: 0; }
+    @media (min-width: 768px) {
+      .modal .modal-header .form-group {
+        display: inline-block; } }
   .modal .modal-header button {
     padding: 0 16px;
     padding: 0 1rem; }
