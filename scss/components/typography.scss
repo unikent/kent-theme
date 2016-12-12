@@ -1,3 +1,13 @@
+@mixin underlined-links{
+    a {
+        border-bottom: 1px solid #CCCCCC;
+
+        &:hover, &:focus {
+            border-bottom: 1px solid $link-hover-color;
+        }
+    }
+}
+
 @mixin bullet-list {
     list-style: none;
     padding:    0;
@@ -181,14 +191,10 @@ form{
         padding-left: 2rem;
     }
 
-    p {
-        a {
-            border-bottom: 1px solid #CCCCCC;
-
-            &:hover, &:focus {
-                border-bottom: 1px solid $link-hover-color;
-            }
-        }
+    p,
+    td,
+    li{
+        @include underlined-links;
     }
 }
 
@@ -212,8 +218,6 @@ form{
 
         svg {
             margin-left: 1.5rem;
-            cake-length: 100px;
-
             rect {
                 transform: rotate(25deg)
             }

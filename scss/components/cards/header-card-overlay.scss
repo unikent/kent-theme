@@ -259,27 +259,28 @@
 		margin-bottom: -1.5rem;
 	}
 
-	.header-card-overlap-search {
-
-		.form-group {
-		  position: relative;
-		}
-	}
-
     .header-card-overlap-search {
       position: absolute;
-      top: 2rem;
+      top: 1rem;
       bottom:inherit;
-      left: 2rem;
-      right: 2rem;
+      left: 1rem;
+      right: 1rem;
 
-    }
-
-	@include media-breakpoint-up(md) {
-		.header-card-overlap-search {
-		  top: 6rem;
+		@include media-breakpoint-up(md) {
+			top: 6rem;
+			bottom:inherit;
+			left: 2rem;
+			right: 2rem;
 		}
-	}
+
+		.form-group {
+			position: relative;
+			@include media-breakpoint-up(md){
+				margin-left: 15%;
+				margin-right: 15%;
+			}
+		}
+    }
 
 }
 
