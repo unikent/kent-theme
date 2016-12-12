@@ -203,18 +203,20 @@ form{
         }
     }
 
-    p {
-        width: 80%;
-        display:inline-block;
-        vertical-align: top;
-    }
+    @include media-breakpoint-up(md) {
+        p {
+            width: 80%;
+            display: inline-block;
+            vertical-align: top;
+        }
 
-    svg {
-        margin-left: 1.5rem;
-        cake-length: 100px;
+        svg {
+            margin-left: 1.5rem;
+            cake-length: 100px;
 
-        rect{
-            transform: rotate(25deg)
+            rect {
+                transform: rotate(25deg)
+            }
         }
     }
 

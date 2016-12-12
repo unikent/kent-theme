@@ -6844,17 +6844,16 @@ form + .h6 {
     .lead.split .wrapper {
       display: none; } }
 
-.lead.split p {
-  width: 80%;
-  display: inline-block;
-  vertical-align: top; }
-
-.lead.split svg {
-  margin-left: 24px;
-  margin-left: 1.5rem;
-  cake-length: 100px; }
-  .lead.split svg rect {
-    transform: rotate(25deg); }
+@media (min-width: 768px) {
+  .lead.split p {
+    width: 80%;
+    display: inline-block;
+    vertical-align: top; }
+  .lead.split svg {
+    margin-left: 1.5rem;
+    cake-length: 100px; }
+    .lead.split svg rect {
+      transform: rotate(25deg); } }
 
 .current-year {
   display: inline-block;
@@ -11854,8 +11853,8 @@ button.beta-toggler {
           display: none; } }
     .spaced-links-inner-container .spaced-links-item .year-of-entry {
       font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
-      font-size: 20.8px;
-      font-size: 1.3rem; }
+      font-size: 19.2px;
+      font-size: 1.2rem; }
   .spaced-links-inner-container .spaced-links-item-btn {
     width: 45%; }
     @media (min-width: 992px) {
