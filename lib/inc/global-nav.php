@@ -17,7 +17,7 @@ $global_nav_links = array(
 			'url' 			=>	'/research/people'
 		),
 		array(
-			'title' 		=>	'Innovation',
+			'title' 		=>	'Innovation and enterprise',
 			'description' 	=> 	'Capitalising on research: our commitment to enterprise.',
 			'url' 			=>	'/research/innovation'
 		)
