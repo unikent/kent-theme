@@ -1,0 +1,55 @@
+.content-aside {
+
+    & > div {
+        margin-bottom: 1.5rem;
+
+        h3 {
+            i {
+                vertical-align: text-top;
+                line-height: 1.2rem;
+            }
+        }
+
+        p {
+            margin-left: 2rem;
+        }
+    }
+
+
+
+    ul.sidebar {
+
+        list-style: none;
+        padding-left: 0;
+        color: $brand-primary;
+        font-weight:bold;
+
+        i{
+            margin-right:0.25rem;
+            vertical-align: text-bottom;
+            line-height: 1.5rem;
+        }
+
+        > li{
+            margin-bottom: 1rem;
+        }
+
+        ul{
+            color: $body-color;
+            list-style:none;
+            font-weight: normal;
+            padding-left: 1.5rem;
+        }
+
+        @include media-breakpoint-up(lg){
+            &.pg{
+                padding-top: 400px;
+            }
+
+            &.ug{
+                padding-top: 350px;
+            }
+
+        }
+    }
+}
