@@ -72,7 +72,6 @@ body .kf.pull-right {
 .redactor-dropdown-box-format .redactor-dropdown-pullquote {
   font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
   font-size: 20.256px;
-  font-size: 1.266rem;
   font-style: italic;
   color: #05345C; }
   .redactor-dropdown-box-format .redactor-dropdown-blockquote span,
@@ -167,7 +166,8 @@ body .kf.pull-right {
   .redactor-editor figure {
     clear: both; }
     .redactor-editor figure .media-wrap, .redactor-editor figure:hover {
-      overflow: hidden; }
+      overflow: hidden;
+      position: relative; }
     .redactor-editor figure:hover img {
       filter: blur(3px); }
     .redactor-editor figure:hover .media-wrap {
@@ -287,11 +287,11 @@ body .kf.pull-right {
   font-size: 13px; }
   #redactor-modal-body .original .value {
     font-style: italic; }
-    #redactor-modal-body .original .value button {
-      padding: 5px 10px;
-      height: auto;
-      float: right;
-      font-size: 13px; }
+  #redactor-modal-body .original button {
+    padding: 5px 10px;
+    height: auto;
+    float: right;
+    font-size: 13px; }
 
 #redactor-modal-body input[disabled] {
   background-color: #CCC; }
