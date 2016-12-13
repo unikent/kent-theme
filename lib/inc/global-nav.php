@@ -53,7 +53,7 @@ $global_nav_links = array(
 		array(
 			'title' 		=>	'Our locations',
 			'description' 	=> 	'A guide to Canterbury, Medway and our four European centres.',
-			'url' 			=>	'/engage/visit-us'
+			'url' 			=>	'/engage/locations'
 		),
 		array(
 			'title' 		=>	'Community',
