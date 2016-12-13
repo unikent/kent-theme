@@ -14,7 +14,7 @@
 	.redactor-dropdown-blockquote,
 	.redactor-dropdown-pullquote {
 		font-family: $font-family-serif;
-		font-size: $font-size-h3;
+		font-size: 20.256px;
 		font-style: italic;
 		color: $brand-primary;
 		span {
@@ -106,6 +106,7 @@
 		font-style: italic;
 		color: $brand-primary;
 		border: 0;
+
 		&:before {
 			font-size: 1.3em;
 			content: '\201C';
@@ -135,6 +136,7 @@
 		.media-wrap,
 		&:hover {
 			overflow: hidden;
+			position: relative;
 		}
 		&:hover {
 			img {
@@ -213,6 +215,7 @@
 }
 
 .image-gallery{
+
 	a,
 	.gallery-img-wrap{
 		height:160px;
@@ -275,12 +278,14 @@
 		font-size: 13px;
 		.value {
 			font-style: italic;
-			button {
-				padding: 5px 10px;
-				height: auto;
-				float: right;
-				font-size: 13px;
-			}
+
+		}
+
+		button {
+			 padding: 5px 10px;
+			 height: auto;
+			 float: right;
+			 font-size: 13px;
 		}
 	}
 
