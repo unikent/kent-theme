@@ -127,29 +127,6 @@ main {
         }
     }
 
-    .content-aside{
-        h3 {
-            font-size: $font-size-h3;
-        }
-
-        nav {
-            margin-bottom: 3rem;
-
-            ul {
-                @include link-list();
-            }
-
-            &.nowrap,
-            ul.nowrap{
-                li a,
-                ul li a {
-                    text-overflow: ellipsis;
-                    white-space:   nowrap;
-                }
-            }
-        }
-    }
-
     @include media-breakpoint-up(sm){
 
         .content-main,
