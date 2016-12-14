@@ -306,7 +306,7 @@ body .kf.pull-right {
 .image-picker .redactor-editor {
   display: none; }
 
-.image-picker .img-wrapper {
+.image-picker .image-wrapper {
   overflow: hidden;
   display: block;
   width: 160px;
