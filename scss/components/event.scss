@@ -19,6 +19,12 @@
 	&.event-meta-multi {
 		line-height: 1.3rem;
 	}
+
+	@each $name, $color in $brand-colors-dark {
+	    &.event-meta-#{$name} {
+	    	background: $color;
+	    }
+	}
 }
 
 .event-header {
