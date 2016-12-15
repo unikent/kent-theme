@@ -7539,29 +7539,46 @@ figure .video-launcher[data-mode='inline'] > .video-player {
 
 .event-meta {
   display: block;
-  width: 80px;
-  width: 5rem;
-  min-width: 80px;
-  min-width: 5rem;
-  height: 80px;
-  height: 5rem;
+  width: 64px;
+  width: 4rem;
+  min-width: 64px;
+  min-width: 4rem;
+  height: 64px;
+  height: 4rem;
   text-align: center;
   font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
   background: #05345C;
   color: #fff;
-  padding-top: 8px;
-  padding-top: .5rem;
+  padding: 8px;
+  padding: .5rem;
   margin-right: 16px;
-  margin-right: 1rem; }
+  margin-right: 1rem;
+  font-size: 14.4px;
+  font-size: .9rem;
+  line-height: 14.4px;
+  line-height: .9rem; }
   .event-meta span {
     display: block;
-    font-size: 32px;
-    font-size: 2rem;
+    font-size: 24px;
+    font-size: 1.5rem;
     line-height: 35.2px;
     line-height: 2.2rem; }
   .event-meta.event-meta-multi {
-    line-height: 20.8px;
-    line-height: 1.3rem; }
+    line-height: 16px;
+    line-height: 1rem; }
+  @media (min-width: 992px) {
+    .event-meta {
+      width: 5rem;
+      min-width: 5rem;
+      height: 5rem;
+      line-height: 1rem;
+      font-size: 1.2rem; }
+      .event-meta span {
+        font-size: 2.5rem;
+        line-height: 3rem; }
+      .event-meta.event-meta-multi {
+        font-size: 1rem;
+        line-height: 1.3rem; } }
   .event-meta.event-meta-primary {
     background: #05345C; }
   .event-meta.event-meta-primary-light {
@@ -7572,6 +7589,8 @@ figure .video-launcher[data-mode='inline'] > .video-player {
     background: #333333; }
   .event-meta.event-meta-energy {
     background: #2abed9; }
+  .event-meta.event-meta-accent-light {
+    background-color: #CE9716; }
 
 .event-header {
   display: -ms-flexbox;
@@ -7585,6 +7604,11 @@ figure .video-launcher[data-mode='inline'] > .video-player {
   margin-bottom: 32px;
   margin-bottom: 2rem; }
   .event-header h1 {
+    margin: 0; }
+
+.card.card-overlay.header-card-overlay .card-title-overlap .event-header {
+  margin-bottom: 0; }
+  .card.card-overlay.header-card-overlay .card-title-overlap .event-header h1:last-child {
     margin: 0; }
 
 .alert {
@@ -11204,22 +11228,22 @@ button.beta-toggler {
   .card-panel.cards-backed .card-panel.cards-backed-energy .card a .card-text, .card-panel.cards-backed-energy .card-panel.cards-backed .card a .card-text, .card-panel .card .card.card-img-overlay-bottom a .card-text, .card .card-panel .card.card-img-overlay-bottom a .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a .card-text, .card-panel .card .card.card-img-overlay-centered a .card-text, .card .card-panel .card.card-img-overlay-centered a .card-text, .card-panel .card.editorial.editorial-primary a .card-text, .card-panel .card.editorial.editorial-primary-light a .card-text, .card-panel .card.editorial.editorial-accent a .card-text, .card-panel .card.editorial.editorial-dark a .card-text, .card-panel .card.editorial.editorial-energy a .card-text, .card-panel .card.card-inverse a:hover .card-text, .card-panel .card.card-backed-primary a:hover .card-text, .card-panel.cards-backed-primary .card a:hover .card-text, .card-panel .card.card-backed-primary-light a:hover .card-text, .card-panel.cards-backed-primary-light .card a:hover .card-text, .card-panel .card.card-backed-accent a:hover .card-text, .card-panel.cards-backed-accent .card a:hover .card-text, .card-panel .card.card-backed-dark a:hover .card-text, .card-panel.cards-backed-dark .card a:hover .card-text, .card-panel .card.card-backed-energy a:hover .card-text, .card-panel.cards-backed-energy .card a:hover .card-text, .card-panel .card .card.card-img-overlay-bottom a:hover .card-text, .card .card-panel .card.card-img-overlay-bottom a:hover .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:hover .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:hover .card-text, .card-panel .card .card.card-img-overlay-centered a:hover .card-text, .card .card-panel .card.card-img-overlay-centered a:hover .card-text, .card-panel .card.editorial.editorial-primary a:hover .card-text, .card-panel .card.editorial.editorial-primary-light a:hover .card-text, .card-panel .card.editorial.editorial-accent a:hover .card-text, .card-panel .card.editorial.editorial-dark a:hover .card-text, .card-panel .card.editorial.editorial-energy a:hover .card-text, .card-panel .card.card-inverse a:focus .card-text, .card-panel .card.card-backed-primary a:focus .card-text, .card-panel.cards-backed-primary .card a:focus .card-text, .card-panel .card.card-backed-primary-light a:focus .card-text, .card-panel.cards-backed-primary-light .card a:focus .card-text, .card-panel .card.card-backed-accent a:focus .card-text, .card-panel.cards-backed-accent .card a:focus .card-text, .card-panel .card.card-backed-dark a:focus .card-text, .card-panel.cards-backed-dark .card a:focus .card-text, .card-panel .card.card-backed-energy a:focus .card-text, .card-panel.cards-backed-energy .card a:focus .card-text, .card-panel .card .card.card-img-overlay-bottom a:focus .card-text, .card .card-panel .card.card-img-overlay-bottom a:focus .card-text, .card-panel .card .card.card-img-overlay-bottom-shaded a:focus .card-text, .card .card-panel .card.card-img-overlay-bottom-shaded a:focus .card-text, .card-panel .card .card.card-img-overlay-centered a:focus .card-text, .card .card-panel .card.card-img-overlay-centered a:focus .card-text, .card-panel .card.editorial.editorial-primary a:focus .card-text, .card-panel .card.editorial.editorial-primary-light a:focus .card-text, .card-panel .card.editorial.editorial-accent a:focus .card-text, .card-panel .card.editorial.editorial-dark a:focus .card-text, .card-panel .card.editorial.editorial-energy a:focus .card-text {
     color: rgba(255, 255, 255, 0.75); }
 
-.card-panel-flush {
+.card-panel-flush, .card-panel-showcase {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0; }
   @media (min-width: 768px) {
-    .card-panel-flush {
+    .card-panel-flush, .card-panel-showcase {
       padding: 0; } }
-  .card-panel-flush .card {
+  .card-panel-flush .card, .card-panel-showcase .card {
     border: none;
     margin: 0; }
-    .card-panel-flush .card .card-img:first-child {
+    .card-panel-flush .card .card-img:first-child, .card-panel-showcase .card .card-img:first-child {
       margin-bottom: 0; }
   @media (min-width: 544px) {
-    .card-panel-flush.cards-backed .card {
+    .card-panel-flush.cards-backed .card, .cards-backed.card-panel-showcase .card {
       border: none; } }
 
 .card-panel-profiles {
@@ -11271,34 +11295,34 @@ button.beta-toggler {
       .card-panel-profiles .card {
         float: left;
         width: 25%; } }
-  .card-panel-profiles.card-panel-flush .card-double,
+  .card-panel-profiles.card-panel-flush .card-double, .card-panel-profiles.card-panel-showcase .card-double,
   .card-panel-profiles .card-double {
     padding: 48px;
     padding: 3rem;
     float: left;
     width: 100%; }
-    .card-panel-profiles.card-panel-flush .card-double .card-title,
+    .card-panel-profiles.card-panel-flush .card-double .card-title, .card-panel-profiles.card-panel-showcase .card-double .card-title,
     .card-panel-profiles .card-double .card-title {
       font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       text-transform: uppercase;
       font-size: 32px;
       font-size: 2rem; }
-    .card-panel-profiles.card-panel-flush .card-double .card-subtitle,
+    .card-panel-profiles.card-panel-flush .card-double .card-subtitle, .card-panel-profiles.card-panel-showcase .card-double .card-subtitle,
     .card-panel-profiles .card-double .card-subtitle {
       font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
       color: #171717;
       font-size: 19.2px;
       font-size: 1.2rem; }
       @media (min-width: 1200px) {
-        .card-panel-profiles.card-panel-flush .card-double .card-subtitle,
+        .card-panel-profiles.card-panel-flush .card-double .card-subtitle, .card-panel-profiles.card-panel-showcase .card-double .card-subtitle,
         .card-panel-profiles .card-double .card-subtitle {
           max-width: 80%; } }
       @media (min-width: 1712px) {
-        .card-panel-profiles.card-panel-flush .card-double .card-subtitle,
+        .card-panel-profiles.card-panel-flush .card-double .card-subtitle, .card-panel-profiles.card-panel-showcase .card-double .card-subtitle,
         .card-panel-profiles .card-double .card-subtitle {
           max-width: 66%; } }
     @media (min-width: 992px) {
-      .card-panel-profiles.card-panel-flush .card-double,
+      .card-panel-profiles.card-panel-flush .card-double, .card-panel-profiles.card-panel-showcase .card-double,
       .card-panel-profiles .card-double {
         float: left;
         width: 50%;
@@ -11323,6 +11347,100 @@ button.beta-toggler {
     @media (min-width: 992px) {
       .card-panel-profiles .kent-slider {
         clear: none; } }
+
+.card-panel-showcase {
+  background: #333333; }
+  .card-panel-showcase .card-panel-single,
+  .card-panel-showcase .card-panel-grid {
+    width: 100%; }
+  @media (min-width: 544px) {
+    .card-panel-showcase .card-panel-single .card-media-wrap {
+      padding-top: 40%; }
+      .card-panel-showcase .card-panel-single .card-media-wrap img {
+        position: absolute;
+        top: -33.3333333%; }
+        .card-panel-showcase .card-panel-single .card-media-wrap img.card-img-top {
+          top: 0; }
+        .card-panel-showcase .card-panel-single .card-media-wrap img.card-img-bottom {
+          bottom: 0;
+          top: auto; }
+    .card-panel-showcase .card-panel-grid {
+      padding: 0; }
+      .card-panel-showcase .card-panel-grid .card {
+        position: relative;
+        min-height: 1px;
+        padding-right: 0;
+        padding-left: 0;
+        float: left;
+        width: 50%; } }
+    @media (min-width: 544px) and (min-width: 544px) {
+      .card-panel-showcase .card-panel-grid .card {
+        padding-right: 0;
+        padding-left: 0; } }
+    @media (min-width: 544px) and (min-width: 768px) {
+      .card-panel-showcase .card-panel-grid .card {
+        padding-right: 0;
+        padding-left: 0; } }
+    @media (min-width: 544px) and (min-width: 992px) {
+      .card-panel-showcase .card-panel-grid .card {
+        padding-right: 0;
+        padding-left: 0; } }
+    @media (min-width: 544px) and (min-width: 1200px) {
+      .card-panel-showcase .card-panel-grid .card {
+        padding-right: 0;
+        padding-left: 0; } }
+  @media (min-width: 544px) {
+        .card-panel-showcase .card-panel-grid .card:nth-child(odd) {
+          clear: left; } }
+  @media (min-width: 992px) {
+    .card-panel-showcase .card-panel-single,
+    .card-panel-showcase .card-panel-grid {
+      position: relative;
+      min-height: 1px;
+      padding-right: 0;
+      padding-left: 0;
+      float: left;
+      width: 50%; } }
+  @media (min-width: 992px) and (min-width: 544px) {
+    .card-panel-showcase .card-panel-single,
+    .card-panel-showcase .card-panel-grid {
+      padding-right: 0;
+      padding-left: 0; } }
+  @media (min-width: 992px) and (min-width: 768px) {
+    .card-panel-showcase .card-panel-single,
+    .card-panel-showcase .card-panel-grid {
+      padding-right: 0;
+      padding-left: 0; } }
+  @media (min-width: 992px) and (min-width: 992px) {
+    .card-panel-showcase .card-panel-single,
+    .card-panel-showcase .card-panel-grid {
+      padding-right: 0;
+      padding-left: 0; } }
+  @media (min-width: 992px) and (min-width: 1200px) {
+    .card-panel-showcase .card-panel-single,
+    .card-panel-showcase .card-panel-grid {
+      padding-right: 0;
+      padding-left: 0; } }
+  @media (min-width: 992px) {
+    .card-panel-showcase .card-panel-single .card-media-wrap {
+      padding-top: 66.66666%; }
+      .card-panel-showcase .card-panel-single .card-media-wrap img {
+        bottom: auto;
+        top: 0; } }
+  .card-panel-showcase .card .event-meta {
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+  .card-panel-showcase .card .card-title {
+    padding: 80px 16px 0;
+    padding: 5rem 1rem 0;
+    font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  .card-panel-showcase .card.event-card .card-title {
+    padding-left: 80px;
+    padding-left: 5rem; }
+    @media (min-width: 992px) {
+      .card-panel-showcase .card.event-card .card-title {
+        padding-left: 6rem; } }
 
 .card.card-overlay {
   padding-top: 0;

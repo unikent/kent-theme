@@ -1,29 +1,52 @@
 .event-meta {
 	display: block;
-	width: 5rem;
-	min-width:5rem;
-	height: 5rem;
+	width: 4rem;
+	min-width: 4rem;
+	height: 4rem;
 	text-align:center;
 	font-family: $font-family-serif;
 	background: $brand-primary;
 	color: #fff;
-	padding-top:.5rem;
+	padding:.5rem;
 	margin-right:1rem;
+
+	font-size: .9rem;
+	line-height: .9rem;
 
 	span {
 		display: block;
-		font-size: 2rem;
+		font-size: 1.5rem;
 		line-height: 2.2rem;
 	}
 
 	&.event-meta-multi {
-		line-height: 1.3rem;
+		line-height: 1rem;
+	}
+
+	@include media-breakpoint-up(lg){
+		width: 5rem;
+		min-width: 5rem;
+		height: 5rem;
+		line-height: 1rem;
+		font-size: 1.2rem;
+
+		span {
+			font-size: 2.5rem;
+			line-height: 3rem;
+		}
+		&.event-meta-multi {
+			font-size: 1rem;
+			line-height: 1.3rem;
+		}
 	}
 
 	@each $name, $color in $brand-colors-dark {
 	    &.event-meta-#{$name} {
 	    	background: $color;
 	    }
+	}
+	&.event-meta-accent-light{
+		background-color: $brand-accent-light;
 	}
 }
 
@@ -34,7 +57,14 @@
 	align-content: flex-start;
 	margin-bottom: 2rem;
 
-	h1 {
+	h1{
+		margin:0;
+	}
+}
+
+.card.card-overlay.header-card-overlay .card-title-overlap .event-header{
+	margin-bottom: 0;
+	h1:last-child {
 		margin:0;
 	}
 }

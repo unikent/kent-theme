@@ -92,6 +92,9 @@ Class KentThemeHelper {
 		include 'inc/page-feedback.php';
 	}
 
+	public static function attribution($image){
+		include 'inc/attribution.php';
+	}
 
 	protected static function generateMenu($menu){
 		$output = "";
