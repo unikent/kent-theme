@@ -57,7 +57,7 @@ $global_nav_links = array(
 		),
 		array(
 			'title' 		=>	'Community',
-			'description' 	=> 	'Our work to connect with local and regional communities.',
+			'description' 	=> 	'Our work to connect with local, national and regional communities.',
 			'url' 			=>	'/engage/community'
 		),
 		array(
