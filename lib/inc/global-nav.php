@@ -44,7 +44,7 @@ $global_nav_links = array(
 			'url' 			=>	'/courses/international'
 		)
 	),
-	'Engage'=> array(
+	'Discover'=> array(
 		array(
 			'title' 		=>	'What’s on',
 			'description' 	=> 	'Public events: films, theatre, dance, art, lectures, sport and festivals.',
