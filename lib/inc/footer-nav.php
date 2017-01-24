@@ -48,6 +48,14 @@ $footer_config =  array(
 							'url'	=> "https://www.kent.ac.uk/governance/"
 						),
 						array(
+							'title' => "Modern Slavery Act Statement",
+							'url'	=> "https://www.kent.ac.uk/governance/modern-slavery-statement.html"
+						),
+						array(
+							'title' => "Charity information",
+							'url'	=> "https://www.kent.ac.uk/governance/charity.html"
+						),
+						array(
 							'title' => "Locations",
 							'url'	=> "https://www.kent.ac.uk/locations"
 						),
@@ -65,7 +73,7 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Business services",
-							'url'	=> "https://www.kent.ac.uk/business/"
+							'url'	=> "/discover/business-services/"
 						),
 						array(
 							'title' => "Jobs",
