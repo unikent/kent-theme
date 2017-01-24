@@ -163,6 +163,10 @@ $footer_config =  array(
 						array(
 							'title' => "Alumni",
 							'url'	=> "https://www.kent.ac.uk/alumni"
+						),
+						array(
+							'title' => "Business and partners",
+							'url'	=> "/discover/business-services/"
 						)
 					)
 				)
