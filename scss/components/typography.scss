@@ -40,7 +40,7 @@
     list-style: none;
     padding:    0;
     li {
-        
+
         border-bottom: 1px solid $border-gray;
         a {
             padding:       0.5rem 0;
@@ -126,7 +126,7 @@ form{
     font-size:     1.2rem;
     padding-bottom:2rem;
     border-bottom: 1px solid $border-gray;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     // Sometimes 2 paragraphs of lead text are wanted - in this case, p can be put inside of a div.lead
     // to acheave this. In this case, don't add bottom padding to last p, so sizing looks normal
     p:last-child {
@@ -188,7 +188,7 @@ form{
 .content-header {
     .lead {
         padding-top: 1.5rem;
-        padding-bottom: 3rem;
+        padding-bottom: 1.5rem;
     }
 }
 
