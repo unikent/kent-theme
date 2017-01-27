@@ -13,3 +13,4 @@ sandbox/
 /.env
 /public/assets/css/kentfont.min.css
 /public/assets/css/kentfont.min.css.map
+composer.lock
