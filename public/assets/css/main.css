@@ -6761,8 +6761,8 @@ form + .h6 {
   padding-bottom: 32px;
   padding-bottom: 2rem;
   border-bottom: 1px solid #E6E6E6;
-  margin-bottom: 16px;
-  margin-bottom: 1rem; }
+  margin-bottom: 32px;
+  margin-bottom: 2rem; }
   .lead p:last-child {
     margin-bottom: 0; }
 
@@ -6808,8 +6808,8 @@ form + .h6 {
 .content-header .lead {
   padding-top: 24px;
   padding-top: 1.5rem;
-  padding-bottom: 48px;
-  padding-bottom: 3rem; }
+  padding-bottom: 24px;
+  padding-bottom: 1.5rem; }
 
 .content-container > ul {
   list-style: none;
