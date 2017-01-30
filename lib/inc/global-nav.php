@@ -48,22 +48,22 @@ $global_nav_links = array(
 		array(
 			'title' 		=>	'What’s on',
 			'description' 	=> 	'Public events: films, theatre, dance, art, lectures, sport and festivals.',
-			'url' 			=>	'/engage/whats-on'
+			'url' 			=>	'/discover/whats-on'
 		),
 		array(
 			'title' 		=>	'Our locations',
 			'description' 	=> 	'A guide to Canterbury, Medway and our four European centres.',
-			'url' 			=>	'/engage/locations'
+			'url' 			=>	'/discover/locations'
 		),
 		array(
 			'title' 		=>	'Community',
 			'description' 	=> 	'Our work to connect with local, national and international communities.',
-			'url' 			=>	'/engage/community'
+			'url' 			=>	'/discover/community'
 		),
 		array(
 			'title' 		=>	'Business services',
 			'description' 	=> 	'How our expertise and facilities can support your business.',
-			'url' 			=>	'/engage/business-services'
+			'url' 			=>	'/discover/business-services'
 		)
 	)
 );
