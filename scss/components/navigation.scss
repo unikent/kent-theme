@@ -184,24 +184,26 @@
 }
 
 .nav.nav-tabs-vertical {
-
     margin-bottom: 1rem;
+    
     .nav-item {
         float: none;
         border-bottom: 1px solid #DDDDDD;
+        padding: 0.5rem 0;
 
         .nav-link {
-            padding: 0.5rem 0;
+            padding: 0;
             width: 100%;
+            border-bottom: none;
             &.active {
-                margin-left: -0.5rem;
-                padding-left: 0.5rem;
-
-                font-weight:   bold;
-                color: $brand-accent;
-                border-left: 3px solid $brand-accent;
+              margin-left: 0;
+              padding-left: 0.5rem;
+              font-weight:   bold;
+              color: $brand-accent;
+              border-left: 3px solid $brand-accent;
             }
         }
+
     }
 }
 
