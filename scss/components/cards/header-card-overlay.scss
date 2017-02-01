@@ -29,6 +29,21 @@
 				font-family: $font-family-sans-serif;
 				color:       #FFFFFF;
 			}
+			.event-meta {
+				float: left;
+				text-shadow: none;
+				position: relative;
+				top: 0.2rem;
+				& + .card-title {
+					display: block;
+				}
+			}
+
+			@include media-breakpoint-down(xs) {
+				.event-meta {
+					top: 0.3rem;
+				}
+			}
 
 			@include media-breakpoint-up(xxl) {
 
@@ -39,6 +54,14 @@
 
 				.card-text {
 					font-size: 1.5rem;
+				}
+
+				.event-meta {
+					width: 6rem;
+					min-width: 6rem;
+					height: 6rem;
+					font-size:1.6rem;
+					line-height: 1.6rem;
 				}
 			}
 		}
@@ -141,8 +164,8 @@
 		}
 
 		@include media-breakpoint-up(xl) {
-			
-			
+
+
 			padding: 1rem 2rem 0.5rem 2rem;
 			width: calc(#{map_get($container-max-widths,xl)} + 2rem);
 			max-width: calc(#{map_get($container-max-widths,xl)} + 2rem);
