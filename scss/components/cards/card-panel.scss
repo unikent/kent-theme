@@ -657,6 +657,10 @@
                     top:0;
                 }
             }
+            .card-title {
+                padding-left: 6rem;
+                font-size: 1.5rem;
+            }
         }
 
     }
@@ -676,6 +680,27 @@
             padding-left: 5rem;
             @include media-breakpoint-up(lg){
                 padding-left: 6rem;
+                font-size: 1.5rem;
+            }
+        }
+        .back {
+            padding: 1.5rem;
+            a {
+                color: $brand-accent-light;
+                &::after {
+                    padding-left: 0.5rem;
+                    font-family: "kentfont", sans-serif;
+                    content: "\f054";
+                    color: $brand-accent;
+                }
+            }
+            @include media-breakpoint-up(lg){
+                .card-text {
+                    font-size: 1.3rem;
+                }
+                a {
+                    font-size: 1.3rem;
+                }
             }
         }
     }
