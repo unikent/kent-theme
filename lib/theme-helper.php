@@ -8,6 +8,7 @@ Class KentThemeHelper {
 
 	private static $theme_web_root = false;
 
+
 	public static function header($config = array()){
 
 		$defaults = array(
@@ -26,9 +27,8 @@ Class KentThemeHelper {
 
 		extract($config);
 
-
+        define("DEBUG","true");
 		$minify = defined("DEBUG") && ("true" == DEBUG) ? "" : ".min";
-
 
 		$meta = array_merge(array('title'=>$title,
 								'thumb'=>'https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif'
@@ -121,6 +121,11 @@ Class KentThemeHelper {
 			
 		}
 		return $output;
+	}
+
+	public static function generateYoutubeVideo($id)
+	{
+		return '<div class="video-launcher mb-2"><div class="video-player"><div data-video-id="$id" data-type="youtube"></div></div><img src="https://img.youtube.com/vi/$id/maxresdefault.jpg"></div>';
 	}
 
 	public static function getThemeWebRoot(){
