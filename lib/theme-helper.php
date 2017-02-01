@@ -27,7 +27,6 @@ Class KentThemeHelper {
 
 		extract($config);
 
-        define("DEBUG","true");
 		$minify = defined("DEBUG") && ("true" == DEBUG) ? "" : ".min";
 
 		$meta = array_merge(array('title'=>$title,
@@ -122,12 +121,7 @@ Class KentThemeHelper {
 		}
 		return $output;
 	}
-
-	public static function generateYoutubeVideo($id)
-	{
-		return '<div class="video-launcher mb-2"><div class="video-player"><div data-video-id="$id" data-type="youtube"></div></div><img src="https://img.youtube.com/vi/$id/maxresdefault.jpg"></div>';
-	}
-
+	
 	public static function getThemeWebRoot(){
 		// If constant was provided
 		if(defined("WEBROOT")){
