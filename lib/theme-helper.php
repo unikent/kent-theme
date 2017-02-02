@@ -8,6 +8,7 @@ Class KentThemeHelper {
 
 	private static $theme_web_root = false;
 
+
 	public static function header($config = array()){
 
 		$defaults = array(
@@ -26,9 +27,7 @@ Class KentThemeHelper {
 
 		extract($config);
 
-
 		$minify = defined("DEBUG") && ("true" == DEBUG) ? "" : ".min";
-
 
 		$meta = array_merge(array('title'=>$title,
 								'thumb'=>'https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif'
@@ -122,7 +121,7 @@ Class KentThemeHelper {
 		}
 		return $output;
 	}
-
+	
 	public static function getThemeWebRoot(){
 		// If constant was provided
 		if(defined("WEBROOT")){
