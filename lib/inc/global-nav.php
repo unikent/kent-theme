@@ -48,7 +48,7 @@ $global_nav_links = array(
 		array(
 			'title' 		=>	'What’s on',
 			'description' 	=> 	'Public events: films, theatre, dance, art, lectures, sport and festivals.',
-			'url' 			=>	'/discover/whats-on'
+			'url' 			=>	'/events/'
 		),
 		array(
 			'title' 		=>	'Our locations',
