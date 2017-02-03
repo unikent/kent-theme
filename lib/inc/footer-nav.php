@@ -65,7 +65,7 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "What's on",
-							'url'	=> HOME_URL . "/discover/whats-on/"
+							'url'	=> HOME_URL . "/events"
 						),
 						array(
 							'title' => "News",
