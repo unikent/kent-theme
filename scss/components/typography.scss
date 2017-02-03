@@ -47,10 +47,9 @@
             vertical-align: middle;
             overflow:       hidden;
             width:          100%;
-
+            border-bottom: none;
             &:hover {
                 text-decoration: underline;
-                border-bottom: 1px solid $border-gray;
             }
             &.active {
                 font-weight: bold;
