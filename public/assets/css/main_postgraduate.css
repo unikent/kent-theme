@@ -7574,6 +7574,39 @@ figure .video-launcher[data-mode='inline'] > .video-player {
       .event-meta.event-meta-multi {
         font-size: 1rem;
         line-height: 1.3rem; } }
+  .event-meta .event-daterange-month {
+    font-size: 17.6px;
+    font-size: 1.1rem;
+    line-height: 28.8px;
+    line-height: 1.8rem; }
+  .event-meta .event-daterange-dates {
+    font-size: 17.6px;
+    font-size: 1.1rem;
+    line-height: 32px;
+    line-height: 2rem; }
+  .event-meta .event-daterange-date {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 22.4px;
+    line-height: 1.4rem; }
+  .event-meta .event-daterange-dash {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 16px;
+    line-height: 1rem; }
+  @media (max-width: 767px) {
+    .event-meta .event-daterange-month {
+      font-size: 0.9rem;
+      line-height: 1.5rem; }
+    .event-meta .event-daterange-dates {
+      font-size: 0.9rem;
+      line-height: 1.5rem; }
+    .event-meta .event-daterange-date {
+      font-size: 0.9rem;
+      line-height: 0.9rem; }
+    .event-meta .event-daterange-dash {
+      font-size: 1rem;
+      line-height: 1rem; } }
   .event-meta.event-meta-primary {
     background: #671115; }
   .event-meta.event-meta-primary-light {

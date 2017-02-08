@@ -1,4 +1,6 @@
 .event-meta {
+
+
 	display: block;
 	width: 4rem;
 	min-width: 4rem;
@@ -40,6 +42,40 @@
 		}
 	}
 
+
+	.event-daterange-month {
+		font-size:1.1rem;
+		line-height:1.8rem;
+	}
+	.event-daterange-dates {
+		font-size:1.1rem;
+		line-height:2rem;
+	}
+	.event-daterange-date {
+		font-size:1rem;
+		line-height:1.4rem;
+	}
+	.event-daterange-dash {
+		font-size:1rem;
+		line-height:1rem;
+	}
+
+
+	@include media-breakpoint-down(sm){
+		.event-daterange-month {
+			font-size:0.9rem;line-height:1.5rem;
+		}
+		.event-daterange-dates {
+			font-size:0.9rem;line-height:1.5rem;
+		}
+		.event-daterange-date {
+			font-size:0.9rem;line-height:0.9rem;
+		}
+		.event-daterange-dash {
+			font-size:1rem;line-height:1rem;
+		}
+	}
+
 	@each $name, $color in $brand-colors-dark {
 	    &.event-meta-#{$name} {
 	    	background: $color;
@@ -48,6 +84,7 @@
 	&.event-meta-accent-light{
 		background-color: $brand-accent-light;
 	}
+
 }
 
 .event-header {
