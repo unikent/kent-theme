@@ -43,9 +43,9 @@
                 font-size:   2rem;
                 line-height: 2rem;
                 line-height: calc(2rem); // IE11 workaround
-
                 content:     $kf-angle-right;
                 font-family: $font-family-kentfont;
+                z-index: -1;
             }
         }
 
@@ -281,8 +281,8 @@
 
             &.content-contained {
 
-                @include media-breakpoint-up(md){ 
-                    left: calc(12% - 15px); 
+                @include media-breakpoint-up(md){
+                    left: calc(12% - 15px);
                 }
                 @include media-breakpoint-up(lg){
                    left: 5%;
@@ -297,8 +297,8 @@
                 &.pull-right {
                     left:auto;
 
-                    @include media-breakpoint-up(md){ 
-                        right: calc(12% + 15px); 
+                    @include media-breakpoint-up(md){
+                        right: calc(12% + 15px);
                     }
                     @include media-breakpoint-up(lg){
                         right: calc(5% + 45px); // 15px right + 15px padd
