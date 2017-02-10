@@ -19,6 +19,7 @@
             color:       $brand-primary;
             font-size:   0.35rem;
             left:        0;
+            top: 0.2rem;
             position:    absolute;
             padding-top: 0.45rem;
         }
@@ -179,6 +180,10 @@ form{
         h2 {
             margin-top: 1.5rem;
         }
+        & > ul {
+            @include bullet-list();
+            padding-left: 2rem;
+        }
       }
 }
 
@@ -191,12 +196,6 @@ form{
 }
 
 .content-container {
-
-    & > ul {
-        @include bullet-list();
-        padding-left: 2rem;
-    }
-
     p,
     td,
     li{
