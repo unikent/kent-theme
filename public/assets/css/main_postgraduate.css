@@ -1736,9 +1736,6 @@ pre {
   .form-control::-webkit-input-placeholder, .card-panel .card-panel-header .card-panel-filter select::-webkit-input-placeholder, .card-panel .card-panel-header .card-panel-filter input::-webkit-input-placeholder {
     color: #999;
     opacity: 1; }
-  .form-control::-moz-placeholder, .card-panel .card-panel-header .card-panel-filter select::-moz-placeholder, .card-panel .card-panel-header .card-panel-filter input::-moz-placeholder {
-    color: #999;
-    opacity: 1; }
   .form-control:-ms-input-placeholder, .card-panel .card-panel-header .card-panel-filter select:-ms-input-placeholder, .card-panel .card-panel-header .card-panel-filter input:-ms-input-placeholder {
     color: #999;
     opacity: 1; }
@@ -3753,10 +3750,8 @@ tbody.collapse.in {
 
 @media (min-width: 544px) {
   .card-columns {
-    -moz-column-count: 3;
-         column-count: 3;
-    -moz-column-gap: 1.25rem;
-         column-gap: 1.25rem; }
+    column-count: 3;
+    column-gap: 1.25rem; }
     .card-columns .card {
       display: inline-block;
       width: 100%; } }
@@ -8959,13 +8954,10 @@ input[type=number]::-webkit-outer-spin-button {
   margin-bottom: 2rem; }
   @media (min-width: 768px) {
     .jump-links {
-      -moz-column-count: 2;
-           column-count: 2;
-      -moz-column-gap: 2rem;
-           column-gap: 2rem; } }
+      column-count: 2;
+      column-gap: 2rem; } }
   .jump-links p {
-    -moz-column-span: all;
-         column-span: all; }
+    column-span: all; }
   .jump-links a {
     display: block; }
     .jump-links a:before {
@@ -9128,7 +9120,8 @@ input[type=number]::-webkit-outer-spin-button {
         position: absolute;
         top: .3rem;
         left: 2rem;
-        padding: 0; }
+        padding: 0;
+        color: #ffffff; }
       #kentBar.kent-bar.in .audience-nav-links,
       #kentBar.audience-bar.in .audience-nav-links {
         height: auto; } }

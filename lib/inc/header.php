@@ -106,7 +106,20 @@
 		<?php } ?>
 		<header class="global-header" role="navigation">
 			<section id="kentBar" class="audience-bar navbar" role="menubar">
-				<a class="navbar-brand kf-kent-horizontal" href="<?php echo HOME_URL; ?>" title="The University of Kent" ><span class="sr-only">The University of Kent</span></a><span class="tag-line">The UK's European university</span><button class="menu-button" aria-controls="global-nav-menu" aria-expanded="false"><span class="sr-only">Open main menu</span></button><button class="search-button" aria-controls="global-nav-search" aria-expanded="false"><span class="sr-only">Open search</span></button><button class="audience-menu kf-user"><span class="sr-only">Open audience menu</span></button><nav class="audience-nav-links" role="menu">
+				<a class="navbar-brand kf-kent-horizontal" href="<?php echo HOME_URL; ?>" title="The University of Kent" >
+					<span class="sr-only">The University of Kent</span>
+				</a>
+				<a class="tag-line" href="<?php echo HOME_URL; ?>">The UK's European university</a>
+				<button class="menu-button" aria-controls="global-nav-menu" aria-expanded="false">
+					<span class="sr-only">Open main menu</span>
+				</button>
+				<button class="search-button" aria-controls="global-nav-search" aria-expanded="false">
+					<span class="sr-only">Open search</span>
+				</button>
+				<button class="audience-menu kf-user">
+					<span class="sr-only">Open audience menu</span>
+				</button>
+				<nav class="audience-nav-links" role="menu">
 					<a href="#" data-action="student" role="menuitem">Student</a>
 					<a href="#" data-action="staff" role="menuitem">Staff</a>
 					<a href="//www.kent.ac.uk/alumni/" role="menuitem">Alumni</a>
