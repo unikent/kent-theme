@@ -187,6 +187,11 @@ form{
     .lead {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
+        @include media-breakpoint-down(sm) {
+            .lead {
+                padding-top: 0;
+            }
+        }
     }
 }
 
