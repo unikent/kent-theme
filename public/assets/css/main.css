@@ -1736,6 +1736,9 @@ pre {
   .form-control::-webkit-input-placeholder, .card-panel .card-panel-header .card-panel-filter select::-webkit-input-placeholder, .card-panel .card-panel-header .card-panel-filter input::-webkit-input-placeholder {
     color: #999;
     opacity: 1; }
+  .form-control::-moz-placeholder, .card-panel .card-panel-header .card-panel-filter select::-moz-placeholder, .card-panel .card-panel-header .card-panel-filter input::-moz-placeholder {
+    color: #999;
+    opacity: 1; }
   .form-control:-ms-input-placeholder, .card-panel .card-panel-header .card-panel-filter select:-ms-input-placeholder, .card-panel .card-panel-header .card-panel-filter input:-ms-input-placeholder {
     color: #999;
     opacity: 1; }
@@ -3750,8 +3753,10 @@ tbody.collapse.in {
 
 @media (min-width: 544px) {
   .card-columns {
-    column-count: 3;
-    column-gap: 1.25rem; }
+    -moz-column-count: 3;
+         column-count: 3;
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem; }
     .card-columns .card {
       display: inline-block;
       width: 100%; } }
@@ -8954,10 +8959,13 @@ input[type=number]::-webkit-outer-spin-button {
   margin-bottom: 2rem; }
   @media (min-width: 768px) {
     .jump-links {
-      column-count: 2;
-      column-gap: 2rem; } }
+      -moz-column-count: 2;
+           column-count: 2;
+      -moz-column-gap: 2rem;
+           column-gap: 2rem; } }
   .jump-links p {
-    column-span: all; }
+    -moz-column-span: all;
+         column-span: all; }
   .jump-links a {
     display: block; }
     .jump-links a:before {
@@ -11557,7 +11565,8 @@ button.beta-toggler {
         line-height: 2rem;
         line-height: calc(2rem);
         content: "";
-        font-family: "kentfont", sans-serif; }
+        font-family: "kentfont", sans-serif;
+        z-index: -1; }
     .card.card-overlay .card-title-wrap .card-title,
     .card.card-overlay .force-block.force-block.force-block.card-title-wrap .card-title {
       font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
