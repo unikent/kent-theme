@@ -57,7 +57,7 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Locations",
-							'url'	=> "https://www.kent.ac.uk/locations"
+							'url'	=> HOME_URL . "/discover/locations/"
 						),
 						array(
 							'title' => "Support us",
@@ -65,7 +65,7 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "What's on",
-							'url'	=> "https://www.kent.ac.uk/events"
+							'url'	=> HOME_URL . "/events"
 						),
 						array(
 							'title' => "News",
@@ -73,7 +73,7 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Business services",
-							'url'	=> "/discover/business-services/"
+							'url'	=> HOME_URL . "/discover/business-services/"
 						),
 						array(
 							'title' => "Jobs",
@@ -166,7 +166,7 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Business and partners",
-							'url'	=> "/discover/business-services/"
+							'url'	=> HOME_URL . "/discover/business-services/"
 						)
 					)
 				)
@@ -193,7 +193,7 @@ $footer_config =  array(
 		),
 		array(
 			'title' => "Feedback",
-			'url'	=> "https://www.kent.ac.uk/contact"
+			'url'	=> "https://www.kent.ac.uk/feedback.html"
 		),
 		array(
 			'title' => "Legal",

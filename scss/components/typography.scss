@@ -1,7 +1,6 @@
 @mixin underlined-links{
     a {
         border-bottom: 1px solid #CCCCCC;
-
         &:hover, &:focus {
             border-bottom: 1px solid $link-hover-color;
         }
@@ -48,10 +47,9 @@
             vertical-align: middle;
             overflow:       hidden;
             width:          100%;
-
+            border-bottom: none;
             &:hover {
                 text-decoration: underline;
-                border-bottom: 1px solid $border-gray;
             }
             &.active {
                 font-weight: bold;
@@ -217,7 +215,7 @@ form{
         }
     }
 
-    @include media-breakpoint-up(md) {
+    @include media-breakpoint-up(lg) {
         p {
             width: 80%;
             display: inline-block;
@@ -225,7 +223,7 @@ form{
         }
 
         svg {
-            margin-left: 1.5rem;
+            margin-left: 0.5rem;
             rect {
                 transform: rotate(25deg)
             }
