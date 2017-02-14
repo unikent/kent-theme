@@ -84,7 +84,7 @@
 
 		<?php echo $head_markup ;?>
 	</head>
-	<body class="<?php echo !empty($home_page) ? ' global-header-transparent"' :'' ; ?><?php echo ($slim)?' slim-header':''; ?>">
+	<body class="<?php echo !empty($home_page) ? ' global-header global-header-transparent"' :'global-header global-header-standard' ; ?><?php echo ($slim)?' slim-header':''; ?>">
 		<?php if(!$home_page){ ?>
 		<a href="#section_menu" class="sr-only">Jump to section menu</a>
 		<?php } ?>
