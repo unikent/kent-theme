@@ -1,5 +1,15 @@
 .card.card-overlay {
 
+    .card-img-overlay-bottom,
+    .card-img-overlay-bottom-shaded{
+
+		.chevron-link{
+			&:after{
+			  color: #FFF;
+			}
+		}
+    }
+
     .card-img-bottom {
         width: 100%;
     }
@@ -43,9 +53,9 @@
                 font-size:   2rem;
                 line-height: 2rem;
                 line-height: calc(2rem); // IE11 workaround
+
                 content:     $kf-angle-right;
                 font-family: $font-family-kentfont;
-                z-index: -1;
             }
         }
 
