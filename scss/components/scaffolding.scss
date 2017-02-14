@@ -7,10 +7,6 @@ main {
     & > article{
         &:first-child {
             margin-top: 2rem;
-            
-            @include media-breakpoint-up(md) {
-                margin-top: 3rem;
-            }
         }
     }
 
@@ -25,6 +21,16 @@ main {
         }
     }
 
+}
+
+// for the search results page
+.panel-secondary > .content-container {
+    padding-top: 3rem;
+}
+@include media-breakpoint-down(sm) {
+    .panel-secondary > .content-container {
+        padding-top: 1rem;
+    }
 }
 
 
