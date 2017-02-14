@@ -75,20 +75,28 @@ window.KENT.kat = {
 
 // Download tracker
 (function() {
-	var whitelist = ['html','htm','php','asp','aspx', 'shtml', 'cgi', 'login', 'jsp'];
-	$("a").click(function(){
+	var whitelist = ['html', 'htm', 'php', 'asp', 'aspx', 'shtml', 'cgi', 'login', 'jsp'];
+	$('a').click(function() {
 		var link = $(this)[0];
-		// Ignore js links
-		if(link.protocol === 'javascript:' || link.protocol === 'mailto:') return;
+
+		// Ignore js & mailto links - Eslint thinks i'm doing bad things with the "javascript:" 
+		// so this bit needs to be ignored for linting
+
+		/*eslint-disable */
+		if (link.protocol === 'javascript:' || link.protocol === 'mailto:') {
+			return;
+		}
+		/*eslint-enable */
+
 		// Get link path
 		var path = link.pathname;
 		// If file has an extension & its not white-listed, track download to PAT
-		if(path.split('/').pop().indexOf('.') !== -1){
+		if (path.split('/').pop().indexOf('.') !== -1) {
 			var ext = path.split('.').pop();
-			if($.inArray(ext, whitelist) === -1){
+			if ($.inArray(ext, whitelist) === -1) {
 				// cat:download, action:filetype, label:file
 				window.KENT.kat('download', ext.toLowerCase(), link.host + '/' + path);
-			}	
+			}
 		}
 	});
 })();

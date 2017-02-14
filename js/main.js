@@ -28701,7 +28701,13 @@ if(typeof target==='undefined'){target=window.location.href;}for(var t in tracke
 var trackers=this.trackers();// if value is set, check its a number, if not set to 1
 if(typeof value!=='undefined'){value=isNaN(parseInt(value,10))?1:parseInt(value,10);}for(var t in trackers){try{trackers[t].send('event',category,action,label,value);}catch(err){/* Fail silently */}}window.KENT.log('[Analytics] Event',category,action,label,value);return true;},/**
 	 * Get trackers
-	 */trackers:function trackers(){return typeof window.ga.getAll!=='undefined'?window.ga.getAll():[];}};/**
+	 */trackers:function trackers(){return typeof window.ga.getAll!=='undefined'?window.ga.getAll():[];}};// Download tracker
+(function(){var whitelist=['html','htm','php','asp','aspx','shtml','cgi','login','jsp'];$('a').click(function(){var link=$(this)[0];// Ignore js links - Eslint thinks i'm doing bad things with the "javascript:" so this bit needs
+// to be ignored for linting
+/*eslint-disable */if(link.protocol==='javascript:'||link.protocol==='mailto:'){return;}/*eslint-enable */// Get link path
+var path=link.pathname;// If file has an extension & its not white-listed, track download to PAT
+if(path.split('/').pop().indexOf('.')!==-1){var ext=path.split('.').pop();if($.inArray(ext,whitelist)===-1){// cat:download, action:filetype, label:file
+window.KENT.kat('download',ext.toLowerCase(),link.host+'/'+path);}}});})();/**
  * Responsive helper
  *
  * Triggers events on resize and breakpoint changes
