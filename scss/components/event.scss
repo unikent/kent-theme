@@ -60,6 +60,10 @@
 		line-height:1rem;
 	}
 
+	& + .card-subtitle {
+		padding: 0;
+	}
+
 
 	@include media-breakpoint-down(sm){
 		.event-daterange-month {
@@ -83,6 +87,7 @@
 	}
 	&.event-meta-accent-light{
 		background-color: $brand-accent-light;
+		float: left;
 	}
 
 }
