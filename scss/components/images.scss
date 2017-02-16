@@ -285,65 +285,37 @@ figure figcaption,
 
 .attribution {
     background-color: rgba(0, 0, 0, 0.6);
-    color:            #FFFFFF;
-    position:         absolute;
-    display:          inline-block;
-    font-size:        0.75rem;
-    padding:          0.3rem 0.75rem;
-    max-height:       2rem;
-    cursor:           pointer;
-    bottom:           0;
-    right:            0;
-    line-height:      1.5rem;
-    min-width:        2.5rem;
-    transition:       all 300ms;
-    z-index: 9;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 0.8em;
+    padding: 0.4em 0.75em 0.1em 0.75em;
+    height: 30px;
+    cursor: pointer;
 
-    &:before {
-        content:    " ";
-        display:    block;
-        float:      right;
-        width:      1rem;
-        height:     1rem;
-        transition: width 500ms;
-    }
-
-    i,
-    em{
-        font-size:   1rem;
-        line-height: 1rem;
-        position:    absolute;
-        top:         0.4rem;
-        right:        0.75rem;
-        font-style: normal;
+    i {
+        font-size: 1.2em;
+        float: left;
+        margin-top: 2px;
+        display: inline-block;
     }
 
     span {
-        transition: max-height 150ms, max-width 150ms 150ms;
-
-        display:    block;
-        max-width:  0;
-        overflow:   hidden;
-        box-sizing: border-box;
-        max-height: 2rem;
-        a {
-            color: #FFFFFF;
-            &:hover {
-                text-decoration: underline;
-            }
+        transition: max-width 500ms;
+        display: block;
+        max-width: 0;
+        max-height: 30px;
+        overflow: hidden;
+        &::before {
+            content: "\00a0\00a0";
         }
     }
 
     &.in {
-        &:before {
-            width:      1.75rem;
-            transition: width 50ms;
-        }
-        max-height: 100vh;
         span {
-            transition: max-width 300ms, max-height 150ms 150ms;
-            max-height: 100vh;
-            max-width:  100vw;
+            max-width: 3000px;
+            max-height: 30px;
         }
     }
 
