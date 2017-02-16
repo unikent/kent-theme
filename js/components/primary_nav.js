@@ -45,7 +45,7 @@
 		} else {
 			//  if not, tell item its expanded & toggle it all open
 			var menu = $(this).attr('aria-expanded', 'true').parent().toggleClass('in');
-			menu.find('.global-nav-link-submenu').css('zIndex', 1).css('height', 'auto');
+			menu.find('.global-nav-link-submenu').css('zIndex', 2).css('height', 'auto');
 			menu.parent().addClass('in');
 		}
 	});

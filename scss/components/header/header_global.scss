@@ -294,7 +294,7 @@
                 }
                 @include media-breakpoint-up(md) {
                     background-color: $brand-primary;
-                    
+
                     a {
                         color: #fff;
                     }
@@ -515,14 +515,11 @@ body {
     }
 }
 
-/* Home page variant */
-
-.global-header-transparent {
+/* global header */
+.global-header {
     @include media-breakpoint-up(md) {
 
         .global-nav {
-            background: transparent;
-
             .main-logo {
                 color:       #FFFFFF;
                 text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8);
@@ -533,7 +530,6 @@ body {
                 height: $global-nav-height - 1.6;
 
                 .global-nav-link {
-                    background: transparent;
 
                     & > a {
                         color:       #FFFFFF;
@@ -559,6 +555,33 @@ body {
     &.show-global-search {
         .global-nav-search.in {
             min-height: 6rem;
+        }
+    }
+}
+
+/* Home page variant */
+.global-header-transparent {
+    @include media-breakpoint-up(md) {
+        .global-nav {
+            background: transparent;
+        }
+        .global-nav-links {
+            .global-nav-link {
+                background: transparent;
+            }
+        }
+    }
+}
+
+/* standard page variant */
+.global-header-standard {
+    @include media-breakpoint-up(md) {
+        .global-nav {
+            background: $kent-primary;
+        }
+        .global-nav-link-submenu {
+            z-index: 2;
+            height: 150px;
         }
     }
 }
