@@ -79,7 +79,7 @@ window.KENT.kat = {
 	$('a').click(function() {
 		var link = $(this)[0];
 
-		// Ignore js & mailto links - Eslint thinks i'm doing bad things with the "javascript:" 
+		// Ignore js & mailto links - Eslint thinks i'm doing bad things with the "javascript:"
 		// so this bit needs to be ignored for linting
 
 		/*eslint-disable */
