@@ -7,10 +7,6 @@ main {
     & > article{
         &:first-child {
             margin-top: 2rem;
-            
-            @include media-breakpoint-up(md) {
-                margin-top: 3rem;
-            }
         }
     }
 
@@ -21,10 +17,25 @@ main {
     & > .content-body,
     & > article{
         &:last-child {
-            margin-bottom: 3rem;
+            margin-bottom: 5rem;
         }
     }
 
+}
+
+// for the search results page
+.panel-secondary {
+    & > .content-container {
+        padding-top: 2rem;
+    }
+    & > .content-aside {
+        padding-top: 0.3rem;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .panel-secondary > .content-container {
+        padding-top: 0.5rem;
+    }
 }
 
 
