@@ -258,3 +258,14 @@ form{
 @each $name, $color in $brand-colors {
     @include text-emphasis-variant('.text-#{$name}', $color);
 }
+
+sub, sup {
+    font-size: 40%;
+    left: 0.1rem;
+}
+sub {
+    bottom: 0;
+}
+sup {
+    top: -0.9rem;
+}
