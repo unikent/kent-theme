@@ -35,7 +35,7 @@ $global_nav_links = array(
 		),
 		array(
 			'title' 		=>	'Postgraduate',
-			'description' 	=> 	'Masters and PhDs within in a world-leading research environment.',
+			'description' 	=> 	'Master’s and PhDs within a world-leading research environment.',
 			'url' 			=>	"/courses/postgraduate"
 		),
 		array(
