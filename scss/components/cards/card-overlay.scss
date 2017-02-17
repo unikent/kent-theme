@@ -26,6 +26,7 @@
         color:            #FFFFFF;
         transition:       background-color 300ms, opacity 600ms;
         text-shadow: none;
+        z-index:  1;
 
         &.pull-right {
             float: none;
@@ -273,7 +274,6 @@
             left:     5%;
             top:      -($card-overlay-amount);
             bottom: auto;
-            z-index:  1;
 
             &.pull-bottom {
                 top: auto;
