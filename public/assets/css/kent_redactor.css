@@ -70,7 +70,7 @@ body .kf.pull-right {
 
 .redactor-dropdown-box-format .redactor-dropdown-blockquote,
 .redactor-dropdown-box-format .redactor-dropdown-pullquote {
-  font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
+  font-family: "Century Schoolbook", "Times New Roman", Times, serif;
   font-size: 20.256px;
   font-style: italic;
   color: #05345C; }
@@ -87,7 +87,7 @@ body .kf.pull-right {
   color: #171717; }
 
 .redactor-dropdown-box-format .redactor-dropdown-impact {
-  font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
+  font-family: "Century Schoolbook", "Times New Roman", Times, serif;
   font-size: 19px;
   color: #937227; }
 
@@ -133,14 +133,14 @@ body .kf.pull-right {
     color: #05345C; }
   .redactor-editor p.impact-statement {
     font-size: 28.8px;
-    font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
+    font-family: "Century Schoolbook", "Times New Roman", Times, serif;
     text-align: center;
     padding: 48px 0;
     padding: 3rem 0;
     color: #937227; }
   .redactor-editor blockquote.simple {
     padding: 16px;
-    font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
+    font-family: "Century Schoolbook", "Times New Roman", Times, serif;
     font-size: 20.8px;
     font-style: italic;
     color: #05345C;
