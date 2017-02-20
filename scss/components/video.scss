@@ -88,13 +88,10 @@
     font-size: 2rem;
     z-index: 999999;
     display: block;
-}
-.plyr--fullscreen-enabled{
-    .fs-toggle {
-        display: none;
-    }
+    font-family: ArialLight, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 4rem;
 }
 
 figure .video-launcher[data-mode='inline'] > .video-player {
-	transition: none; 
+	transition: none;
 }

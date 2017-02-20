@@ -129,7 +129,7 @@ $(document).ready(function(){
 				window.TESTP = this.plyr;
 				var wrap  = this.video.find('.plyr__video-wrapper');
 				if (wrap.length > 0 && wrap.find('.fs-toggle').length === 0 ){
-					wrap.prepend('<span class="kf-close fs-toggle"></span>');
+					wrap.prepend('<button class="fs-toggle" aria-label="close video">&times;</button>');
 					wrap.find('.fs-toggle').click(() => {this.hide();});
 				}
 
