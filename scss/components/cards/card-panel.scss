@@ -642,29 +642,6 @@
         }
     }
 
-    @include media-breakpoint-up(lg) {
-
-        .card-panel-single,
-        .card-panel-grid{
-            @include make-col-ready($showcase-gutter-widths);
-            @include make-col(6);
-        }
-        .card-panel-single{
-            .card-media-wrap{
-                padding-top: 66.66666%;
-                img{
-                    bottom: auto;
-                    top:0;
-                }
-            }
-            .card-title {
-                padding-left: 6rem;
-                font-size: 1.5rem;
-            }
-        }
-
-    }
-
     .card{
         .event-meta{
             position: absolute;
@@ -672,21 +649,25 @@
             left:0;
         }
         .card-title{
-            padding: 5rem 1rem 0;
+            padding: 0 1rem 0 1rem;
             font-family: $font-family-base;
+            font-size: 1.1rem;
+            @include media-breakpoint-up(xxl){
+                font-size: 1.3rem;
+            }
         }
 
         &.event-card .card-title{
-            padding-left: 5rem;
-            @include media-breakpoint-up(lg){
-                padding-left: 6rem;
-                font-size: 1.5rem;
-            }
+            padding: 0 0 0 5rem;
         }
         .back {
-            padding: 1.5rem;
+            padding: 2rem;
+            .card-text {
+                font-size: 0.8rem;
+            }
             a {
                 color: $brand-accent-light;
+                font-size: 0.8rem;
                 &::after {
                     padding-left: 0.5rem;
                     font-family: "kentfont", sans-serif;
@@ -694,7 +675,8 @@
                     color: $brand-accent;
                 }
             }
-            @include media-breakpoint-up(lg){
+
+            @include media-breakpoint-up(xxl){
                 .card-text {
                     font-size: 1.3rem;
                 }
@@ -704,5 +686,41 @@
             }
         }
     }
+
+
+    @include media-breakpoint-up(lg) {
+
+        .card-panel-single,
+        .card-panel-grid{
+            @include make-col-ready($showcase-gutter-widths);
+            @include make-col(6);
+        }
+        .card-panel-single{
+            .back {
+                padding: 3rem;
+            }
+            .card-media-wrap{
+                padding-top: 66.66666%;
+                img{
+                    bottom: auto;
+                    top:0;
+                }
+            }
+            .card-title {
+                padding: 0 1.5rem 1.5rem 1.5rem;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    @include media-breakpoint-up(xxl) {
+        .card-panel-single{
+            .card-title {
+                font-size: 2rem;
+            }
+        }
+
+    }
+
 
 }
