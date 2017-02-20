@@ -577,7 +577,7 @@ body {
 .global-header-standard {
     @include media-breakpoint-up(md) {
         .global-nav {
-            background: $kent-primary;
+            background: $brand-primary;
         }
         .global-nav-link-submenu {
             z-index: 2;
