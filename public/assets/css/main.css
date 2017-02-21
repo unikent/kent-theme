@@ -10353,7 +10353,7 @@ button.beta-toggler {
       z-index: 0; }
   .card .card-footer {
     background: transparent; }
-  .card .card-title, .card .card-title-link {
+  .card .card-title {
     font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
     font-weight: normal;
     color: #05345C;
@@ -10362,16 +10362,16 @@ button.beta-toggler {
     margin-top: 16px;
     margin-top: 1rem;
     display: inline-block; }
-    .card .card-title.card-title-figure, .card .card-title-link.card-title-figure {
+    .card .card-title.card-title-figure {
       margin-top: 16px;
       margin-top: 1rem;
       font-size: 56px;
       font-size: 3.5rem;
       font-family: "Century Schoolbook", "Times New Roman", Times, serif;
       text-transform: uppercase; }
-      .card .card-title.card-title-figure sup, .card .card-title.card-title-figure sub, .card .card-title-link.card-title-figure sup, .card .card-title-link.card-title-figure sub {
+      .card .card-title.card-title-figure sup, .card .card-title.card-title-figure sub {
         font-size: 50%; }
-      .card .card-title.card-title-figure sup, .card .card-title-link.card-title-figure sup {
+      .card .card-title.card-title-figure sup {
         top: -19.2px;
         top: -1.2rem; }
   .card .card-title-link,
@@ -11536,13 +11536,6 @@ button.beta-toggler {
   padding-top: 0;
   padding-bottom: 0;
   margin: 0; }
-  .card.card-overlay .card-img-overlay-bottom .chevron-link:after, .card.card-overlay .card-img-overlay-bottom-shaded .chevron-link:after, .card.card-overlay .card-img-overlay-bottom .inline-links a:after, .inline-links .card.card-overlay .card-img-overlay-bottom a:after, .card.card-overlay .card-img-overlay-bottom-shaded .inline-links a:after, .inline-links .card.card-overlay .card-img-overlay-bottom-shaded a:after, .card.card-overlay .card-img-overlay-bottom nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-img-overlay-bottom a:after, .card.card-overlay .card-img-overlay-bottom-shaded nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay .card-img-overlay-bottom-shaded a:after, .card.card-overlay .card-img-overlay-bottom .card-img-overlay-link .card-subtitle:after, .card.card-overlay .card-img-overlay-link .card-img-overlay-bottom .card-subtitle:after, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-link .card-subtitle:after, .card.card-overlay .card-img-overlay-link .card-img-overlay-bottom-shaded .card-subtitle:after, .card-panel-profiles .card.card-overlay .card-img-overlay-bottom .back a:after, .card-panel-profiles .card.card-overlay .back .card-img-overlay-bottom a:after, .card-panel-profiles .card.card-overlay .card-img-overlay-bottom-shaded .back a:after, .card-panel-profiles .card.card-overlay .back .card-img-overlay-bottom-shaded a:after,
-  .card.card-overlay .card-img-overlay-bottom-shaded .chevron-link:after,
-  .card.card-overlay .card-img-overlay-bottom-shaded .inline-links a:after, .inline-links
-  .card.card-overlay .card-img-overlay-bottom-shaded a:after,
-  .card.card-overlay .card-img-overlay-bottom-shaded nav.breadcrumb a:after, nav.breadcrumb
-  .card.card-overlay .card-img-overlay-bottom-shaded a:after, .card.card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-link .card-subtitle:after, .card.card-overlay .card-img-overlay-link .card-img-overlay-bottom-shaded .card-subtitle:after, .card-panel-profiles .card.card-overlay .card-img-overlay-bottom-shaded .back a:after, .card-panel-profiles .card.card-overlay .back .card-img-overlay-bottom-shaded a:after {
-    color: #FFF; }
   .card.card-overlay .card-img-bottom {
     width: 100%; }
   .card.card-overlay .card-title-wrap,
@@ -11553,8 +11546,7 @@ button.beta-toggler {
     background: #05345C;
     color: #FFFFFF;
     transition: background-color 300ms, opacity 600ms;
-    text-shadow: none;
-    z-index: 1; }
+    text-shadow: none; }
     .card.card-overlay .card-title-wrap.pull-right,
     .card.card-overlay .force-block.force-block.force-block.card-title-wrap.pull-right {
       float: none; }
@@ -11730,7 +11722,8 @@ button.beta-toggler {
       width: 40%;
       left: 5%;
       top: -1.6rem;
-      bottom: auto; }
+      bottom: auto;
+      z-index: 1; }
       .card.card-overlay .card-title-wrap.pull-bottom,
       .card.card-overlay .force-block.force-block.force-block.card-title-wrap.pull-bottom {
         top: auto;
@@ -11809,6 +11802,49 @@ button.beta-toggler {
   margin-top: 16px;
   margin-top: 1rem; }
 
+.card.card-overlay.header-card-overlay .card-title-wrap {
+  background: #333333;
+  padding: 32px;
+  padding: 2rem; }
+  .card.card-overlay.header-card-overlay .card-title-wrap .chevron-link:after, .card.card-overlay.header-card-overlay .card-title-wrap .inline-links a:after, .inline-links .card.card-overlay.header-card-overlay .card-title-wrap a:after, .card.card-overlay.header-card-overlay .card-title-wrap nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay.header-card-overlay .card-title-wrap a:after, .card.card-overlay.header-card-overlay .card-title-wrap .card-img-overlay-link .card-subtitle:after, .card.card-overlay.header-card-overlay .card-img-overlay-link .card-title-wrap .card-subtitle:after, .card-panel-profiles .card.card-overlay.header-card-overlay .card-title-wrap .back a:after, .card-panel-profiles .card.card-overlay.header-card-overlay .back .card-title-wrap a:after {
+    color: #FFF; }
+  .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.9); }
+    .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .card-title {
+      text-transform: none;
+      color: #FFFFFF; }
+    .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .card-text {
+      font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: #FFFFFF; }
+    .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .event-meta {
+      float: left;
+      text-shadow: none;
+      position: relative;
+      top: 3.2px;
+      top: 0.2rem; }
+      .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .event-meta + .card-title {
+        display: block; }
+    @media (max-width: 543px) {
+      .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .event-meta {
+        top: 0.3rem; } }
+    @media (min-width: 1712px) {
+      .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .card-title {
+        font-size: 3rem;
+        line-height: 3rem; }
+      .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .card-text {
+        font-size: 1.5rem; }
+      .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap .event-meta {
+        width: 6rem;
+        min-width: 6rem;
+        height: 6rem;
+        font-size: 1.6rem;
+        line-height: 1.6rem; } }
+  .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap-link:after {
+    content: none; }
+  .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
+    text-decoration: none;
+    background-color: #404040; }
+
 .card.card-overlay.header-card-overlay .card-img-overlay-bottom .chevron-link:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .chevron-link:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom .inline-links a:after, .inline-links .card.card-overlay.header-card-overlay .card-img-overlay-bottom a:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .inline-links a:after, .inline-links .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded a:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay.header-card-overlay .card-img-overlay-bottom a:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded nav.breadcrumb a:after, nav.breadcrumb .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded a:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-img-overlay-link .card-subtitle:after, .card.card-overlay.header-card-overlay .card-img-overlay-link .card-img-overlay-bottom .card-subtitle:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-link .card-subtitle:after, .card.card-overlay.header-card-overlay .card-img-overlay-link .card-img-overlay-bottom-shaded .card-subtitle:after, .card-panel-profiles .card.card-overlay.header-card-overlay .card-img-overlay-bottom .back a:after, .card-panel-profiles .card.card-overlay.header-card-overlay .back .card-img-overlay-bottom a:after, .card-panel-profiles .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .back a:after, .card-panel-profiles .card.card-overlay.header-card-overlay .back .card-img-overlay-bottom-shaded a:after,
 .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .chevron-link:after,
 .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .inline-links a:after, .inline-links
@@ -11817,16 +11853,44 @@ button.beta-toggler {
 .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded a:after, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-img-overlay-link .card-subtitle:after, .card.card-overlay.header-card-overlay .card-img-overlay-link .card-img-overlay-bottom-shaded .card-subtitle:after, .card-panel-profiles .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .back a:after, .card-panel-profiles .card.card-overlay.header-card-overlay .back .card-img-overlay-bottom-shaded a:after {
   color: #FFF; }
 
-@media (min-width: 544px) {
-  .card.card-overlay.header-card-overlay .card-img-overlay-bottom, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded,
-  .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded {
-    padding-left: 2rem;
-    padding-bottom: 2rem; }
-    .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-title, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-title, .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-title-link, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-title-link, .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text,
-    .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-title,
-    .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-title-link,
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle,
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle {
+  font-family: "Century Schoolbook", "Times New Roman", Times, serif;
+  font-weight: normal;
+  text-transform: none;
+  color: #FFF;
+  font-size: 32px;
+  font-size: 2rem;
+  line-height: 35.2px;
+  line-height: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 12px;
+  margin-bottom: .75rem; }
+  @media (min-width: 768px) {
+    .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle,
+    .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle {
+      padding: 2rem 2rem 0;
+      font-size: 2.2rem; } }
+
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text,
+.card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text {
+  font-size: 14.4px;
+  font-size: .9rem;
+  font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #FFFFFF; }
+  @media (min-width: 768px) {
+    .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text,
     .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text {
-      width: 65%; } }
+      padding: 0 2rem 2rem; } }
+
+@media (min-width: 1712px) {
+  .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-subtitle, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle,
+  .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-subtitle {
+    font-size: 3rem;
+    line-height: 3rem; }
+  .card.card-overlay.header-card-overlay .card-img-overlay-bottom .card-text, .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text,
+  .card.card-overlay.header-card-overlay .card-img-overlay-bottom-shaded .card-text {
+    font-size: 1.5rem; } }
 
 .card.card-overlay.header-card-overlay .relative {
   position: relative; }
@@ -11874,8 +11938,35 @@ button.beta-toggler {
     .card.card-overlay.header-card-overlay .breadcrumb {
       padding: 0;
       padding-bottom: 1rem; }
+    .card.card-overlay.header-card-overlay .card-title-wrap {
+      width: 100%;
+      bottom: 0;
+      top: auto;
+      left: 0;
+      padding: 3rem 2rem 2rem;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)); }
+      .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap-link {
+        padding: 3rem 2rem 2rem; }
+        .card.card-overlay.header-card-overlay .card-title-wrap.card-title-wrap-link:hover {
+          background: linear-gradient(transparent, rgba(0, 0, 0, 0.4)); }
+      .card.card-overlay.header-card-overlay .card-title-wrap.force-block.force-block {
+        width: 45%; }
+        .card.card-overlay.header-card-overlay .card-title-wrap.force-block.force-block .card-title {
+          font-size: 1.6rem;
+          line-height: 2rem;
+          margin-top: 0; }
+        .card.card-overlay.header-card-overlay .card-title-wrap.force-block.force-block .card-text {
+          font-size: 1.2rem;
+          margin-bottom: 0px; }
     .card.card-overlay.header-card-overlay .form-group {
       margin-bottom: 1rem; } }
+
+@media (min-width: 992px) {
+  .card.card-overlay.header-card-overlay .card-title-wrap.force-block.force-block {
+    width: 40%; }
+    .card.card-overlay.header-card-overlay .card-title-wrap.force-block.force-block .card-title {
+      font-size: 2.3rem;
+      line-height: 2.3rem; } }
 
 .card.card-overlay.header-card-overlay .overlap-content-container {
   margin-left: 0;
@@ -11955,6 +12046,21 @@ button.beta-toggler {
   .global-header-transparent .card-overlay.header-card-overlay {
     margin-top: -7rem; } }
 
+.year-of-entry {
+  display: none; }
+
+.year-of-entry-slash {
+  display: none; }
+
+@media (max-width: 767px) {
+  .year-of-entry {
+    font-family: "Century Schoolbook", "Times New Roman", Times, serif;
+    font-size: 2rem;
+    display: inline-block; }
+  .year-of-entry-slash {
+    float: left;
+    display: block; } }
+
 .spaced-links-container {
   display: -ms-flexbox;
   display: flex;
@@ -11967,6 +12073,9 @@ button.beta-toggler {
   @media (min-width: 544px) {
     .spaced-links-container {
       margin: 1rem 0; } }
+  @media (max-width: 767px) {
+    .spaced-links-container {
+      margin: 1rem 0 !important; } }
 
 .spaced-links-inner-container {
   display: -ms-flexbox;
@@ -11981,10 +12090,17 @@ button.beta-toggler {
   .spaced-links-inner-container.buttons {
     -ms-flex-order: -1;
         order: -1; }
+  @media (max-width: 767px) {
+    .spaced-links-inner-container {
+      margin-top: 1rem; } }
   @media (min-width: 544px) {
     .spaced-links-inner-container {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap; } }
+  @media (max-width: 767px) {
+    .spaced-links-inner-container.buttons {
+      -ms-flex-pack: justify;
+          justify-content: space-between; } }
   @media (min-width: 992px) {
     .spaced-links-inner-container {
       width: auto; }
@@ -12012,10 +12128,9 @@ button.beta-toggler {
         border: none; }
         .spaced-links-inner-container .spaced-links-item:after {
           display: none; } }
-    .spaced-links-inner-container .spaced-links-item .year-of-entry {
-      font-family: "Century Schoolbook", "Times New Roman", Times, serif;
-      font-size: 19.2px;
-      font-size: 1.2rem; }
+    @media (max-width: 767px) {
+      .spaced-links-inner-container .spaced-links-item {
+        font-size: 1rem; } }
   .spaced-links-inner-container .spaced-links-item-btn {
     width: 45%; }
     @media (min-width: 992px) {
