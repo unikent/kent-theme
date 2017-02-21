@@ -14,7 +14,7 @@
             right: 20px;
             top: 40%;
             top: calc(50% - 1rem);
-
+            
         }
     }
 
@@ -258,7 +258,7 @@
         background: transparent;
     }
 
-    .card-title, .card-title-link {
+    .card-title {
         font-family: $headings-font-family-alt;
         font-weight: normal;
         color:       $kent-primary;

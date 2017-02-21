@@ -1,15 +1,5 @@
 .card.card-overlay {
 
-    .card-img-overlay-bottom,
-    .card-img-overlay-bottom-shaded{
-
-		.chevron-link{
-			&:after{
-			  color: #FFF;
-			}
-		}
-    }
-
     .card-img-bottom {
         width: 100%;
     }
@@ -26,7 +16,6 @@
         color:            #FFFFFF;
         transition:       background-color 300ms, opacity 600ms;
         text-shadow: none;
-        z-index:  1;
 
         &.pull-right {
             float: none;
@@ -274,6 +263,7 @@
             left:     5%;
             top:      -($card-overlay-amount);
             bottom: auto;
+            z-index:  1;
 
             &.pull-bottom {
                 top: auto;
