@@ -6901,7 +6901,8 @@ form + .h6 {
     color: #937227;
     font-size: 40px;
     font-size: 2.5rem;
-    vertical-align: top; }
+    vertical-align: top;
+    font-family: "Century Schoolbook", "Times New Roman", Times, serif; }
   .current-year .current {
     font-family: "ArialLight", "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 16px;
@@ -12046,21 +12047,6 @@ button.beta-toggler {
 @media (min-width: 768px) {
   .global-header-transparent .card-overlay.header-card-overlay {
     margin-top: -7rem; } }
-
-.year-of-entry {
-  display: none; }
-
-.year-of-entry-slash {
-  display: none; }
-
-@media (max-width: 767px) {
-  .year-of-entry {
-    font-family: "Century Schoolbook", "Times New Roman", Times, serif;
-    font-size: 2rem;
-    display: inline-block; }
-  .year-of-entry-slash {
-    float: left;
-    display: block; } }
 
 .spaced-links-container {
   display: -ms-flexbox;

@@ -326,25 +326,6 @@
 	}
 }
 
-.year-of-entry{
-	display:none;
-}
-.year-of-entry-slash{
-	display:none;
-}
-@include media-breakpoint-down(sm)
-{
-	.year-of-entry{
-		font-family:$font-family-serif;
-		font-size: 2rem;
-		display: inline-block;
-	}
-	.year-of-entry-slash{
-		float:left;
-		display: block;
-	}
-}
-
 .spaced-links-container {
 	display: flex;
 	justify-content: space-between;
