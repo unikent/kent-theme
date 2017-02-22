@@ -53,12 +53,12 @@ $global_nav_links = array(
 		array(
 			'title' 		=>	'Our locations',
 			'description' 	=> 	'A guide to Canterbury, Medway and our four European centres.',
-			'url' 			=>	'/discover/locations'
+			'url' 			=>	'/locations/'
 		),
 		array(
 			'title' 		=>	'Community',
 			'description' 	=> 	'Our work to connect with local, national and international communities.',
-			'url' 			=>	'/discover/community'
+			'url' 			=>	'/community/'
 		),
 		array(
 			'title' 		=>	'Business services',
