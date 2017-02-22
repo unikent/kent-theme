@@ -37,51 +37,51 @@ $footer_config =  array(
 					'links' => array(
 						array(
 							'title' => "About us",
-							'url'	=> HOME_URL . "/about/"
+							'url'	=> "/about/"
 						),
 						array(
 							'title' => "The UK's European university",
-							'url'	=> HOME_URL . "/european/"
+							'url'	=> "/european/"
 						),
 						array(
 							'title' => "Research",
-							'url'	=> HOME_URL . "/research/"
+							'url'	=> "/research/"
 						),
 						array(
 							'title' => "Governance and planning",
-							'url'	=> HOME_URL . "/governance/"
+							'url'	=> "/governance/"
 						),
 						array(
 							'title' => "Modern Slavery Act Statement",
-							'url'	=> HOME_URL . "/governance/modern-slavery-statement.html"
+							'url'	=> "/governance/modern-slavery-statement.html"
 						),
 						array(
 							'title' => "Charity information",
-							'url'	=> HOME_URL . "/governance/charity.html"
+							'url'	=> "/governance/charity.html"
 						),
 						array(
 							'title' => "Locations",
-							'url'	=> HOME_URL . "/discover/locations/"
+							'url'	=> "/discover/locations/"
 						),
 						array(
 							'title' => "Support us",
-							'url'	=> HOME_URL . "/giving/"
+							'url'	=> "/giving/"
 						),
 						array(
 							'title' => "What's on",
-							'url'	=> HOME_URL . "/events/"
+							'url'	=> "/events/"
 						),
 						array(
 							'title' => "News",
-							'url'	=> HOME_URL . "/news/"
+							'url'	=> "/news/"
 						),
 						array(
 							'title' => "Business services",
-							'url'	=> HOME_URL . "/discover/business-services/"
+							'url'	=> "/discover/business-services/"
 						),
 						array(
 							'title' => "Jobs",
-							'url'	=> HOME_URL . "/jobs/"
+							'url'	=> "/jobs/"
 						),
 					)
 				),
@@ -98,43 +98,43 @@ $footer_config =  array(
 					'links' => array(
 						array(
 							'title' => "Courses",
-							'url'	=> HOME_URL . "/courses"
+							'url'	=> "/courses"
 						),
 						array(
 							'title' => "Undergraduates",
-							'url'	=> HOME_URL . "/courses/undergraduate"
+							'url'	=> "/courses/undergraduate"
 						),
 						array(
 							'title' => "Postgraduates",
-							'url'	=> HOME_URL . "/courses/postgraduate"
+							'url'	=> "/courses/postgraduate"
 						),
 						array(
 							'title' => "International",
-							'url'	=> HOME_URL . "/courses/international/"
+							'url'	=> "/courses/international/"
 						),
 						array(
 							'title' => "Part-time and short courses",
-							'url'	=> HOME_URL . "/courses/part-time"
+							'url'	=> "/courses/part-time"
 						),
 						array(
 							'title' => "Student experience",
-							'url'	=> HOME_URL . "/courses/undergraduate/student-experience/"
+							'url'	=> "/courses/undergraduate/student-experience/"
 						),
 						array(
 							'title' => "Accommodation",
-							'url'	=> HOME_URL . "/accommodation"
+							'url'	=> "/accommodation"
 						),
 						array(
 							'title' => "Fees and funding",
-							'url'	=> HOME_URL . "/courses/undergraduate/fees-and-funding/"
+							'url'	=> "/courses/undergraduate/fees-and-funding/"
 						),
 						array(
 							'title' => "Scholarships",
-							'url'	=> HOME_URL . "/scholarships/search/postgraduate/"
+							'url'	=> "/scholarships/search/postgraduate/"
 						),
 						array(
 							'title' => "Term dates",
-							'url'	=> HOME_URL . "/academic/University-term-dates/Menutermdates.html"
+							'url'	=> "/academic/University-term-dates/Menutermdates.html"
 						)
 					)
 				),
@@ -150,27 +150,27 @@ $footer_config =  array(
 					'links' => array(
 						array(
 							'title' => "Applicants",
-							'url'	=> HOME_URL . "/applicants/"
+							'url'	=> "/applicants/"
 						),
 						array(
 							'title' => "Parents and family",
-							'url'	=> HOME_URL . "/parents/"
+							'url'	=> "/parents/"
 						),
 						array(
 							'title' => "Students",
-							'url'	=> HOME_URL . "/student/"
+							'url'	=> "/student/"
 						),
 						array(
 							'title' => "Staff",
-							'url'	=> HOME_URL . "/campusonline/"
+							'url'	=> "/campusonline/"
 						),
 						array(
 							'title' => "Alumni",
-							'url'	=> HOME_URL . "/alumni/"
+							'url'	=> "/alumni/"
 						),
 						array(
 							'title' => "Business and partners",
-							'url'	=> HOME_URL . "/discover/business-services/"
+							'url'	=> "/discover/business-services/"
 						)
 					)
 				)
@@ -185,27 +185,27 @@ $footer_config =  array(
 	'bottom' => array(
 		array(
 			'title' => "&copy; University of Kent",
-			'url'	=> HOME_URL
+			'url'	=> '/'
 		),
 		array(
 			'title' => "Accessibility",
-			'url'	=> HOME_URL . "/accessibility/"
+			'url'	=> "/accessibility/"
 		),
 		array(
 			'title' => "Contact us",
-			'url'	=> HOME_URL . "/contact/"
+			'url'	=> "/contact/"
 		),
 		array(
 			'title' => "Feedback",
-			'url'	=> HOME_URL . "/feedback.html"
+			'url'	=> "/feedback.html"
 		),
 		array(
 			'title' => "Legal",
-			'url'	=> HOME_URL . "/legal/"
+			'url'	=> "/legal/"
 		),
 		array(
 			'title' => "Cookies",
-			'url'	=> HOME_URL . "/legal/cookies.html"
+			'url'	=> "/legal/cookies.html"
 		)
 	)
 );
