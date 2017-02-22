@@ -18,7 +18,7 @@ Class KentThemeHelper {
 			'theme' => '',
 			'head_markup' => '',
 			'slim'=> true,
-			'beta_bar'=>true,
+			'beta_bar'=>false,
 			'home_page' => false,
 			'section_nav' =>true
 		);
@@ -32,6 +32,12 @@ Class KentThemeHelper {
 		$meta = array_merge(array('title'=>$title,
 								'thumb'=>'https://static.kent.ac.uk/pantheon/static/logos/logo-1200-1200.gif'
 								  ), $meta);
+
+
+		// Set default HOME_URL const
+		if(!defined("HOME_URL")){ 
+			define('HOME_URL', 'https://www.kent.ac.uk'); 
+		}
 
 		if($menu==='placeholder'){
 			$menu_links = "{{> menu}}".PHP_EOL;
@@ -93,6 +99,16 @@ Class KentThemeHelper {
 
 	public static function attribution($image){
 		include 'inc/attribution.php';
+	}
+
+	public static function eventMeta($startDate, $endDate = null, $colour = "accent-light"){
+		$start = strtotime($startDate);
+		if(!$endDate){
+			$end = $start;
+		}else{
+			$end = strtotime($endDate);
+		}
+		include 'inc/event-meta.php';
 	}
 
 	protected static function generateMenu($menu){

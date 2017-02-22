@@ -9077,7 +9077,8 @@ input[type=number]::-webkit-outer-spin-button {
     border: none;
     font-size: 19.2px;
     font-size: 1.2rem;
-    float: right; }
+    float: right;
+    cursor: pointer; }
     #kentBar.kent-bar button:focus, #kentBar.kent-bar button:active,
     #kentBar.audience-bar button:focus,
     #kentBar.audience-bar button:active {

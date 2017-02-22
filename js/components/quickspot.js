@@ -27,7 +27,7 @@ window.KENT.modules = window.KENT.modules || {};
 			return '<a class=\'quickspot-result selected\'>Press enter to search...</a>';
 		},
 		'no_results_click': function (value, qs) {
-			window.location.href = 'https://beta.kent.ac.uk/search/?q=' + value;
+			document.location.href = '/search/?q=' + value;
 		}
 	};
 
@@ -115,10 +115,10 @@ window.KENT.modules = window.KENT.modules || {};
 			return (itm.name + ' - ' + itm.award + ' <br> <span>' + locations + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
 		},
 		'_click_handler': function (itm) {
-			document.location = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
+			document.location.href = '/courses/undergraduate/' + itm.id + '/' + itm.slug;
 		},
 		'no_results_click': function (value, qs) {
-			window.location.href = 'https://beta.kent.ac.uk/search/courses?q=' + value;
+			window.location.href = '/search/courses?q=' + value;
 		}
 	});
 
@@ -131,7 +131,7 @@ window.KENT.modules = window.KENT.modules || {};
 	configs.pg_courses = $.extend({}, configs.courses_default, {
 		'url':	window.KENT.settings.api_url + '/programmes/current/postgraduate/programmes',
 		'_click_handler': function (itm) {
-			document.location = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
+			document.location.href = '/courses/postgraduate/' + itm.id + '/' + itm.slug;
 		}
 	});
 
@@ -152,7 +152,7 @@ window.KENT.modules = window.KENT.modules || {};
 			return (itm.name + ' - ' + itm.award + ' <span class=\'level\'> &nbsp; ' + itm.level_name + '</span><br><span>' + locations + '</span>').replace( new RegExp('(' + qs.lastValue + ')', 'i'), '<strong>$1</strong>');
 		},
 		'_click_handler': function (itm) {
-			document.location = '/courses/' + ( (itm.level === 'UG') ? 'undergraduate' : 'postgraduate') + '/' + itm.id + '/' + itm.slug;
+			document.location.href = '/courses/' + ( (itm.level === 'UG') ? 'undergraduate' : 'postgraduate') + '/' + itm.id + '/' + itm.slug;
 		},
 		'data_pre_parse': function(data, options){
 			for (var i in data){

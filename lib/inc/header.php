@@ -7,7 +7,6 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
-		<meta name="robots" content="noindex" />
 
 		<meta name="application-name" content="University of Kent"/>
 
@@ -90,19 +89,19 @@
 		<?php } ?>
 		<a href="#main_content" class="sr-only">Jump to content</a>
 		<?php if($beta_bar){ ?>
-		<section id="beta-bar" class="beta-bar navbar" role="banner">
-			<p><span class="beta-bar-beta">BETA</span></p>
+			<section id="beta-bar" class="beta-bar navbar" role="banner">
+				<p><span class="beta-bar-beta">BETA</span></p>
 
-			<p>We're testing <a href="https://blogs.kent.ac.uk/webdev/2015/12/04/beta-kent/">a new design</a>.</p>
-			<p>It may not be complete or work as intended.</p>
-			<p class="p-x-1">
-				<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="">Go to original site</a>
-			</p>
-			<p>
-				<a class="btn btn-secondary feedback" href="https://insights.hotjar.com/s?siteId=235141&surveyId=11292">Give us feedback</a>
-			</p>
-			<button class="beta-toggler" aria-expanded="true" aria-controls="beta-bar" aria-label="Hide the Beta bar" title="Hide the Beta bar"></button>
-		</section>
+				<p>We're testing <a href="https://blogs.kent.ac.uk/webdev/2015/12/04/beta-kent/">a new design</a>.</p>
+				<p>It may not be complete or work as intended.</p>
+				<p class="p-x-1">
+					<a href="<?php echo KentThemeHelper::getOriginalSiteLink();?>" class="">Go to original site</a>
+				</p>
+				<p>
+					<a class="btn btn-secondary feedback" href="https://insights.hotjar.com/s?siteId=235141&surveyId=11292">Give us feedback</a>
+				</p>
+				<button class="beta-toggler" aria-expanded="true" aria-controls="beta-bar" aria-label="Hide the Beta bar" title="Hide the Beta bar"></button>
+			</section>
 		<?php } ?>
 		<header class="global-header" role="navigation">
 			<section id="kentBar" class="audience-bar navbar" role="menubar">
