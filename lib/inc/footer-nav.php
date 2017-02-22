@@ -36,8 +36,12 @@ $footer_config =  array(
 					'title' => 'About us',
 					'links' => array(
 						array(
+							'title' => "About us",
+							'url'	=> HOME_URL . "/about/"
+						),
+						array(
 							'title' => "The UK's European university",
-							'url'	=> "https://www.kent.ac.uk/about"
+							'url'	=> HOME_URL . "/european/"
 						),
 						array(
 							'title' => "Research",
@@ -45,15 +49,15 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Governance and planning",
-							'url'	=> "https://www.kent.ac.uk/governance/"
+							'url'	=> HOME_URL . "/governance/"
 						),
 						array(
 							'title' => "Modern Slavery Act Statement",
-							'url'	=> "https://www.kent.ac.uk/governance/modern-slavery-statement.html"
+							'url'	=> HOME_URL . "/governance/modern-slavery-statement.html"
 						),
 						array(
 							'title' => "Charity information",
-							'url'	=> "https://www.kent.ac.uk/governance/charity.html"
+							'url'	=> HOME_URL . "/governance/charity.html"
 						),
 						array(
 							'title' => "Locations",
@@ -61,15 +65,15 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Support us",
-							'url'	=> "https://www.kent.ac.uk/giving/"
+							'url'	=> HOME_URL . "/giving/"
 						),
 						array(
 							'title' => "What's on",
-							'url'	=> HOME_URL . "/events"
+							'url'	=> HOME_URL . "/events/"
 						),
 						array(
 							'title' => "News",
-							'url'	=> HOME_URL . "/news"
+							'url'	=> HOME_URL . "/news/"
 						),
 						array(
 							'title' => "Business services",
@@ -77,7 +81,7 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Jobs",
-							'url'	=> "https://www.kent.ac.uk/jobs"
+							'url'	=> HOME_URL . "/jobs/"
 						),
 					)
 				),
@@ -110,7 +114,7 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Part-time and short courses",
-							'url'	=> "https://www.kent.ac.uk/courses/part-time"
+							'url'	=> HOME_URL . "/courses/part-time"
 						),
 						array(
 							'title' => "Student experience",
@@ -118,7 +122,7 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Accommodation",
-							'url'	=> "https://www.kent.ac.uk/accommodation"
+							'url'	=> HOME_URL . "/accommodation"
 						),
 						array(
 							'title' => "Fees and funding",
@@ -126,11 +130,11 @@ $footer_config =  array(
 						),
 						array(
 							'title' => "Scholarships",
-							'url'	=> "https://www.kent.ac.uk/scholarships/search/postgraduate/"
+							'url'	=> HOME_URL . "/scholarships/search/postgraduate/"
 						),
 						array(
 							'title' => "Term dates",
-							'url'	=> "https://www.kent.ac.uk/academic/University-term-dates/Menutermdates.html"
+							'url'	=> HOME_URL . "/academic/University-term-dates/Menutermdates.html"
 						)
 					)
 				),
@@ -146,23 +150,23 @@ $footer_config =  array(
 					'links' => array(
 						array(
 							'title' => "Applicants",
-							'url'	=> "https://www.kent.ac.uk/applicants/"
+							'url'	=> HOME_URL . "/applicants/"
 						),
 						array(
 							'title' => "Parents and family",
-							'url'	=> "https://www.kent.ac.uk/parents/"
+							'url'	=> HOME_URL . "/parents/"
 						),
 						array(
 							'title' => "Students",
-							'url'	=> "https://www.kent.ac.uk/student"
+							'url'	=> HOME_URL . "/student/"
 						),
 						array(
 							'title' => "Staff",
-							'url'	=> "https://www.kent.ac.uk/campusonline"
+							'url'	=> HOME_URL . "/campusonline/"
 						),
 						array(
 							'title' => "Alumni",
-							'url'	=> "https://www.kent.ac.uk/alumni"
+							'url'	=> HOME_URL . "/alumni/"
 						),
 						array(
 							'title' => "Business and partners",
@@ -185,23 +189,23 @@ $footer_config =  array(
 		),
 		array(
 			'title' => "Accessibility",
-			'url'	=> "https://www.kent.ac.uk/accessibility"
+			'url'	=> HOME_URL . "/accessibility/"
 		),
 		array(
 			'title' => "Contact us",
-			'url'	=> "https://www.kent.ac.uk/contact"
+			'url'	=> HOME_URL . "/contact/"
 		),
 		array(
 			'title' => "Feedback",
-			'url'	=> "https://www.kent.ac.uk/feedback.html"
+			'url'	=> HOME_URL . "/feedback.html"
 		),
 		array(
 			'title' => "Legal",
-			'url'	=> "https://www.kent.ac.uk/legal"
+			'url'	=> HOME_URL . "/legal/"
 		),
 		array(
 			'title' => "Cookies",
-			'url'	=> "https://www.kent.ac.uk/legal/cookies.html"
+			'url'	=> HOME_URL . "/legal/cookies.html"
 		)
 	)
 );
